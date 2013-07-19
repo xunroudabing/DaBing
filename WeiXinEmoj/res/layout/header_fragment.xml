@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
+    android:background="@drawable/app_panel_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <greendroid.widget.PagedView
+	android:id="@+id/header_pageview"
+	dabing:CenterInVertical="true"
+	android:layout_centerInParent="true"
+	android:layout_centerVertical="true"
+	android:padding="2dp"
+	android:layout_weight="1.0"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" />
+    <greendroid.widget.PageIndicator
+	android:id="@+id/header_indicator"
+	style="@style/PageIndicator"
+	android:layout_gravity="bottom|center"
+	android:layout_alignParentBottom="true"
+	android:layout_centerInParent="true"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"/>		
+</RelativeLayout>

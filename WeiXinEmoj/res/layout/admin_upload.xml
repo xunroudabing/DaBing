@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText 
+    android:id="@+id/admin_txtPath"  
+    android:hint="文件路径"   
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+	
+    <EditText 
+    android:hint="话题"
+    android:id="@+id/admin_txtKey"     
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+    
+     <EditText 
+    android:hint="表情名称"
+    android:id="@+id/admin_txtEmojName"     
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+    <Button  
+    android:id="@+id/admin_btnSend"   
+    android:text="发送"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <Button  
+    android:id="@+id/admin_btnReload"   
+    android:text="重新获取"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <ScrollView     
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <LinearLayout     
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent">
+        <TextView
+        android:id="@+id/admin_txtMsg" 
+        android:textColor="@color/white"   
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+    	</LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

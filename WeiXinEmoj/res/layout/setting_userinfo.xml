@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
+    android:background="@color/background"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+    <LinearLayout android:id="@+id/setting_userLogin" android:layout_marginBottom="10dp" android:paddingTop="10dp" android:paddingBottom="10dp"  style="@style/leba_bg_single_layout">
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:layout_marginLeft="12.0dip" 
+			  android:text="头像"/>
+             
+             <com.dabing.emoj.widget.EmojImageView
+	    		android:id="@+id/setting_userinfo_head"
+	    		dabing:inDensity="hdpi"
+	    		dabing:defaultSrc="@drawable/wb_head_default50x50"	
+	    		android:layout_marginRight="12.0dip" 
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content" />
+     </LinearLayout>
+	 <LinearLayout     
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <LinearLayout android:id="@+id/setting_yijian" style="@style/leba_bg_top_layout">
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:layout_marginLeft="12.0dip" 
+			  android:text="昵称"/>
+             
+             <TextView 
+              android:id="@+id/setting_userinfo_nick"
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:gravity="right"
+			  android:layout_weight="1.0"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:layout_marginRight="12.0dip" 
+			  android:text="熏肉大饼"/>
+        </LinearLayout>
+
+          <LinearLayout android:id="@+id/setting_version" style="@style/leba_bg_mid_layout">
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:layout_marginLeft="12.0dip" 
+			  android:text="性别"/>
+             <TextView 
+              android:id="@+id/setting_userinfo_sex"
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:gravity="right"
+			  android:layout_weight="1.0"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:layout_marginRight="12.0dip" 
+			  android:text=""/>
+        </LinearLayout>
+
+          <LinearLayout android:id="@+id/setting_about" style="@style/leba_bg_bottom_layout">
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:layout_marginLeft="12.0dip" 
+			  android:text="地区"/>
+             <TextView 
+              android:id="@+id/setting_userinfo_location"
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:gravity="right"
+			  android:layout_weight="1.0"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:layout_marginRight="12.0dip" 
+			  android:text=""/>
+        </LinearLayout>
+    </LinearLayout>
+	<Button android:layout_marginTop="5dp" android:textSize="16.0dip" android:textColor="@color/white" android:id="@+id/setting_userinfo_logout" android:background="@drawable/btn_style_one" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="重新登录" android:shadowColor="@color/black" android:shadowDy="2.0" android:shadowRadius="1.0"  />
+</LinearLayout>

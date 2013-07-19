@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<ScrollView
+	android:fadingEdge="none"  
+	android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+    android:padding="10dp"   
+    android:orientation="vertical"     
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout    
+    android:orientation="vertical"
+    android:layout_marginBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+           <LinearLayout android:id="@+id/setting_userLogin"  style="@style/leba_bg_single_layout">
+             <ImageView 
+              android:src="@drawable/social_add_person"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />  
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="用户登录"/>
+             
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+        	</LinearLayout>
+        	
+             <LinearLayout android:id="@+id/setting_userInfo" android:paddingTop="10dp" android:paddingBottom="10dp"  style="@style/leba_bg_single_layout">
+             <ImageView 
+              android:src="@drawable/social_person"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />      
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="用户信息"/>
+             
+              <com.dabing.emoj.widget.EmojImageView
+	    		android:id="@+id/setting_userinfo_head"
+	    		dabing:inDensity="hdpi"
+	    		dabing:defaultSrc="@drawable/wb_head_default50x50"	
+	    		android:layout_marginRight="12.0dip" 
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content" />
+              <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+        	</LinearLayout>
+    </LinearLayout>
+    <LinearLayout     
+    android:orientation="vertical"
+    android:layout_marginBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+         <RelativeLayout android:id="@+id/setting_download" style="@style/leba_bg_top_layout">
+             <ImageView
+              android:id="@+id/setting_download_icon1"    
+              android:src="@drawable/av_download"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />      
+             <TextView 
+              android:id="@+id/setting_download_txt"    
+              android:layout_toRightOf="@id/setting_download_icon1"            
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"  
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:text="表情打包下载"/>
+             
+             <ImageView 
+              android:id="@+id/setting_download_icon"
+              android:layout_toRightOf="@id/setting_download_txt"
+              android:layout_marginLeft="5dp"
+              android:src="@drawable/alert_new"
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"  
+              android:layout_alignParentRight="true"
+       
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+        </RelativeLayout>     
+        <RelativeLayout android:id="@+id/setting_attention" style="@style/leba_bg_mid_layout">
+             <ImageView
+              android:id="@+id/setting_attention_icon1"    
+              android:src="@drawable/rating_important"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />      
+             <TextView 
+              android:id="@+id/setting_attention_txt"    
+              android:layout_toRightOf="@id/setting_attention_icon1"            
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"  
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content" 
+			  android:text="关注官方微信公众账号"/>
+             
+             <ImageView 
+              android:id="@+id/setting_attention_icon"
+              android:layout_toRightOf="@id/setting_attention_txt"
+              android:layout_marginLeft="5dp"
+              android:src="@drawable/alert_new"
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"  
+              android:layout_alignParentRight="true"
+       
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+        </RelativeLayout>     
+        <LinearLayout android:id="@+id/setting_yijian" style="@style/leba_bg_mid_layout">
+            <ImageView 
+              android:src="@drawable/social_chat"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />  
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="反馈意见"/>
+             
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+        </LinearLayout>
+		 <LinearLayout android:id="@+id/setting_appwall" style="@style/leba_bg_bottom_layout">
+		     <ImageView 
+              android:src="@drawable/collections_view_as_grid"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />  
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="猜你喜欢"/>
+             
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+        </LinearLayout>
+    </LinearLayout>
+     <LinearLayout     
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+		  <LinearLayout android:id="@+id/setting_version" style="@style/leba_bg_top_layout">
+		      <ImageView 
+              android:src="@drawable/navigation_refresh"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />  
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			   android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="版本升级"/>
+             
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+          </LinearLayout>
+		  <LinearLayout android:id="@+id/setting_help" style="@style/leba_bg_mid_layout">
+		     <ImageView 
+              android:src="@drawable/collections_view_as_list"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />  
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="使用说明"/>
+             
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+          </LinearLayout>
+           <LinearLayout android:id="@+id/setting_problem" style="@style/leba_bg_mid_layout">
+             <ImageView 
+              android:src="@drawable/action_help"   
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />  
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="常见问题"/>
+             
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+          </LinearLayout>
+           <LinearLayout android:id="@+id/setting_pingjia" style="@style/leba_bg_mid_layout">
+             <ImageView 
+              android:src="@drawable/rating_good"  
+              android:layout_marginLeft="12.0dip"  
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />   
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			  android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			  android:text="来评价一下吧"/>
+            
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+          </LinearLayout>
+          <LinearLayout android:id="@+id/setting_about" style="@style/leba_bg_bottom_layout">
+              <ImageView 
+              android:src="@drawable/action_about"  
+              android:layout_marginLeft="12.0dip" 
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />   
+             <TextView 
+              android:textSize="16.0dip"
+			  android:textColor="#ff333333"
+			   android:layout_weight="1.0"
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" 
+			   
+			  android:text="关于微信表情包"/>
+             
+             <ImageView 
+              android:src="@drawable/mm_submenu_normal"      
+              android:layout_marginRight="12.0dip"         
+              android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"  />
+        </LinearLayout>
+    </LinearLayout>
+	<Button android:layout_marginTop="5dp" android:textSize="16.0dip" android:textColor="@color/white" android:id="@+id/setting_btnclear" android:background="@drawable/btn_style_one" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="清除历史记录" android:shadowColor="@color/black" android:shadowDy="2.0" android:shadowRadius="1.0"  />
+	</LinearLayout>
+	</ScrollView>
+</LinearLayout>

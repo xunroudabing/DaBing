@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="background">#fff</color>
+	<color name="black">#000000</color>
+	<color name="white">#fff</color>
+    <color name="blue">#FF1BA1E2</color>
+    <color name="orange">#FFF09609</color>
+    <color name="red">#FFE51400</color>
+    <color name="pink">#FFE671B8</color>
+    <color name="brown">#FFA05000</color>
+    <color name="lime">#FF8CBF26</color>
+    <color name="teal">#FF00ABA9</color>
+    <color name="purple">#FFA200FF</color>
+    <color name="magenta">#FFFF0097</color>
+    <color name="green">#FF339933</color>
+    <color name="gray">#E6E6E6</color>
+    <color name="gray_light">#eeeeee</color>
+    <color name="gray_dark">#919191</color>
+    <color name="emoj_detail_bottom">#eeeeee</color>
+    <color name="edit_hint_color">#ffb0b0b0</color>
+    <color name="button_unselected">#ff54acea</color>
+    <color name="button_selected">#96CD00</color>
+    <color name="shape_line">#ffcccccc</color>
+    <color name="dark_divider">#C0C1C2</color>
+    <color name="nickblue">#ff0083cd</color>
+    <color name="app_panel_bg">#686868</color>
+    <!-- 微信 -->
+    <color name="semitransparent">#80000000</color>
+    <color name="lightransparent">#a0000000</color>
+    <color name="sc_transparent_background">#00111111</color>
+</resources>

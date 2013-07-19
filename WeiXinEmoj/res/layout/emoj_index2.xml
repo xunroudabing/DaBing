@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+    android:padding="10dp"
+    android:background="@color/gray_light"
+	android:orientation="horizontal"	
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	    <LinearLayout android:clickable="true" android:focusable="true" android:focusableInTouchMode="true" android:padding="5dp" android:orientation="horizontal"  android:background="@drawable/search_edittext_selector" android:layout_weight="1.0" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="7.0dip">
+                <ImageView android:id="@+id/search_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="3.0dip" android:src="@drawable/wb_square_icon_zoom" />
+                <EditText  android:textSize="16.0sp" android:textColorHint="@color/edit_hint_color" android:id="@+id/emoj_index2_edittext" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:hint="@string/search_hint"  />
+        </LinearLayout>
+        <Button 
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/emoj_index2_btnSearch"
+            android:layout_width="60dp"
+			android:layout_height="fill_parent"
+			android:text="搜索" 
+			android:textColor="@color/white"			
+			android:background="@drawable/custom_button_selector" />
+	</LinearLayout>
+	     <View 
+  			android:background="@drawable/list_divider_line" 
+  			android:layout_width="fill_parent" 
+  			android:layout_height="1dp" />
+		<LinearLayout
+	android:paddingTop="2dp"
+	android:orientation="vertical"
+	android:gravity="center"
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+		<GridView     
+		android:gravity="center"
+		android:fadingEdge="none"
+		android:id="@+id/emoj_index2_gridview"
+		android:numColumns="4"
+		android:stretchMode="columnWidth"
+		android:verticalSpacing="2dp"
+		android:horizontalSpacing="2dp"
+		android:listSelector="@drawable/mm_trans"
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"></GridView>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="@drawable/mm_title_bg">
+
+	    <TextView
+		    android:id="@+id/umeng_fb_goback_btn"
+			style="@style/MMTitleButton"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			android:textColor="#fff"
+        	android:background="@drawable/mm_title_btn_back"
+		    android:text="微信"/>		
+		    
+		<TextView android:id="@+id/umeng_fb_conversation_title"
+		    style="@style/MMTitle"
+		    android:layout_centerInParent="true"
+			android:text="@string/app_name"/>
+	    
+		<TextView android:id="@+id/sort_btn"
+			style="@style/MMTitleButton"
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textColor="#fff"
+			android:visibility="gone"
+			android:layout_alignParentRight="true"
+			android:background="@drawable/mm_title_btn_right" />
+
+	</RelativeLayout>
+    <com.dabing.emoj.fragment.CrystalHeaderFragment     
+    android:id="@+id/emoj_index1_header"
+    android:layout_gravity="top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+	 <View 
+  			android:background="@drawable/list_divider_line" 
+  			android:layout_width="fill_parent" 
+  			android:layout_height="1dp" />
+	 <LinearLayout   
+	android:id="@+id/emoj_index1_container"  
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	     
+	 </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="qqappwall_ready_to_download">请稍候,准备下载</string>
+    <string name="qqappwall_unknown_app">神秘应用</string>
+    <string name="qqappwall_downloading">正在下载</string>
+    <string name="qqappwall_download_failed">下载失败，点击重试</string>
+    <string name="qqappwall_download_failed_imply">下载失败</string>
+    <string name="qqappwall_download_finished">下载完成，点击安装</string>
+    <string name="qqappwall_download_finished_imply">下载完成</string>
+    <string name="qqappwall_install_success">安装成功</string>
+    <string name="qqappwall_app_name">腾讯应用墙</string>
+    <string name="qqappwall_task_exist">已在下载任务中</string>
+    <string name="qqappwall_task_cancel">已取消所有下载任务</string>
+</resources>

@@ -1,0 +1,356 @@
+package com.dabing.emoj.activity;
+
+import greendroid.image.ImageProcessor;
+import greendroid.image.ScaleImageProcessor;
+import greendroid.util.GDUtils;
+
+import org.json.JSONObject;
+
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+import android.widget.ImageView.ScaleType;
+
+import com.dabing.emoj.BaseActivity;
+import com.dabing.emoj.R;
+import com.dabing.emoj.advertise.AdManager;
+import com.dabing.emoj.advertise.WAPS_AppWallActivity;
+import com.dabing.emoj.advertise.AdManager.AdType;
+import com.dabing.emoj.utils.AppConfig;
+import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.RegularEmojManager;
+import com.dabing.emoj.utils.TokenStore;
+import com.dabing.emoj.widget.EmojImageView;
+import com.dabing.emoj.widget.PromptDialog;
+import com.tencent.mm.sdk.uikit.MMImageButton;
+import com.tencent.weibo.api.UserAPI;
+import com.tencent.weibo.beans.OAuth;
+import com.tencent.weibo.constants.OAuthConstants;
+import com.umeng.fb.UMFeedbackService;
+/**
+ * 设置
+ * @author DaBing
+ *
+ */
+public class SettingActivity extends BaseActivity implements OnClickListener {
+	MyHandler mHandler= new MyHandler();
+	String action ="send";
+	Button btnClear;
+	EmojImageView headView;
+	RelativeLayout downloadView,attentionView;
+	ImageView downloadIcon,attensionIcon;
+	LinearLayout loginView,userinfoView,versionView,yijianView,aboutView,appwallView,helpView;
+	LinearLayout pingjiaView,problemView;
+	static final int REQUEST_LOGIN = 1;
+	static final String TAG = SettingActivity.class.getSimpleName();
+	/* (non-Javadoc)
+	 * @see com.dabing.emoj.BaseActivity#onCreate(android.os.Bundle)
+	 */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setMMTitle("设置");
+		loginView = (LinearLayout) findViewById(R.id.setting_userLogin);
+		userinfoView = (LinearLayout) findViewById(R.id.setting_userInfo);
+		versionView = (LinearLayout) findViewById(R.id.setting_version);
+		yijianView = (LinearLayout) findViewById(R.id.setting_yijian);
+		aboutView = (LinearLayout) findViewById(R.id.setting_about);
+		appwallView = (LinearLayout) findViewById(R.id.setting_appwall);
+		helpView =(LinearLayout) findViewById(R.id.setting_help);
+		pingjiaView = (LinearLayout) findViewById(R.id.setting_pingjia);
+		problemView = (LinearLayout) findViewById(R.id.setting_problem);
+		btnClear = (Button) findViewById(R.id.setting_btnclear);
+		headView = (EmojImageView) findViewById(R.id.setting_userinfo_head);
+		downloadView = (RelativeLayout) findViewById(R.id.setting_download);
+		attentionView = (RelativeLayout) findViewById(R.id.setting_attention);
+		downloadIcon = (ImageView) findViewById(R.id.setting_download_icon);
+		attensionIcon = (ImageView) findViewById(R.id.setting_attention_icon);
+		loginView.setOnClickListener(this);
+		userinfoView.setOnClickListener(this);
+		versionView.setOnClickListener(this);
+		yijianView.setOnClickListener(this);
+		aboutView.setOnClickListener(this);
+		appwallView.setOnClickListener(this);
+		helpView.setOnClickListener(this);
+		btnClear.setOnClickListener(this);
+		downloadView.setOnClickListener(this);
+		pingjiaView.setOnClickListener(this);
+		problemView.setOnClickListener(this);
+		attentionView.setOnClickListener(this);
+		Initialize();
+		SetupAction();
+	}
+	@Override
+	protected void onResume() {
+		super.onResume();
+		isNew();
+	};
+	@Override
+	protected int getLayoutId() {
+		// TODO Auto-generated method stub
+		return R.layout.setting;
+	}
+	private void isNew(){
+		if (AppConfig.getIsNew(getApplicationContext(), "unread_download")) {
+			downloadIcon.setVisibility(View.VISIBLE);
+		}else {
+			downloadIcon.setVisibility(View.INVISIBLE);
+		}
+		if(AppConfig.getIsNew(getApplicationContext(), "unread_public")){
+			attensionIcon.setVisibility(View.VISIBLE);
+		}else {
+			attensionIcon.setVisibility(View.INVISIBLE);
+		}
+	}
+	public void Initialize(){
+		OAuth oAuth = TokenStore.fetchPrivate(getApplicationContext());
+		if(oAuth == null){
+			//未登录
+			loginView.setVisibility(View.VISIBLE);
+			userinfoView.setVisibility(View.GONE);
+		}else {
+			loginView.setVisibility(View.GONE);
+			userinfoView.setVisibility(View.VISIBLE);
+			BindUserInfo();
+		}
+	}
+
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		//登录
+		case R.id.setting_userLogin:
+			Intent intent1 = new Intent(getApplicationContext(), UserLoginActivity.class);
+			startActivityForResult(intent1, REQUEST_LOGIN);
+			break;
+		//意见	
+		case R.id.setting_yijian:
+			UMFeedbackService.setGoBackButtonVisible();
+			UMFeedbackService
+					.openUmengFeedbackSDK(SettingActivity.this);
+			break;
+		//版本升级	
+		case R.id.setting_version:
+			Intent intent2 = new Intent(getApplicationContext(), SettingVersionActivity.class);
+			startActivity(intent2);
+			break;
+		//关于	
+		case R.id.setting_about:
+			Intent intent3 = new Intent(getApplicationContext(), SettingAboutActivity.class);
+			startActivity(intent3);
+			break;
+		//个人信息	
+		case R.id.setting_userInfo:
+			Intent intent4 = new Intent(getApplicationContext(), SettingUserInfoActivity.class);
+			startActivity(intent4);
+			break;
+		//使用说明	
+		case R.id.setting_help:
+			PromptDialog dialog = new PromptDialog(SettingActivity.this);			
+			dialog.show();
+			break;
+		//清除历史记录	
+		case R.id.setting_btnclear:
+			RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+			manager.clear();
+			Toast.makeText(SettingActivity.this, "清除历史记录成功", Toast.LENGTH_SHORT).show();
+			break;
+		//应用墙	
+		case R.id.setting_appwall:
+			AdManager ad = new AdManager(SettingActivity.this);
+			AdType adType = ad.getAdType();
+			switch (adType) {
+			case QQ:
+				Intent intent5_q = new Intent(getApplicationContext(), AppWallActivity.class);
+				startActivity(intent5_q);
+				break;
+			case WAPS:
+				Intent intent5 = new Intent(getApplicationContext(), WAPS_AppWallActivity.class);
+				startActivity(intent5);
+				break;
+			default:
+				Intent intent5_d = new Intent(getApplicationContext(), AppWallActivity.class);
+				startActivity(intent5_d);
+				break;
+			}
+						
+			break;
+		//打包下载	
+		case R.id.setting_download:
+			AppConfig.setIsNew(getApplicationContext(), "unread_download");
+			Intent intent6 = new Intent(getApplicationContext(), DownloadGridViewActivity.class);
+			startActivity(intent6);
+			break;
+		//常见问题	
+		case R.id.setting_problem:
+			Intent intent7 = new Intent(getApplicationContext(), SettingProblemActivity.class);
+			startActivity(intent7);
+			break;
+		//评价	
+		case R.id.setting_pingjia:
+			try {
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse("market://details?id=" + getPackageName()));
+				startActivity(intent);
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+			break;
+		//关注微信账号	
+		case R.id.setting_attention:
+			try {
+				  AppConfig.setIsNew(getApplicationContext(), "unread_public");
+				  Intent localIntent = new Intent("android.intent.action.VIEW", Uri.parse(AppConfig.getPublicAccount(getApplicationContext())));
+			      localIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.qrcode.GetQRCodeInfoUI");
+			      startActivity(localIntent);
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		if(requestCode == REQUEST_LOGIN){
+			if(resultCode == RESULT_OK){
+				//登录成功
+				loginView.setVisibility(View.GONE);
+				userinfoView.setVisibility(View.VISIBLE);
+				BindUserInfo();
+				Toast.makeText(SettingActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+			}
+		}
+	}
+	
+	public void SetupAction(){
+		Intent data = getIntent();
+		if(data.getStringExtra(AppConstant.INTENT_EMOJ_ACTION) != null){
+			action = data.getStringExtra(AppConstant.INTENT_EMOJ_ACTION);			
+		}
+		Log.d(TAG, "action:"+action);
+		if(action.equals("get")){
+			MMImageButton button = setTitleBtn4("微信", new OnClickListener() {
+				
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					finish();
+				}
+			});
+			button.setBackgroundDrawable(getDrawable(R.drawable.mm_title_btn_back));
+			
+		}
+		else if (action.equals("pick")) {
+			MMImageButton button = setTitleBtn4("返回", new OnClickListener() {
+				
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					finish();
+				}
+			});
+			button.setBackgroundDrawable(getDrawable(R.drawable.mm_title_btn_back));
+		}
+		else {
+			
+		}
+	}
+	public void BindUserInfo(){
+		try {
+			String json = AppConfig.getUserInfo(getApplicationContext());
+			if(json == null){
+				GDUtils.getExecutor(getApplicationContext()).execute(new UserInfoTask());
+			}else {
+				//Log.d(TAG, "111");
+				mHandler.sendMessage(Message.obtain(mHandler, 1, json));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+	}
+	class UserInfoTask implements Runnable{
+		OAuth oAuth;
+		public UserInfoTask(){
+			oAuth = TokenStore.fetchPrivate(getApplicationContext());
+		}
+		public void run() {
+			// TODO Auto-generated method stub
+			UserAPI api = new UserAPI(OAuthConstants.OAUTH_VERSION_2_A);
+			try {
+				String response = api.info(oAuth, "json");
+				Log.d(TAG, "response:"+response);
+				mHandler.sendMessage(Message.obtain(mHandler, 1, response));
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}finally{
+				api.shutdownConnection();
+			}
+		}
+		
+	}
+	
+	class MyHandler extends Handler{
+
+		/* (non-Javadoc)
+		 * @see android.os.Handler#handleMessage(android.os.Message)
+		 */
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			switch (msg.what) {
+			case 1:
+				String json = msg.obj.toString();
+				try {
+					JSONObject object = new JSONObject(json);
+					JSONObject data = object.getJSONObject("data");
+					String head = data.getString("head");
+					String nick = data.getString("nick");
+					String s = data.getString("sex");
+					String sex = "";
+					if(s.equals("1")){
+						sex = "男";
+					}else if (s.equals("2")) {
+						sex = "女";
+					}else {
+						sex = "未填写";
+					}
+					String location = data.getString("location");
+
+					Drawable d = getDrawable(R.drawable.wb_head_default50x50);
+					int width = d.getIntrinsicWidth();
+					int height = d.getIntrinsicHeight();
+					ImageProcessor processor = new ScaleImageProcessor(width, height, ScaleType.CENTER_CROP);
+					headView.setImageProcessor(processor);
+					headView.setUrl(head+AppConstant.PIC_HEAD_SMALL_PREFIX);
+					//缓存
+					AppConfig.setUserInfo(getApplicationContext(), json);
+				} catch (Exception e) {
+					// TODO: handle exception
+					Log.e(TAG, e.toString());
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		
+	}
+}

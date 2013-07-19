@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+ xmlns:android="http://schemas.android.com/apk/res/android"     
+ android:background="@drawable/mm_title_functionframe"
+ android:orientation="vertical"
+ android:paddingTop="20dp"
+ android:paddingLeft="10dp"
+ android:paddingRight="10dp"
+ android:paddingBottom="10dp"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+    
+    <com.dabing.emoj.widget.LinearLayoutForListView        
+    android:id="@+id/gd_quick_action_list_listview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" />
+</LinearLayout>
+

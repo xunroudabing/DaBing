@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, WeiXinEmojActivity!</string>
+    <string name="app_name">微信表情包</string>
+	<string name="search_hint">搜索你感兴趣的图片</string>
+	<string name="sending_request">正在发送请求</string>
+	<string name="confirm_dialog_sent">已发送</string>
+	<string name="confirm_dialog_back">确定</string>
+	<string name="confirm_dialog_cancel">取消</string>
+	<string name="confirm_dialog_ok">确定</string>
+    <string name="confirm_dialog_share">分享</string>
+    <string name="wx_not_install">您的设备上还没有安装微信,先去下载一个吧...</string>
+    <string name="wx_not_finish">图片正在加载,请稍候再试...</string>
+    <string name="notice">这是一款微信表情插件,同时也可以用于手机QQ等应用。它收录了不少有趣的表情,希望这款应用能够给你带来乐趣。</string>
+    <string name="about2">作者:熏肉大饼 邮箱:hzroom110@163.com</string>
+    <string name="add_weibo_content">我发现了一个很有趣的应用#微信表情包#,用它可以在微信和QQ上发表情,表情都可以动哦~~ http://url.cn/8jDAiq</string>
+    <string name="vip">["xunroudabing","xunroudabing_","bati001","crystalunicorn","manathis","MaroonWL","sleepcatlyo","hit1032710212","lisong723"]</string>
+    <string name="nosupport">您的微信版本过低,不支持发送动态表情功能,请先将微信更新至最新版本...</string>
+    <string name="sdcard_mounted">存储卡已拔出,图片展示功能将暂时不可用</string>
+    <string name="network_disconnect">当前网络连接不可用</string>
+    <string name="download_sdcard_mounted">无法检测到存储卡,请插入存储卡后重试</string>
+    <string name="ex_default">程序运行异常,请检查您的网络连接</string>
+    <string name="ex_oom">图片显示异常,这可能与设备可用内存不足有关</string>
+    <string name="ex_runtime">程序运行异常,请检查您的网络连接</string>
+    <string name="p1">1.为什么无法发送表情?</string>
+    <string name="a1">答:首先请您将设备上的微信升级至最新版本(微信4.3以下的版本是不支持发送动态表情的)。如果您的微信已经是最新版本,请您尝试重启一下设备。如果重启设备后仍然无法发送表情,那么建议您重新安装一下微信。</string>
+    <string name="p2">2.如何把微信表情包加为微信插件？</string>
+    <string name="a2">答:具体设置请见【设置】-【使用说明】</string>
+    <string name="p3">3.为什么用了微信表情包以后,我一打开相册传照片就弹出来微信表情包呢？</string>
+    <string name="a3">答:这是因为您将表情包设为了打开相册的默认APP。解决办法:进入“应用程序”-“管理应用程序”-找到微信表情包,在【默认启动】分类下点击“清除默认设置”。建议您不要将微信表情包设为打开图片的默认APP。</string>
+    <string name="p4">4.我的网络比较慢,表情总是要很长时间才能显示出来,这怎么办呢？</string>
+    <string name="a4">答:如果您的网速比较慢,表情加载耗时较长,建议您使用设置中的【表情打包下载】功能。具体使用方法:进入【表情打包下载】页面,点击选择您要下载的表情即可。下载完成后表情就会直接批量下载到您的SD卡中,不会再从网络加载了,会加快显示速度。</string>
+    <string name="p5">5.使用微信表情包会不会很费流量呢？</string>
+    <string name="a5">答:微信表情包中的表情在您第一次使用时会先从网络加载,加载之后就直接存在您的SD卡中了。以后显示该表情就会直接从SD卡中读取,不会反复从网络加载,所以不会浪费您的流量。</string>
+</resources>

@@ -1,0 +1,3028 @@
+ab:
+    24:24:public ab()
+android.annotation.SuppressLint
+android.annotation.TargetApi
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoStubImpl
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompatIcs
+android.support.v4.app.ActivityCompatHoneycomb:
+    27:27:ActivityCompatHoneycomb()
+    34:35:static void dump(android.app.Activity,java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+android.support.v4.app.BackStackRecord:
+    static final java.lang.String TAG
+    static final int OP_NULL
+    static final int OP_ADD
+    static final int OP_REPLACE
+    static final int OP_REMOVE
+    static final int OP_HIDE
+    static final int OP_SHOW
+    static final int OP_DETACH
+    static final int OP_ATTACH
+    291:291:public int getId()
+    295:295:public int getBreadCrumbTitleRes()
+    299:299:public int getBreadCrumbShortTitleRes()
+    303:306:public java.lang.CharSequence getBreadCrumbTitle()
+    310:313:public java.lang.CharSequence getBreadCrumbShortTitle()
+    332:333:public android.support.v4.app.FragmentTransaction add(android.support.v4.app.Fragment,java.lang.String)
+    337:338:public android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment)
+    342:343:public android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment,java.lang.String)
+    374:374:public android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment)
+    387:392:public android.support.v4.app.FragmentTransaction remove(android.support.v4.app.Fragment)
+    396:401:public android.support.v4.app.FragmentTransaction hide(android.support.v4.app.Fragment)
+    405:410:public android.support.v4.app.FragmentTransaction show(android.support.v4.app.Fragment)
+    414:419:public android.support.v4.app.FragmentTransaction detach(android.support.v4.app.Fragment)
+    423:428:public android.support.v4.app.FragmentTransaction attach(android.support.v4.app.Fragment)
+    432:432:public android.support.v4.app.FragmentTransaction setCustomAnimations(int,int)
+    437:441:public android.support.v4.app.FragmentTransaction setCustomAnimations(int,int,int,int)
+    445:446:public android.support.v4.app.FragmentTransaction setTransition(int)
+    450:451:public android.support.v4.app.FragmentTransaction setTransitionStyle(int)
+    455:461:public android.support.v4.app.FragmentTransaction addToBackStack(java.lang.String)
+    465:465:public boolean isAddToBackStackAllowed()
+    469:474:public android.support.v4.app.FragmentTransaction disallowAddToBackStack()
+    478:480:public android.support.v4.app.FragmentTransaction setBreadCrumbTitle(int)
+    484:486:public android.support.v4.app.FragmentTransaction setBreadCrumbTitle(java.lang.CharSequence)
+    490:492:public android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(int)
+    496:498:public android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence)
+    529:529:public int commitAllowingStateLoss()
+    712:712:public int getTransition()
+    716:716:public int getTransitionStyle()
+    720:720:public boolean isEmpty()
+android.support.v4.app.DialogFragment
+android.support.v4.app.Fragment:
+    static final int INITIALIZING
+    static final int CREATED
+    static final int ACTIVITY_CREATED
+    static final int STOPPED
+    static final int STARTED
+    static final int RESUMED
+    461:461:public final int getId()
+    468:468:public final java.lang.String getTag()
+    479:483:public void setArguments(android.os.Bundle)
+    490:490:public final android.os.Bundle getArguments()
+    502:507:public void setInitialSavedState(android.support.v4.app.Fragment$SavedState)
+    521:523:public void setTargetFragment(android.support.v4.app.Fragment,int)
+    529:529:public final android.support.v4.app.Fragment getTargetFragment()
+    536:536:public final int getTargetRequestCode()
+    550:553:public final android.content.res.Resources getResources()
+    563:563:public final java.lang.CharSequence getText(int)
+    573:573:public final java.lang.String getString(int)
+    586:586:public final varargs java.lang.String getString(int,java.lang.Object[])
+    597:597:public final android.support.v4.app.FragmentManager getFragmentManager()
+    604:604:public final boolean isAdded()
+    613:613:public final boolean isDetached()
+    622:622:public final boolean isRemoving()
+    633:633:public final boolean isInLayout()
+    641:641:public final boolean isResumed()
+    650:650:public final boolean isVisible()
+    662:662:public final boolean isHidden()
+    690:691:public void setRetainInstance(boolean)
+    694:694:public final boolean getRetainInstance()
+    705:711:public void setHasOptionsMenu(boolean)
+    723:729:public void setMenuVisibility(boolean)
+    745:750:public void setUserVisibleHint(boolean)
+    757:757:public boolean getUserVisibleHint()
+    764:772:public android.support.v4.app.LoaderManager getLoaderManager()
+    780:784:public void startActivity(android.content.Intent)
+    1218:1219:public void registerForContextMenu(android.view.View)
+    1229:1230:public void unregisterForContextMenu(android.view.View)
+android.support.v4.app.Fragment$SavedState:
+    291:293:Fragment$SavedState(android.os.Bundle)
+android.support.v4.app.FragmentActivity:
+    private static final java.lang.String TAG
+    private static final java.lang.String FRAGMENTS_TAG
+    private static final int HONEYCOMB
+    static final int MSG_REALLY_STOPPED
+    static final int MSG_RESUME_PENDING
+    558:560:public java.lang.Object getLastCustomNonConfigurationInstance()
+    587:609:public void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+    706:711:public android.support.v4.app.LoaderManager getSupportLoaderManager()
+android.support.v4.app.FragmentActivity$FragmentTag:
+    public static final int Fragment_id
+    public static final int Fragment_name
+    public static final int Fragment_tag
+    121:121:FragmentActivity$FragmentTag()
+android.support.v4.app.FragmentManager:
+    public static final int POP_BACK_STACK_INCLUSIVE
+    139:139:public android.support.v4.app.FragmentTransaction openTransaction()
+    public abstract boolean executePendingTransactions()
+    public abstract android.support.v4.app.Fragment findFragmentById(int)
+    public abstract void popBackStack()
+    public abstract boolean popBackStackImmediate()
+    public abstract void popBackStack(java.lang.String,int)
+    public abstract boolean popBackStackImmediate(java.lang.String,int)
+    public abstract void popBackStack(int,int)
+    public abstract boolean popBackStackImmediate(int,int)
+    public abstract int getBackStackEntryCount()
+    public abstract android.support.v4.app.FragmentManager$BackStackEntry getBackStackEntryAt(int)
+    public abstract void addOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    public abstract void removeOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    public abstract void putFragment(android.os.Bundle,java.lang.String,android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.Fragment getFragment(android.os.Bundle,java.lang.String)
+    public abstract android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
+    public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+    334:335:public static void enableDebugLogging(boolean)
+android.support.v4.app.FragmentManager$BackStackEntry
+android.support.v4.app.FragmentManagerImpl:
+    static final java.lang.String TAG
+    static final java.lang.String TARGET_REQUEST_CODE_STATE_TAG
+    static final java.lang.String TARGET_STATE_TAG
+    static final java.lang.String VIEW_STATE_TAG
+    static final java.lang.String USER_VISIBLE_HINT_TAG
+    static final int ANIM_DUR
+    public static final int ANIM_STYLE_OPEN_ENTER
+    public static final int ANIM_STYLE_OPEN_EXIT
+    public static final int ANIM_STYLE_CLOSE_ENTER
+    public static final int ANIM_STYLE_CLOSE_EXIT
+    public static final int ANIM_STYLE_FADE_ENTER
+    public static final int ANIM_STYLE_FADE_EXIT
+    436:441:public void popBackStack()
+    452:457:public void popBackStack(java.lang.String,int)
+    461:463:public boolean popBackStackImmediate(java.lang.String,int)
+    468:476:public void popBackStack(int,int)
+    480:485:public boolean popBackStackImmediate(int,int)
+    490:490:public int getBackStackEntryCount()
+    495:495:public android.support.v4.app.FragmentManager$BackStackEntry getBackStackEntryAt(int)
+    500:504:public void addOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    508:511:public void removeOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    542:550:public android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
+    1286:1294:public android.support.v4.app.Fragment findFragmentByWho(java.lang.String)
+android.support.v4.app.FragmentManagerImpl$2
+android.support.v4.app.FragmentManagerImpl$3
+android.support.v4.app.FragmentManagerImpl$4
+android.support.v4.app.FragmentPagerAdapter
+android.support.v4.app.FragmentStatePagerAdapter
+android.support.v4.app.FragmentTransaction:
+    public static final int TRANSIT_ENTER_MASK
+    public static final int TRANSIT_EXIT_MASK
+    public static final int TRANSIT_UNSET
+    public static final int TRANSIT_NONE
+    public static final int TRANSIT_FRAGMENT_OPEN
+    public static final int TRANSIT_FRAGMENT_CLOSE
+    public static final int TRANSIT_FRAGMENT_FADE
+    public abstract android.support.v4.app.FragmentTransaction add(android.support.v4.app.Fragment,java.lang.String)
+    public abstract android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment,java.lang.String)
+    public abstract android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction remove(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction hide(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction show(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction detach(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction attach(android.support.v4.app.Fragment)
+    public abstract boolean isEmpty()
+    public abstract android.support.v4.app.FragmentTransaction setCustomAnimations(int,int)
+    public abstract android.support.v4.app.FragmentTransaction setCustomAnimations(int,int,int,int)
+    public abstract android.support.v4.app.FragmentTransaction setTransition(int)
+    public abstract android.support.v4.app.FragmentTransaction setTransitionStyle(int)
+    public abstract android.support.v4.app.FragmentTransaction addToBackStack(java.lang.String)
+    public abstract boolean isAddToBackStackAllowed()
+    public abstract android.support.v4.app.FragmentTransaction disallowAddToBackStack()
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbTitle(int)
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbTitle(java.lang.CharSequence)
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(int)
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence)
+    public abstract int commitAllowingStateLoss()
+android.support.v4.app.HCSparseArray:
+    223:228:public void setValueAt(int,java.lang.Object)
+    236:240:public int indexOfKey(int)
+    252:260:public int indexOfValue(java.lang.Object)
+    283:310:public void append(int,java.lang.Object)
+android.support.v4.app.ListFragment
+android.support.v4.app.ListFragment$1
+android.support.v4.app.ListFragment$2
+android.support.v4.app.LoaderManager:
+    public abstract android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    public abstract android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    public abstract void destroyLoader(int)
+    public abstract android.support.v4.content.Loader getLoader(int)
+    public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+    176:177:public static void enableDebugLogging(boolean)
+android.support.v4.app.LoaderManagerImpl:
+    static final java.lang.String TAG
+    boolean mRetainingStarted
+    boolean mCreatingLoader
+    485:488:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    494:499:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createAndInstallLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    504:511:void installLoader(android.support.v4.app.LoaderManagerImpl$LoaderInfo)
+    539:561:public android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    589:643:public android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    654:674:public void destroyLoader(int)
+    682:693:public android.support.v4.content.Loader getLoader(int)
+android.support.v4.app.LoaderManagerImpl$LoaderInfo:
+    225:229:public LoaderManagerImpl$LoaderInfo(android.support.v4.app.LoaderManagerImpl,int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    359:412:public void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
+android.support.v4.app.ServiceCompat
+android.support.v4.content.AsyncTaskLoader
+android.support.v4.content.AsyncTaskLoader$LoadTask
+android.support.v4.content.CursorLoader
+android.support.v4.content.IntentCompat
+android.support.v4.content.Loader:
+    android.content.Context mContext
+    90:92:public Loader(android.content.Context)
+    102:105:public void deliverResult(java.lang.Object)
+    111:111:public android.content.Context getContext()
+    118:118:public int getId()
+    157:157:public boolean isStarted()
+    166:166:public boolean isAbandoned()
+    175:175:public boolean isReset()
+    217:218:public void forceLoad()
+    225:225:protected void onForceLoad()
+    261:263:public void abandon()
+    275:275:protected void onAbandon()
+    312:314:public boolean takeContentChanged()
+    326:334:public void onContentChanged()
+android.support.v4.content.Loader$ForceLoadContentObserver
+android.support.v4.content.Loader$OnLoadCompleteListener:
+    public abstract void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
+android.support.v4.content.LocalBroadcastManager
+android.support.v4.content.LocalBroadcastManager$1
+android.support.v4.content.LocalBroadcastManager$BroadcastRecord
+android.support.v4.content.LocalBroadcastManager$ReceiverRecord
+android.support.v4.content.ModernAsyncTask
+android.support.v4.content.ModernAsyncTask$1
+android.support.v4.content.ModernAsyncTask$2
+android.support.v4.content.ModernAsyncTask$3
+android.support.v4.content.ModernAsyncTask$4
+android.support.v4.content.ModernAsyncTask$AsyncTaskResult
+android.support.v4.content.ModernAsyncTask$InternalHandler
+android.support.v4.content.ModernAsyncTask$Status
+android.support.v4.content.ModernAsyncTask$WorkerRunnable
+android.support.v4.content.pm.ActivityInfoCompat
+android.support.v4.database.DatabaseUtilsCompat
+android.support.v4.os.ParcelableCompat:
+    26:42:public ParcelableCompat()
+android.support.v4.os.ParcelableCompatCreatorHoneycombMR2:
+    36:36:public java.lang.Object createFromParcel(android.os.Parcel)
+    40:40:public java.lang.Object createFromParcel(android.os.Parcel,java.lang.ClassLoader)
+    44:44:public java.lang.Object[] newArray(int)
+android.support.v4.os.ParcelableCompatCreatorHoneycombMR2Stub:
+    22:22:ParcelableCompatCreatorHoneycombMR2Stub()
+android.support.v4.util.DebugUtils:
+    25:25:public DebugUtils()
+android.support.v4.util.LruCache
+android.support.v4.util.TimeUtils
+android.support.v4.view.AccessibilityDelegateCompat
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl$1
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateImpl
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateStubImpl
+android.support.v4.view.AccessibilityDelegateCompatIcs
+android.support.v4.view.AccessibilityDelegateCompatIcs$1
+android.support.v4.view.AccessibilityDelegateCompatIcs$AccessibilityDelegateBridge
+android.support.v4.view.KeyEventCompat:
+    25:95:public KeyEventCompat()
+    127:127:public static int normalizeMetaState(int)
+    131:131:public static boolean metaStateHasModifiers(int,int)
+    135:135:public static boolean metaStateHasNoModifiers(int)
+android.support.v4.view.KeyEventCompat$BaseKeyEventVersionImpl:
+    private static final int META_MODIFIER_MASK
+    private static final int META_ALL_MASK
+android.support.v4.view.KeyEventCompat$HoneycombKeyEventVersionImpl:
+    98:98:public int normalizeMetaState(int)
+android.support.v4.view.KeyEventCompat$KeyEventVersionImpl:
+    public abstract int normalizeMetaState(int)
+android.support.v4.view.KeyEventCompatHoneycomb:
+    24:24:KeyEventCompatHoneycomb()
+    26:26:public static int normalizeMetaState(int)
+android.support.v4.view.MenuCompat
+android.support.v4.view.MenuCompat$BaseMenuVersionImpl
+android.support.v4.view.MenuCompat$HoneycombMenuVersionImpl
+android.support.v4.view.MenuCompat$MenuVersionImpl
+android.support.v4.view.MenuItemCompat
+android.support.v4.view.MenuItemCompat$BaseMenuVersionImpl
+android.support.v4.view.MenuItemCompat$HoneycombMenuVersionImpl
+android.support.v4.view.MenuItemCompat$MenuVersionImpl
+android.support.v4.view.MenuItemCompatHoneycomb
+android.support.v4.view.MotionEventCompat:
+    public static final int ACTION_MASK
+    public static final int ACTION_POINTER_DOWN
+    public static final int ACTION_POINTER_UP
+    public static final int ACTION_HOVER_MOVE
+    public static final int ACTION_SCROLL
+    public static final int ACTION_POINTER_INDEX_MASK
+    public static final int ACTION_POINTER_INDEX_SHIFT
+    25:75:public MotionEventCompat()
+    148:148:public static int getActionMasked(android.view.MotionEvent)
+android.support.v4.view.MotionEventCompatEclair:
+    24:24:MotionEventCompatEclair()
+android.support.v4.view.PagerAdapter:
+    public static final int POSITION_UNCHANGED
+    public static final int POSITION_NONE
+    78:79:public PagerAdapter()
+    268:268:public int getItemPosition(java.lang.Object)
+    276:277:public void notifyDataSetChanged()
+android.support.v4.view.PagerTitleStrip:
+    private static final java.lang.String TAG
+    private static final int SIDE_ALPHA
+    private static final int TEXT_SPACING
+    67:68:public PagerTitleStrip(android.content.Context)
+android.support.v4.view.PagerTitleStrip$PageListener:
+    318:319:public void onAdapterChanged(android.support.v4.view.PagerAdapter,android.support.v4.view.PagerAdapter)
+android.support.v4.view.VelocityTrackerCompat:
+    25:51:public VelocityTrackerCompat()
+    91:91:public static float getYVelocity(android.view.VelocityTracker,int)
+android.support.v4.view.VelocityTrackerCompat$BaseVelocityTrackerVersionImpl:
+    44:44:public float getYVelocity(android.view.VelocityTracker,int)
+android.support.v4.view.VelocityTrackerCompat$HoneycombVelocityTrackerVersionImpl:
+    58:58:public float getYVelocity(android.view.VelocityTracker,int)
+android.support.v4.view.VelocityTrackerCompat$VelocityTrackerVersionImpl:
+    public abstract float getYVelocity(android.view.VelocityTracker,int)
+android.support.v4.view.VelocityTrackerCompatHoneycomb:
+    24:24:VelocityTrackerCompatHoneycomb()
+    29:29:public static float getYVelocity(android.view.VelocityTracker,int)
+android.support.v4.view.ViewCompat:
+    public static final int OVER_SCROLL_ALWAYS
+    public static final int OVER_SCROLL_IF_CONTENT_SCROLLS
+    public static final int OVER_SCROLL_NEVER
+    28:95:public ViewCompat()
+    153:153:public static boolean canScrollVertically(android.view.View,int)
+    182:183:public static void setOverScrollMode(android.view.View,int)
+    219:220:public static void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    252:253:public static void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    288:289:public static void onInitializeAccessibilityNodeInfo(android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat)
+    303:304:public static void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat)
+android.support.v4.view.ViewCompat$BaseViewCompatImpl:
+    62:62:public boolean canScrollVertically(android.view.View,int)
+    69:69:public void setOverScrollMode(android.view.View,int)
+    72:72:public void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat)
+    75:75:public void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    78:78:public void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    81:81:public void onInitializeAccessibilityNodeInfo(android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat)
+android.support.v4.view.ViewCompat$GBViewCompatImpl:
+    91:92:public void setOverScrollMode(android.view.View,int)
+android.support.v4.view.ViewCompat$ICSViewCompatImpl:
+    102:102:public boolean canScrollVertically(android.view.View,int)
+    106:107:public void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    110:111:public void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    114:115:public void onInitializeAccessibilityNodeInfo(android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat)
+    118:119:public void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat)
+android.support.v4.view.ViewCompat$ViewCompatImpl:
+    public abstract boolean canScrollVertically(android.view.View,int)
+    public abstract void setOverScrollMode(android.view.View,int)
+    public abstract void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    public abstract void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    public abstract void onInitializeAccessibilityNodeInfo(android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat)
+    public abstract void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat)
+android.support.v4.view.ViewCompatGingerbread:
+    21:21:ViewCompatGingerbread()
+    27:28:public static void setOverScrollMode(android.view.View,int)
+android.support.v4.view.ViewCompatICS:
+    27:27:ViewCompatICS()
+    34:34:public static boolean canScrollVertically(android.view.View,int)
+    38:39:public static void setAccessibilityDelegate(android.view.View,java.lang.Object)
+    42:43:public static void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    46:47:public static void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    50:51:public static void onInitializeAccessibilityNodeInfo(android.view.View,java.lang.Object)
+android.support.v4.view.ViewConfigurationCompat:
+    25:46:public ViewConfigurationCompat()
+android.support.v4.view.ViewConfigurationCompatFroyo:
+    24:24:ViewConfigurationCompatFroyo()
+android.support.v4.view.ViewGroupCompat
+android.support.v4.view.ViewGroupCompat$ViewGroupCompatIcsImpl
+android.support.v4.view.ViewGroupCompat$ViewGroupCompatImpl
+android.support.v4.view.ViewGroupCompat$ViewGroupCompatStubImpl
+android.support.v4.view.ViewGroupCompatIcs
+android.support.v4.view.ViewPager:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private static final boolean USE_CACHE
+    private static final int DEFAULT_OFFSCREEN_PAGES
+    private static final int MAX_SETTLE_DURATION
+    private static final int MIN_DISTANCE_FOR_FLING
+    private android.support.v4.view.ViewPager$PagerObserver mObserver
+    private static final int INVALID_POINTER
+    private long mFakeDragBeginTime
+    public static final int SCROLL_STATE_IDLE
+    public static final int SCROLL_STATE_DRAGGING
+    public static final int SCROLL_STATE_SETTLING
+    271:273:public ViewPager(android.content.Context)
+    314:351:public void setAdapter(android.support.v4.view.PagerAdapter)
+    354:362:private void removeNonDecorViews()
+    385:387:public void setCurrentItem(int)
+    462:463:public void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)
+    485:485:public int getOffscreenPageLimit()
+    506:515:public void setOffscreenPageLimit(int)
+    526:533:public void setPageMargin(int)
+    541:541:public int getPageMargin()
+    550:554:public void setPageMarginDrawable(android.graphics.drawable.Drawable)
+    562:563:public void setPageMarginDrawable(int)
+    596:597:void smoothScrollTo(int,int)
+    660:717:void dataSetChanged()
+    1652:1668:public boolean beginFakeDrag()
+    1678:1697:public void endFakeDrag()
+    1707:1735:public void fakeDragBy(float)
+    1747:1747:public boolean isFakeDragging()
+android.support.v4.view.ViewPager$OnAdapterChangeListener:
+    public abstract void onAdapterChanged(android.support.v4.view.PagerAdapter,android.support.v4.view.PagerAdapter)
+android.support.v4.view.ViewPager$PagerObserver
+android.support.v4.view.ViewPager$SimpleOnPageChangeListener
+android.support.v4.view.accessibility.AccessibilityEventCompat
+android.support.v4.view.accessibility.AccessibilityEventCompat$AccessibilityEventIcsImpl
+android.support.v4.view.accessibility.AccessibilityEventCompat$AccessibilityEventStubImpl
+android.support.v4.view.accessibility.AccessibilityEventCompat$AccessibilityEventVersionImpl
+android.support.v4.view.accessibility.AccessibilityEventCompatIcs
+android.support.v4.view.accessibility.AccessibilityManagerCompat
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerIcsImpl
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerIcsImpl$1
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerStubImpl
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerVersionImpl
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat
+android.support.v4.view.accessibility.AccessibilityManagerCompatIcs
+android.support.v4.view.accessibility.AccessibilityManagerCompatIcs$1
+android.support.v4.view.accessibility.AccessibilityManagerCompatIcs$AccessibilityStateChangeListenerBridge
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoIcsImpl
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoStubImpl
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatIcs
+android.support.v4.view.accessibility.AccessibilityRecordCompat
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordIcsImpl
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordImpl
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordStubImpl
+android.support.v4.view.accessibility.AccessibilityRecordCompatIcs
+android.support.v4.widget.CursorAdapter
+android.support.v4.widget.CursorAdapter$1
+android.support.v4.widget.CursorAdapter$ChangeObserver
+android.support.v4.widget.CursorAdapter$MyDataSetObserver
+android.support.v4.widget.CursorFilter
+android.support.v4.widget.CursorFilter$CursorFilterClient
+android.support.v4.widget.EdgeEffectCompat:
+    204:204:public boolean onAbsorb(int)
+android.support.v4.widget.EdgeEffectCompat$BaseEdgeEffectImpl:
+    82:82:public boolean onAbsorb(java.lang.Object,int)
+android.support.v4.widget.EdgeEffectCompat$EdgeEffectIcsImpl:
+    116:116:public boolean onAbsorb(java.lang.Object,int)
+android.support.v4.widget.EdgeEffectCompat$EdgeEffectImpl:
+    public abstract boolean onAbsorb(java.lang.Object,int)
+android.support.v4.widget.EdgeEffectCompatIcs:
+    28:28:EdgeEffectCompatIcs()
+    57:58:public static boolean onAbsorb(java.lang.Object,int)
+android.support.v4.widget.ResourceCursorAdapter
+android.support.v4.widget.SearchViewCompat
+android.support.v4.widget.SearchViewCompat$OnQueryTextListenerCompat
+android.support.v4.widget.SearchViewCompat$SearchViewCompatHoneycombImpl
+android.support.v4.widget.SearchViewCompat$SearchViewCompatHoneycombImpl$1
+android.support.v4.widget.SearchViewCompat$SearchViewCompatImpl
+android.support.v4.widget.SearchViewCompat$SearchViewCompatStubImpl
+android.support.v4.widget.SearchViewCompatHoneycomb
+android.support.v4.widget.SearchViewCompatHoneycomb$1
+android.support.v4.widget.SearchViewCompatHoneycomb$OnQueryTextListenerCompatBridge
+android.support.v4.widget.SimpleCursorAdapter
+android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
+android.support.v4.widget.SimpleCursorAdapter$ViewBinder
+com.ant.liao.GifDecoder:
+    public static final int STATUS_PARSING
+    public static final int STATUS_FORMAT_ERROR
+    public static final int STATUS_OPEN_ERROR
+    public static final int STATUS_FINISH
+    private static final int MaxStackSize
+    113:114:public void setGifImage(byte[])
+    201:201:private synchronized java.lang.String getDir()
+    277:277:public int getStatus()
+    285:285:public boolean parseOk()
+    294:301:public int getDelay(int)
+    309:317:public int[] getDelays()
+    338:338:public int getLoopCount()
+    441:441:public com.ant.liao.GifFrame getCurrentFrame()
+    469:470:public void reset()
+com.ant.liao.GifView:
+    142:148:private void setGifDecoderImage(byte[])
+    172:173:public void setAsBackground(android.view.View)
+    215:216:public void setGifImage(byte[])
+    231:234:public void setGifImage(int)
+    260:265:public void showCover()
+    272:275:public void showAnimation()
+    283:285:public void setGifImageType(com.ant.liao.GifView$GifImageType)
+com.ant.liao.R
+com.ant.liao.R$drawable
+com.ant.liao.R$string
+com.cyrilmottier.android.greendroid.R:
+    9:9:public R()
+com.cyrilmottier.android.greendroid.R$anim
+com.cyrilmottier.android.greendroid.R$attr:
+    public static final int isPreMeasureSize
+    public static final int gdActionBarItemBackground
+    public static final int gdItemViewPreferredPaddingLeft
+    public static final int gdThumbnailItemViewStyleSubtitle
+    public static final int gdItemViewPreferredHalfHeight
+    public static final int dividerDrawable
+    public static final int gdActionBarDividerStyle
+    public static final int drawable
+    public static final int gdTabIndicatorStyle
+    public static final int type
+    public static final int gdTextAppearanceSeparator
+    public static final int gdQuickActionBarItemStyle
+    public static final int gdSeparatorItemViewPreferredHeight
+    public static final int gdThumbnailItemViewStyleText
+    public static final int gdSeparatorItemViewStyle
+    public static final int gdDescriptionItemViewStyle
+    public static final int gdSegmentTextSize
+    public static final int gdActionBarItemStyle
+    public static final int gdProgressBarHeight
+    public static final int gdActionBarDividerWidth
+    public static final int gdItemViewPreferredHeight
+    public static final int inDensity
+    public static final int gdActionBarTitleStyle
+    public static final int dotCount
+    public static final int thumbnailURL
+    public static final int CenterInVertical
+    public static final int enabled
+    public static final int text
+    public static final int dotDrawable
+    public static final int gdProgressBarWidth
+    public static final int segmentedBar
+    public static final int gdTextAppearanceSmall
+    public static final int gdProgressItemViewStyleText
+    public static final int url
+    public static final int activeDot
+    public static final int gdTabIndicatorBackground
+    public static final int gdThumbnailItemViewStyleThumbnail
+    public static final int gdDrawableItemViewStyleDrawable
+    public static final int thumbnail
+    public static final int gdTextAppearanceMedium
+    public static final int gravity
+    public static final int subtext
+    public static final int dotType
+    public static final int gdThumbnailItemViewStyle
+    public static final int isInProgress
+    public static final int gdActionBarHomeDrawable
+    public static final int gdActionBarTitleColor
+    public static final int defaultSrc
+    public static final int gdProgressBarMargin
+    public static final int gdDrawableItemViewStyleText
+    public static final int gdDrawableMargin
+    public static final int gdActionBarDividerDrawable
+    public static final int gdActionBarBackground
+    public static final int title
+    public static final int gdTextAppearanceLarge
+    public static final int gdActionBarMaxItems
+    public static final int gdTextItemViewStyle
+    public static final int gdSubtextItemViewStyleSubtext
+    public static final int homeDrawable
+    public static final int gdSubtextItemViewStyle
+    public static final int gdProgressItemViewStyle
+    public static final int gdTabIndicatorHeight
+    public static final int gdQuickActionGridItemStyle
+    public static final int maxItems
+    public static final int gdDrawableWidth
+    public static final int gdLongTextItemViewStyle
+    public static final int gdSegmentTextColor
+    public static final int gdTabIndicatorTextAppearance
+    public static final int gdSubtextItemViewStyleText
+    public static final int gdTextAppearance
+    public static final int gdSubtitleItemViewStyleSubtitle
+    public static final int dotSpacing
+    public static final int gdDrawableItemViewStyle
+    public static final int gdActionBarApplicationDrawable
+    public static final int gdSubtitleItemViewStyleText
+    public static final int gdSubtitleItemViewStyle
+    public static final int gdSegmentBackground
+    public static final int segmentedContentView
+    public static final int subtitle
+    public static final int gdSegmentCheckmark
+    public static final int gdDrawableHeight
+    public static final int gdProgressItemViewStyleProgressBar
+    public static final int gdQuickActionBarStyle
+    public static final int gdQuickActionGridStyle
+    public static final int dividerWidth
+    314:314:public R$attr()
+com.cyrilmottier.android.greendroid.R$color
+com.cyrilmottier.android.greendroid.R$dimen:
+    public static final int gd_progress_bar_margin
+    public static final int gd_drawable_width
+    public static final int gd_item_view_height
+    public static final int gd_item_view_half_height
+    public static final int gd_action_bar_height
+    public static final int gd_separator_item_view_height
+    public static final int gd_separator_item_view_padding_left
+    public static final int gd_drawable_margin
+    public static final int gd_progress_bar_height
+    public static final int gd_item_view_padding_left
+    public static final int gd_drawable_height
+    public static final int gd_progress_bar_width
+    407:407:public R$dimen()
+com.cyrilmottier.android.greendroid.R$drawable:
+    public static final int gd_segment_checkmark_off
+    public static final int gd_action_bar_compass
+    public static final int gd_page_indicator_dot_pressed
+    public static final int gd_shadow_bottom
+    public static final int gd_action_bar_search
+    public static final int gd_quick_action_bar_grip_left
+    public static final int gd_quick_action_top_frame
+    public static final int gd_action_bar_export
+    public static final int gd_tab_indicator_unselected
+    public static final int gd_segment_checkmark
+    public static final int gd_quick_action_bar_item_selected
+    public static final int gd_page_indicator_dot_selected_focused
+    public static final int gd_segment_label_pressed
+    public static final int gd_action_bar_item
+    public static final int gd_action_bar_edit
+    public static final int gd_action_bar_sort_by_size
+    public static final int gd_action_bar_eye
+    public static final int gd_quick_action_bar_grip_right
+    public static final int gd_action_bar_trashcan
+    public static final int gd_action_bar_all_friends
+    public static final int gd_page_indicator_dot_normal
+    public static final int gd_tab_indicator_normal
+    public static final int gd_segment_checkmark_on
+    public static final int gd_action_bar_compose
+    public static final int gd_action_bar_sort_alpha
+    public static final int gd_quick_action_grid_arrow_down
+    public static final int gd_action_bar_gallery
+    public static final int gd_quick_action_bar_background
+    public static final int gd_tab_indicator
+    public static final int gd_quick_action_bar_bottom_frame
+    public static final int gd_action_bar_help
+    public static final int gd_page_indicator_dot_selected
+    public static final int gd_action_bar_star
+    public static final int gd_action_bar_locate
+    public static final int gd_action_bar_item_focused
+    public static final int gd_action_bar_talk
+    public static final int gd_quick_action_bar_arrow_down
+    public static final int gd_action_bar_list
+    public static final int gd_action_bar_add
+    public static final int gd_action_bar_locate_myself
+    public static final int gd_page_indicator_dot_normal_pressed
+    public static final int gd_quick_action_arrow_up
+    public static final int gd_quick_action_grid_selector_pressed
+    public static final int gd_shadow_top
+    public static final int gd_action_bar_take_photo
+    public static final int gd_segment_divider
+    public static final int gd_quick_action_grid_bottom_frame
+    public static final int gd_page_indicator_dot_selected_normal
+    public static final int gd_quick_action_grid_bg
+    public static final int gd_page_indicator_dot_normal_normal
+    public static final int gd_quick_action_grid_selector
+    public static final int gd_segment_label_focused
+    public static final int gd_action_bar_refresh
+    public static final int gd_segment_label_normal
+    public static final int gd_quick_action_bar_item
+    public static final int gd_action_bar_mail
+    public static final int gd_page_indicator_dot_focused
+    public static final int gd_page_indicator_dot
+    public static final int gd_tab_indicator_pressed
+    public static final int gd_segment_label
+    public static final int gd_action_bar_share
+    public static final int gd_action_bar_item_pressed
+    public static final int gd_tab_indicator_selected
+    public static final int gd_page_indicator_dot_selected_pressed
+    public static final int gd_quick_action_bar_item_pressed
+    public static final int gd_action_bar_group
+    public static final int gd_action_bar_info
+    public static final int gd_action_bar_settings
+    public static final int gd_quick_action_grid_selector_focused
+    public static final int gd_action_bar_slideshow
+    public static final int gd_page_indicator_dot_normal_focused
+    public static final int gd_quick_action_bar_item_normal
+    239:239:public R$drawable()
+com.cyrilmottier.android.greendroid.R$id:
+    public static final int ldpi
+    public static final int single
+    public static final int gd_subtitle
+    public static final int gdi_scroll
+    public static final int center_horizontal
+    public static final int normal
+    public static final int gd_description
+    public static final int xhdpi
+    public static final int center
+    public static final int gdi_rack
+    public static final int gdi_header
+    public static final int empty
+    public static final int left
+    public static final int right
+    public static final int multiple
+    public static final int top
+    public static final int gd_separator_text
+    public static final int gd_thumbnail
+    public static final int center_vertical
+    public static final int hdpi
+    public static final int gd_progress_bar
+    public static final int gd_text
+    public static final int mdpi
+    public static final int gdi_quick_action_items
+    public static final int gdi_footer
+    public static final int gd_subtext
+    public static final int gd_action_bar_item_progress_bar
+    public static final int gd_drawable
+    public static final int gd_segmented_content_view
+    public static final int bottom
+    public static final int dashboard
+    public static final int gd_segmented_bar
+    10:10:public R$id()
+com.cyrilmottier.android.greendroid.R$layout:
+    public static final int gd_drawable_item_view
+    public static final int gd_tab_indicator
+    public static final int gd_description_item_view
+    public static final int gd_long_text_item_view
+    public static final int gd_text_item_view
+    public static final int gd_subtext_item_view
+    public static final int gd_thumbnail_item_view
+    public static final int gd_action_bar_item_loader
+    public static final int gd_quick_action_bar
+    public static final int gd_separator_item_view
+    public static final int gd_progress_item_view
+    public static final int gd_action_bar_item_base
+    public static final int gd_quick_action_bar_item
+    public static final int gd_subtitle_item_view
+    public static final int gd_quick_action_grid_item
+    public static final int gd_quick_action_grid
+    160:160:public R$layout()
+com.cyrilmottier.android.greendroid.R$string:
+    public static final int gd_compass
+    public static final int gd_add
+    public static final int gd_locate
+    public static final int gd_trashcan
+    public static final int gd_compose
+    public static final int gd_all_friends
+    public static final int gd_take_photo
+    public static final int gd_mail
+    public static final int gd_sort_by_size
+    public static final int gd_slideshow
+    public static final int gd_edit
+    public static final int gd_pick_photo
+    public static final int gd_eye
+    public static final int gd_help
+    public static final int gd_talk
+    public static final int gd_sort_alpha
+    public static final int gd_gallery
+    public static final int gd_refresh
+    public static final int gd_export
+    public static final int gd_share
+    public static final int gd_list
+    public static final int gd_star
+    public static final int gd_group
+    public static final int gd_settings
+    public static final int gd_search
+    public static final int gd_info
+    public static final int gd_locate_myself
+    130:130:public R$string()
+com.cyrilmottier.android.greendroid.R$style:
+    public static final int GreenDroid_Animation
+    public static final int GreenDroid_Widget_ItemView_SubtextItemView
+    public static final int GreenDroid_Widget_TabIndicator
+    public static final int GreenDroid_Widget_ActionBar_Title
+    public static final int Theme_GreenDroid_Light
+    public static final int GreenDroid_Widget
+    public static final int GreenDroid_Animation_PopDown
+    public static final int TextAppearance_Medium
+    public static final int GreenDroid_Widget_QuickAction_Grid_Item
+    public static final int GreenDroid_Widget_ActionBar
+    public static final int TextAppearance_TabIndicator
+    public static final int GreenDroid_Widget_ItemView_ProgressItemView
+    public static final int GreenDroid_Widget_ItemView_ThumbnailItemView_Text
+    public static final int GreenDroid_Widget_ActionBar_Item
+    public static final int GreenDroid_Widget_SegmentedHost
+    public static final int GreenDroid_Widget_QuickAction_Item
+    public static final int TextAppearance
+    public static final int TextAppearance_Large
+    public static final int GreenDroid_Widget_ItemView_DrawableItemView_Text
+    public static final int GreenDroid_Widget_ItemView_DescriptionItemView
+    public static final int GreenDroid_Animation_PopUp
+    public static final int GreenDroid_Widget_ItemView_ThumbnailItemView_Thumbnail
+    public static final int GreenDroid_Widget_ItemView_LongTextItemView
+    public static final int GreenDroid_Widget_ItemView
+    public static final int GreenDroid_Widget_QuickAction_Bar
+    public static final int GreenDroid_Widget_ItemView_ThumbnailItemView_Subtitle
+    public static final int GreenDroid_Widget_ItemView_ProgressItemView_Text
+    public static final int GreenDroid_Widget_ActionBar_Empty
+    public static final int GreenDroid_Widget_ItemView_DrawableItemView
+    public static final int GreenDroid_Widget_ItemView_DrawableItemView_Drawable
+    public static final int GreenDroid_Widget_QuickAction_Bar_Item
+    public static final int GreenDroid_Widget_ItemView_ThumbnailItemView
+    public static final int GreenDroid_Widget_PageIndicator
+    public static final int TextAppearance_Small
+    public static final int Theme_GreenDroid_NoTitleBar
+    public static final int Theme_GreenDroid_Light_NoTitleBar
+    public static final int TextAppearance_Separator
+    public static final int GreenDroid_Widget_QuickAction
+    public static final int GreenDroid_Widget_ItemView_SubtextItemView_Subtext
+    public static final int GreenDroid_Widget_ItemView_ProgressItemView_ProgressBar
+    public static final int GreenDroid
+    public static final int GreenDroid_Widget_ItemView_SubtitleItemView
+    public static final int GreenDroid_Widget_QuickAction_Grid
+    public static final int GreenDroid_Widget_ItemView_SubtextItemView_Text
+    public static final int GreenDroid_Widget_ItemView_TextItemView
+    public static final int Theme_GreenDroid
+    public static final int GreenDroid_Widget_ItemView_SubtitleItemView_Text
+    public static final int GreenDroid_Widget_SegmentedBar
+    public static final int GreenDroid_Widget_ItemView_SubtitleItemView_Subtitle
+    public static final int GreenDroid_Widget_ItemView_SeparatorItemView
+    public static final int GreenDroid_Widget_ActionBar_Dashboard
+    67:67:public R$style()
+com.cyrilmottier.android.greendroid.R$styleable:
+    public static final int AsyncImageView_isPreMeasureSize
+    public static final int AsyncImageView_inDensity
+    public static final int ActionBar_dividerWidth
+    public static final int SegmentedHost_segmentedContentView
+    public static final int SegmentedHost_segmentedBar
+    public static final int SegmentedBar_dividerDrawable
+    public static final int ActionBar_maxItems
+    public static final int TextItem_text
+    public static final int SubtextItem_subtext
+    public static final int PageIndicator_dotCount
+    public static final int ProgressItem_isInProgress
+    public static final int PagedView_CenterInVertical
+    public static final int AsyncImageView_defaultSrc
+    public static final int PageIndicator_dotSpacing
+    public static final int PageIndicator_activeDot
+    public static final int PageIndicator_dotDrawable
+    public static final int SegmentedBar_dividerWidth
+    public static final int PageIndicator_dotType
+    public static final int ActionBar_dividerDrawable
+    public static final int ActionBar_type
+    public static final int Item_enabled
+    public static final int ThumbnailItem_thumbnailURL
+    public static final int AsyncImageView_url
+    public static final int ActionBar_title
+    public static final int SubtitleItem_subtitle
+    public static final int PageIndicator_gravity
+    public static final int DrawableItem_drawable
+    public static final int ThumbnailItem_thumbnail
+    public static final int ActionBar_homeDrawable
+    192:192:public R$styleable()
+com.dabing.emoj.BuildConfig
+com.dabing.emoj.R:
+    10:10:public R()
+com.dabing.emoj.activity.EmojBrowsePictureActivity:
+    private static final int MENU_ID_ZOOM
+    private static final int MENU_ID_PAN
+    private static final int MENU_ID_RESET
+    private android.widget.ZoomControls mZoomControls
+    static final float ZOOM_RATIO
+    static final long delayMillis
+com.dabing.emoj.activity.EmojBrowseViewActivity:
+    private static final int MENU_ID_ZOOM
+    private static final int MENU_ID_PAN
+    private static final int MENU_ID_RESET
+    private android.widget.ZoomControls mZoomControls
+    static final float ZOOM_RATIO
+    static final long delayMillis
+com.dabing.emoj.activity.EmojEmotionActivity:
+    150:151:private void UmengEvent(java.lang.String)
+com.dabing.emoj.activity.EmojImageViewActivity:
+    private static final int MENU_ID_ZOOM
+    private static final int MENU_ID_PAN
+    private static final int MENU_ID_RESET
+    private android.widget.ZoomControls mZoomControls
+com.dabing.emoj.activity.EmojSearchActivity:
+    static final int COL_NUM
+    static final java.lang.String REQ_NUM
+    322:336:private void getImages(org.json.JSONArray)
+com.dabing.emoj.activity.EmojViewActivity:
+    private static final int MENU_ID_ZOOM
+    private static final int MENU_ID_PAN
+    private static final int MENU_ID_RESET
+    private android.widget.ZoomControls mZoomControls
+com.dabing.emoj.activity.SettingActivity:
+    static final int REQUEST_LOGIN
+com.dabing.emoj.activity.SettingUserInfoActivity:
+    static final int REQUEST_LOGIN
+com.dabing.emoj.activity.WelcomeActivity:
+    static final long delay
+com.dabing.emoj.admin.SelectEmojActivity:
+    private static final int MENU_ID_ZOOM
+    private static final int MENU_ID_PAN
+    private static final int MENU_ID_RESET
+    private android.widget.ZoomControls mZoomControls
+    static final long delayMillis
+    522:530:private void SetupWxAction()
+com.dabing.emoj.admin.uploadPicActivity:
+    static final int interval
+com.dabing.emoj.adpater.CrystalHeaderGridViewAdapter:
+    66:67:private android.graphics.drawable.Drawable getBackground(java.lang.String)
+    111:116:public org.json.JSONObject getData(int)
+com.dabing.emoj.adpater.DownloadGridViewAdapter:
+    99:99:public org.json.JSONObject getJsonObject(int)
+com.dabing.emoj.adpater.EmojUmGridViewAdapter:
+    56:63:public java.lang.String getURL(int)
+com.dabing.emoj.adpater.HeaderGridViewAdapter
+com.dabing.emoj.adpater.HeaderPageViewAdpater
+com.dabing.emoj.adpater.HeaderPageViewAdpater$1
+com.dabing.emoj.advertise.WAPS_CustomAd:
+    static final long DELAY
+    static final long PERIOD
+    96:97:public void setPause(boolean)
+com.dabing.emoj.demo.democall:
+    144:149:private void testJni()
+com.dabing.emoj.exception.AccessRateLimitException:
+    private static final long serialVersionUID
+com.dabing.emoj.exception.Check:
+    8:8:public Check()
+com.dabing.emoj.exception.DBLog:
+    private static final java.lang.String LOG_STRING
+    17:17:public DBLog()
+    20:50:public static void d(java.lang.String,java.lang.String)
+com.dabing.emoj.exception.ExceptionManager:
+    6:6:public ExceptionManager()
+com.dabing.emoj.exception.OauthFailException:
+    private static final long serialVersionUID
+com.dabing.emoj.exception.ParmErrorException:
+    private static final long serialVersionUID
+com.dabing.emoj.exception.ServerErrorException:
+    private static final long serialVersionUID
+com.dabing.emoj.fragment.BaseEmojFragment:
+    10:11:public BaseEmojFragment()
+com.dabing.emoj.fragment.CommonEmojFragment:
+    com.dabing.emoj.widget.NormalProgressDialog dialog
+    com.dabing.emoj.fragment.CommonEmojFragment$EmojRequest request
+    com.dabing.emoj.provider.UMengDataProvider provider
+    static final int CACHE_RANGE
+    static final int COLUM
+    static final int REQ_NUM
+    186:187:public void Exception(java.lang.Exception)
+    192:199:public void Finish()
+    203:205:public void Loading()
+    209:225:public void Receive(java.lang.String)
+com.dabing.emoj.fragment.CommonEmojFragment$EmojRequest:
+    final synthetic com.dabing.emoj.fragment.CommonEmojFragment this$0
+    148:151:public CommonEmojFragment$EmojRequest(com.dabing.emoj.fragment.CommonEmojFragment,android.content.Context,java.lang.String)
+    152:155:public CommonEmojFragment$EmojRequest(com.dabing.emoj.fragment.CommonEmojFragment,android.content.Context)
+com.dabing.emoj.fragment.CrystalHeaderFragment:
+    static final int colums
+    static final int spaceing
+    static final int pagesize
+com.dabing.emoj.fragment.EmotionEmojFragment:
+    com.dabing.emoj.widget.NormalProgressDialog dialog
+    com.dabing.emoj.fragment.EmotionEmojFragment$EmojRequest request
+    com.dabing.emoj.provider.UMengDataProvider provider
+    static final int CACHE_RANGE
+    static final int COLUM
+    static final int REQ_NUM
+    170:171:public void Exception(java.lang.Exception)
+    176:183:public void Finish()
+    187:189:public void Loading()
+    193:209:public void Receive(java.lang.String)
+com.dabing.emoj.fragment.EmotionEmojFragment$EmojRequest:
+    final synthetic com.dabing.emoj.fragment.EmotionEmojFragment this$0
+    132:135:public EmotionEmojFragment$EmojRequest(com.dabing.emoj.fragment.EmotionEmojFragment,android.content.Context,java.lang.String)
+    136:139:public EmotionEmojFragment$EmojRequest(com.dabing.emoj.fragment.EmotionEmojFragment,android.content.Context)
+com.dabing.emoj.fragment.EmotionHeaderFragment:
+    static final int colums
+    static final int spaceing
+    static final int pagesize
+com.dabing.emoj.fragment.HeaderFragment:
+    com.dabing.emoj.adpater.HeaderPageViewAdpater adpater
+    static final int pagesize
+    58:59:public HeaderFragment(android.content.Context)
+    86:99:public void show()
+    101:102:public void Init()
+    121:122:public void setOnItemClickListener(com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener)
+com.dabing.emoj.fragment.HeaderFragment$2
+com.dabing.emoj.fragment.HotEmojFragment:
+    static final int COLUM
+com.dabing.emoj.fragment.RegularEmojFragment:
+    static final int COLUM
+com.dabing.emoj.jni.JniTest
+com.dabing.emoj.jni.JniUtils
+com.dabing.emoj.provider.BaseRequest:
+    52:55:public void reset()
+com.dabing.emoj.provider.UMengDataProvider
+com.dabing.emoj.provider.UMengDataProvider$IUMengReceiveListener
+com.dabing.emoj.provider.UMengDataProvider$RequestTask
+com.dabing.emoj.provider.UMengDataProvider$UMengHandler
+com.dabing.emoj.utils.AppConfig:
+    public static final java.lang.String redirectUri
+    public static final java.lang.String clientId
+    public static final java.lang.String clientSecret
+    public static final java.lang.String FOLDERNAME
+    public static final java.lang.String LOG_STRING
+    public static final java.lang.String TEMP_STRING
+    public static final java.lang.String EMOJ_STRING
+    public static final java.lang.String THUMB_STRING
+    public static final java.lang.String CACHE_STRING
+    public static final java.lang.String ALBUM_STRING
+    static final java.lang.String FILENAME
+    170:190:public static int getBackgroundResId(java.lang.String)
+    287:289:public static boolean getUmengAdEnable(android.content.Context)
+    292:296:public static void setUmengAdEnable(android.content.Context,boolean)
+    319:321:public static java.lang.String getWAPS_AD_Type(android.content.Context)
+    324:328:public static void setWAPS_AD_Type(android.content.Context,java.lang.String)
+    385:388:public static java.lang.String getVip(android.content.Context)
+    419:421:public static java.lang.String getUnListen(android.content.Context)
+    435:437:public static java.lang.String getMenuExtend(android.content.Context)
+    752:755:public static java.lang.String getUploadIds(android.content.Context,java.lang.String)
+com.dabing.emoj.utils.AppConstant
+com.dabing.emoj.utils.DaBingRequest:
+    static final java.lang.String format
+    19:21:public DaBingRequest(java.lang.String,com.tencent.weibo.utils.QHttpClient)
+    26:27:public void setAPIBaseUrl(java.lang.String)
+    74:85:public java.lang.String getHt_timeline(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    116:127:public java.lang.String getWeiBoGroupTimeLine(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    151:162:public java.lang.String getWeiQunTimeLine(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    189:198:public java.lang.String getComment(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    212:222:public java.lang.String add_weiqun(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    226:238:public java.lang.String add_weiqun(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    248:252:public java.lang.String getWeibo(com.tencent.weibo.beans.OAuth,java.lang.String)
+    272:282:public java.lang.String getMultiUserTimeLine(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    298:309:public java.lang.String getOtherUserTimeLine(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    324:332:public java.lang.String getHomeTimeLine(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    355:364:public java.lang.String getMentionsTimeline(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    378:386:public java.lang.String getRecv(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    396:405:public java.lang.String getOtherInfo(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String)
+    418:422:public java.lang.String getUpdate(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String)
+    429:434:public java.lang.String getListUsers(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String)
+    445:450:public java.lang.String getListFollowers(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String)
+    459:462:public java.lang.String getList(com.tencent.weibo.beans.OAuth)
+    472:476:public java.lang.String getListAttr(com.tencent.weibo.beans.OAuth,java.lang.String)
+    489:495:public java.lang.String addToList(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String)
+    507:517:public java.lang.String addToWeiQun(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String)
+    521:528:public static java.lang.String updateAccessToken(java.lang.String)
+    544:548:public java.lang.String addSpecial(com.tencent.weibo.beans.OAuth,java.lang.String)
+    572:582:public java.lang.String searcht(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    596:602:public java.lang.String searchHT(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String)
+    615:621:public java.lang.String searchUser(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String)
+com.dabing.emoj.utils.DialogFactory:
+    22:22:public DialogFactory()
+    44:64:public static android.app.Dialog createSuccessfulDialog(android.content.Context,java.lang.String,android.content.DialogInterface$OnClickListener)
+    94:94:public static android.app.Dialog createCommonDialog(android.content.Context,java.lang.String,android.content.DialogInterface$OnClickListener)
+com.dabing.emoj.utils.DialogFactory$1
+com.dabing.emoj.utils.Emoj:
+    static final java.lang.String emoj001
+    static final java.lang.String emoj002
+    static final java.lang.String emoj003
+    static final java.lang.String emoj004
+    static final java.lang.String emoj005
+    static final java.lang.String emoj006
+    static final java.lang.String emoj007
+    static final java.lang.String emoj008
+    static final java.lang.String emoj009
+    static final java.lang.String emoj010
+    static final java.lang.String emoj011
+    static final java.lang.String emoj012
+    static final java.lang.String emoj013
+    static final java.lang.String emoj014
+    static final java.lang.String emoj015
+    static final java.lang.String emoj016
+    static final java.lang.String emoj017
+    static final java.lang.String emoj018
+    static final java.lang.String emoj019
+    static final java.lang.String emoj020
+    static final java.lang.String emoj021
+    static final java.lang.String emoj022
+    static final java.lang.String emoj023
+    static final java.lang.String emoj024
+    static final java.lang.String emoj025
+    static final java.lang.String emoj026
+    static final java.lang.String emoj027
+    static final java.lang.String emoj028
+    static final java.lang.String emoj029
+    static final java.lang.String emoj034
+    static final java.lang.String emoj031
+    static final java.lang.String emoj032
+    static final java.lang.String emoj033
+    static final java.lang.String emoj035
+    static final java.lang.String emoj036
+    static final java.lang.String emoj037
+    static final java.lang.String emoj038
+    static final java.lang.String emoj039
+    static final java.lang.String emoj041
+    static final java.lang.String emoj042
+    static final java.lang.String emoj043
+    static final java.lang.String emoj045
+    static final java.lang.String emoj046
+    static final java.lang.String emoj047
+    static final java.lang.String emoj048
+    static final java.lang.String e1
+    static final java.lang.String e2
+    static final java.lang.String e3
+    static final java.lang.String e4
+    static final java.lang.String e5
+    static final java.lang.String e6
+    static final java.lang.String e7
+    static final java.lang.String e8
+    static final java.lang.String e9
+    static final java.lang.String e10
+    static final java.lang.String e11
+    static final java.lang.String e12
+    static final java.lang.String e13
+    static final java.lang.String e14
+    static final java.lang.String e15
+    static final java.lang.String e16
+    static final java.lang.String e17
+    static final java.lang.String e18
+    static final java.lang.String e19
+    static final java.lang.String e20
+    static final java.lang.String e21
+    static final java.lang.String e22
+    static final java.lang.String e23
+    static final java.lang.String e24
+    static final java.lang.String e25
+    static final java.lang.String e26
+    static final java.lang.String e27
+    static final java.lang.String e28
+    static final java.lang.String e29
+    static final java.lang.String e30
+    static final java.lang.String e31
+    static final java.lang.String e32
+    static final java.lang.String e33
+    static final java.lang.String e34
+    static final java.lang.String e35
+    static final java.lang.String e36
+    static final java.lang.String e37
+    static final java.lang.String e38
+    static final java.lang.String e39
+    static final java.lang.String e40
+    static final java.lang.String e41
+    static final java.lang.String e42
+    static final java.lang.String e43
+    static final java.lang.String e44
+    static final java.lang.String e45
+    static final java.lang.String e46
+    static final java.lang.String e47
+    static final java.lang.String e48
+    static final java.lang.String e49
+    static final java.lang.String e50
+    static final java.lang.String e51
+    5:5:public Emoj()
+com.dabing.emoj.utils.FileHelper:
+    39:56:public static byte[] getBytesFromFile(java.io.File)
+com.dabing.emoj.utils.FileType:
+    171:172:public void setValue(java.lang.String)
+com.dabing.emoj.utils.FileTypeJudge:
+    103:123:private static java.lang.String getFileContent(java.lang.String)
+    172:188:public static com.dabing.emoj.utils.FileType getType(java.lang.String)
+com.dabing.emoj.utils.MyOauth:
+    17:21:public MyOauth(java.lang.String,long,java.lang.String)
+    95:109:public void RefreshToken(java.lang.String)
+com.dabing.emoj.utils.NetWorkCheck:
+    7:7:public NetWorkCheck()
+com.dabing.emoj.utils.PatchInputStream
+com.dabing.emoj.utils.QStr:
+    20:20:public QStr()
+    30:33:public static java.lang.String def(java.lang.String,java.lang.String)
+    43:80:public static java.lang.String fixTime(java.lang.String)
+    91:99:public static java.lang.String encode(java.lang.String)
+    110:116:public static java.lang.String decode(java.lang.String)
+    121:126:public static java.lang.String getNumFormat(int)
+    131:132:public static java.lang.String getPicName(java.lang.String)
+com.dabing.emoj.utils.RegularEmojManager:
+    static final int MAX
+com.dabing.emoj.utils.TokenStore:
+    static final java.lang.String PUBLIC_ACCESS_QUERYSTRING
+    static final java.lang.String PRIVATE_ACCESS_QUERYSTRING
+    52:56:public static void storePublic(android.content.Context,java.lang.String)
+    87:93:public static void clear(android.app.Activity)
+com.dabing.emoj.utils.Utils:
+    12:12:public Utils()
+    20:22:public static int getScreenHeight(android.content.Context)
+    27:34:public static float getScreenDensity(android.content.Context)
+    37:46:public static boolean isChinese(char)
+    49:58:public static int getLength(java.lang.CharSequence)
+    62:66:public static java.lang.String getRealPathFromURI(android.app.Activity,android.net.Uri)
+com.dabing.emoj.widget.CacheImageView:
+    int mWidth
+    int mHeight
+    86:87:public void setLoadingListener(greendroid.widget.AsyncImageView$OnImageViewLoadListener)
+com.dabing.emoj.widget.CacheImageView$MakeTumbTask
+com.dabing.emoj.widget.CacheWrapperImageView:
+    greendroid.image.ImageProcessor mProcessor
+    66:68:public void setImageProcessor(greendroid.image.ImageProcessor)
+    71:72:public void setCachedPath(java.lang.String)
+com.dabing.emoj.widget.CrystalButton:
+    static final int PADDING
+    65:66:public void setIcon(android.graphics.drawable.Drawable)
+com.dabing.emoj.widget.EmojImageView:
+    int mWidth
+    int mHeight
+    51:52:public void setLoadingListener(greendroid.widget.AsyncImageView$OnImageViewLoadListener)
+com.dabing.emoj.widget.EmotionPanel:
+    static final int mSpacing
+com.dabing.emoj.widget.LinearLayoutForListView:
+    30:31:public void SetDivider(int)
+    65:65:public android.widget.BaseAdapter getAdpater()
+    89:92:public void addFootView(android.view.View)
+    99:99:public android.view.View$OnClickListener getOnclickListner()
+    108:109:public void setOnclickLinstener(android.view.View$OnClickListener)
+com.dabing.emoj.widget.NormalProgressDialog:
+    23:24:public void setMessage(java.lang.CharSequence)
+com.dabing.emoj.widget.QuickActionList
+com.dabing.emoj.widget.QuickActionList$QuickActionAdapter
+com.dabing.emoj.widget.QuickActionPanel
+com.dabing.emoj.wxapi.Util:
+    private static final java.lang.String TAG
+    private static final int MAX_DECODE_PICTURE_SIZE
+    20:20:public Util()
+    42:59:public static byte[] getHtmlByteArray(java.lang.String)
+    64:76:public static byte[] inputStreamToByte(java.io.InputStream)
+    80:121:public static byte[] readFromFile(java.lang.String,int,int)
+    126:201:public static android.graphics.Bitmap extractThumbNail(java.lang.String,int,int,boolean)
+com.dabing.emoj.wxapi.WeiXinHelper:
+    private static final int THUMB_SIZE
+    private static final int THUMB_MAX_WIDTH
+    private static final int THUMB_MAX_HEIGHT
+    161:162:public void shareIMGFromURL_Circle(java.lang.String)
+    165:201:public void shareIMGFromURL(java.lang.String,int)
+    208:208:public void shareEmojToCircle(java.lang.String)
+    273:274:public void shareIMG(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    281:282:public void shareIMGToCircle(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    288:328:public void shareIMG(java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    330:374:public void shareApp(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    380:381:public void shareTextToFriends(java.lang.String)
+    387:388:public void shareTextToCircle(java.lang.String)
+    395:407:private void shareText(java.lang.String,int)
+    415:416:public void shareWebpage(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    424:425:public void shareWebpageToCircle(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    433:474:private void shareWebpage(java.lang.String,java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    476:488:public void shareToOther(java.lang.String,java.lang.String)
+    491:549:public void shareToOther(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    567:567:static synthetic java.lang.String access$0(com.dabing.emoj.wxapi.WeiXinHelper,java.lang.String)
+    62:62:static synthetic com.tencent.mm.sdk.openapi.IWXAPI access$1(com.dabing.emoj.wxapi.WeiXinHelper)
+    61:61:static synthetic android.content.Context access$2(com.dabing.emoj.wxapi.WeiXinHelper)
+com.dabing.emoj.wxapi.WeiXinHelper$1
+com.dabing.emoj.wxapi.WeiXinHelper$2
+com.dabing.emoj.wxapi.WeiXinHelper$3
+com.dabing.emoj.wxapi.WeiXinHelper$4
+com.dabing.emoj.wxapi.WeiXinHelper$5
+com.dabing.emoj.wxapi.WeiXinHelper$WXHandler
+com.dabing.emoj.wxapi.WeiXinHelper$WXImageDownloadTask
+com.dabing.emoj.wxapi.WeiXinHelper$WXThumbTask
+com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener
+com.tencent.exmobwin.MobWINManager:
+    private static final java.lang.String a
+    public MobWINManager()
+    public static varargs void init(android.content.Context,java.lang.String,java.lang.String,java.lang.String,int[])
+com.tencent.exmobwin.Type:
+    public static final int MOBWIN_BANNER
+    public static final int MOBWIN_SPOT
+    public static final int MOBWIN_INTEGRALWALL
+    public static final int MOBWIN_MINIBANNER
+    public Type()
+com.tencent.exmobwin.a.b:
+    private static final java.lang.String r
+    private static final int B
+    public static final int a
+    public static final int b
+    public static final int c
+    public static final int d
+    public static final int e
+    public static final int f
+    public static final int g
+    public static final int h
+    public static final int i
+com.tencent.exmobwin.a.c:
+    public static final int a
+    public static final java.lang.String c
+    public static final java.lang.String d
+    public static final java.lang.String e
+    public static final java.lang.String f
+    public c()
+com.tencent.exmobwin.a.d:
+    public static final java.lang.String e
+    public android.content.Context g()
+com.tencent.exmobwin.a.e:
+    private static final java.lang.String f
+    private static final java.lang.String i
+    private static final java.lang.String r
+    public static final java.lang.String a
+    private static final int u
+    public static final int b
+    public static final int c
+    private static final int v
+    private static final int w
+    private static final int x
+    private static final int y
+    public static final int d
+    public com.tencent.exmobwin.a.b b()
+com.tencent.exmobwin.a.f:
+    public f()
+    public static void c(java.lang.String,java.lang.String)
+com.tencent.exmobwin.a.g:
+    private static final java.lang.String b
+    public static final java.lang.String a
+    public g()
+    public static void a(android.content.Context,java.lang.String)
+com.tencent.exmobwin.a.h:
+    public h()
+com.tencent.exmobwin.b.b:
+    private static final java.lang.String n
+    public static final int b
+    public static final int c
+    public static final int d
+    public static final int g
+com.tencent.exmobwin.b.c:
+    private static final long a
+    public c(java.lang.String)
+com.tencent.exmobwin.b.e:
+    public static final int j
+    public static final int k
+    public static final int l
+    public static final int m
+    public static final int n
+    public static final int o
+    public static final int p
+    public static final int q
+com.tencent.exmobwin.b.g:
+    private static final long a
+com.tencent.exmobwin.b.h:
+    private static final java.lang.String d
+    public static final java.lang.String a
+    private static final int h
+    private static final int i
+    private static final int j
+com.tencent.exmobwin.banner.AdListener:
+    public static final int ERROR_CONNECTION_FAILED
+    public static final int ERROR_NO_AVAILABLE_ADS
+    public static final int ERROR_GIF_DECODE_FAILED
+    public static final int ERROR_GET_IMAGE_FAILED
+    public static final int ERROR_SERVER_DATA_EXCEPTION
+    public abstract void onReceiveAd()
+    public abstract void onReceiveFailed(int)
+com.tencent.exmobwin.banner.DialogActivity:
+    private static final java.lang.String a
+    private static final java.lang.String b
+com.tencent.exmobwin.banner.MobWINBrowserActivity:
+    private static final java.lang.String a
+    private static final java.lang.String b
+    private static final int c
+    private static final int d
+com.tencent.exmobwin.banner.TAdView:
+    public static final java.lang.String TAG
+    public static final int CREATE_ADVIEW
+    private com.tencent.exmobwin.banner.AdListener a
+    public void setAdListener(com.tencent.exmobwin.banner.AdListener)
+com.tencent.exmobwin.banner.a:
+    private static final java.lang.String l
+    private static final java.lang.String m
+    private static final java.lang.String n
+    private static final int o
+com.tencent.exmobwin.banner.d:
+    public void a(com.tencent.exmobwin.banner.AdListener)
+com.tencent.exmobwin.c.a:
+    private java.lang.String a
+    public void a(java.lang.String)
+    public java.lang.String a()
+com.tencent.exmobwin.c.c:
+    public static final int a
+    public static final int b
+    public static final int c
+    public c(java.lang.String,int,java.lang.String)
+    public java.lang.String j()
+com.tencent.exmobwin.c.d:
+    public static final int a
+com.tencent.exmobwin.c.e
+com.tencent.exmobwin.c.f:
+    private static final java.lang.String a
+    private static final java.lang.String b
+    public java.util.ArrayList a()
+com.tencent.exmobwin.d.a:
+    private static final java.lang.String a
+    public a()
+    public static java.lang.String a(android.content.Context,java.lang.String)
+    public static java.lang.String c(android.content.Context)
+com.tencent.mm.algorithm.Base64
+com.tencent.mm.algorithm.LRUMap
+com.tencent.mm.algorithm.LRUMap$1
+com.tencent.mm.algorithm.LRUMap$OnClearListener
+com.tencent.mm.algorithm.LRUMap$PreRemoveCallback
+com.tencent.mm.algorithm.LRUMap$TimeVal
+com.tencent.mm.algorithm.MD5:
+    private MD5()
+    public static final byte[] getRawDigest(byte[])
+    public static final java.lang.String getMD5(java.io.FileInputStream,int,int,int)
+    public static final java.lang.String getMD5(java.io.FileInputStream,int)
+    public static java.lang.String getMD5(java.lang.String)
+    public static java.lang.String getMD5(java.io.File)
+    public static java.lang.String getMD5(java.io.File,int)
+    public static java.lang.String getMD5(java.lang.String,int,int)
+    public static java.lang.String getMD5(java.io.File,int,int)
+com.tencent.mm.algorithm.TypeTransform:
+    private TypeTransform()
+    private static byte[] a(byte[])
+    public static byte[] longToByteArrayLH(long)
+    public static byte[] intToByteArrayHL(int)
+    public static byte[] longToByteArrayHL(long)
+    public static int byteArrayLHToInt(byte[])
+    public static int byteArrayLHToInt(byte[],int)
+    public static long byteArrayLHToLong(byte[])
+    public static long byteArrayLHToLong(byte[],int)
+    public static int byteArrayHLToInt(byte[])
+    public static int byteArrayHLToInt(byte[],int)
+    public static long byteArrayHLToLong(byte[],int)
+    public static long byteArrayHLToLong(byte[])
+com.tencent.mm.algorithm.UIN
+com.tencent.mm.sdk.Build
+com.tencent.mm.sdk.BuildConfig
+com.tencent.mm.sdk.ConstantsUI
+com.tencent.mm.sdk.ConstantsUI$Contact
+com.tencent.mm.sdk.MMAppMgr:
+    private MMAppMgr()
+    public static com.tencent.mm.sdk.plugin.IMMPluginAPI getPluginMgr(android.content.Context)
+com.tencent.mm.sdk.MMSharedPreferences:
+    public java.util.Set getStringSet(java.lang.String,java.util.Set)
+com.tencent.mm.sdk.MMSharedPreferences$REditor:
+    public void apply()
+    public android.content.SharedPreferences$Editor putStringSet(java.lang.String,java.util.Set)
+com.tencent.mm.sdk.R:
+    9:9:public R()
+com.tencent.mm.sdk.R$anim
+com.tencent.mm.sdk.R$color
+com.tencent.mm.sdk.R$dimen
+com.tencent.mm.sdk.R$drawable:
+    public static final int ic_preference_first_normal
+    public static final int btn_style_alert_dialog_special_normal
+    public static final int mm_title_act_btn_normal
+    public static final int btn_check_on_normal
+    public static final int btn_style_alert_dialog_background
+    public static final int ic_dialog_long_click
+    public static final int mm_listitem_pressed
+    public static final int btn_style_one_focused
+    public static final int mm_title_btn_right
+    public static final int mm_checkbox_mini
+    public static final int btn_style_alert_dialog_special
+    public static final int btn_style_one
+    public static final int mm_title_act_btn_disable
+    public static final int ic_preference_one_normal
+    public static final int mm_title_back_focused
+    public static final int ic_preference_last_normal
+    public static final int mm_title_act_btn_pressed
+    public static final int mm_submenu_normal
+    public static final int btn_check_off_normal
+    public static final int mm_listitem_disable
+    public static final int btn_check_on_disable
+    public static final int mm_title_btn_normal
+    public static final int btn_style_alert_dialog_blue
+    public static final int mm_title_back_pressed
+    public static final int btn_check_off_disable
+    public static final int mm_title_btn_focused
+    public static final int mm_title_btn_groupcontact_normal
+    public static final int ic_preference_top_pressed
+    public static final int ic_preference_last_pressed
+    public static final int mm_title_bg
+    public static final int ic_preference_first_pressed
+    public static final int ic_preference_normal
+    public static final int ic_preference_single_pressed
+    public static final int btn_style_alert_dialog_button
+    public static final int mm_checkbox_mini_normal
+    public static final int mm_trans
+    public static final int btn_style_alert_dialog_special_pressed
+    public static final int list_selector_background
+    public static final int mm_title_act_btn_focused
+    public static final int mm_title_btn_pressed
+    public static final int mm_submenu_pressed
+    public static final int preference_one_item
+    public static final int btn_style_one_pressed
+    public static final int preference_last_item
+    public static final int btn_style_one_disabled
+    public static final int btn_style_alert_dialog_cancel
+    public static final int ic_preference_pressed
+    public static final int ic_preference_one_pressed
+    public static final int mm_checkbox_mini_checked
+    public static final int preference_first_item
+    public static final int mm_listitem_normal
+    public static final int btn_style_alert_dialog_cancel_normal
+    public static final int preference_item
+    public static final int btn_style_alert_dialog_button_pressed
+    public static final int mm_submenu
+    public static final int btn_style_alert_dialog_button_normal
+    public static final int ic_dialog_alert
+    public static final int ic_preference_single_normal
+    public static final int mm_edit_focused
+    public static final int btn_style_one_normal
+    public static final int ic_preference_top_normal
+    public static final int mm_edit
+    public static final int mm_edit_normal
+    public static final int mm_title_back_normal
+    209:209:public R$drawable()
+com.tencent.mm.sdk.R$id:
+    public static final int info_wv
+    public static final int title_btn
+    public static final int content_ll
+    public static final int authcode_iv
+    public static final int image_iv
+    public static final int secondDomainMail
+    public static final int authcode_change_btn
+    public static final int refresh_mini_pb
+    public static final int edittext_container
+    public static final int firstDomainMail
+    public static final int sendrequest
+    public static final int mm_preference_ll_id
+    public static final int sendrequest_content
+    public static final int thirdDomainMail
+    public static final int content
+    public static final int sendrequest_tip
+    public static final int icon_preference_imageview
+    public static final int group
+    public static final int popup_layout
+    public static final int authcode_et
+    public static final int text_tv
+    10:10:public R$id()
+com.tencent.mm.sdk.R$layout:
+    public static final int mm_example_ui
+    public static final int mm_preference_checkbox
+    public static final int mm_preference_self_vuser
+    public static final int mm_preference_list_content
+    public static final int mm_preference_screen
+    public static final int mm_preference_content_domainmaillist
+    public static final int sendrequest_dialog
+    public static final int mm_preference_widget_empty
+    public static final int mm_preference_submenu
+    public static final int mm_preference_content_choice
+    public static final int mm_preference_content_domainmail
+    public static final int mm_preference
+    public static final int webalert
+    public static final int security_image
+    public static final int mm_preference_child
+    public static final int mm_preference_dialog_edittext
+    public static final int mm_preference_catalog
+    public static final int mm_preference_content_keyvalue
+    public static final int mm_preference_image
+    public static final int mm_preference_info
+    public static final int mm_preference_null
+    177:177:public R$layout()
+com.tencent.mm.sdk.R$string:
+    public static final int app_save
+    public static final int fmt_evening
+    public static final int app_continue
+    public static final int fmt_iap_err
+    public static final int fmt_morning
+    public static final int fmt_patime
+    public static final int app_finish
+    public static final int app_set
+    public static final int fmt_afternoon
+    public static final int app_tip
+    public static final int fmt_datetime
+    public static final int fmt_noon
+    public static final int applet_secimg_change
+    public static final int app_name
+    public static final int applet_seccode_tip
+    public static final int app_ok
+    public static final int app_delete
+    public static final int app_nextstep
+    public static final int verify_password_null_tip
+    public static final int fmt_date
+    public static final int app_find
+    public static final int fmt_pre_yesterday
+    public static final int applet_secimg_title
+    public static final int app_prevstep
+    public static final int applet_seccode_fail_tip
+    public static final int fmt_justnow
+    public static final int app_send
+    public static final int fmt_dawn
+    public static final int app_edit
+    public static final int fmt_in60min
+    public static final int fmt_longtime
+    public static final int fmt_longdate
+    141:141:public R$string()
+com.tencent.mm.sdk.R$style:
+    public static final int MMPreference_DialogPreference_YesNoPreference
+    public static final int MMToolbarButton
+    public static final int MMPreferenceTextLarge
+    public static final int ChattingUIText
+    public static final int MMBody
+    public static final int MMLineEditPass
+    public static final int ChattingUIContent
+    public static final int ChattingUIWordCount
+    public static final int MMPreference_Information
+    public static final int ChattingUIFMessageText
+    public static final int MMLineLabel
+    public static final int MMPreferenceScreen
+    public static final int ChattingUIMailSenderText
+    public static final int MMTheme_Preference
+    public static final int MMDivider
+    public static final int MMTitleButton
+    public static final int ChattingUISplit
+    public static final int MMListItem
+    public static final int MMBriefText
+    public static final int HyperText
+    public static final int NavPage
+    public static final int MMPreference_DialogPreference_EditTextPreference
+    public static final int MMBlock
+    public static final int MMFontTitleInList
+    public static final int MMEditText
+    public static final int MMButton
+    public static final int MMFontTipInList
+    public static final int MMFooter
+    public static final int MMPreference_CheckBoxPreference
+    public static final int MMPreference_DialogPreference
+    public static final int MMCheckBox
+    public static final int MMListView
+    public static final int MMTheme_Search
+    public static final int MMPreferenceTextSmall
+    public static final int MMFontPreferenceSmall
+    public static final int noBgFullScreen
+    public static final int MMPreference_Child
+    public static final int MMPreference_Catagory
+    public static final int MMFontPreferenceSummary
+    public static final int MMLabelSplit
+    public static final int MMSplit
+    public static final int MMLineButton
+    public static final int MMTitle
+    public static final int MMFontPreferenceLarge
+    public static final int MMLineEditText
+    public static final int MMTheme_Launcher
+    public static final int MMLabel
+    public static final int MMFontPreferenceProfile
+    public static final int MMLine
+    public static final int MMMultiLineEditText
+    public static final int MMFontEmptyMsgLarge
+    public static final int MMScroll
+    public static final int ChattingUIVoiceLength
+    public static final int MMPreference_RingtonePreference
+    public static final int MMFriendListItem
+    public static final int MMLineActionButton
+    public static final int DataSheetAnimation
+    public static final int MMTheme_Basic
+    public static final int ChattingUISenderText
+    public static final int MMFontTimeInList
+    public static final int MMLogin
+    public static final int ChattingUIThumbnail
+    public static final int ChattingUISystem
+    public static final int ChoicePreferenceButton
+    public static final int MMListCatalog
+    public static final int MMPreference
+    47:47:public R$style()
+com.tencent.mm.sdk.channel.ConstantsMMessage
+com.tencent.mm.sdk.channel.MMessage:
+    public MMessage()
+    public static void send(android.content.Context,java.lang.String,java.lang.String)
+com.tencent.mm.sdk.channel.MMessage$Receiver:
+    public static void registerCallBack(java.lang.String,com.tencent.mm.sdk.channel.MMessage$CallBack)
+    public static void unregisterCallBack(java.lang.String)
+com.tencent.mm.sdk.channel.MMessageAct:
+    public MMessageAct()
+    public static boolean send(android.content.Context,java.lang.String,java.lang.String)
+    public static boolean send(android.content.Context,java.lang.String,java.lang.String,android.os.Bundle)
+    public static boolean sendToWx(android.content.Context,java.lang.String)
+com.tencent.mm.sdk.channel.MMessageUtil:
+    private MMessageUtil()
+com.tencent.mm.sdk.channel.package-info
+com.tencent.mm.sdk.contact.RContact
+com.tencent.mm.sdk.contact.RContactAvatar
+com.tencent.mm.sdk.contact.RContactDB
+com.tencent.mm.sdk.contact.RContactStorage
+com.tencent.mm.sdk.contact.package-info
+com.tencent.mm.sdk.conversation.RConversation
+com.tencent.mm.sdk.conversation.RConversationDB
+com.tencent.mm.sdk.conversation.RConversationStorage
+com.tencent.mm.sdk.conversation.package-info
+com.tencent.mm.sdk.message.RMsgInfo
+com.tencent.mm.sdk.message.RMsgInfoDB
+com.tencent.mm.sdk.message.RMsgInfoStorage
+com.tencent.mm.sdk.openapi.BaseResp$ErrCode
+com.tencent.mm.sdk.openapi.ConstantsAPI
+com.tencent.mm.sdk.openapi.GetMessageFromWX:
+    private GetMessageFromWX()
+com.tencent.mm.sdk.openapi.GetMessageFromWX$Resp:
+    public GetMessageFromWX$Resp(android.os.Bundle)
+com.tencent.mm.sdk.openapi.IWXAPI:
+    public abstract void unregisterApp()
+    public abstract boolean openWXApp()
+com.tencent.mm.sdk.openapi.SendAuth:
+    private SendAuth()
+com.tencent.mm.sdk.openapi.SendAuth$Req
+com.tencent.mm.sdk.openapi.SendAuth$Resp:
+    public java.lang.String resultUrl
+com.tencent.mm.sdk.openapi.SendMessageToWX:
+    private SendMessageToWX()
+com.tencent.mm.sdk.openapi.SendMessageToWX$Req:
+    public static final int WXSceneSession
+    public static final int WXSceneTimeline
+    public SendMessageToWX$Req(android.os.Bundle)
+com.tencent.mm.sdk.openapi.ShowMessageFromWX:
+    private ShowMessageFromWX()
+com.tencent.mm.sdk.openapi.ShowMessageFromWX$Resp
+com.tencent.mm.sdk.openapi.WXApiImplV10:
+    public final void unregisterApp()
+    public final boolean openWXApp()
+com.tencent.mm.sdk.openapi.WXAppLaunchData
+com.tencent.mm.sdk.openapi.WXAppLaunchData$Builder
+com.tencent.mm.sdk.openapi.WXMediaMessage$Builder:
+    public static final java.lang.String KEY_IDENTIFIER
+    public WXMediaMessage$Builder()
+com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject:
+    public static final int TYPE_UNKNOWN
+    public static final int TYPE_TEXT
+    public static final int TYPE_IMAGE
+    public static final int TYPE_MUSIC
+    public static final int TYPE_VIDEO
+    public static final int TYPE_URL
+    public static final int TYPE_FILE
+    public static final int TYPE_APPDATA
+    public static final int TYPE_EMOJI
+com.tencent.mm.sdk.openapi.package-info
+com.tencent.mm.sdk.package-info
+com.tencent.mm.sdk.platformtools.AnimationHelperImpl21below
+com.tencent.mm.sdk.platformtools.AnimationHelperImpl22
+com.tencent.mm.sdk.platformtools.BackwardSupportUtil
+com.tencent.mm.sdk.platformtools.BackwardSupportUtil$AnimationHelper
+com.tencent.mm.sdk.platformtools.BackwardSupportUtil$AnimationHelper$IHelper
+com.tencent.mm.sdk.platformtools.BackwardSupportUtil$BitmapFactory
+com.tencent.mm.sdk.platformtools.BackwardSupportUtil$ExifHelper
+com.tencent.mm.sdk.platformtools.BackwardSupportUtil$SmoothScrollFactory
+com.tencent.mm.sdk.platformtools.BackwardSupportUtil$SmoothScrollFactory$IScroll
+com.tencent.mm.sdk.platformtools.ChannelUtil
+com.tencent.mm.sdk.platformtools.CharSequences
+com.tencent.mm.sdk.platformtools.CharSequences$1
+com.tencent.mm.sdk.platformtools.CharSequences$2
+com.tencent.mm.sdk.platformtools.InetUtil
+com.tencent.mm.sdk.platformtools.KVConfig
+com.tencent.mm.sdk.platformtools.LBSManager:
+    public static final java.lang.String FILTER_GPS
+    public static final float INVALID_LAT
+    public static final float INVALID_LNG
+    public static final int INVALID_ACC
+    public static final int MM_SOURCE_HARDWARE
+    public static final int MM_SOURCE_NET
+    public static final int MM_SOURCE_REPORT_HARWARE
+    public static final int MM_SOURCE_REPORT_NETWORK
+    private android.location.LocationManager ad
+    private android.app.PendingIntent ae
+    private boolean af
+    public LBSManager(android.content.Context,com.tencent.mm.sdk.platformtools.LBSManager$OnLocationGotListener)
+    private boolean b()
+    public void start()
+    public boolean isGpsEnable()
+    public boolean isNetworkPrividerEnable()
+    public void removeGpsUpdate()
+    public void requestGpsUpdate()
+    public void removeListener()
+    static synthetic boolean a(com.tencent.mm.sdk.platformtools.LBSManager)
+com.tencent.mm.sdk.platformtools.LBSManager$1
+com.tencent.mm.sdk.platformtools.LVBuffer
+com.tencent.mm.sdk.platformtools.LocaleUtil:
+    public static final java.lang.String LANGUAGE_DEFAULT
+    public static final java.lang.String LANGUAGE_KEY
+    public static final java.lang.String TAIWAN
+    public static final java.lang.String HONGKONG
+    public static final java.lang.String CHINA
+    public static final java.lang.String ENGLISH
+    public static final java.lang.String THAI
+    public static final java.lang.String INDONESIAN
+    public static final java.lang.String VIETNAMESE
+    public static final java.lang.String PORTUGUESE
+    public static final java.lang.String SPANISH
+    public static final java.lang.String RUSSIAN
+    public static final java.lang.String ARABIC
+    public static final java.lang.String HEBREW
+    public static final java.lang.String POLISH
+    public static final java.lang.String HINDI
+    public static final java.lang.String JAPANESE
+    public static final java.lang.String ITALIAN
+    public static final java.lang.String KOREAN
+    public static final java.lang.String MALAY
+    public static final java.lang.String TURKEY
+    private LocaleUtil()
+    public static boolean isLanguageSupported(java.lang.String)
+    public static java.lang.String getCurrentCountryCode()
+    public static java.lang.String getApplicationLanguage()
+    public static java.lang.String loadApplicationLanguageSettings(android.content.SharedPreferences,android.content.Context)
+    public static void saveApplicationLanguage(android.content.SharedPreferences,android.content.Context,java.lang.String)
+com.tencent.mm.sdk.platformtools.Log:
+    public static final int LEVEL_VERBOSE
+    public static final int LEVEL_DEBUG
+    public static final int LEVEL_INFO
+    public static final int LEVEL_WARNING
+    public static final int LEVEL_ERROR
+    public static final int LEVEL_FATAL
+    public static final int LEVEL_NONE
+    protected Log()
+    public static void setOutputPath(java.lang.String,java.lang.String,java.lang.String,int)
+    public static void setOutputStream(java.io.InputStream,java.io.OutputStream,java.lang.String,java.lang.String,int)
+    public static void reset()
+    public static void setLevel(int,boolean)
+    public static int getLevel()
+    public static void f(java.lang.String,java.lang.String)
+    public static void w(java.lang.String,java.lang.String)
+    public static varargs void f(java.lang.String,java.lang.String,java.lang.Object[])
+    public static varargs void w(java.lang.String,java.lang.String,java.lang.Object[])
+    public static java.lang.String getSysInfo()
+com.tencent.mm.sdk.platformtools.LogHelper:
+    private LogHelper()
+    public static void initLogHeader(java.io.PrintStream,java.lang.String,java.lang.String,long,int)
+com.tencent.mm.sdk.platformtools.MAlarmHandler
+com.tencent.mm.sdk.platformtools.MAlarmHandler$CallBack
+com.tencent.mm.sdk.platformtools.MAlarmHandler$IBumper
+com.tencent.mm.sdk.platformtools.MMApplicationContext
+com.tencent.mm.sdk.platformtools.MMEntryLock
+com.tencent.mm.sdk.platformtools.MTimerHandler:
+    private static int av
+    public MTimerHandler(com.tencent.mm.sdk.platformtools.MTimerHandler$CallBack,boolean)
+    public MTimerHandler(android.os.Looper,com.tencent.mm.sdk.platformtools.MTimerHandler$CallBack,boolean)
+    private static int d()
+    public void startTimer(long)
+    public boolean stopped()
+com.tencent.mm.sdk.platformtools.NetStatusUtil
+com.tencent.mm.sdk.platformtools.PhoneUtil:
+    public static final java.lang.String CELL_GSM
+    public static final java.lang.String CELL_CDMA
+    private PhoneUtil()
+    public static void getSignalStrength(android.content.Context)
+com.tencent.mm.sdk.platformtools.PhoneUtil$CellInfo:
+    public static final int MAX_CID
+    public static final int MAX_LAC
+com.tencent.mm.sdk.platformtools.PhoneUtil16Impl:
+    public void getSignalStrength(android.content.Context)
+com.tencent.mm.sdk.platformtools.PhoneUtil20Impl:
+    public void getSignalStrength(android.content.Context)
+com.tencent.mm.sdk.platformtools.SensorController:
+    private android.hardware.SensorManager aS
+    private android.hardware.Sensor aW
+    private final boolean aX
+    private boolean aZ
+    public SensorController(android.content.Context)
+    public void setSensorCallBack(com.tencent.mm.sdk.platformtools.SensorController$SensorEventCallBack)
+    public void removeSensorCallBack()
+    public boolean isSensorEnable()
+com.tencent.mm.sdk.platformtools.SmoothScrollToPosition21below
+com.tencent.mm.sdk.platformtools.SmoothScrollToPosition22
+com.tencent.mm.sdk.platformtools.SyncTask
+com.tencent.mm.sdk.platformtools.SyncTask$1
+com.tencent.mm.sdk.platformtools.SystemProperty:
+    private SystemProperty()
+    public static java.lang.String getProperty(java.lang.String)
+com.tencent.mm.sdk.platformtools.TrafficStats
+com.tencent.mm.sdk.platformtools.Util:
+    public static final int MAX_DECODE_PICTURE_SIZE
+    public static final java.lang.String PHOTO_DEFAULT_EXT
+    public static final long MILLSECONDS_OF_SECOND
+    public static final long MILLSECONDS_OF_MINUTE
+    public static final long MILLSECONDS_OF_HOUR
+    public static final long MILLSECONDS_OF_DAY
+    public static final long SECOND_OF_MINUTE
+    public static final long MINUTE_OF_HOUR
+    public static final long MAX_32BIT_VALUE
+    public static final int MIN_ACCOUNT_LENGTH
+    public static final int MAX_ACCOUNT_LENGTH
+    public static final int MIN_PASSWORD_LENGTH
+    public static final int MAX_PASSWORD_LENGTH
+    public static final int BIT_OF_KB
+    public static final int BIT_OF_MB
+    public static final int BYTE_OF_KB
+    public static final int BYTE_OF_MB
+    public static final int MASK_4BIT
+    public static final int MASK_8BIT
+    public static final int MASK_16BIT
+    public static final int MASK_32BIT
+    public static final int BEGIN_TIME
+    public static final int END_TIME
+    public static final int DAY
+    public static final java.lang.String TAIWAN
+    public static final java.lang.String HONGKONG
+    public static final java.lang.String CHINA
+    public static final java.lang.String ENGLISH
+    public static final java.lang.String LANGUAGE_DEFAULT
+    private Util()
+    public static java.lang.String escapeSqlValue(java.lang.String)
+    public static java.lang.String listToString(java.util.List,java.lang.String)
+    public static int getIntRandom(int,int)
+    public static boolean isDayTimeNow()
+    public static boolean isNightTime(int,int,int)
+    public static java.lang.String getTimeZoneOffset()
+    public static java.lang.String getTimeZone()
+    public static java.lang.String getTimeZoneDef()
+    public static java.lang.String formatUnixTime(long)
+    public static boolean isChinese(char)
+    public static boolean isAlpha(char)
+    public static boolean isNum(char)
+    public static boolean isValidQQNum(java.lang.String)
+    public static boolean isValidEmail(java.lang.String)
+    public static byte[] bmpToByteArray(android.graphics.Bitmap,boolean)
+    public static boolean isValidAccount(java.lang.String)
+    public static boolean isValidPassword(java.lang.String)
+    public static android.graphics.BitmapFactory$Options getImageOptions(java.lang.String)
+    public static void saveBitmapToImage(android.graphics.Bitmap,int,android.graphics.Bitmap$CompressFormat,java.lang.String,java.lang.String,boolean)
+    public static void saveBitmapToImage(android.graphics.Bitmap,int,android.graphics.Bitmap$CompressFormat,java.lang.String,boolean)
+    public static android.graphics.Bitmap getRoundedCornerBitmap(android.graphics.Bitmap,boolean,float)
+    public static java.lang.String getSizeKB(long)
+    public static java.lang.String getSizeMB(long)
+    public static java.lang.String dumpArray(java.lang.Object[])
+    public static java.lang.String dumpHex(byte[])
+    public static android.content.Intent getInstallPackIntent(java.lang.String,android.content.Context)
+    public static void installPack(java.lang.String,android.content.Context)
+    public static void shake(android.content.Context,boolean)
+    public static android.media.MediaPlayer playSound(android.content.Context,int,android.media.MediaPlayer$OnCompletionListener)
+    public static void playSound(android.content.Context,int)
+    public static long nowSecond()
+    public static java.lang.String formatSecToMin(int)
+    public static long nowMilliSecond()
+    public static long secondsToNow(long)
+    public static long milliSecondsToNow(long)
+    public static long ticksToNow(long)
+    public static long currentTicks()
+    public static long currentDayInMills()
+    public static long currentWeekInMills()
+    public static long currentMonthInMills()
+    public static long currentYearInMills()
+    public static int getSystemVersion(android.content.Context,int)
+    public static java.lang.String getDeviceId(android.content.Context)
+    public static java.lang.String getLine1Number(android.content.Context)
+    public static boolean isLockScreen(android.content.Context)
+    public static boolean isTopActivity(android.content.Context)
+    public static boolean isServiceRunning(android.content.Context,java.lang.String)
+    public static boolean isProcessRunning(android.content.Context,java.lang.String)
+    public static java.lang.String getTopActivityName(android.content.Context)
+    public static boolean isTopApplication(android.content.Context)
+    public static boolean isIntentAvailable(android.content.Context,android.content.Intent)
+    public static void freeBitmapMap(java.util.Map)
+    public static void selectPicture(android.content.Context,int)
+    public static int nullAsNil(java.lang.Integer)
+    public static long nullAsNil(java.lang.Long)
+    public static boolean nullAsTrue(java.lang.Boolean)
+    public static boolean nullAsFalse(java.lang.Boolean)
+    public static int nullAs(java.lang.Integer,int)
+    public static long nullAs(java.lang.Long,long)
+    public static boolean nullAs(java.lang.Boolean,boolean)
+    public static java.lang.String nullAs(java.lang.String,java.lang.String)
+    public static int nullAsInt(java.lang.Object,int)
+    public static int getInt(java.lang.String,int)
+    public static long getLong(java.lang.String,long)
+    public static int getHex(java.lang.String,int)
+    public static java.util.Map parseXml(java.lang.String,java.lang.String,java.lang.String)
+    private static void a(java.util.Map,java.lang.String,org.w3c.dom.Node,int)
+    public static void transClickToSelect(android.view.View,android.view.View)
+    public static java.lang.String getCutPasswordMD5(java.lang.String)
+    public static java.lang.String getFullPasswordMD5(java.lang.String)
+    public static org.w3c.dom.Element getRootElementFromXML(byte[])
+    public static java.lang.String convertStreamToString(java.io.InputStream)
+    public static java.lang.String encodeHexString(byte[])
+    public static byte[] decodeHexString(java.lang.String)
+    public static int guessHttpSendLength(int)
+    public static int guessHttpRecvLength(int)
+    public static int guessHttpContinueRecvLength(int)
+    public static int guessTcpConnectLength()
+    public static int guessTcpDisconnectLength()
+    public static int guessTcpSendLength(int)
+    public static int guessTcpRecvLength(int)
+    public static int[] splitToIntArray(java.lang.String)
+    public static int UnZipFolder(java.lang.String,java.lang.String)
+    public static java.lang.String getStack()
+    public static boolean checkSDCardFull()
+    public static java.lang.String GetHostIp()
+    public static boolean checkPermission(android.content.Context,java.lang.String)
+    public static boolean jump(android.content.Context,java.lang.String)
+    public static java.lang.String escapeStringForXml(java.lang.String)
+    public static java.lang.String processXml(java.lang.String)
+    public static java.lang.String expandEntities(java.lang.String)
+    private static int a(char[],int,int)
+    public static boolean isImgFile(java.lang.String)
+    public static java.lang.String mapToXml(java.lang.String,java.util.LinkedHashMap)
+    public static java.util.Map parseIni(java.lang.String)
+com.tencent.mm.sdk.platformtools.Util$1
+com.tencent.mm.sdk.platformtools.Util$2
+com.tencent.mm.sdk.platformtools.package-info
+com.tencent.mm.sdk.plugin.IMMPluginAPI
+com.tencent.mm.sdk.plugin.MMPluginAPIImpl
+com.tencent.mm.sdk.plugin.MMPluginMsg
+com.tencent.mm.sdk.plugin.MMPluginMsg$ReceiverHelper
+com.tencent.mm.sdk.plugin.MMPluginOAuth:
+    private final android.content.Context R
+    private android.os.Handler handler
+    public MMPluginOAuth(android.content.Context,com.tencent.mm.sdk.plugin.MMPluginOAuth$IResult)
+    public java.lang.String getAccessToken()
+    public java.lang.String getRequestToken()
+    public void start()
+    public boolean start(android.os.Handler)
+    static synthetic com.tencent.mm.sdk.plugin.MMPluginOAuth$IResult b(com.tencent.mm.sdk.plugin.MMPluginOAuth)
+com.tencent.mm.sdk.plugin.MMPluginOAuth$1
+com.tencent.mm.sdk.plugin.MMPluginOAuth$IResult:
+    public abstract void onSessionTimeOut()
+com.tencent.mm.sdk.plugin.MMPluginOAuth$Receiver:
+    public static void register(java.lang.String,com.tencent.mm.sdk.plugin.MMPluginOAuth)
+com.tencent.mm.sdk.plugin.MMPluginProviderConstants:
+    public static final java.lang.String AUTHORITY
+    public static final int TYPE_UNKNOWN
+    public static final int TYPE_INT
+    public static final int TYPE_LONG
+    public static final int TYPE_STRING
+    public static final int TYPE_BOOLEAN
+    public static final int TYPE_FLOAT
+    public static final int TYPE_DOUBLE
+    public static final java.lang.String PLUGIN_PACKAGE_PATTERN
+    public MMPluginProviderConstants()
+com.tencent.mm.sdk.plugin.MMPluginProviderConstants$OAuth
+com.tencent.mm.sdk.plugin.MMPluginProviderConstants$PluginDB
+com.tencent.mm.sdk.plugin.MMPluginProviderConstants$PluginIntent
+com.tencent.mm.sdk.plugin.MMPluginProviderConstants$Resolver:
+    private MMPluginProviderConstants$Resolver()
+com.tencent.mm.sdk.plugin.MMPluginProviderConstants$SharedPref:
+    public static final java.lang.String KEY
+    public static final java.lang.String TYPE
+    public static final java.lang.String VALUE
+    private MMPluginProviderConstants$SharedPref()
+com.tencent.mm.sdk.plugin.MMPluginUtil
+com.tencent.mm.sdk.plugin.Profile
+com.tencent.mm.sdk.plugin.package-info
+com.tencent.mm.sdk.storage.ContentProviderDB
+com.tencent.mm.sdk.storage.CursorFieldHelper
+com.tencent.mm.sdk.storage.ISQLiteDatabase
+com.tencent.mm.sdk.storage.MAutoDBItem
+com.tencent.mm.sdk.storage.MAutoStorage
+com.tencent.mm.sdk.storage.MDBItem
+com.tencent.mm.sdk.storage.MStorage
+com.tencent.mm.sdk.storage.MStorage$1
+com.tencent.mm.sdk.storage.MStorage$2
+com.tencent.mm.sdk.storage.MStorage$IOnStorageChange
+com.tencent.mm.sdk.storage.MStorage$IOnStorageLoaded
+com.tencent.mm.sdk.storage.MStorageEvent
+com.tencent.mm.sdk.storage.MStorageEvent$1
+com.tencent.mm.sdk.storage.package-info
+com.tencent.mm.sdk.uikit.AlertAdapter
+com.tencent.mm.sdk.uikit.AlertAdapter$ViewHolder
+com.tencent.mm.sdk.uikit.Controller:
+    410:413:public void setToTop(android.view.View$OnClickListener)
+    472:475:public void setTitleVisibility(int)
+    478:478:public android.view.View getTitleView()
+    482:482:public android.view.View getTitleBtn1()
+    492:495:public void setMMTitle(int)
+    498:501:public void setTitleLogo(int,int)
+    509:512:public void setPrevEnabled(boolean)
+    520:523:public void setNextEnabled(boolean)
+    531:534:public void setNavNextVisibility(int)
+    547:547:public com.tencent.mm.sdk.uikit.MMImageButton setNavNext(int,android.view.View$OnClickListener)
+    560:560:public com.tencent.mm.sdk.uikit.MMImageButton setNavPrev(int,android.view.View$OnClickListener)
+com.tencent.mm.sdk.uikit.DaBingAlertAdapter:
+    public static final java.lang.String TYPE_BUTTON
+    public static final java.lang.String TYPE_TITLE
+    public static final java.lang.String TYPE_EXIT
+    public static final java.lang.String TYPE_CANCEL
+    public static final java.lang.String TYPE_BLUE
+com.tencent.mm.sdk.uikit.MMAlert:
+    40:42:private MMAlert()
+    45:61:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,java.lang.String)
+    65:81:public static android.app.AlertDialog showAlert(android.content.Context,int,int)
+    85:97:public static android.app.AlertDialog showAlert(android.content.Context,int,int,android.content.DialogInterface$OnClickListener)
+    101:113:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener)
+    117:130:public static android.app.AlertDialog showAlert(android.content.Context,int,int,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener)
+    135:148:public static android.app.AlertDialog showAlert(android.content.Context,int,int,int,int,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener)
+    152:165:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener)
+    170:183:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener)
+    187:198:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,android.view.View,android.content.DialogInterface$OnClickListener)
+    203:215:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,android.view.View,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener)
+    219:230:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,java.lang.String,android.view.View,android.content.DialogInterface$OnClickListener)
+    235:256:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,java.lang.String,android.view.View,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener)
+    260:271:public static android.app.AlertDialog showAlert(android.content.Context,java.lang.String,android.view.View,android.content.DialogInterface$OnCancelListener)
+    275:275:public static android.app.Dialog showAlert(android.content.Context,java.lang.String,java.lang.String[],java.lang.String,com.tencent.mm.sdk.uikit.MMAlert$OnAlertSelectId)
+    280:282:public static android.app.ProgressDialog showProgressDlg(android.content.Context,java.lang.String,java.lang.String,boolean,boolean,android.content.DialogInterface$OnCancelListener)
+    295:311:public static android.app.AlertDialog showWebAlert(android.content.Context,java.lang.String,java.lang.String,android.webkit.WebViewClient,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnDismissListener)
+    316:332:public static android.app.AlertDialog showWebAlert(android.content.Context,java.lang.String,java.lang.String,android.webkit.WebViewClient,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnDismissListener)
+    349:389:public static android.app.Dialog showAlert(android.content.Context,java.lang.String,java.lang.String[],java.lang.String,com.tencent.mm.sdk.uikit.MMAlert$OnAlertSelectId,android.content.DialogInterface$OnCancelListener)
+com.tencent.mm.sdk.uikit.MMAlert$1
+com.tencent.mm.sdk.uikit.MMAlert$2
+com.tencent.mm.sdk.uikit.MMAlert$3
+com.tencent.mm.sdk.uikit.MMAlert$4
+com.tencent.mm.sdk.uikit.MMAlert$5
+com.tencent.mm.sdk.uikit.MMAlert$6
+com.tencent.mm.sdk.uikit.MMAlert$7
+com.tencent.mm.sdk.uikit.MMBaseActivity:
+    protected static final int DEFAULT_TOAST_TIME
+    130:133:public android.content.res.ColorStateList getColor(int)
+    145:148:public void updateSkinRes()
+    151:155:public void setUsedSkin(java.lang.String)
+    162:171:public void setScreenEnable(boolean)
+    174:179:protected void setBodyView(int)
+    182:182:protected android.view.View getBodyView()
+    186:186:protected android.view.View getContentView()
+    271:272:public static void setDensity(float)
+    275:275:public static float getDensity()
+    279:280:public void setToTop(android.view.View$OnClickListener)
+    283:284:public void setTitleVisibility(int)
+    291:292:public void setMMTitle(int)
+    295:296:public void setTitleLogo(int,int)
+    299:300:public void setPrevEnabled(boolean)
+    303:304:public void setNextEnabled(boolean)
+    307:308:public void setNavNextVisibility(int)
+    311:311:public com.tencent.mm.sdk.uikit.MMImageButton setNavNext(int,android.view.View$OnClickListener)
+    315:315:public com.tencent.mm.sdk.uikit.MMImageButton setNavPrev(int,android.view.View$OnClickListener)
+    327:327:public com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn4(int,android.view.View$OnClickListener)
+    335:335:public android.view.View getTitleView()
+    354:357:protected void startActivity(java.lang.Class)
+    360:362:protected void startActivity(java.lang.Class,android.content.Intent)
+    381:395:public void showVKB()
+com.tencent.mm.sdk.uikit.MMImageButton:
+    49:52:public void setText(int)
+com.tencent.mm.sdk.uikit.MMSkinFactory:
+    private static final java.lang.String TAG
+    public static final java.lang.String ANDROID_NAMESPACE
+    311:322:public android.content.res.ColorStateList getColor(int)
+com.tencent.mm.sdk.uikit.MMTabBaseActivity:
+    protected static final int DEFAULT_TOAST_TIME
+    125:128:public android.graphics.drawable.Drawable getDrawable(int)
+    132:135:public android.content.res.ColorStateList getColor(int)
+    139:142:public android.content.Context getContext()
+    147:150:public void updateSkinRes()
+    153:157:public void setUsedSkin(java.lang.String)
+    164:173:public void setScreenEnable(boolean)
+    176:181:protected void setBodyView(int)
+    184:184:protected android.view.View getBodyView()
+    188:188:protected android.view.View getContentView()
+    273:274:public static void setDensity(float)
+    277:277:public static float getDensity()
+    281:282:public void setToTop(android.view.View$OnClickListener)
+    285:286:public void setTitleVisibility(int)
+    289:290:public void setMMTitle(java.lang.String)
+    293:294:public void setMMTitle(int)
+    297:298:public void setTitleLogo(int,int)
+    301:302:public void setPrevEnabled(boolean)
+    305:306:public void setNextEnabled(boolean)
+    309:310:public void setNavNextVisibility(int)
+    313:313:public com.tencent.mm.sdk.uikit.MMImageButton setNavNext(int,android.view.View$OnClickListener)
+    317:317:public com.tencent.mm.sdk.uikit.MMImageButton setNavPrev(int,android.view.View$OnClickListener)
+    321:321:public com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn1(int,android.view.View$OnClickListener)
+    325:325:public com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn1(java.lang.String,android.view.View$OnClickListener)
+    329:329:public com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn4(int,android.view.View$OnClickListener)
+    333:333:public com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn4(java.lang.String,android.view.View$OnClickListener)
+    337:337:public android.view.View getTitleView()
+    341:344:public com.tencent.mm.sdk.uikit.MMImageButton setBackBtn(android.view.View$OnClickListener)
+    356:359:protected void startActivity(java.lang.Class)
+    362:364:protected void startActivity(java.lang.Class,android.content.Intent)
+    383:397:public void showVKB()
+com.tencent.mm.sdk.uikit.MMTabBaseActivity$Controller:
+    410:413:public void setToTop(android.view.View$OnClickListener)
+    427:442:public com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn1(java.lang.Object,android.view.View$OnClickListener)
+    454:468:public com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn4(java.lang.Object,android.view.View$OnClickListener)
+    472:475:public void setTitleVisibility(int)
+    478:478:public android.view.View getTitleView()
+    482:482:public android.view.View getTitleBtn1()
+    486:489:public void setMMTitle(java.lang.CharSequence)
+    492:495:public void setMMTitle(int)
+    498:501:public void setTitleLogo(int,int)
+    509:512:public void setPrevEnabled(boolean)
+    520:523:public void setNextEnabled(boolean)
+    531:534:public void setNavNextVisibility(int)
+    547:547:public com.tencent.mm.sdk.uikit.MMImageButton setNavNext(int,android.view.View$OnClickListener)
+    560:560:public com.tencent.mm.sdk.uikit.MMImageButton setNavPrev(int,android.view.View$OnClickListener)
+com.tencent.mm.sdk.uikit.MMWizardActivity:
+    private static final java.lang.String TAG
+    private static final java.lang.String WIZARD_ROOT_CLASS
+    private static final java.lang.String WIZARD_ROOT_KILLSELF
+    private static final java.lang.String WIZARD_TRANSACTION_ID
+    40:66:public static void startWizardActivity(android.content.Context,android.content.Intent)
+    69:73:public static void startWizardActivity(android.content.Context,android.content.Intent,android.content.Intent)
+    86:103:protected void finishWizard()
+com.tencent.mm.sdk.uikit.TimeUtil
+com.tencent.mm.sdk.uikit.applet.CameraUtil
+com.tencent.mm.sdk.uikit.applet.SecurityImage:
+    private static final java.lang.String TAG
+    private com.tencent.mm.sdk.uikit.applet.SecurityImage$ISecurityModel model
+    private static final int HIDE_MASK_ALPHA
+    private static final int SHOW_MASK_ALPHA
+    private static final int HIDE_MASK_BGCOLOR
+    private static final int SHOW_MASK_BGCOLOR
+    58:64:public void setNetworkModel(com.tencent.mm.sdk.uikit.applet.SecurityImage$ISecurityModel)
+    67:87:public void onStart(byte[],java.lang.String,java.lang.String)
+    90:92:public void update(byte[],java.lang.String,java.lang.String)
+    95:96:public void onStop()
+    100:100:public void cancel()
+    103:103:public java.lang.String getSecImgSid()
+    107:107:public java.lang.String getSecImgCode()
+    111:111:public java.lang.String getSecImgEncryptKey()
+    115:122:protected void onGetImgResponse(boolean,android.graphics.Bitmap,java.lang.String,java.lang.String)
+    125:129:public void dismiss()
+    137:140:private void removeHideMask(boolean)
+    143:149:private void setSecImg(byte[],java.lang.String,java.lang.String)
+    152:159:private void setSecImg(android.graphics.Bitmap,java.lang.String,java.lang.String)
+    31:31:static synthetic void access$0(com.tencent.mm.sdk.uikit.applet.SecurityImage,android.app.AlertDialog)
+    31:31:static synthetic android.app.AlertDialog access$1(com.tencent.mm.sdk.uikit.applet.SecurityImage)
+    136:136:static synthetic void access$2(com.tencent.mm.sdk.uikit.applet.SecurityImage,boolean)
+    46:46:static synthetic com.tencent.mm.sdk.uikit.applet.SecurityImage$ISecurityModel access$3(com.tencent.mm.sdk.uikit.applet.SecurityImage)
+com.tencent.mm.sdk.uikit.applet.SecurityImage$1
+com.tencent.mm.sdk.uikit.applet.SecurityImage$Builder
+com.tencent.mm.sdk.uikit.applet.SecurityImage$Builder$1
+com.tencent.mm.sdk.uikit.applet.SecurityImage$HttpModel
+com.tencent.mm.sdk.uikit.applet.SecurityImage$HttpModel$1
+com.tencent.mm.sdk.uikit.applet.SecurityImage$HttpModel$HttpGetTask
+com.tencent.mm.sdk.uikit.applet.SecurityImage$ISecurityModel
+com.tencent.mm.sdk.uikit.package-info
+com.tencent.weibo.api.BasicAPI:
+    31:42:public BasicAPI(java.lang.String,com.tencent.weibo.utils.QHttpClient)
+    49:49:public java.lang.String getAPIBaseUrl()
+    public abstract void setAPIBaseUrl(java.lang.String)
+com.tencent.weibo.api.FriendsAPI
+com.tencent.weibo.api.InfoAPI
+com.tencent.weibo.api.PrivateAPI
+com.tencent.weibo.api.SearchAPI
+com.tencent.weibo.api.StatusesAPI
+com.tencent.weibo.api.TAPI:
+    42:43:public TAPI(java.lang.String,com.tencent.weibo.utils.QHttpClient)
+    56:60:public java.lang.String show(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String)
+    117:121:public java.lang.String del(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String)
+    138:138:public java.lang.String reAdd(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    158:166:public java.lang.String reAdd(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    183:183:public java.lang.String comment(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    203:211:public java.lang.String comment(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    229:229:public java.lang.String reply(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    249:257:public java.lang.String reply(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    333:338:public java.lang.String reCount(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String)
+    360:369:public java.lang.String reList(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    393:402:public java.lang.String addVideo(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    407:419:public void setAPIBaseUrl(java.lang.String)
+com.tencent.weibo.api.UserAPI:
+    33:34:public UserAPI(java.lang.String,com.tencent.weibo.utils.QHttpClient)
+    66:71:public java.lang.String otherInfo(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String)
+    90:95:public java.lang.String infos(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String)
+    99:103:public void setAPIBaseUrl(java.lang.String)
+com.tencent.weibo.beans.OAuth:
+    private static final long serialVersionUID
+    32:38:public java.util.List getCommonParamsList()
+    46:51:public java.lang.String generateSeqId()
+    56:56:public java.lang.String getSeqId()
+    61:62:public void setSeqId(java.lang.String)
+    76:76:public java.lang.String getAppFrom()
+    82:83:public void setAppFrom(java.lang.String)
+    107:107:public java.lang.String getOauthVersion()
+    113:114:public void setOauthVersion(java.lang.String)
+    118:118:public java.lang.String getScope()
+    123:124:public void setScope(java.lang.String)
+    148:148:public java.lang.String getMsg()
+com.tencent.weibo.beans.RouteCfg
+com.tencent.weibo.constants.APIConstants
+com.tencent.weibo.constants.ErrorCodeConstants:
+    8:8:public ErrorCodeConstants()
+com.tencent.weibo.constants.MyErrorCodeHashMap:
+    private static final long serialVersionUID
+com.tencent.weibo.constants.OAuthConstants
+com.tencent.weibo.demo.DaBingAPI:
+    18:20:public DaBingAPI(java.lang.String,com.tencent.weibo.utils.QHttpClient)
+    26:26:public void setAPIBaseUrl(java.lang.String)
+    45:49:public java.lang.String add_idol(com.tencent.weibo.beans.OAuth,java.lang.String)
+    68:76:public java.lang.String getHometimeline(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    80:86:public java.lang.String add_wq(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    90:93:public java.lang.String addTag(com.tencent.weibo.beans.OAuth,java.lang.String)
+com.tencent.weibo.exceptions.OAuthClientException:
+    private static final long serialVersionUID
+    30:33:public OAuthClientException(java.lang.String,java.lang.String)
+    36:36:public java.lang.String getErrcode()
+    40:41:public void setErrcode(java.lang.String)
+    44:44:public java.lang.String getErrmsg()
+    48:49:public void setErrmsg(java.lang.String)
+com.tencent.weibo.exceptions.QweibosdkException
+com.tencent.weibo.oauthv1.Base64Encoder:
+    3:3:public Base64Encoder()
+com.tencent.weibo.oauthv1.OAuthV1:
+    private static final long serialVersionUID
+    54:59:public OAuthV1(java.lang.String,java.lang.String,java.lang.String)
+    118:118:public java.lang.String getOauthConsumerKey()
+    128:128:public java.lang.String getOauthSignatureMethod()
+    133:134:public void setOauthSignatureMethod(java.lang.String)
+    158:158:public java.lang.String getOauthTimestamp()
+    163:164:public void setOauthTimestamp(java.lang.String)
+    168:168:public java.lang.String getOauthNonce()
+    173:174:public void setOauthNonce(java.lang.String)
+    178:178:public java.lang.String getOauthCallback()
+    183:184:public void setOauthCallback(java.lang.String)
+com.tencent.weibo.oauthv1.OAuthV1Client:
+    private static final java.lang.String hashAlgorithmName
+    34:35:private OAuthV1Client()
+    72:72:public static java.lang.String generateAuthorizationURL(com.tencent.weibo.oauthv1.OAuthV1)
+    84:128:public static boolean parseAuthorization(java.lang.String,com.tencent.weibo.oauthv1.OAuthV1)
+com.tencent.weibo.oauthv1.OAuthV1Request:
+    28:30:public OAuthV1Request(com.tencent.weibo.utils.QHttpClient)
+    80:80:public com.tencent.weibo.utils.QHttpClient getqHttpClient()
+    84:85:public void setqHttpClient(com.tencent.weibo.utils.QHttpClient)
+com.tencent.weibo.oauthv2.OAuthV2:
+    private static final long serialVersionUID
+    42:45:public OAuthV2(java.lang.String)
+    71:77:public java.util.List getAccessTokenByCodeParamsList()
+    97:97:public java.lang.String getRedirectUri()
+    102:103:public void setRedirectUri(java.lang.String)
+    107:107:public java.lang.String getClientId()
+    112:113:public void setClientId(java.lang.String)
+    117:117:public java.lang.String getResponeType()
+    122:122:public java.lang.String getClientSecret()
+    127:128:public void setClientSecret(java.lang.String)
+    137:137:public java.lang.String getType()
+    142:143:public void setType(java.lang.String)
+    147:147:public java.lang.String getAuthorizeCode()
+    152:153:public void setAuthorizeCode(java.lang.String)
+    156:156:public java.lang.String getAccessToken()
+    165:165:public java.lang.String getExpiresIn()
+    175:175:public java.lang.String getGrantType()
+    180:181:public void setGrantType(java.lang.String)
+    185:185:public java.lang.String getRefreshToken()
+    190:191:public void setRefreshToken(java.lang.String)
+    194:199:public com.tencent.weibo.oauthv3.OAuthV3 getOAuthV3()
+    202:207:public static com.tencent.weibo.oauthv3.OAuthV3 parse(com.tencent.weibo.oauthv2.OAuthV2)
+com.tencent.weibo.oauthv2.OAuthV2Client:
+    21:22:private OAuthV2Client()
+    32:39:public static java.lang.String generateAuthorizationURL(com.tencent.weibo.oauthv2.OAuthV2)
+    51:59:public static boolean setAuthorization(java.lang.String,java.lang.String,java.lang.String,com.tencent.weibo.oauthv2.OAuthV2)
+    70:106:public static boolean parseAuthorization(java.lang.String,com.tencent.weibo.oauthv2.OAuthV2)
+    117:135:public static boolean accessToken(com.tencent.weibo.oauthv2.OAuthV2)
+    165:193:public static boolean parseAccessToken(java.lang.String,com.tencent.weibo.oauthv2.OAuthV2)
+    252:252:public static com.tencent.weibo.utils.QHttpClient getQHttpClient()
+    256:257:public static void setQHttpClient(com.tencent.weibo.utils.QHttpClient)
+com.tencent.weibo.oauthv2.OAuthV2Request:
+    29:31:public OAuthV2Request(com.tencent.weibo.utils.QHttpClient)
+    112:112:public com.tencent.weibo.utils.QHttpClient getqHttpClient()
+    116:117:public void setqHttpClient(com.tencent.weibo.utils.QHttpClient)
+com.tencent.weibo.oauthv3.OAuthV3:
+    private static final long serialVersionUID
+    61:66:public OAuthV3(java.lang.String,java.lang.String,java.lang.String)
+    79:85:public java.util.List getAccessTokenByCodeParamsList()
+    121:121:public java.lang.String getRedirectUri()
+    126:127:public void setRedirectUri(java.lang.String)
+    131:131:public java.lang.String getClientId()
+    141:141:public java.lang.String getResponeType()
+    146:146:public java.lang.String getClientSecret()
+    161:161:public java.lang.String getType()
+    166:167:public void setType(java.lang.String)
+    171:171:public java.lang.String getAuthorizeCode()
+    176:177:public void setAuthorizeCode(java.lang.String)
+    180:180:public java.lang.String getAccessToken()
+    189:189:public java.lang.String getExpiresIn()
+    199:199:public java.lang.String getGrantType()
+    204:205:public void setGrantType(java.lang.String)
+    209:209:public java.lang.String getRefreshToken()
+    214:215:public void setRefreshToken(java.lang.String)
+    218:223:public com.tencent.weibo.oauthv2.OAuthV2 getOAuthV2()
+    226:231:public static com.tencent.weibo.oauthv2.OAuthV2 parse(com.tencent.weibo.oauthv3.OAuthV3)
+com.tencent.weibo.oauthv3.OAuthV3Client:
+    14:15:private OAuthV3Client()
+    25:32:public static java.lang.String generateAuthorizationURL(com.tencent.weibo.oauthv3.OAuthV3)
+    44:52:public static boolean setAuthorization(java.lang.String,java.lang.String,java.lang.String,com.tencent.weibo.oauthv3.OAuthV3)
+    63:99:public static boolean parseAuthorization(java.lang.String,com.tencent.weibo.oauthv3.OAuthV3)
+    110:128:public static boolean accessToken(com.tencent.weibo.oauthv3.OAuthV3)
+    158:186:public static boolean parseAccessToken(java.lang.String,com.tencent.weibo.oauthv3.OAuthV3)
+    249:250:public static void setQHttpClient(com.tencent.weibo.utils.QHttpClient)
+com.tencent.weibo.oauthv3.OAuthV3Request:
+    28:30:public OAuthV3Request(com.tencent.weibo.utils.QHttpClient)
+    111:111:public com.tencent.weibo.utils.QHttpClient getqHttpClient()
+    115:116:public void setqHttpClient(com.tencent.weibo.utils.QHttpClient)
+com.tencent.weibo.utils.Base64Coder:
+    57:57:public static java.lang.String encodeString(java.lang.String)
+    66:66:public static java.lang.String encodeLines(byte[])
+    78:89:public static java.lang.String encodeLines(byte[],int,int,int,java.lang.String)
+    108:108:public static char[] encode(byte[],int)
+    147:147:public static java.lang.String decodeString(java.lang.String)
+    158:164:public static byte[] decodeLines(java.lang.String)
+    174:174:public static byte[] decode(java.lang.String)
+    184:184:public static byte[] decode(char[])
+    196:222:public static byte[] decode(char[],int,int)
+    225:225:private Base64Coder()
+com.tencent.weibo.utils.QArrayList:
+    private static final long serialVersionUID
+com.tencent.weibo.utils.QHttpClient:
+    public static final int CONNECTION_TIMEOUT
+    public static final int CON_TIME_OUT_MS
+    public static final int SO_TIME_OUT_MS
+    public static final int MAX_CONNECTIONS_PER_HOST
+    public static final int MAX_TOTAL_CONNECTIONS
+    66:67:public QHttpClient(boolean)
+    103:137:public QHttpClient(int,int,int,int,boolean)
+com.tencent.weibo.utils.QStrOperate:
+    19:20:private QStrOperate()
+    141:178:public static java.lang.String getTimeState(java.lang.String)
+com.tencent.weibo.utils.SnsSigCheck:
+    private static final java.lang.String CONTENT_CHARSET
+    private static final java.lang.String HMAC_ALGORITHM
+com.tencent.weibo.webview.OAuthV1AuthorizeWebView:
+    public static final int RESULT_CODE
+    private static final java.lang.String TAG
+com.tencent.weibo.webview.OAuthV2AuthorizeWebView:
+    public static final int RESULT_CODE
+    private static final java.lang.String TAG
+com.tencent.weibo.webview.OAuthV3AuthorizeWebView:
+    public static final int RESULT_CODE
+    private static final java.lang.String TAG
+com.umeng.analytics.Gender
+com.umeng.analytics.MobclickAgent:
+    private static synthetic int[] b
+    public MobclickAgent()
+    public static void setAutoLocation(boolean)
+    public static void setSessionContinueMillis(long)
+    public static void setEnableEventBuffer(boolean)
+    static com.umeng.analytics.b a()
+    public static void setOpenGLContext(javax.microedition.khronos.opengles.GL10)
+    public static void openActivityDurationTrack(boolean)
+    public static void setDebugMode(boolean)
+    public static void setDefaultReportPolicy(android.content.Context,int)
+    public static void onResume(android.content.Context,java.lang.String,java.lang.String)
+    public static void onError(android.content.Context,java.lang.String)
+    public static void reportError(android.content.Context,java.lang.String)
+    public static void flush(android.content.Context)
+    public static void onEvent(android.content.Context,java.lang.String,int)
+    public static void onEvent(android.content.Context,java.lang.String,java.lang.String,int)
+    public static void onEventDuration(android.content.Context,java.lang.String,long)
+    public static void onEventDuration(android.content.Context,java.lang.String,java.lang.String,long)
+    public static void onEventDuration(android.content.Context,java.lang.String,java.util.Map,long)
+    public static void onEventBegin(android.content.Context,java.lang.String)
+    public static void onEventEnd(android.content.Context,java.lang.String)
+    public static void onEventBegin(android.content.Context,java.lang.String,java.lang.String)
+    public static void onEventEnd(android.content.Context,java.lang.String,java.lang.String)
+    public static void onKVEventBegin(android.content.Context,java.lang.String,java.util.Map,java.lang.String)
+    public static void onKVEventEnd(android.content.Context,java.lang.String,java.lang.String)
+    public static void updateOnlineConfig(android.content.Context,java.lang.String,java.lang.String)
+    public void setGender(android.content.Context,com.umeng.analytics.Gender)
+    public void setAge(android.content.Context,int)
+    public void setUserID(android.content.Context,java.lang.String,java.lang.String)
+    static synthetic int[] b()
+com.umeng.analytics.MobclickAgentJSInterface
+com.umeng.analytics.MobclickAgentJSInterface$a
+com.umeng.analytics.ReportPolicy:
+    public static final int REALTIME
+    public static final int BATCH_AT_LAUNCH
+    static final int a
+    static final int b
+    public static final int DAILY
+    public static final int WIFIONLY
+    public static final int BATCH_BY_INTERVAL
+    static void a(android.content.Context,int)
+    static void b(android.content.Context,int,long)
+com.umeng.analytics.a:
+    private static final java.lang.String d
+com.umeng.analytics.b:
+    void a(android.content.Context,java.lang.String)
+    void d(android.content.Context)
+    private synchronized void l(android.content.Context)
+    private void p(android.content.Context)
+    private org.json.JSONArray a(org.json.JSONObject,org.json.JSONArray)
+    void b(android.content.Context,java.lang.String)
+    void c(android.content.Context,java.lang.String)
+    void a(android.content.Context,java.lang.String,java.lang.String)
+    void b(android.content.Context,java.lang.String,java.lang.String)
+    void a(android.content.Context,java.lang.String,java.util.Map,java.lang.String)
+    void c(android.content.Context,java.lang.String,java.lang.String)
+com.umeng.analytics.b$a:
+    b$a(com.umeng.analytics.b,android.content.Context,java.lang.String,java.util.Map,java.lang.String,int)
+com.umeng.analytics.d:
+    public void a(int)
+    public void a(java.lang.String,java.util.Map)
+    public java.util.Map c(java.lang.String)
+com.umeng.analytics.e:
+    static final java.lang.String a
+    static final java.lang.String b
+    static final java.lang.String c
+    static final int e
+    static final int f
+    static final java.lang.String l
+    static final java.lang.String m
+    static final java.lang.String o
+    static final java.lang.String q
+    static final java.lang.String r
+    static final java.lang.String t
+    static final java.lang.String u
+    static final java.lang.String v
+    static final java.lang.String w
+    static final java.lang.String x
+    static final java.lang.String y
+    static final java.lang.String z
+    static final java.lang.String A
+    static final java.lang.String B
+    static final java.lang.String C
+    e()
+com.umeng.analytics.f:
+    f()
+com.umeng.analytics.h:
+    h()
+com.umeng.analytics.i:
+    private static final int b
+    public i(java.lang.String,int)
+    public int b()
+com.umeng.common.Log:
+    public Log()
+    public static void d(java.lang.String,java.lang.String)
+    public static void d(java.lang.String,java.lang.String,java.lang.Exception)
+    public static void e(java.lang.String,java.lang.String,java.lang.Exception)
+com.umeng.common.a
+com.umeng.common.a.a:
+    public a()
+    public static int g(android.content.Context)
+com.umeng.common.a.b:
+    public b()
+com.umeng.common.a.c:
+    public c()
+    public static int b(android.content.Context)
+    public static int c(android.content.Context)
+    public static int f(android.content.Context)
+com.umeng.common.b:
+    protected static final java.lang.String b
+    private static final java.lang.String d
+    private static final java.lang.String e
+    public static final int c
+    public static boolean a(java.lang.String,android.content.Context)
+    public static boolean a(android.content.Context)
+    public static java.util.Set b(android.content.Context)
+    public static boolean c(android.content.Context)
+    public static java.lang.String[] a(javax.microedition.khronos.opengles.GL10)
+    public static java.lang.String h(android.content.Context)
+    public static java.lang.String i(android.content.Context)
+    public static java.lang.String a(java.util.Date)
+    public static java.util.Date a(java.lang.String)
+    public static int a(java.util.Date,java.util.Date)
+com.umeng.common.b.a
+com.umeng.common.b.b
+com.umeng.common.b.c
+com.umeng.common.b.d
+com.umeng.common.b.e
+com.umeng.common.b.f:
+    public f()
+    public static java.lang.String a(byte[],java.lang.String)
+com.umeng.common.b.g:
+    private static final java.lang.String b
+    public g()
+    public static java.lang.String a(android.content.Context,long)
+    public static void a(android.content.Context,java.lang.String)
+    public static boolean b(android.content.Context,java.lang.String)
+    public static boolean d(java.lang.String)
+com.umeng.common.b.h
+com.umeng.common.b.i
+com.umeng.common.c:
+    public int a(java.lang.String)
+    public int e(java.lang.String)
+com.umeng.common.net.DownloadingService:
+    static final int a
+    static final int b
+    static final int c
+    static final int d
+    static final int e
+    static final int f
+    static final java.lang.String g
+    private static final int l
+    private static final long p
+    private void d()
+com.umeng.common.net.a:
+    public void a(java.lang.String[])
+    public void a(boolean)
+com.umeng.common.net.c:
+    private static final java.lang.String b
+    private static final java.lang.String c
+    private static final java.lang.String d
+    private static final java.lang.String e
+    private static final java.lang.String f
+    private static final java.lang.String g
+    private static final java.lang.String h
+    private static final java.lang.String j
+    public void a(java.lang.String,java.lang.String,java.lang.String)
+    public int b(java.lang.String,java.lang.String)
+    public java.lang.String c(java.lang.String,java.lang.String)
+    public java.util.Date d(java.lang.String,java.lang.String)
+    public void e(java.lang.String,java.lang.String)
+    public java.util.List a(java.lang.String)
+com.umeng.common.net.c$a:
+    private static final int b
+    private static final java.lang.String c
+com.umeng.common.net.c$b:
+    private c$b()
+com.umeng.common.net.f
+com.umeng.common.net.l:
+    public static final java.lang.String a
+    public static final java.lang.String b
+    public static final java.lang.String c
+    public static final java.lang.String d
+    public static final java.lang.String e
+    public l()
+    public static int a(com.umeng.common.net.a$a)
+    public static android.app.PendingIntent a(android.content.Context,java.lang.String)
+com.umeng.common.net.m
+com.umeng.common.net.m$a
+com.umeng.common.net.m$b
+com.umeng.common.net.n
+com.umeng.common.net.o
+com.umeng.common.net.o$a
+com.umeng.common.net.p
+com.umeng.common.net.p$a
+com.umeng.common.net.p$b
+com.umeng.common.net.p$c
+com.umeng.common.net.q
+com.umeng.common.net.r:
+    public com.umeng.common.net.r a(java.util.Map)
+com.umeng.common.net.s:
+    public java.lang.String d()
+com.umeng.fb.UMFeedbackService:
+    public UMFeedbackService()
+    public static void setContactMap(java.util.Map)
+    public static void setRemarkMap(java.util.Map)
+    public static void setFeedBackListener(com.umeng.fb.util.FeedBackListener)
+com.umeng.fb.a:
+    public java.lang.String d
+com.umeng.fb.a.a:
+    private static final int b
+com.umeng.fb.a.b:
+    public b(java.lang.String)
+com.umeng.fb.b.a:
+    public a()
+com.umeng.fb.b.b:
+    public b()
+com.umeng.fb.b.c:
+    public c()
+    public static int l(android.content.Context)
+com.umeng.fb.b.d:
+    public d()
+com.umeng.fb.b.e:
+    public e()
+    public static int c(android.content.Context)
+    public static int k(android.content.Context)
+    public static int A(android.content.Context)
+com.umeng.fb.f:
+    public static final java.lang.String a
+    public static final java.lang.String b
+    public static final java.lang.String c
+    public static final int f
+    static final int g
+    public static final java.lang.String p
+    public static final java.lang.String s
+    public static final java.lang.String t
+    public static final java.lang.String v
+    public static final java.lang.String w
+    public static final java.lang.String x
+    public static final java.lang.String y
+    public static final java.lang.String z
+    public static final java.lang.String A
+    public static final java.lang.String B
+    public static final java.lang.String C
+    public static final java.lang.String D
+    public static final java.lang.String E
+    public static final java.lang.String F
+    public static final java.lang.String G
+    public static final java.lang.String H
+    public static final java.lang.String I
+    public static final java.lang.String J
+    public static final java.lang.String K
+    public static final java.lang.String L
+    public static final java.lang.String M
+    static final java.lang.String N
+    static final java.lang.String O
+    static final java.lang.String P
+    static final java.lang.String Q
+    static final java.lang.String R
+    public static final java.lang.String S
+    public static final java.lang.String T
+    public static final java.lang.String U
+    public static final java.lang.String V
+    public static final java.lang.String W
+    public static final java.lang.String X
+    public static final java.lang.String Y
+    public static final java.lang.String Z
+    public static final java.lang.String aa
+    public static final java.lang.String ab
+    public static final java.lang.String ac
+    public static final java.lang.String ad
+    public static final java.lang.String ae
+    public static final java.lang.String af
+    public static final java.lang.String ag
+    public static final java.lang.String ah
+    public static final java.lang.String ai
+    public static final java.lang.String aj
+    public static final java.lang.String ak
+    public static final java.lang.String al
+    public static final java.lang.String am
+    public static final java.lang.String an
+    public static final java.lang.String ao
+    public static final java.lang.String ap
+    public static final java.lang.String aq
+    public static final java.lang.String ar
+    public static final java.lang.String as
+    public static final java.lang.String at
+    public static final java.lang.String au
+    public static final java.lang.String av
+    public static final java.lang.String aw
+    public static final java.lang.String ax
+    public static final java.lang.String ay
+    public static final java.lang.String az
+    public static final java.lang.String aA
+    public static final int aB
+    public static final int aC
+    public static final int aD
+    public static final java.lang.String aE
+    public static final int aF
+    public static final int aG
+    public static final java.lang.String aH
+    public static final java.lang.String aI
+    public static final int aJ
+    public static final int aK
+    public static final java.lang.String aL
+    public static final java.lang.String aM
+    public static final java.lang.String aN
+    public static final java.lang.String aO
+    public static final java.lang.String aP
+    public static final java.lang.String aQ
+    public f()
+com.umeng.fb.g:
+    public g()
+    public static void a(android.content.Context)
+    public static java.lang.String a()
+    public static int a(java.util.Date,java.util.Date)
+    public static java.util.Date b(android.content.Context)
+    public static void a(android.content.Context,java.util.Date)
+    public static java.lang.String a(org.json.JSONObject)
+    public static java.lang.String b(org.json.JSONObject)
+com.umeng.fb.ui.FeedbackConversations:
+    private static final int c
+    private static final int d
+    private static final int e
+    private static final int f
+    private static final int g
+com.umeng.fb.ui.b:
+    java.lang.String c
+com.umeng.fb.ui.d:
+    org.json.JSONArray d
+    java.lang.String[] e
+    public com.umeng.fb.b$a a(int)
+com.umeng.fb.util.ActivityStarter:
+    public ActivityStarter()
+com.umeng.fb.util.a:
+    static final java.lang.String a
+    private static final int b
+    public a()
+com.umeng.fb.util.b:
+    public b()
+    public static synchronized boolean b(org.json.JSONObject)
+com.umeng.fb.util.c:
+    public c()
+com.umeng.update.UmengUpdateAgent:
+    private static final java.lang.String e
+    private static final java.lang.String g
+    private static final java.lang.String h
+    public static final java.lang.String a
+    public static void update(android.content.Context,java.lang.String)
+    public static void destroy()
+    public static void update(android.content.Context,long)
+    private static android.content.SharedPreferences a(android.content.Context)
+com.umeng.update.UpdateStatus
+d:
+    25:25:public d()
+greendroid.app.ActionBarActivity
+greendroid.app.GDActivity:
+    229:229:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem)
+    233:233:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem,int)
+    237:237:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem$Type)
+    241:241:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem$Type,int)
+    250:253:public void setActionBarContentView(int)
+    256:259:public void setActionBarContentView(android.view.View,android.view.ViewGroup$LayoutParams)
+greendroid.app.GDApplication:
+    private static final int CORE_POOL_SIZE
+    private greendroid.image.EmojImageCache mEmojImageCache
+    95:98:public greendroid.image.EmojImageCache getEmojImageCache()
+    141:152:public void unregisterOnLowMemoryListener(greendroid.app.GDApplication$OnLowMemoryListener)
+greendroid.app.GDExpandableListActivity:
+    50:51:public GDExpandableListActivity(greendroid.widget.ActionBar$Type)
+    106:107:public android.widget.ExpandableListView getExpandableListView()
+    115:115:public android.widget.ExpandableListAdapter getExpandableListAdapter()
+    161:162:public void setActionBarContentView(int)
+    166:167:public void setActionBarContentView(android.view.View,android.view.ViewGroup$LayoutParams)
+    191:191:public long getSelectedId()
+    206:206:public long getSelectedPosition()
+    221:221:public boolean setSelectedChild(int,int,boolean)
+    230:231:public void setSelectedGroup(int)
+greendroid.app.GDListActivity:
+    59:60:public GDListActivity(greendroid.widget.ActionBar$Type)
+    83:84:public void setSelection(int)
+    92:92:public int getSelectedItemPosition()
+    101:101:public long getSelectedItemId()
+    111:112:public android.widget.ListView getListView()
+    123:123:public android.widget.ListAdapter getListAdapter()
+    190:191:public void setActionBarContentView(int)
+    195:196:public void setActionBarContentView(android.view.View,android.view.ViewGroup$LayoutParams)
+greendroid.app.GDTabActivity:
+    128:128:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem)
+    132:132:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem,int)
+    136:136:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem$Type)
+    140:140:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem$Type,int)
+    144:144:public android.widget.FrameLayout getContentView()
+    180:181:public void addTab(java.lang.String,int,android.content.Intent)
+    184:194:public void addTab(java.lang.String,java.lang.CharSequence,android.content.Intent)
+    198:198:protected android.view.View createTabIndicator(java.lang.CharSequence)
+    212:212:protected android.view.View createTabIndicator(java.lang.String,java.lang.CharSequence,android.view.ViewGroup)
+greendroid.graphics.drawable.ActionBarDrawable:
+    52:53:public ActionBarDrawable(android.content.res.Resources,int)
+    57:58:public ActionBarDrawable(android.content.res.Resources,android.graphics.drawable.Drawable)
+    62:63:public ActionBarDrawable(android.content.res.Resources,int,int,int)
+    67:70:public ActionBarDrawable(android.content.res.Resources,android.graphics.drawable.Drawable,int,int)
+    82:83:public ActionBarDrawable(android.content.Context,int,int,int)
+greendroid.graphics.drawable.DrawableStateSet:
+    18:18:public DrawableStateSet()
+greendroid.image.ChainImageProcessor
+greendroid.image.EmojImageCache
+greendroid.image.EmojImageLoader:
+    java.lang.String mFilePath
+    java.lang.String mThumbFile
+greendroid.image.ImageCache:
+    41:41:public static greendroid.image.ImageCache from(android.content.Context)
+    58:58:public int getLength()
+    75:101:public void flush(java.lang.String[],java.lang.String)
+    103:117:public void flush(java.util.List)
+greendroid.image.ImageLoader:
+    static final int ON_START
+    static final int ON_FAIL
+    static final int ON_END
+    92:92:public java.util.concurrent.Future loadImage(java.lang.String,greendroid.image.ImageLoader$ImageLoaderCallback)
+    96:96:public java.util.concurrent.Future loadImage(java.lang.String,greendroid.image.ImageLoader$ImageLoaderCallback,greendroid.image.ImageProcessor)
+greendroid.image.ImageRequest:
+    61:62:public ImageRequest(java.lang.String,greendroid.image.ImageRequest$ImageRequestCallback)
+    65:66:public ImageRequest(java.lang.String,greendroid.image.ImageRequest$ImageRequestCallback,greendroid.image.ImageProcessor)
+    76:77:public void setImageRequestCallback(greendroid.image.ImageRequest$ImageRequestCallback)
+    80:80:public java.lang.String getUrl()
+greendroid.image.MaskImageProcessor
+greendroid.image.PreImageRequest:
+    24:25:public void setWidth(int)
+    27:28:public void setHeight(int)
+greendroid.image.ScaleImageProcessor:
+    131:131:public int getMyWidth()
+    134:134:public int getMyHeight()
+greendroid.util.Config
+greendroid.util.FileType:
+    166:166:public java.lang.String getValue()
+    170:171:public void setValue(java.lang.String)
+greendroid.util.FileTypeJudge
+greendroid.util.GDUtils:
+    33:34:private GDUtils()
+    57:57:public static greendroid.image.EmojImageCache getEmojImageCache(android.content.Context)
+greendroid.util.Md5Util
+greendroid.util.Time
+greendroid.widget.ActionBar:
+    public static final int NONE
+    177:177:public greendroid.widget.ActionBarItem addItem(greendroid.widget.ActionBarItem$Type)
+    181:181:public greendroid.widget.ActionBarItem addItem(greendroid.widget.ActionBarItem$Type,int)
+    185:185:public greendroid.widget.ActionBarItem addItem(greendroid.widget.ActionBarItem)
+    190:220:public greendroid.widget.ActionBarItem addItem(greendroid.widget.ActionBarItem,int)
+    231:232:public void removeItem(greendroid.widget.ActionBarItem)
+    236:244:public void removeItem(int)
+    247:274:public void setType(greendroid.widget.ActionBar$Type)
+    278:282:public greendroid.widget.ActionBarItem newActionBarItem(java.lang.Class)
+greendroid.widget.ActionBar$OnActionBarListener:
+    public static final int HOME_ITEM
+greendroid.widget.ActionBarItem:
+    protected android.graphics.drawable.Drawable mDrawable
+    protected java.lang.CharSequence mContentDescription
+    protected android.content.Context mContext
+    protected greendroid.widget.ActionBar mActionBar
+    private int mItemId
+    private static synthetic int[] $SWITCH_TABLE$greendroid$widget$ActionBarItem$Type
+    76:78:void setActionBar(greendroid.widget.ActionBar)
+    81:81:public android.graphics.drawable.Drawable getDrawable()
+    85:85:public greendroid.widget.ActionBarItem setDrawable(int)
+    89:95:public greendroid.widget.ActionBarItem setDrawable(android.graphics.drawable.Drawable)
+    99:99:public java.lang.CharSequence getContentDescription()
+    103:103:public greendroid.widget.ActionBarItem setContentDescription(int)
+    107:113:public greendroid.widget.ActionBarItem setContentDescription(java.lang.CharSequence)
+    130:130:protected void onDrawableChanged()
+    133:133:protected void onContentDescriptionChanged()
+    139:140:void setItemId(int)
+    143:143:public int getItemId()
+    148:299:static greendroid.widget.ActionBarItem createWithType(greendroid.widget.ActionBar,greendroid.widget.ActionBarItem$Type)
+    32:32:static synthetic int[] $SWITCH_TABLE$greendroid$widget$ActionBarItem$Type()
+greendroid.widget.ActionBarItem$Type
+greendroid.widget.AsyncImageView:
+    private static final int IMAGE_SOURCE_UNKNOWN
+    private static final int IMAGE_SOURCE_RESOURCE
+    private static final int IMAGE_SOURCE_DRAWABLE
+    private static final int IMAGE_SOURCE_BITMAP
+    152:152:public boolean isLoading()
+    162:162:public boolean isLoaded()
+    172:178:public void setPaused(boolean)
+    207:208:public void setOptions(android.graphics.BitmapFactory$Options)
+    314:317:public void setDefaultImageBitmap(android.graphics.Bitmap)
+    330:335:public void recycle()
+    342:345:public void setDefaultImageResource(int)
+    359:359:public greendroid.image.ImageProcessor getImageProcessor()
+greendroid.widget.ItemAdapter
+greendroid.widget.ItemAdapter$TypeInfo
+greendroid.widget.LoaderActionBarItem
+greendroid.widget.NormalActionBarItem
+greendroid.widget.PageIndicator:
+    public static final int NO_ACTIVE_DOT
+    private static final int MIN_DOT_COUNT
+    129:129:public int getDotCount()
+    159:159:public int getActiveDot()
+    198:198:public android.graphics.drawable.Drawable getDotDrawable()
+    245:245:public int getDotSpacing()
+    267:267:public int getGravity()
+    290:290:public int getDotType()
+greendroid.widget.PageIndicator$DotType
+greendroid.widget.PagedAdapter:
+    public abstract java.lang.Object getItem(int)
+    public abstract long getItemId(int)
+    69:70:public void notifyDataSetChanged()
+greendroid.widget.PagedView:
+    private static final int INVALID_PAGE
+    private static final int MINIMUM_PAGE_CHANGE_VELOCITY
+    private static final int VELOCITY_UNITS
+    private static final int FRAME_RATE
+    427:428:public void smoothScrollToNext()
+    434:435:public void smoothScrollToPrevious()
+    443:444:public void scrollToPage(int)
+    450:451:public void scrollToNext()
+    457:458:public void scrollToPrevious()
+greendroid.widget.QuickAction
+greendroid.widget.QuickActionBar
+greendroid.widget.QuickActionBar$1
+greendroid.widget.QuickActionBar$2
+greendroid.widget.QuickActionGrid
+greendroid.widget.QuickActionGrid$1
+greendroid.widget.QuickActionGrid$2
+greendroid.widget.QuickActionWidget:
+    protected static final int MEASURE_AND_LAYOUT_DONE
+    private greendroid.widget.QuickActionWidget$OnQuickActionClickListener mOnQuickActionClickListener
+    140:141:public void setArrowOffsetY(int)
+    149:149:protected int getScreenWidth()
+    170:171:public void setDismissOnClick(boolean)
+    174:174:public boolean getDismissOnClick()
+    181:182:public void setOnQuickActionClickListener(greendroid.widget.QuickActionWidget$OnQuickActionClickListener)
+    193:197:public void addQuickAction(greendroid.widget.QuickAction)
+    203:207:public void clearAllQuickActions()
+    310:310:protected greendroid.widget.QuickActionWidget$OnQuickActionClickListener getOnQuickActionClickListener()
+greendroid.widget.QuickActionWidget$OnQuickActionClickListener
+greendroid.widget.SegmentedAdapter:
+    private final android.database.DataSetObservable mDataSetObservable
+    28:28:public SegmentedAdapter()
+    63:64:public void registerDataSetObserver(android.database.DataSetObserver)
+    73:74:public void unregisterDataSetObserver(android.database.DataSetObserver)
+    81:82:public void notifyDataSetChanged()
+greendroid.widget.SegmentedBar:
+    65:66:public SegmentedBar(android.content.Context)
+    101:102:public void setDividerDrawable(android.graphics.drawable.Drawable)
+    110:111:public void setDividerDrawable(int)
+    121:122:public void setDividerWidth(int)
+greendroid.widget.SegmentedHost:
+    62:63:public SegmentedHost(android.content.Context)
+    112:112:public greendroid.widget.SegmentedBar getSegmentedBar()
+    116:116:public android.widget.FrameLayout getContentView()
+    121:130:public void setAdapter(greendroid.widget.SegmentedAdapter)
+greendroid.widget.item.DescriptionItem
+greendroid.widget.item.DrawableItem
+greendroid.widget.item.Item
+greendroid.widget.item.LongTextItem
+greendroid.widget.item.ProgressItem
+greendroid.widget.item.SeparatorItem
+greendroid.widget.item.SubtextItem
+greendroid.widget.item.SubtitleItem
+greendroid.widget.item.TextItem
+greendroid.widget.item.ThumbnailItem
+greendroid.widget.itemview.DescriptionItemView:
+    39:39:public void prepareItemView()
+    42:43:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.DrawableItemView:
+    private android.widget.TextView mTextView
+    private android.widget.ImageView mImageView
+    43:45:public void prepareItemView()
+    48:58:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.ItemView
+greendroid.widget.itemview.LongTextItemView:
+    27:28:public LongTextItemView(android.content.Context)
+    39:39:public void prepareItemView()
+    42:43:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.ProgressItemView:
+    private android.widget.ProgressBar mProgressBar
+    private android.widget.TextView mTextView
+    47:49:public void prepareItemView()
+    52:55:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.SeparatorItemView:
+    39:39:public void prepareItemView()
+    42:44:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.SubtextItemView:
+    private android.widget.TextView mTextView
+    private android.widget.TextView mSubtextView
+    41:43:public void prepareItemView()
+    46:49:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.SubtitleItemView:
+    private android.widget.TextView mTextView
+    private android.widget.TextView mSubtitleView
+    41:43:public void prepareItemView()
+    46:49:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.TextItemView:
+    39:39:public void prepareItemView()
+    42:43:public void setObject(greendroid.widget.item.Item)
+greendroid.widget.itemview.ThumbnailItemView:
+    private android.widget.TextView mTextView
+    private android.widget.TextView mSubtitleView
+    private greendroid.widget.AsyncImageView mThumbnailView
+    47:50:public void prepareItemView()
+    53:58:public void setObject(greendroid.widget.item.Item)
+i:
+    12:12:public i()
+j:
+    37:38:private j()
+org.apache.http.entity.mime.Header:
+    68:68:public java.util.List getFields()
+    84:92:public java.util.List getFields(java.lang.String)
+    97:106:public int removeFields(java.lang.String)
+    110:133:public void setField(org.apache.http.entity.mime.MinimalField)
+org.apache.http.entity.mime.HttpMultipart:
+    138:139:public HttpMultipart(java.lang.String,java.nio.charset.Charset,java.lang.String)
+    142:143:public HttpMultipart(java.lang.String,java.lang.String)
+    146:146:public java.lang.String getSubType()
+    150:150:public java.nio.charset.Charset getCharset()
+    154:154:public org.apache.http.entity.mime.HttpMultipartMode getMode()
+org.apache.http.entity.mime.MIME:
+    public static final java.lang.String CONTENT_TYPE
+    public static final java.lang.String CONTENT_TRANSFER_ENC
+    public static final java.lang.String CONTENT_DISPOSITION
+    public static final java.lang.String ENC_8BIT
+    public static final java.lang.String ENC_BINARY
+    36:36:public MIME()
+org.apache.http.entity.mime.MultipartEntity:
+    93:94:public MultipartEntity(org.apache.http.entity.mime.HttpMultipartMode)
+    132:133:public void addPart(java.lang.String,org.apache.http.entity.mime.content.ContentBody)
+org.apache.http.entity.mime.content.AbstractContentBody:
+    61:61:public java.lang.String getMediaType()
+    65:65:public java.lang.String getSubType()
+org.apache.http.entity.mime.content.ByteArrayBody
+org.apache.http.entity.mime.content.ContentDescriptor:
+    public abstract java.lang.String getMediaType()
+    public abstract java.lang.String getSubType()
+org.apache.http.entity.mime.content.FileBody:
+    81:82:public FileBody(java.io.File)
+    85:85:public java.io.InputStream getInputStream()
+    93:94:public void writeTo(java.io.OutputStream,int)
+    130:130:public java.io.File getFile()
+org.apache.http.entity.mime.content.InputStreamBody
+org.apache.http.entity.mime.content.StringBody:
+    58:60:public static org.apache.http.entity.mime.content.StringBody create(java.lang.String,java.lang.String,java.nio.charset.Charset)
+    69:69:public static org.apache.http.entity.mime.content.StringBody create(java.lang.String,java.nio.charset.Charset)
+    76:76:public static org.apache.http.entity.mime.content.StringBody create(java.lang.String)
+    126:127:public StringBody(java.lang.String)
+    130:130:public java.io.Reader getReader()
+    140:141:public void writeTo(java.io.OutputStream,int)
+w:
+    3:3:public w()

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/waps_custom_ad_layout"
+    android:background="@drawable/waps_custom_ad_selector"
+    android:clickable="true"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <LinearLayout
+    android:orientation="vertical"
+    android:gravity="center_vertical|center"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+        <ImageView 
+        android:id="@+id/waps_custom_ad_icon"     
+        android:gravity="center"      
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
+    </LinearLayout>
+	
+     <LinearLayout     
+    android:orientation="vertical"
+    android:layout_weight="1.0"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+         <TextView
+        android:id="@+id/waps_custom_ad_appname" 
+        android:text=""    
+        android:textSize="@dimen/LargeTextSize"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"  />
+         <TextView 
+        android:id="@+id/waps_custom_ad_appdetail"      
+        android:text=""    
+        android:textSize="@dimen/SmallTextSize"
+        android:textColor="@color/orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"  />
+    </LinearLayout>     
+</LinearLayout>

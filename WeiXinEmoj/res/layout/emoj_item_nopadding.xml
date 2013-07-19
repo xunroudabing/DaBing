@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
+    android:background="@drawable/emoj_item_selector"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.dabing.emoj.widget.EmojImageView
+	    android:id="@+id/emoj_item_img"
+	    android:layout_gravity="center"
+	    dabing:inDensity="hdpi"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
+
+</LinearLayout>

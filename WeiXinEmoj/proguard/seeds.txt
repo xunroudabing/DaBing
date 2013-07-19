@@ -1,0 +1,2659 @@
+android.support.v4.app.BackStackState
+android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.Fragment$SavedState
+android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentActivity
+android.support.v4.app.FragmentActivity: FragmentActivity()
+android.support.v4.app.FragmentManagerState
+android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentState
+android.support.v4.app.FragmentState: android.os.Parcelable$Creator CREATOR
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status[] values()
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String)
+android.support.v4.view.PagerTitleStrip
+android.support.v4.view.PagerTitleStrip: PagerTitleStrip(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager
+android.support.v4.view.ViewPager: ViewPager(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager$LayoutParams
+android.support.v4.view.ViewPager$LayoutParams: ViewPager$LayoutParams(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager$SavedState
+android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
+cn.waps.AdInfo
+cn.waps.AdInfo: java.lang.String a
+cn.waps.AdInfo: java.lang.String b
+cn.waps.AdInfo: java.lang.String c
+cn.waps.AdInfo: int d
+cn.waps.AdInfo: java.lang.String e
+cn.waps.AdInfo: java.lang.String f
+cn.waps.AdInfo: java.lang.String g
+cn.waps.AdInfo: java.lang.String h
+cn.waps.AdInfo: java.lang.String[] i
+cn.waps.AdInfo: java.lang.String j
+cn.waps.AdInfo: java.lang.String k
+cn.waps.AdInfo: android.graphics.Bitmap l
+cn.waps.AdInfo: java.lang.String m
+cn.waps.AdInfo: java.lang.String n
+cn.waps.AdInfo: java.lang.String o
+cn.waps.AdInfo: java.lang.String p
+cn.waps.AdInfo: java.lang.String q
+cn.waps.AdInfo: java.lang.String r
+cn.waps.AdInfo: java.lang.String s
+cn.waps.AdInfo: java.lang.String t
+cn.waps.AdInfo: java.lang.String u
+cn.waps.AdInfo: java.lang.String v
+cn.waps.AdInfo: int w
+cn.waps.AdInfo: int x
+cn.waps.AdInfo: android.graphics.Bitmap y
+cn.waps.AdInfo: java.lang.String z
+cn.waps.AdInfo: AdInfo()
+cn.waps.AdInfo: android.graphics.Bitmap getAdIcon()
+cn.waps.AdInfo: void a(android.graphics.Bitmap)
+cn.waps.AdInfo: java.lang.String getAdId()
+cn.waps.AdInfo: void a(java.lang.String)
+cn.waps.AdInfo: java.lang.String a()
+cn.waps.AdInfo: void b(java.lang.String)
+cn.waps.AdInfo: java.lang.String getAdText()
+cn.waps.AdInfo: void c(java.lang.String)
+cn.waps.AdInfo: java.lang.String b()
+cn.waps.AdInfo: void d(java.lang.String)
+cn.waps.AdInfo: java.lang.String c()
+cn.waps.AdInfo: void e(java.lang.String)
+cn.waps.AdInfo: java.lang.String getAdPackage()
+cn.waps.AdInfo: void f(java.lang.String)
+cn.waps.AdInfo: java.lang.String d()
+cn.waps.AdInfo: void g(java.lang.String)
+cn.waps.AdInfo: java.lang.String getAdName()
+cn.waps.AdInfo: void h(java.lang.String)
+cn.waps.AdInfo: int getAdPoints()
+cn.waps.AdInfo: void a(int)
+cn.waps.AdInfo: java.lang.String getDescription()
+cn.waps.AdInfo: void i(java.lang.String)
+cn.waps.AdInfo: java.lang.String getVersion()
+cn.waps.AdInfo: void j(java.lang.String)
+cn.waps.AdInfo: java.lang.String getFilesize()
+cn.waps.AdInfo: void k(java.lang.String)
+cn.waps.AdInfo: java.lang.String getProvider()
+cn.waps.AdInfo: void l(java.lang.String)
+cn.waps.AdInfo: java.lang.String[] getImageUrls()
+cn.waps.AdInfo: void a(java.lang.String[])
+cn.waps.AdInfo: java.lang.String e()
+cn.waps.AdInfo: void m(java.lang.String)
+cn.waps.AdInfo: java.lang.String getAction()
+cn.waps.AdInfo: void n(java.lang.String)
+cn.waps.AdInfo: void o(java.lang.String)
+cn.waps.AdInfo: java.lang.String f()
+cn.waps.AdInfo: void p(java.lang.String)
+cn.waps.AdInfo: int g()
+cn.waps.AdInfo: void b(int)
+cn.waps.AdInfo: int h()
+cn.waps.AdInfo: void c(int)
+cn.waps.AdInfo: android.graphics.Bitmap i()
+cn.waps.AdInfo: void b(android.graphics.Bitmap)
+cn.waps.AdInfo: java.lang.String j()
+cn.waps.AdInfo: void q(java.lang.String)
+cn.waps.AdView
+cn.waps.AdView: android.content.Context c
+cn.waps.AdView: android.widget.LinearLayout d
+cn.waps.AdView: cn.waps.am e
+cn.waps.AdView: long f
+cn.waps.AdView: android.widget.RelativeLayout g
+cn.waps.AdView: int h
+cn.waps.AdView: boolean i
+cn.waps.AdView: android.os.Handler mHandler
+cn.waps.AdView: android.webkit.WebView j
+cn.waps.AdView: boolean a
+cn.waps.AdView: boolean k
+cn.waps.AdView: int l
+cn.waps.AdView: float m
+cn.waps.AdView: java.lang.String n
+cn.waps.AdView: java.lang.String o
+cn.waps.AdView: java.lang.String p
+cn.waps.AdView: java.util.Map q
+cn.waps.AdView: java.lang.Thread b
+cn.waps.AdView: AdView(android.content.Context,android.widget.LinearLayout)
+cn.waps.AdView: AdView()
+cn.waps.AdView: void DisplayAd()
+cn.waps.AdView: void DisplayAd(int)
+cn.waps.AdView: android.webkit.WebView a()
+cn.waps.AdView: void a(java.lang.String)
+cn.waps.AdView: android.content.Context a(cn.waps.AdView)
+cn.waps.AdView: boolean b(cn.waps.AdView)
+cn.waps.AdView: java.lang.String c(cn.waps.AdView)
+cn.waps.AdView: boolean a(cn.waps.AdView,boolean)
+cn.waps.AdView: long d(cn.waps.AdView)
+cn.waps.AdView: int e(cn.waps.AdView)
+cn.waps.AdView: boolean f(cn.waps.AdView)
+cn.waps.AdView: boolean b(cn.waps.AdView,boolean)
+cn.waps.AdView: long a(cn.waps.AdView,long)
+cn.waps.AdView: android.widget.RelativeLayout g(cn.waps.AdView)
+cn.waps.AdView: android.os.Handler h(cn.waps.AdView)
+cn.waps.AdView: int a(cn.waps.AdView,int)
+cn.waps.AdView: int i(cn.waps.AdView)
+cn.waps.AdView: void a(cn.waps.AdView,java.lang.String)
+cn.waps.AdView: void <clinit>()
+cn.waps.AnimationType
+cn.waps.AnimationType: int NONE
+cn.waps.AnimationType: int RANDOM
+cn.waps.AnimationType: int SCALE_CENTER
+cn.waps.AnimationType: int ROTATE
+cn.waps.AnimationType: int ALPHA
+cn.waps.AnimationType: int TRANSLATE_FROM_RIGHT
+cn.waps.AnimationType: int TRANSLATE_FROM_LEFT
+cn.waps.AnimationType: int MINI_RANDOM
+cn.waps.AnimationType: int[] a
+cn.waps.AnimationType: int b
+cn.waps.AnimationType: AnimationType()
+cn.waps.AnimationType: AnimationType(int)
+cn.waps.AnimationType: AnimationType(int[])
+cn.waps.AnimationType: void startRotation(float,float,android.view.View)
+cn.waps.AnimationType: void startMiniAdAnimation(int,android.view.View)
+cn.waps.AnimationType: void startAnimation(android.view.View)
+cn.waps.AnimationType: java.util.List getAnimationList2(android.view.View)
+cn.waps.AnimationType: java.util.List getAnimationList(android.view.View)
+cn.waps.AnimationType: java.util.Map getAnimation(android.view.View)
+cn.waps.AppConnect
+cn.waps.AppConnect: java.lang.String LIBRARY_VERSION_NUMBER
+cn.waps.AppConnect: java.util.concurrent.ScheduledExecutorService p
+cn.waps.AppConnect: cn.waps.ad q
+cn.waps.AppConnect: android.content.Context a
+cn.waps.AppConnect: cn.waps.AppConnect r
+cn.waps.AppConnect: cn.waps.am s
+cn.waps.AppConnect: java.lang.String b
+cn.waps.AppConnect: java.lang.String t
+cn.waps.AppConnect: java.lang.String u
+cn.waps.AppConnect: java.lang.String v
+cn.waps.AppConnect: java.lang.String w
+cn.waps.AppConnect: java.lang.String x
+cn.waps.AppConnect: java.lang.String y
+cn.waps.AppConnect: java.lang.String z
+cn.waps.AppConnect: java.lang.String A
+cn.waps.AppConnect: java.lang.String B
+cn.waps.AppConnect: java.lang.String C
+cn.waps.AppConnect: java.lang.String D
+cn.waps.AppConnect: java.lang.String E
+cn.waps.AppConnect: java.lang.String F
+cn.waps.AppConnect: java.lang.String G
+cn.waps.AppConnect: java.lang.String H
+cn.waps.AppConnect: java.lang.String I
+cn.waps.AppConnect: java.lang.String J
+cn.waps.AppConnect: java.lang.String c
+cn.waps.AppConnect: java.lang.String K
+cn.waps.AppConnect: java.lang.String L
+cn.waps.AppConnect: int M
+cn.waps.AppConnect: int N
+cn.waps.AppConnect: java.lang.String O
+cn.waps.AppConnect: boolean P
+cn.waps.AppConnect: boolean Q
+cn.waps.AppConnect: java.lang.String R
+cn.waps.AppConnect: java.lang.String S
+cn.waps.AppConnect: java.lang.String T
+cn.waps.AppConnect: java.lang.String U
+cn.waps.AppConnect: java.lang.String V
+cn.waps.AppConnect: java.lang.String W
+cn.waps.AppConnect: java.lang.String X
+cn.waps.AppConnect: java.lang.String Y
+cn.waps.AppConnect: java.lang.String Z
+cn.waps.AppConnect: java.lang.String aa
+cn.waps.AppConnect: java.lang.String ab
+cn.waps.AppConnect: java.lang.String ac
+cn.waps.AppConnect: java.lang.String ad
+cn.waps.AppConnect: java.lang.String ae
+cn.waps.AppConnect: java.lang.String af
+cn.waps.AppConnect: java.lang.String ag
+cn.waps.AppConnect: java.lang.String ah
+cn.waps.AppConnect: java.lang.String ai
+cn.waps.AppConnect: java.lang.String aj
+cn.waps.AppConnect: java.lang.String ak
+cn.waps.AppConnect: java.lang.String al
+cn.waps.AppConnect: java.lang.String am
+cn.waps.AppConnect: java.lang.String an
+cn.waps.AppConnect: java.lang.String ao
+cn.waps.AppConnect: java.lang.String ap
+cn.waps.AppConnect: java.lang.String aq
+cn.waps.AppConnect: java.lang.String ar
+cn.waps.AppConnect: java.lang.String as
+cn.waps.AppConnect: java.lang.String at
+cn.waps.AppConnect: java.lang.String au
+cn.waps.AppConnect: cn.waps.UpdatePointsNotifier av
+cn.waps.AppConnect: cn.waps.x aw
+cn.waps.AppConnect: cn.waps.ac ax
+cn.waps.AppConnect: cn.waps.w ay
+cn.waps.AppConnect: cn.waps.aa az
+cn.waps.AppConnect: cn.waps.z aA
+cn.waps.AppConnect: java.lang.String aB
+cn.waps.AppConnect: java.lang.String aC
+cn.waps.AppConnect: java.lang.String aD
+cn.waps.AppConnect: int aE
+cn.waps.AppConnect: boolean aF
+cn.waps.AppConnect: android.content.ComponentName d
+cn.waps.AppConnect: android.app.ActivityManager$RunningTaskInfo e
+cn.waps.AppConnect: java.lang.String aG
+cn.waps.AppConnect: java.lang.String aH
+cn.waps.AppConnect: java.lang.String aI
+cn.waps.AppConnect: boolean aJ
+cn.waps.AppConnect: boolean aK
+cn.waps.AppConnect: java.lang.String aL
+cn.waps.AppConnect: java.lang.String aM
+cn.waps.AppConnect: boolean aN
+cn.waps.AppConnect: java.util.Map aO
+cn.waps.AppConnect: java.util.Map f
+cn.waps.AppConnect: boolean aP
+cn.waps.AppConnect: boolean aQ
+cn.waps.AppConnect: boolean aR
+cn.waps.AppConnect: int g
+cn.waps.AppConnect: int h
+cn.waps.AppConnect: java.util.List i
+cn.waps.AppConnect: java.lang.String j
+cn.waps.AppConnect: cn.waps.s aS
+cn.waps.AppConnect: java.lang.String aT
+cn.waps.AppConnect: java.lang.String aU
+cn.waps.AppConnect: java.lang.String aV
+cn.waps.AppConnect: cn.waps.v aW
+cn.waps.AppConnect: boolean k
+cn.waps.AppConnect: cn.waps.ai l
+cn.waps.AppConnect: java.lang.String aX
+cn.waps.AppConnect: java.lang.String aY
+cn.waps.AppConnect: boolean m
+cn.waps.AppConnect: boolean aZ
+cn.waps.AppConnect: boolean ba
+cn.waps.AppConnect: boolean finalize_tag
+cn.waps.AppConnect: byte[] bb
+cn.waps.AppConnect: boolean n
+cn.waps.AppConnect: int bc
+cn.waps.AppConnect: java.lang.String bd
+cn.waps.AppConnect: boolean be
+cn.waps.AppConnect: android.app.Dialog bf
+cn.waps.AppConnect: cn.waps.ab bg
+cn.waps.AppConnect: java.util.List bh
+cn.waps.AppConnect: java.util.List o
+cn.waps.AppConnect: android.os.Handler bi
+cn.waps.AppConnect: void a(android.content.Context,cn.waps.am)
+cn.waps.AppConnect: void a(android.content.Context)
+cn.waps.AppConnect: void b(android.content.Context)
+cn.waps.AppConnect: cn.waps.AppConnect getInstance(java.lang.String,java.lang.String,android.content.Context)
+cn.waps.AppConnect: cn.waps.AppConnect getInstance(java.lang.String,android.content.Context)
+cn.waps.AppConnect: cn.waps.AppConnect getInstance(android.content.Context)
+cn.waps.AppConnect: java.lang.String c(android.content.Context)
+cn.waps.AppConnect: AppConnect()
+cn.waps.AppConnect: AppConnect(android.content.Context)
+cn.waps.AppConnect: void a(cn.waps.ai)
+cn.waps.AppConnect: java.lang.String d(android.content.Context)
+cn.waps.AppConnect: void a()
+cn.waps.AppConnect: void p()
+cn.waps.AppConnect: boolean c(java.lang.String)
+cn.waps.AppConnect: void setPointsCache(boolean)
+cn.waps.AppConnect: boolean b()
+cn.waps.AppConnect: java.lang.String a(int,android.content.SharedPreferences)
+cn.waps.AppConnect: void setUpdatePointsFlag(boolean)
+cn.waps.AppConnect: boolean c()
+cn.waps.AppConnect: void b(java.lang.String,int)
+cn.waps.AppConnect: boolean d(java.lang.String)
+cn.waps.AppConnect: int getHistoryPoints(android.content.Context)
+cn.waps.AppConnect: java.lang.String getHistoryPointsName(android.content.Context)
+cn.waps.AppConnect: void getPoints(cn.waps.UpdatePointsNotifier)
+cn.waps.AppConnect: void awardPoints(int,cn.waps.UpdatePointsNotifier)
+cn.waps.AppConnect: void spendPoints(int,cn.waps.UpdatePointsNotifier)
+cn.waps.AppConnect: void q()
+cn.waps.AppConnect: void r()
+cn.waps.AppConnect: void s()
+cn.waps.AppConnect: java.lang.String getConfig(java.lang.String,java.lang.String)
+cn.waps.AppConnect: java.lang.String getConfig(java.lang.String)
+cn.waps.AppConnect: java.lang.String getConfig_Sync(java.lang.String)
+cn.waps.AppConnect: java.util.Map getConfigMap()
+cn.waps.AppConnect: java.util.Map e(java.lang.String)
+cn.waps.AppConnect: boolean f(java.lang.String)
+cn.waps.AppConnect: void checkUpdate(android.content.Context)
+cn.waps.AppConnect: boolean g(java.lang.String)
+cn.waps.AppConnect: void h(java.lang.String)
+cn.waps.AppConnect: org.w3c.dom.Document i(java.lang.String)
+cn.waps.AppConnect: java.lang.String a(org.w3c.dom.NodeList)
+cn.waps.AppConnect: void finalize()
+cn.waps.AppConnect: void showMore(android.content.Context)
+cn.waps.AppConnect: void showMore(android.content.Context,java.lang.String)
+cn.waps.AppConnect: android.content.Intent showMore_forTab(android.content.Context)
+cn.waps.AppConnect: android.content.Intent showMore_forTab(android.content.Context,java.lang.String)
+cn.waps.AppConnect: void showOffers(android.content.Context)
+cn.waps.AppConnect: void showOffers(android.content.Context,java.lang.String)
+cn.waps.AppConnect: void showGameOffers(android.content.Context)
+cn.waps.AppConnect: void showGameOffers(android.content.Context,java.lang.String)
+cn.waps.AppConnect: void showAppOffers(android.content.Context)
+cn.waps.AppConnect: void showAppOffers(android.content.Context,java.lang.String)
+cn.waps.AppConnect: void a(android.content.Context,java.lang.String,java.lang.String)
+cn.waps.AppConnect: android.content.Intent showOffers_forTab(android.content.Context)
+cn.waps.AppConnect: android.content.Intent showOffers_forTab(android.content.Context,java.lang.String)
+cn.waps.AppConnect: void a(java.lang.String,int)
+cn.waps.AppConnect: void t()
+cn.waps.AppConnect: void showFeedback()
+cn.waps.AppConnect: android.content.Intent showFeedback_forTab()
+cn.waps.AppConnect: java.lang.String a(byte[])
+cn.waps.AppConnect: java.lang.String a(byte[],java.lang.String)
+cn.waps.AppConnect: void setCrashReport(boolean)
+cn.waps.AppConnect: void u()
+cn.waps.AppConnect: java.lang.String d()
+cn.waps.AppConnect: void setAdBackColor(int)
+cn.waps.AppConnect: void setAdForeColor(int)
+cn.waps.AppConnect: java.util.Map e(android.content.Context)
+cn.waps.AppConnect: void initAdInfo()
+cn.waps.AppConnect: java.util.List getAdInfoList()
+cn.waps.AppConnect: cn.waps.AdInfo getAdInfo()
+cn.waps.AppConnect: cn.waps.AdInfo a(java.util.List)
+cn.waps.AppConnect: cn.waps.AdInfo a(java.util.List,java.lang.String)
+cn.waps.AppConnect: void downloadAd(java.lang.String)
+cn.waps.AppConnect: void clickAd(java.lang.String)
+cn.waps.AppConnect: void a(java.lang.String,java.lang.String)
+cn.waps.AppConnect: java.util.List a(java.io.InputStream)
+cn.waps.AppConnect: android.graphics.Bitmap a(android.content.Context,java.lang.String,java.lang.String,java.lang.String)
+cn.waps.AppConnect: void setAdViewClassName(java.lang.String)
+cn.waps.AppConnect: java.lang.String f(android.content.Context)
+cn.waps.AppConnect: java.lang.String g(android.content.Context)
+cn.waps.AppConnect: java.lang.Class h(android.content.Context)
+cn.waps.AppConnect: void setWebViewTransparent(boolean)
+cn.waps.AppConnect: void i(android.content.Context)
+cn.waps.AppConnect: void initPopAd(android.content.Context)
+cn.waps.AppConnect: void showPopAd(android.content.Context)
+cn.waps.AppConnect: void showPopAd(android.content.Context,int)
+cn.waps.AppConnect: void a(android.content.Context,java.util.List,boolean,int)
+cn.waps.AppConnect: android.app.Dialog getPopAdDialog()
+cn.waps.AppConnect: java.util.List b(java.io.InputStream)
+cn.waps.AppConnect: android.graphics.Bitmap b(android.content.Context,java.lang.String,java.lang.String,java.lang.String)
+cn.waps.AppConnect: void b(java.util.List)
+cn.waps.AppConnect: android.widget.LinearLayout a(cn.waps.AdInfo,android.content.Context,android.app.Dialog)
+cn.waps.AppConnect: void j(java.lang.String)
+cn.waps.AppConnect: void a(java.lang.String,android.app.Dialog)
+cn.waps.AppConnect: android.widget.LinearLayout getPopAdView(android.content.Context)
+cn.waps.AppConnect: android.widget.LinearLayout getPopAdView(android.content.Context,int,int)
+cn.waps.AppConnect: java.lang.String a(cn.waps.AppConnect)
+cn.waps.AppConnect: cn.waps.am e()
+cn.waps.AppConnect: boolean a(cn.waps.AppConnect,java.lang.String)
+cn.waps.AppConnect: java.util.Map b(cn.waps.AppConnect,java.lang.String)
+cn.waps.AppConnect: java.lang.String b(cn.waps.AppConnect)
+cn.waps.AppConnect: boolean f()
+cn.waps.AppConnect: java.lang.String c(cn.waps.AppConnect)
+cn.waps.AppConnect: java.lang.String g()
+cn.waps.AppConnect: void c(cn.waps.AppConnect,java.lang.String)
+cn.waps.AppConnect: boolean a(boolean)
+cn.waps.AppConnect: boolean h()
+cn.waps.AppConnect: java.lang.String i()
+cn.waps.AppConnect: cn.waps.z a(cn.waps.AppConnect,cn.waps.z)
+cn.waps.AppConnect: cn.waps.z d(cn.waps.AppConnect)
+cn.waps.AppConnect: boolean j()
+cn.waps.AppConnect: boolean k()
+cn.waps.AppConnect: boolean b(boolean)
+cn.waps.AppConnect: boolean c(boolean)
+cn.waps.AppConnect: void e(cn.waps.AppConnect)
+cn.waps.AppConnect: java.lang.String a(java.lang.String)
+cn.waps.AppConnect: java.lang.String l()
+cn.waps.AppConnect: java.lang.String m()
+cn.waps.AppConnect: java.lang.String f(cn.waps.AppConnect)
+cn.waps.AppConnect: boolean d(cn.waps.AppConnect,java.lang.String)
+cn.waps.AppConnect: java.lang.String g(cn.waps.AppConnect)
+cn.waps.AppConnect: java.lang.String h(cn.waps.AppConnect)
+cn.waps.AppConnect: cn.waps.UpdatePointsNotifier n()
+cn.waps.AppConnect: java.lang.String a(cn.waps.AppConnect,int,android.content.SharedPreferences)
+cn.waps.AppConnect: boolean e(cn.waps.AppConnect,java.lang.String)
+cn.waps.AppConnect: java.lang.String i(cn.waps.AppConnect)
+cn.waps.AppConnect: void a(cn.waps.AppConnect,java.lang.String,int)
+cn.waps.AppConnect: java.lang.String j(cn.waps.AppConnect)
+cn.waps.AppConnect: java.lang.String o()
+cn.waps.AppConnect: java.lang.String b(java.lang.String)
+cn.waps.AppConnect: boolean f(cn.waps.AppConnect,java.lang.String)
+cn.waps.AppConnect: java.lang.String k(cn.waps.AppConnect)
+cn.waps.AppConnect: java.util.List l(cn.waps.AppConnect)
+cn.waps.AppConnect: boolean a(cn.waps.AppConnect,boolean)
+cn.waps.AppConnect: java.util.List a(cn.waps.AppConnect,java.util.List)
+cn.waps.AppConnect: java.util.List a(cn.waps.AppConnect,java.io.InputStream)
+cn.waps.AppConnect: void a(cn.waps.AppConnect,android.content.Context,java.util.List,boolean,int)
+cn.waps.AppConnect: void b(cn.waps.AppConnect,java.util.List)
+cn.waps.AppConnect: void a(cn.waps.AppConnect,java.lang.String,android.app.Dialog)
+cn.waps.AppConnect: java.lang.String m(cn.waps.AppConnect)
+cn.waps.AppConnect: void g(cn.waps.AppConnect,java.lang.String)
+cn.waps.AppConnect: void <clinit>()
+cn.waps.AppLog
+cn.waps.AppLog: boolean showLog
+cn.waps.AppLog: AppLog()
+cn.waps.AppLog: void enableLogging(boolean)
+cn.waps.AppLog: void i(java.lang.String,java.lang.String)
+cn.waps.AppLog: void e(java.lang.String,java.lang.String)
+cn.waps.AppLog: void e(java.lang.String,java.lang.String,java.lang.Throwable)
+cn.waps.AppLog: void w(java.lang.String,java.lang.String)
+cn.waps.AppLog: void w(java.lang.String,java.lang.String,java.lang.Throwable)
+cn.waps.AppLog: void d(java.lang.String,java.lang.String)
+cn.waps.AppLog: void v(java.lang.String,java.lang.String)
+cn.waps.AppLog: void <clinit>()
+cn.waps.MiniAdView
+cn.waps.MiniAdView: android.os.Handler mHandler
+cn.waps.MiniAdView: android.widget.LinearLayout a
+cn.waps.MiniAdView: boolean b
+cn.waps.MiniAdView: android.view.View c
+cn.waps.MiniAdView: android.content.Context d
+cn.waps.MiniAdView: long e
+cn.waps.MiniAdView: int f
+cn.waps.MiniAdView: int[] h
+cn.waps.MiniAdView: int i
+cn.waps.MiniAdView: cn.waps.AnimationType j
+cn.waps.MiniAdView: int k
+cn.waps.MiniAdView: java.lang.String l
+cn.waps.MiniAdView: int m
+cn.waps.MiniAdView: boolean n
+cn.waps.MiniAdView: int o
+cn.waps.MiniAdView: java.lang.String p
+cn.waps.MiniAdView: int q
+cn.waps.MiniAdView: int r
+cn.waps.MiniAdView: java.lang.String s
+cn.waps.MiniAdView: java.lang.String t
+cn.waps.MiniAdView: long DELETE_ICON_LIMIT_TIME
+cn.waps.MiniAdView: android.content.SharedPreferences u
+cn.waps.MiniAdView: android.content.SharedPreferences$Editor v
+cn.waps.MiniAdView: cn.waps.AdInfo w
+cn.waps.MiniAdView: java.lang.Runnable mUpdateResults
+cn.waps.MiniAdView: android.widget.TextView g
+cn.waps.MiniAdView: MiniAdView(android.content.Context,android.widget.LinearLayout)
+cn.waps.MiniAdView: MiniAdView()
+cn.waps.MiniAdView: MiniAdView(android.content.Context)
+cn.waps.MiniAdView: cn.waps.MiniAdView setAnimationType(int)
+cn.waps.MiniAdView: cn.waps.MiniAdView setAnimationType(int[])
+cn.waps.MiniAdView: void DisplayAd()
+cn.waps.MiniAdView: void DisplayAd(int)
+cn.waps.MiniAdView: void b()
+cn.waps.MiniAdView: void c()
+cn.waps.MiniAdView: void b(int)
+cn.waps.MiniAdView: android.view.View$OnClickListener getMiniAdClickListener(android.content.Context,int)
+cn.waps.MiniAdView: android.widget.LinearLayout a(android.content.Context,android.graphics.Bitmap,java.lang.String,int)
+cn.waps.MiniAdView: void a(java.lang.String)
+cn.waps.MiniAdView: void a(cn.waps.MiniAdView)
+cn.waps.MiniAdView: boolean b(cn.waps.MiniAdView)
+cn.waps.MiniAdView: int c(cn.waps.MiniAdView)
+cn.waps.MiniAdView: int d(cn.waps.MiniAdView)
+cn.waps.MiniAdView: int a()
+cn.waps.MiniAdView: int a(cn.waps.MiniAdView,int)
+cn.waps.MiniAdView: int a(int)
+cn.waps.MiniAdView: void b(cn.waps.MiniAdView,int)
+cn.waps.MiniAdView: boolean a(cn.waps.MiniAdView,boolean)
+cn.waps.MiniAdView: int e(cn.waps.MiniAdView)
+cn.waps.MiniAdView: void <clinit>()
+cn.waps.OffersWebView
+cn.waps.OffersWebView: android.webkit.WebView k
+cn.waps.OffersWebView: java.lang.String l
+cn.waps.OffersWebView: android.widget.ProgressBar m
+cn.waps.OffersWebView: java.lang.String n
+cn.waps.OffersWebView: java.lang.String o
+cn.waps.OffersWebView: java.lang.String p
+cn.waps.OffersWebView: java.lang.String q
+cn.waps.OffersWebView: java.lang.String r
+cn.waps.OffersWebView: java.lang.String s
+cn.waps.OffersWebView: java.lang.String t
+cn.waps.OffersWebView: java.lang.String u
+cn.waps.OffersWebView: java.lang.String v
+cn.waps.OffersWebView: cn.waps.ag a
+cn.waps.OffersWebView: boolean w
+cn.waps.OffersWebView: java.lang.String x
+cn.waps.OffersWebView: java.lang.String y
+cn.waps.OffersWebView: java.lang.String z
+cn.waps.OffersWebView: java.lang.String A
+cn.waps.OffersWebView: java.lang.String B
+cn.waps.OffersWebView: java.util.Map C
+cn.waps.OffersWebView: java.lang.String b
+cn.waps.OffersWebView: java.lang.String c
+cn.waps.OffersWebView: cn.waps.al d
+cn.waps.OffersWebView: java.lang.String e
+cn.waps.OffersWebView: java.lang.String f
+cn.waps.OffersWebView: cn.waps.aj g
+cn.waps.OffersWebView: java.lang.String h
+cn.waps.OffersWebView: java.io.File i
+cn.waps.OffersWebView: android.app.AlertDialog j
+cn.waps.OffersWebView: boolean D
+cn.waps.OffersWebView: boolean outsideFlag
+cn.waps.OffersWebView: java.lang.String E
+cn.waps.OffersWebView: java.lang.String F
+cn.waps.OffersWebView: java.lang.String G
+cn.waps.OffersWebView: java.lang.String H
+cn.waps.OffersWebView: java.lang.String I
+cn.waps.OffersWebView: java.lang.String J
+cn.waps.OffersWebView: OffersWebView()
+cn.waps.OffersWebView: void onCreate(android.os.Bundle)
+cn.waps.OffersWebView: void a(android.content.Context)
+cn.waps.OffersWebView: void b()
+cn.waps.OffersWebView: void onResume()
+cn.waps.OffersWebView: void onPause()
+cn.waps.OffersWebView: void onDestroy()
+cn.waps.OffersWebView: boolean onKeyDown(int,android.view.KeyEvent)
+cn.waps.OffersWebView: void a(android.os.Bundle)
+cn.waps.OffersWebView: void a(android.content.SharedPreferences)
+cn.waps.OffersWebView: java.lang.String a(cn.waps.OffersWebView)
+cn.waps.OffersWebView: java.util.Map a()
+cn.waps.OffersWebView: android.webkit.WebView b(cn.waps.OffersWebView)
+cn.waps.OffersWebView: java.lang.String c(cn.waps.OffersWebView)
+cn.waps.OffersWebView: void d(cn.waps.OffersWebView)
+cn.waps.OffersWebView: java.lang.String e(cn.waps.OffersWebView)
+cn.waps.OffersWebView: boolean a(cn.waps.OffersWebView,boolean)
+cn.waps.OffersWebView: android.widget.ProgressBar f(cn.waps.OffersWebView)
+cn.waps.OffersWebView: java.lang.String a(cn.waps.OffersWebView,java.lang.String)
+cn.waps.OffersWebView: java.lang.String b(cn.waps.OffersWebView,java.lang.String)
+cn.waps.OffersWebView: void <clinit>()
+cn.waps.SDKUtils
+cn.waps.SDKUtils: android.content.Context a
+cn.waps.SDKUtils: android.content.pm.PackageManager b
+cn.waps.SDKUtils: android.content.pm.ApplicationInfo c
+cn.waps.SDKUtils: java.lang.String d
+cn.waps.SDKUtils: android.content.pm.PackageInfo e
+cn.waps.SDKUtils: android.os.Handler f
+cn.waps.SDKUtils: android.widget.RelativeLayout g
+cn.waps.SDKUtils: android.widget.LinearLayout h
+cn.waps.SDKUtils: SDKUtils(android.content.Context)
+cn.waps.SDKUtils: SDKUtils(android.content.Context,android.os.Handler,android.widget.RelativeLayout,android.widget.LinearLayout)
+cn.waps.SDKUtils: void close()
+cn.waps.SDKUtils: void closeSubmit(java.lang.String)
+cn.waps.SDKUtils: void closeOfDialog(java.lang.String)
+cn.waps.SDKUtils: void submit(java.lang.String,java.lang.String)
+cn.waps.SDKUtils: java.lang.String getWAPS_PID()
+cn.waps.SDKUtils: java.lang.String getWAPS_ID()
+cn.waps.SDKUtils: java.lang.String getUdid()
+cn.waps.SDKUtils: java.lang.String getImsi()
+cn.waps.SDKUtils: java.lang.String getMac_Address()
+cn.waps.SDKUtils: java.lang.String getSDKVersion()
+cn.waps.SDKUtils: java.lang.String getAppVersion(java.lang.String)
+cn.waps.SDKUtils: java.lang.String getDeviceName()
+cn.waps.SDKUtils: int getDeviceOSVersion()
+cn.waps.SDKUtils: java.lang.String getCountryCode()
+cn.waps.SDKUtils: java.lang.String getLanguageCode()
+cn.waps.SDKUtils: java.lang.String getParams()
+cn.waps.SDKUtils: void load(java.lang.String)
+cn.waps.SDKUtils: java.lang.String getInstalled()
+cn.waps.SDKUtils: java.lang.String isInstalled(java.lang.String)
+cn.waps.SDKUtils: java.lang.String getBrowserPackageName(java.lang.String)
+cn.waps.SDKUtils: void goToTargetBrowser(java.lang.String,java.lang.String,android.content.pm.PackageManager)
+cn.waps.SDKUtils: android.content.Intent goToTargetBrowser_Intent(java.lang.String,java.lang.String,android.content.pm.PackageManager)
+cn.waps.SDKUtils: android.content.Intent goToTargetBrowser_Intent(java.lang.String,java.lang.String,java.lang.String,android.content.pm.PackageManager)
+cn.waps.SDKUtils: void openUrlByBrowser(java.lang.String,java.lang.String)
+cn.waps.SDKUtils: android.content.Intent openUrlByBrowser_Intent(java.lang.String,java.lang.String)
+cn.waps.SDKUtils: java.util.Map getAppInfoMap(java.lang.String)
+cn.waps.SDKUtils: java.lang.String getRunningAppPackageNames()
+cn.waps.SDKUtils: boolean isCmwap()
+cn.waps.SDKUtils: boolean isConnect()
+cn.waps.SDKUtils: java.lang.String getResponseResult(org.apache.http.HttpResponse)
+cn.waps.SDKUtils: void closeAd()
+cn.waps.SDKUtils: void hideAd()
+cn.waps.SDKUtils: void openAd()
+cn.waps.SDKUtils: void openAd(java.lang.String)
+cn.waps.SDKUtils: void full_screen()
+cn.waps.SDKUtils: int initAdWidth()
+cn.waps.SDKUtils: java.lang.String getScreenStatus()
+cn.waps.SDKUtils: void saveDataToLocal(java.lang.String,java.lang.String,java.lang.String,boolean)
+cn.waps.SDKUtils: java.lang.String loadStringFromLocal(java.lang.String,java.lang.String)
+cn.waps.SDKUtils: void saveDataToLocal(java.io.InputStream,java.lang.String,java.lang.String,boolean)
+cn.waps.SDKUtils: java.io.InputStream loadStreamFromLocal(java.lang.String,java.lang.String)
+cn.waps.SDKUtils: void deleteLocalFiles(java.io.File)
+cn.waps.SDKUtils: java.io.InputStream getNetDataToStream(java.lang.String)
+cn.waps.SDKUtils: boolean isTimeLimited(java.lang.String,java.lang.String)
+cn.waps.SDKUtils: java.lang.String[] splitString(java.lang.String,java.lang.String,java.lang.String)
+cn.waps.SDKUtils: java.lang.String getNodeTrimValues(org.w3c.dom.NodeList)
+cn.waps.SDKUtils: java.util.List getList(java.lang.String)
+cn.waps.SDKUtils: java.lang.String replaceData(java.lang.String)
+cn.waps.SDKUtils: java.lang.String[] getAllPermissions()
+cn.waps.SDKUtils: boolean hasThePermission(java.lang.String)
+cn.waps.SDKUtils: void callTel(java.lang.String)
+cn.waps.SDKUtils: void sendSMS(java.lang.String,java.lang.String)
+cn.waps.SDKUtils: void showToast(java.lang.String)
+cn.waps.SDKUtils: java.lang.String getAppName()
+cn.waps.SDKUtils: java.lang.String isVisible()
+cn.waps.SDKUtils: boolean isWifi()
+cn.waps.SDKUtils: int getDisplaySize(android.content.Context)
+cn.waps.SDKUtils: android.content.Context access$000(cn.waps.SDKUtils)
+cn.waps.SDKUtils: android.widget.RelativeLayout access$100(cn.waps.SDKUtils)
+cn.waps.SDKUtils: android.widget.LinearLayout access$200(cn.waps.SDKUtils)
+cn.waps.UpdatePointsNotifier
+cn.waps.UpdatePointsNotifier: void getUpdatePoints(java.lang.String,int)
+cn.waps.UpdatePointsNotifier: void getUpdatePointsFailed(java.lang.String)
+cn.waps.ag
+cn.waps.ag: java.lang.String r
+cn.waps.ag: android.view.View s
+cn.waps.ag: cn.waps.aj t
+cn.waps.ag: cn.waps.al u
+cn.waps.ag: android.content.Context v
+cn.waps.ag: java.lang.String w
+cn.waps.ag: int a
+cn.waps.ag: cn.waps.am b
+cn.waps.ag: java.lang.String c
+cn.waps.ag: java.lang.String x
+cn.waps.ag: boolean d
+cn.waps.ag: boolean e
+cn.waps.ag: java.util.HashMap f
+cn.waps.ag: java.util.HashMap g
+cn.waps.ag: boolean y
+cn.waps.ag: float h
+cn.waps.ag: float i
+cn.waps.ag: java.text.NumberFormat j
+cn.waps.ag: float k
+cn.waps.ag: java.io.InputStream l
+cn.waps.ag: java.io.FileOutputStream m
+cn.waps.ag: java.lang.String n
+cn.waps.ag: java.lang.String o
+cn.waps.ag: boolean p
+cn.waps.ag: java.io.File q
+cn.waps.ag: ag(android.content.Context)
+cn.waps.ag: ag(android.content.Context,java.lang.String,java.lang.String)
+cn.waps.ag: ag(android.content.Context,android.view.View,java.lang.String,java.lang.String)
+cn.waps.ag: ag(android.content.Context,android.view.View,java.lang.String,java.lang.String,java.lang.String)
+cn.waps.ag: ag(android.content.Context,android.view.View,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+cn.waps.ag: void a(android.content.Context,android.view.View,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+cn.waps.ag: java.lang.String a(java.lang.String[])
+cn.waps.ag: void b(java.lang.String[])
+cn.waps.ag: void c(java.lang.String)
+cn.waps.ag: void a(org.apache.http.HttpResponse,java.lang.String,float,float,java.lang.String,int,java.io.InputStream,cn.waps.aj,boolean)
+cn.waps.ag: java.lang.String a(java.lang.String)
+cn.waps.ag: long b(java.lang.String)
+cn.waps.ag: void a(cn.waps.al)
+cn.waps.ag: java.lang.Object doInBackground(java.lang.Object[])
+cn.waps.ag: android.content.Context a(cn.waps.ag)
+cn.waps.ag: void <clinit>()
+cn.waps.ai
+cn.waps.ai: java.lang.String a
+cn.waps.ai: float b
+cn.waps.ai: float c
+cn.waps.ai: java.lang.String d
+cn.waps.ai: int e
+cn.waps.ai: java.lang.String f
+cn.waps.ai: java.text.NumberFormat g
+cn.waps.ai: java.lang.String h
+cn.waps.ai: ai()
+cn.waps.ai: void onReceive(android.content.Context,android.content.Intent)
+cn.waps.ai: void a(java.lang.String,float,float,java.lang.String,int,java.lang.String)
+cn.waps.aj
+cn.waps.aj: android.app.Notification a
+cn.waps.aj: android.app.NotificationManager f
+cn.waps.aj: android.content.Context g
+cn.waps.aj: java.lang.String h
+cn.waps.aj: java.lang.String i
+cn.waps.aj: boolean b
+cn.waps.aj: boolean c
+cn.waps.aj: java.lang.String d
+cn.waps.aj: long e
+cn.waps.aj: java.util.Map j
+cn.waps.aj: java.util.concurrent.ScheduledExecutorService k
+cn.waps.aj: aj(android.content.Context)
+cn.waps.aj: void a(android.view.View,java.lang.String,int,java.lang.String)
+cn.waps.aj: void a(android.view.View,java.lang.String,int,java.lang.String,java.lang.String)
+cn.waps.aj: void a(java.lang.String,int,java.lang.String)
+cn.waps.aj: void a(int,java.lang.String)
+cn.waps.aj: void a(int)
+cn.waps.aj: void <clinit>()
+cn.waps.al
+cn.waps.al: java.lang.String e
+cn.waps.al: int a
+cn.waps.al: cn.waps.aj b
+cn.waps.al: java.lang.String f
+cn.waps.al: android.content.SharedPreferences g
+cn.waps.al: android.content.SharedPreferences$Editor h
+cn.waps.al: boolean c
+cn.waps.al: boolean d
+cn.waps.al: al(cn.waps.aj,int,java.lang.String)
+cn.waps.al: al(java.lang.String)
+cn.waps.al: void onReceive(android.content.Context,android.content.Intent)
+cn.waps.al: void <clinit>()
+cn.waps.am
+cn.waps.am: boolean b
+cn.waps.am: cn.waps.SDKUtils c
+cn.waps.am: android.content.Context d
+cn.waps.am: java.lang.String a
+cn.waps.am: am(android.content.Context)
+cn.waps.am: am()
+cn.waps.am: boolean a()
+cn.waps.am: void a(boolean)
+cn.waps.am: java.lang.String a(java.lang.String,java.lang.String)
+cn.waps.am: java.lang.String b(java.lang.String,java.lang.String)
+cn.waps.am: byte[] a(java.lang.String)
+cn.waps.am: java.lang.String a(byte[],java.lang.String)
+cn.waps.am: java.lang.String b()
+cn.waps.am: void <clinit>()
+cn.waps.an
+cn.waps.an: boolean a
+cn.waps.an: byte[] a(java.lang.String,int)
+cn.waps.an: byte[] a(byte[],int)
+cn.waps.an: byte[] a(byte[],int,int,int)
+cn.waps.an: java.lang.String b(byte[],int)
+cn.waps.an: byte[] c(byte[],int)
+cn.waps.an: byte[] b(byte[],int,int,int)
+cn.waps.an: an()
+cn.waps.an: void <clinit>()
+cn.waps.ar
+cn.waps.ar: java.lang.String a
+cn.waps.ar: java.lang.String b
+cn.waps.ar: java.lang.String c
+cn.waps.ar: java.lang.String d
+cn.waps.ar: java.lang.String e
+cn.waps.ar: java.lang.String f
+cn.waps.ar: java.lang.String g
+cn.waps.ar: java.lang.String h
+cn.waps.ar: java.lang.String i
+cn.waps.ar: java.lang.String j
+cn.waps.ar: ar()
+cn.waps.ar: void a()
+cn.waps.ar: java.lang.String b()
+cn.waps.ar: java.lang.String c()
+cn.waps.ar: java.lang.String d()
+cn.waps.ar: java.lang.String e()
+cn.waps.ar: java.lang.String f()
+cn.waps.ar: java.lang.String g()
+cn.waps.ar: void <clinit>()
+cn.waps.as
+cn.waps.as: java.lang.Thread$UncaughtExceptionHandler a
+cn.waps.as: cn.waps.as b
+cn.waps.as: android.content.Context c
+cn.waps.as: cn.waps.au d
+cn.waps.as: cn.waps.am e
+cn.waps.as: java.lang.String f
+cn.waps.as: java.lang.String g
+cn.waps.as: java.lang.String h
+cn.waps.as: as(android.content.Context,cn.waps.am,java.lang.String)
+cn.waps.as: cn.waps.as a(android.content.Context,cn.waps.am,java.lang.String)
+cn.waps.as: void a()
+cn.waps.as: void uncaughtException(java.lang.Thread,java.lang.Throwable)
+cn.waps.as: boolean a(java.lang.Throwable)
+cn.waps.as: void a(android.content.Context)
+cn.waps.as: java.lang.String d()
+cn.waps.as: void b(java.lang.Throwable)
+cn.waps.as: android.content.Context b()
+cn.waps.as: java.lang.String a(cn.waps.as)
+cn.waps.as: java.lang.String b(cn.waps.as)
+cn.waps.as: cn.waps.am c()
+cn.waps.as: java.lang.String c(cn.waps.as)
+cn.waps.as: void <clinit>()
+cn.waps.av
+cn.waps.av: av()
+cn.waps.av: java.util.Map a()
+cn.waps.av: java.util.Map b()
+cn.waps.ba
+cn.waps.ba: int a
+cn.waps.ba: android.content.Context b
+cn.waps.ba: cn.waps.MiniAdView c
+cn.waps.ba: ba(cn.waps.MiniAdView,android.content.Context,int)
+cn.waps.ba: void onClick(android.view.View)
+cn.waps.bg
+cn.waps.bg: android.content.Context g
+cn.waps.bg: cn.waps.SDKUtils h
+cn.waps.bg: java.lang.String i
+cn.waps.bg: java.io.File a
+cn.waps.bg: android.app.AlertDialog b
+cn.waps.bg: java.util.Map j
+cn.waps.bg: java.lang.String c
+cn.waps.bg: java.lang.String d
+cn.waps.bg: cn.waps.al e
+cn.waps.bg: boolean f
+cn.waps.bg: bg(android.content.Context)
+cn.waps.bg: java.lang.Object[] a(java.lang.String,java.util.List,org.apache.http.entity.ByteArrayEntity)
+cn.waps.bg: java.lang.Object[] b(java.lang.String,java.util.List,org.apache.http.entity.ByteArrayEntity)
+cn.waps.bg: java.lang.Object[] c(java.lang.String,java.util.List,org.apache.http.entity.ByteArrayEntity)
+cn.waps.bg: java.lang.Object[] a(java.lang.String,org.apache.http.HttpHost,org.apache.http.HttpHost,org.apache.http.entity.ByteArrayEntity,java.util.List)
+cn.waps.bg: boolean a(android.webkit.WebView,java.lang.String)
+cn.waps.bg: android.content.Intent a(android.content.Context,java.lang.String)
+cn.waps.bg: java.lang.String a(java.lang.String,java.lang.String)
+cn.waps.bg: java.lang.String a(java.lang.String,int)
+cn.waps.bg: void a(java.lang.String,java.lang.String,java.lang.String)
+cn.waps.bg: boolean a(java.lang.String)
+cn.waps.bg: java.lang.String b(android.content.Context,java.lang.String)
+cn.waps.bg: java.lang.String c(android.content.Context,java.lang.String)
+cn.waps.bg: void a(android.content.Context,java.lang.String,java.lang.String)
+cn.waps.bg: java.lang.String a(android.content.Context)
+cn.waps.bg: java.lang.String b(java.lang.String)
+cn.waps.bg: java.lang.String c(java.lang.String)
+cn.waps.bg: java.lang.String a(cn.waps.bg,java.lang.String)
+cn.waps.bg: java.util.Map a()
+cn.waps.bg: java.util.Map a(java.util.Map)
+cn.waps.f
+cn.waps.f: float a
+cn.waps.f: float b
+cn.waps.f: float c
+cn.waps.f: float d
+cn.waps.f: float e
+cn.waps.f: boolean f
+cn.waps.f: android.graphics.Camera g
+cn.waps.f: f(float,float,float,float,float,boolean)
+cn.waps.f: void initialize(int,int,int,int)
+cn.waps.f: void applyTransformation(float,android.view.animation.Transformation)
+com.ant.liao.GifView
+com.ant.liao.GifView: GifView(android.content.Context)
+com.ant.liao.GifView: GifView(android.content.Context,android.util.AttributeSet)
+com.ant.liao.GifView: GifView(android.content.Context,android.util.AttributeSet,int)
+com.ant.liao.GifView$GifImageType: com.ant.liao.GifView$GifImageType[] values()
+com.ant.liao.GifView$GifImageType: com.ant.liao.GifView$GifImageType valueOf(java.lang.String)
+com.dabing.emoj.BaseActivity
+com.dabing.emoj.BaseActivity: BaseActivity()
+com.dabing.emoj.BaseApplication
+com.dabing.emoj.BaseApplication: BaseApplication()
+com.dabing.emoj.R$anim
+com.dabing.emoj.R$anim: int fade
+com.dabing.emoj.R$anim: int gd_grow_from_bottom
+com.dabing.emoj.R$anim: int gd_grow_from_bottomleft_to_topright
+com.dabing.emoj.R$anim: int gd_grow_from_bottomright_to_topleft
+com.dabing.emoj.R$anim: int gd_grow_from_top
+com.dabing.emoj.R$anim: int gd_grow_from_topleft_to_bottomright
+com.dabing.emoj.R$anim: int gd_grow_from_topright_to_bottomleft
+com.dabing.emoj.R$anim: int gd_rack
+com.dabing.emoj.R$anim: int gd_shrink_from_bottom
+com.dabing.emoj.R$anim: int gd_shrink_from_bottomleft_to_topright
+com.dabing.emoj.R$anim: int gd_shrink_from_bottomright_to_topleft
+com.dabing.emoj.R$anim: int gd_shrink_from_top
+com.dabing.emoj.R$anim: int gd_shrink_from_topleft_to_bottomright
+com.dabing.emoj.R$anim: int gd_shrink_from_topright_to_bottomleft
+com.dabing.emoj.R$anim: int hold_in
+com.dabing.emoj.R$anim: int hold_out
+com.dabing.emoj.R$anim: int layout_grid_fade
+com.dabing.emoj.R$anim: int overshoot_down_in
+com.dabing.emoj.R$anim: int overshoot_left_in
+com.dabing.emoj.R$anim: int overshoot_right_in
+com.dabing.emoj.R$anim: int overshoot_up_in
+com.dabing.emoj.R$anim: int pop_in
+com.dabing.emoj.R$anim: int push_down_in
+com.dabing.emoj.R$anim: int push_down_out
+com.dabing.emoj.R$anim: int push_up_in
+com.dabing.emoj.R$anim: int push_up_out
+com.dabing.emoj.R$anim: int qqappwall_push_up_in
+com.dabing.emoj.R$anim: int qqappwall_push_up_out
+com.dabing.emoj.R$anim: int slide_left_in
+com.dabing.emoj.R$anim: int slide_left_out
+com.dabing.emoj.R$anim: int slide_right_in
+com.dabing.emoj.R$anim: int slide_right_out
+com.dabing.emoj.R$anim: int welcome_anmi_move
+com.dabing.emoj.R$anim: int zoom_enter
+com.dabing.emoj.R$array
+com.dabing.emoj.R$array: int UMageList
+com.dabing.emoj.R$array: int UMgenderList
+com.dabing.emoj.R$attr
+com.dabing.emoj.R$attr: int CenterInVertical
+com.dabing.emoj.R$attr: int activeDot
+com.dabing.emoj.R$attr: int defaultSrc
+com.dabing.emoj.R$attr: int dividerDrawable
+com.dabing.emoj.R$attr: int dividerWidth
+com.dabing.emoj.R$attr: int dotCount
+com.dabing.emoj.R$attr: int dotDrawable
+com.dabing.emoj.R$attr: int dotSpacing
+com.dabing.emoj.R$attr: int dotType
+com.dabing.emoj.R$attr: int drawable
+com.dabing.emoj.R$attr: int enabled
+com.dabing.emoj.R$attr: int gdActionBarApplicationDrawable
+com.dabing.emoj.R$attr: int gdActionBarBackground
+com.dabing.emoj.R$attr: int gdActionBarDividerDrawable
+com.dabing.emoj.R$attr: int gdActionBarDividerStyle
+com.dabing.emoj.R$attr: int gdActionBarDividerWidth
+com.dabing.emoj.R$attr: int gdActionBarHomeDrawable
+com.dabing.emoj.R$attr: int gdActionBarItemBackground
+com.dabing.emoj.R$attr: int gdActionBarItemColorAlt
+com.dabing.emoj.R$attr: int gdActionBarItemColorNormal
+com.dabing.emoj.R$attr: int gdActionBarItemStyle
+com.dabing.emoj.R$attr: int gdActionBarMaxItems
+com.dabing.emoj.R$attr: int gdActionBarStyle
+com.dabing.emoj.R$attr: int gdActionBarTitleColor
+com.dabing.emoj.R$attr: int gdActionBarTitleStyle
+com.dabing.emoj.R$attr: int gdDescriptionItemViewStyle
+com.dabing.emoj.R$attr: int gdDrawableHeight
+com.dabing.emoj.R$attr: int gdDrawableItemViewStyle
+com.dabing.emoj.R$attr: int gdDrawableItemViewStyleDrawable
+com.dabing.emoj.R$attr: int gdDrawableItemViewStyleText
+com.dabing.emoj.R$attr: int gdDrawableMargin
+com.dabing.emoj.R$attr: int gdDrawableWidth
+com.dabing.emoj.R$attr: int gdItemViewPreferredHalfHeight
+com.dabing.emoj.R$attr: int gdItemViewPreferredHeight
+com.dabing.emoj.R$attr: int gdItemViewPreferredPaddingLeft
+com.dabing.emoj.R$attr: int gdLongTextItemViewStyle
+com.dabing.emoj.R$attr: int gdPageIndicatorStyle
+com.dabing.emoj.R$attr: int gdProgressBarHeight
+com.dabing.emoj.R$attr: int gdProgressBarMargin
+com.dabing.emoj.R$attr: int gdProgressBarWidth
+com.dabing.emoj.R$attr: int gdProgressItemViewStyle
+com.dabing.emoj.R$attr: int gdProgressItemViewStyleProgressBar
+com.dabing.emoj.R$attr: int gdProgressItemViewStyleText
+com.dabing.emoj.R$attr: int gdQuickActionBarItemStyle
+com.dabing.emoj.R$attr: int gdQuickActionBarStyle
+com.dabing.emoj.R$attr: int gdQuickActionGridItemStyle
+com.dabing.emoj.R$attr: int gdQuickActionGridStyle
+com.dabing.emoj.R$attr: int gdSegmentBackground
+com.dabing.emoj.R$attr: int gdSegmentCheckmark
+com.dabing.emoj.R$attr: int gdSegmentTextColor
+com.dabing.emoj.R$attr: int gdSegmentTextSize
+com.dabing.emoj.R$attr: int gdSegmentedBarStyle
+com.dabing.emoj.R$attr: int gdSegmentedHostStyle
+com.dabing.emoj.R$attr: int gdSeparatorItemViewPreferredHeight
+com.dabing.emoj.R$attr: int gdSeparatorItemViewStyle
+com.dabing.emoj.R$attr: int gdSubtextItemViewStyle
+com.dabing.emoj.R$attr: int gdSubtextItemViewStyleSubtext
+com.dabing.emoj.R$attr: int gdSubtextItemViewStyleText
+com.dabing.emoj.R$attr: int gdSubtitleItemViewStyle
+com.dabing.emoj.R$attr: int gdSubtitleItemViewStyleSubtitle
+com.dabing.emoj.R$attr: int gdSubtitleItemViewStyleText
+com.dabing.emoj.R$attr: int gdTabIndicatorBackground
+com.dabing.emoj.R$attr: int gdTabIndicatorHeight
+com.dabing.emoj.R$attr: int gdTabIndicatorStyle
+com.dabing.emoj.R$attr: int gdTabIndicatorTextAppearance
+com.dabing.emoj.R$attr: int gdTextAppearance
+com.dabing.emoj.R$attr: int gdTextAppearanceLarge
+com.dabing.emoj.R$attr: int gdTextAppearanceMedium
+com.dabing.emoj.R$attr: int gdTextAppearanceSeparator
+com.dabing.emoj.R$attr: int gdTextAppearanceSmall
+com.dabing.emoj.R$attr: int gdTextItemViewStyle
+com.dabing.emoj.R$attr: int gdThumbnailItemViewStyle
+com.dabing.emoj.R$attr: int gdThumbnailItemViewStyleSubtitle
+com.dabing.emoj.R$attr: int gdThumbnailItemViewStyleText
+com.dabing.emoj.R$attr: int gdThumbnailItemViewStyleThumbnail
+com.dabing.emoj.R$attr: int gravity
+com.dabing.emoj.R$attr: int homeDrawable
+com.dabing.emoj.R$attr: int inDensity
+com.dabing.emoj.R$attr: int isInProgress
+com.dabing.emoj.R$attr: int isPreMeasureSize
+com.dabing.emoj.R$attr: int maxItems
+com.dabing.emoj.R$attr: int padding
+com.dabing.emoj.R$attr: int segmentedBar
+com.dabing.emoj.R$attr: int segmentedContentView
+com.dabing.emoj.R$attr: int subtext
+com.dabing.emoj.R$attr: int subtitle
+com.dabing.emoj.R$attr: int text
+com.dabing.emoj.R$attr: int thumbnail
+com.dabing.emoj.R$attr: int thumbnailURL
+com.dabing.emoj.R$attr: int title
+com.dabing.emoj.R$attr: int type
+com.dabing.emoj.R$attr: int url
+com.dabing.emoj.R$color
+com.dabing.emoj.R$color: int app_panel_bg
+com.dabing.emoj.R$color: int background
+com.dabing.emoj.R$color: int black
+com.dabing.emoj.R$color: int blue
+com.dabing.emoj.R$color: int brown
+com.dabing.emoj.R$color: int button_selected
+com.dabing.emoj.R$color: int button_unselected
+com.dabing.emoj.R$color: int dark_divider
+com.dabing.emoj.R$color: int darkgrey
+com.dabing.emoj.R$color: int edit_hint_color
+com.dabing.emoj.R$color: int emoj_detail_bottom
+com.dabing.emoj.R$color: int gd_action_bar_divider_tint
+com.dabing.emoj.R$color: int gd_action_bar_tint
+com.dabing.emoj.R$color: int gray
+com.dabing.emoj.R$color: int gray_dark
+com.dabing.emoj.R$color: int gray_light
+com.dabing.emoj.R$color: int green
+com.dabing.emoj.R$color: int grey
+com.dabing.emoj.R$color: int lightgrey
+com.dabing.emoj.R$color: int lightransparent
+com.dabing.emoj.R$color: int lime
+com.dabing.emoj.R$color: int magenta
+com.dabing.emoj.R$color: int mm_actbtn_text
+com.dabing.emoj.R$color: int mm_btn_text
+com.dabing.emoj.R$color: int mm_choice_text_color
+com.dabing.emoj.R$color: int mm_hyper_text
+com.dabing.emoj.R$color: int mm_list_textcolor_one
+com.dabing.emoj.R$color: int mm_list_textcolor_time
+com.dabing.emoj.R$color: int mm_list_textcolor_two
+com.dabing.emoj.R$color: int mm_pref_summary
+com.dabing.emoj.R$color: int mm_pref_title
+com.dabing.emoj.R$color: int mm_style_one_btn_text
+com.dabing.emoj.R$color: int mm_style_two_btn_text
+com.dabing.emoj.R$color: int mm_tab_btn
+com.dabing.emoj.R$color: int mm_title_btn_text
+com.dabing.emoj.R$color: int navpage
+com.dabing.emoj.R$color: int nickblue
+com.dabing.emoj.R$color: int orange
+com.dabing.emoj.R$color: int pink
+com.dabing.emoj.R$color: int purple
+com.dabing.emoj.R$color: int red
+com.dabing.emoj.R$color: int sc_transparent_background
+com.dabing.emoj.R$color: int semitransparent
+com.dabing.emoj.R$color: int shape_line
+com.dabing.emoj.R$color: int teal
+com.dabing.emoj.R$color: int toasterro
+com.dabing.emoj.R$color: int transparent
+com.dabing.emoj.R$color: int white
+com.dabing.emoj.R$dimen
+com.dabing.emoj.R$dimen: int BasicTextSize
+com.dabing.emoj.R$dimen: int ChattingContentMinHeight
+com.dabing.emoj.R$dimen: int ChattingTextSize
+com.dabing.emoj.R$dimen: int ConversationItemHeight
+com.dabing.emoj.R$dimen: int LargeAvatarSize
+com.dabing.emoj.R$dimen: int LargeTextSize
+com.dabing.emoj.R$dimen: int LargerTextSize
+com.dabing.emoj.R$dimen: int LargestTextSize
+com.dabing.emoj.R$dimen: int PreferenceItemHeight
+com.dabing.emoj.R$dimen: int SmallTextSize
+com.dabing.emoj.R$dimen: int SmallerTextSize
+com.dabing.emoj.R$dimen: int SmallestTextSize
+com.dabing.emoj.R$dimen: int TitleTextSize
+com.dabing.emoj.R$dimen: int XLargeTextSize
+com.dabing.emoj.R$dimen: int XXLargeTextSize
+com.dabing.emoj.R$dimen: int gd_action_bar_height
+com.dabing.emoj.R$dimen: int gd_arrow_offset
+com.dabing.emoj.R$dimen: int gd_drawable_height
+com.dabing.emoj.R$dimen: int gd_drawable_margin
+com.dabing.emoj.R$dimen: int gd_drawable_width
+com.dabing.emoj.R$dimen: int gd_item_view_half_height
+com.dabing.emoj.R$dimen: int gd_item_view_height
+com.dabing.emoj.R$dimen: int gd_item_view_padding_left
+com.dabing.emoj.R$dimen: int gd_progress_bar_height
+com.dabing.emoj.R$dimen: int gd_progress_bar_margin
+com.dabing.emoj.R$dimen: int gd_progress_bar_width
+com.dabing.emoj.R$dimen: int gd_separator_item_view_height
+com.dabing.emoj.R$dimen: int gd_separator_item_view_padding_left
+com.dabing.emoj.R$drawable
+com.dabing.emoj.R$drawable: int a1
+com.dabing.emoj.R$drawable: int a10
+com.dabing.emoj.R$drawable: int a11
+com.dabing.emoj.R$drawable: int a12
+com.dabing.emoj.R$drawable: int a13
+com.dabing.emoj.R$drawable: int a14
+com.dabing.emoj.R$drawable: int a15
+com.dabing.emoj.R$drawable: int a16
+com.dabing.emoj.R$drawable: int a17
+com.dabing.emoj.R$drawable: int a18
+com.dabing.emoj.R$drawable: int a19
+com.dabing.emoj.R$drawable: int a2
+com.dabing.emoj.R$drawable: int a20
+com.dabing.emoj.R$drawable: int a21
+com.dabing.emoj.R$drawable: int a22
+com.dabing.emoj.R$drawable: int a23
+com.dabing.emoj.R$drawable: int a24
+com.dabing.emoj.R$drawable: int a3
+com.dabing.emoj.R$drawable: int a4
+com.dabing.emoj.R$drawable: int a5
+com.dabing.emoj.R$drawable: int a6
+com.dabing.emoj.R$drawable: int a7
+com.dabing.emoj.R$drawable: int a8
+com.dabing.emoj.R$drawable: int a9
+com.dabing.emoj.R$drawable: int aa_button_install_focused
+com.dabing.emoj.R$drawable: int aa_button_install_normal
+com.dabing.emoj.R$drawable: int aa_button_install_pressed
+com.dabing.emoj.R$drawable: int aa_install_background
+com.dabing.emoj.R$drawable: int action_about
+com.dabing.emoj.R$drawable: int action_bar_divider
+com.dabing.emoj.R$drawable: int action_help
+com.dabing.emoj.R$drawable: int alert_dialog_trans_background
+com.dabing.emoj.R$drawable: int alert_hot
+com.dabing.emoj.R$drawable: int alert_new
+com.dabing.emoj.R$drawable: int alert_secret
+com.dabing.emoj.R$drawable: int app_item_nor
+com.dabing.emoj.R$drawable: int app_item_pressed
+com.dabing.emoj.R$drawable: int app_item_shade
+com.dabing.emoj.R$drawable: int app_panel_bg
+com.dabing.emoj.R$drawable: int av_download
+com.dabing.emoj.R$drawable: int broswer_progress
+com.dabing.emoj.R$drawable: int btn_browse_left_nor
+com.dabing.emoj.R$drawable: int btn_browse_left_pressed
+com.dabing.emoj.R$drawable: int btn_browse_left_selector
+com.dabing.emoj.R$drawable: int btn_browse_right_nor
+com.dabing.emoj.R$drawable: int btn_browse_right_pressed
+com.dabing.emoj.R$drawable: int btn_browse_right_selector
+com.dabing.emoj.R$drawable: int btn_check_off_disable
+com.dabing.emoj.R$drawable: int btn_check_off_normal
+com.dabing.emoj.R$drawable: int btn_check_on_disable
+com.dabing.emoj.R$drawable: int btn_check_on_normal
+com.dabing.emoj.R$drawable: int btn_nor
+com.dabing.emoj.R$drawable: int btn_pressed
+com.dabing.emoj.R$drawable: int btn_selector
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_background
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_blue
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_button
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_button_normal
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_button_pressed
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_cancel
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_cancel_normal
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_special
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_special_normal
+com.dabing.emoj.R$drawable: int btn_style_alert_dialog_special_pressed
+com.dabing.emoj.R$drawable: int btn_style_one
+com.dabing.emoj.R$drawable: int btn_style_one_disabled
+com.dabing.emoj.R$drawable: int btn_style_one_focused
+com.dabing.emoj.R$drawable: int btn_style_one_normal
+com.dabing.emoj.R$drawable: int btn_style_one_pressed
+com.dabing.emoj.R$drawable: int btn_style_two
+com.dabing.emoj.R$drawable: int btn_style_two_focused
+com.dabing.emoj.R$drawable: int btn_style_two_normal
+com.dabing.emoj.R$drawable: int btn_style_two_pressed
+com.dabing.emoj.R$drawable: int btn_txt_nor
+com.dabing.emoj.R$drawable: int btn_txt_selected
+com.dabing.emoj.R$drawable: int btn_txt_selector
+com.dabing.emoj.R$drawable: int button_install_selector
+com.dabing.emoj.R$drawable: int collections_view_as_grid
+com.dabing.emoj.R$drawable: int collections_view_as_list
+com.dabing.emoj.R$drawable: int confirm_dialog_bottom_bg
+com.dabing.emoj.R$drawable: int confirm_dialog_failweb
+com.dabing.emoj.R$drawable: int confirm_dialog_load
+com.dabing.emoj.R$drawable: int confirm_dialog_successful_icon
+com.dabing.emoj.R$drawable: int confirm_dialog_top_bg
+com.dabing.emoj.R$drawable: int crystal_circle_nor
+com.dabing.emoj.R$drawable: int crystal_rectangle_nor
+com.dabing.emoj.R$drawable: int crystal_rectangle_pressed
+com.dabing.emoj.R$drawable: int crystal_rectangle_selector
+com.dabing.emoj.R$drawable: int cursor
+com.dabing.emoj.R$drawable: int custom_button_nor
+com.dabing.emoj.R$drawable: int custom_button_selected
+com.dabing.emoj.R$drawable: int custom_button_selector
+com.dabing.emoj.R$drawable: int custom_loading
+com.dabing.emoj.R$drawable: int cute_cate_danceing
+com.dabing.emoj.R$drawable: int default_imageview_background
+com.dabing.emoj.R$drawable: int dot4
+com.dabing.emoj.R$drawable: int dot5
+com.dabing.emoj.R$drawable: int edittext1_bg_focuse
+com.dabing.emoj.R$drawable: int edittext1_bg_nor
+com.dabing.emoj.R$drawable: int emoj000
+com.dabing.emoj.R$drawable: int emoj001
+com.dabing.emoj.R$drawable: int emoj003
+com.dabing.emoj.R$drawable: int emoj004
+com.dabing.emoj.R$drawable: int emoj005
+com.dabing.emoj.R$drawable: int emoj008
+com.dabing.emoj.R$drawable: int emoj009
+com.dabing.emoj.R$drawable: int emoj011
+com.dabing.emoj.R$drawable: int emoj012
+com.dabing.emoj.R$drawable: int emoj013
+com.dabing.emoj.R$drawable: int emoj014
+com.dabing.emoj.R$drawable: int emoj015
+com.dabing.emoj.R$drawable: int emoj016
+com.dabing.emoj.R$drawable: int emoj017
+com.dabing.emoj.R$drawable: int emoj018
+com.dabing.emoj.R$drawable: int emoj019
+com.dabing.emoj.R$drawable: int emoj020
+com.dabing.emoj.R$drawable: int emoj021
+com.dabing.emoj.R$drawable: int emoj022
+com.dabing.emoj.R$drawable: int emoj023
+com.dabing.emoj.R$drawable: int emoj024
+com.dabing.emoj.R$drawable: int emoj025
+com.dabing.emoj.R$drawable: int emoj026
+com.dabing.emoj.R$drawable: int emoj027
+com.dabing.emoj.R$drawable: int emoj028
+com.dabing.emoj.R$drawable: int emoj029
+com.dabing.emoj.R$drawable: int emoj031
+com.dabing.emoj.R$drawable: int emoj032
+com.dabing.emoj.R$drawable: int emoj033
+com.dabing.emoj.R$drawable: int emoj034
+com.dabing.emoj.R$drawable: int emoj035
+com.dabing.emoj.R$drawable: int emoj036
+com.dabing.emoj.R$drawable: int emoj037
+com.dabing.emoj.R$drawable: int emoj039
+com.dabing.emoj.R$drawable: int emoj041
+com.dabing.emoj.R$drawable: int emoj042
+com.dabing.emoj.R$drawable: int emoj043
+com.dabing.emoj.R$drawable: int emoj045
+com.dabing.emoj.R$drawable: int emoj046
+com.dabing.emoj.R$drawable: int emoj047
+com.dabing.emoj.R$drawable: int emoj048
+com.dabing.emoj.R$drawable: int emoj099
+com.dabing.emoj.R$drawable: int emoj_black
+com.dabing.emoj.R$drawable: int emoj_bottom_background
+com.dabing.emoj.R$drawable: int emoj_graydark
+com.dabing.emoj.R$drawable: int emoj_graylight
+com.dabing.emoj.R$drawable: int emoj_item_nor
+com.dabing.emoj.R$drawable: int emoj_item_pressed
+com.dabing.emoj.R$drawable: int emoj_item_selector
+com.dabing.emoj.R$drawable: int gd_action_bar_add
+com.dabing.emoj.R$drawable: int gd_action_bar_all_friends
+com.dabing.emoj.R$drawable: int gd_action_bar_compass
+com.dabing.emoj.R$drawable: int gd_action_bar_compose
+com.dabing.emoj.R$drawable: int gd_action_bar_edit
+com.dabing.emoj.R$drawable: int gd_action_bar_export
+com.dabing.emoj.R$drawable: int gd_action_bar_eye
+com.dabing.emoj.R$drawable: int gd_action_bar_gallery
+com.dabing.emoj.R$drawable: int gd_action_bar_group
+com.dabing.emoj.R$drawable: int gd_action_bar_help
+com.dabing.emoj.R$drawable: int gd_action_bar_home
+com.dabing.emoj.R$drawable: int gd_action_bar_info
+com.dabing.emoj.R$drawable: int gd_action_bar_item
+com.dabing.emoj.R$drawable: int gd_action_bar_item_focused
+com.dabing.emoj.R$drawable: int gd_action_bar_item_pressed
+com.dabing.emoj.R$drawable: int gd_action_bar_list
+com.dabing.emoj.R$drawable: int gd_action_bar_locate
+com.dabing.emoj.R$drawable: int gd_action_bar_locate_myself
+com.dabing.emoj.R$drawable: int gd_action_bar_mail
+com.dabing.emoj.R$drawable: int gd_action_bar_refresh
+com.dabing.emoj.R$drawable: int gd_action_bar_search
+com.dabing.emoj.R$drawable: int gd_action_bar_settings
+com.dabing.emoj.R$drawable: int gd_action_bar_share
+com.dabing.emoj.R$drawable: int gd_action_bar_slideshow
+com.dabing.emoj.R$drawable: int gd_action_bar_sort_alpha
+com.dabing.emoj.R$drawable: int gd_action_bar_sort_by_size
+com.dabing.emoj.R$drawable: int gd_action_bar_star
+com.dabing.emoj.R$drawable: int gd_action_bar_take_photo
+com.dabing.emoj.R$drawable: int gd_action_bar_talk
+com.dabing.emoj.R$drawable: int gd_action_bar_trashcan
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_focused
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_normal
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_normal_focused
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_normal_normal
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_normal_pressed
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_pressed
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_selected
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_selected_focused
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_selected_normal
+com.dabing.emoj.R$drawable: int gd_page_indicator_dot_selected_pressed
+com.dabing.emoj.R$drawable: int gd_quick_action_arrow_up
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_arrow_down
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_background
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_bottom_frame
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_grip_left
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_grip_right
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_item
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_item_normal
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_item_pressed
+com.dabing.emoj.R$drawable: int gd_quick_action_bar_item_selected
+com.dabing.emoj.R$drawable: int gd_quick_action_grid_arrow_down
+com.dabing.emoj.R$drawable: int gd_quick_action_grid_bg
+com.dabing.emoj.R$drawable: int gd_quick_action_grid_bottom_frame
+com.dabing.emoj.R$drawable: int gd_quick_action_grid_selector
+com.dabing.emoj.R$drawable: int gd_quick_action_grid_selector_focused
+com.dabing.emoj.R$drawable: int gd_quick_action_grid_selector_pressed
+com.dabing.emoj.R$drawable: int gd_quick_action_top_frame
+com.dabing.emoj.R$drawable: int gd_segment_checkmark
+com.dabing.emoj.R$drawable: int gd_segment_checkmark_off
+com.dabing.emoj.R$drawable: int gd_segment_checkmark_on
+com.dabing.emoj.R$drawable: int gd_segment_divider
+com.dabing.emoj.R$drawable: int gd_segment_label
+com.dabing.emoj.R$drawable: int gd_segment_label_focused
+com.dabing.emoj.R$drawable: int gd_segment_label_normal
+com.dabing.emoj.R$drawable: int gd_segment_label_pressed
+com.dabing.emoj.R$drawable: int gd_shadow_bottom
+com.dabing.emoj.R$drawable: int gd_shadow_top
+com.dabing.emoj.R$drawable: int gd_tab_indicator
+com.dabing.emoj.R$drawable: int gd_tab_indicator_normal
+com.dabing.emoj.R$drawable: int gd_tab_indicator_pressed
+com.dabing.emoj.R$drawable: int gd_tab_indicator_selected
+com.dabing.emoj.R$drawable: int gd_tab_indicator_unselected
+com.dabing.emoj.R$drawable: int hasdownload
+com.dabing.emoj.R$drawable: int header_gridview_selector
+com.dabing.emoj.R$drawable: int heart_black
+com.dabing.emoj.R$drawable: int heart_graydark
+com.dabing.emoj.R$drawable: int ic_dialog_alert
+com.dabing.emoj.R$drawable: int ic_dialog_long_click
+com.dabing.emoj.R$drawable: int ic_launcher
+com.dabing.emoj.R$drawable: int ic_preference_first_normal
+com.dabing.emoj.R$drawable: int ic_preference_first_pressed
+com.dabing.emoj.R$drawable: int ic_preference_last_normal
+com.dabing.emoj.R$drawable: int ic_preference_last_pressed
+com.dabing.emoj.R$drawable: int ic_preference_normal
+com.dabing.emoj.R$drawable: int ic_preference_one_normal
+com.dabing.emoj.R$drawable: int ic_preference_one_pressed
+com.dabing.emoj.R$drawable: int ic_preference_pressed
+com.dabing.emoj.R$drawable: int ic_preference_single_normal
+com.dabing.emoj.R$drawable: int ic_preference_single_pressed
+com.dabing.emoj.R$drawable: int ic_preference_top_normal
+com.dabing.emoj.R$drawable: int ic_preference_top_pressed
+com.dabing.emoj.R$drawable: int icon
+com.dabing.emoj.R$drawable: int image_download_fail
+com.dabing.emoj.R$drawable: int image_download_fail_nor
+com.dabing.emoj.R$drawable: int image_download_fail_pressed
+com.dabing.emoj.R$drawable: int leba_bg_bottom_selected
+com.dabing.emoj.R$drawable: int leba_bg_bottom_selector
+com.dabing.emoj.R$drawable: int leba_bg_bottom_unselected
+com.dabing.emoj.R$drawable: int leba_bg_mid_selected
+com.dabing.emoj.R$drawable: int leba_bg_mid_selector
+com.dabing.emoj.R$drawable: int leba_bg_mid_unselected
+com.dabing.emoj.R$drawable: int leba_bg_single_selected
+com.dabing.emoj.R$drawable: int leba_bg_single_selector
+com.dabing.emoj.R$drawable: int leba_bg_single_unselected
+com.dabing.emoj.R$drawable: int leba_bg_top_selected
+com.dabing.emoj.R$drawable: int leba_bg_top_selector
+com.dabing.emoj.R$drawable: int leba_bg_top_unselected
+com.dabing.emoj.R$drawable: int leba_shape_bg
+com.dabing.emoj.R$drawable: int leba_shape_line
+com.dabing.emoj.R$drawable: int list_divider_line
+com.dabing.emoj.R$drawable: int list_item_nor
+com.dabing.emoj.R$drawable: int list_item_pressed
+com.dabing.emoj.R$drawable: int list_item_selector
+com.dabing.emoj.R$drawable: int list_selector_background
+com.dabing.emoj.R$drawable: int logo
+com.dabing.emoj.R$drawable: int mm_checkbox_btn
+com.dabing.emoj.R$drawable: int mm_checkbox_mini
+com.dabing.emoj.R$drawable: int mm_checkbox_mini_checked
+com.dabing.emoj.R$drawable: int mm_checkbox_mini_normal
+com.dabing.emoj.R$drawable: int mm_edit
+com.dabing.emoj.R$drawable: int mm_edit_focused
+com.dabing.emoj.R$drawable: int mm_edit_normal
+com.dabing.emoj.R$drawable: int mm_listitem_disable
+com.dabing.emoj.R$drawable: int mm_listitem_normal
+com.dabing.emoj.R$drawable: int mm_listitem_pressed
+com.dabing.emoj.R$drawable: int mm_progress
+com.dabing.emoj.R$drawable: int mm_progress_bg
+com.dabing.emoj.R$drawable: int mm_submenu
+com.dabing.emoj.R$drawable: int mm_submenu_normal
+com.dabing.emoj.R$drawable: int mm_submenu_pressed
+com.dabing.emoj.R$drawable: int mm_title_act_btn_disable
+com.dabing.emoj.R$drawable: int mm_title_act_btn_focused
+com.dabing.emoj.R$drawable: int mm_title_act_btn_normal
+com.dabing.emoj.R$drawable: int mm_title_act_btn_pressed
+com.dabing.emoj.R$drawable: int mm_title_back_focused
+com.dabing.emoj.R$drawable: int mm_title_back_normal
+com.dabing.emoj.R$drawable: int mm_title_back_pressed
+com.dabing.emoj.R$drawable: int mm_title_bg
+com.dabing.emoj.R$drawable: int mm_title_btn_back
+com.dabing.emoj.R$drawable: int mm_title_btn_focused
+com.dabing.emoj.R$drawable: int mm_title_btn_groupcontact_normal
+com.dabing.emoj.R$drawable: int mm_title_btn_menu_normal
+com.dabing.emoj.R$drawable: int mm_title_btn_newmail_normal
+com.dabing.emoj.R$drawable: int mm_title_btn_normal
+com.dabing.emoj.R$drawable: int mm_title_btn_pressed
+com.dabing.emoj.R$drawable: int mm_title_btn_qqlist_normal
+com.dabing.emoj.R$drawable: int mm_title_btn_right
+com.dabing.emoj.R$drawable: int mm_title_btn_share_normal
+com.dabing.emoj.R$drawable: int mm_title_functionframe
+com.dabing.emoj.R$drawable: int mm_trans
+com.dabing.emoj.R$drawable: int mm_zoomin_btn
+com.dabing.emoj.R$drawable: int mm_zoomin_btn_disabled
+com.dabing.emoj.R$drawable: int mm_zoomin_btn_normal
+com.dabing.emoj.R$drawable: int mm_zoomout_btn
+com.dabing.emoj.R$drawable: int mm_zoomout_btn_disabled
+com.dabing.emoj.R$drawable: int mm_zoomout_btn_normal
+com.dabing.emoj.R$drawable: int mmfooter_bg
+com.dabing.emoj.R$drawable: int mmfooter_bg_black
+com.dabing.emoj.R$drawable: int mmfooter_bg_gray
+com.dabing.emoj.R$drawable: int mmfooter_bg_white
+com.dabing.emoj.R$drawable: int mmtitle_bg
+com.dabing.emoj.R$drawable: int mmtitle_bg_alpha
+com.dabing.emoj.R$drawable: int navigation_expand
+com.dabing.emoj.R$drawable: int navigation_refresh
+com.dabing.emoj.R$drawable: int net_warn_icon
+com.dabing.emoj.R$drawable: int net_webwechat_line
+com.dabing.emoj.R$drawable: int new_icon
+com.dabing.emoj.R$drawable: int nosdcard_pic
+com.dabing.emoj.R$drawable: int page_indicator_dot_style2
+com.dabing.emoj.R$drawable: int pic_black
+com.dabing.emoj.R$drawable: int pic_graydark
+com.dabing.emoj.R$drawable: int pic_graylight
+com.dabing.emoj.R$drawable: int preference_first_item
+com.dabing.emoj.R$drawable: int preference_item
+com.dabing.emoj.R$drawable: int preference_last_item
+com.dabing.emoj.R$drawable: int preference_one_item
+com.dabing.emoj.R$drawable: int progress
+com.dabing.emoj.R$drawable: int prompt
+com.dabing.emoj.R$drawable: int qqappwall_backgroud
+com.dabing.emoj.R$drawable: int qqappwall_launcher
+com.dabing.emoj.R$drawable: int qqappwall_webview_title_bg
+com.dabing.emoj.R$drawable: int rating_good
+com.dabing.emoj.R$drawable: int rating_important
+com.dabing.emoj.R$drawable: int regular_alert_nohistory
+com.dabing.emoj.R$drawable: int right_corner
+com.dabing.emoj.R$drawable: int search_edittext_selector
+com.dabing.emoj.R$drawable: int setting_black
+com.dabing.emoj.R$drawable: int setting_graydark
+com.dabing.emoj.R$drawable: int setting_graylight
+com.dabing.emoj.R$drawable: int shape_dialog
+com.dabing.emoj.R$drawable: int share_to_time_line_icon
+com.dabing.emoj.R$drawable: int social_add_person
+com.dabing.emoj.R$drawable: int social_chat
+com.dabing.emoj.R$drawable: int social_person
+com.dabing.emoj.R$drawable: int tab_bg
+com.dabing.emoj.R$drawable: int tab_bg_checked
+com.dabing.emoj.R$drawable: int tab_bg_halo
+com.dabing.emoj.R$drawable: int tab_bg_normal
+com.dabing.emoj.R$drawable: int tab_bg_pressed
+com.dabing.emoj.R$drawable: int tab_emoj_nor
+com.dabing.emoj.R$drawable: int tab_emoj_selector
+com.dabing.emoj.R$drawable: int tab_emotion_selector
+com.dabing.emoj.R$drawable: int tab_pic_selector
+com.dabing.emoj.R$drawable: int tab_setting_selector
+com.dabing.emoj.R$drawable: int tab_unread_bg
+com.dabing.emoj.R$drawable: int textview_background_black
+com.dabing.emoj.R$drawable: int textview_background_blue
+com.dabing.emoj.R$drawable: int textview_background_brown
+com.dabing.emoj.R$drawable: int textview_background_gray
+com.dabing.emoj.R$drawable: int textview_background_graydark
+com.dabing.emoj.R$drawable: int textview_background_lime
+com.dabing.emoj.R$drawable: int textview_background_magenta
+com.dabing.emoj.R$drawable: int textview_background_orange
+com.dabing.emoj.R$drawable: int textview_background_pink
+com.dabing.emoj.R$drawable: int textview_background_pressed
+com.dabing.emoj.R$drawable: int textview_background_purple
+com.dabing.emoj.R$drawable: int textview_background_red
+com.dabing.emoj.R$drawable: int textview_background_teal
+com.dabing.emoj.R$drawable: int textview_black_selector
+com.dabing.emoj.R$drawable: int textview_blue_selector
+com.dabing.emoj.R$drawable: int textview_brown_selector
+com.dabing.emoj.R$drawable: int textview_gray_selector
+com.dabing.emoj.R$drawable: int textview_lime_selector
+com.dabing.emoj.R$drawable: int textview_magenta_selector
+com.dabing.emoj.R$drawable: int textview_orange_selector
+com.dabing.emoj.R$drawable: int textview_pink_selector
+com.dabing.emoj.R$drawable: int textview_purple_selector
+com.dabing.emoj.R$drawable: int textview_red_selector
+com.dabing.emoj.R$drawable: int textview_teal_selector
+com.dabing.emoj.R$drawable: int toast_frame
+com.dabing.emoj.R$drawable: int transparent
+com.dabing.emoj.R$drawable: int umeng_common_gradient_green
+com.dabing.emoj.R$drawable: int umeng_common_gradient_orange
+com.dabing.emoj.R$drawable: int umeng_common_gradient_red
+com.dabing.emoj.R$drawable: int umeng_fb_bar_bg
+com.dabing.emoj.R$drawable: int umeng_fb_blank_selector
+com.dabing.emoj.R$drawable: int umeng_fb_bottom_banner
+com.dabing.emoj.R$drawable: int umeng_fb_dev_bubble
+com.dabing.emoj.R$drawable: int umeng_fb_gradient_green
+com.dabing.emoj.R$drawable: int umeng_fb_gradient_orange
+com.dabing.emoj.R$drawable: int umeng_fb_gray_frame
+com.dabing.emoj.R$drawable: int umeng_fb_list_item
+com.dabing.emoj.R$drawable: int umeng_fb_list_item_pressed
+com.dabing.emoj.R$drawable: int umeng_fb_list_item_selector
+com.dabing.emoj.R$drawable: int umeng_fb_point_new
+com.dabing.emoj.R$drawable: int umeng_fb_point_normal
+com.dabing.emoj.R$drawable: int umeng_fb_see_list_normal
+com.dabing.emoj.R$drawable: int umeng_fb_see_list_pressed
+com.dabing.emoj.R$drawable: int umeng_fb_see_list_selector
+com.dabing.emoj.R$drawable: int umeng_fb_statusbar_icon
+com.dabing.emoj.R$drawable: int umeng_fb_submit_selector
+com.dabing.emoj.R$drawable: int umeng_fb_top_banner
+com.dabing.emoj.R$drawable: int umeng_fb_user_bubble
+com.dabing.emoj.R$drawable: int umeng_fb_write_normal
+com.dabing.emoj.R$drawable: int umeng_fb_write_pressed
+com.dabing.emoj.R$drawable: int umeng_fb_write_selector
+com.dabing.emoj.R$drawable: int waps_app_detail_download_nor
+com.dabing.emoj.R$drawable: int waps_app_detail_download_pressed
+com.dabing.emoj.R$drawable: int waps_app_detail_download_selector
+com.dabing.emoj.R$drawable: int waps_custom_ad_nor
+com.dabing.emoj.R$drawable: int waps_custom_ad_pressed
+com.dabing.emoj.R$drawable: int waps_custom_ad_selector
+com.dabing.emoj.R$drawable: int waps_listview_download_pressed
+com.dabing.emoj.R$drawable: int waps_listview_download_selector
+com.dabing.emoj.R$drawable: int waps_listview_nor
+com.dabing.emoj.R$drawable: int waps_listview_pressed
+com.dabing.emoj.R$drawable: int waps_listview_selector
+com.dabing.emoj.R$drawable: int wb_browser_processbar_bg
+com.dabing.emoj.R$drawable: int wb_browser_processbar_loading
+com.dabing.emoj.R$drawable: int wb_head_default50x50
+com.dabing.emoj.R$drawable: int wb_square_icon_zoom
+com.dabing.emoj.R$drawable: int welcome_textview_background
+com.dabing.emoj.R$drawable: int white_av_download
+com.dabing.emoj.R$id
+com.dabing.emoj.R$id: int ad_layout
+com.dabing.emoj.R$id: int admin_btnReload
+com.dabing.emoj.R$id: int admin_btnSend
+com.dabing.emoj.R$id: int admin_make_emotion_btn1
+com.dabing.emoj.R$id: int admin_txtEmojName
+com.dabing.emoj.R$id: int admin_txtKey
+com.dabing.emoj.R$id: int admin_txtMsg
+com.dabing.emoj.R$id: int admin_txtPath
+com.dabing.emoj.R$id: int adview
+com.dabing.emoj.R$id: int alert_dialog_transparent_txt
+com.dabing.emoj.R$id: int authcode_change_btn
+com.dabing.emoj.R$id: int authcode_et
+com.dabing.emoj.R$id: int authcode_iv
+com.dabing.emoj.R$id: int bottom
+com.dabing.emoj.R$id: int btn1
+com.dabing.emoj.R$id: int btn2
+com.dabing.emoj.R$id: int btn3
+com.dabing.emoj.R$id: int btn4
+com.dabing.emoj.R$id: int btn5
+com.dabing.emoj.R$id: int btn6
+com.dabing.emoj.R$id: int btn7
+com.dabing.emoj.R$id: int btn_browse_left
+com.dabing.emoj.R$id: int btn_browse_right
+com.dabing.emoj.R$id: int btn_txt
+com.dabing.emoj.R$id: int cache_imageview_img
+com.dabing.emoj.R$id: int cache_item_img
+com.dabing.emoj.R$id: int center
+com.dabing.emoj.R$id: int center_horizontal
+com.dabing.emoj.R$id: int center_vertical
+com.dabing.emoj.R$id: int color_button_img
+com.dabing.emoj.R$id: int color_button_txt
+com.dabing.emoj.R$id: int common_emoj_fragment_gridview
+com.dabing.emoj.R$id: int confirm_dialog_btn1
+com.dabing.emoj.R$id: int confirm_dialog_btn2
+com.dabing.emoj.R$id: int confirm_dialog_container_ll
+com.dabing.emoj.R$id: int confirm_dialog_message_tv
+com.dabing.emoj.R$id: int confirm_dialog_source_tv
+com.dabing.emoj.R$id: int confirm_dialog_text_et
+com.dabing.emoj.R$id: int confirm_dialog_thumb_iv
+com.dabing.emoj.R$id: int confirm_progress_rate
+com.dabing.emoj.R$id: int confirm_progress_title
+com.dabing.emoj.R$id: int confirm_progressbar
+com.dabing.emoj.R$id: int content
+com.dabing.emoj.R$id: int content_list
+com.dabing.emoj.R$id: int content_ll
+com.dabing.emoj.R$id: int cr1
+com.dabing.emoj.R$id: int cr2
+com.dabing.emoj.R$id: int cr3
+com.dabing.emoj.R$id: int cr4
+com.dabing.emoj.R$id: int crystal_button_background_banner
+com.dabing.emoj.R$id: int crystal_button_background_container
+com.dabing.emoj.R$id: int crystal_button_background_icon
+com.dabing.emoj.R$id: int crystal_button_background_img
+com.dabing.emoj.R$id: int dashboard
+com.dabing.emoj.R$id: int demo_panel1
+com.dabing.emoj.R$id: int download_gridview
+com.dabing.emoj.R$id: int download_gridview_item_crystalButton
+com.dabing.emoj.R$id: int edittext_container
+com.dabing.emoj.R$id: int emoj_browse_container
+com.dabing.emoj.R$id: int emoj_detail_bottom
+com.dabing.emoj.R$id: int emoj_detail_btnok
+com.dabing.emoj.R$id: int emoj_detail_exception
+com.dabing.emoj.R$id: int emoj_detail_exception_img
+com.dabing.emoj.R$id: int emoj_detail_l1
+com.dabing.emoj.R$id: int emoj_img_txt
+com.dabing.emoj.R$id: int emoj_index1_container
+com.dabing.emoj.R$id: int emoj_index1_header
+com.dabing.emoj.R$id: int emoj_index2_btnSearch
+com.dabing.emoj.R$id: int emoj_index2_edittext
+com.dabing.emoj.R$id: int emoj_index2_gridview
+com.dabing.emoj.R$id: int emoj_index3_container
+com.dabing.emoj.R$id: int emoj_index3_header
+com.dabing.emoj.R$id: int emoj_item_img
+com.dabing.emoj.R$id: int emoj_zoom_layout
+com.dabing.emoj.R$id: int emoj_zoomview
+com.dabing.emoj.R$id: int empty
+com.dabing.emoj.R$id: int firstDomainMail
+com.dabing.emoj.R$id: int gdPanel_container
+com.dabing.emoj.R$id: int gd_action_bar
+com.dabing.emoj.R$id: int gd_action_bar_content_view
+com.dabing.emoj.R$id: int gd_action_bar_home_item
+com.dabing.emoj.R$id: int gd_action_bar_host
+com.dabing.emoj.R$id: int gd_action_bar_item
+com.dabing.emoj.R$id: int gd_action_bar_item_progress_bar
+com.dabing.emoj.R$id: int gd_action_bar_title
+com.dabing.emoj.R$id: int gd_description
+com.dabing.emoj.R$id: int gd_drawable
+com.dabing.emoj.R$id: int gd_progress_bar
+com.dabing.emoj.R$id: int gd_quick_aciton_grid_item_txt
+com.dabing.emoj.R$id: int gd_quick_aciton_list_item_img
+com.dabing.emoj.R$id: int gd_quick_aciton_list_item_txt
+com.dabing.emoj.R$id: int gd_quick_action_gridview
+com.dabing.emoj.R$id: int gd_quick_action_list_listview
+com.dabing.emoj.R$id: int gd_segmented_bar
+com.dabing.emoj.R$id: int gd_segmented_content_view
+com.dabing.emoj.R$id: int gd_separator_text
+com.dabing.emoj.R$id: int gd_subtext
+com.dabing.emoj.R$id: int gd_subtitle
+com.dabing.emoj.R$id: int gd_text
+com.dabing.emoj.R$id: int gd_thumbnail
+com.dabing.emoj.R$id: int gdi_arrow_down
+com.dabing.emoj.R$id: int gdi_arrow_up
+com.dabing.emoj.R$id: int gdi_footer
+com.dabing.emoj.R$id: int gdi_header
+com.dabing.emoj.R$id: int gdi_quick_action_items
+com.dabing.emoj.R$id: int gdi_rack
+com.dabing.emoj.R$id: int gdi_scroll
+com.dabing.emoj.R$id: int gifview
+com.dabing.emoj.R$id: int group
+com.dabing.emoj.R$id: int hdpi
+com.dabing.emoj.R$id: int header_corner
+com.dabing.emoj.R$id: int header_fragment_gridview_item_cr1
+com.dabing.emoj.R$id: int header_fragment_panel
+com.dabing.emoj.R$id: int header_gridview
+com.dabing.emoj.R$id: int header_icon
+com.dabing.emoj.R$id: int header_indicator
+com.dabing.emoj.R$id: int header_pageview
+com.dabing.emoj.R$id: int header_txtEmoj
+com.dabing.emoj.R$id: int hot_emoj_fragment_gridview
+com.dabing.emoj.R$id: int icon_preference_imageview
+com.dabing.emoj.R$id: int image_iv
+com.dabing.emoj.R$id: int image_zoom_view_progress
+com.dabing.emoj.R$id: int image_zoom_view_rate
+com.dabing.emoj.R$id: int info_wv
+com.dabing.emoj.R$id: int ldpi
+com.dabing.emoj.R$id: int left
+com.dabing.emoj.R$id: int main_cursor
+com.dabing.emoj.R$id: int main_tab_address
+com.dabing.emoj.R$id: int main_tab_emotion
+com.dabing.emoj.R$id: int main_tab_favorit
+com.dabing.emoj.R$id: int main_tab_group
+com.dabing.emoj.R$id: int main_tab_home
+com.dabing.emoj.R$id: int main_tab_new_emotion
+com.dabing.emoj.R$id: int main_tab_new_settings
+com.dabing.emoj.R$id: int main_tab_new_tv
+com.dabing.emoj.R$id: int main_tab_settings
+com.dabing.emoj.R$id: int main_tab_unread_tv
+com.dabing.emoj.R$id: int mdpi
+com.dabing.emoj.R$id: int miniAdLinearLayout
+com.dabing.emoj.R$id: int miniAdview
+com.dabing.emoj.R$id: int miniAdviewBackView
+com.dabing.emoj.R$id: int mm_body_sv
+com.dabing.emoj.R$id: int mm_preference_ll_id
+com.dabing.emoj.R$id: int mm_root_view
+com.dabing.emoj.R$id: int mm_trans_layer
+com.dabing.emoj.R$id: int multiple
+com.dabing.emoj.R$id: int nav_title
+com.dabing.emoj.R$id: int normal
+com.dabing.emoj.R$id: int parent
+com.dabing.emoj.R$id: int popup_layout
+com.dabing.emoj.R$id: int popup_text
+com.dabing.emoj.R$id: int progress_dialog_message
+com.dabing.emoj.R$id: int prompt_img
+com.dabing.emoj.R$id: int qq_app_wall_view
+com.dabing.emoj.R$id: int qqappwall_framelayout_webview
+com.dabing.emoj.R$id: int qqappwall_webview_root
+com.dabing.emoj.R$id: int qqappwall_webview_title_text
+com.dabing.emoj.R$id: int refresh_mini_pb
+com.dabing.emoj.R$id: int regular_emoj_fragment_alertImg
+com.dabing.emoj.R$id: int regular_emoj_fragment_gridview
+com.dabing.emoj.R$id: int right
+com.dabing.emoj.R$id: int sdcard_toast_img
+com.dabing.emoj.R$id: int sdcard_toast_text
+com.dabing.emoj.R$id: int search_icon
+com.dabing.emoj.R$id: int secondDomainMail
+com.dabing.emoj.R$id: int sendrequest
+com.dabing.emoj.R$id: int sendrequest_content
+com.dabing.emoj.R$id: int sendrequest_tip
+com.dabing.emoj.R$id: int setting_about
+com.dabing.emoj.R$id: int setting_about_btnscore
+com.dabing.emoj.R$id: int setting_about_notice
+com.dabing.emoj.R$id: int setting_appwall
+com.dabing.emoj.R$id: int setting_attention
+com.dabing.emoj.R$id: int setting_attention_icon
+com.dabing.emoj.R$id: int setting_attention_icon1
+com.dabing.emoj.R$id: int setting_attention_txt
+com.dabing.emoj.R$id: int setting_btnclear
+com.dabing.emoj.R$id: int setting_download
+com.dabing.emoj.R$id: int setting_download_icon
+com.dabing.emoj.R$id: int setting_download_icon1
+com.dabing.emoj.R$id: int setting_download_txt
+com.dabing.emoj.R$id: int setting_help
+com.dabing.emoj.R$id: int setting_pingjia
+com.dabing.emoj.R$id: int setting_problem
+com.dabing.emoj.R$id: int setting_problem_a1
+com.dabing.emoj.R$id: int setting_problem_p1
+com.dabing.emoj.R$id: int setting_userInfo
+com.dabing.emoj.R$id: int setting_userLogin
+com.dabing.emoj.R$id: int setting_userinfo_head
+com.dabing.emoj.R$id: int setting_userinfo_location
+com.dabing.emoj.R$id: int setting_userinfo_logout
+com.dabing.emoj.R$id: int setting_userinfo_nick
+com.dabing.emoj.R$id: int setting_userinfo_sex
+com.dabing.emoj.R$id: int setting_version
+com.dabing.emoj.R$id: int setting_version_txtVer
+com.dabing.emoj.R$id: int setting_version_update
+com.dabing.emoj.R$id: int setting_yijian
+com.dabing.emoj.R$id: int single
+com.dabing.emoj.R$id: int sort_btn
+com.dabing.emoj.R$id: int text_tv
+com.dabing.emoj.R$id: int thirdDomainMail
+com.dabing.emoj.R$id: int title
+com.dabing.emoj.R$id: int title_btn
+com.dabing.emoj.R$id: int title_btn1
+com.dabing.emoj.R$id: int title_btn4
+com.dabing.emoj.R$id: int title_btn_iv
+com.dabing.emoj.R$id: int title_btn_tv
+com.dabing.emoj.R$id: int top
+com.dabing.emoj.R$id: int tvLoad
+com.dabing.emoj.R$id: int umeng_common_app
+com.dabing.emoj.R$id: int umeng_common_appIcon
+com.dabing.emoj.R$id: int umeng_common_description
+com.dabing.emoj.R$id: int umeng_common_notification
+com.dabing.emoj.R$id: int umeng_common_notification_controller
+com.dabing.emoj.R$id: int umeng_common_progress_bar
+com.dabing.emoj.R$id: int umeng_common_progress_text
+com.dabing.emoj.R$id: int umeng_common_rich_notification_cancel
+com.dabing.emoj.R$id: int umeng_common_rich_notification_continue
+com.dabing.emoj.R$id: int umeng_common_title
+com.dabing.emoj.R$id: int umeng_fb_age_spinner
+com.dabing.emoj.R$id: int umeng_fb_atomLinearLayout
+com.dabing.emoj.R$id: int umeng_fb_atom_left_margin
+com.dabing.emoj.R$id: int umeng_fb_atom_right_margin
+com.dabing.emoj.R$id: int umeng_fb_atomtxt
+com.dabing.emoj.R$id: int umeng_fb_bottom_sub
+com.dabing.emoj.R$id: int umeng_fb_btnSendFb
+com.dabing.emoj.R$id: int umeng_fb_bubble
+com.dabing.emoj.R$id: int umeng_fb_content
+com.dabing.emoj.R$id: int umeng_fb_conversation_title
+com.dabing.emoj.R$id: int umeng_fb_dev_reply
+com.dabing.emoj.R$id: int umeng_fb_editTxtFb
+com.dabing.emoj.R$id: int umeng_fb_exitBtn
+com.dabing.emoj.R$id: int umeng_fb_feedbackpreview
+com.dabing.emoj.R$id: int umeng_fb_gender_spinner
+com.dabing.emoj.R$id: int umeng_fb_goback_btn
+com.dabing.emoj.R$id: int umeng_fb_imgBtn_submitFb
+com.dabing.emoj.R$id: int umeng_fb_new_dev_reply_box
+com.dabing.emoj.R$id: int umeng_fb_new_reply_alert_title
+com.dabing.emoj.R$id: int umeng_fb_new_reply_notifier
+com.dabing.emoj.R$id: int umeng_fb_rootId
+com.dabing.emoj.R$id: int umeng_fb_see_detail_btn
+com.dabing.emoj.R$id: int umeng_fb_see_list_btn
+com.dabing.emoj.R$id: int umeng_fb_stateOrTime
+com.dabing.emoj.R$id: int umeng_fb_state_or_date
+com.dabing.emoj.R$id: int umeng_fb_submit
+com.dabing.emoj.R$id: int wapsAdview
+com.dabing.emoj.R$id: int wapsCustomAdview
+com.dabing.emoj.R$id: int waps_app_detail_btnDownload
+com.dabing.emoj.R$id: int waps_app_detail_btnInstall
+com.dabing.emoj.R$id: int waps_app_detail_icon
+com.dabing.emoj.R$id: int waps_app_detail_img1
+com.dabing.emoj.R$id: int waps_app_detail_img2
+com.dabing.emoj.R$id: int waps_app_detail_txtAppDes
+com.dabing.emoj.R$id: int waps_app_detail_txtAppText
+com.dabing.emoj.R$id: int waps_app_detail_txtAppname
+com.dabing.emoj.R$id: int waps_app_detail_txtFilesize
+com.dabing.emoj.R$id: int waps_app_detail_txtProvider
+com.dabing.emoj.R$id: int waps_app_detail_txtVersion
+com.dabing.emoj.R$id: int waps_appwall_download
+com.dabing.emoj.R$id: int waps_appwall_listitem_appdetail
+com.dabing.emoj.R$id: int waps_appwall_listitem_appname
+com.dabing.emoj.R$id: int waps_appwall_listitem_icon
+com.dabing.emoj.R$id: int waps_appwall_listview
+com.dabing.emoj.R$id: int waps_custom_ad_appdetail
+com.dabing.emoj.R$id: int waps_custom_ad_appname
+com.dabing.emoj.R$id: int waps_custom_ad_icon
+com.dabing.emoj.R$id: int waps_custom_ad_layout
+com.dabing.emoj.R$id: int webview
+com.dabing.emoj.R$id: int welcome_img_anim
+com.dabing.emoj.R$id: int wrapper_item_img
+com.dabing.emoj.R$id: int xhdpi
+com.dabing.emoj.R$id: int zoomin
+com.dabing.emoj.R$id: int zoomout
+com.dabing.emoj.R$layout
+com.dabing.emoj.R$layout: int admin_make_emotion
+com.dabing.emoj.R$layout: int admin_select_emoj
+com.dabing.emoj.R$layout: int admin_upload
+com.dabing.emoj.R$layout: int alert_dialog_menu_layout
+com.dabing.emoj.R$layout: int alert_dialog_menu_list_layout
+com.dabing.emoj.R$layout: int alert_dialog_menu_list_layout_blue
+com.dabing.emoj.R$layout: int alert_dialog_menu_list_layout_cancel
+com.dabing.emoj.R$layout: int alert_dialog_menu_list_layout_special
+com.dabing.emoj.R$layout: int alert_dialog_menu_list_layout_title
+com.dabing.emoj.R$layout: int alert_dialog_transparent_layout
+com.dabing.emoj.R$layout: int app_wall
+com.dabing.emoj.R$layout: int cache_imageview
+com.dabing.emoj.R$layout: int cache_item
+com.dabing.emoj.R$layout: int colorbutton
+com.dabing.emoj.R$layout: int common_emoj_fragment
+com.dabing.emoj.R$layout: int confirm_dialog_footer_btn
+com.dabing.emoj.R$layout: int confirm_dialog_item2
+com.dabing.emoj.R$layout: int confirm_dialog_item5
+com.dabing.emoj.R$layout: int confirm_dialog_item7
+com.dabing.emoj.R$layout: int confirm_dialog_item8
+com.dabing.emoj.R$layout: int confirm_dialog_item9
+com.dabing.emoj.R$layout: int crystal_button_background
+com.dabing.emoj.R$layout: int demo_call
+com.dabing.emoj.R$layout: int demo_oom
+com.dabing.emoj.R$layout: int demo_panel
+com.dabing.emoj.R$layout: int demo_show
+com.dabing.emoj.R$layout: int dialog_layout
+com.dabing.emoj.R$layout: int divider
+com.dabing.emoj.R$layout: int download_gridview
+com.dabing.emoj.R$layout: int download_gridview_item
+com.dabing.emoj.R$layout: int emoj_browse_detail
+com.dabing.emoj.R$layout: int emoj_browse_picture_detail
+com.dabing.emoj.R$layout: int emoj_detail
+com.dabing.emoj.R$layout: int emoj_img_detail
+com.dabing.emoj.R$layout: int emoj_index1
+com.dabing.emoj.R$layout: int emoj_index2
+com.dabing.emoj.R$layout: int emoj_index3
+com.dabing.emoj.R$layout: int emoj_item
+com.dabing.emoj.R$layout: int emoj_item_nopadding
+com.dabing.emoj.R$layout: int gd_action_bar_dashboard
+com.dabing.emoj.R$layout: int gd_action_bar_empty
+com.dabing.emoj.R$layout: int gd_action_bar_item_base
+com.dabing.emoj.R$layout: int gd_action_bar_item_loader
+com.dabing.emoj.R$layout: int gd_action_bar_normal
+com.dabing.emoj.R$layout: int gd_content_dashboard
+com.dabing.emoj.R$layout: int gd_content_empty
+com.dabing.emoj.R$layout: int gd_content_normal
+com.dabing.emoj.R$layout: int gd_description_item_view
+com.dabing.emoj.R$layout: int gd_drawable_item_view
+com.dabing.emoj.R$layout: int gd_expandable_list_content_dashboard
+com.dabing.emoj.R$layout: int gd_expandable_list_content_empty
+com.dabing.emoj.R$layout: int gd_expandable_list_content_normal
+com.dabing.emoj.R$layout: int gd_list_content_dashboard
+com.dabing.emoj.R$layout: int gd_list_content_empty
+com.dabing.emoj.R$layout: int gd_list_content_normal
+com.dabing.emoj.R$layout: int gd_long_text_item_view
+com.dabing.emoj.R$layout: int gd_progress_item_view
+com.dabing.emoj.R$layout: int gd_quick_action_bar
+com.dabing.emoj.R$layout: int gd_quick_action_bar_item
+com.dabing.emoj.R$layout: int gd_quick_action_grid
+com.dabing.emoj.R$layout: int gd_quick_action_grid_item
+com.dabing.emoj.R$layout: int gd_quick_action_list
+com.dabing.emoj.R$layout: int gd_quick_action_list_item
+com.dabing.emoj.R$layout: int gd_quick_action_panel
+com.dabing.emoj.R$layout: int gd_segment
+com.dabing.emoj.R$layout: int gd_separator_item_view
+com.dabing.emoj.R$layout: int gd_subtext_item_view
+com.dabing.emoj.R$layout: int gd_subtitle_item_view
+com.dabing.emoj.R$layout: int gd_tab_content
+com.dabing.emoj.R$layout: int gd_tab_indicator
+com.dabing.emoj.R$layout: int gd_text_item_view
+com.dabing.emoj.R$layout: int gd_thumbnail_item_view
+com.dabing.emoj.R$layout: int header_fragment
+com.dabing.emoj.R$layout: int header_fragment_emotionpanel
+com.dabing.emoj.R$layout: int header_fragment_emotionpanel_item
+com.dabing.emoj.R$layout: int header_fragment_gridview
+com.dabing.emoj.R$layout: int header_fragment_gridview_crystal_item
+com.dabing.emoj.R$layout: int header_fragment_gridview_item
+com.dabing.emoj.R$layout: int hot_emoj_frargment
+com.dabing.emoj.R$layout: int image_button
+com.dabing.emoj.R$layout: int linearlayout_forlistview
+com.dabing.emoj.R$layout: int main
+com.dabing.emoj.R$layout: int main_tab
+com.dabing.emoj.R$layout: int main_tab1
+com.dabing.emoj.R$layout: int mm_activity
+com.dabing.emoj.R$layout: int mm_example_ui
+com.dabing.emoj.R$layout: int mm_preference
+com.dabing.emoj.R$layout: int mm_preference_catalog
+com.dabing.emoj.R$layout: int mm_preference_checkbox
+com.dabing.emoj.R$layout: int mm_preference_child
+com.dabing.emoj.R$layout: int mm_preference_content_choice
+com.dabing.emoj.R$layout: int mm_preference_content_domainmail
+com.dabing.emoj.R$layout: int mm_preference_content_domainmaillist
+com.dabing.emoj.R$layout: int mm_preference_content_keyvalue
+com.dabing.emoj.R$layout: int mm_preference_dialog_edittext
+com.dabing.emoj.R$layout: int mm_preference_image
+com.dabing.emoj.R$layout: int mm_preference_info
+com.dabing.emoj.R$layout: int mm_preference_list_content
+com.dabing.emoj.R$layout: int mm_preference_null
+com.dabing.emoj.R$layout: int mm_preference_screen
+com.dabing.emoj.R$layout: int mm_preference_self_vuser
+com.dabing.emoj.R$layout: int mm_preference_submenu
+com.dabing.emoj.R$layout: int mm_preference_widget_empty
+com.dabing.emoj.R$layout: int mm_title
+com.dabing.emoj.R$layout: int progress_dialog
+com.dabing.emoj.R$layout: int prompt
+com.dabing.emoj.R$layout: int qqappwall_browse_layout
+com.dabing.emoj.R$layout: int regular_emoj_fragment
+com.dabing.emoj.R$layout: int sdcard_eject_toast
+com.dabing.emoj.R$layout: int security_image
+com.dabing.emoj.R$layout: int sendrequest_dialog
+com.dabing.emoj.R$layout: int setting
+com.dabing.emoj.R$layout: int setting_about
+com.dabing.emoj.R$layout: int setting_problem
+com.dabing.emoj.R$layout: int setting_userinfo
+com.dabing.emoj.R$layout: int setting_version
+com.dabing.emoj.R$layout: int umeng_common_download_notification
+com.dabing.emoj.R$layout: int umeng_fb_atom
+com.dabing.emoj.R$layout: int umeng_fb_conversation
+com.dabing.emoj.R$layout: int umeng_fb_conversation_item
+com.dabing.emoj.R$layout: int umeng_fb_conversations
+com.dabing.emoj.R$layout: int umeng_fb_conversations_item
+com.dabing.emoj.R$layout: int umeng_fb_list_item
+com.dabing.emoj.R$layout: int umeng_fb_new_reply_alert_dialog
+com.dabing.emoj.R$layout: int umeng_fb_send_feedback
+com.dabing.emoj.R$layout: int waps_app_detail
+com.dabing.emoj.R$layout: int waps_appwall
+com.dabing.emoj.R$layout: int waps_appwall_listitem
+com.dabing.emoj.R$layout: int waps_custom_ad
+com.dabing.emoj.R$layout: int webalert
+com.dabing.emoj.R$layout: int webview_login
+com.dabing.emoj.R$layout: int welcome
+com.dabing.emoj.R$layout: int wrapper_item
+com.dabing.emoj.R$layout: int wrapper_item_nopadding
+com.dabing.emoj.R$string
+com.dabing.emoj.R$string: int UMAppUpdate
+com.dabing.emoj.R$string: int UMBreak_Network
+com.dabing.emoj.R$string: int UMContentTooLong
+com.dabing.emoj.R$string: int UMDeleteFeedback
+com.dabing.emoj.R$string: int UMDeleteMsg
+com.dabing.emoj.R$string: int UMDeleteThread
+com.dabing.emoj.R$string: int UMDialog_InstallAPK
+com.dabing.emoj.R$string: int UMEmptyFbNotAllowed
+com.dabing.emoj.R$string: int UMFbList_ListItem_State_Fail
+com.dabing.emoj.R$string: int UMFbList_ListItem_State_ReSend
+com.dabing.emoj.R$string: int UMFbList_ListItem_State_Resending
+com.dabing.emoj.R$string: int UMFbList_ListItem_State_Sending
+com.dabing.emoj.R$string: int UMFb_Atom_State_Fail
+com.dabing.emoj.R$string: int UMFb_Atom_State_Resend
+com.dabing.emoj.R$string: int UMFb_Atom_State_Resending
+com.dabing.emoj.R$string: int UMFb_Atom_State_Sending
+com.dabing.emoj.R$string: int UMFeedbackContent
+com.dabing.emoj.R$string: int UMFeedbackConversationTitle
+com.dabing.emoj.R$string: int UMFeedbackGoBack
+com.dabing.emoj.R$string: int UMFeedbackGotIt
+com.dabing.emoj.R$string: int UMFeedbackListTitle
+com.dabing.emoj.R$string: int UMFeedbackSeeDetail
+com.dabing.emoj.R$string: int UMFeedbackSummit
+com.dabing.emoj.R$string: int UMFeedbackTitle
+com.dabing.emoj.R$string: int UMFeedbackUmengTitle
+com.dabing.emoj.R$string: int UMGprsCondition
+com.dabing.emoj.R$string: int UMNewReplyAlertTitle
+com.dabing.emoj.R$string: int UMNewReplyFlick
+com.dabing.emoj.R$string: int UMNewReplyHint
+com.dabing.emoj.R$string: int UMNewReplyTitle
+com.dabing.emoj.R$string: int UMNewVersion
+com.dabing.emoj.R$string: int UMNotNow
+com.dabing.emoj.R$string: int UMResendFeedback
+com.dabing.emoj.R$string: int UMToast_IsUpdating
+com.dabing.emoj.R$string: int UMUpdateNow
+com.dabing.emoj.R$string: int UMUpdateTitle
+com.dabing.emoj.R$string: int UMViewFeedback
+com.dabing.emoj.R$string: int UMViewThread
+com.dabing.emoj.R$string: int a1
+com.dabing.emoj.R$string: int a2
+com.dabing.emoj.R$string: int a3
+com.dabing.emoj.R$string: int a4
+com.dabing.emoj.R$string: int a5
+com.dabing.emoj.R$string: int about2
+com.dabing.emoj.R$string: int add_weibo_content
+com.dabing.emoj.R$string: int app_back
+com.dabing.emoj.R$string: int app_cancel
+com.dabing.emoj.R$string: int app_continue
+com.dabing.emoj.R$string: int app_delete
+com.dabing.emoj.R$string: int app_edit
+com.dabing.emoj.R$string: int app_find
+com.dabing.emoj.R$string: int app_finish
+com.dabing.emoj.R$string: int app_name
+com.dabing.emoj.R$string: int app_nextstep
+com.dabing.emoj.R$string: int app_ok
+com.dabing.emoj.R$string: int app_prevstep
+com.dabing.emoj.R$string: int app_save
+com.dabing.emoj.R$string: int app_send
+com.dabing.emoj.R$string: int app_set
+com.dabing.emoj.R$string: int app_tip
+com.dabing.emoj.R$string: int applet_seccode_fail_tip
+com.dabing.emoj.R$string: int applet_seccode_tip
+com.dabing.emoj.R$string: int applet_secimg_change
+com.dabing.emoj.R$string: int applet_secimg_title
+com.dabing.emoj.R$string: int confirm_dialog_back
+com.dabing.emoj.R$string: int confirm_dialog_cancel
+com.dabing.emoj.R$string: int confirm_dialog_ok
+com.dabing.emoj.R$string: int confirm_dialog_sent
+com.dabing.emoj.R$string: int confirm_dialog_share
+com.dabing.emoj.R$string: int download_sdcard_mounted
+com.dabing.emoj.R$string: int ex_default
+com.dabing.emoj.R$string: int ex_oom
+com.dabing.emoj.R$string: int ex_runtime
+com.dabing.emoj.R$string: int fmt_afternoon
+com.dabing.emoj.R$string: int fmt_date
+com.dabing.emoj.R$string: int fmt_datetime
+com.dabing.emoj.R$string: int fmt_dawn
+com.dabing.emoj.R$string: int fmt_evening
+com.dabing.emoj.R$string: int fmt_iap_err
+com.dabing.emoj.R$string: int fmt_in60min
+com.dabing.emoj.R$string: int fmt_justnow
+com.dabing.emoj.R$string: int fmt_longdate
+com.dabing.emoj.R$string: int fmt_longtime
+com.dabing.emoj.R$string: int fmt_morning
+com.dabing.emoj.R$string: int fmt_noon
+com.dabing.emoj.R$string: int fmt_patime
+com.dabing.emoj.R$string: int fmt_pre_yesterday
+com.dabing.emoj.R$string: int gd_add
+com.dabing.emoj.R$string: int gd_all_friends
+com.dabing.emoj.R$string: int gd_compass
+com.dabing.emoj.R$string: int gd_compose
+com.dabing.emoj.R$string: int gd_edit
+com.dabing.emoj.R$string: int gd_export
+com.dabing.emoj.R$string: int gd_eye
+com.dabing.emoj.R$string: int gd_gallery
+com.dabing.emoj.R$string: int gd_go_home
+com.dabing.emoj.R$string: int gd_group
+com.dabing.emoj.R$string: int gd_help
+com.dabing.emoj.R$string: int gd_info
+com.dabing.emoj.R$string: int gd_list
+com.dabing.emoj.R$string: int gd_locate
+com.dabing.emoj.R$string: int gd_locate_myself
+com.dabing.emoj.R$string: int gd_mail
+com.dabing.emoj.R$string: int gd_pick_photo
+com.dabing.emoj.R$string: int gd_refresh
+com.dabing.emoj.R$string: int gd_search
+com.dabing.emoj.R$string: int gd_settings
+com.dabing.emoj.R$string: int gd_share
+com.dabing.emoj.R$string: int gd_slideshow
+com.dabing.emoj.R$string: int gd_sort_alpha
+com.dabing.emoj.R$string: int gd_sort_by_size
+com.dabing.emoj.R$string: int gd_star
+com.dabing.emoj.R$string: int gd_take_photo
+com.dabing.emoj.R$string: int gd_talk
+com.dabing.emoj.R$string: int gd_trashcan
+com.dabing.emoj.R$string: int hello
+com.dabing.emoj.R$string: int network_disconnect
+com.dabing.emoj.R$string: int nosupport
+com.dabing.emoj.R$string: int notice
+com.dabing.emoj.R$string: int p1
+com.dabing.emoj.R$string: int p2
+com.dabing.emoj.R$string: int p3
+com.dabing.emoj.R$string: int p4
+com.dabing.emoj.R$string: int p5
+com.dabing.emoj.R$string: int qqappwall_app_name
+com.dabing.emoj.R$string: int qqappwall_download_failed
+com.dabing.emoj.R$string: int qqappwall_download_failed_imply
+com.dabing.emoj.R$string: int qqappwall_download_finished
+com.dabing.emoj.R$string: int qqappwall_download_finished_imply
+com.dabing.emoj.R$string: int qqappwall_downloading
+com.dabing.emoj.R$string: int qqappwall_install_success
+com.dabing.emoj.R$string: int qqappwall_ready_to_download
+com.dabing.emoj.R$string: int qqappwall_task_cancel
+com.dabing.emoj.R$string: int qqappwall_task_exist
+com.dabing.emoj.R$string: int qqappwall_unknown_app
+com.dabing.emoj.R$string: int sdcard_mounted
+com.dabing.emoj.R$string: int search_hint
+com.dabing.emoj.R$string: int sending_request
+com.dabing.emoj.R$string: int umeng_common_action_cancel
+com.dabing.emoj.R$string: int umeng_common_action_continue
+com.dabing.emoj.R$string: int umeng_common_action_info_exist
+com.dabing.emoj.R$string: int umeng_common_action_pause
+com.dabing.emoj.R$string: int umeng_common_download_failed
+com.dabing.emoj.R$string: int umeng_common_download_notification_prefix
+com.dabing.emoj.R$string: int umeng_common_info_interrupt
+com.dabing.emoj.R$string: int umeng_common_network_break_alert
+com.dabing.emoj.R$string: int verify_password_null_tip
+com.dabing.emoj.R$string: int vip
+com.dabing.emoj.R$string: int wx_not_finish
+com.dabing.emoj.R$string: int wx_not_install
+com.dabing.emoj.R$style
+com.dabing.emoj.R$style: int BrowseLeftStyle
+com.dabing.emoj.R$style: int BrowseRightStyle
+com.dabing.emoj.R$style: int ChattingUIContent
+com.dabing.emoj.R$style: int ChattingUIFMessageText
+com.dabing.emoj.R$style: int ChattingUIMailSenderText
+com.dabing.emoj.R$style: int ChattingUISenderText
+com.dabing.emoj.R$style: int ChattingUISplit
+com.dabing.emoj.R$style: int ChattingUISystem
+com.dabing.emoj.R$style: int ChattingUIText
+com.dabing.emoj.R$style: int ChattingUIThumbnail
+com.dabing.emoj.R$style: int ChattingUIVoiceLength
+com.dabing.emoj.R$style: int ChattingUIWordCount
+com.dabing.emoj.R$style: int ChoicePreferenceButton
+com.dabing.emoj.R$style: int ConfirmDialog
+com.dabing.emoj.R$style: int ConfirmDialogImg
+com.dabing.emoj.R$style: int ConfirmDialogMessage
+com.dabing.emoj.R$style: int ConfirmDialogTitle
+com.dabing.emoj.R$style: int DataSheetAnimation
+com.dabing.emoj.R$style: int DialogAnimation
+com.dabing.emoj.R$style: int GreenDroid
+com.dabing.emoj.R$style: int GreenDroid_Animation
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopDown
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopDown_Center
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopDown_Left
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopDown_Right
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopUp
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopUp_Center
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopUp_Left
+com.dabing.emoj.R$style: int GreenDroid_Animation_PopUp_Right
+com.dabing.emoj.R$style: int GreenDroid_Widget
+com.dabing.emoj.R$style: int GreenDroid_Widget_ActionBar
+com.dabing.emoj.R$style: int GreenDroid_Widget_ActionBar_Dashboard
+com.dabing.emoj.R$style: int GreenDroid_Widget_ActionBar_Empty
+com.dabing.emoj.R$style: int GreenDroid_Widget_ActionBar_Item
+com.dabing.emoj.R$style: int GreenDroid_Widget_ActionBar_Title
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_DescriptionItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_DrawableItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_DrawableItemView_Drawable
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_DrawableItemView_Text
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_LongTextItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_ProgressItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_ProgressItemView_ProgressBar
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_ProgressItemView_Text
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_SeparatorItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_SubtextItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_SubtextItemView_Subtext
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_SubtextItemView_Text
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_SubtitleItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_SubtitleItemView_Subtitle
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_SubtitleItemView_Text
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_TextItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_ThumbnailItemView
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_ThumbnailItemView_Subtitle
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_ThumbnailItemView_Text
+com.dabing.emoj.R$style: int GreenDroid_Widget_ItemView_ThumbnailItemView_Thumbnail
+com.dabing.emoj.R$style: int GreenDroid_Widget_PageIndicator
+com.dabing.emoj.R$style: int GreenDroid_Widget_QuickAction
+com.dabing.emoj.R$style: int GreenDroid_Widget_QuickAction_Bar
+com.dabing.emoj.R$style: int GreenDroid_Widget_QuickAction_Bar_Item
+com.dabing.emoj.R$style: int GreenDroid_Widget_QuickAction_Grid
+com.dabing.emoj.R$style: int GreenDroid_Widget_QuickAction_Grid_Item
+com.dabing.emoj.R$style: int GreenDroid_Widget_QuickAction_Item
+com.dabing.emoj.R$style: int GreenDroid_Widget_SegmentedBar
+com.dabing.emoj.R$style: int GreenDroid_Widget_SegmentedHost
+com.dabing.emoj.R$style: int GreenDroid_Widget_TabIndicator
+com.dabing.emoj.R$style: int HyperText
+com.dabing.emoj.R$style: int MMBlock
+com.dabing.emoj.R$style: int MMBody
+com.dabing.emoj.R$style: int MMBriefText
+com.dabing.emoj.R$style: int MMButton
+com.dabing.emoj.R$style: int MMCheckBox
+com.dabing.emoj.R$style: int MMDivider
+com.dabing.emoj.R$style: int MMEditText
+com.dabing.emoj.R$style: int MMFontEmptyMsgLarge
+com.dabing.emoj.R$style: int MMFontPreferenceLarge
+com.dabing.emoj.R$style: int MMFontPreferenceProfile
+com.dabing.emoj.R$style: int MMFontPreferenceSmall
+com.dabing.emoj.R$style: int MMFontPreferenceSummary
+com.dabing.emoj.R$style: int MMFontTimeInList
+com.dabing.emoj.R$style: int MMFontTipInList
+com.dabing.emoj.R$style: int MMFontTitleInList
+com.dabing.emoj.R$style: int MMFooter
+com.dabing.emoj.R$style: int MMFriendListItem
+com.dabing.emoj.R$style: int MMLabel
+com.dabing.emoj.R$style: int MMLabelSplit
+com.dabing.emoj.R$style: int MMLine
+com.dabing.emoj.R$style: int MMLineActionButton
+com.dabing.emoj.R$style: int MMLineButton
+com.dabing.emoj.R$style: int MMLineEditPass
+com.dabing.emoj.R$style: int MMLineEditText
+com.dabing.emoj.R$style: int MMLineLabel
+com.dabing.emoj.R$style: int MMListCatalog
+com.dabing.emoj.R$style: int MMListItem
+com.dabing.emoj.R$style: int MMListView
+com.dabing.emoj.R$style: int MMLogin
+com.dabing.emoj.R$style: int MMMultiLineEditText
+com.dabing.emoj.R$style: int MMPreference
+com.dabing.emoj.R$style: int MMPreference_Catagory
+com.dabing.emoj.R$style: int MMPreference_CheckBoxPreference
+com.dabing.emoj.R$style: int MMPreference_Child
+com.dabing.emoj.R$style: int MMPreference_DialogPreference
+com.dabing.emoj.R$style: int MMPreference_DialogPreference_EditTextPreference
+com.dabing.emoj.R$style: int MMPreference_DialogPreference_YesNoPreference
+com.dabing.emoj.R$style: int MMPreference_Information
+com.dabing.emoj.R$style: int MMPreference_RingtonePreference
+com.dabing.emoj.R$style: int MMPreferenceScreen
+com.dabing.emoj.R$style: int MMPreferenceTextLarge
+com.dabing.emoj.R$style: int MMPreferenceTextSmall
+com.dabing.emoj.R$style: int MMScroll
+com.dabing.emoj.R$style: int MMSplit
+com.dabing.emoj.R$style: int MMTabButton
+com.dabing.emoj.R$style: int MMTheme_Basic
+com.dabing.emoj.R$style: int MMTheme_DataSheet
+com.dabing.emoj.R$style: int MMTheme_Launcher
+com.dabing.emoj.R$style: int MMTheme_Preference
+com.dabing.emoj.R$style: int MMTheme_Search
+com.dabing.emoj.R$style: int MMTitle
+com.dabing.emoj.R$style: int MMTitleButton
+com.dabing.emoj.R$style: int MMToolbarButton
+com.dabing.emoj.R$style: int MyDialog
+com.dabing.emoj.R$style: int NavPage
+com.dabing.emoj.R$style: int PageIndicator
+com.dabing.emoj.R$style: int PromptDialog
+com.dabing.emoj.R$style: int QuickActionPanelStyle
+com.dabing.emoj.R$style: int TextAppearance
+com.dabing.emoj.R$style: int TextAppearance_Large
+com.dabing.emoj.R$style: int TextAppearance_Medium
+com.dabing.emoj.R$style: int TextAppearance_Separator
+com.dabing.emoj.R$style: int TextAppearance_Small
+com.dabing.emoj.R$style: int TextAppearance_TabIndicator
+com.dabing.emoj.R$style: int Theme_GreenDroid
+com.dabing.emoj.R$style: int Theme_GreenDroid_Light
+com.dabing.emoj.R$style: int Theme_GreenDroid_Light_NoTitleBar
+com.dabing.emoj.R$style: int Theme_GreenDroid_NoTitleBar
+com.dabing.emoj.R$style: int TxtButton
+com.dabing.emoj.R$style: int ZoomInButton
+com.dabing.emoj.R$style: int ZoomOutButton
+com.dabing.emoj.R$style: int dialog
+com.dabing.emoj.R$style: int largeCustomProgressBar
+com.dabing.emoj.R$style: int leba_bg_base_layout
+com.dabing.emoj.R$style: int leba_bg_bottom_layout
+com.dabing.emoj.R$style: int leba_bg_mid_layout
+com.dabing.emoj.R$style: int leba_bg_single_layout
+com.dabing.emoj.R$style: int leba_bg_top_layout
+com.dabing.emoj.R$style: int mmalertdialog
+com.dabing.emoj.R$style: int mmdialog
+com.dabing.emoj.R$style: int nick
+com.dabing.emoj.R$style: int noBgFullScreen
+com.dabing.emoj.R$style: int normal_full_screen
+com.dabing.emoj.R$style: int qqappwall_prograssbar
+com.dabing.emoj.R$styleable
+com.dabing.emoj.R$styleable: int ActionBar_dividerDrawable
+com.dabing.emoj.R$styleable: int ActionBar_dividerWidth
+com.dabing.emoj.R$styleable: int ActionBar_homeDrawable
+com.dabing.emoj.R$styleable: int ActionBar_maxItems
+com.dabing.emoj.R$styleable: int ActionBar_title
+com.dabing.emoj.R$styleable: int ActionBar_type
+com.dabing.emoj.R$styleable: int AsyncImageView_defaultSrc
+com.dabing.emoj.R$styleable: int AsyncImageView_inDensity
+com.dabing.emoj.R$styleable: int AsyncImageView_isPreMeasureSize
+com.dabing.emoj.R$styleable: int AsyncImageView_url
+com.dabing.emoj.R$styleable: int DrawableItem_drawable
+com.dabing.emoj.R$styleable: int Item_enabled
+com.dabing.emoj.R$styleable: int PageIndicator_activeDot
+com.dabing.emoj.R$styleable: int PageIndicator_dotCount
+com.dabing.emoj.R$styleable: int PageIndicator_dotDrawable
+com.dabing.emoj.R$styleable: int PageIndicator_dotSpacing
+com.dabing.emoj.R$styleable: int PageIndicator_dotType
+com.dabing.emoj.R$styleable: int PageIndicator_gravity
+com.dabing.emoj.R$styleable: int PagedView_CenterInVertical
+com.dabing.emoj.R$styleable: int ProgressItem_isInProgress
+com.dabing.emoj.R$styleable: int SegmentedBar_dividerDrawable
+com.dabing.emoj.R$styleable: int SegmentedBar_dividerWidth
+com.dabing.emoj.R$styleable: int SegmentedHost_segmentedBar
+com.dabing.emoj.R$styleable: int SegmentedHost_segmentedContentView
+com.dabing.emoj.R$styleable: int SubtextItem_subtext
+com.dabing.emoj.R$styleable: int SubtitleItem_subtitle
+com.dabing.emoj.R$styleable: int TextItem_text
+com.dabing.emoj.R$styleable: int ThumbnailItem_thumbnail
+com.dabing.emoj.R$styleable: int ThumbnailItem_thumbnailURL
+com.dabing.emoj.R$styleable: int WrapperImageView_padding
+com.dabing.emoj.WeiXinEmojActivity
+com.dabing.emoj.WeiXinEmojActivity: WeiXinEmojActivity()
+com.dabing.emoj.activity.AppWallActivity
+com.dabing.emoj.activity.AppWallActivity: AppWallActivity()
+com.dabing.emoj.activity.DownloadGridViewActivity
+com.dabing.emoj.activity.DownloadGridViewActivity: DownloadGridViewActivity()
+com.dabing.emoj.activity.EmojBrowsePictureActivity
+com.dabing.emoj.activity.EmojBrowsePictureActivity: EmojBrowsePictureActivity()
+com.dabing.emoj.activity.EmojBrowsePictureActivity: void onClick(android.view.View)
+com.dabing.emoj.activity.EmojBrowseViewActivity
+com.dabing.emoj.activity.EmojBrowseViewActivity: EmojBrowseViewActivity()
+com.dabing.emoj.activity.EmojBrowseViewActivity: void onClick(android.view.View)
+com.dabing.emoj.activity.EmojContainerActivity
+com.dabing.emoj.activity.EmojContainerActivity: EmojContainerActivity()
+com.dabing.emoj.activity.EmojEmotionActivity
+com.dabing.emoj.activity.EmojEmotionActivity: EmojEmotionActivity()
+com.dabing.emoj.activity.EmojImageViewActivity
+com.dabing.emoj.activity.EmojImageViewActivity: EmojImageViewActivity()
+com.dabing.emoj.activity.EmojImageViewActivity: void onClick(android.view.View)
+com.dabing.emoj.activity.EmojSearchActivity
+com.dabing.emoj.activity.EmojSearchActivity: EmojSearchActivity()
+com.dabing.emoj.activity.EmojViewActivity
+com.dabing.emoj.activity.EmojViewActivity: EmojViewActivity()
+com.dabing.emoj.activity.EmojViewActivity: void onClick(android.view.View)
+com.dabing.emoj.activity.MainTab1Activity
+com.dabing.emoj.activity.MainTab1Activity: MainTab1Activity()
+com.dabing.emoj.activity.MainTabActivity
+com.dabing.emoj.activity.MainTabActivity: MainTabActivity()
+com.dabing.emoj.activity.SettingAboutActivity
+com.dabing.emoj.activity.SettingAboutActivity: SettingAboutActivity()
+com.dabing.emoj.activity.SettingActivity
+com.dabing.emoj.activity.SettingActivity: SettingActivity()
+com.dabing.emoj.activity.SettingActivity: void onClick(android.view.View)
+com.dabing.emoj.activity.SettingProblemActivity
+com.dabing.emoj.activity.SettingProblemActivity: SettingProblemActivity()
+com.dabing.emoj.activity.SettingUserInfoActivity
+com.dabing.emoj.activity.SettingUserInfoActivity: SettingUserInfoActivity()
+com.dabing.emoj.activity.SettingVersionActivity
+com.dabing.emoj.activity.SettingVersionActivity: SettingVersionActivity()
+com.dabing.emoj.activity.UserLoginActivity
+com.dabing.emoj.activity.UserLoginActivity: UserLoginActivity()
+com.dabing.emoj.activity.WelcomeActivity
+com.dabing.emoj.activity.WelcomeActivity: WelcomeActivity()
+com.dabing.emoj.admin.MakeEmotionActivity
+com.dabing.emoj.admin.MakeEmotionActivity: MakeEmotionActivity()
+com.dabing.emoj.admin.SelectEmojActivity
+com.dabing.emoj.admin.SelectEmojActivity: SelectEmojActivity()
+com.dabing.emoj.admin.SelectEmojActivity: void onClick(android.view.View)
+com.dabing.emoj.admin.WebLoginActivity
+com.dabing.emoj.admin.WebLoginActivity: WebLoginActivity()
+com.dabing.emoj.admin.uploadPicActivity
+com.dabing.emoj.admin.uploadPicActivity: uploadPicActivity()
+com.dabing.emoj.advertise.AdManager$AdType: com.dabing.emoj.advertise.AdManager$AdType[] values()
+com.dabing.emoj.advertise.AdManager$AdType: com.dabing.emoj.advertise.AdManager$AdType valueOf(java.lang.String)
+com.dabing.emoj.advertise.WAPS_ADInfo
+com.dabing.emoj.advertise.WAPS_ADInfo: android.os.Parcelable$Creator CREATOR
+com.dabing.emoj.advertise.WAPS_ADView
+com.dabing.emoj.advertise.WAPS_ADView: WAPS_ADView()
+com.dabing.emoj.advertise.WAPS_AppDetailActivity
+com.dabing.emoj.advertise.WAPS_AppDetailActivity: WAPS_AppDetailActivity()
+com.dabing.emoj.advertise.WAPS_AppDetailActivity: void onClick(android.view.View)
+com.dabing.emoj.advertise.WAPS_AppWallActivity
+com.dabing.emoj.advertise.WAPS_AppWallActivity: WAPS_AppWallActivity()
+com.dabing.emoj.advertise.WAPS_CustomAd
+com.dabing.emoj.advertise.WAPS_CustomAd: WAPS_CustomAd(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.demo.demo1
+com.dabing.emoj.demo.demo1: demo1()
+com.dabing.emoj.demo.demoOOM
+com.dabing.emoj.demo.demoOOM: demoOOM()
+com.dabing.emoj.demo.demoPanel
+com.dabing.emoj.demo.demoPanel: demoPanel()
+com.dabing.emoj.demo.democall
+com.dabing.emoj.demo.democall: democall()
+com.dabing.emoj.demo.democall: void onClick(android.view.View)
+com.dabing.emoj.demo.demolist
+com.dabing.emoj.demo.demolist: demolist()
+com.dabing.emoj.demo.demoshow
+com.dabing.emoj.demo.demoshow: demoshow()
+com.dabing.emoj.fragment.BaseEmojFragment: BaseEmojFragment(org.json.JSONObject)
+com.dabing.emoj.fragment.CommonEmojFragment: CommonEmojFragment(org.json.JSONObject)
+com.dabing.emoj.fragment.CommonEmojFragment$EmojRequest
+com.dabing.emoj.fragment.CrystalHeaderFragment
+com.dabing.emoj.fragment.CrystalHeaderFragment: CrystalHeaderFragment(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.fragment.EmotionEmojFragment: EmotionEmojFragment(org.json.JSONObject)
+com.dabing.emoj.fragment.EmotionEmojFragment$EmojRequest
+com.dabing.emoj.fragment.EmotionHeaderFragment
+com.dabing.emoj.fragment.EmotionHeaderFragment: EmotionHeaderFragment(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.fragment.HeaderFragment
+com.dabing.emoj.fragment.HeaderFragment: HeaderFragment(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.fragment.HotEmojFragment: HotEmojFragment(org.json.JSONObject)
+com.dabing.emoj.fragment.RegularEmojFragment: RegularEmojFragment(org.json.JSONObject)
+com.dabing.emoj.imagezoomview.ImageZoomView
+com.dabing.emoj.imagezoomview.ImageZoomView: ImageZoomView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.imagezoomview.SimpleZoomListener$ControlType: com.dabing.emoj.imagezoomview.SimpleZoomListener$ControlType[] values()
+com.dabing.emoj.imagezoomview.SimpleZoomListener$ControlType: com.dabing.emoj.imagezoomview.SimpleZoomListener$ControlType valueOf(java.lang.String)
+com.dabing.emoj.jni.JniUtils
+com.dabing.emoj.jni.JniUtils: void exifClose(int)
+com.dabing.emoj.jni.JniUtils: double[] exifGet3RealValue(int,int,boolean)
+com.dabing.emoj.jni.JniUtils: int exifGetDegrees(int)
+com.dabing.emoj.jni.JniUtils: long exifGetImageSize(int)
+com.dabing.emoj.jni.JniUtils: byte[] exifGetThumbnail(int)
+com.dabing.emoj.jni.JniUtils: java.lang.Object exifGetValue(int,int,boolean)
+com.dabing.emoj.jni.JniUtils: int exifOpen(java.lang.String,boolean)
+com.dabing.emoj.jni.JniUtils: int exifOpenFD(java.io.FileDescriptor)
+com.dabing.emoj.jni.JniUtils: boolean exifSetDegrees(int,int)
+com.dabing.emoj.jni.JniUtils: void fsCancelScan(boolean)
+com.dabing.emoj.jni.JniUtils: boolean fsCopyFile(java.lang.String,java.lang.String)
+com.dabing.emoj.jni.JniUtils: int fsGetFileTime(java.lang.String)
+com.dabing.emoj.jni.JniUtils: void fsInitExtensions(java.lang.String)
+com.dabing.emoj.jni.JniUtils: java.lang.String fsScanFolders(java.lang.String,int)
+com.dabing.emoj.jni.JniUtils: java.lang.String fsScanPictures(java.lang.String,int)
+com.dabing.emoj.jni.JniUtils: int gifAllocBuffer(int)
+com.dabing.emoj.jni.JniUtils: void gifClose(int)
+com.dabing.emoj.jni.JniUtils: int gifDecodeFrame(int,int,int)
+com.dabing.emoj.jni.JniUtils: boolean gifDrawFrame(int,int,int,int[])
+com.dabing.emoj.jni.JniUtils: void gifFreeBuffer(int)
+com.dabing.emoj.jni.JniUtils: int gifGetFrameCount(int)
+com.dabing.emoj.jni.JniUtils: long gifGetImageSize(int)
+com.dabing.emoj.jni.JniUtils: int gifOpenFD(java.io.FileDescriptor)
+com.dabing.emoj.jni.JniUtils: void gifSetBkColor(int,int)
+com.dabing.emoj.provider.BaseRequest
+com.dabing.emoj.provider.ChannelRequest
+com.dabing.emoj.provider.ChannelRequest: android.os.Parcelable$Creator CREATOR
+com.dabing.emoj.provider.MyRequest
+com.dabing.emoj.provider.MyRequest: android.os.Parcelable$Creator CREATOR
+com.dabing.emoj.service.AppRegister
+com.dabing.emoj.service.AppRegister: AppRegister()
+com.dabing.emoj.service.LoginSuccessBroadcast
+com.dabing.emoj.service.LoginSuccessBroadcast: LoginSuccessBroadcast()
+com.dabing.emoj.service.StartUpBroadcast
+com.dabing.emoj.service.StartUpBroadcast: StartUpBroadcast()
+com.dabing.emoj.service.WeiXinEmojLoginService
+com.dabing.emoj.service.WeiXinEmojLoginService: WeiXinEmojLoginService()
+com.dabing.emoj.service.WeiXinEmojService
+com.dabing.emoj.service.WeiXinEmojService: WeiXinEmojService()
+com.dabing.emoj.utils.FileType: com.dabing.emoj.utils.FileType[] values()
+com.dabing.emoj.utils.FileType: com.dabing.emoj.utils.FileType valueOf(java.lang.String)
+com.dabing.emoj.widget.CacheImageView
+com.dabing.emoj.widget.CacheImageView: CacheImageView(android.content.Context)
+com.dabing.emoj.widget.CacheImageView: CacheImageView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.CacheImageView: CacheImageView(android.content.Context,android.util.AttributeSet,int)
+com.dabing.emoj.widget.CacheWrapperImageView
+com.dabing.emoj.widget.CacheWrapperImageView: CacheWrapperImageView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.ColorButton
+com.dabing.emoj.widget.ColorButton: ColorButton(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.ColorButton: ColorButton(android.content.Context,android.util.AttributeSet,int)
+com.dabing.emoj.widget.CrystalButton
+com.dabing.emoj.widget.CrystalButton: CrystalButton(android.content.Context)
+com.dabing.emoj.widget.CrystalButton: CrystalButton(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.EmojImageView
+com.dabing.emoj.widget.EmojImageView: EmojImageView(android.content.Context)
+com.dabing.emoj.widget.EmojImageView: EmojImageView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.EmojImageView: EmojImageView(android.content.Context,android.util.AttributeSet,int)
+com.dabing.emoj.widget.EmotionPanel
+com.dabing.emoj.widget.EmotionPanel: EmotionPanel(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.EmotionPanel: EmotionPanel(android.content.Context,android.util.AttributeSet,int)
+com.dabing.emoj.widget.LinearLayoutForListView
+com.dabing.emoj.widget.LinearLayoutForListView: LinearLayoutForListView(android.content.Context)
+com.dabing.emoj.widget.LinearLayoutForListView: LinearLayoutForListView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.WrapperImageView
+com.dabing.emoj.widget.WrapperImageView: WrapperImageView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.wxapi.WXEntryActivity
+com.dabing.emoj.wxapi.WXEntryActivity: WXEntryActivity()
+com.tencent.appwallsdk.QQAppWallSDK
+com.tencent.appwallsdk.QQAppWallSDK: java.lang.String SDK_VERSION
+com.tencent.appwallsdk.QQAppWallSDK: void init(long,android.content.Context)
+com.tencent.appwallsdk.QQAppWallSDK: void setAutoInstall(boolean)
+com.tencent.appwallsdk.QQAppWallSDK: void destory()
+com.tencent.appwallsdk.QQAppWallSDK: void setTriggerView(android.view.View)
+com.tencent.appwallsdk.QQAppWallSDK: void cancelDownload(android.content.Context)
+com.tencent.appwallsdk.activity.QQAppWallActivity
+com.tencent.appwallsdk.activity.QQAppWallActivity: QQAppWallActivity()
+com.tencent.appwallsdk.activity.QQAppWallActivity: void onCreate(android.os.Bundle)
+com.tencent.appwallsdk.activity.QQAppWallActivity: void showBuildInBrowserActivity(android.content.Context,java.lang.String,java.lang.String)
+com.tencent.appwallsdk.activity.QQAppWallActivity: boolean onKeyDown(int,android.view.KeyEvent)
+com.tencent.appwallsdk.activity.QQAppWallActivity: void finish()
+com.tencent.appwallsdk.activity.QQAppWallActivity: void onConfigurationChanged(android.content.res.Configuration)
+com.tencent.appwallsdk.activity.QQAppWallActivity: void a(com.tencent.appwallsdk.activity.QQAppWallActivity)
+com.tencent.appwallsdk.logic.JSObject
+com.tencent.appwallsdk.logic.JSObject: JSObject(android.content.Context)
+com.tencent.appwallsdk.logic.JSObject: void startDownload(int,int,int,java.lang.String,java.lang.String,java.lang.String)
+com.tencent.appwallsdk.logic.JSObject: void alert(java.lang.String)
+com.tencent.appwallsdk.logic.JSObject: void cancelDownload()
+com.tencent.appwallsdk.service.DownloadService
+com.tencent.appwallsdk.service.DownloadService: java.lang.String ACTION_CANCEL_DOWNLOAD
+com.tencent.appwallsdk.service.DownloadService: DownloadService()
+com.tencent.appwallsdk.service.DownloadService: android.os.IBinder onBind(android.content.Intent)
+com.tencent.appwallsdk.service.DownloadService: void onCreate()
+com.tencent.appwallsdk.service.DownloadService: void registerReceiver()
+com.tencent.appwallsdk.service.DownloadService: void onDestroy()
+com.tencent.appwallsdk.service.DownloadService: void onStart(android.content.Intent,int)
+com.tencent.appwallsdk.service.DownloadService: void startDownload(java.lang.String)
+com.tencent.appwallsdk.service.DownloadService: void onDownloadStart(java.lang.String)
+com.tencent.appwallsdk.service.DownloadService: void onProgressUpdate(java.lang.String,int,int)
+com.tencent.appwallsdk.service.DownloadService: void onDownloadFinish(java.lang.String,java.lang.String)
+com.tencent.appwallsdk.service.DownloadService: void notifyInstallSuccess(java.lang.String)
+com.tencent.appwallsdk.service.DownloadService: void onDownloadError(java.lang.String,int,java.lang.String)
+com.tencent.appwallsdk.service.DownloadService$CommandBroadcaseReciver
+com.tencent.appwallsdk.service.DownloadService$CommandBroadcaseReciver: DownloadService$CommandBroadcaseReciver(com.tencent.appwallsdk.service.DownloadService)
+com.tencent.appwallsdk.service.DownloadService$CommandBroadcaseReciver: void onReceive(android.content.Context,android.content.Intent)
+com.tencent.appwallsdk.service.DownloadService$PackageBroadcastReciver
+com.tencent.appwallsdk.service.DownloadService$PackageBroadcastReciver: DownloadService$PackageBroadcastReciver(com.tencent.appwallsdk.service.DownloadService)
+com.tencent.appwallsdk.service.DownloadService$PackageBroadcastReciver: void onReceive(android.content.Context,android.content.Intent)
+com.tencent.appwallsdk.service.DownloadService$ServiceBinder
+com.tencent.appwallsdk.service.DownloadService$ServiceBinder: DownloadService$ServiceBinder(com.tencent.appwallsdk.service.DownloadService)
+com.tencent.appwallsdk.view.QQAppWallView
+com.tencent.appwallsdk.view.QQAppWallView: QQAppWallView(android.content.Context,android.util.AttributeSet,int)
+com.tencent.appwallsdk.view.QQAppWallView: QQAppWallView(android.content.Context,android.util.AttributeSet)
+com.tencent.appwallsdk.view.QQAppWallView: QQAppWallView(android.content.Context)
+com.tencent.appwallsdk.view.QQAppWallView: void openAppWall()
+com.tencent.appwallsdk.view.QQAppWallView: java.lang.String getWallHomePageUrl()
+com.tencent.appwallsdk.view.QQAppWallView: boolean canBack()
+com.tencent.appwallsdk.view.QQAppWallView: boolean canForward()
+com.tencent.appwallsdk.view.QQAppWallView: void goBack()
+com.tencent.appwallsdk.view.QQAppWallView: void goForward()
+com.tencent.appwallsdk.view.QQAppWallView: void reload()
+com.tencent.appwallsdk.view.QQAppWallView: void stopLoading()
+com.tencent.appwallsdk.view.QQAppWallView: void loadUrl(java.lang.String)
+com.tencent.appwallsdk.view.QQAppWallView: void setListener(com.tencent.appwallsdk.view.QQAppWallViewPageListener)
+com.tencent.appwallsdk.view.QQAppWallView: void a(com.tencent.appwallsdk.view.QQAppWallView)
+com.tencent.appwallsdk.view.QQAppWallView: com.tencent.appwallsdk.view.QQAppWallViewPageListener b(com.tencent.appwallsdk.view.QQAppWallView)
+com.tencent.appwallsdk.view.QQAppWallView: void a(com.tencent.appwallsdk.view.QQAppWallView,android.webkit.WebView,java.lang.String)
+com.tencent.appwallsdk.view.QQAppWallViewPageListener
+com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onPageProgressChanged(int)
+com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onLoadPageFinish()
+com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onReceivePageTitle(java.lang.String)
+com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onReceiveError(int,java.lang.String)
+com.tencent.exmobwin.banner.DialogActivity
+com.tencent.exmobwin.banner.DialogActivity: DialogActivity()
+com.tencent.exmobwin.banner.MobWINBrowserActivity
+com.tencent.exmobwin.banner.MobWINBrowserActivity: MobWINBrowserActivity()
+com.tencent.exmobwin.banner.TAdView
+com.tencent.exmobwin.banner.TAdView: TAdView(android.app.Activity)
+com.tencent.exmobwin.banner.TAdView: TAdView(android.content.Context,android.util.AttributeSet)
+com.tencent.mm.sdk.channel.MMessage$Receiver
+com.tencent.mm.sdk.openapi.WXAppExtendObject
+com.tencent.mm.sdk.openapi.WXAppExtendObject: java.lang.String extInfo
+com.tencent.mm.sdk.openapi.WXAppExtendObject: java.lang.String filePath
+com.tencent.mm.sdk.openapi.WXAppExtendObject: byte[] fileData
+com.tencent.mm.sdk.openapi.WXAppExtendObject: WXAppExtendObject()
+com.tencent.mm.sdk.openapi.WXAppExtendObject: WXAppExtendObject(java.lang.String,byte[])
+com.tencent.mm.sdk.openapi.WXAppExtendObject: WXAppExtendObject(java.lang.String,java.lang.String)
+com.tencent.mm.sdk.openapi.WXAppExtendObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXAppExtendObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXAppExtendObject: int type()
+com.tencent.mm.sdk.openapi.WXAppExtendObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXEmojiObject
+com.tencent.mm.sdk.openapi.WXEmojiObject: byte[] emojiData
+com.tencent.mm.sdk.openapi.WXEmojiObject: java.lang.String emojiPath
+com.tencent.mm.sdk.openapi.WXEmojiObject: WXEmojiObject()
+com.tencent.mm.sdk.openapi.WXEmojiObject: WXEmojiObject(byte[])
+com.tencent.mm.sdk.openapi.WXEmojiObject: WXEmojiObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXEmojiObject: void setEmojiData(byte[])
+com.tencent.mm.sdk.openapi.WXEmojiObject: void setEmojiPath(java.lang.String)
+com.tencent.mm.sdk.openapi.WXEmojiObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXEmojiObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXEmojiObject: int type()
+com.tencent.mm.sdk.openapi.WXEmojiObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXFileObject
+com.tencent.mm.sdk.openapi.WXFileObject: byte[] fileData
+com.tencent.mm.sdk.openapi.WXFileObject: java.lang.String filePath
+com.tencent.mm.sdk.openapi.WXFileObject: WXFileObject()
+com.tencent.mm.sdk.openapi.WXFileObject: WXFileObject(byte[])
+com.tencent.mm.sdk.openapi.WXFileObject: WXFileObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXFileObject: void setFileData(byte[])
+com.tencent.mm.sdk.openapi.WXFileObject: void setFilePath(java.lang.String)
+com.tencent.mm.sdk.openapi.WXFileObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXFileObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXFileObject: int type()
+com.tencent.mm.sdk.openapi.WXFileObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXImageObject
+com.tencent.mm.sdk.openapi.WXImageObject: byte[] imageData
+com.tencent.mm.sdk.openapi.WXImageObject: java.lang.String imagePath
+com.tencent.mm.sdk.openapi.WXImageObject: java.lang.String imageUrl
+com.tencent.mm.sdk.openapi.WXImageObject: WXImageObject()
+com.tencent.mm.sdk.openapi.WXImageObject: WXImageObject(byte[])
+com.tencent.mm.sdk.openapi.WXImageObject: WXImageObject(android.graphics.Bitmap)
+com.tencent.mm.sdk.openapi.WXImageObject: void setImagePath(java.lang.String)
+com.tencent.mm.sdk.openapi.WXImageObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXImageObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXImageObject: int type()
+com.tencent.mm.sdk.openapi.WXImageObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXMediaMessage
+com.tencent.mm.sdk.openapi.WXMediaMessage: java.lang.String ACTION_WXAPPMESSAGE
+com.tencent.mm.sdk.openapi.WXMediaMessage: int sdkVer
+com.tencent.mm.sdk.openapi.WXMediaMessage: java.lang.String title
+com.tencent.mm.sdk.openapi.WXMediaMessage: java.lang.String description
+com.tencent.mm.sdk.openapi.WXMediaMessage: byte[] thumbData
+com.tencent.mm.sdk.openapi.WXMediaMessage: com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject mediaObject
+com.tencent.mm.sdk.openapi.WXMediaMessage: WXMediaMessage()
+com.tencent.mm.sdk.openapi.WXMediaMessage: WXMediaMessage(com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject)
+com.tencent.mm.sdk.openapi.WXMediaMessage: int getType()
+com.tencent.mm.sdk.openapi.WXMediaMessage: void setThumbImage(android.graphics.Bitmap)
+com.tencent.mm.sdk.openapi.WXMediaMessage: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXMusicObject
+com.tencent.mm.sdk.openapi.WXMusicObject: java.lang.String musicUrl
+com.tencent.mm.sdk.openapi.WXMusicObject: java.lang.String musicLowBandUrl
+com.tencent.mm.sdk.openapi.WXMusicObject: WXMusicObject()
+com.tencent.mm.sdk.openapi.WXMusicObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXMusicObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXMusicObject: int type()
+com.tencent.mm.sdk.openapi.WXMusicObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXTextObject
+com.tencent.mm.sdk.openapi.WXTextObject: java.lang.String text
+com.tencent.mm.sdk.openapi.WXTextObject: WXTextObject()
+com.tencent.mm.sdk.openapi.WXTextObject: WXTextObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXTextObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXTextObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXTextObject: int type()
+com.tencent.mm.sdk.openapi.WXTextObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXVideoObject
+com.tencent.mm.sdk.openapi.WXVideoObject: java.lang.String videoUrl
+com.tencent.mm.sdk.openapi.WXVideoObject: java.lang.String videoLowBandUrl
+com.tencent.mm.sdk.openapi.WXVideoObject: WXVideoObject()
+com.tencent.mm.sdk.openapi.WXVideoObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXVideoObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXVideoObject: int type()
+com.tencent.mm.sdk.openapi.WXVideoObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXWebpageObject
+com.tencent.mm.sdk.openapi.WXWebpageObject: java.lang.String webpageUrl
+com.tencent.mm.sdk.openapi.WXWebpageObject: WXWebpageObject()
+com.tencent.mm.sdk.openapi.WXWebpageObject: WXWebpageObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXWebpageObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXWebpageObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXWebpageObject: int type()
+com.tencent.mm.sdk.openapi.WXWebpageObject: boolean checkArgs()
+com.tencent.mm.sdk.platformtools.LBSManager
+com.tencent.mm.sdk.platformtools.SensorController
+com.tencent.mm.sdk.plugin.MMPluginOAuth$Receiver
+com.tencent.mm.sdk.uikit.MMBaseActivity
+com.tencent.mm.sdk.uikit.MMBaseActivity: MMBaseActivity()
+com.tencent.mm.sdk.uikit.MMImageButton
+com.tencent.mm.sdk.uikit.MMImageButton: MMImageButton(android.content.Context)
+com.tencent.mm.sdk.uikit.MMImageButton: MMImageButton(android.content.Context,android.util.AttributeSet)
+com.tencent.mm.sdk.uikit.MMTabBaseActivity
+com.tencent.mm.sdk.uikit.MMWizardActivity
+com.tencent.mm.sdk.uikit.applet.SecurityImage
+com.tencent.mm.sdk.uikit.applet.SecurityImage: SecurityImage(android.content.Context)
+com.tencent.mm.sdk.uikit.applet.SecurityImage: SecurityImage(android.content.Context,android.util.AttributeSet)
+com.tencent.weibo.demo.MainActivity
+com.tencent.weibo.demo.OAuthV1Activity
+com.tencent.weibo.demo.OAuthV3ImplicitGrantActivity
+com.tencent.weibo.demo.WeiBoAPIV1Activity
+com.tencent.weibo.demo.WeiBoAPIV3Activity
+com.tencent.weibo.webview.OAuthV1AuthorizeWebView
+com.tencent.weibo.webview.OAuthV2AuthorizeWebView
+com.tencent.weibo.webview.OAuthV3AuthorizeWebView
+com.umeng.analytics.Gender: com.umeng.analytics.Gender[] values()
+com.umeng.analytics.Gender: com.umeng.analytics.Gender valueOf(java.lang.String)
+com.umeng.common.net.DownloadingService
+com.umeng.common.net.DownloadingService: DownloadingService()
+com.umeng.common.net.o: o(org.json.JSONObject)
+com.umeng.common.net.o$a: com.umeng.common.net.o$a[] values()
+com.umeng.common.net.o$a: com.umeng.common.net.o$a valueOf(java.lang.String)
+com.umeng.common.net.p$b: com.umeng.common.net.p$b[] values()
+com.umeng.common.net.p$b: com.umeng.common.net.p$b valueOf(java.lang.String)
+com.umeng.common.net.t: t(org.json.JSONObject)
+com.umeng.fb.NotificationType: com.umeng.fb.NotificationType[] values()
+com.umeng.fb.NotificationType: com.umeng.fb.NotificationType valueOf(java.lang.String)
+com.umeng.fb.a: a(org.json.JSONObject)
+com.umeng.fb.a$a: com.umeng.fb.a$a[] values()
+com.umeng.fb.a$a: com.umeng.fb.a$a valueOf(java.lang.String)
+com.umeng.fb.a$b: com.umeng.fb.a$b[] values()
+com.umeng.fb.a$b: com.umeng.fb.a$b valueOf(java.lang.String)
+com.umeng.fb.a.c: c(org.json.JSONObject)
+com.umeng.fb.b$a: com.umeng.fb.b$a[] values()
+com.umeng.fb.b$a: com.umeng.fb.b$a valueOf(java.lang.String)
+com.umeng.fb.ui.FeedbackConversation
+com.umeng.fb.ui.FeedbackConversation: FeedbackConversation()
+com.umeng.fb.ui.FeedbackConversations
+com.umeng.fb.ui.FeedbackConversations: FeedbackConversations()
+com.umeng.fb.ui.SendFeedback
+com.umeng.fb.ui.SendFeedback: SendFeedback()
+com.umeng.fb.ui.ThreadView
+com.umeng.fb.ui.ThreadView: ThreadView(android.content.Context,android.util.AttributeSet)
+com.umeng.update.UpdateResponse: UpdateResponse(org.json.JSONObject)
+greendroid.app.GDActivity
+greendroid.app.GDActivity: void setActionBarContentView(android.view.View)
+greendroid.app.GDApplication
+greendroid.app.GDApplication: GDApplication()
+greendroid.app.GDExpandableListActivity
+greendroid.app.GDExpandableListActivity: void setActionBarContentView(android.view.View)
+greendroid.app.GDListActivity
+greendroid.app.GDListActivity: void setActionBarContentView(android.view.View)
+greendroid.app.GDTabActivity
+greendroid.util.FileType: greendroid.util.FileType[] values()
+greendroid.util.FileType: greendroid.util.FileType valueOf(java.lang.String)
+greendroid.widget.ActionBar
+greendroid.widget.ActionBar: ActionBar(android.content.Context)
+greendroid.widget.ActionBar: ActionBar(android.content.Context,android.util.AttributeSet)
+greendroid.widget.ActionBar: ActionBar(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.ActionBar$Type: greendroid.widget.ActionBar$Type[] values()
+greendroid.widget.ActionBar$Type: greendroid.widget.ActionBar$Type valueOf(java.lang.String)
+greendroid.widget.ActionBarHost
+greendroid.widget.ActionBarHost: ActionBarHost(android.content.Context)
+greendroid.widget.ActionBarHost: ActionBarHost(android.content.Context,android.util.AttributeSet)
+greendroid.widget.ActionBarItem$Type: greendroid.widget.ActionBarItem$Type[] values()
+greendroid.widget.ActionBarItem$Type: greendroid.widget.ActionBarItem$Type valueOf(java.lang.String)
+greendroid.widget.AsyncImageView
+greendroid.widget.AsyncImageView: AsyncImageView(android.content.Context)
+greendroid.widget.AsyncImageView: AsyncImageView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.AsyncImageView: AsyncImageView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.AsyncImageView$SavedState
+greendroid.widget.AsyncImageView$SavedState: android.os.Parcelable$Creator CREATOR
+greendroid.widget.EmojAsyncImageView
+greendroid.widget.EmojAsyncImageView: EmojAsyncImageView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.EmojAsyncImageView: EmojAsyncImageView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.PageIndicator
+greendroid.widget.PageIndicator: PageIndicator(android.content.Context)
+greendroid.widget.PageIndicator: PageIndicator(android.content.Context,android.util.AttributeSet)
+greendroid.widget.PageIndicator: PageIndicator(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.PageIndicator$SavedState
+greendroid.widget.PageIndicator$SavedState: android.os.Parcelable$Creator CREATOR
+greendroid.widget.PagedView
+greendroid.widget.PagedView: PagedView(android.content.Context)
+greendroid.widget.PagedView: PagedView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.PagedView: PagedView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.PagedView$SavedState
+greendroid.widget.PagedView$SavedState: android.os.Parcelable$Creator CREATOR
+greendroid.widget.PreAsyncImageView
+greendroid.widget.PreAsyncImageView: PreAsyncImageView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.PreAsyncImageView: PreAsyncImageView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.SegmentedBar
+greendroid.widget.SegmentedBar: SegmentedBar(android.content.Context,android.util.AttributeSet)
+greendroid.widget.SegmentedBar: SegmentedBar(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.SegmentedHost
+greendroid.widget.SegmentedHost: SegmentedHost(android.content.Context,android.util.AttributeSet)
+greendroid.widget.SegmentedHost: SegmentedHost(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.itemview.DescriptionItemView
+greendroid.widget.itemview.DescriptionItemView: DescriptionItemView(android.content.Context)
+greendroid.widget.itemview.DescriptionItemView: DescriptionItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.DescriptionItemView: DescriptionItemView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.itemview.DrawableItemView
+greendroid.widget.itemview.DrawableItemView: DrawableItemView(android.content.Context)
+greendroid.widget.itemview.DrawableItemView: DrawableItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.LongTextItemView
+greendroid.widget.itemview.LongTextItemView: LongTextItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.LongTextItemView: LongTextItemView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.itemview.ProgressItemView
+greendroid.widget.itemview.ProgressItemView: ProgressItemView(android.content.Context)
+greendroid.widget.itemview.ProgressItemView: ProgressItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.ProgressItemView: ProgressItemView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.itemview.SeparatorItemView
+greendroid.widget.itemview.SeparatorItemView: SeparatorItemView(android.content.Context)
+greendroid.widget.itemview.SeparatorItemView: SeparatorItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.SeparatorItemView: SeparatorItemView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.itemview.SubtextItemView
+greendroid.widget.itemview.SubtextItemView: SubtextItemView(android.content.Context)
+greendroid.widget.itemview.SubtextItemView: SubtextItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.SubtitleItemView
+greendroid.widget.itemview.SubtitleItemView: SubtitleItemView(android.content.Context)
+greendroid.widget.itemview.SubtitleItemView: SubtitleItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.TextItemView
+greendroid.widget.itemview.TextItemView: TextItemView(android.content.Context)
+greendroid.widget.itemview.TextItemView: TextItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.TextItemView: TextItemView(android.content.Context,android.util.AttributeSet,int)
+greendroid.widget.itemview.ThumbnailItemView
+greendroid.widget.itemview.ThumbnailItemView: ThumbnailItemView(android.content.Context)
+greendroid.widget.itemview.ThumbnailItemView: ThumbnailItemView(android.content.Context,android.util.AttributeSet)
+greendroid.widget.itemview.ThumbnailItemView: ThumbnailItemView(android.content.Context,android.util.AttributeSet,int)
+org.apache.http.entity.mime.HttpMultipartMode: org.apache.http.entity.mime.HttpMultipartMode[] values()
+org.apache.http.entity.mime.HttpMultipartMode: org.apache.http.entity.mime.HttpMultipartMode valueOf(java.lang.String)

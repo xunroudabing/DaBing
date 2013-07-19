@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PageIndicator">
+		<item name="dotDrawable">@drawable/page_indicator_dot_style2</item>
+	</style>
+	<style name="largeCustomProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/custom_loading</item>
+    </style>
+    <!-- 昵称文字样式 -->
+	<style name="nick">
+  		<item name="android:textColor">@color/nickblue</item>
+  		<item name="android:textSize">15dip</item>
+	</style>
+	<!-- 加载提示框 -->
+	<style name="MyDialog" parent="@android:Theme.Dialog">       
+ 		<item name="android:windowFrame">@null</item>    
+ 		<item name="android:windowNoTitle">true</item>  
+ 		<item name="android:windowBackground">@drawable/mm_trans</item>      
+ 		<item name="android:windowIsFloating">false</item> 
+ 		<item name="android:windowContentOverlay">@null</item>  
+	</style>
+	<style name="PromptDialog" parent="@android:Theme.Dialog">       
+ 		<item name="android:windowFrame">@null</item>    
+ 		<item name="android:windowNoTitle">true</item>  
+ 		<item name="android:windowBackground">@null</item>      
+ 		<item name="android:windowIsFloating">true</item> 
+ 		<item name="android:windowContentOverlay">@null</item>  
+	</style>
+	<style name="MMTabButton">
+        <item name="android:textSize">2.0dip</item>
+        <item name="android:textColor">@color/mm_tab_btn</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/tab_bg</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">0.70000005dip</item>
+        <item name="android:layout_marginRight">0.70000005dip</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    	 <style name="ZoomInButton">
+        <item name="android:background">@drawable/mm_zoomin_btn</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ZoomOutButton">
+        <item name="android:background">@drawable/mm_zoomout_btn</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="TxtButton">
+    	<item name="android:background">@drawable/btn_txt_selector</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+	    <item name="android:windowIsFloating">true</item>     <!-- 设置未浮动窗口 -->
+		<item name="android:windowFrame">@null</item>         <!-- 设置无边框 -->     
+		<item name="android:windowNoTitle">true</item>        <!-- 设置无标题 -->
+		<item name="android:windowBackground">@color/sc_transparent_background</item>  <!-- 设置完全透明 -->
+		<item name="android:backgroundDimEnabled">true</item>                          <!-- 设置屏幕变暗 -->   
+	</style>
+	<!-- 微信 -->
+	<style name="ConfirmDialogTitle">
+        <item name="android:textSize">20.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:paddingLeft">12.0dip</item>
+        <item name="android:paddingRight">12.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowDx">1.2</item>
+        <item name="android:shadowDy">1.2</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+	<style name="DialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
+        <item name="android:windowExitAnimation">@anim/push_down_out</item>
+    </style>
+	<style name="ConfirmDialog">
+        <item name="android:background">@drawable/confirm_dialog_top_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ConfirmDialogImg">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">12.0dip</item>
+        <item name="android:layout_marginRight">12.0dip</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">180.0dip</item>
+        <item name="android:maxHeight">180.0dip</item>
+    </style>
+    <style name="ConfirmDialogMessage">
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+        <item name="android:textColor">#ff737373</item>
+        <item name="android:paddingLeft">12.0dip</item>
+        <item name="android:paddingTop">6.0dip</item>
+        <item name="android:paddingRight">12.0dip</item>
+        <item name="android:paddingBottom">6.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowDx">1.2</item>
+        <item name="android:shadowDy">1.2</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+     <style name="mmdialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/mm_trans</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:background">@drawable/mm_trans</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="mmalertdialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/mm_trans</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@drawable/mm_trans</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+        
+     <style name="leba_bg_base_layout">
+       	<item name="android:orientation">horizontal</item>
+       	<item name="android:layout_width">fill_parent</item>
+      	<item name="android:layout_height">wrap_content</item>
+      	<item name="android:gravity">center_vertical</item>
+       	<item name="android:paddingTop">16.0dip</item>
+       	<item name="android:paddingBottom">16.0dip</item>
+       	<item name="android:focusable">true</item>
+       	<item name="android:clickable">true</item>   
+   </style>
+       
+      <style name="leba_bg_top_layout" parent="@style/leba_bg_base_layout">      
+       	<item name="android:background">@drawable/leba_bg_top_selector</item>
+   </style>
+                                   
+   
+   <style name="leba_bg_mid_layout" parent="@style/leba_bg_base_layout">
+       	<item name="android:background">@drawable/leba_bg_mid_selector</item> 
+   </style>
+                    
+   
+   <style name="leba_bg_bottom_layout" parent="@style/leba_bg_base_layout">
+       	<item name="android:background">@drawable/leba_bg_bottom_selector</item> 
+   </style>
+   
+    <style name="leba_bg_single_layout" parent="@style/leba_bg_base_layout">
+       	<item name="android:background">@drawable/leba_bg_single_selector</item>  
+    </style>    
+        <style name="QuickActionPanelStyle">
+		<item name="android:padding">7dp</item>
+		<item name="android:background">@drawable/gd_quick_action_grid_bg</item>
+		<item name="android:gravity">center</item>
+	</style>   
+	
+   <style name="BrowseLeftStyle">
+        <item name="android:layout_alignParentLeft">true</item>
+       	<item name="android:layout_centerInParent">true</item>
+        <item name="android:background">@drawable/btn_browse_left_selector</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="BrowseRightStyle">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:background">@drawable/btn_browse_right_selector</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

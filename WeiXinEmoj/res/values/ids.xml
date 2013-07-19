@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item type="id" name="main_tab_group">false</item>
+    <item type="id" name="main_tab_home">false</item>
+    <item type="id" name="main_tab_unread_tv">false</item>
+    <item type="id" name="main_tab_address">false</item>
+    <item type="id" name="main_tab_favorit">false</item>
+    <item type="id" name="main_tab_new_tv">false</item>
+    <item type="id" name="main_tab_new_settings"></item>
+    <item type="id" name="main_tab_new_emotion"></item>
+    <item type="id" name="main_tab_settings">false</item>
+    <item type="id" name="main_tab_emotion"></item>
+    <item type="id" name="confirm_dialog_container_ll"></item>
+    <item type="id" name="confirm_dialog_message_tv"></item>
+    <item type="id" name="confirm_dialog_source_tv"></item>
+    <item type="id" name="confirm_dialog_text_et"></item>
+    <item type="id" name="confirm_dialog_btn1"></item>
+    <item type="id" name="confirm_dialog_btn2"></item>
+    <item type="id" name="confirm_dialog_thumb_iv"></item>
+    <item type="id" name="sdcard_toast_text"></item>
+</resources>

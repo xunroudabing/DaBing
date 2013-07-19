@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/app_panel_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <GridView     
+	android:gravity="center"
+	android:fadingEdge="none"
+	android:id="@+id/download_gridview"
+	android:numColumns="4"
+	android:stretchMode="columnWidth"
+	android:verticalSpacing="0dp"
+	android:horizontalSpacing="0dp"
+	android:listSelector="@drawable/mm_trans"
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"></GridView>
+
+</LinearLayout>

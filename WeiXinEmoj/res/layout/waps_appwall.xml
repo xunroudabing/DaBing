@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout     
+    android:background="@drawable/app_panel_bg"    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+        <LinearLayout  
+        android:id="@+id/miniAdLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"/>        
+    </LinearLayout>	
+	 <ListView 
+	  android:layout_weight="1.0" 
+	  android:cacheColorHint="#00000000"
+	  android:divider="@drawable/list_divider_line"
+	  android:dividerHeight="1dp"
+	  android:fadingEdge="none"
+	  android:id="@+id/waps_appwall_listview" 
+	  android:layout_width="fill_parent" 
+	  android:layout_height="wrap_content"></ListView>
+</LinearLayout>

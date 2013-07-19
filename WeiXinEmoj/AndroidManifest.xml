@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dabing.emoj"
+    android:versionCode="11"
+    android:versionName="1.9" >
+
+    <uses-sdk android:minSdkVersion="8" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>   
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>	    
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />  
+	    
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 用于精确统计用户手机的系统信息 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 有助于获取投放地域广告,提高广告与用户的相关性,提高广告点击率 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <application
+        android:name=".BaseApplication"
+        android:theme="@style/MMTheme.Basic"
+        android:debuggable="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name" >
+        <!-- Mobwin所需要的Activity -->
+        <activity android:name="com.tencent.exmobwin.banner.MobWINBrowserActivity" />
+        <activity
+            android:name="com.tencent.exmobwin.banner.DialogActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <meta-data
+		android:name="APP_ID"
+		android:value="31F5D22D857C84E0CDFD7726AE3961E0" />					
+		<!-- 广告播放时间(s) -->
+		<meta-data
+		android:name="APP_INTERVAL"
+		android:value="30" />		
+		<!-- 测试模式, true为测试,false为发布  -->
+		<meta-data
+		android:name="APP_TESTMODE"
+		android:value="false" />
+        <!-- 友盟appkey -->
+		<meta-data android:value="50b2d1565270151296000023" android:name="UMENG_APPKEY"></meta-data>
+		<!--DaBing Google Play google 腾讯 QQ  应用汇 APPCHINA 小米 XIAOMI 91助手 91ZS N多市场 NDUO 安智 anzhi 搜狐sohu 机锋 jifeng 中国移动 ChinaMobile 百度 baidu-->
+        <meta-data android:name="UMENG_CHANNEL" android:value="jifeng" />
+        <activity
+            android:label="@string/app_name"
+            android:name=".WeiXinEmojActivity" >
+           
+        </activity>
+        <activity android:name=".activity.EmojContainerActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.EmojViewActivity"></activity>
+        <activity android:name=".activity.MainTabActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".activity.MainTab1Activity" android:screenOrientation="portrait">
+             <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />               
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="vnd.android.cursor.dir/image" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="vnd.android.cursor.dir/image" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.EmojSearchActivity"></activity>
+        <activity android:name=".activity.EmojImageViewActivity"></activity>
+        <activity android:name=".activity.WelcomeActivity" android:screenOrientation="portrait">
+			<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SettingActivity"></activity>
+        <activity android:name=".activity.UserLoginActivity"></activity>
+        <activity android:name=".activity.SettingVersionActivity"></activity>
+        <activity android:name=".activity.SettingAboutActivity"></activity>
+        <activity android:name=".activity.SettingUserInfoActivity"></activity>
+        <activity android:name=".activity.SettingProblemActivity"></activity>
+        <activity android:name=".activity.EmojBrowseViewActivity"></activity>
+        <activity android:name=".activity.EmojBrowsePictureActivity"></activity>
+        <activity android:name=".activity.DownloadGridViewActivity"></activity>
+        <activity android:name=".activity.EmojEmotionActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.AppWallActivity"></activity>
+        <activity android:name=".activity.UserDefineActivity"></activity>
+        <activity android:name=".advertise.WAPS_AppWallActivity"></activity>
+        <activity android:name=".advertise.WAPS_AppDetailActivity"></activity>
+        <activity android:name=".advertise.WAPS_ADView" android:configChanges="keyboardHidden|orientation"/>    
+        <activity android:name=".activity.MainTab2Activity"></activity>  
+        <receiver android:name=".service.StartUpBroadcast"></receiver>
+        <receiver android:name=".service.LoginSuccessBroadcast"></receiver>
+        <service  android:name=".service.WeiXinEmojService"></service>
+        <service android:name=".service.WeiXinEmojLoginService"></service>
+        <service android:name=".service.EmojScanService"></service>
+        <activity android:name=".demo.demolist">
+			<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".admin.uploadPicActivity"></activity>
+        <activity android:name=".admin.WebLoginActivity"></activity>
+        <activity android:name=".admin.SelectEmojActivity"></activity>
+        <activity android:name=".admin.MakeEmotionActivity"></activity>
+        <activity android:name=".demo.demo1"></activity>
+        <activity android:name=".demo.democall"></activity>
+        <activity android:name=".demo.demoshow"></activity>
+        <activity android:name=".demo.demoOOM"></activity>
+        <activity android:name=".demo.demoPanel"></activity>
+        <activity android:name=".demo.demoFile"></activity>
+        <!-- 友盟  -->
+        <activity android:name="com.umeng.fb.ui.SendFeedback" android:windowSoftInputMode="adjustResize" />
+		<activity android:name="com.umeng.fb.ui.FeedbackConversations" />
+		<activity android:name="com.umeng.fb.ui.FeedbackConversation"  android:configChanges="keyboard" />
+        <service
+    		android:name="com.umeng.common.net.DownloadingService"
+    		android:exported="true"
+    		android:process=":DownloadingService" />
+        <!-- 微信 -->
+        <activity android:name=".wxapi.WXEntryActivity" android:exported="true" android:label="@string/app_name"></activity>
+        <receiver
+            android:name=".service.AppRegister"
+            android:permission="com.tencent.mm.plugin.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        <!-- 腾讯应用墙界面 -->
+        <activity
+            android:name="com.tencent.appwallsdk.activity.QQAppWallActivity"
+            android:label="@string/qqappwall_app_name"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/normal_full_screen"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <!-- 腾讯应用墙下载服务 -->
+        <service android:name="com.tencent.appwallsdk.service.DownloadService" />
+        
+      
+    </application>
+
+</manifest>

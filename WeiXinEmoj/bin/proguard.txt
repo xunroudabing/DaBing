@@ -1,0 +1,296 @@
+# view res/layout/user_define_layout.xml #generated:20
+-keep class android.support.v7.widget.GridLayout { <init>(...); }
+
+# view res/layout/admin_select_emoj.xml #generated:15
+# view res/layout/demo_oom.xml #generated:8
+# view res/layout/emoj_browse_detail.xml #generated:15
+# view res/layout/emoj_browse_picture_detail.xml #generated:62
+# view res/layout/emoj_detail.xml #generated:16
+# view res/layout/emoj_img_detail.xml #generated:16
+-keep class com.ant.liao.GifView { <init>(...); }
+
+# view AndroidManifest.xml #generated:20
+-keep class com.dabing.emoj.BaseApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:47
+-keep class com.dabing.emoj.WeiXinEmojActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:91
+-keep class com.dabing.emoj.activity.AppWallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:89
+-keep class com.dabing.emoj.activity.DownloadGridViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:88
+-keep class com.dabing.emoj.activity.EmojBrowsePictureActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:87
+-keep class com.dabing.emoj.activity.EmojBrowseViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:52
+-keep class com.dabing.emoj.activity.EmojContainerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:90
+-keep class com.dabing.emoj.activity.EmojEmotionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:74
+-keep class com.dabing.emoj.activity.EmojImageViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:73
+-keep class com.dabing.emoj.activity.EmojSearchActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:53
+-keep class com.dabing.emoj.activity.EmojViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:56
+-keep class com.dabing.emoj.activity.MainTab1Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:96
+-keep class com.dabing.emoj.activity.MainTab2Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:54
+-keep class com.dabing.emoj.activity.MainTabActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:84
+-keep class com.dabing.emoj.activity.SettingAboutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:81
+-keep class com.dabing.emoj.activity.SettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:86
+-keep class com.dabing.emoj.activity.SettingProblemActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:85
+-keep class com.dabing.emoj.activity.SettingUserInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:83
+-keep class com.dabing.emoj.activity.SettingVersionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:92
+-keep class com.dabing.emoj.activity.UserDefineActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:82
+-keep class com.dabing.emoj.activity.UserLoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:75
+-keep class com.dabing.emoj.activity.WelcomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:111
+-keep class com.dabing.emoj.admin.MakeEmotionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:110
+-keep class com.dabing.emoj.admin.SelectEmojActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class com.dabing.emoj.admin.WebLoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.dabing.emoj.admin.uploadPicActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:95
+-keep class com.dabing.emoj.advertise.WAPS_ADView { <init>(...); }
+
+# view AndroidManifest.xml #generated:94
+-keep class com.dabing.emoj.advertise.WAPS_AppDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:93
+-keep class com.dabing.emoj.advertise.WAPS_AppWallActivity { <init>(...); }
+
+# view res/layout/emoj_browse_detail.xml #generated:163
+# view res/layout/emoj_browse_picture_detail.xml #generated:35
+-keep class com.dabing.emoj.advertise.WAPS_CustomAd { <init>(...); }
+
+# view AndroidManifest.xml #generated:112
+-keep class com.dabing.emoj.demo.demo1 { <init>(...); }
+
+# view AndroidManifest.xml #generated:117
+-keep class com.dabing.emoj.demo.demoFile { <init>(...); }
+
+# view AndroidManifest.xml #generated:115
+-keep class com.dabing.emoj.demo.demoOOM { <init>(...); }
+
+# view AndroidManifest.xml #generated:116
+-keep class com.dabing.emoj.demo.demoPanel { <init>(...); }
+
+# view AndroidManifest.xml #generated:113
+-keep class com.dabing.emoj.demo.democall { <init>(...); }
+
+# view AndroidManifest.xml #generated:102
+-keep class com.dabing.emoj.demo.demolist { <init>(...); }
+
+# view AndroidManifest.xml #generated:114
+-keep class com.dabing.emoj.demo.demoshow { <init>(...); }
+
+# view res/layout/emoj_index1.xml #generated:34
+-keep class com.dabing.emoj.fragment.CrystalHeaderFragment { <init>(...); }
+
+# view res/layout/emoj_index3.xml #generated:33
+-keep class com.dabing.emoj.fragment.EmotionHeaderFragment { <init>(...); }
+
+# view res/layout/admin_select_emoj.xml #generated:23
+# view res/layout/emoj_browse_detail.xml #generated:23
+# view res/layout/emoj_browse_picture_detail.xml #generated:70
+# view res/layout/emoj_detail.xml #generated:24
+# view res/layout/emoj_img_detail.xml #generated:24
+-keep class com.dabing.emoj.imagezoomview.ImageZoomView { <init>(...); }
+
+# view AndroidManifest.xml #generated:128
+-keep class com.dabing.emoj.service.AppRegister { <init>(...); }
+
+# view AndroidManifest.xml #generated:101
+-keep class com.dabing.emoj.service.EmojScanService { <init>(...); }
+
+# view AndroidManifest.xml #generated:98
+-keep class com.dabing.emoj.service.LoginSuccessBroadcast { <init>(...); }
+
+# view AndroidManifest.xml #generated:97
+-keep class com.dabing.emoj.service.StartUpBroadcast { <init>(...); }
+
+# view AndroidManifest.xml #generated:100
+-keep class com.dabing.emoj.service.WeiXinEmojLoginService { <init>(...); }
+
+# view AndroidManifest.xml #generated:99
+-keep class com.dabing.emoj.service.WeiXinEmojService { <init>(...); }
+
+# view res/layout/cache_imageview.xml #generated:11
+-keep class com.dabing.emoj.widget.CacheImageView { <init>(...); }
+
+# view res/layout/cache_item.xml #generated:2
+-keep class com.dabing.emoj.widget.CacheWrapperImageView { <init>(...); }
+
+# view res/layout/header_fragment_emotionpanel_item.xml #generated:2
+-keep class com.dabing.emoj.widget.ColorButton { <init>(...); }
+
+# view res/layout/demo_show.xml #generated:14
+# view res/layout/demo_show.xml #generated:19
+# view res/layout/demo_show.xml #generated:24
+# view res/layout/demo_show.xml #generated:9
+# view res/layout/download_gridview_item.xml #generated:9
+# view res/layout/header_fragment_gridview_crystal_item.xml #generated:8
+-keep class com.dabing.emoj.widget.CrystalButton { <init>(...); }
+
+# view res/layout/emoj_item.xml #generated:11
+# view res/layout/emoj_item_nopadding.xml #generated:10
+# view res/layout/setting.xml #generated:57
+# view res/layout/setting_userinfo.xml #generated:20
+# view res/layout/userdefine_gridview_item.xml #generated:14
+-keep class com.dabing.emoj.widget.EmojImageView { <init>(...); }
+
+# view res/layout/demo_panel.xml #generated:7
+# view res/layout/header_fragment_emotionpanel.xml #generated:8
+-keep class com.dabing.emoj.widget.EmotionPanel { <init>(...); }
+
+# view res/layout/gd_quick_action_list.xml #generated:13
+-keep class com.dabing.emoj.widget.LinearLayoutForListView { <init>(...); }
+
+# view res/layout/waps_app_detail.xml #generated:137
+# view res/layout/waps_app_detail.xml #generated:143
+# view res/layout/wrapper_item.xml #generated:2
+# view res/layout/wrapper_item_nopadding.xml #generated:2
+-keep class com.dabing.emoj.widget.WrapperImageView { <init>(...); }
+
+# view AndroidManifest.xml #generated:127
+-keep class com.dabing.emoj.wxapi.WXEntryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:136
+-keep class com.tencent.appwallsdk.activity.QQAppWallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:146
+-keep class com.tencent.appwallsdk.service.DownloadService { <init>(...); }
+
+# view res/layout/app_wall.xml #generated:6
+-keep class com.tencent.appwallsdk.view.QQAppWallView { <init>(...); }
+
+# view AndroidManifest.xml #generated:28
+-keep class com.tencent.exmobwin.banner.DialogActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:27
+-keep class com.tencent.exmobwin.banner.MobWINBrowserActivity { <init>(...); }
+
+# view res/layout/admin_select_emoj.xml #generated:122
+# view res/layout/emoj_browse_detail.xml #generated:145
+# view res/layout/emoj_browse_picture_detail.xml #generated:18
+# view res/layout/emoj_detail.xml #generated:123
+# view res/layout/emoj_img_detail.xml #generated:130
+-keep class com.tencent.exmobwin.banner.TAdView { <init>(...); }
+
+# view res/layout/mm_title.xml #generated:10
+# view res/layout/mm_title.xml #generated:28
+-keep class com.tencent.mm.sdk.uikit.MMImageButton { <init>(...); }
+
+# view res/layout/security_image.xml #generated:2
+-keep class com.tencent.mm.sdk.uikit.applet.SecurityImage { <init>(...); }
+
+# view AndroidManifest.xml #generated:122
+-keep class com.umeng.common.net.DownloadingService { <init>(...); }
+
+# view AndroidManifest.xml #generated:121
+-keep class com.umeng.fb.ui.FeedbackConversation { <init>(...); }
+
+# view AndroidManifest.xml #generated:120
+-keep class com.umeng.fb.ui.FeedbackConversations { <init>(...); }
+
+# view AndroidManifest.xml #generated:119
+-keep class com.umeng.fb.ui.SendFeedback { <init>(...); }
+
+# view res/layout/umeng_fb_conversation.xml #generated:14
+-keep class com.umeng.fb.ui.ThreadView { <init>(...); }
+
+# view res/layout/gd_content_dashboard.xml #generated:31
+# view res/layout/gd_content_empty.xml #generated:27
+# view res/layout/gd_content_normal.xml #generated:27
+# view res/layout/gd_expandable_list_content_dashboard.xml #generated:32
+# view res/layout/gd_expandable_list_content_empty.xml #generated:32
+# view res/layout/gd_expandable_list_content_normal.xml #generated:32
+# view res/layout/gd_list_content_dashboard.xml #generated:32
+# view res/layout/gd_list_content_empty.xml #generated:32
+# view res/layout/gd_list_content_normal.xml #generated:32
+# view res/layout/gd_tab_content.xml #generated:27
+-keep class greendroid.widget.ActionBar { <init>(...); }
+
+# view res/layout/gd_content_dashboard.xml #generated:19
+# view res/layout/gd_content_empty.xml #generated:20
+# view res/layout/gd_content_normal.xml #generated:20
+# view res/layout/gd_expandable_list_content_dashboard.xml #generated:20
+# view res/layout/gd_expandable_list_content_empty.xml #generated:20
+# view res/layout/gd_expandable_list_content_normal.xml #generated:20
+# view res/layout/gd_list_content_dashboard.xml #generated:20
+# view res/layout/gd_list_content_empty.xml #generated:20
+# view res/layout/gd_list_content_normal.xml #generated:20
+# view res/layout/gd_tab_content.xml #generated:20
+-keep class greendroid.widget.ActionBarHost { <init>(...); }
+
+# view res/layout/gd_thumbnail_item_view.xml #generated:27
+-keep class greendroid.widget.AsyncImageView { <init>(...); }
+
+# view res/layout/header_fragment.xml #generated:17
+-keep class greendroid.widget.PageIndicator { <init>(...); }
+
+# view res/layout/header_fragment.xml #generated:8
+-keep class greendroid.widget.PagedView { <init>(...); }
+
+# view res/layout/gd_description_item_view.xml #generated:20
+# view res/layout/gd_long_text_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.DescriptionItemView { <init>(...); }
+
+# view res/layout/gd_drawable_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.DrawableItemView { <init>(...); }
+
+# view res/layout/gd_progress_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.ProgressItemView { <init>(...); }
+
+# view res/layout/gd_separator_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.SeparatorItemView { <init>(...); }
+
+# view res/layout/gd_subtext_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.SubtextItemView { <init>(...); }
+
+# view res/layout/gd_subtitle_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.SubtitleItemView { <init>(...); }
+
+# view res/layout/gd_text_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.TextItemView { <init>(...); }
+
+# view res/layout/gd_thumbnail_item_view.xml #generated:20
+-keep class greendroid.widget.itemview.ThumbnailItemView { <init>(...); }
+
