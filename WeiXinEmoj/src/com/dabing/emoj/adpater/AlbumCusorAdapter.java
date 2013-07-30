@@ -1,37 +1,62 @@
 package com.dabing.emoj.adpater;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.CursorAdapter;
+
 import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.db.UserDefineDataBaseHelper.UserDefineCursor;
 import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.widget.Album;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CursorAdapter;
-
 public class AlbumCusorAdapter extends CursorAdapter {
-
+	int mWidth = 80;
+	Context mContext;
+	static final int COLUM_NUM = 4;
+	static final int COLUM_PADDING = 0;
+	static final String TAG = AlbumCusorAdapter.class.getSimpleName();
 	public AlbumCusorAdapter(Context context, Cursor c) {
 		super(context, c,false);
 		// TODO Auto-generated constructor stub
+		mContext = context;
+		calculateAlbumWidth();
+		
 	}
 
+	// 计算相册宽度
+	private void calculateAlbumWidth() {
+		WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+		int screenWidth = windowManager.getDefaultDisplay().getWidth();
+		mWidth = (screenWidth - (COLUM_NUM + 1) * COLUM_PADDING)
+				/ COLUM_NUM;
+		Log.d(TAG, "width:" + mWidth);
+
+	}
 	@Override
 	public View newView(Context context, Cursor cursor, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		return new Album(context);
+		Album album = new Album(context);
+		album.setWidth(mWidth);
+		return album;
 	}
 
 	@Override
 	public void bindView(View view, Context context, Cursor cursor) {
 		// TODO Auto-generated method stub
-		
+		Album album = (Album) view;
+		album.setFile(getFileInfo(cursor));
 	}
 	
 	private FileInfo getFileInfo(Cursor cursor){
 		return FileInfo.GetFileInfo((UserDefineCursor)cursor);
+	}
+	
+	public void reflesh(){
+		changeCursor(new UserDefineDataBaseHelper(mContext).getCursor());
 	}
 
 }

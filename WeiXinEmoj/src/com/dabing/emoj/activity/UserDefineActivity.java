@@ -22,10 +22,13 @@ import android.widget.Button;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
+import com.dabing.emoj.adpater.AlbumCusorAdapter;
+import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.service.EmojScanService;
 import com.dabing.emoj.utils.FileHelper;
 import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.widget.Album;
+import com.dabing.emoj.widget.CustomGridLayout;
 
 /**
  * 自定义表情
@@ -39,7 +42,8 @@ public class UserDefineActivity extends BaseActivity {
 	Messenger mService;	
 	boolean mBound = false;
 	private int numButtons = 1;
-	GridLayout gridLayout;
+	CustomGridLayout gridLayout;
+	AlbumCusorAdapter adapter;
 	int Album_Width = 80;
 	static final int COLUM_NUM = 4;
 	static final int COLUM_PADDING = 0;
@@ -53,16 +57,17 @@ public class UserDefineActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		calculateAlbumWidth();
 		BindService();
-		gridLayout = (GridLayout) findViewById(R.id.gridContainer);
+		gridLayout = (CustomGridLayout) findViewById(R.id.gridContainer);
 		gridLayout.setColumnCount(COLUM_NUM);
-		 
 
-	        Button addButton = (Button) findViewById(R.id.addNewButton);
-	        addButton.setOnClickListener(new View.OnClickListener() {
-	            public void onClick(View v) {
-	                scanfiles();
-	            }
-	        });
+		Button addButton = (Button) findViewById(R.id.addNewButton);
+		addButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				scanfiles();
+			}
+		});
+		
+		bindGridLayout();
 	}
 
 	@Override
@@ -78,7 +83,7 @@ public class UserDefineActivity extends BaseActivity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		unbindService(mConnection);
+		UnBindService();
 	}
 	//计算相册宽度
 	private void calculateAlbumWidth(){
@@ -95,6 +100,19 @@ public class UserDefineActivity extends BaseActivity {
 		album.setFile(fileInfo);
 		
 		gridLayout.addView(album);
+	}
+	
+	protected void bindGridLayout(){
+		if(adapter == null){
+			adapter = new AlbumCusorAdapter(getApplicationContext(), new UserDefineDataBaseHelper(getApplicationContext()).getCursor());
+		}
+		gridLayout.setAdapter(adapter);
+	}
+	
+	protected void refleshGridLayout(){
+		if(adapter != null){
+			adapter.reflesh();
+		}
 	}
 	//*******bind service 相关*********
 	private void BindService(){
@@ -171,8 +189,9 @@ public class UserDefineActivity extends BaseActivity {
 			case EmojScanService.CLIENT_SCAN_GET_FILE:
 				File file = (File) msg.obj;
 				Log.d(TAG, "get:"+file.toString());
-				FileInfo fileInfo = FileInfo.GetFileInfo(file, new ImageFilenameFilter(), false);
-				addAlbum(fileInfo);
+//				FileInfo fileInfo = FileInfo.GetFileInfo(file, new ImageFilenameFilter(), false);
+//				addAlbum(fileInfo);
+				refleshGridLayout();
 				break;
 
 			default:

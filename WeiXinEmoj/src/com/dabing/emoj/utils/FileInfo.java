@@ -88,19 +88,32 @@ public class FileInfo {
         }
         return lFileInfo;
     }
-    
-    public static FileInfo GetFileInfo(UserDefineCursor cursor){
-		if(cursor == null || cursor.getCount() == 0){
+
+	static final String IMAGE_PATTERN = "([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)";
+	public static FileInfo GetFileInfo(UserDefineCursor cursor) {
+		if (cursor == null || cursor.getCount() == 0) {
 			return null;
 		}
 		String filePath = cursor.getPath();
 		FileInfo fileInfo = FileInfo.GetFileInfo(filePath);
+//		FileInfo fileInfo = FileInfo.GetFileInfo(new File(filePath),
+//				new FilenameFilter() {
+//
+//					@Override
+//					public boolean accept(File dir, String filename) {
+//						// TODO Auto-generated method stub
+//						return filename.matches(IMAGE_PATTERN);
+//					}
+//				}, false);
+		
 		fileInfo.dbId = cursor.getId();
 		fileInfo.dbName = cursor.getName();
 		fileInfo.dbState = cursor.getState();
 		fileInfo.dbThumb = cursor.getThumb();
 		fileInfo.dbTime = cursor.getTime();
+		fileInfo.Count = cursor.getChildSize();
 		return fileInfo;
 
 	}
+    
 }

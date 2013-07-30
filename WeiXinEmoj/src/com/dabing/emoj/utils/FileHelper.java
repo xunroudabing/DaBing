@@ -28,6 +28,10 @@ public class FileHelper {
 	static final String[] IMAGE_PREFIX = {"gif","png","jpg","jpeg"};
 	static final String TAG = FileHelper.class.getSimpleName();
 	public FileHelper(){}
+	/**
+	 * 停止扫描
+	 * @param b true-停止 false-开始
+	 */
 	public synchronized void setCancel(boolean b){
 		cancel = b;
 	}
@@ -151,7 +155,7 @@ public class FileHelper {
 		
 	}
 	//把图片过滤出来
-	class FileContainsImageFilter implements FilenameFilter{
+	public class FileContainsImageFilter implements FilenameFilter{
 
 		@Override
 		public boolean accept(File dir, String filename) {
