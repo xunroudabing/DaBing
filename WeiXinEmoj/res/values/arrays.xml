@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pull_msg_array">
+     	<item>把表情图片放到SD卡中就可以使用了哦</item>
+    	<item>点击加号,选择表情所在文件夹,就可以添加了哦</item>
+    	<item>点击“编辑”,可以移除不需要的表情文件夹</item>
+    </string-array>
+</resources>
