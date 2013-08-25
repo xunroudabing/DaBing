@@ -3,8 +3,12 @@ package com.dabing.emoj.demo;
 import org.json.JSONArray;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.provider.MediaStore.MediaColumns;
+import android.provider.MediaStore.Images.Media;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,9 +36,12 @@ public class democall extends BaseActivity implements OnClickListener {
 	QuickActionGrid mlist;
 	IWXAPI api;
 	OAuth oAuth;
-	Button btn1,btn2,btn3,btn4,btn5,btn6,btn7;
+	Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
 	static final String TAG = democall.class.getSimpleName();
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.tencent.mm.sdk.uikit.MMBaseActivity#onCreate(android.os.Bundle)
 	 */
 	@Override
@@ -47,7 +54,7 @@ public class democall extends BaseActivity implements OnClickListener {
 		btn4 = (Button) findViewById(R.id.btn4);
 		btn5 = (Button) findViewById(R.id.btn5);
 		btn6 = (Button) findViewById(R.id.btn6);
-		btn7 = (Button)findViewById(R.id.btn7);
+		btn7 = (Button) findViewById(R.id.btn7);
 		btn1.setOnClickListener(this);
 		btn2.setOnClickListener(this);
 		btn3.setOnClickListener(this);
@@ -90,22 +97,24 @@ public class democall extends BaseActivity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.btn7:
-			getChannel();
+			//getChannel();
+			getImages();
 			break;
 		default:
 			break;
 		}
 	}
-	
-	private void getHtId(){
+
+	private void getHtId() {
 		new Thread(new Runnable() {
-			
+
 			public void run() {
 				// TODO Auto-generated method stub
-				DaBingRequest request = new DaBingRequest(OAuthConstants.OAUTH_VERSION_2_A);
+				DaBingRequest request = new DaBingRequest(
+						OAuthConstants.OAUTH_VERSION_2_A);
 				try {
 					String response = request.getHt_ids(oAuth, "wxemoj1");
-					Log.d(TAG, "response:"+response);
+					Log.d(TAG, "response:" + response);
 				} catch (Exception e) {
 					// TODO: handle exception
 					Log.e(TAG, e.toString());
@@ -113,58 +122,86 @@ public class democall extends BaseActivity implements OnClickListener {
 			}
 		}).start();
 	}
-	
-	private void sendemoj(){
+
+	private void sendemoj() {
 		WeiXinHelper helper = new WeiXinHelper(democall.this, api);
-		String path = AppConfig.getEmoj()+"db.gif";
-		Log.d(TAG, "path:"+path);
+		String path = AppConfig.getEmoj() + "db.gif";
+		Log.d(TAG, "path:" + path);
 		helper.sendEmoj(path);
-		//helper.sendIMGPath(path);
+		// helper.sendIMGPath(path);
 		finish();
 	}
-	
-	private void openWX(){
-		//api.openWXApp();
-		MMessage.send(democall.this, "com.tencent.mm.permission.MM_MESSAGE", "com.tencent.mm.sdk.channel.Intent.ACTION_MESSAGE", "hello dabing", getIntent().getExtras());
+
+	private void openWX() {
+		// api.openWXApp();
+		MMessage.send(democall.this, "com.tencent.mm.permission.MM_MESSAGE",
+				"com.tencent.mm.sdk.channel.Intent.ACTION_MESSAGE",
+				"hello dabing", getIntent().getExtras());
 	}
-	
-	private void prepare(){
+
+	private void prepare() {
 		mlist = new QuickActionGrid(getApplicationContext());
-		try{
+		try {
 			String json = AppConfig.getCategory(getApplicationContext());
 			JSONArray array = new JSONArray(json);
 			mlist.setData(array);
-		}catch (Exception e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());
 		}
 	}
-	
-	private void testJni(){
+
+	private void testJni() {
 		int i = 0;
-		//i |= 8;
+		// i |= 8;
 		String path = AppConfig.getThumb() + "test.gif";
 		String str = JniTest.ScanPictures(path, i);
-		Log.d(TAG, "jni:"+str);
+		Log.d(TAG, "jni:" + str);
 	}
-	
-	private void getChannel(){
+
+	private void getChannel() {
 		new Thread(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				DaBingRequest request = new DaBingRequest(OAuthConstants.OAUTH_VERSION_2_A);
+				DaBingRequest request = new DaBingRequest(
+						OAuthConstants.OAUTH_VERSION_2_A);
 				try {
 					String id = "903";
-					String responseString = request.getChannelList(oAuth, "0", "0", "0", "", id, "2", "1", "4");
-					Log.d(TAG, "微频道:"+responseString);
+					String responseString = request.getChannelList(oAuth, "0",
+							"0", "0", "", id, "2", "1", "4");
+					Log.d(TAG, "微频道:" + responseString);
 				} catch (Exception e) {
 					// TODO: handle exception
 					Log.e(TAG, e.toString());
 				}
 			}
 		}).start();
-		
+
+	}
+
+	private void getImages() {
+		Uri uri = Media.getContentUri("external");
+		String order = MediaColumns.DATE_MODIFIED + " desc";
+		String[] colums = { MediaColumns._ID, MediaColumns.TITLE,
+				MediaColumns.DISPLAY_NAME, MediaColumns.DATE_MODIFIED,
+				String.format("REPLACE(%s,%s,'')", MediaColumns.DATA,MediaColumns.DISPLAY_NAME) };
+		Cursor cursor = getContentResolver().query(uri, colums, null, null,
+				order);
+
+		if(cursor == null){
+			return;
+		}
+		cursor.moveToFirst();
+		do {
+			long id = cursor.getLong(cursor
+					.getColumnIndexOrThrow(MediaColumns._ID));
+			String title = cursor.getString(cursor.getColumnIndexOrThrow(MediaColumns.TITLE));
+			String display = cursor.getString(cursor.getColumnIndexOrThrow(MediaColumns.DISPLAY_NAME));
+			String date = cursor.getString(cursor.getColumnIndexOrThrow(MediaColumns.DATE_MODIFIED));
+			String data = cursor.getString(4);
+			Log.d(TAG, String.format("id:%d title:%s display:%s date:%s data:%s", id,title,display,date,data));
+		} while (cursor.moveToNext());
 	}
 }

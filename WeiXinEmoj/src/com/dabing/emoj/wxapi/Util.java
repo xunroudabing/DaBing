@@ -240,4 +240,46 @@ public class Util {
 
         return bitmap;
     }
+    
+    /**
+     * 保持长宽比缩小Bitmap
+     *
+     * @param bitmap
+     * @param maxWidth
+     * @param maxHeight
+     * @return
+     */
+    public static Bitmap resizeBitmap2(Bitmap bitmap, int maxWidth, int maxHeight) {
+
+        int originWidth  = bitmap.getWidth();
+        int originHeight = bitmap.getHeight();
+
+        // no need to resize
+        if (originWidth < maxWidth && originHeight < maxHeight) {
+            return bitmap;
+        }
+
+        int width  = originWidth;
+        int height = originHeight;
+
+        // 若图片过宽, 则保持长宽比缩放图片
+        if (originWidth > maxWidth) {
+            width = maxWidth;
+            double i = originWidth * 1.0 / maxWidth;
+            height = (int) Math.floor(originHeight / i);
+            bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false);
+        }
+        // 若图片过长, 则从上端截取
+        if (height > maxHeight) {
+            height = maxHeight;
+            bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height);
+        }else {
+			
+		}
+
+//        Log.i(TAG, width + " width");
+//        Log.i(TAG, height + " height");
+
+        return bitmap;
+    }
 }

@@ -43,10 +43,11 @@ public class CustomGridLayout extends GridLayout {
 	}
 	
 	private void addViewsFromAdapter(){
+		int count = mAdapter.getCount();
+		Log.d(TAG, "count:"+count);
 		for(int i = 0;i<mAdapter.getCount();i++){
 			View view = mAdapter.getView(i, null, this);
 			addView(view);
 		}
-		mAdapter.getCursor().close();
 	}
 }

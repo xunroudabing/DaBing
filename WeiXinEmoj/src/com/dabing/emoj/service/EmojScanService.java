@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -19,12 +21,17 @@ import com.dabing.emoj.utils.Util;
 
 import android.app.Service;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
+import android.provider.MediaStore.Images.Thumbnails;
+import android.provider.MediaStore.MediaColumns;
+import android.provider.MediaStore.Images.Media;
 import android.util.Log;
 
 /**
@@ -69,6 +76,18 @@ public class EmojScanService extends Service {
 	 * 数据库中的文件记录扫描更新完成
 	 */
 	public static final int CLIENT_ALBUM_CHECK = 6;
+	/**
+	 * 操作开始
+	 */
+	public static final int CLIENT_ACTION_START = 7;
+	/**
+	 * 操作完成
+	 */
+	public static final int CLIENT_ACTION_END = 8;
+	/**
+	 * UI层刷新
+	 */
+	public static final int CLINET_REFLESH_UI = 9;
 	static final String TAG = EmojScanService.class.getSimpleName();
 
 	/*
@@ -144,6 +163,7 @@ public class EmojScanService extends Service {
 			case CLIENT_SEND_MSG:
 
 				break;
+			//测试用
 			case CLIENT_START:
 				start();
 				break;
@@ -173,6 +193,29 @@ public class EmojScanService extends Service {
 					}
 				}
 				break;
+
+			case CLIENT_ACTION_START:
+				for (int i = 0; i < mClients.size(); i++) {
+					Messenger client = mClients.get(i);
+					try {
+						client.send(Message.obtain(null, CLIENT_ACTION_START));
+					} catch (Exception e) {
+						// TODO: handle exception
+						Log.e(TAG, e.toString());
+					}
+				}
+				break;
+			case CLIENT_ACTION_END:
+				for (int i = 0; i < mClients.size(); i++) {
+					Messenger client = mClients.get(i);
+					try {
+						client.send(Message.obtain(null, CLIENT_ACTION_END));
+					} catch (Exception e) {
+						// TODO: handle exception
+						Log.e(TAG, e.toString());
+					}
+				}
+				break;
 			default:
 				break;
 			}
@@ -192,10 +235,10 @@ public class EmojScanService extends Service {
 	}
 
 	public void scan() {
-		fileHelper.setCancel(false);
+		fileHelper.setCancel(false);		
 		BlockingQueue<Runnable> blockingQueue = new LinkedBlockingQueue<Runnable>();
 		blockingQueue.add(new AlbumCheckTask());
-		blockingQueue.add(new FileRootScanTask());
+		blockingQueue.add(new ImageScanTask());
 		BlockQueueTask blockTask = new BlockQueueTask(blockingQueue);
 		GDUtils.getExecutor(getApplicationContext()).execute(blockTask);
 	}
@@ -221,6 +264,8 @@ public class EmojScanService extends Service {
 		public void run() {
 			// TODO Auto-generated method stub
 			try {
+				Log.d(TAG, "扫描任务开始...");
+				mHandler.sendEmptyMessage(CLIENT_ACTION_START);
 				while (!mQueue.isEmpty()) {
 					mQueue.take().run();
 				}
@@ -228,13 +273,20 @@ public class EmojScanService extends Service {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
 			} finally {
-
+				Log.d(TAG, "扫描任务结束...");
+				mHandler.sendEmptyMessage(CLIENT_ACTION_END);
 			}
 		}
 
 	}
 
-	// 从根目录扫描
+	class Data {
+		public int count;
+		public String thumb;
+		public long id;
+	}
+
+	// 从根目录扫描(废弃)
 	class FileRootScanTask implements Runnable {
 		String rootPath;
 
@@ -285,39 +337,174 @@ public class EmojScanService extends Service {
 											}
 										}, false);
 								if (!dbHelper.exist(fileInfo)) {
-									dbHelper.insert(fileInfo);
-									mHandler.sendMessage(Message.obtain(mHandler,
-											CLIENT_SCAN_GET_FILE, file));
+									long id = dbHelper.insert(fileInfo);
+									mHandler.sendMessage(Message.obtain(
+											mHandler, CLIENT_SCAN_GET_FILE,
+											fileInfo));
 								}
-								
+
 							}
 						});
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
+			} finally {
+
 			}
 		}
 
 	}
 
+	// 用provider方式取图片文件夹 速度更快
+	class ImageScanTask implements Runnable {
+		private Map<Integer, String> getThumbnails(Map<String, Data> list){
+			Map<Integer, String> coll = new HashMap<Integer, String>();
+			StringBuilder builder = new StringBuilder();
+			builder.append("(");
+			for (String path : list.keySet()) {
+				Data data = list.get(path);
+				builder.append(data.id);
+				builder.append(",");
+			}
+			String string = builder.substring(0, builder.length() - 1);
+			string += ")";
+			Log.d(TAG, "where:"+string);
+			String whereClause = Thumbnails.IMAGE_ID + " IN " + string;
+			String[] colums = {Thumbnails.THUMB_DATA,Thumbnails.IMAGE_ID};
+			Cursor cursor = null;
+			try {
+				cursor = getContentResolver().query(Thumbnails.getContentUri("external"), colums, whereClause, null, null);
+				if(cursor != null){
+					cursor.moveToFirst();
+					do {
+						String thumb = cursor.getString(cursor.getColumnIndexOrThrow(Thumbnails.THUMB_DATA));
+						int image_id = cursor.getInt(cursor.getColumnIndexOrThrow(Thumbnails.IMAGE_ID));
+						coll.put(image_id, thumb);
+						Log.d(TAG, "image_id:"+image_id + " thumb:"+thumb);
+					} while (cursor.moveToNext());
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}finally{
+				if(cursor != null){
+					cursor.close();
+				}
+			}
+			return coll;
+		}
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			Log.d(TAG, "begin scan");
+			Cursor cursor = null;
+			Map<String, Data> fileList = new HashMap<String, Data>();
+			try {
+				Uri uri = Media.getContentUri("external");
+				String order = MediaColumns.DATE_MODIFIED + " desc";
+				String[] colums = {
+						MediaColumns._ID,
+						MediaColumns.TITLE,
+						MediaColumns.DISPLAY_NAME,
+						MediaColumns.DATE_MODIFIED,
+						String.format("REPLACE(%s,%s,'')", MediaColumns.DATA,
+								MediaColumns.DISPLAY_NAME), MediaColumns.DATA };
+				cursor = getContentResolver().query(uri, colums, null, null,
+						order);
+				if (cursor == null) {
+					return;
+				}
+				if (!cursor.moveToFirst()) {
+					return;
+				}
+				do {
+					long id = cursor.getLong(cursor
+							.getColumnIndexOrThrow(MediaColumns._ID));
+					String title = cursor.getString(cursor
+							.getColumnIndexOrThrow(MediaColumns.TITLE));
+					String display = cursor.getString(cursor
+							.getColumnIndexOrThrow(MediaColumns.DISPLAY_NAME));
+					String date = cursor.getString(cursor
+							.getColumnIndexOrThrow(MediaColumns.DATE_MODIFIED));
+					String filepath = cursor.getString(4);
+					String thumbpath = cursor.getString(cursor
+							.getColumnIndexOrThrow(MediaColumns.DATA));
+//					//Log.d(TAG, String.format(
+//							"id:%d title:%s display:%s date:%s data:%s", id,
+//							title, display, date, filepath));
+					if (fileList.containsKey(filepath)) {
+						Data data = fileList.get(filepath);
+						data.count++;
+						fileList.put(filepath, data);
+					} else {
+						Data data = new Data();
+						data.count = 1;
+						data.thumb = String.valueOf(id);
+						data.id = id;
+						fileList.put(filepath, data);
+					}
+				} while (cursor.moveToNext());
+				
+				for (String path : fileList.keySet()) {
+					Log.d(TAG, "path:" + path);
+					File file = new File(path);
+					if (!file.exists() || !file.isDirectory()) {
+						continue;
+					}
+					Data data = fileList.get(path);
+					int id = dbHelper.getId(path);
+					// 插入数据
+					if (id == -1) {
+						FileInfo fileInfo = new FileInfo();
+						fileInfo.filePath = path;
+						fileInfo.fileName = Util.getNameFromFilepath(path);
+						fileInfo.Count = data.count;
+						fileInfo.dbThumb = data.thumb;
+						dbHelper.insert(fileInfo);
+						mHandler.sendMessage(Message.obtain(mHandler,
+								CLIENT_SCAN_GET_FILE, fileInfo));
+					}
+					// 更新数据
+					else {
+						FileInfo fileInfo = new FileInfo();
+						fileInfo.Count = data.count;
+						fileInfo.dbThumb = data.thumb;
+						dbHelper.update(id, fileInfo);
+					}
+				}
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			} finally {
+				if(cursor != null){
+					cursor.close();
+				}
+			}
+		}
+
+	}
+
+	// 更新相册信息
 	class AlbumCheckTask implements Runnable {
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
 			UserDefineCursor cusor = dbHelper.getCursor();
 			try {
-				while (cusor.moveToNext()) {
-					int id = cusor.getId();
-					String path = cusor.getPath();
-					Log.d(TAG, "check:" + path);
-					// 该文件不存在
-					if (!exists(path)) {
-						dbHelper.remove(id);
-					} else {
-						// 更新子文件数
-						int count = getChildCount(path);
-						dbHelper.updateCount(count, id);
-					}
+				if (cusor != null && cusor.moveToFirst()) {
+					do {
+						int id = cusor.getId();
+						String path = cusor.getPath();
+						Log.d(TAG, "check:" + path);
+						// 该文件不存在
+						if (!exists(path)) {
+							dbHelper.delete(id);
+						} else {
+							// 更新子文件数
+							int count = getChildCount(path);
+							dbHelper.updateCount(count, id);
+						}
+					} while (cusor.moveToNext());
 				}
 				mHandler.sendEmptyMessage(CLIENT_ALBUM_CHECK);
 			} catch (Exception e) {

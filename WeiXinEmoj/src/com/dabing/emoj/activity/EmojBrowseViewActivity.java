@@ -486,7 +486,14 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 					RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
 					manager.add(mFileName, mParms);
 					WeiXinHelper helper = new WeiXinHelper(EmojBrowseViewActivity.this, api);
-					helper.sendEmoj(mFilePath);
+					if(mFileType == FileType.GIF){
+						//发动态图
+						helper.sendEmoj(mFilePath);
+					}
+					else {
+						//发静态图
+						helper.sendPng(mFilePath);
+					}
 					UpdateHeaderClickCount();
 					UmengEvent("action002", mFileName, mParms);
 					setResult(RESULT_OK);

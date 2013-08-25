@@ -24,7 +24,7 @@ public class FileHelper {
 		boolean interception(File file);
 	}
 	boolean cancel = false;
-	public static final String IMAGE_PATTERN = "([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)";
+	public static final String IMAGE_PATTERN = "([^\\s]+(\\.(?i)(jpeg|jpg|png|gif|bmp))$)";
 	static final String[] IMAGE_PREFIX = {"gif","png","jpg","jpeg"};
 	static final String TAG = FileHelper.class.getSimpleName();
 	public FileHelper(){}
@@ -59,6 +59,7 @@ public class FileHelper {
 				}
 			});
 			for(File subFile : files){
+				//Log.d(TAG, "scan:"+subFile.toString());
 				if(listener != null){
 					if(listener.interception(subFile)){
 						continue;
@@ -155,7 +156,7 @@ public class FileHelper {
 		
 	}
 	//把图片过滤出来
-	public class FileContainsImageFilter implements FilenameFilter{
+	public static class FileContainsImageFilter implements FilenameFilter{
 
 		@Override
 		public boolean accept(File dir, String filename) {

@@ -71,12 +71,27 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 		mAnimation = AnimationUtils.loadAnimation(context, R.anim.pop_in);
 		setOnImageViewLoadListener(this);
 	}
-	public void setImage(String url){
-//		 if (url != null && url.equals(mURL)) {
-//	            return;
-//	     }  
+	/**
+	 * 从url获取图片
+	 * @param url
+	 */
+	public void setImage(String url){  
 		mURL = url;
 		reloadImage();
+	}
+	/**
+	 * 从file获取图片
+	 * @param path
+	 */
+	public void setPath(String path,int width){
+		setImageDrawable(null);
+		Bitmap cache = GDUtils.getImageCache(getContext()).get(path);
+		if(cache != null){
+			mHandler.sendMessage(Message.obtain(mHandler, 1,
+					cache));
+			return;
+		}
+		mService.execute(new ThumbnailTask(path, width));
 	}
 	public void reloadImage(){
 		setImageDrawable(null);
@@ -127,6 +142,11 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 		}
 		return null;
 	}
+	/**
+	 * 废弃
+	 * @author DaBing
+	 *
+	 */
 	class MakeTumbTask implements Runnable{
 		private String _filename;
 		private Bitmap mBitmap;
@@ -226,94 +246,41 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 			}
 		}
 	}
-//	class CachedTask implements Runnable{
-//		public CachedTask(){
-//		}
-//		public void run() {
-//			// TODO Auto-generated method stub	
-//			Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-//			try {
-//				Bitmap cacheBitmap = mCache.get(mURL);
-//				if(cacheBitmap != null && !cacheBitmap.isRecycled()){
-//					Log.d(TAG, "取缓存:"+mURL);
-//					mHandler.sendMessage(Message.obtain(mHandler, 1, cacheBitmap));
-//					return;
-//				}
-//				String cache = GDUtils.getEmojImageCache(getContext()).getPath(mURL);
-//				if(cache == null){
-//					String name = QStr.getPicNameFromURL(mURL);
-//					String filename = new FileHelper().find(AppConfig.getThumb(), name);
-//					if(filename != null){
-//						String path = AppConfig.getThumb() + filename;
-//						File file = new File(path);		
-//						//Log.d(TAG, "length:"+file.length());
-//						long length = file.length();
-//						if(length > 0){
-//							InputStream is = null;
-//							try {
-//							    is = new FileInputStream(file);				
-//								Bitmap bitmap = BitmapFactory.decodeStream(new FlushedInputStream(is));
-//								is.close();
-//								GDUtils.getEmojImageCache(getContext()).put(mURL, path);	
-//								mCache.put(mURL, bitmap);
-//								mHandler.sendMessage(Message.obtain(mHandler, 1, bitmap));
-//								
-//								return;
-//							} catch (FileNotFoundException e) {
-//								// TODO Auto-generated catch block
-//								Log.e(TAG, e.toString());
-//							} catch (IOException e) {
-//								// TODO Auto-generated catch block
-//								Log.e(TAG, e.toString());
-//							}	
-//						}
-//					}else {
-//						String emojFile = new FileHelper().find(AppConfig.getEmoj(), name);
-//						//从现有的emoj生成缩略图
-//						if(emojFile != null){
-//							String thumbpath = AppConfig.getThumb() + name + ".PNG";
-//							String sourcepath = AppConfig.getEmoj() + emojFile;
-//							Bitmap bitmap = makeThumb(sourcepath, name);
-//							if(bitmap != null){
-//								Log.d(TAG, "生成缩略图:"+thumbpath);
-//								GDUtils.getEmojImageCache(getContext()).put(mURL, thumbpath);	
-//								mCache.put(mURL, bitmap);
-//								mHandler.sendMessage(Message.obtain(mHandler, 1, bitmap));
-//								return;
-//							}
-//						}
-//					}
-//				}else {			
-//					InputStream is = null;
-//					try {
-//						//Log.d(TAG, "cache is not null filename:"+cache);
-//					    is = new FileInputStream(cache);
-//					    int length = is.available();
-//					    if(length > 0){
-//							Bitmap bitmap = BitmapFactory.decodeStream(new FlushedInputStream(is));
-//							is.close();
-//							mHandler.sendMessage(Message.obtain(mHandler, 1, bitmap));
-//							mCache.put(mURL, bitmap);
-//							return;
-//					    }
-//					} catch (FileNotFoundException e) {
-//						// TODO Auto-generated catch block
-//						Log.e(TAG, e.toString());
-//					} catch (IOException e) {
-//						// TODO Auto-generated catch block
-//						Log.e(TAG, e.toString());
-//					}	
-//				}
-//				mHandler.sendMessage(Message.obtain(mHandler, 2, mURL));
-//			} catch (Exception e) {
-//				// TODO: handle exception
-//				Log.e(TAG, e.toString());
-//			}
-//		}
-//		
-//		
-//	}
-	
+	/**
+	 * 获取缩略图
+	 * @author DaBing
+	 *
+	 */
+	public  class ThumbnailTask implements Runnable {
+		String mPath;
+		int mThumbWidth;
+		public ThumbnailTask(String filepath,int width) {
+			mPath = filepath;
+			mThumbWidth = width;
+		}
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			try {
+				Bitmap bitmap = com.dabing.emoj.wxapi.Util.extractThumbNail(
+						mPath, mThumbWidth, mThumbWidth, true);
+				//Bitmap bitmap = BitmapFactory.decodeFile(mPath);
+				if (bitmap != null) {
+					Bitmap resizeBitmap = com.dabing.emoj.wxapi.Util
+							.resizeBitmap(bitmap, mThumbWidth, mThumbWidth);
+					GDUtils.getImageCache(getContext()).put(mPath, resizeBitmap);
+					mHandler.sendMessage(Message.obtain(mHandler, 1,
+							resizeBitmap));
+				}
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+		}
+
+	}
 	class CacheHandler extends Handler{
 
 		/* (non-Javadoc)

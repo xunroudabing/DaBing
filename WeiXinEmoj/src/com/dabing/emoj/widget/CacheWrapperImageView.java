@@ -61,7 +61,9 @@ public class CacheWrapperImageView extends LinearLayout {
 	public void setImage(String url){
 		imageView.setImage(url);
 	}
-	
+	public void setPath(String path){
+		imageView.setPath(path, mWidth);
+	}
 	public void setImageProcessor(ImageProcessor processor){
 		mProcessor = processor;
 		imageView.setImageProcessor(mProcessor);

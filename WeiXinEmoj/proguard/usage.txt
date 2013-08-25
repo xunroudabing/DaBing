@@ -38,7 +38,6 @@ android.support.v4.app.BackStackRecord:
     437:441:public android.support.v4.app.FragmentTransaction setCustomAnimations(int,int,int,int)
     445:446:public android.support.v4.app.FragmentTransaction setTransition(int)
     450:451:public android.support.v4.app.FragmentTransaction setTransitionStyle(int)
-    455:461:public android.support.v4.app.FragmentTransaction addToBackStack(java.lang.String)
     465:465:public boolean isAddToBackStackAllowed()
     469:474:public android.support.v4.app.FragmentTransaction disallowAddToBackStack()
     478:480:public android.support.v4.app.FragmentTransaction setBreadCrumbTitle(int)
@@ -65,7 +64,6 @@ android.support.v4.app.Fragment:
     521:523:public void setTargetFragment(android.support.v4.app.Fragment,int)
     529:529:public final android.support.v4.app.Fragment getTargetFragment()
     536:536:public final int getTargetRequestCode()
-    550:553:public final android.content.res.Resources getResources()
     563:563:public final java.lang.CharSequence getText(int)
     573:573:public final java.lang.String getString(int)
     586:586:public final varargs java.lang.String getString(int,java.lang.Object[])
@@ -83,7 +81,6 @@ android.support.v4.app.Fragment:
     723:729:public void setMenuVisibility(boolean)
     745:750:public void setUserVisibleHint(boolean)
     757:757:public boolean getUserVisibleHint()
-    764:772:public android.support.v4.app.LoaderManager getLoaderManager()
     780:784:public void startActivity(android.content.Intent)
     1218:1219:public void registerForContextMenu(android.view.View)
     1229:1230:public void unregisterForContextMenu(android.view.View)
@@ -175,7 +172,6 @@ android.support.v4.app.FragmentTransaction:
     public abstract android.support.v4.app.FragmentTransaction setCustomAnimations(int,int,int,int)
     public abstract android.support.v4.app.FragmentTransaction setTransition(int)
     public abstract android.support.v4.app.FragmentTransaction setTransitionStyle(int)
-    public abstract android.support.v4.app.FragmentTransaction addToBackStack(java.lang.String)
     public abstract boolean isAddToBackStackAllowed()
     public abstract android.support.v4.app.FragmentTransaction disallowAddToBackStack()
     public abstract android.support.v4.app.FragmentTransaction setBreadCrumbTitle(int)
@@ -185,69 +181,65 @@ android.support.v4.app.FragmentTransaction:
     public abstract int commitAllowingStateLoss()
 android.support.v4.app.HCSparseArray:
     223:228:public void setValueAt(int,java.lang.Object)
-    236:240:public int indexOfKey(int)
     252:260:public int indexOfValue(java.lang.Object)
     283:310:public void append(int,java.lang.Object)
 android.support.v4.app.ListFragment
 android.support.v4.app.ListFragment$1
 android.support.v4.app.ListFragment$2
 android.support.v4.app.LoaderManager:
-    public abstract android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     public abstract android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    public abstract void destroyLoader(int)
     public abstract android.support.v4.content.Loader getLoader(int)
     public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
     176:177:public static void enableDebugLogging(boolean)
 android.support.v4.app.LoaderManagerImpl:
     static final java.lang.String TAG
     boolean mRetainingStarted
-    boolean mCreatingLoader
-    485:488:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    494:499:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createAndInstallLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    504:511:void installLoader(android.support.v4.app.LoaderManagerImpl$LoaderInfo)
-    539:561:public android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     589:643:public android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    654:674:public void destroyLoader(int)
     682:693:public android.support.v4.content.Loader getLoader(int)
-android.support.v4.app.LoaderManagerImpl$LoaderInfo:
-    225:229:public LoaderManagerImpl$LoaderInfo(android.support.v4.app.LoaderManagerImpl,int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    359:412:public void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
 android.support.v4.app.ServiceCompat
-android.support.v4.content.AsyncTaskLoader
-android.support.v4.content.AsyncTaskLoader$LoadTask
-android.support.v4.content.CursorLoader
+android.support.v4.content.AsyncTaskLoader:
+    static final java.lang.String TAG
+    static final boolean DEBUG
+    103:107:public void setUpdateThrottle(long)
+    254:262:public void waitForLoader()
+android.support.v4.content.AsyncTaskLoader$LoadTask:
+    40:40:static synthetic java.util.concurrent.CountDownLatch access$000(android.support.v4.content.AsyncTaskLoader$LoadTask)
+android.support.v4.content.CursorLoader:
+    95:97:public CursorLoader(android.content.Context)
+    163:163:public android.net.Uri getUri()
+    167:168:public void setUri(android.net.Uri)
+    171:171:public java.lang.String[] getProjection()
+    175:176:public void setProjection(java.lang.String[])
+    179:179:public java.lang.String getSelection()
+    183:184:public void setSelection(java.lang.String)
+    187:187:public java.lang.String[] getSelectionArgs()
+    191:192:public void setSelectionArgs(java.lang.String[])
+    195:195:public java.lang.String getSortOrder()
+    199:200:public void setSortOrder(java.lang.String)
 android.support.v4.content.IntentCompat
 android.support.v4.content.Loader:
-    android.content.Context mContext
-    90:92:public Loader(android.content.Context)
-    102:105:public void deliverResult(java.lang.Object)
-    111:111:public android.content.Context getContext()
     118:118:public int getId()
-    157:157:public boolean isStarted()
-    166:166:public boolean isAbandoned()
-    175:175:public boolean isReset()
-    217:218:public void forceLoad()
-    225:225:protected void onForceLoad()
     261:263:public void abandon()
     275:275:protected void onAbandon()
-    312:314:public boolean takeContentChanged()
-    326:334:public void onContentChanged()
-android.support.v4.content.Loader$ForceLoadContentObserver
-android.support.v4.content.Loader$OnLoadCompleteListener:
-    public abstract void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
 android.support.v4.content.LocalBroadcastManager
 android.support.v4.content.LocalBroadcastManager$1
 android.support.v4.content.LocalBroadcastManager$BroadcastRecord
 android.support.v4.content.LocalBroadcastManager$ReceiverRecord
-android.support.v4.content.ModernAsyncTask
-android.support.v4.content.ModernAsyncTask$1
-android.support.v4.content.ModernAsyncTask$2
-android.support.v4.content.ModernAsyncTask$3
-android.support.v4.content.ModernAsyncTask$4
-android.support.v4.content.ModernAsyncTask$AsyncTaskResult
-android.support.v4.content.ModernAsyncTask$InternalHandler
-android.support.v4.content.ModernAsyncTask$Status
-android.support.v4.content.ModernAsyncTask$WorkerRunnable
+android.support.v4.content.ModernAsyncTask:
+    private static final java.lang.String LOG_TAG
+    private static final int CORE_POOL_SIZE
+    private static final int MAXIMUM_POOL_SIZE
+    private static final int KEEP_ALIVE
+    private static final int MESSAGE_POST_RESULT
+    private static final int MESSAGE_POST_PROGRESS
+    106:107:public static void init()
+    111:112:public static void setDefaultExecutor(java.util.concurrent.Executor)
+    169:169:public final android.support.v4.content.ModernAsyncTask$Status getStatus()
+    321:321:public final java.lang.Object get()
+    341:341:public final java.lang.Object get(long,java.util.concurrent.TimeUnit)
+    371:371:public final varargs android.support.v4.content.ModernAsyncTask execute(java.lang.Object[])
+    433:434:public static void execute(java.lang.Runnable)
+    451:455:protected final varargs void publishProgress(java.lang.Object[])
 android.support.v4.content.pm.ActivityInfoCompat
 android.support.v4.database.DatabaseUtilsCompat
 android.support.v4.os.ParcelableCompat:
@@ -261,7 +253,13 @@ android.support.v4.os.ParcelableCompatCreatorHoneycombMR2Stub:
 android.support.v4.util.DebugUtils:
     25:25:public DebugUtils()
 android.support.v4.util.LruCache
-android.support.v4.util.TimeUtils
+android.support.v4.util.TimeUtils:
+    public static final int HUNDRED_DAY_FIELD_LEN
+    private static final int SECONDS_PER_MINUTE
+    private static final int SECONDS_PER_HOUR
+    private static final int SECONDS_PER_DAY
+    27:27:public TimeUtils()
+    148:152:public static void formatDuration(long,java.lang.StringBuilder)
 android.support.v4.view.AccessibilityDelegateCompat
 android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl
 android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl$1
@@ -471,6 +469,104 @@ android.support.v4.widget.SearchViewCompatHoneycomb$OnQueryTextListenerCompatBri
 android.support.v4.widget.SimpleCursorAdapter
 android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
 android.support.v4.widget.SimpleCursorAdapter$ViewBinder
+android.support.v7.gridlayout.R:
+    9:9:public R()
+android.support.v7.gridlayout.R$attr
+android.support.v7.gridlayout.R$dimen:
+    67:67:public R$dimen()
+android.support.v7.gridlayout.R$id
+android.support.v7.gridlayout.R$styleable:
+    public static final int GridLayout_alignmentMode
+    public static final int GridLayout_Layout_layout_gravity
+    public static final int GridLayout_columnCount
+    public static final int GridLayout_Layout_layout_column
+    public static final int GridLayout_Layout_android_layout_width
+    public static final int GridLayout_useDefaultMargins
+    public static final int GridLayout_Layout_layout_columnSpan
+    public static final int GridLayout_Layout_layout_rowSpan
+    public static final int GridLayout_orientation
+    public static final int GridLayout_Layout_layout_row
+    public static final int GridLayout_Layout_android_layout_marginTop
+    public static final int GridLayout_rowOrderPreserved
+    public static final int GridLayout_Layout_android_layout_marginBottom
+    public static final int GridLayout_Layout_android_layout_height
+    public static final int GridLayout_Layout_android_layout_marginLeft
+    public static final int GridLayout_Layout_android_layout_margin
+    public static final int GridLayout_Layout_android_layout_marginRight
+    public static final int GridLayout_rowCount
+    public static final int GridLayout_columnOrderPreserved
+    30:30:public R$styleable()
+android.support.v7.widget.GridLayout:
+    public static final int HORIZONTAL
+    public static final int VERTICAL
+    public static final int UNDEFINED
+    public static final int ALIGN_BOUNDS
+    public static final int ALIGN_MARGINS
+    static final boolean DEBUG
+    static final int MAX_SIZE
+    static final int DEFAULT_CONTAINER_MARGIN
+    static final int UNINITIALIZED_HASH
+    private static final int DEFAULT_ORIENTATION
+    private static final int DEFAULT_COUNT
+    private static final boolean DEFAULT_USE_DEFAULT_MARGINS
+    private static final boolean DEFAULT_ORDER_PRESERVED
+    private static final int DEFAULT_ALIGNMENT_MODE
+    private static final int ORIENTATION
+    private static final int ROW_COUNT
+    private static final int COLUMN_COUNT
+    private static final int USE_DEFAULT_MARGINS
+    private static final int ALIGNMENT_MODE
+    private static final int ROW_ORDER_PRESERVED
+    private static final int COLUMN_ORDER_PRESERVED
+    private static final int INFLEXIBLE
+    private static final int CAN_STRETCH
+    297:297:public int getOrientation()
+    333:333:public int getRowCount()
+    366:366:public int getColumnCount()
+    397:397:public boolean getUseDefaultMargins()
+    444:444:public int getAlignmentMode()
+    478:478:public boolean isRowOrderPreserved()
+    514:514:public boolean isColumnOrderPreserved()
+    741:743:protected void onSetLayoutParams(android.view.View,android.view.ViewGroup$LayoutParams)
+    771:779:private void drawLine(android.graphics.Canvas,int,int,int,int,android.graphics.Paint)
+    782:783:private static void drawRect(android.graphics.Canvas,int,int,int,int,android.graphics.Paint)
+    840:842:protected void onViewAdded(android.view.View)
+    849:851:protected void onViewRemoved(android.view.View)
+    861:865:protected void onChildVisibilityChanged(android.view.View,int,int)
+    1072:1074:public void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent)
+    1078:1080:public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo)
+    2373:2373:public static android.support.v7.widget.GridLayout$Spec spec(int,android.support.v7.widget.GridLayout$Alignment)
+android.support.v7.widget.GridLayout$Axis:
+    private static final int NEW
+    private static final int PENDING
+    private static final int COMPLETE
+    1160:1160:public boolean isOrderPreserved()
+android.support.v7.widget.GridLayout$LayoutParams:
+    private static final int DEFAULT_WIDTH
+    private static final int DEFAULT_HEIGHT
+    private static final int DEFAULT_MARGIN
+    private static final int DEFAULT_ROW
+    private static final int DEFAULT_COLUMN
+    private static final int MARGIN
+    private static final int LEFT_MARGIN
+    private static final int TOP_MARGIN
+    private static final int RIGHT_MARGIN
+    private static final int BOTTOM_MARGIN
+    private static final int COLUMN
+    private static final int COLUMN_SPAN
+    private static final int ROW
+    private static final int ROW_SPAN
+    private static final int GRAVITY
+    1850:1851:public GridLayout$LayoutParams(android.view.ViewGroup$MarginLayoutParams)
+    1857:1860:public GridLayout$LayoutParams(android.support.v7.widget.GridLayout$LayoutParams)
+    1928:1930:public void setGravity(int)
+android.support.v7.widget.GridLayout$Spec:
+    2300:2300:final android.support.v7.widget.GridLayout$Spec copyWriteAlignment(android.support.v7.widget.GridLayout$Alignment)
+android.support.v7.widget.Space:
+    52:53:public Space(android.content.Context)
+android.support.v7.widget.ViewGroup:
+    protected static final int MEASURED_STATE_TOO_SMALL
+    protected static final int MEASURED_STATE_MASK
 com.ant.liao.GifDecoder:
     public static final int STATUS_PARSING
     public static final int STATUS_FORMAT_ERROR
@@ -878,6 +974,17 @@ com.dabing.emoj.activity.SettingActivity:
     static final int REQUEST_LOGIN
 com.dabing.emoj.activity.SettingUserInfoActivity:
     static final int REQUEST_LOGIN
+com.dabing.emoj.activity.UserDefineActivity:
+    com.dabing.emoj.widget.CustomGridLayout gridLayout
+    com.handmark.pulltorefresh.library.PullToRefreshScrollView mScrollView
+    com.dabing.emoj.adpater.AlbumCusorAdapter adapter
+    static final long REFLESH_UI_DELAY
+    static final int COLUM_NUM
+    static final int COLUM_PADDING
+    123:128:private void calculateAlbumWidth()
+    131:136:protected void addAlbum(com.dabing.emoj.utils.FileInfo)
+    141:148:protected void setDelMode()
+com.dabing.emoj.activity.UserDefineActivity$ImageFilenameFilter
 com.dabing.emoj.activity.WelcomeActivity:
     static final long delay
 com.dabing.emoj.admin.SelectEmojActivity:
@@ -889,6 +996,9 @@ com.dabing.emoj.admin.SelectEmojActivity:
     522:530:private void SetupWxAction()
 com.dabing.emoj.admin.uploadPicActivity:
     static final int interval
+com.dabing.emoj.adpater.AlbumCusorAdapter:
+    static final int COLUM_PADDING
+    74:77:public void close()
 com.dabing.emoj.adpater.CrystalHeaderGridViewAdapter:
     66:67:private android.graphics.drawable.Drawable getBackground(java.lang.String)
     111:116:public org.json.JSONObject getData(int)
@@ -903,8 +1013,40 @@ com.dabing.emoj.advertise.WAPS_CustomAd:
     static final long DELAY
     static final long PERIOD
     96:97:public void setPause(boolean)
+com.dabing.emoj.db.UserDefineContentProvider:
+    static final int URI_ALBUM
+    static final int URI_ALBUM_ID
+com.dabing.emoj.db.UserDefineDataBaseHelper:
+    public static final java.lang.String FIELD_ID
+    public static final java.lang.String FIELD_NAME
+    public static final java.lang.String FIELD_PATH
+    public static final java.lang.String FIELD_TYPE
+    public static final java.lang.String FIELD_THUMB
+    public static final java.lang.String FIELD_TIME
+    public static final java.lang.String FIELD_STATE
+    public static final java.lang.String FIELD_CHILDSIZE
+    static final java.lang.String TABLE_NAME
+    static final int VERSION
+    92:107:public com.dabing.emoj.utils.FileInfo getFileInfo(int)
+    111:130:public com.dabing.emoj.utils.FileInfo getFileInfo(java.lang.String)
+    139:145:public void remove(int)
+    206:215:public void insert(java.io.File)
+    218:218:public boolean exist(com.dabing.emoj.utils.FileInfo)
+    222:232:public boolean exist(java.lang.String)
+com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor:
+    277:277:public java.lang.String getName()
+    285:285:public java.lang.String getType()
+    289:289:public java.lang.String getThumb()
+    293:293:public long getTime()
+    297:297:public int getState()
+    301:301:public int getChildSize()
+com.dabing.emoj.demo.demoFile:
+    55:56:private void maketext1(java.lang.CharSequence)
+    100:111:private void start()
 com.dabing.emoj.demo.democall:
-    144:149:private void testJni()
+    155:160:private void testJni()
+    163:182:private void getChannel()
+com.dabing.emoj.demo.democall$2
 com.dabing.emoj.exception.AccessRateLimitException:
     private static final long serialVersionUID
 com.dabing.emoj.exception.Check:
@@ -921,6 +1063,12 @@ com.dabing.emoj.exception.ParmErrorException:
     private static final long serialVersionUID
 com.dabing.emoj.exception.ServerErrorException:
     private static final long serialVersionUID
+com.dabing.emoj.fragment.AlbumDetailFragment:
+    static final int COLUM_NUM
+    109:110:public void setCallBack(com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack)
+com.dabing.emoj.fragment.AlbumFragment:
+    static final int COLUM_NUM
+    306:314:protected void unregister()
 com.dabing.emoj.fragment.BaseEmojFragment:
     10:11:public BaseEmojFragment()
 com.dabing.emoj.fragment.CommonEmojFragment:
@@ -981,7 +1129,25 @@ com.dabing.emoj.provider.UMengDataProvider
 com.dabing.emoj.provider.UMengDataProvider$IUMengReceiveListener
 com.dabing.emoj.provider.UMengDataProvider$RequestTask
 com.dabing.emoj.provider.UMengDataProvider$UMengHandler
+com.dabing.emoj.service.EmojScanService:
+    public static final int CLIENT_REGISTER
+    public static final int CLIENT_UNREGISTER
+    public static final int CLIENT_SEND_MSG
+    public static final int CLIENT_START
+    public static final int CLIENT_SCAN
+    public static final int CLIENT_SCAN_GET_FILE
+    public static final int CLIENT_ALBUM_CHECK
+    public static final int CLIENT_ACTION_START
+    public static final int CLIENT_ACTION_END
+    public static final int CLINET_REFLESH_UI
+    247:248:public void stopScan()
+com.dabing.emoj.service.EmojScanService$FileRootScanTask
+com.dabing.emoj.service.EmojScanService$FileRootScanTask$1
+com.dabing.emoj.service.EmojScanService$FileRootScanTask$1$1
+com.dabing.emoj.service.EmojScanService$ImageScanTask:
+    361:393:private java.util.Map getThumbnails(java.util.Map)
 com.dabing.emoj.utils.AppConfig:
+    public static final boolean DEBUG
     public static final java.lang.String redirectUri
     public static final java.lang.String clientId
     public static final java.lang.String clientSecret
@@ -993,15 +1159,15 @@ com.dabing.emoj.utils.AppConfig:
     public static final java.lang.String CACHE_STRING
     public static final java.lang.String ALBUM_STRING
     static final java.lang.String FILENAME
-    170:190:public static int getBackgroundResId(java.lang.String)
-    287:289:public static boolean getUmengAdEnable(android.content.Context)
-    292:296:public static void setUmengAdEnable(android.content.Context,boolean)
-    319:321:public static java.lang.String getWAPS_AD_Type(android.content.Context)
-    324:328:public static void setWAPS_AD_Type(android.content.Context,java.lang.String)
-    385:388:public static java.lang.String getVip(android.content.Context)
-    419:421:public static java.lang.String getUnListen(android.content.Context)
-    435:437:public static java.lang.String getMenuExtend(android.content.Context)
-    752:755:public static java.lang.String getUploadIds(android.content.Context,java.lang.String)
+    171:191:public static int getBackgroundResId(java.lang.String)
+    288:290:public static boolean getUmengAdEnable(android.content.Context)
+    293:297:public static void setUmengAdEnable(android.content.Context,boolean)
+    320:322:public static java.lang.String getWAPS_AD_Type(android.content.Context)
+    325:329:public static void setWAPS_AD_Type(android.content.Context,java.lang.String)
+    386:389:public static java.lang.String getVip(android.content.Context)
+    420:422:public static java.lang.String getUnListen(android.content.Context)
+    436:438:public static java.lang.String getMenuExtend(android.content.Context)
+    753:756:public static java.lang.String getUploadIds(android.content.Context,java.lang.String)
 com.dabing.emoj.utils.AppConstant
 com.dabing.emoj.utils.DaBingRequest:
     static final java.lang.String format
@@ -1136,7 +1302,16 @@ com.dabing.emoj.utils.Emoj:
     static final java.lang.String e51
     5:5:public Emoj()
 com.dabing.emoj.utils.FileHelper:
-    39:56:public static byte[] getBytesFromFile(java.io.File)
+    public static final java.lang.String IMAGE_PATTERN
+    45:81:public void getFileContainsImage(java.lang.String,com.dabing.emoj.utils.FileHelper$OnScanFileListener)
+    89:98:public boolean isContainsImage(java.io.File)
+    125:142:public static byte[] getBytesFromFile(java.io.File)
+com.dabing.emoj.utils.FileHelper$1
+com.dabing.emoj.utils.FileHelper$OnScanFileListener
+com.dabing.emoj.utils.FileInfo:
+    public boolean Selected
+    static final java.lang.String IMAGE_PATTERN
+    59:91:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.io.File,java.io.FilenameFilter,boolean)
 com.dabing.emoj.utils.FileType:
     171:172:public void setValue(java.lang.String)
 com.dabing.emoj.utils.FileTypeJudge:
@@ -1163,6 +1338,28 @@ com.dabing.emoj.utils.TokenStore:
     static final java.lang.String PRIVATE_ACCESS_QUERYSTRING
     52:56:public static void storePublic(android.content.Context,java.lang.String)
     87:93:public static void clear(android.app.Activity)
+com.dabing.emoj.utils.Util:
+    private static final java.lang.String ROOT_PATH
+    private static final java.lang.String LOG_TAG
+    47:47:public Util()
+    54:54:public static boolean isSDCardReady()
+    59:69:public static boolean containsPath(java.lang.String,java.lang.String)
+    73:76:public static java.lang.String makePath(java.lang.String,java.lang.String)
+    80:80:public static java.lang.String getSdDirectory()
+    88:101:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.lang.String)
+    105:137:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.io.File,java.io.FilenameFilter,boolean)
+    146:159:public static android.graphics.drawable.Drawable getApkIcon(android.content.Context,java.lang.String)
+    163:167:public static java.lang.String getExtFromFilename(java.lang.String)
+    171:175:public static java.lang.String getNameFromFilename(java.lang.String)
+    179:183:public static java.lang.String getPathFromFilepath(java.lang.String)
+    201:256:public static java.lang.String copyFile(java.lang.String,java.lang.String)
+    266:271:public static boolean setText(android.view.View,int,java.lang.String)
+    275:280:public static boolean setText(android.view.View,int,int)
+    285:285:public static java.lang.String convertNumber(long)
+    290:303:public static java.lang.String convertStorage(long)
+    313:346:public static com.dabing.emoj.utils.Util$SDCardInfo getSDCardInfo()
+    352:356:public static java.lang.String formatDateString(android.content.Context,long)
+com.dabing.emoj.utils.Util$SDCardInfo
 com.dabing.emoj.utils.Utils:
     12:12:public Utils()
     20:22:public static int getScreenHeight(android.content.Context)
@@ -1170,15 +1367,24 @@ com.dabing.emoj.utils.Utils:
     37:46:public static boolean isChinese(char)
     49:58:public static int getLength(java.lang.CharSequence)
     62:66:public static java.lang.String getRealPathFromURI(android.app.Activity,android.net.Uri)
+com.dabing.emoj.widget.AddImageButton:
+    15:16:public AddImageButton(android.content.Context)
+    23:24:public void setWidth(int)
+com.dabing.emoj.widget.Album:
+    100:105:public void setDelMode(boolean)
+com.dabing.emoj.widget.Album$ThumbnailTask
+com.dabing.emoj.widget.AlbumImageView:
+    47:48:public void setImageDrawable(android.graphics.drawable.Drawable)
+    51:52:public void setImageResource(int)
 com.dabing.emoj.widget.CacheImageView:
     int mWidth
     int mHeight
-    86:87:public void setLoadingListener(greendroid.widget.AsyncImageView$OnImageViewLoadListener)
+    101:102:public void setLoadingListener(greendroid.widget.AsyncImageView$OnImageViewLoadListener)
 com.dabing.emoj.widget.CacheImageView$MakeTumbTask
 com.dabing.emoj.widget.CacheWrapperImageView:
     greendroid.image.ImageProcessor mProcessor
-    66:68:public void setImageProcessor(greendroid.image.ImageProcessor)
-    71:72:public void setCachedPath(java.lang.String)
+    68:70:public void setImageProcessor(greendroid.image.ImageProcessor)
+    73:74:public void setCachedPath(java.lang.String)
 com.dabing.emoj.widget.CrystalButton:
     static final int PADDING
     65:66:public void setIcon(android.graphics.drawable.Drawable)
@@ -1206,27 +1412,27 @@ com.dabing.emoj.wxapi.Util:
     42:59:public static byte[] getHtmlByteArray(java.lang.String)
     64:76:public static byte[] inputStreamToByte(java.io.InputStream)
     80:121:public static byte[] readFromFile(java.lang.String,int,int)
-    126:201:public static android.graphics.Bitmap extractThumbNail(java.lang.String,int,int,boolean)
+    254:283:public static android.graphics.Bitmap resizeBitmap2(android.graphics.Bitmap,int,int)
 com.dabing.emoj.wxapi.WeiXinHelper:
     private static final int THUMB_SIZE
     private static final int THUMB_MAX_WIDTH
     private static final int THUMB_MAX_HEIGHT
-    161:162:public void shareIMGFromURL_Circle(java.lang.String)
-    165:201:public void shareIMGFromURL(java.lang.String,int)
-    208:208:public void shareEmojToCircle(java.lang.String)
-    273:274:public void shareIMG(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    281:282:public void shareIMGToCircle(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    288:328:public void shareIMG(java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    330:374:public void shareApp(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    380:381:public void shareTextToFriends(java.lang.String)
-    387:388:public void shareTextToCircle(java.lang.String)
-    395:407:private void shareText(java.lang.String,int)
-    415:416:public void shareWebpage(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    424:425:public void shareWebpageToCircle(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    433:474:private void shareWebpage(java.lang.String,java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    476:488:public void shareToOther(java.lang.String,java.lang.String)
-    491:549:public void shareToOther(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    567:567:static synthetic java.lang.String access$0(com.dabing.emoj.wxapi.WeiXinHelper,java.lang.String)
+    188:189:public void shareIMGFromURL_Circle(java.lang.String)
+    192:228:public void shareIMGFromURL(java.lang.String,int)
+    235:235:public void shareEmojToCircle(java.lang.String)
+    300:301:public void shareIMG(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    308:309:public void shareIMGToCircle(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    315:355:public void shareIMG(java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    357:401:public void shareApp(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    407:408:public void shareTextToFriends(java.lang.String)
+    414:415:public void shareTextToCircle(java.lang.String)
+    422:434:private void shareText(java.lang.String,int)
+    442:443:public void shareWebpage(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    451:452:public void shareWebpageToCircle(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    460:501:private void shareWebpage(java.lang.String,java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    503:515:public void shareToOther(java.lang.String,java.lang.String)
+    518:576:public void shareToOther(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    596:596:static synthetic java.lang.String access$0(com.dabing.emoj.wxapi.WeiXinHelper,java.lang.String)
     62:62:static synthetic com.tencent.mm.sdk.openapi.IWXAPI access$1(com.dabing.emoj.wxapi.WeiXinHelper)
     61:61:static synthetic android.content.Context access$2(com.dabing.emoj.wxapi.WeiXinHelper)
 com.dabing.emoj.wxapi.WeiXinHelper$1
@@ -1238,6 +1444,189 @@ com.dabing.emoj.wxapi.WeiXinHelper$WXHandler
 com.dabing.emoj.wxapi.WeiXinHelper$WXImageDownloadTask
 com.dabing.emoj.wxapi.WeiXinHelper$WXThumbTask
 com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener
+com.handmark.pulltorefresh.library.ILoadingLayout:
+    public abstract void setLastUpdatedLabel(java.lang.CharSequence)
+    public abstract void setRefreshingLabel(java.lang.CharSequence)
+    public abstract void setTextTypeface(android.graphics.Typeface)
+com.handmark.pulltorefresh.library.IPullToRefresh
+com.handmark.pulltorefresh.library.LoadingLayoutProxy:
+    35:38:public void setLastUpdatedLabel(java.lang.CharSequence)
+    49:52:public void setRefreshingLabel(java.lang.CharSequence)
+    69:72:public void setTextTypeface(android.graphics.Typeface)
+com.handmark.pulltorefresh.library.OverscrollHelper:
+    static final java.lang.String LOG_TAG
+    static final float DEFAULT_OVERSCROLL_SCALE
+    private static synthetic int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation
+    26:26:public OverscrollHelper()
+    53:54:public static void overScrollBy(com.handmark.pulltorefresh.library.PullToRefreshBase,int,int,int,int,boolean)
+    77:78:public static void overScrollBy(com.handmark.pulltorefresh.library.PullToRefreshBase,int,int,int,int,int,boolean)
+    107:173:public static void overScrollBy(com.handmark.pulltorefresh.library.PullToRefreshBase,int,int,int,int,int,int,float,boolean)
+    26:26:static synthetic int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation()
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase:
+    99:99:public boolean getShowIndicator()
+    152:153:public void setAdapter(android.widget.ListAdapter)
+    208:209:public void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)
+    212:213:public final void setOnLastItemVisibleListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnLastItemVisibleListener)
+    216:217:public final void setOnScrollListener(android.widget.AbsListView$OnScrollListener)
+    220:221:public final void setScrollEmptyView(boolean)
+    232:241:public void setShowIndicator(boolean)
+com.handmark.pulltorefresh.library.PullToRefreshBase:
+    static final boolean DEBUG
+    static final boolean USE_HW_LAYERS
+    static final java.lang.String LOG_TAG
+    static final float FRICTION
+    public static final int SMOOTH_SCROLL_DURATION_MS
+    public static final int SMOOTH_SCROLL_LONG_DURATION_MS
+    static final int DEMO_SCROLL_INTERVAL
+    static final java.lang.String STATE_STATE
+    static final java.lang.String STATE_MODE
+    static final java.lang.String STATE_CURRENT_MODE
+    static final java.lang.String STATE_SCROLLING_REFRESHING_ENABLED
+    static final java.lang.String STATE_SHOW_REFRESHING_VIEW
+    static final java.lang.String STATE_SUPER
+    146:154:public final boolean demo()
+    164:164:public final boolean getFilterTouchEvents()
+    201:201:public final boolean isDisableScrollingWhileRefreshing()
+    222:222:public final boolean isScrollingWhileRefreshingEnabled()
+    383:384:public void setDisableScrollingWhileRefreshing(boolean)
+    388:389:public final void setFilterTouchEvents(boolean)
+    396:397:public void setLastUpdatedLabel(java.lang.CharSequence)
+    404:405:public void setLoadingDrawable(android.graphics.drawable.Drawable)
+    412:414:public void setLoadingDrawable(android.graphics.drawable.Drawable,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    444:446:public final void setOnRefreshListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2)
+    453:454:public void setPullLabel(java.lang.CharSequence)
+    461:462:public void setPullLabel(java.lang.CharSequence,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    470:471:public final void setPullToRefreshEnabled(boolean)
+    475:476:public final void setPullToRefreshOverScrollEnabled(boolean)
+    480:481:public final void setRefreshing()
+    485:488:public final void setRefreshing(boolean)
+    495:496:public void setRefreshingLabel(java.lang.CharSequence)
+    503:505:public void setRefreshingLabel(java.lang.CharSequence,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    512:513:public void setReleaseLabel(java.lang.CharSequence)
+    520:522:public void setReleaseLabel(java.lang.CharSequence,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    525:526:public void setScrollAnimationInterpolator(android.view.animation.Interpolator)
+    530:531:public final void setShowViewWhileRefreshing(boolean)
+    651:651:protected int getPullToRefreshScrollDurationLonger()
+    1016:1017:protected final void smoothScrollToLonger(int)
+    1280:1287:private final void smoothScrollToAndBack(int)
+    1247:1247:static synthetic void access$5(com.handmark.pulltorefresh.library.PullToRefreshBase,int,long,long,com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener)
+com.handmark.pulltorefresh.library.PullToRefreshBase$3
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView:
+    31:32:public PullToRefreshExpandableListView(android.content.Context)
+    39:40:public PullToRefreshExpandableListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    43:44:public PullToRefreshExpandableListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListViewSDK9:
+    93:100:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridViewSDK9:
+    93:99:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView:
+    29:30:public PullToRefreshHorizontalScrollView(android.content.Context)
+    37:38:public PullToRefreshHorizontalScrollView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    41:42:public PullToRefreshHorizontalScrollView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9:
+    88:95:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+    102:107:private int getScrollRange()
+com.handmark.pulltorefresh.library.PullToRefreshListView:
+    45:46:public PullToRefreshListView(android.content.Context)
+    53:54:public PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    57:58:public PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListViewSDK9:
+    267:273:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9:
+    87:94:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+    101:106:private int getScrollRange()
+com.handmark.pulltorefresh.library.PullToRefreshWebView:
+    51:58:public PullToRefreshWebView(android.content.Context)
+    71:78:public PullToRefreshWebView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    81:88:public PullToRefreshWebView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9:
+    static final int OVERSCROLL_FUZZY_THRESHOLD
+    static final float OVERSCROLL_SCALE_FACTOR
+    150:157:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
+    161:161:private int getScrollRange()
+com.handmark.pulltorefresh.library.R:
+    9:9:public R()
+com.handmark.pulltorefresh.library.R$anim:
+    29:29:public R$anim()
+com.handmark.pulltorefresh.library.R$attr
+com.handmark.pulltorefresh.library.R$dimen:
+    public static final int indicator_corner_radius
+    public static final int header_footer_top_bottom_padding
+    public static final int header_footer_left_right_padding
+    97:97:public R$dimen()
+com.handmark.pulltorefresh.library.R$drawable:
+    69:69:public R$drawable()
+com.handmark.pulltorefresh.library.R$id:
+    public static final int pullFromStart
+    public static final int rotate
+    public static final int both
+    public static final int pullDownFromTop
+    public static final int pullUpFromBottom
+    public static final int pullFromEnd
+    public static final int disabled
+    public static final int flip
+    public static final int manualOnly
+    10:10:public R$id()
+com.handmark.pulltorefresh.library.R$layout:
+    43:43:public R$layout()
+com.handmark.pulltorefresh.library.R$string:
+    35:35:public R$string()
+com.handmark.pulltorefresh.library.R$styleable:
+    public static final int PullToRefresh_ptrDrawableStart
+    public static final int PullToRefresh_ptrShowIndicator
+    public static final int PullToRefresh_ptrHeaderTextAppearance
+    public static final int PullToRefresh_ptrRefreshableViewBackground
+    public static final int PullToRefresh_ptrAnimationStyle
+    public static final int PullToRefresh_ptrScrollingWhileRefreshingEnabled
+    public static final int PullToRefresh_ptrAdapterViewBackground
+    public static final int PullToRefresh_ptrMode
+    public static final int PullToRefresh_ptrHeaderTextColor
+    public static final int PullToRefresh_ptrListViewExtrasEnabled
+    public static final int PullToRefresh_ptrDrawableBottom
+    public static final int PullToRefresh_ptrHeaderBackground
+    public static final int PullToRefresh_ptrDrawableTop
+    public static final int PullToRefresh_ptrOverScroll
+    public static final int PullToRefresh_ptrDrawableEnd
+    public static final int PullToRefresh_ptrRotateDrawableWhilePulling
+    public static final int PullToRefresh_ptrSubHeaderTextAppearance
+    public static final int PullToRefresh_ptrDrawable
+    public static final int PullToRefresh_ptrHeaderSubTextColor
+    47:47:public R$styleable()
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2:
+    static final java.lang.String JS_INTERFACE_PKG
+    static final java.lang.String DEF_JS_READY_PULL_DOWN_CALL
+    static final java.lang.String DEF_JS_READY_PULL_UP_CALL
+    69:70:public PullToRefreshWebView2(android.content.Context)
+    77:78:public PullToRefreshWebView2(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+    82:82:static synthetic java.util.concurrent.atomic.AtomicBoolean access$0(com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2)
+    81:81:static synthetic java.util.concurrent.atomic.AtomicBoolean access$1(com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2)
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback:
+    125:126:public void isReadyForPullUpResponse(boolean)
+    129:130:public void isReadyForPullDownResponse(boolean)
+com.handmark.pulltorefresh.library.extras.SoundPullEventListener
+com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor:
+    public abstract void setEmptyView(android.view.View)
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout:
+    static final int FLIP_ANIMATION_DURATION
+com.handmark.pulltorefresh.library.internal.IndicatorLayout:
+    static final int DEFAULT_ROTATION_ANIMATION_DURATION
+com.handmark.pulltorefresh.library.internal.LoadingLayout:
+    static final java.lang.String LOG_TAG
+    285:286:public void setLastUpdatedLabel(java.lang.CharSequence)
+    302:303:public void setRefreshingLabel(java.lang.CharSequence)
+    311:312:public void setTextTypeface(android.graphics.Typeface)
+    348:361:private void setSubHeaderText(java.lang.CharSequence)
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout:
+    static final int ROTATION_ANIMATION_DURATION
+com.handmark.pulltorefresh.library.internal.Utils:
+    static final java.lang.String LOG_TAG
+    5:5:public Utils()
+com.handmark.pulltorefresh.library.internal.ViewCompat:
+    25:25:public ViewCompat()
+    44:47:public static void setLayerType(android.view.View,int)
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK11
+com.handmark.pulltorefresh.library.internal.ViewCompat$SDK16:
+    58:58:ViewCompat$SDK16()
 com.tencent.exmobwin.MobWINManager:
     private static final java.lang.String a
     public MobWINManager()

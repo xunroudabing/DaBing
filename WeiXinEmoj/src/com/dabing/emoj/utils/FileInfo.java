@@ -3,9 +3,11 @@ package com.dabing.emoj.utils;
 import java.io.File;
 import java.io.FilenameFilter;
 
+import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.db.UserDefineDataBaseHelper.UserDefineCursor;
 
 import android.R.integer;
+import android.database.Cursor;
 
 
 public class FileInfo {
@@ -90,28 +92,28 @@ public class FileInfo {
     }
 
 	static final String IMAGE_PATTERN = "([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)";
-	public static FileInfo GetFileInfo(UserDefineCursor cursor) {
+	public static FileInfo GetFileInfo(Cursor cursor) {
 		if (cursor == null || cursor.getCount() == 0) {
 			return null;
 		}
-		String filePath = cursor.getPath();
+		String filePath = cursor.getString(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_PATH));
 		FileInfo fileInfo = FileInfo.GetFileInfo(filePath);
-//		FileInfo fileInfo = FileInfo.GetFileInfo(new File(filePath),
-//				new FilenameFilter() {
-//
-//					@Override
-//					public boolean accept(File dir, String filename) {
-//						// TODO Auto-generated method stub
-//						return filename.matches(IMAGE_PATTERN);
-//					}
-//				}, false);
+
 		
-		fileInfo.dbId = cursor.getId();
-		fileInfo.dbName = cursor.getName();
-		fileInfo.dbState = cursor.getState();
-		fileInfo.dbThumb = cursor.getThumb();
-		fileInfo.dbTime = cursor.getTime();
-		fileInfo.Count = cursor.getChildSize();
+//		fileInfo.dbId = cursor.getId();
+//		fileInfo.dbName = cursor.getName();
+//		fileInfo.dbState = cursor.getState();
+//		fileInfo.dbThumb = cursor.getThumb();
+//		fileInfo.dbTime = cursor.getTime();		
+//		fileInfo.Count = cursor.getChildSize();
+		
+		fileInfo.dbId = cursor.getInt(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_ID));
+		fileInfo.dbName = cursor.getString(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_NAME));
+		fileInfo.dbState = cursor.getInt(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_STATE));
+		fileInfo.dbThumb = cursor.getString(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_THUMB));
+		fileInfo.dbTime = cursor.getLong(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_TIME));	
+		fileInfo.Count = cursor.getInt(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_CHILDSIZE));
+		fileInfo.dbType = cursor.getString(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_TYPE));
 		return fileInfo;
 
 	}

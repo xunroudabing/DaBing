@@ -56,10 +56,11 @@ android.support.v4.app.BackStackRecord -> android.support.v4.app.a:
     void dump$ec96877(java.lang.String,java.io.PrintWriter) -> a
     void addOp(android.support.v4.app.BackStackRecord$Op) -> a
     android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment,java.lang.String) -> a
+    android.support.v4.app.FragmentTransaction addToBackStack$6738a57() -> a
     void bumpBackStackNesting(int) -> a
-    int commit() -> a
+    int commit() -> b
     void run() -> run
-    void popFromBackStack$1385ff() -> b
+    void popFromBackStack$1385ff() -> c
 android.support.v4.app.BackStackRecord$Op -> android.support.v4.app.b:
     android.support.v4.app.BackStackRecord$Op next -> a
     android.support.v4.app.BackStackRecord$Op prev -> b
@@ -130,45 +131,48 @@ android.support.v4.app.Fragment -> android.support.v4.app.Fragment:
     boolean mCheckedForLoaderManager -> M
     android.support.v4.app.Fragment instantiate(android.content.Context,java.lang.String) -> a
     android.support.v4.app.Fragment instantiate(android.content.Context,java.lang.String,android.os.Bundle) -> a
-    void restoreViewState() -> a
+    void restoreViewState() -> b_
     void setIndex(int) -> a
     boolean isInBackStack() -> b
     boolean equals(java.lang.Object) -> equals
     int hashCode() -> hashCode
     java.lang.String toString() -> toString
     android.support.v4.app.FragmentActivity getActivity() -> c
-    void onHiddenChanged$1385ff() -> d
+    android.content.res.Resources getResources() -> d
+    void onHiddenChanged$1385ff() -> e
+    android.support.v4.app.LoaderManager getLoaderManager() -> f
     void startActivityForResult$7a9ca511(android.content.Intent) -> a
     void onActivityResult(int,int,android.content.Intent) -> a
-    android.view.LayoutInflater getLayoutInflater$2ee30c11() -> e
-    void onInflate$423a76cd() -> f
-    void onAttach$63a22f9() -> g
-    android.view.animation.Animation onCreateAnimation$24236ca7() -> h
+    android.view.LayoutInflater getLayoutInflater$2ee30c11() -> g
+    void onInflate$423a76cd() -> h
+    void onAttach$63a22f9() -> i
+    android.view.animation.Animation onCreateAnimation$24236ca7() -> j
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onViewCreated$65f1d89() -> i
-    android.view.View getView() -> j
+    void onViewCreated$65f1d89() -> k
+    android.view.View getView() -> l
     void onActivityCreated(android.os.Bundle) -> b
-    void onResume() -> k
+    void onResume() -> m
     void onSaveInstanceState(android.os.Bundle) -> c
     void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
-    void onPause() -> l
+    void onPause() -> n
     void onLowMemory() -> onLowMemory
-    void onDestroy() -> m
-    void initState() -> n
-    void onDetach() -> o
-    void onCreateOptionsMenu$761f6f96() -> p
-    void onPrepareOptionsMenu$1eec55bd() -> q
-    void onDestroyOptionsMenu() -> r
-    boolean onOptionsItemSelected$1b88ab4c() -> s
-    void onOptionsMenuClosed$1eec55bd() -> t
+    void onDestroyView() -> o
+    void onDestroy() -> p
+    void initState() -> q
+    void onDetach() -> r
+    void onCreateOptionsMenu$761f6f96() -> s
+    void onPrepareOptionsMenu$1eec55bd() -> t
+    void onDestroyOptionsMenu() -> u
+    boolean onOptionsItemSelected$1b88ab4c() -> v
+    void onOptionsMenuClosed$1eec55bd() -> w
     void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-    boolean onContextItemSelected$1b88ab4c() -> u
-    void dump$ec96877$3725603f(java.lang.String,java.io.PrintWriter) -> a
-    void performStart() -> v
-    void performStop() -> w
-    void performReallyStop() -> x
-    void performDestroyView() -> y
+    boolean onContextItemSelected$1b88ab4c() -> x
+    void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
+    void performStart() -> y
+    void performStop() -> z
+    void performReallyStop() -> A
+    void performDestroyView() -> B
 android.support.v4.app.Fragment$InstantiationException -> android.support.v4.app.d:
 android.support.v4.app.Fragment$SavedState -> android.support.v4.app.Fragment$SavedState:
     android.os.Bundle mState -> a
@@ -217,7 +221,7 @@ android.support.v4.app.FragmentActivity -> android.support.v4.app.FragmentActivi
     void startActivityForResult(android.content.Intent,int) -> startActivityForResult
     void startActivityFromFragment$68747257(android.support.v4.app.Fragment,android.content.Intent) -> a
     void invalidateSupportFragmentIndex(int) -> a
-    android.support.v4.app.LoaderManagerImpl getLoaderManager$3d2266e4(int) -> b
+    android.support.v4.app.LoaderManagerImpl getLoaderManager(int,boolean,boolean) -> a
 android.support.v4.app.FragmentActivity$1 -> android.support.v4.app.f:
     android.support.v4.app.FragmentActivity this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
@@ -263,7 +267,7 @@ android.support.v4.app.FragmentManagerImpl -> android.support.v4.app.j:
     android.support.v4.app.FragmentTransaction beginTransaction() -> a
     boolean popBackStackImmediate() -> b
     java.lang.String toString() -> toString
-    void dump$ec96877$3725603f(java.lang.String,java.io.PrintWriter) -> a
+    void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
     android.view.animation.Animation makeOpenCloseAnimation$376f30fd(float,float,float,float) -> a
     android.view.animation.Animation makeFadeAnimation$424ea1bd(float,float) -> a
     android.view.animation.Animation loadAnimation(android.support.v4.app.Fragment,int,boolean,int) -> a
@@ -271,7 +275,7 @@ android.support.v4.app.FragmentManagerImpl -> android.support.v4.app.j:
     void moveToState(android.support.v4.app.Fragment) -> a
     void moveToState$2563266(int) -> d
     void moveToState(int,int,int,boolean) -> a
-    void startPendingDeferredFragments() -> u
+    void startPendingDeferredFragments() -> c
     void addFragment(android.support.v4.app.Fragment,boolean) -> a
     void removeFragment(android.support.v4.app.Fragment,int,int) -> a
     void hideFragment(android.support.v4.app.Fragment,int,int) -> b
@@ -285,30 +289,30 @@ android.support.v4.app.FragmentManagerImpl -> android.support.v4.app.j:
     int allocBackStackIndex(android.support.v4.app.BackStackRecord) -> a
     void setBackStackIndex(int,android.support.v4.app.BackStackRecord) -> a
     void freeBackStackIndex(int) -> b
-    boolean execPendingActions() -> c
+    boolean execPendingActions() -> d
     void reportBackStackChanged() -> w
     void addBackStackState(android.support.v4.app.BackStackRecord) -> b
-    java.util.ArrayList retainNonConfig() -> d
+    java.util.ArrayList retainNonConfig() -> e
     void saveFragmentViewState(android.support.v4.app.Fragment) -> b
-    android.os.Parcelable saveAllState() -> e
+    android.os.Parcelable saveAllState() -> f
     void restoreAllState(android.os.Parcelable,java.util.ArrayList) -> a
     void attachActivity(android.support.v4.app.FragmentActivity) -> a
-    void noteStateNotSaved() -> f
-    void dispatchCreate() -> g
-    void dispatchActivityCreated() -> h
-    void dispatchStart() -> i
-    void dispatchResume() -> j
-    void dispatchPause() -> k
-    void dispatchStop() -> l
-    void dispatchReallyStop() -> m
-    void dispatchDestroy() -> n
+    void noteStateNotSaved() -> g
+    void dispatchCreate() -> h
+    void dispatchActivityCreated() -> i
+    void dispatchStart() -> j
+    void dispatchResume() -> k
+    void dispatchPause() -> l
+    void dispatchStop() -> m
+    void dispatchReallyStop() -> n
+    void dispatchDestroy() -> o
     void dispatchConfigurationChanged(android.content.res.Configuration) -> a
-    void dispatchLowMemory() -> o
-    boolean dispatchCreateOptionsMenu$761f6f92() -> p
-    boolean dispatchPrepareOptionsMenu$1eec55b9() -> q
-    boolean dispatchOptionsItemSelected$1b88ab4c() -> r
-    boolean dispatchContextItemSelected$1b88ab4c() -> s
-    void dispatchOptionsMenuClosed$1eec55bd() -> t
+    void dispatchLowMemory() -> p
+    boolean dispatchCreateOptionsMenu$761f6f92() -> q
+    boolean dispatchPrepareOptionsMenu$1eec55b9() -> r
+    boolean dispatchOptionsItemSelected$1b88ab4c() -> s
+    boolean dispatchContextItemSelected$1b88ab4c() -> t
+    void dispatchOptionsMenuClosed$1eec55bd() -> u
     int reverseTransit(int) -> c
 android.support.v4.app.FragmentManagerImpl$1 -> android.support.v4.app.k:
     android.support.v4.app.FragmentManagerImpl this$0 -> a
@@ -350,7 +354,8 @@ android.support.v4.app.FragmentState$1 -> android.support.v4.app.n:
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
 android.support.v4.app.FragmentTransaction -> android.support.v4.app.o:
     android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment,java.lang.String) -> a
-    int commit() -> a
+    android.support.v4.app.FragmentTransaction addToBackStack$6738a57() -> a
+    int commit() -> b
 android.support.v4.app.HCSparseArray -> android.support.v4.app.p:
     java.lang.Object DELETED -> a
     boolean mGarbage -> b
@@ -360,16 +365,23 @@ android.support.v4.app.HCSparseArray -> android.support.v4.app.p:
     java.lang.Object get(int) -> a
     void remove(int) -> b
     void removeAt(int) -> c
-    void gc() -> c
+    void gc() -> d
+    void put(int,java.lang.Object) -> a
     int size() -> a
     int keyAt(int) -> d
     java.lang.Object valueAt(int) -> e
-    void clear() -> b
+    int indexOfKey$134621() -> b
+    void clear() -> c
     int binarySearch$76412d8d(int[],int,int) -> a
+    int idealIntArraySize(int) -> f
 android.support.v4.app.LoaderManager -> android.support.v4.app.q:
-    boolean hasRunningLoaders() -> a
+    android.support.v4.content.Loader initLoader$71be8de6(android.support.v4.app.LoaderManager$LoaderCallbacks) -> a
+    void destroyLoader$13462e() -> a
+    boolean hasRunningLoaders() -> b
 android.support.v4.app.LoaderManager$LoaderCallbacks -> android.support.v4.app.r:
     android.support.v4.content.Loader onCreateLoader$e57f803() -> a
+    void onLoadFinished$13079eae(java.lang.Object) -> a
+    void onLoaderReset$5dda1f52() -> a_
 android.support.v4.app.LoaderManagerImpl -> android.support.v4.app.s:
     boolean DEBUG -> a
     android.support.v4.app.HCSparseArray mLoaders -> b
@@ -377,17 +389,22 @@ android.support.v4.app.LoaderManagerImpl -> android.support.v4.app.s:
     android.support.v4.app.FragmentActivity mActivity -> d
     boolean mStarted -> e
     boolean mRetaining -> f
+    boolean mCreatingLoader -> g
     void updateActivity(android.support.v4.app.FragmentActivity) -> a
-    void doStart() -> b
-    void doStop() -> c
-    void doRetain() -> d
-    void finishRetain() -> e
-    void doReportNextStart() -> f
-    void doReportStart() -> g
-    void doDestroy() -> h
+    android.support.v4.app.LoaderManagerImpl$LoaderInfo createAndInstallLoader$348a764a(android.support.v4.app.LoaderManager$LoaderCallbacks) -> b
+    void installLoader(android.support.v4.app.LoaderManagerImpl$LoaderInfo) -> a
+    android.support.v4.content.Loader initLoader$71be8de6(android.support.v4.app.LoaderManager$LoaderCallbacks) -> a
+    void destroyLoader$13462e() -> a
+    void doStart() -> c
+    void doStop() -> d
+    void doRetain() -> e
+    void finishRetain() -> f
+    void doReportNextStart() -> g
+    void doReportStart() -> h
+    void doDestroy() -> i
     java.lang.String toString() -> toString
-    void dump$ec96877$79f041d6(java.lang.String,java.io.PrintWriter) -> a
-    boolean hasRunningLoaders() -> a
+    void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
+    boolean hasRunningLoaders() -> b
 android.support.v4.app.LoaderManagerImpl$LoaderInfo -> android.support.v4.app.t:
     int mId -> a
     android.os.Bundle mArgs -> b
@@ -404,31 +421,130 @@ android.support.v4.app.LoaderManagerImpl$LoaderInfo -> android.support.v4.app.t:
     boolean mListenerRegistered -> m
     android.support.v4.app.LoaderManagerImpl$LoaderInfo mPendingLoader -> n
     android.support.v4.app.LoaderManagerImpl this$0 -> o
-    void stop() -> a
-    void destroy() -> b
-    void callOnLoadFinished(android.support.v4.content.Loader,java.lang.Object) -> a
+    void start() -> a
+    void stop() -> b
+    void destroy() -> c
+    void onLoadComplete(android.support.v4.content.Loader,java.lang.Object) -> a
+    void callOnLoadFinished(android.support.v4.content.Loader,java.lang.Object) -> b
     java.lang.String toString() -> toString
-    void dump$ec96877$79f041d6(java.lang.String,java.io.PrintWriter) -> a
+    void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
 android.support.v4.app.NoSaveStateFrameLayout -> android.support.v4.app.u:
     android.view.ViewGroup wrap(android.view.View) -> a
     void dispatchSaveInstanceState(android.util.SparseArray) -> dispatchSaveInstanceState
     void dispatchRestoreInstanceState(android.util.SparseArray) -> dispatchRestoreInstanceState
 android.support.v4.app.SuperNotCalledException -> android.support.v4.app.v:
-android.support.v4.content.Loader -> android.support.v4.a.a:
-    int mId -> a
-    android.support.v4.content.Loader$OnLoadCompleteListener mListener -> b
-    boolean mStarted -> c
-    boolean mAbandoned -> d
-    boolean mReset -> e
-    boolean mContentChanged -> f
+android.support.v4.content.AsyncTaskLoader -> android.support.v4.a.a:
+    android.support.v4.content.AsyncTaskLoader$LoadTask mTask -> a
+    android.support.v4.content.AsyncTaskLoader$LoadTask mCancellingTask -> b
+    long mUpdateThrottle -> c
+    long mLastLoadCompleteTime -> d
+    android.os.Handler mHandler -> e
+    void onForceLoad() -> a
+    boolean cancelLoad() -> b
+    void onCanceled(java.lang.Object) -> a
+    void executePendingTask() -> c
+    void dispatchOnCancelled(android.support.v4.content.AsyncTaskLoader$LoadTask,java.lang.Object) -> a
+    java.lang.Object loadInBackground() -> d
+    void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
+android.support.v4.content.AsyncTaskLoader$LoadTask -> android.support.v4.a.b:
+    java.lang.Object result -> a
+    boolean waiting -> b
+    java.util.concurrent.CountDownLatch done -> e
+    android.support.v4.content.AsyncTaskLoader this$0 -> c
+    void onPostExecute(java.lang.Object) -> a
+    void onCancelled() -> a
+    void run() -> run
+    java.lang.Object doInBackground$42af7916() -> b
+android.support.v4.content.CursorLoader -> android.support.v4.a.c:
+    android.support.v4.content.Loader$ForceLoadContentObserver mObserver -> f
+    android.net.Uri mUri -> g
+    java.lang.String[] mProjection -> h
+    java.lang.String mSelection -> i
+    java.lang.String[] mSelectionArgs -> j
+    java.lang.String mSortOrder -> k
+    android.database.Cursor mCursor -> l
+    void deliverResult(android.database.Cursor) -> a
+    void onStartLoading() -> e
+    void onStopLoading() -> f
+    void onReset() -> g
+    void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
+    java.lang.Object loadInBackground() -> d
+    void onCanceled(java.lang.Object) -> a
+    void deliverResult(java.lang.Object) -> b
+android.support.v4.content.Loader -> android.support.v4.a.d:
+    int mId -> m
+    android.support.v4.content.Loader$OnLoadCompleteListener mListener -> n
+    android.content.Context mContext -> o
+    boolean mStarted -> p
+    boolean mAbandoned -> q
+    boolean mReset -> r
+    boolean mContentChanged -> s
+    void deliverResult(java.lang.Object) -> b
     void registerListener(int,android.support.v4.content.Loader$OnLoadCompleteListener) -> a
     void unregisterListener(android.support.v4.content.Loader$OnLoadCompleteListener) -> a
-    void startLoading() -> a
-    void stopLoading() -> b
-    void reset() -> c
+    void startLoading() -> h
+    void onStartLoading() -> e
+    void forceLoad() -> i
+    void onForceLoad() -> a
+    void stopLoading() -> j
+    void onStopLoading() -> f
+    void reset() -> k
+    void onReset() -> g
+    void onContentChanged() -> l
     java.lang.String toString() -> toString
-    void dump$ec96877(java.lang.String,java.io.PrintWriter) -> a
-android.support.v4.content.Loader$OnLoadCompleteListener -> android.support.v4.a.b:
+    void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
+android.support.v4.content.Loader$ForceLoadContentObserver -> android.support.v4.a.e:
+    android.support.v4.content.Loader this$0 -> a
+    boolean deliverSelfNotifications() -> deliverSelfNotifications
+    void onChange(boolean) -> onChange
+android.support.v4.content.Loader$OnLoadCompleteListener -> android.support.v4.a.f:
+    void onLoadComplete(android.support.v4.content.Loader,java.lang.Object) -> a
+android.support.v4.content.ModernAsyncTask -> android.support.v4.a.g:
+    java.util.concurrent.ThreadFactory sThreadFactory -> a
+    java.util.concurrent.BlockingQueue sPoolWorkQueue -> b
+    java.util.concurrent.Executor THREAD_POOL_EXECUTOR -> d
+    android.support.v4.content.ModernAsyncTask$InternalHandler sHandler -> c
+    java.util.concurrent.Executor sDefaultExecutor -> e
+    android.support.v4.content.ModernAsyncTask$WorkerRunnable mWorker -> f
+    java.util.concurrent.FutureTask mFuture -> g
+    android.support.v4.content.ModernAsyncTask$Status mStatus -> h
+    java.util.concurrent.atomic.AtomicBoolean mTaskInvoked -> i
+    java.lang.Object postResult(java.lang.Object) -> b
+    java.lang.Object doInBackground$42af7916() -> b
+    void onPostExecute(java.lang.Object) -> a
+    void onProgressUpdate$1b4f7664() -> c
+    void onCancelled() -> a
+    boolean cancel$138603() -> d
+    android.support.v4.content.ModernAsyncTask executeOnExecutor$46741b06(java.util.concurrent.Executor) -> a
+    java.util.concurrent.atomic.AtomicBoolean access$200(android.support.v4.content.ModernAsyncTask) -> a
+    java.lang.Object access$300(android.support.v4.content.ModernAsyncTask,java.lang.Object) -> a
+    void access$400(android.support.v4.content.ModernAsyncTask,java.lang.Object) -> b
+    void access$500(android.support.v4.content.ModernAsyncTask,java.lang.Object) -> c
+android.support.v4.content.ModernAsyncTask$1 -> android.support.v4.a.h:
+    java.util.concurrent.atomic.AtomicInteger mCount -> a
+    java.lang.Thread newThread(java.lang.Runnable) -> newThread
+android.support.v4.content.ModernAsyncTask$2 -> android.support.v4.a.i:
+    android.support.v4.content.ModernAsyncTask this$0 -> a
+    java.lang.Object call() -> call
+android.support.v4.content.ModernAsyncTask$3 -> android.support.v4.a.j:
+    android.support.v4.content.ModernAsyncTask this$0 -> a
+    void done() -> done
+android.support.v4.content.ModernAsyncTask$4 -> android.support.v4.a.k:
+    int[] $SwitchMap$android$support$v4$content$ModernAsyncTask$Status -> a
+android.support.v4.content.ModernAsyncTask$AsyncTaskResult -> android.support.v4.a.l:
+    android.support.v4.content.ModernAsyncTask mTask -> a
+    java.lang.Object[] mData -> b
+android.support.v4.content.ModernAsyncTask$InternalHandler -> android.support.v4.a.m:
+    void handleMessage(android.os.Message) -> handleMessage
+android.support.v4.content.ModernAsyncTask$Status -> android.support.v4.a.n:
+    android.support.v4.content.ModernAsyncTask$Status PENDING -> a
+    android.support.v4.content.ModernAsyncTask$Status RUNNING -> b
+    android.support.v4.content.ModernAsyncTask$Status FINISHED -> c
+    android.support.v4.content.ModernAsyncTask$Status[] $VALUES -> d
+    android.support.v4.content.ModernAsyncTask$Status[] values() -> values
+    android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String) -> valueOf
+android.support.v4.content.ModernAsyncTask$WorkerRunnable -> android.support.v4.a.o:
+    java.lang.Object[] mParams -> b
 android.support.v4.os.ParcelableCompat -> android.support.v4.b.a:
     android.os.Parcelable$Creator newCreator(android.support.v4.os.ParcelableCompatCreatorCallbacks) -> a
 android.support.v4.os.ParcelableCompat$CompatCreator -> android.support.v4.b.b:
@@ -449,6 +565,13 @@ android.support.v4.util.LogWriter -> android.support.v4.c.b:
     void flush() -> flush
     void write(char[],int,int) -> write
     void flushBuilder() -> a
+android.support.v4.util.TimeUtils -> android.support.v4.c.c:
+    java.lang.Object sFormatSync -> a
+    char[] sFormatStr -> b
+    int printField$6419d3d2(char[],int,char,int,boolean) -> a
+    void formatDuration$112769eb(long,java.io.PrintWriter) -> b
+    void formatDuration(long,java.io.PrintWriter) -> a
+    void formatDuration(long,long,java.io.PrintWriter) -> a
 android.support.v4.view.KeyEventCompat -> android.support.v4.view.a:
     android.support.v4.view.KeyEventCompat$KeyEventVersionImpl IMPL -> a
     boolean hasModifiers$79c6ddc0(android.view.KeyEvent) -> a
@@ -698,6 +821,226 @@ android.support.v4.widget.EdgeEffectCompat$EdgeEffectImpl -> android.support.v4.
     boolean onPull(java.lang.Object,float) -> a
     boolean onRelease(java.lang.Object) -> c
     boolean draw(java.lang.Object,android.graphics.Canvas) -> a
+android.support.v7.gridlayout.R -> android.support.v7.a.a:
+android.support.v7.gridlayout.R$dimen -> android.support.v7.a.b:
+    int default_gap -> a
+android.support.v7.gridlayout.R$styleable -> android.support.v7.a.c:
+    int[] GridLayout_Layout -> a
+    int[] GridLayout -> b
+android.support.v7.widget.GridLayout -> android.support.v7.widget.GridLayout:
+    java.lang.String TAG -> a
+    android.support.v7.widget.GridLayout$Axis horizontalAxis -> b
+    android.support.v7.widget.GridLayout$Axis verticalAxis -> c
+    boolean layoutParamsValid -> d
+    int orientation -> e
+    boolean useDefaultMargins -> f
+    int alignmentMode -> g
+    int defaultGap -> h
+    int lastLayoutParamsHashCode -> i
+    android.support.v7.widget.GridLayout$Alignment UNDEFINED_ALIGNMENT -> j
+    android.support.v7.widget.GridLayout$Alignment LEADING -> t
+    android.support.v7.widget.GridLayout$Alignment TRAILING -> u
+    android.support.v7.widget.GridLayout$Alignment TOP -> k
+    android.support.v7.widget.GridLayout$Alignment BOTTOM -> l
+    android.support.v7.widget.GridLayout$Alignment START -> m
+    android.support.v7.widget.GridLayout$Alignment END -> n
+    android.support.v7.widget.GridLayout$Alignment LEFT -> o
+    android.support.v7.widget.GridLayout$Alignment RIGHT -> p
+    android.support.v7.widget.GridLayout$Alignment CENTER -> q
+    android.support.v7.widget.GridLayout$Alignment BASELINE -> r
+    android.support.v7.widget.GridLayout$Alignment FILL -> s
+    void setColumnCount(int) -> a
+    int max2$49667a13(int[]) -> a
+    java.lang.Object[] append(java.lang.Object[],java.lang.Object[]) -> a
+    android.support.v7.widget.GridLayout$Alignment getAlignment(int,boolean) -> a
+    int getMargin1(android.view.View,boolean,boolean) -> a
+    int getMargin(android.view.View,boolean,boolean) -> b
+    int getTotalMargin(android.view.View,boolean) -> b
+    void setCellGroup(android.support.v7.widget.GridLayout$LayoutParams,int,int,int,int) -> a
+    void invalidateStructure() -> c
+    void invalidateValues() -> d
+    android.support.v7.widget.GridLayout$LayoutParams getLayoutParams(android.view.View) -> a
+    void onDraw(android.graphics.Canvas) -> onDraw
+    int computeLayoutParamsHashCode() -> e
+    void checkForLayoutParamsModification() -> f
+    void measureChildWithMargins2(android.view.View,int,int,int,int) -> a
+    void measureChildrenWithMargins(int,int,boolean) -> a
+    void onMeasure(int,int) -> onMeasure
+    int getMeasurement(android.view.View,boolean) -> c
+    int getMeasurementIncludingMargin(android.view.View,boolean) -> a
+    void requestLayout() -> requestLayout
+    android.support.v7.widget.GridLayout$Alignment getAlignment(android.support.v7.widget.GridLayout$Alignment,boolean) -> a
+    void onLayout(boolean,int,int,int,int) -> onLayout
+    android.support.v7.widget.GridLayout$Spec spec(int,int,android.support.v7.widget.GridLayout$Alignment) -> a
+    android.support.v7.widget.GridLayout$Spec spec$6f3c99d3() -> a
+    android.support.v7.widget.GridLayout$Alignment createSwitchingAlignment(android.support.v7.widget.GridLayout$Alignment,android.support.v7.widget.GridLayout$Alignment) -> a
+    boolean canStretch(int) -> b
+    android.view.ViewGroup$LayoutParams generateDefaultLayoutParams() -> generateDefaultLayoutParams
+    android.view.ViewGroup$LayoutParams generateLayoutParams(android.view.ViewGroup$LayoutParams) -> generateLayoutParams
+    android.view.ViewGroup$LayoutParams generateLayoutParams(android.util.AttributeSet) -> generateLayoutParams
+android.support.v7.widget.GridLayout$1 -> android.support.v7.widget.a:
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+android.support.v7.widget.GridLayout$2 -> android.support.v7.widget.b:
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+android.support.v7.widget.GridLayout$3 -> android.support.v7.widget.c:
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+android.support.v7.widget.GridLayout$4 -> android.support.v7.widget.d:
+    android.support.v7.widget.GridLayout$Alignment val$ltr -> a
+    android.support.v7.widget.GridLayout$Alignment val$rtl -> b
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+android.support.v7.widget.GridLayout$5 -> android.support.v7.widget.e:
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+android.support.v7.widget.GridLayout$6 -> android.support.v7.widget.f:
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+    android.support.v7.widget.GridLayout$Bounds getBounds() -> a
+android.support.v7.widget.GridLayout$6$1 -> android.support.v7.widget.g:
+    int size -> e
+    android.support.v7.widget.GridLayout$6 this$0 -> a
+    void reset() -> a
+    void include(int,int) -> a
+    int size(boolean) -> a
+    int getOffset(android.view.View,android.support.v7.widget.GridLayout$Alignment,int) -> a
+android.support.v7.widget.GridLayout$7 -> android.support.v7.widget.h:
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+    int getSizeInCell$17e143b0(int,int) -> a
+android.support.v7.widget.GridLayout$Alignment -> android.support.v7.widget.i:
+    int getGravityOffset(android.view.View,int) -> a
+    int getAlignmentValue(android.view.View,int) -> b
+    int getSizeInCell$17e143b0(int,int) -> a
+    android.support.v7.widget.GridLayout$Bounds getBounds() -> a
+android.support.v7.widget.GridLayout$Arc -> android.support.v7.widget.j:
+    android.support.v7.widget.GridLayout$Interval span -> a
+    android.support.v7.widget.GridLayout$MutableInt value -> b
+    boolean valid -> c
+    java.lang.String toString() -> toString
+android.support.v7.widget.GridLayout$Assoc -> android.support.v7.widget.k:
+    java.lang.Class keyType -> a
+    java.lang.Class valueType -> b
+    android.support.v7.widget.GridLayout$Assoc of(java.lang.Class,java.lang.Class) -> a
+    void put(java.lang.Object,java.lang.Object) -> a
+    android.support.v7.widget.GridLayout$PackedMap pack() -> a
+android.support.v7.widget.GridLayout$Axis -> android.support.v7.widget.l:
+    boolean horizontal -> a
+    int definedCount -> b
+    int maxIndex -> t
+    android.support.v7.widget.GridLayout$PackedMap groupBounds -> c
+    boolean groupBoundsValid -> d
+    android.support.v7.widget.GridLayout$PackedMap forwardLinks -> e
+    boolean forwardLinksValid -> f
+    android.support.v7.widget.GridLayout$PackedMap backwardLinks -> g
+    boolean backwardLinksValid -> h
+    int[] leadingMargins -> i
+    boolean leadingMarginsValid -> j
+    int[] trailingMargins -> k
+    boolean trailingMarginsValid -> l
+    android.support.v7.widget.GridLayout$Arc[] arcs -> m
+    boolean arcsValid -> n
+    int[] locations -> o
+    boolean locationsValid -> p
+    boolean orderPreserved -> q
+    android.support.v7.widget.GridLayout$MutableInt parentMin -> u
+    android.support.v7.widget.GridLayout$MutableInt parentMax -> v
+    boolean $assertionsDisabled -> r
+    android.support.v7.widget.GridLayout this$0 -> s
+    int getCount() -> a
+    void setCount(int) -> a
+    void setOrderPreserved(boolean) -> a
+    android.support.v7.widget.GridLayout$PackedMap getGroupBounds() -> b
+    android.support.v7.widget.GridLayout$PackedMap createLinks(boolean) -> b
+    void computeLinks(android.support.v7.widget.GridLayout$PackedMap,boolean) -> a
+    android.support.v7.widget.GridLayout$PackedMap getForwardLinks() -> h
+    android.support.v7.widget.GridLayout$PackedMap getBackwardLinks() -> i
+    void include(java.util.List,android.support.v7.widget.GridLayout$Interval,android.support.v7.widget.GridLayout$MutableInt,boolean) -> a
+    void include(java.util.List,android.support.v7.widget.GridLayout$Interval,android.support.v7.widget.GridLayout$MutableInt) -> a
+    android.support.v7.widget.GridLayout$Arc[][] groupArcsByFirstVertex(android.support.v7.widget.GridLayout$Arc[]) -> a
+    android.support.v7.widget.GridLayout$Arc[] topologicalSort(java.util.List) -> a
+    void addComponentSizes(java.util.List,android.support.v7.widget.GridLayout$PackedMap) -> a
+    void computeArcs() -> j
+    boolean relax(int[],android.support.v7.widget.GridLayout$Arc) -> a
+    java.lang.String arcsToString(java.util.List) -> b
+    void solve(android.support.v7.widget.GridLayout$Arc[],int[]) -> a
+    void computeMargins(boolean) -> c
+    int[] getLeadingMargins() -> c
+    int[] getTrailingMargins() -> d
+    int[] getLocations() -> e
+    void setParentConstraints(int,int) -> a
+    int getMeasure(int,int) -> b
+    int getMeasure(int) -> b
+    void layout(int) -> c
+    void invalidateStructure() -> f
+    void invalidateValues() -> g
+android.support.v7.widget.GridLayout$Axis$1 -> android.support.v7.widget.m:
+    android.support.v7.widget.GridLayout$Arc[] result -> a
+    int cursor -> b
+    android.support.v7.widget.GridLayout$Arc[][] arcsByVertex -> c
+    int[] visited -> d
+    boolean $assertionsDisabled -> e
+    android.support.v7.widget.GridLayout$Arc[] val$arcs -> f
+    android.support.v7.widget.GridLayout$Axis this$1 -> g
+    void walk(int) -> a
+    android.support.v7.widget.GridLayout$Arc[] sort() -> a
+android.support.v7.widget.GridLayout$Bounds -> android.support.v7.widget.n:
+    int before -> b
+    int after -> c
+    int flexibility -> d
+    void reset() -> a
+    void include(int,int) -> a
+    int size(boolean) -> a
+    int getOffset(android.view.View,android.support.v7.widget.GridLayout$Alignment,int) -> a
+    void include(android.view.View,android.support.v7.widget.GridLayout$Spec,android.support.v7.widget.GridLayout,android.support.v7.widget.GridLayout$Axis) -> a
+    java.lang.String toString() -> toString
+android.support.v7.widget.GridLayout$Interval -> android.support.v7.widget.o:
+    int min -> a
+    int max -> b
+    int size() -> a
+    android.support.v7.widget.GridLayout$Interval inverse() -> b
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    java.lang.String toString() -> toString
+android.support.v7.widget.GridLayout$LayoutParams -> android.support.v7.widget.GridLayout$LayoutParams:
+    android.support.v7.widget.GridLayout$Interval DEFAULT_SPAN -> c
+    int DEFAULT_SPAN_SIZE -> d
+    android.support.v7.widget.GridLayout$Spec rowSpec -> a
+    android.support.v7.widget.GridLayout$Spec columnSpec -> b
+    void setBaseAttributes(android.content.res.TypedArray,int,int) -> setBaseAttributes
+    void setRowSpecSpan(android.support.v7.widget.GridLayout$Interval) -> a
+    void setColumnSpecSpan(android.support.v7.widget.GridLayout$Interval) -> b
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+android.support.v7.widget.GridLayout$MutableInt -> android.support.v7.widget.p:
+    int value -> a
+    void reset() -> a
+    java.lang.String toString() -> toString
+android.support.v7.widget.GridLayout$PackedMap -> android.support.v7.widget.q:
+    int[] index -> a
+    java.lang.Object[] keys -> b
+    java.lang.Object[] values -> c
+    java.lang.Object getValue(int) -> a
+    int[] createIndex(java.lang.Object[]) -> a
+    java.lang.Object[] compact(java.lang.Object[],int[]) -> a
+android.support.v7.widget.GridLayout$Spec -> android.support.v7.widget.r:
+    android.support.v7.widget.GridLayout$Spec UNDEFINED -> a
+    boolean startDefined -> b
+    android.support.v7.widget.GridLayout$Interval span -> c
+    android.support.v7.widget.GridLayout$Alignment alignment -> d
+    android.support.v7.widget.GridLayout$Spec copyWriteSpan(android.support.v7.widget.GridLayout$Interval) -> a
+    int getFlexibility() -> a
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+android.support.v7.widget.Space -> android.support.v7.widget.Space:
+    void draw(android.graphics.Canvas) -> draw
+    int getDefaultSize2(int,int) -> a
+    void onMeasure(int,int) -> onMeasure
+android.support.v7.widget.ViewGroup -> android.support.v7.widget.ViewGroup:
+    int resolveSizeAndState$4868d301(int,int) -> a
+    boolean isLayoutRtl$3c7ec8bf() -> b
 b -> h:
     long a -> a
     boolean b -> b
@@ -1944,8 +2287,12 @@ com.dabing.emoj.R$anim -> com.dabing.emoj.R$anim:
     int push_up_out -> push_up_out
     int qqappwall_push_up_in -> qqappwall_push_up_in
     int qqappwall_push_up_out -> qqappwall_push_up_out
+    int slide_in_from_bottom -> slide_in_from_bottom
+    int slide_in_from_top -> slide_in_from_top
     int slide_left_in -> slide_left_in
     int slide_left_out -> slide_left_out
+    int slide_out_to_bottom -> slide_out_to_bottom
+    int slide_out_to_top -> slide_out_to_top
     int slide_right_in -> slide_right_in
     int slide_right_out -> slide_right_out
     int welcome_anmi_move -> welcome_anmi_move
@@ -1953,10 +2300,15 @@ com.dabing.emoj.R$anim -> com.dabing.emoj.R$anim:
 com.dabing.emoj.R$array -> com.dabing.emoj.R$array:
     int UMageList -> UMageList
     int UMgenderList -> UMgenderList
+    int pull_msg_array -> pull_msg_array
 com.dabing.emoj.R$attr -> com.dabing.emoj.R$attr:
     int CenterInVertical -> CenterInVertical
     int activeDot -> activeDot
+    int alignmentMode -> alignmentMode
+    int columnCount -> columnCount
+    int columnOrderPreserved -> columnOrderPreserved
     int defaultSrc -> defaultSrc
+    int default_src -> default_src
     int dividerDrawable -> dividerDrawable
     int dividerWidth -> dividerWidth
     int dotCount -> dotCount
@@ -2034,8 +2386,35 @@ com.dabing.emoj.R$attr -> com.dabing.emoj.R$attr:
     int inDensity -> inDensity
     int isInProgress -> isInProgress
     int isPreMeasureSize -> isPreMeasureSize
+    int layout_column -> layout_column
+    int layout_columnSpan -> layout_columnSpan
+    int layout_gravity -> layout_gravity
+    int layout_row -> layout_row
+    int layout_rowSpan -> layout_rowSpan
     int maxItems -> maxItems
+    int orientation -> orientation
     int padding -> padding
+    int ptrAdapterViewBackground -> ptrAdapterViewBackground
+    int ptrAnimationStyle -> ptrAnimationStyle
+    int ptrDrawable -> ptrDrawable
+    int ptrDrawableBottom -> ptrDrawableBottom
+    int ptrDrawableEnd -> ptrDrawableEnd
+    int ptrDrawableStart -> ptrDrawableStart
+    int ptrDrawableTop -> ptrDrawableTop
+    int ptrHeaderBackground -> ptrHeaderBackground
+    int ptrHeaderSubTextColor -> ptrHeaderSubTextColor
+    int ptrHeaderTextAppearance -> ptrHeaderTextAppearance
+    int ptrHeaderTextColor -> ptrHeaderTextColor
+    int ptrListViewExtrasEnabled -> ptrListViewExtrasEnabled
+    int ptrMode -> ptrMode
+    int ptrOverScroll -> ptrOverScroll
+    int ptrRefreshableViewBackground -> ptrRefreshableViewBackground
+    int ptrRotateDrawableWhilePulling -> ptrRotateDrawableWhilePulling
+    int ptrScrollingWhileRefreshingEnabled -> ptrScrollingWhileRefreshingEnabled
+    int ptrShowIndicator -> ptrShowIndicator
+    int ptrSubHeaderTextAppearance -> ptrSubHeaderTextAppearance
+    int rowCount -> rowCount
+    int rowOrderPreserved -> rowOrderPreserved
     int segmentedBar -> segmentedBar
     int segmentedContentView -> segmentedContentView
     int subtext -> subtext
@@ -2046,6 +2425,7 @@ com.dabing.emoj.R$attr -> com.dabing.emoj.R$attr:
     int title -> title
     int type -> type
     int url -> url
+    int useDefaultMargins -> useDefaultMargins
 com.dabing.emoj.R$color -> com.dabing.emoj.R$color:
     int app_panel_bg -> app_panel_bg
     int background -> background
@@ -2111,6 +2491,7 @@ com.dabing.emoj.R$dimen -> com.dabing.emoj.R$dimen:
     int TitleTextSize -> TitleTextSize
     int XLargeTextSize -> XLargeTextSize
     int XXLargeTextSize -> XXLargeTextSize
+    int default_gap -> default_gap
     int gd_action_bar_height -> gd_action_bar_height
     int gd_arrow_offset -> gd_arrow_offset
     int gd_drawable_height -> gd_drawable_height
@@ -2124,6 +2505,11 @@ com.dabing.emoj.R$dimen -> com.dabing.emoj.R$dimen:
     int gd_progress_bar_width -> gd_progress_bar_width
     int gd_separator_item_view_height -> gd_separator_item_view_height
     int gd_separator_item_view_padding_left -> gd_separator_item_view_padding_left
+    int header_footer_left_right_padding -> header_footer_left_right_padding
+    int header_footer_top_bottom_padding -> header_footer_top_bottom_padding
+    int indicator_corner_radius -> indicator_corner_radius
+    int indicator_internal_padding -> indicator_internal_padding
+    int indicator_right_padding -> indicator_right_padding
 com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int a1 -> a1
     int a10 -> a10
@@ -2156,6 +2542,10 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int action_about -> action_about
     int action_bar_divider -> action_bar_divider
     int action_help -> action_help
+    int album_background -> album_background
+    int album_bg_nor -> album_bg_nor
+    int albums_bg -> albums_bg
+    int albums_icon_bg -> albums_icon_bg
     int alert_dialog_trans_background -> alert_dialog_trans_background
     int alert_hot -> alert_hot
     int alert_new -> alert_new
@@ -2164,6 +2554,9 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int app_item_pressed -> app_item_pressed
     int app_item_shade -> app_item_shade
     int app_panel_bg -> app_panel_bg
+    int appitem_del_btn_normal -> appitem_del_btn_normal
+    int appitem_del_btn_pressed -> appitem_del_btn_pressed
+    int appitem_del_selector -> appitem_del_selector
     int av_download -> av_download
     int broswer_progress -> broswer_progress
     int btn_browse_left_nor -> btn_browse_left_nor
@@ -2220,6 +2613,8 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int custom_loading -> custom_loading
     int cute_cate_danceing -> cute_cate_danceing
     int default_imageview_background -> default_imageview_background
+    int default_ptr_flip -> default_ptr_flip
+    int default_ptr_rotate -> default_ptr_rotate
     int dot4 -> dot4
     int dot5 -> dot5
     int edittext1_bg_focuse -> edittext1_bg_focuse
@@ -2231,6 +2626,7 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int emoj005 -> emoj005
     int emoj008 -> emoj008
     int emoj009 -> emoj009
+    int emoj010 -> emoj010
     int emoj011 -> emoj011
     int emoj012 -> emoj012
     int emoj013 -> emoj013
@@ -2266,13 +2662,17 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int emoj047 -> emoj047
     int emoj048 -> emoj048
     int emoj099 -> emoj099
+    int emoj_add_selector -> emoj_add_selector
     int emoj_black -> emoj_black
     int emoj_bottom_background -> emoj_bottom_background
     int emoj_graydark -> emoj_graydark
     int emoj_graylight -> emoj_graylight
+    int emoj_graylight_v2 -> emoj_graylight_v2
     int emoj_item_nor -> emoj_item_nor
     int emoj_item_pressed -> emoj_item_pressed
     int emoj_item_selector -> emoj_item_selector
+    int emotionstore_custom_add_icon -> emotionstore_custom_add_icon
+    int emotionstore_custom_add_icon_press -> emotionstore_custom_add_icon_press
     int gd_action_bar_add -> gd_action_bar_add
     int gd_action_bar_all_friends -> gd_action_bar_all_friends
     int gd_action_bar_compass -> gd_action_bar_compass
@@ -2369,6 +2769,9 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int image_download_fail -> image_download_fail
     int image_download_fail_nor -> image_download_fail_nor
     int image_download_fail_pressed -> image_download_fail_pressed
+    int indicator_arrow -> indicator_arrow
+    int indicator_bg_bottom -> indicator_bg_bottom
+    int indicator_bg_top -> indicator_bg_top
     int leba_bg_bottom_selected -> leba_bg_bottom_selected
     int leba_bg_bottom_selector -> leba_bg_bottom_selector
     int leba_bg_bottom_unselected -> leba_bg_bottom_unselected
@@ -2433,6 +2836,7 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int mmfooter_bg -> mmfooter_bg
     int mmfooter_bg_black -> mmfooter_bg_black
     int mmfooter_bg_gray -> mmfooter_bg_gray
+    int mmfooter_bg_v2 -> mmfooter_bg_v2
     int mmfooter_bg_white -> mmfooter_bg_white
     int mmtitle_bg -> mmtitle_bg
     int mmtitle_bg_alpha -> mmtitle_bg_alpha
@@ -2446,6 +2850,7 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int pic_black -> pic_black
     int pic_graydark -> pic_graydark
     int pic_graylight -> pic_graylight
+    int pic_graylight_v2 -> pic_graylight_v2
     int preference_first_item -> preference_first_item
     int preference_item -> preference_item
     int preference_last_item -> preference_last_item
@@ -2463,6 +2868,7 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int setting_black -> setting_black
     int setting_graydark -> setting_graydark
     int setting_graylight -> setting_graylight
+    int setting_graylight_v2 -> setting_graylight_v2
     int shape_dialog -> shape_dialog
     int share_to_time_line_icon -> share_to_time_line_icon
     int social_add_person -> social_add_person
@@ -2558,9 +2964,12 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int admin_txtPath -> admin_txtPath
     int adview -> adview
     int alert_dialog_transparent_txt -> alert_dialog_transparent_txt
+    int alignBounds -> alignBounds
+    int alignMargins -> alignMargins
     int authcode_change_btn -> authcode_change_btn
     int authcode_et -> authcode_et
     int authcode_iv -> authcode_iv
+    int both -> both
     int bottom -> bottom
     int btn1 -> btn1
     int btn2 -> btn2
@@ -2577,6 +2986,8 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int center -> center
     int center_horizontal -> center_horizontal
     int center_vertical -> center_vertical
+    int clip_horizontal -> clip_horizontal
+    int clip_vertical -> clip_vertical
     int color_button_img -> color_button_img
     int color_button_txt -> color_button_txt
     int common_emoj_fragment_gridview -> common_emoj_fragment_gridview
@@ -2602,7 +3013,13 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int crystal_button_background_icon -> crystal_button_background_icon
     int crystal_button_background_img -> crystal_button_background_img
     int dashboard -> dashboard
+    int demo_file_btn1 -> demo_file_btn1
+    int demo_file_btn2 -> demo_file_btn2
+    int demo_file_btn3 -> demo_file_btn3
+    int demo_file_t1 -> demo_file_t1
+    int demo_file_t2 -> demo_file_t2
     int demo_panel1 -> demo_panel1
+    int disabled -> disabled
     int download_gridview -> download_gridview
     int download_gridview_item_crystalButton -> download_gridview_item_crystalButton
     int edittext_container -> edittext_container
@@ -2624,7 +3041,13 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int emoj_zoom_layout -> emoj_zoom_layout
     int emoj_zoomview -> emoj_zoomview
     int empty -> empty
+    int end -> end
+    int fill -> fill
+    int fill_horizontal -> fill_horizontal
+    int fill_vertical -> fill_vertical
     int firstDomainMail -> firstDomainMail
+    int fl_inner -> fl_inner
+    int flip -> flip
     int gdPanel_container -> gdPanel_container
     int gd_action_bar -> gd_action_bar
     int gd_action_bar_content_view -> gd_action_bar_content_view
@@ -2656,6 +3079,9 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int gdi_rack -> gdi_rack
     int gdi_scroll -> gdi_scroll
     int gifview -> gifview
+    int gridContainer -> gridContainer
+    int gridview -> gridview
+    int gridview2 -> gridview2
     int group -> group
     int hdpi -> hdpi
     int header_corner -> header_corner
@@ -2666,6 +3092,7 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int header_indicator -> header_indicator
     int header_pageview -> header_pageview
     int header_txtEmoj -> header_txtEmoj
+    int horizontal -> horizontal
     int hot_emoj_fragment_gridview -> hot_emoj_fragment_gridview
     int icon_preference_imageview -> icon_preference_imageview
     int image_iv -> image_iv
@@ -2685,6 +3112,7 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int main_tab_new_tv -> main_tab_new_tv
     int main_tab_settings -> main_tab_settings
     int main_tab_unread_tv -> main_tab_unread_tv
+    int manualOnly -> manualOnly
     int mdpi -> mdpi
     int miniAdLinearLayout -> miniAdLinearLayout
     int miniAdview -> miniAdview
@@ -2701,6 +3129,15 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int popup_text -> popup_text
     int progress_dialog_message -> progress_dialog_message
     int prompt_img -> prompt_img
+    int pullDownFromTop -> pullDownFromTop
+    int pullFromEnd -> pullFromEnd
+    int pullFromStart -> pullFromStart
+    int pullUpFromBottom -> pullUpFromBottom
+    int pull_refresh_scrollview -> pull_refresh_scrollview
+    int pull_to_refresh_image -> pull_to_refresh_image
+    int pull_to_refresh_progress -> pull_to_refresh_progress
+    int pull_to_refresh_sub_text -> pull_to_refresh_sub_text
+    int pull_to_refresh_text -> pull_to_refresh_text
     int qq_app_wall_view -> qq_app_wall_view
     int qqappwall_framelayout_webview -> qqappwall_framelayout_webview
     int qqappwall_webview_root -> qqappwall_webview_root
@@ -2709,6 +3146,8 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int regular_emoj_fragment_alertImg -> regular_emoj_fragment_alertImg
     int regular_emoj_fragment_gridview -> regular_emoj_fragment_gridview
     int right -> right
+    int rotate -> rotate
+    int scrollview -> scrollview
     int sdcard_toast_img -> sdcard_toast_img
     int sdcard_toast_text -> sdcard_toast_text
     int search_icon -> search_icon
@@ -2747,6 +3186,7 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int setting_yijian -> setting_yijian
     int single -> single
     int sort_btn -> sort_btn
+    int start -> start
     int text_tv -> text_tv
     int thirdDomainMail -> thirdDomainMail
     int title -> title
@@ -2793,6 +3233,17 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int umeng_fb_stateOrTime -> umeng_fb_stateOrTime
     int umeng_fb_state_or_date -> umeng_fb_state_or_date
     int umeng_fb_submit -> umeng_fb_submit
+    int user_define_albumImageview -> user_define_albumImageview
+    int user_define_album_add_btnAdd -> user_define_album_add_btnAdd
+    int user_define_album_image_imageview -> user_define_album_image_imageview
+    int user_define_btnDel -> user_define_btnDel
+    int user_define_childsize -> user_define_childsize
+    int user_define_container -> user_define_container
+    int user_define_progressBar -> user_define_progressBar
+    int user_define_txt -> user_define_txt
+    int userdefine_gridview -> userdefine_gridview
+    int userdefine_gridview_container -> userdefine_gridview_container
+    int vertical -> vertical
     int wapsAdview -> wapsAdview
     int wapsCustomAdview -> wapsCustomAdview
     int waps_app_detail_btnDownload -> waps_app_detail_btnDownload
@@ -2845,6 +3296,7 @@ com.dabing.emoj.R$layout -> com.dabing.emoj.R$layout:
     int confirm_dialog_item9 -> confirm_dialog_item9
     int crystal_button_background -> crystal_button_background
     int demo_call -> demo_call
+    int demo_file_scan -> demo_file_scan
     int demo_oom -> demo_oom
     int demo_panel -> demo_panel
     int demo_show -> demo_show
@@ -2859,6 +3311,7 @@ com.dabing.emoj.R$layout -> com.dabing.emoj.R$layout:
     int emoj_index1 -> emoj_index1
     int emoj_index2 -> emoj_index2
     int emoj_index3 -> emoj_index3
+    int emoj_index4 -> emoj_index4
     int emoj_item -> emoj_item
     int emoj_item_nopadding -> emoj_item_nopadding
     int gd_action_bar_dashboard -> gd_action_bar_dashboard
@@ -2906,6 +3359,7 @@ com.dabing.emoj.R$layout -> com.dabing.emoj.R$layout:
     int main -> main
     int main_tab -> main_tab
     int main_tab1 -> main_tab1
+    int main_tab2 -> main_tab2
     int mm_activity -> mm_activity
     int mm_example_ui -> mm_example_ui
     int mm_preference -> mm_preference
@@ -2928,6 +3382,8 @@ com.dabing.emoj.R$layout -> com.dabing.emoj.R$layout:
     int mm_title -> mm_title
     int progress_dialog -> progress_dialog
     int prompt -> prompt
+    int pull_to_refresh_header_horizontal -> pull_to_refresh_header_horizontal
+    int pull_to_refresh_header_vertical -> pull_to_refresh_header_vertical
     int qqappwall_browse_layout -> qqappwall_browse_layout
     int regular_emoj_fragment -> regular_emoj_fragment
     int sdcard_eject_toast -> sdcard_eject_toast
@@ -2947,6 +3403,13 @@ com.dabing.emoj.R$layout -> com.dabing.emoj.R$layout:
     int umeng_fb_list_item -> umeng_fb_list_item
     int umeng_fb_new_reply_alert_dialog -> umeng_fb_new_reply_alert_dialog
     int umeng_fb_send_feedback -> umeng_fb_send_feedback
+    int user_define_album -> user_define_album
+    int user_define_album_add -> user_define_album_add
+    int user_define_album_image -> user_define_album_image
+    int user_define_fragment1 -> user_define_fragment1
+    int user_define_fragment2 -> user_define_fragment2
+    int user_define_layout -> user_define_layout
+    int userdefine_gridview_item -> userdefine_gridview_item
     int waps_app_detail -> waps_app_detail
     int waps_appwall -> waps_appwall
     int waps_appwall_listitem -> waps_appwall_listitem
@@ -3021,6 +3484,7 @@ com.dabing.emoj.R$string -> com.dabing.emoj.R$string:
     int applet_seccode_tip -> applet_seccode_tip
     int applet_secimg_change -> applet_secimg_change
     int applet_secimg_title -> applet_secimg_title
+    int btn_userdefine_edit -> btn_userdefine_edit
     int confirm_dialog_back -> confirm_dialog_back
     int confirm_dialog_cancel -> confirm_dialog_cancel
     int confirm_dialog_ok -> confirm_dialog_ok
@@ -3081,6 +3545,12 @@ com.dabing.emoj.R$string -> com.dabing.emoj.R$string:
     int p3 -> p3
     int p4 -> p4
     int p5 -> p5
+    int pull_to_refresh_from_bottom_pull_label -> pull_to_refresh_from_bottom_pull_label
+    int pull_to_refresh_from_bottom_refreshing_label -> pull_to_refresh_from_bottom_refreshing_label
+    int pull_to_refresh_from_bottom_release_label -> pull_to_refresh_from_bottom_release_label
+    int pull_to_refresh_pull_label -> pull_to_refresh_pull_label
+    int pull_to_refresh_refreshing_label -> pull_to_refresh_refreshing_label
+    int pull_to_refresh_release_label -> pull_to_refresh_release_label
     int qqappwall_app_name -> qqappwall_app_name
     int qqappwall_download_failed -> qqappwall_download_failed
     int qqappwall_download_failed_imply -> qqappwall_download_failed_imply
@@ -3095,6 +3565,7 @@ com.dabing.emoj.R$string -> com.dabing.emoj.R$string:
     int sdcard_mounted -> sdcard_mounted
     int search_hint -> search_hint
     int sending_request -> sending_request
+    int title_custom -> title_custom
     int umeng_common_action_cancel -> umeng_common_action_cancel
     int umeng_common_action_continue -> umeng_common_action_continue
     int umeng_common_action_info_exist -> umeng_common_action_info_exist
@@ -3232,6 +3703,7 @@ com.dabing.emoj.R$style -> com.dabing.emoj.R$style:
     int NavPage -> NavPage
     int PageIndicator -> PageIndicator
     int PromptDialog -> PromptDialog
+    int PullToRreshMessage -> PullToRreshMessage
     int QuickActionPanelStyle -> QuickActionPanelStyle
     int TextAppearance -> TextAppearance
     int TextAppearance_Large -> TextAppearance_Large
@@ -3267,45 +3739,88 @@ com.dabing.emoj.R$styleable -> com.dabing.emoj.R$styleable:
     int ActionBar_maxItems -> ActionBar_maxItems
     int ActionBar_title -> ActionBar_title
     int ActionBar_type -> ActionBar_type
-    int[] AsyncImageView -> b
+    int[] AlbumImageView -> b
+    int AlbumImageView_default_src -> AlbumImageView_default_src
+    int[] AsyncImageView -> c
     int AsyncImageView_defaultSrc -> AsyncImageView_defaultSrc
     int AsyncImageView_inDensity -> AsyncImageView_inDensity
     int AsyncImageView_isPreMeasureSize -> AsyncImageView_isPreMeasureSize
     int AsyncImageView_url -> AsyncImageView_url
-    int[] DescriptionItem -> c
-    int[] DrawableItem -> d
+    int[] DescriptionItem -> d
+    int[] DrawableItem -> e
     int DrawableItem_drawable -> DrawableItem_drawable
-    int[] Item -> e
+    int[] GridLayout -> f
+    int GridLayout_alignmentMode -> GridLayout_alignmentMode
+    int GridLayout_columnCount -> GridLayout_columnCount
+    int GridLayout_columnOrderPreserved -> GridLayout_columnOrderPreserved
+    int GridLayout_orientation -> GridLayout_orientation
+    int GridLayout_rowCount -> GridLayout_rowCount
+    int GridLayout_rowOrderPreserved -> GridLayout_rowOrderPreserved
+    int GridLayout_useDefaultMargins -> GridLayout_useDefaultMargins
+    int[] GridLayout_Layout -> g
+    int GridLayout_Layout_android_layout_height -> GridLayout_Layout_android_layout_height
+    int GridLayout_Layout_android_layout_margin -> GridLayout_Layout_android_layout_margin
+    int GridLayout_Layout_android_layout_marginBottom -> GridLayout_Layout_android_layout_marginBottom
+    int GridLayout_Layout_android_layout_marginLeft -> GridLayout_Layout_android_layout_marginLeft
+    int GridLayout_Layout_android_layout_marginRight -> GridLayout_Layout_android_layout_marginRight
+    int GridLayout_Layout_android_layout_marginTop -> GridLayout_Layout_android_layout_marginTop
+    int GridLayout_Layout_android_layout_width -> GridLayout_Layout_android_layout_width
+    int GridLayout_Layout_layout_column -> GridLayout_Layout_layout_column
+    int GridLayout_Layout_layout_columnSpan -> GridLayout_Layout_layout_columnSpan
+    int GridLayout_Layout_layout_gravity -> GridLayout_Layout_layout_gravity
+    int GridLayout_Layout_layout_row -> GridLayout_Layout_layout_row
+    int GridLayout_Layout_layout_rowSpan -> GridLayout_Layout_layout_rowSpan
+    int[] Item -> h
     int Item_enabled -> Item_enabled
-    int[] LongTextItem -> f
-    int[] PageIndicator -> g
+    int[] LongTextItem -> i
+    int[] PageIndicator -> j
     int PageIndicator_activeDot -> PageIndicator_activeDot
     int PageIndicator_dotCount -> PageIndicator_dotCount
     int PageIndicator_dotDrawable -> PageIndicator_dotDrawable
     int PageIndicator_dotSpacing -> PageIndicator_dotSpacing
     int PageIndicator_dotType -> PageIndicator_dotType
     int PageIndicator_gravity -> PageIndicator_gravity
-    int[] PagedView -> h
+    int[] PagedView -> k
     int PagedView_CenterInVertical -> PagedView_CenterInVertical
-    int[] ProgressItem -> i
+    int[] ProgressItem -> l
     int ProgressItem_isInProgress -> ProgressItem_isInProgress
-    int[] SegmentedBar -> j
+    int[] PullToRefresh -> m
+    int PullToRefresh_ptrAdapterViewBackground -> PullToRefresh_ptrAdapterViewBackground
+    int PullToRefresh_ptrAnimationStyle -> PullToRefresh_ptrAnimationStyle
+    int PullToRefresh_ptrDrawable -> PullToRefresh_ptrDrawable
+    int PullToRefresh_ptrDrawableBottom -> PullToRefresh_ptrDrawableBottom
+    int PullToRefresh_ptrDrawableEnd -> PullToRefresh_ptrDrawableEnd
+    int PullToRefresh_ptrDrawableStart -> PullToRefresh_ptrDrawableStart
+    int PullToRefresh_ptrDrawableTop -> PullToRefresh_ptrDrawableTop
+    int PullToRefresh_ptrHeaderBackground -> PullToRefresh_ptrHeaderBackground
+    int PullToRefresh_ptrHeaderSubTextColor -> PullToRefresh_ptrHeaderSubTextColor
+    int PullToRefresh_ptrHeaderTextAppearance -> PullToRefresh_ptrHeaderTextAppearance
+    int PullToRefresh_ptrHeaderTextColor -> PullToRefresh_ptrHeaderTextColor
+    int PullToRefresh_ptrListViewExtrasEnabled -> PullToRefresh_ptrListViewExtrasEnabled
+    int PullToRefresh_ptrMode -> PullToRefresh_ptrMode
+    int PullToRefresh_ptrOverScroll -> PullToRefresh_ptrOverScroll
+    int PullToRefresh_ptrRefreshableViewBackground -> PullToRefresh_ptrRefreshableViewBackground
+    int PullToRefresh_ptrRotateDrawableWhilePulling -> PullToRefresh_ptrRotateDrawableWhilePulling
+    int PullToRefresh_ptrScrollingWhileRefreshingEnabled -> PullToRefresh_ptrScrollingWhileRefreshingEnabled
+    int PullToRefresh_ptrShowIndicator -> PullToRefresh_ptrShowIndicator
+    int PullToRefresh_ptrSubHeaderTextAppearance -> PullToRefresh_ptrSubHeaderTextAppearance
+    int[] SegmentedBar -> n
     int SegmentedBar_dividerDrawable -> SegmentedBar_dividerDrawable
     int SegmentedBar_dividerWidth -> SegmentedBar_dividerWidth
-    int[] SegmentedHost -> k
+    int[] SegmentedHost -> o
     int SegmentedHost_segmentedBar -> SegmentedHost_segmentedBar
     int SegmentedHost_segmentedContentView -> SegmentedHost_segmentedContentView
-    int[] SeparatorItem -> l
-    int[] SubtextItem -> m
+    int[] SeparatorItem -> p
+    int[] SubtextItem -> q
     int SubtextItem_subtext -> SubtextItem_subtext
-    int[] SubtitleItem -> n
+    int[] SubtitleItem -> r
     int SubtitleItem_subtitle -> SubtitleItem_subtitle
-    int[] TextItem -> o
+    int[] TextItem -> s
     int TextItem_text -> TextItem_text
-    int[] ThumbnailItem -> p
+    int[] ThumbnailItem -> t
     int ThumbnailItem_thumbnail -> ThumbnailItem_thumbnail
     int ThumbnailItem_thumbnailURL -> ThumbnailItem_thumbnailURL
-    int[] WrapperImageView -> q
+    int[] WrapperImageView -> u
     int WrapperImageView_padding -> WrapperImageView_padding
 com.dabing.emoj.WeiXinEmojActivity -> com.dabing.emoj.WeiXinEmojActivity:
     void onCreate(android.os.Bundle) -> onCreate
@@ -3912,6 +4427,8 @@ com.dabing.emoj.activity.MainTab1Activity$2 -> com.dabing.emoj.activity.bw:
 com.dabing.emoj.activity.MainTab1Activity$3 -> com.dabing.emoj.activity.bx:
     com.dabing.emoj.activity.MainTab1Activity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.activity.MainTab2Activity -> com.dabing.emoj.activity.MainTab2Activity:
+    void onCreate(android.os.Bundle) -> onCreate
 com.dabing.emoj.activity.MainTabActivity -> com.dabing.emoj.activity.MainTabActivity:
     java.lang.String action -> a
     int offset -> b
@@ -4053,13 +4570,33 @@ com.dabing.emoj.activity.SettingVersionActivity$2$1 -> com.dabing.emoj.activity.
 com.dabing.emoj.activity.SettingVersionActivity$3 -> com.dabing.emoj.activity.cp:
     com.dabing.emoj.activity.SettingVersionActivity this$0 -> a
     void onClick(android.view.View) -> onClick
+com.dabing.emoj.activity.UserDefineActivity -> com.dabing.emoj.activity.UserDefineActivity:
+    boolean Mode -> m
+    android.widget.ProgressBar mProgressBar -> n
+    android.widget.TextView rightBtn -> o
+    int Album_Width -> p
+    java.lang.String[] PULL_MSG_ARRAY -> q
+    int PULL_MSG_ARRAY_INDEX -> r
+    java.lang.String TAG -> s
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> t
+    void onCreate(android.os.Bundle) -> onCreate
+    void onDestroy() -> onDestroy
+    void onLoading() -> d
+    void onEnd() -> e
+    void onClick(java.lang.String,java.lang.Object) -> a
+com.dabing.emoj.activity.UserDefineActivity$1 -> com.dabing.emoj.activity.cq:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
+com.dabing.emoj.activity.UserDefineActivity$2 -> com.dabing.emoj.activity.cr:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.UserLoginActivity -> com.dabing.emoj.activity.UserLoginActivity:
     android.webkit.WebView webView -> a
     com.tencent.weibo.oauthv2.OAuthV2 oAuthV2 -> b
     java.lang.String TAG -> c
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
-com.dabing.emoj.activity.UserLoginActivity$1 -> com.dabing.emoj.activity.cq:
+com.dabing.emoj.activity.UserLoginActivity$1 -> com.dabing.emoj.activity.cs:
     com.dabing.emoj.activity.UserLoginActivity this$0 -> a
     void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
     void onReceivedSslError(android.webkit.WebView,android.webkit.SslErrorHandler,android.net.http.SslError) -> onReceivedSslError
@@ -4069,7 +4606,7 @@ com.dabing.emoj.activity.WelcomeActivity -> com.dabing.emoj.activity.WelcomeActi
     java.lang.String TAG -> c
     void onCreate(android.os.Bundle) -> onCreate
     void onWindowFocusChanged(boolean) -> onWindowFocusChanged
-com.dabing.emoj.activity.WelcomeActivity$1 -> com.dabing.emoj.activity.cr:
+com.dabing.emoj.activity.WelcomeActivity$1 -> com.dabing.emoj.activity.ct:
     com.dabing.emoj.activity.WelcomeActivity this$0 -> a
     void run() -> run
 com.dabing.emoj.admin.MakeEmotionActivity -> com.dabing.emoj.admin.MakeEmotionActivity:
@@ -4236,7 +4773,26 @@ com.dabing.emoj.admin.uploadPicActivity$uploadTask -> com.dabing.emoj.admin.t:
     java.lang.String ht -> c
     com.dabing.emoj.admin.uploadPicActivity this$0 -> d
     void run() -> run
-com.dabing.emoj.adpater.CrystalHeaderGridViewAdapter -> com.dabing.emoj.a.a:
+com.dabing.emoj.adpater.AlbumCusorAdapter -> com.dabing.emoj.a.a:
+    int mWidth -> a
+    com.dabing.emoj.widget.Album$AlbumClickListener mListener -> b
+    android.content.Context mContext -> c
+    int COLUM_NUM -> d
+    java.lang.String TAG -> e
+    android.view.View newView(android.content.Context,android.database.Cursor,android.view.ViewGroup) -> newView
+    void bindView(android.view.View,android.content.Context,android.database.Cursor) -> bindView
+    void reflesh() -> a
+com.dabing.emoj.adpater.AlbumDetailAdapter -> com.dabing.emoj.a.b:
+    android.content.Context mContext -> a
+    java.io.File[] mFiles -> b
+    int mSpacing -> c
+    int mWidth -> d
+    java.lang.String TAG -> e
+    int getCount() -> getCount
+    java.lang.Object getItem(int) -> getItem
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.dabing.emoj.adpater.CrystalHeaderGridViewAdapter -> com.dabing.emoj.a.c:
     com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener listener -> a
     int mWidth -> b
     android.content.Context mContext -> c
@@ -4248,7 +4804,7 @@ com.dabing.emoj.adpater.CrystalHeaderGridViewAdapter -> com.dabing.emoj.a.a:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.CrystalHeaderPageViewAdpater -> com.dabing.emoj.a.b:
+com.dabing.emoj.adpater.CrystalHeaderPageViewAdpater -> com.dabing.emoj.a.d:
     int mWidth -> a
     int colums -> b
     int space -> c
@@ -4261,7 +4817,7 @@ com.dabing.emoj.adpater.CrystalHeaderPageViewAdpater -> com.dabing.emoj.a.b:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.DownloadGridViewAdapter -> com.dabing.emoj.a.c:
+com.dabing.emoj.adpater.DownloadGridViewAdapter -> com.dabing.emoj.a.e:
     com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener listener -> a
     android.content.Context mContext -> b
     org.json.JSONArray mData -> c
@@ -4275,7 +4831,7 @@ com.dabing.emoj.adpater.DownloadGridViewAdapter -> com.dabing.emoj.a.c:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.EmojGridViewAdapter -> com.dabing.emoj.a.d:
+com.dabing.emoj.adpater.EmojGridViewAdapter -> com.dabing.emoj.a.f:
     greendroid.image.ImageProcessor processor -> a
     android.content.Context mContext -> b
     org.json.JSONArray mData -> c
@@ -4289,7 +4845,7 @@ com.dabing.emoj.adpater.EmojGridViewAdapter -> com.dabing.emoj.a.d:
     org.json.JSONObject getData(int) -> a
     org.json.JSONArray getArray() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.EmojUmGridViewAdapter -> com.dabing.emoj.a.e:
+com.dabing.emoj.adpater.EmojUmGridViewAdapter -> com.dabing.emoj.a.g:
     android.content.Context mContext -> a
     org.json.JSONArray mData -> b
     int mSpacing -> c
@@ -4301,7 +4857,7 @@ com.dabing.emoj.adpater.EmojUmGridViewAdapter -> com.dabing.emoj.a.e:
     java.lang.String getPicName(int) -> a
     java.lang.String getData() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.EmotionHeaderPageViewAdpater -> com.dabing.emoj.a.f:
+com.dabing.emoj.adpater.EmotionHeaderPageViewAdpater -> com.dabing.emoj.a.h:
     com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener listener -> a
     android.content.Context mContext -> b
     java.util.List mData -> c
@@ -4311,7 +4867,7 @@ com.dabing.emoj.adpater.EmotionHeaderPageViewAdpater -> com.dabing.emoj.a.f:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.EmotionHeaderPanelAdapter -> com.dabing.emoj.a.g:
+com.dabing.emoj.adpater.EmotionHeaderPanelAdapter -> com.dabing.emoj.a.i:
     com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener listener -> a
     android.content.Context mContext -> b
     org.json.JSONArray mData -> c
@@ -4321,11 +4877,11 @@ com.dabing.emoj.adpater.EmotionHeaderPanelAdapter -> com.dabing.emoj.a.g:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.EmotionHeaderPanelAdapter$1 -> com.dabing.emoj.a.h:
+com.dabing.emoj.adpater.EmotionHeaderPanelAdapter$1 -> com.dabing.emoj.a.j:
     com.dabing.emoj.adpater.EmotionHeaderPanelAdapter this$0 -> a
     org.json.JSONObject val$object -> b
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.adpater.HotEmojGridViewAdapter -> com.dabing.emoj.a.i:
+com.dabing.emoj.adpater.HotEmojGridViewAdapter -> com.dabing.emoj.a.k:
     android.content.Context mContext -> a
     org.json.JSONArray mData -> b
     int mSpacing -> c
@@ -4337,7 +4893,7 @@ com.dabing.emoj.adpater.HotEmojGridViewAdapter -> com.dabing.emoj.a.i:
     java.lang.String getPic(int) -> a
     java.lang.String getData() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.RegularEmojGridViewAdapter -> com.dabing.emoj.a.j:
+com.dabing.emoj.adpater.RegularEmojGridViewAdapter -> com.dabing.emoj.a.l:
     android.content.Context mContext -> a
     org.json.JSONArray mData -> b
     int mSpacing -> c
@@ -4348,7 +4904,7 @@ com.dabing.emoj.adpater.RegularEmojGridViewAdapter -> com.dabing.emoj.a.j:
     long getItemId(int) -> getItemId
     org.json.JSONObject getPic(int) -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.WapsAppWallListViewAdapter -> com.dabing.emoj.a.k:
+com.dabing.emoj.adpater.WapsAppWallListViewAdapter -> com.dabing.emoj.a.m:
     android.content.Context mContext -> a
     java.util.List mData -> b
     java.lang.String TAG -> c
@@ -4357,7 +4913,7 @@ com.dabing.emoj.adpater.WapsAppWallListViewAdapter -> com.dabing.emoj.a.k:
     long getItemId(int) -> getItemId
     cn.waps.AdInfo getAdInfo(int) -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.WapsAppWallListViewAdapter$1 -> com.dabing.emoj.a.l:
+com.dabing.emoj.adpater.WapsAppWallListViewAdapter$1 -> com.dabing.emoj.a.n:
     com.dabing.emoj.adpater.WapsAppWallListViewAdapter this$0 -> a
     cn.waps.AdInfo val$info -> b
     void onClick(android.view.View) -> onClick
@@ -4473,8 +5029,64 @@ com.dabing.emoj.advertise.WAPS_CustomAd$WAPS_AD_TASK -> com.dabing.emoj.advertis
 com.dabing.emoj.advertise.WAPS_CustomAd$WapsHandler -> com.dabing.emoj.advertise.m:
     com.dabing.emoj.advertise.WAPS_CustomAd this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
+com.dabing.emoj.db.UserDefineContentProvider -> com.dabing.emoj.db.UserDefineContentProvider:
+    com.dabing.emoj.db.UserDefineDataBaseHelper mHelper -> a
+    java.lang.String AUTHORITY -> b
+    android.content.UriMatcher MATCHER -> c
+    java.lang.String TAG -> d
+    android.net.Uri getUri() -> a
+    boolean onCreate() -> onCreate
+    android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> query
+    java.lang.String getType(android.net.Uri) -> getType
+    android.net.Uri insert(android.net.Uri,android.content.ContentValues) -> insert
+    int delete(android.net.Uri,java.lang.String,java.lang.String[]) -> delete
+    int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[]) -> update
+com.dabing.emoj.db.UserDefineDataBaseHelper -> com.dabing.emoj.db.a:
+    boolean isFirstCreate -> a
+    java.lang.String TAG -> b
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+    com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor getCursor() -> a
+    com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor getCursor(long) -> a
+    void delete(int) -> a
+    void updateCount(int,int) -> a
+    void update(int,com.dabing.emoj.utils.FileInfo) -> a
+    long insert(com.dabing.emoj.utils.FileInfo) -> a
+    int getId(java.lang.String) -> a
+com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor -> com.dabing.emoj.db.b:
+    int getId() -> a
+    java.lang.String getPath() -> b
+com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor$Factory -> com.dabing.emoj.db.c:
+    android.database.Cursor newCursor(android.database.sqlite.SQLiteDatabase,android.database.sqlite.SQLiteCursorDriver,java.lang.String,android.database.sqlite.SQLiteQuery) -> newCursor
 com.dabing.emoj.demo.demo1 -> com.dabing.emoj.demo.demo1:
     int getLayoutId() -> a
+com.dabing.emoj.demo.demoFile -> com.dabing.emoj.demo.demoFile:
+    android.os.Messenger mService -> a
+    android.widget.Button btn1 -> b
+    android.widget.Button btn2 -> c
+    android.widget.Button btn3 -> d
+    android.widget.TextView t1 -> e
+    android.widget.TextView t2 -> f
+    java.lang.String TAG -> g
+    android.view.View$OnClickListener listener -> i
+    android.os.Messenger clientMessenger -> h
+    android.content.ServiceConnection mConnection -> j
+    void onCreate(android.os.Bundle) -> onCreate
+    int getLayoutId() -> a
+    void access$0(com.dabing.emoj.demo.demoFile) -> a
+    void access$1(com.dabing.emoj.demo.demoFile) -> b
+    void access$2(com.dabing.emoj.demo.demoFile) -> c
+    void access$3(com.dabing.emoj.demo.demoFile,java.lang.CharSequence) -> a
+com.dabing.emoj.demo.demoFile$1 -> com.dabing.emoj.demo.a:
+    com.dabing.emoj.demo.demoFile this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.demo.demoFile$2 -> com.dabing.emoj.demo.b:
+    com.dabing.emoj.demo.demoFile this$0 -> a
+    void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+com.dabing.emoj.demo.demoFile$mHandler -> com.dabing.emoj.demo.c:
+    com.dabing.emoj.demo.demoFile this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
 com.dabing.emoj.demo.demoOOM -> com.dabing.emoj.demo.demoOOM:
     com.ant.liao.GifView gifView -> a
     java.lang.String TAG -> b
@@ -4486,7 +5098,7 @@ com.dabing.emoj.demo.demoPanel -> com.dabing.emoj.demo.demoPanel:
     java.lang.String TAG -> b
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
-com.dabing.emoj.demo.demoPanel$EmotionAdpater -> com.dabing.emoj.demo.a:
+com.dabing.emoj.demo.demoPanel$EmotionAdpater -> com.dabing.emoj.demo.d:
     org.json.JSONArray mData -> a
     com.dabing.emoj.demo.demoPanel this$0 -> b
     int getCount() -> getCount
@@ -4508,16 +5120,14 @@ com.dabing.emoj.demo.democall -> com.dabing.emoj.demo.democall:
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.demo.democall$1 -> com.dabing.emoj.demo.b:
-    com.dabing.emoj.demo.democall this$0 -> a
-    void run() -> run
-com.dabing.emoj.demo.democall$2 -> com.dabing.emoj.demo.c:
+    void getImages() -> b
+com.dabing.emoj.demo.democall$1 -> com.dabing.emoj.demo.e:
     com.dabing.emoj.demo.democall this$0 -> a
     void run() -> run
 com.dabing.emoj.demo.demolist -> com.dabing.emoj.demo.demolist:
     android.widget.ListView listView -> a
     void onCreate(android.os.Bundle) -> onCreate
-com.dabing.emoj.demo.demolist$1 -> com.dabing.emoj.demo.d:
+com.dabing.emoj.demo.demolist$1 -> com.dabing.emoj.demo.f:
     com.dabing.emoj.demo.demolist this$0 -> a
     java.lang.Class[] val$classes -> b
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
@@ -4534,31 +5144,87 @@ com.dabing.emoj.exception.Check -> com.dabing.emoj.b.b:
     boolean check_ret(org.json.JSONObject) -> a
 com.dabing.emoj.exception.DBLog -> com.dabing.emoj.b.c:
     void d(java.lang.String,java.lang.String,java.lang.String) -> a
-com.dabing.emoj.exception.DefaultCrashHandler -> com.dabing.emoj.b.d:
-    android.content.Context mContext -> b
-    java.lang.Thread$UncaughtExceptionHandler mDefaultHandler -> c
-    com.dabing.emoj.exception.DefaultCrashHandler instance -> d
-    java.lang.String TAG -> a
-    android.content.DialogInterface$OnClickListener listener -> e
-    com.dabing.emoj.exception.DefaultCrashHandler getInstance() -> a
-    void Init(android.content.Context) -> a
-    void uncaughtException(java.lang.Thread,java.lang.Throwable) -> uncaughtException
-    void access$0$a5183b0() -> b
-    android.content.Context access$1(com.dabing.emoj.exception.DefaultCrashHandler) -> a
-    android.content.DialogInterface$OnClickListener access$2(com.dabing.emoj.exception.DefaultCrashHandler) -> b
-com.dabing.emoj.exception.DefaultCrashHandler$1 -> com.dabing.emoj.b.e:
-    com.dabing.emoj.exception.DefaultCrashHandler this$0 -> a
-    void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.exception.DefaultCrashHandler$2 -> com.dabing.emoj.b.f:
-    com.dabing.emoj.exception.DefaultCrashHandler this$0 -> a
-    java.lang.String val$msg -> b
-    void run() -> run
-com.dabing.emoj.exception.ExceptionManager -> com.dabing.emoj.b.g:
+com.dabing.emoj.exception.ExceptionManager -> com.dabing.emoj.b.d:
     void handle(android.content.Context,java.lang.Exception) -> a
-com.dabing.emoj.exception.OauthFailException -> com.dabing.emoj.b.h:
-com.dabing.emoj.exception.ParmErrorException -> com.dabing.emoj.b.i:
-com.dabing.emoj.exception.ServerErrorException -> com.dabing.emoj.b.j:
-com.dabing.emoj.fragment.BaseEmojFragment -> com.dabing.emoj.fragment.a:
+com.dabing.emoj.exception.OauthFailException -> com.dabing.emoj.b.e:
+com.dabing.emoj.exception.ParmErrorException -> com.dabing.emoj.b.f:
+com.dabing.emoj.exception.ServerErrorException -> com.dabing.emoj.b.g:
+com.dabing.emoj.fragment.AlbumDetailFragment -> com.dabing.emoj.fragment.a:
+    com.dabing.emoj.adpater.AlbumDetailAdapter adapter -> N
+    com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack mCallBack -> O
+    com.dabing.emoj.utils.FileInfo mFileInfo -> P
+    com.handmark.pulltorefresh.library.PullToRefreshGridView gridView -> Q
+    java.lang.String TAG -> R
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener onPullEventListener -> S
+    android.os.Handler mHandler -> T
+    com.dabing.emoj.fragment.AlbumDetailFragment getInstance(com.dabing.emoj.utils.FileInfo) -> a
+    void onCreate(android.os.Bundle) -> a
+    android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
+    void onActivityCreated(android.os.Bundle) -> b
+    void onDestroy() -> p
+    void onDetach() -> r
+    void onResume() -> m
+    void bindGridView(java.io.File[]) -> a
+    android.os.Handler access$0(com.dabing.emoj.fragment.AlbumDetailFragment) -> a
+com.dabing.emoj.fragment.AlbumDetailFragment$1 -> com.dabing.emoj.fragment.b:
+    com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> a
+    void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
+com.dabing.emoj.fragment.AlbumDetailFragment$2 -> com.dabing.emoj.fragment.c:
+    com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.dabing.emoj.fragment.AlbumDetailFragment$GetImagesTask -> com.dabing.emoj.fragment.d:
+    java.lang.String mPath -> a
+    com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> b
+    void run() -> run
+com.dabing.emoj.fragment.AlbumFragment -> com.dabing.emoj.fragment.e:
+    com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack mCallBack -> N
+    android.os.Messenger client -> O
+    android.os.Messenger mService -> P
+    boolean mBound -> Q
+    java.lang.String[] PULL_MSG_ARRAY -> R
+    int PULL_MSG_ARRAY_INDEX -> S
+    com.dabing.emoj.widget.CustomGridLayout gridLayout -> T
+    com.handmark.pulltorefresh.library.PullToRefreshScrollView mScrollView -> U
+    com.dabing.emoj.adpater.AlbumCusorAdapter adapter -> V
+    java.lang.String TAG -> W
+    com.dabing.emoj.fragment.AlbumFragment instance -> X
+    com.dabing.emoj.widget.Album$AlbumClickListener albumClickListener -> Y
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> Z
+    android.os.Handler mHandler -> aa
+    android.content.ServiceConnection mConnection -> ab
+    com.dabing.emoj.fragment.AlbumFragment getInstance() -> C
+    void onActivityCreated(android.os.Bundle) -> b
+    void onCreate(android.os.Bundle) -> a
+    android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
+    void onDestroy() -> p
+    void onPause() -> n
+    void onResume() -> m
+    void onDestroyView() -> o
+    void onDetach() -> r
+    void refleshGridLayout() -> D
+    void setCallBack(com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack) -> a
+    void register() -> E
+    void scanfiles() -> F
+    android.support.v4.content.Loader onCreateLoader$e57f803() -> a
+    void onLoaderReset$5dda1f52() -> a_
+    void onLoadFinished$13079eae(java.lang.Object) -> a
+com.dabing.emoj.fragment.AlbumFragment$1 -> com.dabing.emoj.fragment.f:
+    com.dabing.emoj.fragment.AlbumFragment this$0 -> a
+    void click(com.dabing.emoj.utils.FileInfo) -> a
+com.dabing.emoj.fragment.AlbumFragment$2 -> com.dabing.emoj.fragment.g:
+    com.dabing.emoj.fragment.AlbumFragment this$0 -> a
+    void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
+com.dabing.emoj.fragment.AlbumFragment$3 -> com.dabing.emoj.fragment.h:
+    com.dabing.emoj.fragment.AlbumFragment this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.dabing.emoj.fragment.AlbumFragment$4 -> com.dabing.emoj.fragment.i:
+    com.dabing.emoj.fragment.AlbumFragment this$0 -> a
+    void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+com.dabing.emoj.fragment.AlbumFragment$5 -> com.dabing.emoj.fragment.j:
+    com.dabing.emoj.fragment.AlbumFragment this$0 -> a
+    void run() -> run
+com.dabing.emoj.fragment.BaseEmojFragment -> com.dabing.emoj.fragment.k:
     org.json.JSONObject mObject -> N
 com.dabing.emoj.fragment.CommonEmojFragment -> com.dabing.emoj.fragment.CommonEmojFragment:
     boolean flag -> O
@@ -4610,10 +5276,10 @@ com.dabing.emoj.fragment.CrystalHeaderFragment -> com.dabing.emoj.fragment.Cryst
     void onPageChanged$3d66f259(int) -> a
     void setItemSeleted(int,java.lang.String,boolean) -> a
     void access$0$5cbd274f(com.dabing.emoj.fragment.CrystalHeaderFragment,int,java.lang.String) -> a
-com.dabing.emoj.fragment.CrystalHeaderFragment$1 -> com.dabing.emoj.fragment.b:
+com.dabing.emoj.fragment.CrystalHeaderFragment$1 -> com.dabing.emoj.fragment.l:
     com.dabing.emoj.fragment.CrystalHeaderFragment this$0 -> a
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.CrystalHeaderFragment$2 -> com.dabing.emoj.fragment.c:
+com.dabing.emoj.fragment.CrystalHeaderFragment$2 -> com.dabing.emoj.fragment.m:
     com.dabing.emoj.fragment.CrystalHeaderFragment this$0 -> a
     void run() -> run
 com.dabing.emoj.fragment.EmotionEmojFragment -> com.dabing.emoj.fragment.EmotionEmojFragment:
@@ -4665,10 +5331,10 @@ com.dabing.emoj.fragment.EmotionHeaderFragment -> com.dabing.emoj.fragment.Emoti
     void onPageChanged$3d66f259(int) -> a
     void setItemSeleted(int,java.lang.String,boolean) -> a
     void access$0$529bb2b6(com.dabing.emoj.fragment.EmotionHeaderFragment,int,java.lang.String) -> a
-com.dabing.emoj.fragment.EmotionHeaderFragment$1 -> com.dabing.emoj.fragment.d:
+com.dabing.emoj.fragment.EmotionHeaderFragment$1 -> com.dabing.emoj.fragment.n:
     com.dabing.emoj.fragment.EmotionHeaderFragment this$0 -> a
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.EmotionHeaderFragment$2 -> com.dabing.emoj.fragment.e:
+com.dabing.emoj.fragment.EmotionHeaderFragment$2 -> com.dabing.emoj.fragment.o:
     com.dabing.emoj.fragment.EmotionHeaderFragment this$0 -> a
     void run() -> run
 com.dabing.emoj.fragment.HeaderFragment -> com.dabing.emoj.fragment.HeaderFragment:
@@ -4689,12 +5355,12 @@ com.dabing.emoj.fragment.HeaderFragment -> com.dabing.emoj.fragment.HeaderFragme
     org.json.JSONArray sort(org.json.JSONArray) -> a
     void onPageChanged$3d66f259(int) -> a
     void access$0$116747ce(com.dabing.emoj.fragment.HeaderFragment,int,java.lang.String) -> a
-com.dabing.emoj.fragment.HeaderFragment$1 -> com.dabing.emoj.fragment.f:
+com.dabing.emoj.fragment.HeaderFragment$1 -> com.dabing.emoj.fragment.p:
     com.dabing.emoj.fragment.HeaderFragment this$0 -> a
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener -> com.dabing.emoj.fragment.g:
+com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener -> com.dabing.emoj.fragment.q:
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.HotEmojFragment -> com.dabing.emoj.fragment.h:
+com.dabing.emoj.fragment.HotEmojFragment -> com.dabing.emoj.fragment.r:
     com.dabing.emoj.adpater.HotEmojGridViewAdapter adapter -> O
     android.widget.GridView gridView -> P
     java.lang.String TAG -> Q
@@ -4702,10 +5368,10 @@ com.dabing.emoj.fragment.HotEmojFragment -> com.dabing.emoj.fragment.h:
     void onActivityCreated(android.os.Bundle) -> b
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onDestroy() -> m
+    void onDestroy() -> p
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     void onActivityResult(int,int,android.content.Intent) -> a
-com.dabing.emoj.fragment.RegularEmojFragment -> com.dabing.emoj.fragment.i:
+com.dabing.emoj.fragment.RegularEmojFragment -> com.dabing.emoj.fragment.s:
     java.lang.String action -> O
     org.json.JSONArray mArray -> P
     com.tencent.mm.sdk.openapi.IWXAPI api -> Q
@@ -4717,11 +5383,16 @@ com.dabing.emoj.fragment.RegularEmojFragment -> com.dabing.emoj.fragment.i:
     void onActivityCreated(android.os.Bundle) -> b
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onDestroy() -> m
+    void onDestroy() -> p
     org.json.JSONArray makeArray(org.json.JSONArray) -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     void SendIntent$14e1ec6d(java.lang.String,java.lang.String) -> a
     void onActivityResult(int,int,android.content.Intent) -> a
+com.dabing.emoj.fragment.UserDefineFragment -> com.dabing.emoj.fragment.t:
+com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack -> com.dabing.emoj.fragment.u:
+    void onLoading() -> d
+    void onEnd() -> e
+    void onClick(java.lang.String,java.lang.Object) -> a
 com.dabing.emoj.imagezoomview.ImageZoomView -> com.dabing.emoj.imagezoomview.ImageZoomView:
     android.graphics.Paint mPaint -> b
     android.graphics.Rect mRectSrc -> c
@@ -4823,6 +5494,45 @@ com.dabing.emoj.provider.MyRequest$1 -> com.dabing.emoj.provider.e:
     java.lang.Object[] newArray(int) -> newArray
 com.dabing.emoj.service.AppRegister -> com.dabing.emoj.service.AppRegister:
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.dabing.emoj.service.EmojScanService -> com.dabing.emoj.service.EmojScanService:
+    com.dabing.emoj.db.UserDefineDataBaseHelper dbHelper -> a
+    com.dabing.emoj.utils.FileHelper fileHelper -> b
+    boolean cancel -> c
+    boolean isRun -> d
+    java.lang.String[] ARRAY_IGNOR -> e
+    com.dabing.emoj.service.EmojScanService$EmojScanHandler mHandler -> f
+    android.os.Messenger mMessenger -> g
+    java.util.List mClients -> h
+    java.lang.String TAG -> i
+    int onStartCommand(android.content.Intent,int,int) -> onStartCommand
+    void onCreate() -> onCreate
+    android.os.IBinder onBind(android.content.Intent) -> onBind
+    boolean onUnbind(android.content.Intent) -> onUnbind
+    void onDestroy() -> onDestroy
+    void scan() -> a
+    void access$0(com.dabing.emoj.service.EmojScanService) -> a
+com.dabing.emoj.service.EmojScanService$AlbumCheckTask -> com.dabing.emoj.service.a:
+    com.dabing.emoj.service.EmojScanService this$0 -> a
+    void run() -> run
+    int getChildCount(java.lang.String) -> a
+com.dabing.emoj.service.EmojScanService$AlbumCheckTask$1 -> com.dabing.emoj.service.b:
+    com.dabing.emoj.service.EmojScanService$AlbumCheckTask this$1 -> a
+    boolean accept(java.io.File,java.lang.String) -> accept
+com.dabing.emoj.service.EmojScanService$BlockQueueTask -> com.dabing.emoj.service.c:
+    java.util.concurrent.BlockingQueue mQueue -> a
+    com.dabing.emoj.service.EmojScanService this$0 -> b
+    void run() -> run
+com.dabing.emoj.service.EmojScanService$Data -> com.dabing.emoj.service.d:
+    int count -> a
+    java.lang.String thumb -> b
+    long id -> c
+    com.dabing.emoj.service.EmojScanService this$0 -> d
+com.dabing.emoj.service.EmojScanService$EmojScanHandler -> com.dabing.emoj.service.e:
+    com.dabing.emoj.service.EmojScanService this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.dabing.emoj.service.EmojScanService$ImageScanTask -> com.dabing.emoj.service.f:
+    com.dabing.emoj.service.EmojScanService this$0 -> a
+    void run() -> run
 com.dabing.emoj.service.LoginSuccessBroadcast -> com.dabing.emoj.service.LoginSuccessBroadcast:
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
 com.dabing.emoj.service.StartUpBroadcast -> com.dabing.emoj.service.StartUpBroadcast:
@@ -4832,14 +5542,14 @@ com.dabing.emoj.service.WeiXinEmojLoginService -> com.dabing.emoj.service.WeiXin
     void onCreate() -> onCreate
     int onStartCommand(android.content.Intent,int,int) -> onStartCommand
     android.os.IBinder onBind(android.content.Intent) -> onBind
-com.dabing.emoj.service.WeiXinEmojLoginService$BlockQueueTask -> com.dabing.emoj.service.a:
+com.dabing.emoj.service.WeiXinEmojLoginService$BlockQueueTask -> com.dabing.emoj.service.g:
     java.util.concurrent.BlockingQueue mQueue -> a
     com.dabing.emoj.service.WeiXinEmojLoginService this$0 -> b
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojLoginService$ListenTask -> com.dabing.emoj.service.b:
+com.dabing.emoj.service.WeiXinEmojLoginService$ListenTask -> com.dabing.emoj.service.h:
     com.dabing.emoj.service.WeiXinEmojLoginService this$0 -> a
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojLoginService$ShareTask -> com.dabing.emoj.service.c:
+com.dabing.emoj.service.WeiXinEmojLoginService$ShareTask -> com.dabing.emoj.service.i:
     com.dabing.emoj.service.WeiXinEmojLoginService this$0 -> a
     void run() -> run
 com.dabing.emoj.service.WeiXinEmojService -> com.dabing.emoj.service.WeiXinEmojService:
@@ -4850,35 +5560,35 @@ com.dabing.emoj.service.WeiXinEmojService -> com.dabing.emoj.service.WeiXinEmojS
     int onStartCommand(android.content.Intent,int,int) -> onStartCommand
     android.os.IBinder onBind(android.content.Intent) -> onBind
     com.tencent.mm.sdk.openapi.IWXAPI access$0(com.dabing.emoj.service.WeiXinEmojService) -> a
-com.dabing.emoj.service.WeiXinEmojService$ApiCheckTask -> com.dabing.emoj.service.d:
+com.dabing.emoj.service.WeiXinEmojService$ApiCheckTask -> com.dabing.emoj.service.j:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojService$BlockQueueTask -> com.dabing.emoj.service.e:
+com.dabing.emoj.service.WeiXinEmojService$BlockQueueTask -> com.dabing.emoj.service.k:
     java.util.concurrent.BlockingQueue mQueue -> a
     com.dabing.emoj.service.WeiXinEmojService this$0 -> b
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojService$EmojHandler -> com.dabing.emoj.service.f:
+com.dabing.emoj.service.WeiXinEmojService$EmojHandler -> com.dabing.emoj.service.l:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.service.WeiXinEmojService$EmojHandler$1 -> com.dabing.emoj.service.g:
+com.dabing.emoj.service.WeiXinEmojService$EmojHandler$1 -> com.dabing.emoj.service.m:
     com.dabing.emoj.service.WeiXinEmojService$EmojHandler this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.service.WeiXinEmojService$ListenTask -> com.dabing.emoj.service.h:
+com.dabing.emoj.service.WeiXinEmojService$ListenTask -> com.dabing.emoj.service.n:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojService$MenuTask -> com.dabing.emoj.service.i:
+com.dabing.emoj.service.WeiXinEmojService$MenuTask -> com.dabing.emoj.service.o:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojService$OauthTask -> com.dabing.emoj.service.j:
+com.dabing.emoj.service.WeiXinEmojService$OauthTask -> com.dabing.emoj.service.p:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojService$PriOauthVerify -> com.dabing.emoj.service.k:
+com.dabing.emoj.service.WeiXinEmojService$PriOauthVerify -> com.dabing.emoj.service.q:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojService$Task1 -> com.dabing.emoj.service.l:
+com.dabing.emoj.service.WeiXinEmojService$Task1 -> com.dabing.emoj.service.r:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
-com.dabing.emoj.service.WeiXinEmojService$Task2 -> com.dabing.emoj.service.m:
+com.dabing.emoj.service.WeiXinEmojService$Task2 -> com.dabing.emoj.service.s:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
 com.dabing.emoj.utils.AppConfig -> com.dabing.emoj.c.a:
@@ -4978,13 +5688,34 @@ com.dabing.emoj.utils.DialogFactory$5 -> com.dabing.emoj.c.g:
 com.dabing.emoj.utils.Emoj -> com.dabing.emoj.c.h:
     java.lang.String getEmoj(android.content.Context,java.lang.String) -> a
 com.dabing.emoj.utils.FileHelper -> com.dabing.emoj.c.i:
-    java.lang.String TAG -> a
+    boolean cancel -> a
+    java.lang.String[] IMAGE_PREFIX -> b
+    java.lang.String TAG -> c
+    void setCancel$1385ff() -> a
     java.lang.String find(java.lang.String,java.lang.String) -> a
-com.dabing.emoj.utils.FileHelper$MyFileNameFilter -> com.dabing.emoj.c.j:
+com.dabing.emoj.utils.FileHelper$FileContainsImageFilter -> com.dabing.emoj.c.j:
+    boolean accept(java.io.File,java.lang.String) -> accept
+com.dabing.emoj.utils.FileHelper$MyFileNameFilter -> com.dabing.emoj.c.k:
     java.lang.String mKey -> a
     com.dabing.emoj.utils.FileHelper this$0 -> b
     boolean accept(java.io.File,java.lang.String) -> accept
-com.dabing.emoj.utils.FileType -> com.dabing.emoj.c.k:
+com.dabing.emoj.utils.FileInfo -> com.dabing.emoj.c.l:
+    java.lang.String fileName -> a
+    java.lang.String filePath -> b
+    long fileSize -> c
+    boolean IsDir -> d
+    int Count -> e
+    long ModifiedDate -> f
+    boolean canRead -> g
+    boolean canWrite -> h
+    boolean isHidden -> i
+    long dbId -> j
+    java.lang.String dbName -> k
+    long dbTime -> l
+    int dbState -> m
+    java.lang.String dbType -> n
+    java.lang.String dbThumb -> o
+com.dabing.emoj.utils.FileType -> com.dabing.emoj.c.m:
     com.dabing.emoj.utils.FileType JPEG -> a
     com.dabing.emoj.utils.FileType PNG -> b
     com.dabing.emoj.utils.FileType GIF -> c
@@ -5020,18 +5751,18 @@ com.dabing.emoj.utils.FileType -> com.dabing.emoj.c.k:
     java.lang.String getValue() -> a
     com.dabing.emoj.utils.FileType[] values() -> values
     com.dabing.emoj.utils.FileType valueOf(java.lang.String) -> valueOf
-com.dabing.emoj.utils.FileTypeJudge -> com.dabing.emoj.c.l:
+com.dabing.emoj.utils.FileTypeJudge -> com.dabing.emoj.c.n:
     java.lang.String TAG -> a
     java.lang.String getURLContent(java.lang.String) -> b
     java.lang.String getFileContent(java.io.InputStream) -> b
     com.dabing.emoj.utils.FileType getTypeFromURL(java.lang.String) -> a
     com.dabing.emoj.utils.FileType getType(java.io.InputStream) -> a
-com.dabing.emoj.utils.FlushedInputStream -> com.dabing.emoj.c.m:
+com.dabing.emoj.utils.FlushedInputStream -> com.dabing.emoj.c.o:
     long skip(long) -> skip
-com.dabing.emoj.utils.JsonHelper -> com.dabing.emoj.c.n:
+com.dabing.emoj.utils.JsonHelper -> com.dabing.emoj.c.p:
     java.lang.String TAG -> a
     org.json.JSONArray Filter(org.json.JSONArray) -> a
-com.dabing.emoj.utils.MyOauth -> com.dabing.emoj.c.o:
+com.dabing.emoj.utils.MyOauth -> com.dabing.emoj.c.q:
     java.lang.String access_token -> a
     long expires_in -> b
     java.lang.String openid -> c
@@ -5042,22 +5773,22 @@ com.dabing.emoj.utils.MyOauth -> com.dabing.emoj.c.o:
     java.lang.String msg -> h
     java.lang.String TAG -> i
     java.lang.String toString() -> toString
-com.dabing.emoj.utils.NetWorkCheck -> com.dabing.emoj.c.p:
+com.dabing.emoj.utils.NetWorkCheck -> com.dabing.emoj.c.r:
     boolean isConnect(android.content.Context) -> a
-com.dabing.emoj.utils.PackageDownloader -> com.dabing.emoj.c.q:
+com.dabing.emoj.utils.PackageDownloader -> com.dabing.emoj.c.s:
     android.content.Context mContext -> a
     com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask mTask -> b
     com.dabing.emoj.widget.DownloadProgressDialog mDialog -> c
     com.dabing.emoj.utils.PackageDownloader$DownloadPackageHandler mHandler -> d
     java.lang.String TAG -> e
     void download(java.lang.String) -> a
-com.dabing.emoj.utils.PackageDownloader$1 -> com.dabing.emoj.c.r:
+com.dabing.emoj.utils.PackageDownloader$1 -> com.dabing.emoj.c.t:
     com.dabing.emoj.utils.PackageDownloader this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.utils.PackageDownloader$DownloadPackageHandler -> com.dabing.emoj.c.s:
+com.dabing.emoj.utils.PackageDownloader$DownloadPackageHandler -> com.dabing.emoj.c.u:
     com.dabing.emoj.utils.PackageDownloader this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask -> com.dabing.emoj.c.t:
+com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask -> com.dabing.emoj.c.v:
     java.lang.String mID -> a
     org.json.JSONArray mArray -> b
     boolean isRun -> c
@@ -5065,10 +5796,10 @@ com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask -> com.dabing.emoj.c
     void stop() -> a
     void run() -> run
     void makeThumb(java.lang.String,java.lang.String) -> a
-com.dabing.emoj.utils.QStr -> com.dabing.emoj.c.u:
+com.dabing.emoj.utils.QStr -> com.dabing.emoj.c.w:
     java.lang.String getPic(java.lang.String) -> a
     java.lang.String getPicNameFromURL(java.lang.String) -> b
-com.dabing.emoj.utils.RegularEmojManager -> com.dabing.emoj.c.v:
+com.dabing.emoj.utils.RegularEmojManager -> com.dabing.emoj.c.x:
     android.content.Context mContext -> a
     java.lang.String TAG -> b
     void clear() -> a
@@ -5077,7 +5808,7 @@ com.dabing.emoj.utils.RegularEmojManager -> com.dabing.emoj.c.v:
     void put(org.json.JSONArray,org.json.JSONObject) -> a
     org.json.JSONArray getArray$58e954dc(org.json.JSONArray) -> a
     org.json.JSONArray sort(org.json.JSONArray) -> b
-com.dabing.emoj.utils.TokenStore -> com.dabing.emoj.c.w:
+com.dabing.emoj.utils.TokenStore -> com.dabing.emoj.c.y:
     java.lang.String fileName -> a
     java.lang.String TAG -> b
     void store(android.content.Context,java.lang.String) -> a
@@ -5086,8 +5817,60 @@ com.dabing.emoj.utils.TokenStore -> com.dabing.emoj.c.w:
     void storePrivate(android.content.Context,java.lang.String) -> b
     com.tencent.weibo.oauthv2.OAuthV2 fetch(android.content.Context) -> c
     com.tencent.weibo.oauthv2.OAuthV2 fetchPrivate(android.content.Context) -> d
-com.dabing.emoj.utils.Utils -> com.dabing.emoj.c.x:
+com.dabing.emoj.utils.Util -> com.dabing.emoj.c.z:
+    java.lang.String ANDROID_SECURE -> e
+    java.lang.String[] SysFileDirs -> f
+    java.util.HashSet sDocMimeTypesSet -> a
+    java.lang.String sZipFileMimeType -> b
+    int CATEGORY_TAB_INDEX -> c
+    int SDCARD_TAB_INDEX -> d
+    boolean isNormalFile(java.lang.String) -> a
+    java.lang.String getNameFromFilepath(java.lang.String) -> b
+com.dabing.emoj.utils.Util$1 -> com.dabing.emoj.c.aa:
+com.dabing.emoj.utils.Utils -> com.dabing.emoj.c.ab:
     int getScreenWidth(android.content.Context) -> a
+com.dabing.emoj.widget.AddImageButton -> com.dabing.emoj.widget.AddImageButton:
+    int mWidth -> a
+    java.lang.String TAG -> b
+    void onMeasure(int,int) -> onMeasure
+com.dabing.emoj.widget.Album -> com.dabing.emoj.widget.Album:
+    com.dabing.emoj.widget.Album$AlbumClickListener mListener -> a
+    com.dabing.emoj.utils.FileInfo mFileInfo -> b
+    com.dabing.emoj.widget.AlbumImageView imageView -> c
+    android.widget.ImageButton btnDel -> d
+    android.widget.TextView albumNameTextView -> e
+    android.widget.TextView childSizeTextView -> f
+    int mWidth -> g
+    int mThumbWidth -> h
+    android.graphics.BitmapFactory$Options sDefaultOptions -> i
+    java.util.concurrent.ExecutorService mService -> j
+    java.lang.String TAG -> k
+    android.view.View$OnClickListener listener -> l
+    android.os.Handler mHandler -> m
+    void setAlbumClickListener(com.dabing.emoj.widget.Album$AlbumClickListener) -> a
+    void setFile(com.dabing.emoj.utils.FileInfo) -> a
+    void setWidth(int) -> a
+    void onMeasure(int,int) -> onMeasure
+    android.os.Handler access$0(com.dabing.emoj.widget.Album) -> a
+com.dabing.emoj.widget.Album$1 -> com.dabing.emoj.widget.a:
+    com.dabing.emoj.widget.Album this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.widget.Album$2 -> com.dabing.emoj.widget.b:
+    com.dabing.emoj.widget.Album this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.dabing.emoj.widget.Album$AlbumClickListener -> com.dabing.emoj.widget.c:
+    void click(com.dabing.emoj.utils.FileInfo) -> a
+com.dabing.emoj.widget.Album$ThumbnailProvider -> com.dabing.emoj.widget.d:
+    long _id -> a
+    com.dabing.emoj.widget.Album this$0 -> b
+    void run() -> run
+com.dabing.emoj.widget.AlbumImageView -> com.dabing.emoj.widget.AlbumImageView:
+    int mWidth -> a
+    android.widget.ImageView mImageView -> b
+    java.lang.String TAG -> c
+    void setWidth(int) -> a
+    void setImageBitmap(android.graphics.Bitmap) -> a
+    void onMeasure(int,int) -> onMeasure
 com.dabing.emoj.widget.CacheImageView -> com.dabing.emoj.widget.CacheImageView:
     com.dabing.emoj.widget.CacheImageView$CacheHandler mHandler -> a
     java.util.concurrent.ExecutorService mService -> b
@@ -5098,17 +5881,23 @@ com.dabing.emoj.widget.CacheImageView -> com.dabing.emoj.widget.CacheImageView:
     boolean isLoading -> g
     java.lang.String TAG -> h
     void setImage(java.lang.String) -> a
+    void setPath(java.lang.String,int) -> a
     void onLoadingEnded(greendroid.widget.AsyncImageView,android.graphics.Bitmap) -> a
     android.graphics.Bitmap makeThumb(java.lang.String,java.lang.String) -> b
     android.graphics.BitmapFactory$Options access$0(com.dabing.emoj.widget.CacheImageView) -> a
     android.graphics.Bitmap access$1$6ac18fbd(java.lang.String,java.lang.String) -> a
-com.dabing.emoj.widget.CacheImageView$CacheHandler -> com.dabing.emoj.widget.a:
+com.dabing.emoj.widget.CacheImageView$CacheHandler -> com.dabing.emoj.widget.e:
     com.dabing.emoj.widget.CacheImageView this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.widget.CacheImageView$GetImageTask -> com.dabing.emoj.widget.b:
+com.dabing.emoj.widget.CacheImageView$GetImageTask -> com.dabing.emoj.widget.f:
     java.lang.String _filename -> b
     java.lang.String _url -> c
     com.dabing.emoj.widget.CacheImageView this$0 -> a
+    void run() -> run
+com.dabing.emoj.widget.CacheImageView$ThumbnailTask -> com.dabing.emoj.widget.g:
+    java.lang.String mPath -> a
+    int mThumbWidth -> b
+    com.dabing.emoj.widget.CacheImageView this$0 -> c
     void run() -> run
 com.dabing.emoj.widget.CacheWrapperImageView -> com.dabing.emoj.widget.CacheWrapperImageView:
     int mWidth -> a
@@ -5117,6 +5906,7 @@ com.dabing.emoj.widget.CacheWrapperImageView -> com.dabing.emoj.widget.CacheWrap
     void onMeasure(int,int) -> onMeasure
     void setWidth(int) -> a
     void setImage(java.lang.String) -> a
+    void setPath(java.lang.String) -> b
 com.dabing.emoj.widget.ColorButton -> com.dabing.emoj.widget.ColorButton:
     java.lang.String mID -> a
     android.widget.TextView mTextView -> b
@@ -5152,7 +5942,15 @@ com.dabing.emoj.widget.CrystalButton -> com.dabing.emoj.widget.CrystalButton:
     void setJson(org.json.JSONObject) -> a
     void setIEmojItemClickListener(com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener) -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.widget.DownloadProgressDialog -> com.dabing.emoj.widget.c:
+com.dabing.emoj.widget.CustomGridLayout -> com.dabing.emoj.widget.CustomGridLayout:
+    android.widget.CursorAdapter mAdapter -> t
+    java.lang.String TAG -> u
+    android.database.DataSetObserver mObserver -> v
+    void setAdapter(android.widget.CursorAdapter) -> a
+com.dabing.emoj.widget.CustomGridLayout$1 -> com.dabing.emoj.widget.h:
+    com.dabing.emoj.widget.CustomGridLayout this$0 -> a
+    void onChanged() -> onChanged
+com.dabing.emoj.widget.DownloadProgressDialog -> com.dabing.emoj.widget.i:
     android.widget.TextView titleView -> a
     android.widget.ProgressBar progressBar -> b
     android.widget.TextView rateView -> c
@@ -5174,7 +5972,7 @@ com.dabing.emoj.widget.EmotionPanel -> com.dabing.emoj.widget.EmotionPanel:
     void measureChildren(int,int) -> measureChildren
     void onLayout(boolean,int,int,int,int) -> onLayout
     void setAdapter(android.widget.BaseAdapter) -> a
-com.dabing.emoj.widget.EmotionPanel$1 -> com.dabing.emoj.widget.d:
+com.dabing.emoj.widget.EmotionPanel$1 -> com.dabing.emoj.widget.j:
     com.dabing.emoj.widget.EmotionPanel this$0 -> a
     void onChanged() -> onChanged
 com.dabing.emoj.widget.LinearLayoutForListView -> com.dabing.emoj.widget.LinearLayoutForListView:
@@ -5185,15 +5983,15 @@ com.dabing.emoj.widget.LinearLayoutForListView -> com.dabing.emoj.widget.LinearL
     android.database.DataSetObserver mDataSetObserver -> e
     void setAdapter(android.widget.BaseAdapter) -> a
     android.widget.BaseAdapter access$0(com.dabing.emoj.widget.LinearLayoutForListView) -> a
-com.dabing.emoj.widget.LinearLayoutForListView$1 -> com.dabing.emoj.widget.e:
+com.dabing.emoj.widget.LinearLayoutForListView$1 -> com.dabing.emoj.widget.k:
     com.dabing.emoj.widget.LinearLayoutForListView this$0 -> a
     void onChanged() -> onChanged
-com.dabing.emoj.widget.NormalProgressDialog -> com.dabing.emoj.widget.f:
+com.dabing.emoj.widget.NormalProgressDialog -> com.dabing.emoj.widget.l:
     android.widget.TextView messageTextView -> a
-com.dabing.emoj.widget.PromptDialog -> com.dabing.emoj.widget.g:
+com.dabing.emoj.widget.PromptDialog -> com.dabing.emoj.widget.m:
     android.widget.ImageView imageView -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.widget.QuickActionGrid -> com.dabing.emoj.widget.h:
+com.dabing.emoj.widget.QuickActionGrid -> com.dabing.emoj.widget.n:
     com.dabing.emoj.widget.QuickActionGrid$OnQuickActionItemClickListener listener -> a
     com.dabing.emoj.widget.QuickActionGrid$QuickGridAdapter adapter -> b
     org.json.JSONArray mData -> c
@@ -5205,12 +6003,12 @@ com.dabing.emoj.widget.QuickActionGrid -> com.dabing.emoj.widget.h:
     void setData(org.json.JSONArray) -> a
     void show(android.view.View) -> a
     android.content.Context access$0(com.dabing.emoj.widget.QuickActionGrid) -> a
-com.dabing.emoj.widget.QuickActionGrid$1 -> com.dabing.emoj.widget.i:
+com.dabing.emoj.widget.QuickActionGrid$1 -> com.dabing.emoj.widget.o:
     com.dabing.emoj.widget.QuickActionGrid this$0 -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-com.dabing.emoj.widget.QuickActionGrid$OnQuickActionItemClickListener -> com.dabing.emoj.widget.j:
+com.dabing.emoj.widget.QuickActionGrid$OnQuickActionItemClickListener -> com.dabing.emoj.widget.p:
     void onClick$3b77d2a1(org.json.JSONObject) -> a
-com.dabing.emoj.widget.QuickActionGrid$QuickGridAdapter -> com.dabing.emoj.widget.k:
+com.dabing.emoj.widget.QuickActionGrid$QuickGridAdapter -> com.dabing.emoj.widget.q:
     org.json.JSONArray mArray -> a
     com.dabing.emoj.widget.QuickActionGrid this$0 -> b
     org.json.JSONObject getData(int) -> a
@@ -5233,6 +6031,7 @@ com.dabing.emoj.widget.WrapperImageView -> com.dabing.emoj.widget.WrapperImageVi
     void setImageProcessor(greendroid.image.ImageProcessor) -> a
 com.dabing.emoj.wxapi.Util -> com.dabing.emoj.wxapi.a:
     byte[] bmpToByteArray$2448d2a2(android.graphics.Bitmap) -> a
+    android.graphics.Bitmap extractThumbNail$7f90680d(java.lang.String,int,int) -> a
     android.graphics.Bitmap resizeBitmap(android.graphics.Bitmap,int,int) -> a
 com.dabing.emoj.wxapi.WXEntryActivity -> com.dabing.emoj.wxapi.WXEntryActivity:
     com.tencent.mm.sdk.openapi.IWXAPI api -> b
@@ -5247,15 +6046,407 @@ com.dabing.emoj.wxapi.WeiXinHelper -> com.dabing.emoj.wxapi.b:
     java.lang.String TAG -> a
     java.lang.String getTransaction() -> a
     void sendEmoj(java.lang.String) -> a
-    void sendIMGPath(java.lang.String) -> b
+    void sendPng(java.lang.String) -> b
+    void sendIMGPath(java.lang.String) -> c
     void shareIMGPath(java.lang.String,int) -> a
-    void shareEmoj(java.lang.String) -> c
+    void shareEmoj(java.lang.String) -> d
     void shareWebpageToCircle(java.lang.String,java.lang.String) -> a
     void shareWebpageToCircle(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
-    void shareIMG(java.lang.String) -> d
-    void shareIMGToCircle(java.lang.String) -> e
+    void shareIMG(java.lang.String) -> e
+    void shareIMGToCircle(java.lang.String) -> f
     void shareToOther(java.lang.String,java.lang.String,java.lang.String) -> a
-    java.lang.String buildTransaction(java.lang.String) -> f
+    java.lang.String buildTransaction(java.lang.String) -> g
+com.handmark.pulltorefresh.library.ILoadingLayout -> com.handmark.pulltorefresh.library.a:
+    void setLoadingDrawable(android.graphics.drawable.Drawable) -> a
+    void setPullLabel(java.lang.CharSequence) -> a
+    void setReleaseLabel(java.lang.CharSequence) -> b
+com.handmark.pulltorefresh.library.LoadingLayoutProxy -> com.handmark.pulltorefresh.library.b:
+    java.util.HashSet mLoadingLayouts -> a
+    void addLayout(com.handmark.pulltorefresh.library.internal.LoadingLayout) -> a
+    void setLoadingDrawable(android.graphics.drawable.Drawable) -> a
+    void setPullLabel(java.lang.CharSequence) -> a
+    void setReleaseLabel(java.lang.CharSequence) -> b
+com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase -> com.handmark.pulltorefresh.library.PullToRefreshAdapterViewBase:
+    boolean mLastItemVisible -> b
+    android.widget.AbsListView$OnScrollListener mOnScrollListener -> c
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnLastItemVisibleListener mOnLastItemVisibleListener -> d
+    android.view.View mEmptyView -> e
+    com.handmark.pulltorefresh.library.internal.IndicatorLayout mIndicatorIvTop -> f
+    com.handmark.pulltorefresh.library.internal.IndicatorLayout mIndicatorIvBottom -> g
+    boolean mShowIndicator -> h
+    boolean mScrollEmptyView -> i
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode -> j
+    void onScroll(android.widget.AbsListView,int,int,int) -> onScroll
+    void onScrollStateChanged(android.widget.AbsListView,int) -> onScrollStateChanged
+    void setEmptyView(android.view.View) -> a
+    void onPullToRefresh() -> a
+    void onRefreshing(boolean) -> a
+    void onReleaseToRefresh() -> b
+    void onReset() -> c
+    void handleStyledAttributes(android.content.res.TypedArray) -> a
+    boolean isReadyForPullStart() -> d
+    boolean isReadyForPullEnd() -> e
+    void onScrollChanged(int,int,int,int) -> onScrollChanged
+    void updateUIForMode() -> f
+    boolean getShowIndicatorInternal() -> z
+    void updateIndicatorViewsVisibility() -> A
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode() -> B
+com.handmark.pulltorefresh.library.PullToRefreshBase -> com.handmark.pulltorefresh.library.PullToRefreshBase:
+    int mTouchSlop -> b
+    float mLastMotionX -> c
+    float mLastMotionY -> d
+    float mInitialMotionX -> e
+    float mInitialMotionY -> f
+    boolean mIsBeingDragged -> g
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State mState -> h
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mMode -> i
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mCurrentMode -> j
+    android.view.View mRefreshableView -> a
+    android.widget.FrameLayout mRefreshableViewWrapper -> k
+    boolean mShowViewWhileRefreshing -> l
+    boolean mScrollingWhileRefreshingEnabled -> m
+    boolean mFilterTouchEvents -> n
+    boolean mOverScrollEnabled -> o
+    boolean mLayoutVisibilityChangesEnabled -> p
+    android.view.animation.Interpolator mScrollAnimationInterpolator -> q
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle mLoadingAnimationStyle -> r
+    com.handmark.pulltorefresh.library.internal.LoadingLayout mHeaderLayout -> s
+    com.handmark.pulltorefresh.library.internal.LoadingLayout mFooterLayout -> t
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener mOnRefreshListener -> u
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2 mOnRefreshListener2 -> v
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener mOnPullEventListener -> w
+    com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable mCurrentSmoothScrollRunnable -> x
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation -> y
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$State -> z
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode -> A
+    void addView(android.view.View,int,android.view.ViewGroup$LayoutParams) -> addView
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getCurrentMode() -> g
+    com.handmark.pulltorefresh.library.ILoadingLayout getLoadingLayoutProxy() -> h
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getMode() -> i
+    android.view.View getRefreshableView() -> j
+    boolean getShowViewWhileRefreshing() -> k
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State getState() -> l
+    boolean isPullToRefreshEnabled() -> m
+    boolean isPullToRefreshOverScrollEnabled() -> n
+    boolean isRefreshing() -> o
+    boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
+    void onRefreshComplete() -> p
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void setScrollingWhileRefreshingEnabled$1385ff() -> q
+    void setLongClickable(boolean) -> setLongClickable
+    void setOnPullEventListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener) -> a
+    void setOnRefreshListener(com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener) -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection() -> r
+    void setState(com.handmark.pulltorefresh.library.PullToRefreshBase$State,boolean[]) -> a
+    com.handmark.pulltorefresh.library.internal.LoadingLayout createLoadingLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,android.content.res.TypedArray) -> a
+    com.handmark.pulltorefresh.library.LoadingLayoutProxy createLoadingLayoutProxy(boolean,boolean) -> a
+    android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet) -> a
+    void disableLoadingLayoutVisibilityChanges() -> s
+    com.handmark.pulltorefresh.library.internal.LoadingLayout getFooterLayout() -> t
+    int getFooterSize() -> u
+    com.handmark.pulltorefresh.library.internal.LoadingLayout getHeaderLayout() -> v
+    int getHeaderSize() -> w
+    android.widget.FrameLayout getRefreshableViewWrapper() -> x
+    void handleStyledAttributes(android.content.res.TypedArray) -> a
+    boolean isReadyForPullEnd() -> e
+    boolean isReadyForPullStart() -> d
+    void onPtrRestoreInstanceState(android.os.Bundle) -> a
+    void onPtrSaveInstanceState(android.os.Bundle) -> b
+    void onPullToRefresh() -> a
+    void onRefreshing(boolean) -> a
+    void onReleaseToRefresh() -> b
+    void onReset() -> c
+    void onRestoreInstanceState(android.os.Parcelable) -> onRestoreInstanceState
+    android.os.Parcelable onSaveInstanceState() -> onSaveInstanceState
+    void onSizeChanged(int,int,int,int) -> onSizeChanged
+    void refreshLoadingViewsSize() -> z
+    void setHeaderScroll(int) -> a
+    void smoothScrollTo$13462e() -> y
+    void updateUIForMode() -> f
+    void callRefreshListener() -> A
+    void init(android.content.Context,android.util.AttributeSet) -> b
+    boolean isReadyForPull() -> B
+    int getMaximumPullScroll() -> C
+    void smoothScrollTo$2e44402e$188ade06(int,com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener) -> a
+    android.view.animation.Interpolator access$0(com.handmark.pulltorefresh.library.PullToRefreshBase) -> a
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation() -> D
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$State() -> E
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode() -> F
+    void access$4(com.handmark.pulltorefresh.library.PullToRefreshBase) -> b
+com.handmark.pulltorefresh.library.PullToRefreshBase$1 -> com.handmark.pulltorefresh.library.c:
+    com.handmark.pulltorefresh.library.PullToRefreshBase this$0 -> a
+    void onSmoothScrollFinished() -> a
+com.handmark.pulltorefresh.library.PullToRefreshBase$2 -> com.handmark.pulltorefresh.library.d:
+    com.handmark.pulltorefresh.library.PullToRefreshBase this$0 -> a
+    void run() -> run
+com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle -> com.handmark.pulltorefresh.library.e:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle ROTATE -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle FLIP -> b
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$AnimationStyle -> c
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle[] ENUM$VALUES -> d
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle getDefault() -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle mapIntToValue(int) -> a
+    com.handmark.pulltorefresh.library.internal.LoadingLayout createLoadingLayout(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation,android.content.res.TypedArray) -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle[] values() -> values
+    com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle valueOf(java.lang.String) -> valueOf
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$AnimationStyle() -> b
+com.handmark.pulltorefresh.library.PullToRefreshBase$Mode -> com.handmark.pulltorefresh.library.f:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode DISABLED -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_FROM_START -> b
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_FROM_END -> c
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode BOTH -> d
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode MANUAL_REFRESH_ONLY -> e
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_DOWN_TO_REFRESH -> f
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode PULL_UP_TO_REFRESH -> g
+    int mIntValue -> h
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode[] ENUM$VALUES -> i
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mapIntToValue(int) -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode getDefault() -> a
+    boolean permitsPullToRefresh() -> b
+    boolean showHeaderLoadingLayout() -> c
+    boolean showFooterLoadingLayout() -> d
+    int getIntValue() -> e
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode[] values() -> values
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode valueOf(java.lang.String) -> valueOf
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnLastItemVisibleListener -> com.handmark.pulltorefresh.library.g:
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener -> com.handmark.pulltorefresh.library.h:
+    void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener -> com.handmark.pulltorefresh.library.i:
+    void onRefresh(com.handmark.pulltorefresh.library.PullToRefreshBase) -> a
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener2 -> com.handmark.pulltorefresh.library.j:
+com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener -> com.handmark.pulltorefresh.library.k:
+    void onSmoothScrollFinished() -> a
+com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation -> com.handmark.pulltorefresh.library.l:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation VERTICAL -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation HORIZONTAL -> b
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation[] ENUM$VALUES -> c
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation[] values() -> values
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation valueOf(java.lang.String) -> valueOf
+com.handmark.pulltorefresh.library.PullToRefreshBase$SmoothScrollRunnable -> com.handmark.pulltorefresh.library.m:
+    android.view.animation.Interpolator mInterpolator -> b
+    int mScrollToY -> c
+    int mScrollFromY -> d
+    long mDuration -> e
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnSmoothScrollFinishedListener mListener -> f
+    boolean mContinueRunning -> g
+    long mStartTime -> h
+    int mCurrentY -> i
+    com.handmark.pulltorefresh.library.PullToRefreshBase this$0 -> a
+    void run() -> run
+    void stop() -> a
+com.handmark.pulltorefresh.library.PullToRefreshBase$State -> com.handmark.pulltorefresh.library.n:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State RESET -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State PULL_TO_REFRESH -> b
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State RELEASE_TO_REFRESH -> c
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State REFRESHING -> d
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State MANUAL_REFRESHING -> e
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State OVERSCROLLING -> f
+    int mIntValue -> g
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State[] ENUM$VALUES -> h
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State mapIntToValue(int) -> a
+    int getIntValue() -> a
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State[] values() -> values
+    com.handmark.pulltorefresh.library.PullToRefreshBase$State valueOf(java.lang.String) -> valueOf
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView -> com.handmark.pulltorefresh.library.PullToRefreshExpandableListView:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection() -> r
+    android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet) -> a
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListView -> com.handmark.pulltorefresh.library.o:
+    com.handmark.pulltorefresh.library.PullToRefreshExpandableListView this$0 -> a
+    void setEmptyView(android.view.View) -> setEmptyView
+    void setEmptyViewInternal(android.view.View) -> a
+com.handmark.pulltorefresh.library.PullToRefreshExpandableListView$InternalExpandableListViewSDK9 -> com.handmark.pulltorefresh.library.p:
+    com.handmark.pulltorefresh.library.PullToRefreshExpandableListView this$0 -> b
+com.handmark.pulltorefresh.library.PullToRefreshGridView -> com.handmark.pulltorefresh.library.PullToRefreshGridView:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection() -> r
+    android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet) -> a
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridView -> com.handmark.pulltorefresh.library.q:
+    com.handmark.pulltorefresh.library.PullToRefreshGridView this$0 -> a
+    void setEmptyView(android.view.View) -> setEmptyView
+    void setEmptyViewInternal(android.view.View) -> a
+com.handmark.pulltorefresh.library.PullToRefreshGridView$InternalGridViewSDK9 -> com.handmark.pulltorefresh.library.r:
+    com.handmark.pulltorefresh.library.PullToRefreshGridView this$0 -> b
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView -> com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection() -> r
+    boolean isReadyForPullStart() -> d
+    boolean isReadyForPullEnd() -> e
+    android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet) -> a
+com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9 -> com.handmark.pulltorefresh.library.s:
+    com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView this$0 -> a
+com.handmark.pulltorefresh.library.PullToRefreshListView -> com.handmark.pulltorefresh.library.PullToRefreshListView:
+    com.handmark.pulltorefresh.library.internal.LoadingLayout mHeaderLoadingView -> b
+    com.handmark.pulltorefresh.library.internal.LoadingLayout mFooterLoadingView -> c
+    android.widget.FrameLayout mLvFooterLoadingFrame -> d
+    boolean mListViewExtrasEnabled -> e
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode -> f
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection() -> r
+    void onRefreshing(boolean) -> a
+    void onReset() -> c
+    com.handmark.pulltorefresh.library.LoadingLayoutProxy createLoadingLayoutProxy(boolean,boolean) -> a
+    void handleStyledAttributes(android.content.res.TypedArray) -> a
+    android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet) -> a
+    android.widget.FrameLayout access$1(com.handmark.pulltorefresh.library.PullToRefreshListView) -> a
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode() -> z
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListView -> com.handmark.pulltorefresh.library.t:
+    boolean mAddedLvFooter -> b
+    com.handmark.pulltorefresh.library.PullToRefreshListView this$0 -> a
+    void dispatchDraw(android.graphics.Canvas) -> dispatchDraw
+    boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+    void setAdapter(android.widget.ListAdapter) -> setAdapter
+    void setEmptyView(android.view.View) -> setEmptyView
+    void setEmptyViewInternal(android.view.View) -> a
+com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListViewSDK9 -> com.handmark.pulltorefresh.library.u:
+    com.handmark.pulltorefresh.library.PullToRefreshListView this$0 -> b
+com.handmark.pulltorefresh.library.PullToRefreshScrollView -> com.handmark.pulltorefresh.library.PullToRefreshScrollView:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection() -> r
+    boolean isReadyForPullStart() -> d
+    boolean isReadyForPullEnd() -> e
+    android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet) -> a
+com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9 -> com.handmark.pulltorefresh.library.v:
+    com.handmark.pulltorefresh.library.PullToRefreshScrollView this$0 -> a
+com.handmark.pulltorefresh.library.PullToRefreshWebView -> com.handmark.pulltorefresh.library.PullToRefreshWebView:
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnRefreshListener defaultOnRefreshListener -> b
+    android.webkit.WebChromeClient defaultWebChromeClient -> c
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation getPullToRefreshScrollDirection() -> r
+    android.webkit.WebView createRefreshableView(android.content.Context,android.util.AttributeSet) -> b
+    boolean isReadyForPullStart() -> d
+    boolean isReadyForPullEnd() -> e
+    void onPtrRestoreInstanceState(android.os.Bundle) -> a
+    void onPtrSaveInstanceState(android.os.Bundle) -> b
+    android.view.View createRefreshableView(android.content.Context,android.util.AttributeSet) -> a
+com.handmark.pulltorefresh.library.PullToRefreshWebView$1 -> com.handmark.pulltorefresh.library.w:
+    void onRefresh(com.handmark.pulltorefresh.library.PullToRefreshBase) -> a
+com.handmark.pulltorefresh.library.PullToRefreshWebView$2 -> com.handmark.pulltorefresh.library.x:
+    com.handmark.pulltorefresh.library.PullToRefreshWebView this$0 -> a
+    void onProgressChanged(android.webkit.WebView,int) -> onProgressChanged
+com.handmark.pulltorefresh.library.PullToRefreshWebView$InternalWebViewSDK9 -> com.handmark.pulltorefresh.library.y:
+    com.handmark.pulltorefresh.library.PullToRefreshWebView this$0 -> a
+com.handmark.pulltorefresh.library.R -> com.handmark.pulltorefresh.library.z:
+com.handmark.pulltorefresh.library.R$anim -> com.handmark.pulltorefresh.library.aa:
+    int slide_out_to_bottom -> a
+    int slide_out_to_top -> b
+    int slide_in_from_bottom -> c
+    int slide_in_from_top -> d
+com.handmark.pulltorefresh.library.R$dimen -> com.handmark.pulltorefresh.library.ab:
+    int indicator_right_padding -> a
+    int indicator_internal_padding -> b
+com.handmark.pulltorefresh.library.R$drawable -> com.handmark.pulltorefresh.library.ac:
+    int indicator_bg_top -> a
+    int default_ptr_flip -> b
+    int indicator_arrow -> c
+    int indicator_bg_bottom -> d
+    int default_ptr_rotate -> e
+com.handmark.pulltorefresh.library.R$id -> com.handmark.pulltorefresh.library.ad:
+    int pull_to_refresh_progress -> a
+    int webview -> b
+    int pull_to_refresh_text -> c
+    int gridview -> d
+    int scrollview -> e
+    int pull_to_refresh_image -> f
+    int fl_inner -> g
+    int pull_to_refresh_sub_text -> h
+com.handmark.pulltorefresh.library.R$layout -> com.handmark.pulltorefresh.library.ae:
+    int pull_to_refresh_header_horizontal -> a
+    int pull_to_refresh_header_vertical -> b
+com.handmark.pulltorefresh.library.R$string -> com.handmark.pulltorefresh.library.af:
+    int pull_to_refresh_refreshing_label -> a
+    int pull_to_refresh_release_label -> b
+    int pull_to_refresh_from_bottom_pull_label -> c
+    int pull_to_refresh_from_bottom_refreshing_label -> d
+    int pull_to_refresh_pull_label -> e
+    int pull_to_refresh_from_bottom_release_label -> f
+com.handmark.pulltorefresh.library.R$styleable -> com.handmark.pulltorefresh.library.ag:
+    int[] PullToRefresh -> a
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2 -> com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2:
+    com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback mJsCallback -> b
+    java.util.concurrent.atomic.AtomicBoolean mIsReadyForPullDown -> c
+    java.util.concurrent.atomic.AtomicBoolean mIsReadyForPullUp -> d
+    android.webkit.WebView createRefreshableView(android.content.Context,android.util.AttributeSet) -> b
+    boolean isReadyForPullStart() -> d
+    boolean isReadyForPullEnd() -> e
+com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2$JsValueCallback -> com.handmark.pulltorefresh.library.extras.a:
+    com.handmark.pulltorefresh.library.extras.PullToRefreshWebView2 this$0 -> a
+com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor -> com.handmark.pulltorefresh.library.a.a:
+    void setEmptyViewInternal(android.view.View) -> a
+com.handmark.pulltorefresh.library.internal.FlipLoadingLayout -> com.handmark.pulltorefresh.library.a.b:
+    android.view.animation.Animation mRotateAnimation -> f
+    android.view.animation.Animation mResetRotateAnimation -> g
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode -> h
+    void onLoadingDrawableSet(android.graphics.drawable.Drawable) -> b
+    void onPullImpl(float) -> a
+    void pullToRefreshImpl() -> a
+    void refreshingImpl() -> b
+    void releaseToRefreshImpl() -> c
+    void resetImpl() -> d
+    int getDefaultDrawableResId() -> e
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode() -> m
+com.handmark.pulltorefresh.library.internal.IndicatorLayout -> com.handmark.pulltorefresh.library.a.c:
+    android.view.animation.Animation mInAnim -> a
+    android.view.animation.Animation mOutAnim -> b
+    android.widget.ImageView mArrowImageView -> c
+    android.view.animation.Animation mRotateAnimation -> d
+    android.view.animation.Animation mResetRotateAnimation -> e
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode -> f
+    boolean isVisible() -> a
+    void hide() -> b
+    void show() -> c
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void releaseToRefresh() -> d
+    void pullToRefresh() -> e
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode() -> f
+com.handmark.pulltorefresh.library.internal.LoadingLayout -> com.handmark.pulltorefresh.library.a.d:
+    android.view.animation.Interpolator ANIMATION_INTERPOLATOR -> a
+    android.widget.FrameLayout mInnerLayout -> f
+    android.widget.ImageView mHeaderImage -> b
+    android.widget.ProgressBar mHeaderProgress -> c
+    boolean mUseIntrinsicAnimation -> g
+    android.widget.TextView mHeaderText -> h
+    android.widget.TextView mSubHeaderText -> i
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Mode mMode -> d
+    com.handmark.pulltorefresh.library.PullToRefreshBase$Orientation mScrollDirection -> e
+    java.lang.CharSequence mPullLabel -> j
+    java.lang.CharSequence mRefreshingLabel -> k
+    java.lang.CharSequence mReleaseLabel -> l
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation -> m
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode -> n
+    void setHeight(int) -> a
+    void setWidth(int) -> b
+    int getContentSize() -> f
+    void hideAllViews() -> g
+    void onPull(float) -> b
+    void pullToRefresh() -> h
+    void refreshing() -> i
+    void releaseToRefresh() -> j
+    void reset() -> k
+    void setLoadingDrawable(android.graphics.drawable.Drawable) -> a
+    void setPullLabel(java.lang.CharSequence) -> a
+    void setReleaseLabel(java.lang.CharSequence) -> b
+    void showInvisibleViews() -> l
+    int getDefaultDrawableResId() -> e
+    void onLoadingDrawableSet(android.graphics.drawable.Drawable) -> b
+    void onPullImpl(float) -> a
+    void pullToRefreshImpl() -> a
+    void refreshingImpl() -> b
+    void releaseToRefreshImpl() -> c
+    void resetImpl() -> d
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Orientation() -> m
+    int[] $SWITCH_TABLE$com$handmark$pulltorefresh$library$PullToRefreshBase$Mode() -> n
+com.handmark.pulltorefresh.library.internal.RotateLoadingLayout -> com.handmark.pulltorefresh.library.a.e:
+    android.view.animation.Animation mRotateAnimation -> f
+    android.graphics.Matrix mHeaderImageMatrix -> g
+    float mRotationPivotX -> h
+    float mRotationPivotY -> i
+    boolean mRotateDrawableWhilePulling -> j
+    void onLoadingDrawableSet(android.graphics.drawable.Drawable) -> b
+    void onPullImpl(float) -> a
+    void refreshingImpl() -> b
+    void resetImpl() -> d
+    void pullToRefreshImpl() -> a
+    void releaseToRefreshImpl() -> c
+    int getDefaultDrawableResId() -> e
+com.handmark.pulltorefresh.library.internal.Utils -> com.handmark.pulltorefresh.library.a.f:
+    void warnDeprecation(java.lang.String,java.lang.String) -> a
 com.tencent.appwallsdk.QQAppWallSDK -> com.tencent.appwallsdk.QQAppWallSDK:
     java.lang.String SDK_VERSION -> SDK_VERSION
     void init(long,android.content.Context) -> init

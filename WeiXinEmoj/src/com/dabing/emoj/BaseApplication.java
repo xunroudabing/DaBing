@@ -39,6 +39,9 @@ public class BaseApplication extends GDApplication {
 	}
 	//注册异常处理
 	private void RegCrashHandler(){
+		if(AppConfig.DEBUG){
+			return;
+		}
 		DefaultCrashHandler mHandler = DefaultCrashHandler.getInstance();
 		mHandler.Init(getApplicationContext());
 	}

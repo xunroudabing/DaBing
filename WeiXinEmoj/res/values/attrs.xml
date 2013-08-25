@@ -4,4 +4,8 @@
     <declare-styleable name="WrapperImageView">
         <attr name="padding" format="boolean" />
     </declare-styleable>
+    
+    <declare-styleable name="AlbumImageView">
+        <attr name="default_src" format="reference"></attr>
+    </declare-styleable>
 </resources>

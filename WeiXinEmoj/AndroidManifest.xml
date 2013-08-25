@@ -105,6 +105,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <provider android:name=".db.UserDefineContentProvider" android:authorities="com.dabing.emoj.UserDefineContentProvider"></provider>
+        
         <activity android:name=".admin.uploadPicActivity"></activity>
         <activity android:name=".admin.WebLoginActivity"></activity>
         <activity android:name=".admin.SelectEmojActivity"></activity>

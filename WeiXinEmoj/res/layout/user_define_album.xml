@@ -1,29 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
-    android:padding="2dp"
+    xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical" >
     
-    <LinearLayout 
-    android:background="@drawable/album_background"
-    android:padding="2dp"    
-    android:orientation="vertical"
+    <RelativeLayout         
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-	    <ImageView 
-		android:id="@+id/user_define_img"    
-		android:layout_width="wrap_content"
-	    android:layout_height="wrap_content" />
-    </LinearLayout>
+    
+    <com.dabing.emoj.widget.AlbumImageView     
+    android:id="@+id/user_define_albumImageview"  
+    dabing:default_src="@drawable/emoj005"  
+   	android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+	    
+    <!-- 图片数量 -->
+    <TextView 
+     android:id="@+id/user_define_childsize"
+     android:background="@drawable/albums_icon_bg" 	
+     android:text="0"	
+     android:textColor="@color/gray_dark"
+     android:gravity="center"
+     android:layout_centerHorizontal="true"
+	 android:layout_alignParentBottom="true"
+	 android:layout_marginBottom="10dp"
+     android:layout_width="wrap_content"
+	 android:layout_height="wrap_content" />
+    <!-- 删除按钮 -->
+    <ImageButton 
+     android:id="@+id/user_define_btnDel"
+     android:background="@null"   
+     android:src="@drawable/appitem_del_selector"
+     android:layout_alignParentRight="true"
+     android:layout_alignParentTop="true"
+     android:layout_marginRight="20dp"
+	 android:visibility="gone"
+     android:layout_width="wrap_content"
+	 android:layout_height="wrap_content" />
+    </RelativeLayout>
+  
 	<TextView
 	android:id="@+id/user_define_txt"
-	android:text="1111"
+	android:text=""
 	android:gravity="center"
 	android:singleLine="true"
 	android:ellipsize="end"
-	android:textColor="@color/gray_dark"
+	android:textColor="@color/black"
 	android:textSize="@dimen/SmallerTextSize"     
 	android:layout_width="match_parent"
     android:layout_height="wrap_content" />

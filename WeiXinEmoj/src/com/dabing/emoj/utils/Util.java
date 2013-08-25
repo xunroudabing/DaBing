@@ -186,6 +186,11 @@ public class Util {
     public static String getNameFromFilepath(String filepath) {
         int pos = filepath.lastIndexOf('/');
         if (pos != -1) {
+        	if(pos == filepath.length() - 1){
+        		String temp = filepath.substring(0, filepath.length() - 1);
+        		pos = temp.lastIndexOf('/');
+        		return temp.substring(pos + 1);
+        	}
             return filepath.substring(pos + 1);
         }
         return "";

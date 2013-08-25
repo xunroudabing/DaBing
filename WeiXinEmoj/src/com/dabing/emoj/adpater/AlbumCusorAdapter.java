@@ -10,19 +10,24 @@ import android.widget.CursorAdapter;
 
 import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.db.UserDefineDataBaseHelper.UserDefineCursor;
+import com.dabing.emoj.fragment.UserDefineFragment.IEmojScanCallBack;
 import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.widget.Album;
+import com.dabing.emoj.widget.Album.AlbumClickListener;
 
 public class AlbumCusorAdapter extends CursorAdapter {
 	int mWidth = 80;
+	AlbumClickListener mListener;
 	Context mContext;
-	static final int COLUM_NUM = 4;
+	int COLUM_NUM = 3;
 	static final int COLUM_PADDING = 0;
 	static final String TAG = AlbumCusorAdapter.class.getSimpleName();
-	public AlbumCusorAdapter(Context context, Cursor c) {
+	public AlbumCusorAdapter(Context context, Cursor c , int col_num ,AlbumClickListener listener) {
 		super(context, c,false);
 		// TODO Auto-generated constructor stub
 		mContext = context;
+		COLUM_NUM = col_num;
+		mListener = listener;
 		calculateAlbumWidth();
 		
 	}
@@ -41,6 +46,7 @@ public class AlbumCusorAdapter extends CursorAdapter {
 		// TODO Auto-generated method stub
 		Album album = new Album(context);
 		album.setWidth(mWidth);
+		album.setAlbumClickListener(mListener);
 		return album;
 	}
 
@@ -52,11 +58,22 @@ public class AlbumCusorAdapter extends CursorAdapter {
 	}
 	
 	private FileInfo getFileInfo(Cursor cursor){
-		return FileInfo.GetFileInfo((UserDefineCursor)cursor);
+		return FileInfo.GetFileInfo(cursor);
 	}
 	
 	public void reflesh(){
-		changeCursor(new UserDefineDataBaseHelper(mContext).getCursor());
+		//changeCursor(new UserDefineDataBaseHelper(mContext).getCursor());
+		if(getCursor() == null || getCursor().isClosed()){
+			return;
+		}
+		getCursor().requery();
+		notifyDataSetChanged();
+	}
+	
+	public void close(){
+		if(getCursor() != null){
+			getCursor().close();
+		}
 	}
 
 }

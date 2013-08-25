@@ -95,6 +95,33 @@ public class WeiXinHelper {
 		mAPI.sendResp(resp);
 	
 	}
+	/**
+	 * 将静态图片以emoj的形式发送
+	 * @param filepath
+	 */
+	public void sendPng(String filepath){
+		File file = new File(filepath);
+		if(!file.exists()){
+			return;
+		}		 
+		WXEmojiObject emoji = new WXEmojiObject();
+		emoji.emojiPath = filepath;
+		WXMediaMessage msg = new WXMediaMessage(emoji);
+		msg.title = "分享自微信表情包";
+		msg.description = "";
+		Bitmap bitmap  = BitmapFactory.decodeFile(filepath);
+		Bitmap thumbBmp = Util.resizeBitmap(bitmap, 150, 225);		
+		byte[] thumbData = Util.bmpToByteArray(thumbBmp, true);
+		Log.d(TAG, "sendPng thumbData:"+thumbData.length);
+		msg.thumbData = thumbData;	
+		bitmap.recycle();
+		GetMessageFromWX.Resp resp = new GetMessageFromWX.Resp();
+		String trans = getTransaction();
+		Log.d(TAG, "trans:"+trans);
+		resp.transaction = trans;
+		resp.message = msg;
+		mAPI.sendResp(resp);
+	}
 	public void sendIMGPath(String filepath){
 		File file = new File(filepath);
 		if(!file.exists()){

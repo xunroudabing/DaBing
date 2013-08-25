@@ -24,6 +24,7 @@ import android.util.Log;
 
 public class AppConfig {
 	static final String TAG = AppConfig.class.getSimpleName();
+	public static final boolean DEBUG = true;
 	//正式 http://t.qq.com/xunroudabing 测试 http://www.appchina.com/soft_detail_472820_0_10.html
 	public static final String redirectUri="http://android.myapp.com/android/appdetail.jsp?appid=653908";
 	//正式801278477 测试 801202538
