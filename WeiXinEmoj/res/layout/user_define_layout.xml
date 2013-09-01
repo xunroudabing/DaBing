@@ -12,7 +12,7 @@
 		    android:id="@+id/umeng_fb_goback_btn"
 			style="@style/MMTitleButton"
 			android:layout_height="wrap_content"
-			android:visibility="gone"
+			android:visibility="visible"
 			android:textColor="#fff"
         	android:background="@drawable/mm_title_btn_back"
 		    android:text="微信"/>		

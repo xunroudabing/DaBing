@@ -140,9 +140,15 @@ public class RegularEmojFragment extends BaseEmojFragment implements OnItemClick
 					String mFileName = helper.find(AppConfig.getEmoj(), filename);
 					//有缓存
 					if(mFileName != null){
+						String prefix = mFileName.substring(mFileName.lastIndexOf(".")+1);
 						String filepath = AppConfig.getEmoj()+mFileName;
 						WeiXinHelper wx = new WeiXinHelper(getActivity(), api);
-						wx.sendEmoj(filepath);
+						//Log.d(TAG, "prefix:"+prefix);
+						if(prefix.toLowerCase().equals("gif")){
+							wx.sendEmoj(filepath);
+						}else {
+							wx.sendPng(filepath);
+						}
 						UmengEvent("action012", filename);
 						getActivity().finish();
 					}else {

@@ -5186,12 +5186,13 @@ com.dabing.emoj.fragment.AlbumFragment -> com.dabing.emoj.fragment.e:
     com.dabing.emoj.widget.CustomGridLayout gridLayout -> T
     com.handmark.pulltorefresh.library.PullToRefreshScrollView mScrollView -> U
     com.dabing.emoj.adpater.AlbumCusorAdapter adapter -> V
-    java.lang.String TAG -> W
-    com.dabing.emoj.fragment.AlbumFragment instance -> X
-    com.dabing.emoj.widget.Album$AlbumClickListener albumClickListener -> Y
-    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> Z
-    android.os.Handler mHandler -> aa
-    android.content.ServiceConnection mConnection -> ab
+    boolean IsScaned -> W
+    java.lang.String TAG -> X
+    com.dabing.emoj.fragment.AlbumFragment instance -> Y
+    com.dabing.emoj.widget.Album$AlbumClickListener albumClickListener -> Z
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> aa
+    android.os.Handler mHandler -> ab
+    android.content.ServiceConnection mConnection -> ac
     com.dabing.emoj.fragment.AlbumFragment getInstance() -> C
     void onActivityCreated(android.os.Bundle) -> b
     void onCreate(android.os.Bundle) -> a
@@ -8477,6 +8478,11 @@ e -> k:
     int b -> b
     java.lang.String c -> c
     java.lang.String d -> d
+eclipse.local.sdk.Util -> a.a.a.a:
+eclipse.local.sdk.Util$BitmapFactory -> a.a.a.b:
+    int fromDPToPix(android.content.Context,float) -> a
+eclipse.local.sdk.c -> a.a.a.c:
+eclipse.local.sdk.h -> a.a.a.d:
 f -> l:
     v a -> a
     void run() -> run
@@ -9124,21 +9130,21 @@ n -> s:
 o -> t:
     com.tencent.appwallsdk.service.DownloadService a -> a
     void handleMessage(android.os.Message) -> handleMessage
-org.apache.http.entity.mime.FormBodyPart -> a.a.a.a.a.a:
+org.apache.http.entity.mime.FormBodyPart -> b.a.a.a.a.a:
     java.lang.String name -> a
     org.apache.http.entity.mime.Header header -> b
     org.apache.http.entity.mime.content.ContentBody body -> c
     org.apache.http.entity.mime.content.ContentBody getBody() -> a
     org.apache.http.entity.mime.Header getHeader() -> b
     void addField(java.lang.String,java.lang.String) -> a
-org.apache.http.entity.mime.Header -> a.a.a.a.a.b:
+org.apache.http.entity.mime.Header -> b.a.a.a.a.b:
     java.util.List fields -> a
     java.util.Map fieldMap -> b
     void addField(org.apache.http.entity.mime.MinimalField) -> a
     org.apache.http.entity.mime.MinimalField getField(java.lang.String) -> a
     java.util.Iterator iterator() -> iterator
     java.lang.String toString() -> toString
-org.apache.http.entity.mime.HttpMultipart -> a.a.a.a.a.c:
+org.apache.http.entity.mime.HttpMultipart -> b.a.a.a.a.c:
     org.apache.http.util.ByteArrayBuffer FIELD_SEP -> a
     org.apache.http.util.ByteArrayBuffer CR_LF -> b
     org.apache.http.util.ByteArrayBuffer TWO_DASHES -> c
@@ -9157,23 +9163,23 @@ org.apache.http.entity.mime.HttpMultipart -> a.a.a.a.a.c:
     void doWriteTo(org.apache.http.entity.mime.HttpMultipartMode,java.io.OutputStream,boolean) -> a
     void writeTo(java.io.OutputStream) -> a
     long getTotalLength() -> b
-org.apache.http.entity.mime.HttpMultipart$1 -> a.a.a.a.a.d:
+org.apache.http.entity.mime.HttpMultipart$1 -> b.a.a.a.a.d:
     int[] $SwitchMap$org$apache$http$entity$mime$HttpMultipartMode -> a
-org.apache.http.entity.mime.HttpMultipartMode -> a.a.a.a.a.e:
+org.apache.http.entity.mime.HttpMultipartMode -> b.a.a.a.a.e:
     org.apache.http.entity.mime.HttpMultipartMode STRICT -> a
     org.apache.http.entity.mime.HttpMultipartMode BROWSER_COMPATIBLE -> b
     org.apache.http.entity.mime.HttpMultipartMode[] $VALUES -> c
     org.apache.http.entity.mime.HttpMultipartMode[] values() -> values
     org.apache.http.entity.mime.HttpMultipartMode valueOf(java.lang.String) -> valueOf
-org.apache.http.entity.mime.MIME -> a.a.a.a.a.f:
+org.apache.http.entity.mime.MIME -> b.a.a.a.a.f:
     java.nio.charset.Charset DEFAULT_CHARSET -> a
-org.apache.http.entity.mime.MinimalField -> a.a.a.a.a.g:
+org.apache.http.entity.mime.MinimalField -> b.a.a.a.a.g:
     java.lang.String name -> a
     java.lang.String value -> b
     java.lang.String getName() -> a
     java.lang.String getBody() -> b
     java.lang.String toString() -> toString
-org.apache.http.entity.mime.MultipartEntity -> a.a.a.a.a.h:
+org.apache.http.entity.mime.MultipartEntity -> b.a.a.a.a.h:
     char[] MULTIPART_CHARS -> a
     org.apache.http.entity.mime.HttpMultipart multipart -> b
     org.apache.http.Header contentType -> c
@@ -9190,20 +9196,20 @@ org.apache.http.entity.mime.MultipartEntity -> a.a.a.a.a.h:
     void consumeContent() -> consumeContent
     java.io.InputStream getContent() -> getContent
     void writeTo(java.io.OutputStream) -> writeTo
-org.apache.http.entity.mime.content.AbstractContentBody -> a.a.a.a.a.a.a:
+org.apache.http.entity.mime.content.AbstractContentBody -> b.a.a.a.a.a.a:
     java.lang.String mimeType -> a
     java.lang.String mediaType -> b
     java.lang.String subType -> c
     java.lang.String getMimeType() -> a
-org.apache.http.entity.mime.content.ContentBody -> a.a.a.a.a.a.b:
+org.apache.http.entity.mime.content.ContentBody -> b.a.a.a.a.a.b:
     java.lang.String getFilename() -> b
     void writeTo(java.io.OutputStream) -> a
-org.apache.http.entity.mime.content.ContentDescriptor -> a.a.a.a.a.a.c:
+org.apache.http.entity.mime.content.ContentDescriptor -> b.a.a.a.a.a.c:
     java.lang.String getMimeType() -> a
     java.lang.String getCharset() -> c
     java.lang.String getTransferEncoding() -> d
     long getContentLength() -> e
-org.apache.http.entity.mime.content.FileBody -> a.a.a.a.a.a.d:
+org.apache.http.entity.mime.content.FileBody -> b.a.a.a.a.a.d:
     java.io.File file -> a
     java.lang.String filename -> b
     java.lang.String charset -> c
@@ -9212,7 +9218,7 @@ org.apache.http.entity.mime.content.FileBody -> a.a.a.a.a.a.d:
     java.lang.String getCharset() -> c
     long getContentLength() -> e
     java.lang.String getFilename() -> b
-org.apache.http.entity.mime.content.StringBody -> a.a.a.a.a.a.e:
+org.apache.http.entity.mime.content.StringBody -> b.a.a.a.a.a.e:
     byte[] content -> a
     java.nio.charset.Charset charset -> b
     void writeTo(java.io.OutputStream) -> a

@@ -11,6 +11,7 @@
     <item type="id" name="main_tab_new_emotion"></item>
     <item type="id" name="main_tab_settings">false</item>
     <item type="id" name="main_tab_emotion"></item>
+    <item type="id" name="main_tab_user_define"></item>
     <item type="id" name="confirm_dialog_container_ll"></item>
     <item type="id" name="confirm_dialog_message_tv"></item>
     <item type="id" name="confirm_dialog_source_tv"></item>

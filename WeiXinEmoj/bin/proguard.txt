@@ -186,6 +186,9 @@
 # view res/layout/header_fragment_emotionpanel.xml #generated:8
 -keep class com.dabing.emoj.widget.EmotionPanel { <init>(...); }
 
+# view res/layout/user_define_album_add.xml #generated:11
+-keep class com.dabing.emoj.widget.FitSizeImageView { <init>(...); }
+
 # view res/layout/gd_quick_action_list.xml #generated:13
 -keep class com.dabing.emoj.widget.LinearLayoutForListView { <init>(...); }
 

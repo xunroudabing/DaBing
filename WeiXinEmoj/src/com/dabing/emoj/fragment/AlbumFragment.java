@@ -7,6 +7,7 @@ import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.service.EmojScanService;
 import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.widget.Album.AlbumClickListener;
+import com.dabing.emoj.widget.AddImageButton;
 import com.dabing.emoj.widget.AlbumImageView;
 import com.dabing.emoj.widget.CustomGridLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -32,10 +33,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ScrollView;
 
 public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks<Cursor>{
-	
+	int mWidth = 80;
 	IEmojScanCallBack mCallBack;
 	Messenger client;
 	Messenger mService;
@@ -45,7 +47,9 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	CustomGridLayout gridLayout;
 	PullToRefreshScrollView mScrollView;
 	AlbumCusorAdapter adapter;
+	boolean IsScaned = false;//是否扫描过
 	static final int COLUM_NUM = 3;
+	static final int COLUM_PADDING = 0;
 	static final String TAG = AlbumFragment.class.getSimpleName();	
 	static AlbumFragment instance;
 	public static AlbumFragment getInstance(){
@@ -82,8 +86,12 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		
 		bindGridLayout();
 		getLoaderManager().initLoader(0, null, this);
+		
 		//扫描图片
-		scanFilesDelayed(500);
+		if(!IsScaned){
+			IsScaned = true;
+			scanFilesDelayed(500);
+		}
 	}
 
 	/*
@@ -97,6 +105,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		super.onCreate(savedInstanceState);
 		client = new Messenger(mHandler);
 		BindService();
+		calculateAlbumWidth();
 	}
 
 	/*
@@ -179,12 +188,28 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	}
 	
 	protected void bindGridLayout(){
+		AddImageButton addImageButton = new AddImageButton(getActivity());
+		addImageButton.setWidth(mWidth);
+		gridLayout.setFirstView(addImageButton);
 		if(adapter == null){
 			adapter = new AlbumCusorAdapter(getActivity().getApplicationContext(), null,COLUM_NUM,albumClickListener);
 		}
 		gridLayout.setAdapter(adapter);		
 		
+		
+		
 	}
+	
+	// 计算相册宽度
+	private void calculateAlbumWidth() {
+		WindowManager windowManager = (WindowManager) getActivity()
+				.getApplication().getSystemService(Context.WINDOW_SERVICE);
+		int screenWidth = windowManager.getDefaultDisplay().getWidth();
+		mWidth = (screenWidth - (COLUM_NUM + 1) * COLUM_PADDING) / COLUM_NUM;
+		//Log.d(TAG, "width:" + mWidth);
+
+	}
+		
 	/**
 	 * 设置与activity的回调监听
 	 * @param callBack
@@ -276,7 +301,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 
 	private void UnBindService() {
 		try {
-			getActivity().getApplication().unbindService(mConnection);
+			getActivity().unbindService(mConnection);
 			mBound = false;
 		} catch (Exception e) {
 			// TODO: handle exception

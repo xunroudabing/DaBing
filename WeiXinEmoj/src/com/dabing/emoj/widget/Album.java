@@ -148,7 +148,7 @@ public class Album extends LinearLayout {
 				if (bitmap != null) {
 					Log.d(TAG, "生成缩率图");
 					Bitmap resizeBitmap = com.dabing.emoj.wxapi.Util
-							.resizeBitmap(bitmap, mThumbWidth, mThumbWidth);
+							.resizeBitmap2(bitmap, mThumbWidth, mThumbWidth);
 					GDUtils.getImageCache(getContext()).put(key, resizeBitmap);
 					mHandler.sendMessage(Message.obtain(mHandler, 1,
 							resizeBitmap));

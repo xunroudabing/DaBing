@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.dabing.emoj.R;
@@ -121,8 +123,9 @@ public class AlbumDetailFragment extends UserDefineFragment {
 	}
 	
 	protected void bindGridView(File[] files){
-		adapter = new AlbumDetailAdapter(getActivity().getApplicationContext(), files, COLUM_NUM);
+		adapter = new AlbumDetailAdapter(getActivity().getApplicationContext(), files, COLUM_NUM);		
 		gridView.getRefreshableView().setAdapter(adapter);
+		gridView.getRefreshableView().setOnItemClickListener(itemClickListener);
 	}
 	/**
 	 * 获取相册下的所有图片
@@ -161,6 +164,28 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				State state, Mode direction) {
 			// TODO Auto-generated method stub
 			
+		}
+	};
+	//图片点击事件
+	private OnItemClickListener itemClickListener = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			// TODO Auto-generated method stub
+			try {
+				File file = adapter.getFile(position);
+				File[] mFiles = adapter.getData();
+				String[] paths = new String[mFiles.length];
+				for (int i = 0; i < mFiles.length; i++) {
+					paths[i] = mFiles[i].getPath();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+			
+			 
 		}
 	};
 	

@@ -18,49 +18,50 @@ import android.graphics.Bitmap.CompressFormat;
 import android.util.Log;
 
 public class Util {
-	
+
 	private static final String TAG = "SDK_Sample.Util";
-	
-	public static byte[] bmpToByteArray(final Bitmap bmp, final boolean needRecycle) {
+
+	public static byte[] bmpToByteArray(final Bitmap bmp,
+			final boolean needRecycle) {
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
 		bmp.compress(CompressFormat.PNG, 100, output);
 		if (needRecycle) {
-			bmp.recycle();			
+			bmp.recycle();
 		}
-		
+
 		byte[] result = output.toByteArray();
 		try {
 			output.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return result;
 	}
-	
+
 	public static byte[] getHtmlByteArray(final String url) {
-		 URL htmlUrl = null;     
-		 InputStream inStream = null;     
-		 try {         
-			 htmlUrl = new URL(url);         
-			 URLConnection connection = htmlUrl.openConnection();         
-			 HttpURLConnection httpConnection = (HttpURLConnection)connection;         
-			 int responseCode = httpConnection.getResponseCode();         
-			 if(responseCode == HttpURLConnection.HTTP_OK){             
-				 inStream = httpConnection.getInputStream();         
-			  }     
-			 } catch (MalformedURLException e) {               
-				 e.printStackTrace();     
-			 } catch (IOException e) {              
-				e.printStackTrace();    
-		  } 
+		URL htmlUrl = null;
+		InputStream inStream = null;
+		try {
+			htmlUrl = new URL(url);
+			URLConnection connection = htmlUrl.openConnection();
+			HttpURLConnection httpConnection = (HttpURLConnection) connection;
+			int responseCode = httpConnection.getResponseCode();
+			if (responseCode == HttpURLConnection.HTTP_OK) {
+				inStream = httpConnection.getInputStream();
+			}
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		byte[] data = inputStreamToByte(inStream);
 
 		return data;
 	}
-	
+
 	public static byte[] inputStreamToByte(InputStream is) {
-		try{
+		try {
 			ByteArrayOutputStream bytestream = new ByteArrayOutputStream();
 			int ch;
 			while ((ch = is.read()) != -1) {
@@ -69,13 +70,13 @@ public class Util {
 			byte imgdata[] = bytestream.toByteArray();
 			bytestream.close();
 			return imgdata;
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
-	
+
 	public static byte[] readFromFile(String fileName, int offset, int len) {
 		if (fileName == null) {
 			return null;
@@ -91,17 +92,18 @@ public class Util {
 			len = (int) file.length();
 		}
 
-		Log.d(TAG, "readFromFile : offset = " + offset + " len = " + len + " offset + len = " + (offset + len));
+		Log.d(TAG, "readFromFile : offset = " + offset + " len = " + len
+				+ " offset + len = " + (offset + len));
 
-		if(offset <0){
+		if (offset < 0) {
 			Log.e(TAG, "readFromFile invalid offset:" + offset);
 			return null;
 		}
-		if(len <=0 ){
+		if (len <= 0) {
 			Log.e(TAG, "readFromFile invalid len:" + len);
 			return null;
 		}
-		if(offset + len > (int) file.length()){
+		if (offset + len > (int) file.length()) {
 			Log.e(TAG, "readFromFile invalid file len:" + file.length());
 			return null;
 		}
@@ -120,10 +122,13 @@ public class Util {
 		}
 		return b;
 	}
-	
+
 	private static final int MAX_DECODE_PICTURE_SIZE = 1920 * 1440;
-	public static Bitmap extractThumbNail(final String path, final int height, final int width, final boolean crop) {
-		Assert.assertTrue(path != null && !path.equals("") && height > 0 && width > 0);
+
+	public static Bitmap extractThumbNail(final String path, final int height,
+			final int width, final boolean crop) {
+		Assert.assertTrue(path != null && !path.equals("") && height > 0
+				&& width > 0);
 
 		BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -135,11 +140,14 @@ public class Util {
 				tmp = null;
 			}
 
-			Log.d(TAG, "extractThumbNail: round=" + width + "x" + height + ", crop=" + crop);
+			Log.d(TAG, "extractThumbNail: round=" + width + "x" + height
+					+ ", crop=" + crop);
 			final double beY = options.outHeight * 1.0 / height;
 			final double beX = options.outWidth * 1.0 / width;
-			Log.d(TAG, "extractThumbNail: extract beX = " + beX + ", beY = " + beY);
-			options.inSampleSize = (int) (crop ? (beY > beX ? beX : beY) : (beY < beX ? beX : beY));
+			Log.d(TAG, "extractThumbNail: extract beX = " + beX + ", beY = "
+					+ beY);
+			options.inSampleSize = (int) (crop ? (beY > beX ? beX : beY)
+					: (beY < beX ? beX : beY));
 			if (options.inSampleSize <= 1) {
 				options.inSampleSize = 1;
 			}
@@ -167,29 +175,38 @@ public class Util {
 
 			options.inJustDecodeBounds = false;
 
-			Log.i(TAG, "bitmap required size=" + newWidth + "x" + newHeight + ", orig=" + options.outWidth + "x" + options.outHeight + ", sample=" + options.inSampleSize);
+			Log.i(TAG, "bitmap required size=" + newWidth + "x" + newHeight
+					+ ", orig=" + options.outWidth + "x" + options.outHeight
+					+ ", sample=" + options.inSampleSize);
 			Bitmap bm = BitmapFactory.decodeFile(path, options);
 			if (bm == null) {
 				Log.e(TAG, "bitmap decode failed");
 				return null;
 			}
 
-			Log.i(TAG, "bitmap decoded size=" + bm.getWidth() + "x" + bm.getHeight());
-			final Bitmap scale = Bitmap.createScaledBitmap(bm, newWidth, newHeight, true);
+			Log.i(TAG,
+					"bitmap decoded size=" + bm.getWidth() + "x"
+							+ bm.getHeight());
+			final Bitmap scale = Bitmap.createScaledBitmap(bm, newWidth,
+					newHeight, true);
 			if (scale != null) {
 				bm.recycle();
 				bm = scale;
 			}
 
 			if (crop) {
-				final Bitmap cropped = Bitmap.createBitmap(bm, (bm.getWidth() - width) >> 1, (bm.getHeight() - height) >> 1, width, height);
+				final Bitmap cropped = Bitmap.createBitmap(bm,
+						(bm.getWidth() - width) >> 1,
+						(bm.getHeight() - height) >> 1, width, height);
 				if (cropped == null) {
 					return bm;
 				}
 
 				bm.recycle();
 				bm = cropped;
-				Log.i(TAG, "bitmap croped size=" + bm.getWidth() + "x" + bm.getHeight());
+				Log.i(TAG,
+						"bitmap croped size=" + bm.getWidth() + "x"
+								+ bm.getHeight());
 			}
 			return bm;
 
@@ -200,86 +217,101 @@ public class Util {
 
 		return null;
 	}
-	
+
 	/**
-     * 保持长宽比缩小Bitmap
-     *
-     * @param bitmap
-     * @param maxWidth
-     * @param maxHeight
-     * @return
-     */
-    public static Bitmap resizeBitmap(Bitmap bitmap, int maxWidth, int maxHeight) {
+	 * 保持长宽比缩小Bitmap
+	 * 
+	 * @param bitmap
+	 * @param maxWidth
+	 * @param maxHeight
+	 * @return
+	 */
+	public static Bitmap resizeBitmap(Bitmap bitmap, int maxWidth, int maxHeight) {
 
-        int originWidth  = bitmap.getWidth();
-        int originHeight = bitmap.getHeight();
+		int originWidth = bitmap.getWidth();
+		int originHeight = bitmap.getHeight();
 
-        // no need to resize
-        if (originWidth < maxWidth && originHeight < maxHeight) {
-            return bitmap;
-        }
-
-        int width  = originWidth;
-        int height = originHeight;
-
-        // 若图片过宽, 则保持长宽比缩放图片
-        if (originWidth > maxWidth) {
-            width = maxWidth;
-            double i = originWidth * 1.0 / maxWidth;
-            height = (int) Math.floor(originHeight / i);
-            bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false);
-        }
-        // 若图片过长, 则从上端截取
-        if (height > maxHeight) {
-            height = maxHeight;
-            bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height);
-        }
-
-//        Log.i(TAG, width + " width");
-//        Log.i(TAG, height + " height");
-
-        return bitmap;
-    }
-    
-    /**
-     * 保持长宽比缩小Bitmap
-     *
-     * @param bitmap
-     * @param maxWidth
-     * @param maxHeight
-     * @return
-     */
-    public static Bitmap resizeBitmap2(Bitmap bitmap, int maxWidth, int maxHeight) {
-
-        int originWidth  = bitmap.getWidth();
-        int originHeight = bitmap.getHeight();
-
-        // no need to resize
-        if (originWidth < maxWidth && originHeight < maxHeight) {
-            return bitmap;
-        }
-
-        int width  = originWidth;
-        int height = originHeight;
-
-        // 若图片过宽, 则保持长宽比缩放图片
-        if (originWidth > maxWidth) {
-            width = maxWidth;
-            double i = originWidth * 1.0 / maxWidth;
-            height = (int) Math.floor(originHeight / i);
-            bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false);
-        }
-        // 若图片过长, 则从上端截取
-        if (height > maxHeight) {
-            height = maxHeight;
-            bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height);
-        }else {
-			
+		// no need to resize
+		if (originWidth < maxWidth && originHeight < maxHeight) {
+			return bitmap;
 		}
 
-//        Log.i(TAG, width + " width");
-//        Log.i(TAG, height + " height");
+		int width = originWidth;
+		int height = originHeight;
 
-        return bitmap;
-    }
+		// 若图片过宽, 则保持长宽比缩放图片
+		if (originWidth > maxWidth) {
+			width = maxWidth;
+			double i = originWidth * 1.0 / maxWidth;
+			height = (int) Math.floor(originHeight / i);
+			bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false);
+		}
+		// 若图片过长, 则从上端截取
+		if (height > maxHeight) {
+			height = maxHeight;
+			bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height);
+		}
+
+		// Log.i(TAG, width + " width");
+		// Log.i(TAG, height + " height");
+
+		return bitmap;
+	}
+
+	/**
+	 * 保持长宽比缩小Bitmap
+	 * 
+	 * @param bitmap
+	 * @param maxWidth
+	 * @param maxHeight
+	 * @return
+	 */
+	public static Bitmap resizeBitmap2(Bitmap bitmap, int maxWidth,
+			int maxHeight) {
+
+		int originWidth = bitmap.getWidth();
+		int originHeight = bitmap.getHeight();
+
+		// no need to resize
+		if (originWidth < maxWidth && originHeight < maxHeight) {
+			return bitmap;
+		}
+
+		int width = originWidth;
+		int height = originHeight;
+
+		// 若图片过宽, 则保持长宽比缩放图片
+		if (originWidth > maxWidth) {
+			width = maxWidth;
+			double i = originWidth * 1.0 / maxWidth;
+			height = (int) Math.floor(originHeight / i);
+			if (height >= maxHeight) {
+				bitmap = Bitmap
+						.createScaledBitmap(bitmap, width, height, false);
+			} else {
+				double j = originHeight * 1.0 / maxHeight;
+				width = (int) Math.floor(originWidth / j);
+
+				bitmap = Bitmap.createScaledBitmap(bitmap, width, maxHeight,
+						false);
+			}
+
+		}
+		// 若图片过长, 则从上端截取
+		if (height > maxHeight) {
+			height = maxHeight;
+			bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height);
+		} 
+		//图片过宽，从中间截取
+		if (width > maxWidth) {
+			int margin = (width - maxWidth) / 2;
+			height = maxHeight;
+			bitmap = Bitmap.createBitmap(bitmap, margin, 0, maxWidth,
+					height);
+		}
+
+		// Log.i(TAG, width + " width");
+		// Log.i(TAG, height + " height");
+		return bitmap;
+	}
 }

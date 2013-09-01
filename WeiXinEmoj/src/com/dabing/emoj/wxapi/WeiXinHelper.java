@@ -110,8 +110,12 @@ public class WeiXinHelper {
 		msg.title = "分享自微信表情包";
 		msg.description = "";
 		Bitmap bitmap  = BitmapFactory.decodeFile(filepath);
-		Bitmap thumbBmp = Util.resizeBitmap(bitmap, 150, 225);		
+		Bitmap thumbBmp = Util.resizeBitmap(bitmap, 200, 300);		
 		byte[] thumbData = Util.bmpToByteArray(thumbBmp, true);
+		if(thumbData.length > 30000){
+			thumbBmp = Util.resizeBitmap(bitmap, 150, 225);
+			thumbData = Util.bmpToByteArray(thumbBmp, true);
+		}
 		Log.d(TAG, "sendPng thumbData:"+thumbData.length);
 		msg.thumbData = thumbData;	
 		bitmap.recycle();

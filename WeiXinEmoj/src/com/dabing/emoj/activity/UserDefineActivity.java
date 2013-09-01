@@ -3,53 +3,31 @@ package com.dabing.emoj.activity;
 import java.io.File;
 import java.io.FilenameFilter;
 
-import android.R.anim;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Message;
-import android.os.Messenger;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.CursorLoader;
-import android.support.v7.widget.GridLayout;
-import android.support.v7.widget.GridLayout.Alignment;
-import android.support.v7.widget.GridLayout.Spec;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
-import android.widget.AbsoluteLayout;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.adpater.AlbumCusorAdapter;
-import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.fragment.AlbumDetailFragment;
 import com.dabing.emoj.fragment.AlbumFragment;
 import com.dabing.emoj.fragment.UserDefineFragment.IEmojScanCallBack;
-import com.dabing.emoj.service.EmojScanService;
 import com.dabing.emoj.utils.FileHelper;
 import com.dabing.emoj.utils.FileInfo;
-import com.dabing.emoj.widget.AddImageButton;
 import com.dabing.emoj.widget.Album;
-import com.dabing.emoj.widget.AlbumImageView;
 import com.dabing.emoj.widget.CustomGridLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
@@ -62,7 +40,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 public class UserDefineActivity extends FragmentActivity implements IEmojScanCallBack {
 	boolean Mode = false;
 	ProgressBar mProgressBar;
-	TextView rightBtn;
+	TextView rightBtn,leftBtn;
 	CustomGridLayout gridLayout;
 	PullToRefreshScrollView mScrollView;
 	AlbumCusorAdapter adapter;
@@ -82,6 +60,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.user_define_layout);
 		mProgressBar = (ProgressBar) findViewById(R.id.user_define_progressBar);
+		leftBtn = (TextView) findViewById(R.id.umeng_fb_goback_btn);
 		rightBtn = (TextView) findViewById(R.id.sort_btn);
 		rightBtn.setOnClickListener(new OnClickListener() {
 			
@@ -216,6 +195,12 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 			Log.d(TAG, "fileinfo:"+fileInfo.filePath + " type:"+fileInfo.dbType);
 			startDetailFragment(fileInfo);
 		}
+	}
+
+	@Override
+	public void onInit(String TAG) {
+		// TODO Auto-generated method stub
+		Log.d(TAG, "onInit:"+TAG);
 	}
 
 }

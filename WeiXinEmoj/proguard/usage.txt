@@ -1068,7 +1068,7 @@ com.dabing.emoj.fragment.AlbumDetailFragment:
     109:110:public void setCallBack(com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack)
 com.dabing.emoj.fragment.AlbumFragment:
     static final int COLUM_NUM
-    306:314:protected void unregister()
+    310:318:protected void unregister()
 com.dabing.emoj.fragment.BaseEmojFragment:
     10:11:public BaseEmojFragment()
 com.dabing.emoj.fragment.CommonEmojFragment:
@@ -1417,22 +1417,22 @@ com.dabing.emoj.wxapi.WeiXinHelper:
     private static final int THUMB_SIZE
     private static final int THUMB_MAX_WIDTH
     private static final int THUMB_MAX_HEIGHT
-    188:189:public void shareIMGFromURL_Circle(java.lang.String)
-    192:228:public void shareIMGFromURL(java.lang.String,int)
-    235:235:public void shareEmojToCircle(java.lang.String)
-    300:301:public void shareIMG(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    308:309:public void shareIMGToCircle(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    315:355:public void shareIMG(java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    357:401:public void shareApp(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    407:408:public void shareTextToFriends(java.lang.String)
-    414:415:public void shareTextToCircle(java.lang.String)
-    422:434:private void shareText(java.lang.String,int)
-    442:443:public void shareWebpage(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    451:452:public void shareWebpageToCircle(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    460:501:private void shareWebpage(java.lang.String,java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    503:515:public void shareToOther(java.lang.String,java.lang.String)
-    518:576:public void shareToOther(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    596:596:static synthetic java.lang.String access$0(com.dabing.emoj.wxapi.WeiXinHelper,java.lang.String)
+    192:193:public void shareIMGFromURL_Circle(java.lang.String)
+    196:232:public void shareIMGFromURL(java.lang.String,int)
+    239:239:public void shareEmojToCircle(java.lang.String)
+    304:305:public void shareIMG(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    312:313:public void shareIMGToCircle(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    319:359:public void shareIMG(java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    361:405:public void shareApp(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    411:412:public void shareTextToFriends(java.lang.String)
+    418:419:public void shareTextToCircle(java.lang.String)
+    426:438:private void shareText(java.lang.String,int)
+    446:447:public void shareWebpage(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    455:456:public void shareWebpageToCircle(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    464:505:private void shareWebpage(java.lang.String,java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    507:519:public void shareToOther(java.lang.String,java.lang.String)
+    522:580:public void shareToOther(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    600:600:static synthetic java.lang.String access$0(com.dabing.emoj.wxapi.WeiXinHelper,java.lang.String)
     62:62:static synthetic com.tencent.mm.sdk.openapi.IWXAPI access$1(com.dabing.emoj.wxapi.WeiXinHelper)
     61:61:static synthetic android.content.Context access$2(com.dabing.emoj.wxapi.WeiXinHelper)
 com.dabing.emoj.wxapi.WeiXinHelper$1
@@ -3121,6 +3121,45 @@ com.umeng.update.UmengUpdateAgent:
 com.umeng.update.UpdateStatus
 d:
     25:25:public d()
+eclipse.local.sdk.Util:
+    private static final int ANDROID_API_LEVEL_3
+    private static final int ANDROID_API_LEVEL_8
+    private static final int ANDROID_API_LEVEL_5
+    private static final int ANDROID_API_LEVEL_11
+    22:22:public Util()
+eclipse.local.sdk.Util$AnimationHelper
+eclipse.local.sdk.Util$AnimationHelper$IHelper
+eclipse.local.sdk.Util$BitmapFactory:
+    private static final java.lang.String TAG
+    185:185:public Util$BitmapFactory()
+    191:193:public static android.graphics.Bitmap decodeFile(java.lang.String,float)
+    198:200:public static android.graphics.Bitmap decodeStream(java.io.InputStream)
+    205:207:public static android.graphics.Bitmap decodeStream(java.io.InputStream,float)
+    219:220:public static java.lang.String getDisplaySizeType(android.content.Context)
+    225:227:public static java.lang.String getDisplayDensityType(android.content.Context)
+    235:245:public static android.graphics.Bitmap getBitmapFromURL(java.lang.String)
+eclipse.local.sdk.Util$BitmapFactory$Decode
+eclipse.local.sdk.Util$ClipboardHelper
+eclipse.local.sdk.Util$ExifHelper
+eclipse.local.sdk.Util$SmoothScrollFactory
+eclipse.local.sdk.Util$SmoothScrollFactory$IScroll
+eclipse.local.sdk.a
+eclipse.local.sdk.b
+eclipse.local.sdk.c:
+    15:15:public final android.graphics.Bitmap decodeFile(java.lang.String,float)
+    25:25:public final android.graphics.Bitmap decodeStream(java.io.InputStream)
+    30:32:public final java.lang.String getDisplayDensityType(android.content.Context)
+    37:37:public final android.graphics.Bitmap decodeStream(java.io.InputStream,float)
+eclipse.local.sdk.d
+eclipse.local.sdk.e
+eclipse.local.sdk.f
+eclipse.local.sdk.g
+eclipse.local.sdk.h:
+    20:27:public final android.graphics.Bitmap decodeFile(java.lang.String,float)
+    40:42:public final android.graphics.Bitmap decodeStream(java.io.InputStream)
+    48:50:public final android.graphics.Bitmap decodeStream(java.io.InputStream,float)
+    55:64:public final java.lang.String getDisplayDensityType(android.content.Context)
+eclipse.local.sdk.i
 greendroid.app.ActionBarActivity
 greendroid.app.GDActivity:
     229:229:public greendroid.widget.ActionBarItem addActionBarItem(greendroid.widget.ActionBarItem)

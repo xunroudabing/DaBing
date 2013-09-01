@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 
 public class AddImageButton extends LinearLayout {
 	int mWidth = 80;
+	FitSizeImageView mImageView;
 	static final String TAG = AddImageButton.class.getSimpleName();
 	public AddImageButton(Context context){
 		this(context, null);
@@ -18,24 +19,23 @@ public class AddImageButton extends LinearLayout {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 		LayoutInflater.from(context).inflate(R.layout.user_define_album_add, this, true);
+		mImageView = (FitSizeImageView) findViewById(R.id.user_define_album_add_btnAdd);
 	}
 	public void setWidth(int width){
 		mWidth = width;
+		mImageView.setWidth(width-50);
 	}
-	/* (non-Javadoc)
+	
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see android.widget.LinearLayout#onMeasure(int, int)
 	 */
-	@Override
+	// @Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		// TODO Auto-generated method stub
-		int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-	    int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-	    int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-	    int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-	    //Log.d(TAG, "widthMode:"+widthMode+" widthSize:"+widthSize+" heightMode:"+heightMode+" heightSize:"+heightSize);
-		int w = MeasureSpec.makeMeasureSpec(mWidth, MeasureSpec.EXACTLY);
-		int h = MeasureSpec.makeMeasureSpec(mWidth, MeasureSpec.EXACTLY);
-		super.onMeasure(w, h);
+		int width = MeasureSpec.makeMeasureSpec(mWidth, MeasureSpec.EXACTLY);
+		super.onMeasure(width, heightMeasureSpec);
 	}
 
 }

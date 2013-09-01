@@ -12,7 +12,7 @@
         ptr:ptrHeaderBackground="@drawable/app_panel_bg"
         ptr:ptrAnimationStyle="flip"
         ptr:ptrHeaderTextAppearance="@style/PullToRreshMessage"
-        ptr:ptrMode="both" >
+        ptr:ptrMode="pullFromStart" >
 
         <com.dabing.emoj.widget.CustomGridLayout
             android:id="@+id/gridContainer"

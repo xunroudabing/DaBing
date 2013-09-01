@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.CursorAdapter;
 
 public class CustomGridLayout extends GridLayout {
+	View mFirstView;
 	CursorAdapter mAdapter;
 	static final String TAG = CustomGridLayout.class.getSimpleName();
 	public CustomGridLayout(Context context){
@@ -28,7 +29,9 @@ public class CustomGridLayout extends GridLayout {
 			setAdapter(mAdapter);
 		};
 	};
-	
+	public void setFirstView(View view){
+		mFirstView = view;
+	}
 	public void setAdapter(CursorAdapter adapter){
 		if(adapter != null){
 			if(mAdapter != null){
@@ -49,5 +52,10 @@ public class CustomGridLayout extends GridLayout {
 			View view = mAdapter.getView(i, null, this);
 			addView(view);
 		}
+		if(mFirstView != null){
+			addView(mFirstView, 0);
+		}
 	}
+	
+	
 }

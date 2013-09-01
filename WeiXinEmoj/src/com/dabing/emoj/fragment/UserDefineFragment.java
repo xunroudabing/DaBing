@@ -18,5 +18,10 @@ public class UserDefineFragment extends Fragment {
 		 * @param parms 参数
 		 */
 		void onClick(String TAG,Object parms);
+		/**
+		 * 初始化完成
+		 * @param TAG
+		 */
+		void onInit(String TAG);
 	}
 }
