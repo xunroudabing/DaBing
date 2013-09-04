@@ -50,6 +50,12 @@ public class AlbumDetailAdapter extends BaseAdapter {
 		imageView.setPath(file.getPath());
 		return root;
 	}
+	public File[] getData(){
+		return mFiles;
+	}
+	public File getFile(int position){
+		return mFiles[position];
+	}
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
