@@ -75,7 +75,9 @@ public class AlbumDetailFragment extends UserDefineFragment {
 		gridView.getLoadingLayoutProxy().setPullLabel(null);
 		gridView.getLoadingLayoutProxy().setReleaseLabel(null);
 		gridView.setOnPullEventListener(onPullEventListener);
-		
+		if(mCallBack != null){
+			mCallBack.onInit(TAG);
+		}
 		//gridView = (GridView) getView().findViewById(R.id.gridview);
 		scanFiles();
 	}
@@ -200,6 +202,7 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				Intent intent = new Intent(getActivity(), UserDefineEmojViewActivity.class);
 				intent.putExtra(AppConstant.INTENT_PIC_NAME, file.getPath());
 				intent.putExtra(AppConstant.INTENT_PIC_ARRAY, paths);
+				intent.putExtras(getActivity().getIntent());
 				startActivityForResult(intent, AppConstant.REQUEST_COMMON_EMOJ);
 			} catch (Exception e) {
 				// TODO: handle exception

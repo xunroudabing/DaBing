@@ -22,10 +22,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
+import android.media.ThumbnailUtils;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Process;
+import android.provider.MediaStore.Images.Thumbnails;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -50,6 +53,7 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 	int mHeight;
 	String mURL;
 	boolean isLoading = false;
+	static BitmapFactory.Options sDefaultOptions;
 	static final String TAG = CacheImageView.class.getSimpleName();
 	public CacheImageView(Context context){
 		this(context, null);
@@ -67,6 +71,14 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 		if(mCache == null){
 			mCache = GDUtils.getImageCache(context);	
 			//mCache.setThumb(AppConfig.getThumb());
+		}
+		if (sDefaultOptions == null) {
+			sDefaultOptions = new BitmapFactory.Options();
+			sDefaultOptions.inDither = true;
+			sDefaultOptions.inScaled = true;
+			sDefaultOptions.inDensity = DisplayMetrics.DENSITY_DEFAULT;
+			sDefaultOptions.inTargetDensity = getResources()
+					.getDisplayMetrics().densityDpi;
 		}
 		mAnimation = AnimationUtils.loadAnimation(context, R.anim.pop_in);
 		setOnImageViewLoadListener(this);
@@ -263,8 +275,12 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 		public void run() {
 			// TODO Auto-generated method stub
 			try {
-				Bitmap bitmap = com.dabing.emoj.wxapi.Util.extractThumbNail(
-						mPath, mThumbWidth, mThumbWidth, true);
+				FileInputStream is = new FileInputStream(new File(mPath));
+				Bitmap bitmap = BitmapFactory.decodeStream(new FlushedInputStream(is));
+				is.close();
+				//Bitmap bitmap = BitmapFactory.decodeFile(mPath, sDefaultOptions);
+//				Bitmap bitmap = com.dabing.emoj.wxapi.Util.extractThumbNail(
+//						mPath, mThumbWidth, mThumbWidth, true);
 				//Bitmap bitmap = BitmapFactory.decodeFile(mPath);
 				if (bitmap != null) {
 					Bitmap resizeBitmap = com.dabing.emoj.wxapi.Util

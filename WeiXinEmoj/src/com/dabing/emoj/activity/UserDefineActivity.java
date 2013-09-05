@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -21,6 +22,7 @@ import com.dabing.emoj.adpater.AlbumCusorAdapter;
 import com.dabing.emoj.fragment.AlbumDetailFragment;
 import com.dabing.emoj.fragment.AlbumFragment;
 import com.dabing.emoj.fragment.UserDefineFragment.IEmojScanCallBack;
+import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.FileHelper;
 import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.widget.Album;
@@ -30,6 +32,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+import com.tencent.mm.sdk.uikit.MMImageButton;
 
 
 /**
@@ -38,6 +41,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
  *
  */
 public class UserDefineActivity extends FragmentActivity implements IEmojScanCallBack {
+	String action = "send";
 	boolean Mode = false;
 	ProgressBar mProgressBar;
 	TextView rightBtn,leftBtn;
@@ -159,9 +163,45 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 		if(fm.findFragmentByTag(AlbumDetailFragment.class.getSimpleName()) == null){
 			FragmentTransaction trans = fm.beginTransaction();
 			AlbumDetailFragment fragment = AlbumDetailFragment.getInstance(fileInfo);
+			fragment.setCallBack(this);
 			trans.replace(R.id.user_define_container, fragment, AlbumDetailFragment.class.getSimpleName());
 			trans.addToBackStack(null);
 			trans.commit();
+		}
+	}
+	
+	public void SetupAction(){
+		Intent data = getIntent();
+		if(data.getStringExtra(AppConstant.INTENT_EMOJ_ACTION) != null){
+			action = data.getStringExtra(AppConstant.INTENT_EMOJ_ACTION);			
+		}
+		Log.d(TAG, "action:"+action);
+		if(action.equals("get")){			
+			leftBtn.setText(R.string.btn_userdefine_weixin);
+			leftBtn.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					finish();
+				}
+			});
+			leftBtn.setVisibility(View.VISIBLE);
+		}
+		else if (action.equals("pick")) {			
+			leftBtn.setText(R.string.btn_userdefine_back);
+			leftBtn.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					finish();
+				}
+			});
+			leftBtn.setVisibility(View.VISIBLE);
+		}
+		else {
+			leftBtn.setVisibility(View.INVISIBLE);
 		}
 	}
 	class ImageFilenameFilter implements FilenameFilter{
@@ -190,17 +230,37 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 	public void onClick(String TAG, Object parms) {
 		// TODO Auto-generated method stub
 		Log.d(TAG, "onClick");
+		//点击相册跳转至图片列表
 		if(TAG.equals(AlbumFragment.class.getSimpleName())){
 			FileInfo fileInfo = (FileInfo) parms;
 			Log.d(TAG, "fileinfo:"+fileInfo.filePath + " type:"+fileInfo.dbType);
 			startDetailFragment(fileInfo);
+			
+			
 		}
+		
 	}
 
 	@Override
 	public void onInit(String TAG) {
 		// TODO Auto-generated method stub
 		Log.d(TAG, "onInit:"+TAG);
+		if(TAG.equals(AlbumFragment.class.getSimpleName())){
+			SetupAction();
+		}
+		else if (TAG.equals(AlbumDetailFragment.class.getSimpleName())) {
+			leftBtn.setText(R.string.btn_userdefine_back);
+			leftBtn.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					FragmentManager fm = getSupportFragmentManager();
+					fm.popBackStack(null, 0);
+				}
+			});
+			leftBtn.setVisibility(View.VISIBLE);
+		}
 	}
 
 }

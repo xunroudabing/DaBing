@@ -24,7 +24,9 @@
     <string name="ex_oom">图片显示异常,这可能与设备可用内存不足有关</string>
     <string name="ex_runtime">程序运行异常,请检查您的网络连接</string>
     <string name="btn_userdefine_edit">编辑</string>
-    
+    <string name="btn_userdefine_up">上一级</string>
+    <string name="btn_userdefine_back">返回</string>
+    <string name="btn_userdefine_weixin">微信</string>
     <string name="title_custom">自定义表情</string>
     <string name="p1">1.为什么无法发送表情?</string>
     <string name="a1">答:首先请您将设备上的微信升级至最新版本(微信4.3以下的版本是不支持发送动态表情的)。如果您的微信已经是最新版本,请您尝试重启一下设备。如果重启设备后仍然无法发送表情,那么建议您重新安装一下微信。</string>

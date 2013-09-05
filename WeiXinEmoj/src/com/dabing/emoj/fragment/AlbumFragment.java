@@ -86,7 +86,10 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		
 		bindGridLayout();
 		getLoaderManager().initLoader(0, null, this);
-		
+		//通知父activity初始化完成
+		if(mCallBack != null){
+			mCallBack.onInit(TAG);
+		}
 		//扫描图片
 		if(!IsScaned){
 			IsScaned = true;
@@ -181,6 +184,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		super.onDetach();
 	}
 	// *********函数**************
+	
 	protected void refleshGridLayout() {
 		if (adapter != null) {
 			adapter.reflesh();

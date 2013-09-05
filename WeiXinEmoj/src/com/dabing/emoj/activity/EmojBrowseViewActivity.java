@@ -354,7 +354,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		layout.setVisibility(View.GONE);
 		exceptionLayout.setVisibility(View.VISIBLE);
 	}
-	private void hideException(){
+	protected void hideException(){
 		exceptionLayout.setVisibility(View.GONE);
 	}
 	class EmojHandler extends Handler{
