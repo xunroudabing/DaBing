@@ -86,23 +86,23 @@ import com.umeng.analytics.MobclickAgent;
 
 public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListener,OnClickListener {
 	 /** Constant used as menu item id for setting zoom control type */
-    private static final int MENU_ID_ZOOM = 0;
+    protected static final int MENU_ID_ZOOM = 0;
     /** Constant used as menu item id for setting pan control type */
-    private static final int MENU_ID_PAN = 1;
+    protected static final int MENU_ID_PAN = 1;
     /** Constant used as menu item id for resetting zoom state */
-    private static final int MENU_ID_RESET = 2;
+    protected static final int MENU_ID_RESET = 2;
     /** Image zoom view */
-    private ImageZoomView mZoomView;
+    protected ImageZoomView mZoomView;
     /** Zoom state */
-    private ZoomState mZoomState;
+    protected ZoomState mZoomState;
     /** Decoded bitmap image */
-    private Bitmap mBitmap;
+    protected Bitmap mBitmap;
     /** On touch listener for zoom view */
-    private SimpleZoomListener mZoomListener;
-    private ZoomControls mZoomControls;
-    private Button mZoomIn;
-    private Button mZoomOut;
-    private float seed=1.2f;
+    protected SimpleZoomListener mZoomListener;
+    protected ZoomControls mZoomControls;
+    protected Button mZoomIn;
+    protected Button mZoomOut;
+    protected float seed=1.2f;
 	//************************************
     boolean emotionMode = false;
     RelativeLayout container;
@@ -532,7 +532,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		}
 		return super.onKeyDown(keyCode, event);
 	};
-	private void recycle(){
+	protected void recycle(){
 		if(mGifView != null){	
 			mGifView.interrupt();
 		}
@@ -565,7 +565,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		}
 		super.onDestroy();
 	};
-	private void SetupWxAction(){
+	protected void SetupWxAction(){
 		//直接打开应用
 		if(action.equals("send")){
 			//隐藏确定按钮
@@ -672,7 +672,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 	 * 0-加载中 1-gif 2-png
 	 * @param i
 	 */
-	private void show(int i){
+	protected void show(int i){
 		if(i== 0){
 			exceptionLayout.setVisibility(View.GONE);
 			layout.setVisibility(View.VISIBLE);
