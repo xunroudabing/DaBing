@@ -258,7 +258,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		}
 	};
 
-	private Handler mHandler = new Handler() {
+	private  Handler mHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
@@ -295,13 +295,13 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	private void BindService() {
 		Intent intent = new Intent(getActivity().getApplicationContext(),
 				EmojScanService.class);
-		getActivity().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+		getActivity().getApplicationContext().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 		mBound = true;
 	}
 
 	private void UnBindService() {
 		try {
-			getActivity().unbindService(mConnection);
+			getActivity().getApplicationContext().unbindService(mConnection);
 			mBound = false;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -341,12 +341,13 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	// 开始扫描
 	public void scanfiles() {
 		try {
+			Log.d(TAG, "222");
 			Message message = Message.obtain(null, EmojScanService.CLIENT_SCAN);
 			message.replyTo = client;
 			mService.send(message);
 		} catch (Exception e) {
 			// TODO: handle exception
-			Log.e(TAG, e.toString());
+			Log.e(TAG, "11:"+e.toString());
 		}
 	}
 

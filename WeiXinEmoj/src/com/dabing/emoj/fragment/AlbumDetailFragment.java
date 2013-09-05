@@ -4,6 +4,8 @@ import greendroid.util.GDUtils;
 
 import java.io.File;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,7 +18,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.dabing.emoj.R;
+import com.dabing.emoj.activity.UserDefineEmojViewActivity;
 import com.dabing.emoj.adpater.AlbumDetailAdapter;
+import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.FileHelper;
 import com.dabing.emoj.utils.FileInfo;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -102,6 +106,18 @@ public class AlbumDetailFragment extends UserDefineFragment {
 		// TODO Auto-generated method stub
 		super.onResume();
 	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		Log.d(TAG, "requestCode:"+requestCode+" resultCode:"+resultCode);
+		if(requestCode == AppConstant.REQUEST_COMMON_EMOJ){
+			if(resultCode == Activity.RESULT_OK){
+				getActivity().getParent().setResult(Activity.RESULT_OK, data);
+				getActivity().getParent().finish();
+			}
+		}
+	}
 	//*****函数*****
 	/**
 	 * 设置与activity的回调监听
@@ -180,6 +196,11 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				for (int i = 0; i < mFiles.length; i++) {
 					paths[i] = mFiles[i].getPath();
 				}
+				
+				Intent intent = new Intent(getActivity(), UserDefineEmojViewActivity.class);
+				intent.putExtra(AppConstant.INTENT_PIC_NAME, file.getPath());
+				intent.putExtra(AppConstant.INTENT_PIC_ARRAY, paths);
+				startActivityForResult(intent, AppConstant.REQUEST_COMMON_EMOJ);
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());

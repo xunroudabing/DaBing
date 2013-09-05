@@ -93,7 +93,8 @@
         <activity android:name=".advertise.WAPS_AppWallActivity"></activity>
         <activity android:name=".advertise.WAPS_AppDetailActivity"></activity>
         <activity android:name=".advertise.WAPS_ADView" android:configChanges="keyboardHidden|orientation"/>    
-        <activity android:name=".activity.MainTab2Activity"></activity>  
+        <activity android:name=".activity.MainTab2Activity" android:screenOrientation="portrait"></activity>  
+        <activity android:name=".activity.UserDefineEmojViewActivity"></activity>
         <receiver android:name=".service.StartUpBroadcast"></receiver>
         <receiver android:name=".service.LoginSuccessBroadcast"></receiver>
         <service  android:name=".service.WeiXinEmojService"></service>
