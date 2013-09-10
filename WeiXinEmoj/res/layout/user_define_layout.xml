@@ -36,7 +36,9 @@
 			style="@android:style/Widget.ProgressBar.Small.Inverse"
 			android:visibility="invisible"
 			android:layout_toLeftOf="@id/sort_btn"
+			android:layout_alignWithParentIfMissing="true"
 			android:layout_centerVertical="true"
+			android:layout_marginRight="2dp"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"></ProgressBar>
 	</RelativeLayout>

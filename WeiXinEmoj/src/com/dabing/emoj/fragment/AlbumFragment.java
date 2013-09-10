@@ -6,6 +6,7 @@ import com.dabing.emoj.db.UserDefineContentProvider;
 import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.service.EmojScanService;
 import com.dabing.emoj.utils.FileInfo;
+import com.dabing.emoj.widget.Album;
 import com.dabing.emoj.widget.Album.AlbumClickListener;
 import com.dabing.emoj.widget.AddImageButton;
 import com.dabing.emoj.widget.AlbumImageView;
@@ -88,7 +89,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		getLoaderManager().initLoader(0, null, this);
 		//通知父activity初始化完成
 		if(mCallBack != null){
-			mCallBack.onInit(TAG);
+			mCallBack.onInit(TAG,null);
 		}
 		//扫描图片
 		if(!IsScaned){
@@ -139,7 +140,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		getLoaderManager().destroyLoader(0);
 		UnBindService();
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -231,6 +232,17 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 				scanfiles();
 			}
 		}, delay);
+	}
+	
+	public void recycle(){
+//		for (int i = 0; i < gridLayout.getChildCount(); i++) {
+//			View v = gridLayout.getChildAt(i);
+//			if(v instanceof Album){
+//				Album album = (Album) v;
+//				album.recycle();
+//			}
+//		}
+		gridLayout.removeAllViews();
 	}
 	// *********成员*********
 	private AlbumClickListener albumClickListener = new AlbumClickListener() {

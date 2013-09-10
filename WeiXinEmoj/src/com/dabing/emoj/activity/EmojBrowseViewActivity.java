@@ -30,6 +30,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -68,6 +69,8 @@ import com.dabing.emoj.utils.FileType;
 import com.dabing.emoj.utils.FileTypeJudge;
 import com.dabing.emoj.utils.PackageDownloader;
 import com.dabing.emoj.utils.RegularEmojManager;
+import com.dabing.emoj.utils.Util;
+import com.dabing.emoj.utils.Utils;
 import com.dabing.emoj.wxapi.WeiXinHelper;
 import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.IWXAPI;
@@ -134,6 +137,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 	Animation left_out;
 	Animation right_out;
 	Animation pop_in;
+	static BitmapFactory.Options sDefaultOptions;
 	static final float ZOOM_RATIO = 0.25f;
 	static final long delayMillis = 5000;
 	static final String TAG = EmojBrowseViewActivity.class.getSimpleName();
@@ -158,6 +162,14 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		left_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_left_out);
 		right_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_right_out);
 		pop_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pop_in);
+		if (sDefaultOptions == null) {
+			sDefaultOptions = new BitmapFactory.Options();
+			sDefaultOptions.inDither = true;
+			sDefaultOptions.inScaled = true;
+			sDefaultOptions.inDensity = DisplayMetrics.DENSITY_DEFAULT;
+			sDefaultOptions.inTargetDensity = getResources()
+					.getDisplayMetrics().densityDpi;
+		}
 		Initialize();
 	}
 	protected void Initialize(){
@@ -757,7 +769,13 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
         mZoomState = new ZoomState();
         File picFile=new File(path);
         if(picFile.exists()){
-        	mBitmap = BitmapFactory.decodeFile(path);
+        	//mBitmap = BitmapFactory.decodeFile(path);
+        	mBitmap = null;
+        	int w = (int) (Utils.getScreenWidth(getApplicationContext())*0.5F);
+        	int h = (int) (Utils.getScreenHeight(getApplicationContext())*0.5F);
+        	mBitmap = Util.decodeSampledBitmap(mFilePath,w,h);
+        	int size = mBitmap.getRowBytes() * mBitmap.getHeight();
+        	Log.d(TAG,w+"*"+h+ " bitmap.size:"+size);
         }
 
         mZoomListener = new SimpleZoomListener();

@@ -76,7 +76,7 @@ public class AlbumDetailFragment extends UserDefineFragment {
 		gridView.getLoadingLayoutProxy().setReleaseLabel(null);
 		gridView.setOnPullEventListener(onPullEventListener);
 		if(mCallBack != null){
-			mCallBack.onInit(TAG);
+			mCallBack.onInit(TAG,mFileInfo);
 		}
 		//gridView = (GridView) getView().findViewById(R.id.gridview);
 		scanFiles();
@@ -141,7 +141,7 @@ public class AlbumDetailFragment extends UserDefineFragment {
 	}
 	
 	protected void bindGridView(File[] files){
-		adapter = new AlbumDetailAdapter(getActivity().getApplicationContext(), files, COLUM_NUM);		
+		adapter = new AlbumDetailAdapter(getActivity(), files, COLUM_NUM);		
 		gridView.getRefreshableView().setAdapter(adapter);
 		gridView.getRefreshableView().setOnItemClickListener(itemClickListener);
 	}
@@ -167,9 +167,7 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
 			}finally{
-				if(mCallBack != null){
-					mCallBack.onEnd();
-				}
+				mHandler.sendEmptyMessage(10);
 			}
 		}
 		
@@ -202,6 +200,7 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				Intent intent = new Intent(getActivity(), UserDefineEmojViewActivity.class);
 				intent.putExtra(AppConstant.INTENT_PIC_NAME, file.getPath());
 				intent.putExtra(AppConstant.INTENT_PIC_ARRAY, paths);
+				intent.putExtra(AppConstant.INTENT_TITLE, getString(R.string.title_custom));
 				intent.putExtras(getActivity().getIntent());
 				startActivityForResult(intent, AppConstant.REQUEST_COMMON_EMOJ);
 			} catch (Exception e) {
@@ -221,7 +220,11 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				File[] files = (File[]) msg.obj;
 				bindGridView(files);
 				break;
-
+			//异步任务结束	
+			case 10:
+				if(mCallBack != null){
+					mCallBack.onEnd();
+				}
 			default:
 				break;
 			}

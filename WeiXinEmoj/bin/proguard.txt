@@ -175,7 +175,7 @@
 # view res/layout/header_fragment_gridview_crystal_item.xml #generated:8
 -keep class com.dabing.emoj.widget.CrystalButton { <init>(...); }
 
-# view res/layout/user_define_fragment1.xml #generated:17
+# view res/layout/user_define_fragment1.xml #generated:18
 -keep class com.dabing.emoj.widget.CustomGridLayout { <init>(...); }
 
 # view res/layout/emoj_item.xml #generated:11

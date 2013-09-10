@@ -50,6 +50,7 @@ public class AlbumImageView extends LinearLayout {
 	public void setImageResource(int resId){
 		mImageView.setImageResource(resId);
 	}
+
 	/* (non-Javadoc)
 	 * @see android.widget.LinearLayout#onMeasure(int, int)
 	 */

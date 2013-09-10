@@ -9,6 +9,7 @@
         android:id="@+id/pull_refresh_scrollview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:fadingEdge="none"
         ptr:ptrHeaderBackground="@drawable/app_panel_bg"
         ptr:ptrAnimationStyle="flip"
         ptr:ptrHeaderTextAppearance="@style/PullToRreshMessage"

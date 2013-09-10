@@ -45,7 +45,6 @@ import greendroid.widget.AsyncImageView.OnImageViewLoadListener;
 public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoadListener {
 
 	CacheHandler mHandler = new CacheHandler();
-	static ExecutorService mService;
 	static ImageCache mCache;
 	OnImageViewLoadListener listener;
 	Animation mAnimation;
@@ -64,10 +63,6 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 	public CacheImageView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
-		if(mService == null){
-			mService = GDUtils.getExecutor(context);
-					
-		}
 		if(mCache == null){
 			mCache = GDUtils.getImageCache(context);	
 			//mCache.setThumb(AppConfig.getThumb());
@@ -103,11 +98,11 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 					cache));
 			return;
 		}
-		mService.execute(new ThumbnailTask(path, width));
+		GDUtils.getExecutor(getContext()).execute(new ThumbnailTask(path, width));
 	}
 	public void reloadImage(){
 		setImageDrawable(null);
-		mService.execute(new GetImageTask(mURL));
+		GDUtils.getExecutor(getContext()).execute(new GetImageTask(mURL));
 	}
 	public void setLoadingListener(OnImageViewLoadListener l){
 		listener = l;
@@ -275,12 +270,12 @@ public class CacheImageView extends EmojAsyncImageView implements OnImageViewLoa
 		public void run() {
 			// TODO Auto-generated method stub
 			try {
-				FileInputStream is = new FileInputStream(new File(mPath));
-				Bitmap bitmap = BitmapFactory.decodeStream(new FlushedInputStream(is));
-				is.close();
+//				FileInputStream is = new FileInputStream(new File(mPath));
+//				Bitmap bitmap = BitmapFactory.decodeStream(new FlushedInputStream(is));
+//				is.close();
 				//Bitmap bitmap = BitmapFactory.decodeFile(mPath, sDefaultOptions);
-//				Bitmap bitmap = com.dabing.emoj.wxapi.Util.extractThumbNail(
-//						mPath, mThumbWidth, mThumbWidth, true);
+				Bitmap bitmap = com.dabing.emoj.wxapi.Util.extractThumbNail(
+						mPath, mThumbWidth, mThumbWidth, true);
 				//Bitmap bitmap = BitmapFactory.decodeFile(mPath);
 				if (bitmap != null) {
 					Bitmap resizeBitmap = com.dabing.emoj.wxapi.Util

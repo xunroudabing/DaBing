@@ -5,6 +5,7 @@ import java.io.FilenameFilter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -44,7 +45,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 	String action = "send";
 	boolean Mode = false;
 	ProgressBar mProgressBar;
-	TextView rightBtn,leftBtn;
+	TextView rightBtn,leftBtn,mTitle;
 	CustomGridLayout gridLayout;
 	PullToRefreshScrollView mScrollView;
 	AlbumCusorAdapter adapter;
@@ -63,6 +64,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.user_define_layout);
+		mTitle = (TextView) findViewById(R.id.umeng_fb_conversation_title);
 		mProgressBar = (ProgressBar) findViewById(R.id.user_define_progressBar);
 		leftBtn = (TextView) findViewById(R.id.umeng_fb_goback_btn);
 		rightBtn = (TextView) findViewById(R.id.sort_btn);
@@ -176,6 +178,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 			action = data.getStringExtra(AppConstant.INTENT_EMOJ_ACTION);			
 		}
 		Log.d(TAG, "action:"+action);
+		rightBtn.setVisibility(View.VISIBLE);
 		if(action.equals("get")){			
 			leftBtn.setText(R.string.btn_userdefine_weixin);
 			leftBtn.setOnClickListener(new OnClickListener() {
@@ -242,14 +245,16 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 	}
 
 	@Override
-	public void onInit(String TAG) {
+	public void onInit(String TAG,Object obj) {
 		// TODO Auto-generated method stub
 		Log.d(TAG, "onInit:"+TAG);
 		if(TAG.equals(AlbumFragment.class.getSimpleName())){
+			mTitle.setText(R.string.title_custom);
 			SetupAction();
 		}
 		else if (TAG.equals(AlbumDetailFragment.class.getSimpleName())) {
-			leftBtn.setText(R.string.btn_userdefine_back);
+			rightBtn.setVisibility(View.GONE);
+			leftBtn.setText(R.string.btn_userdefine_up);
 			leftBtn.setOnClickListener(new OnClickListener() {
 				
 				@Override
@@ -260,6 +265,10 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 				}
 			});
 			leftBtn.setVisibility(View.VISIBLE);
+			if(obj != null){
+				FileInfo fileInfo = (FileInfo) obj;
+				mTitle.setText(fileInfo.dbName);
+			}
 		}
 	}
 

@@ -22,6 +22,6 @@ public class UserDefineFragment extends Fragment {
 		 * 初始化完成
 		 * @param TAG
 		 */
-		void onInit(String TAG);
+		void onInit(String TAG,Object parms);
 	}
 }
