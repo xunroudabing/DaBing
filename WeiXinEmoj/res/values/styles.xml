@@ -4,7 +4,7 @@
     <style name="PageIndicator">
 		<item name="dotDrawable">@drawable/page_indicator_dot_style2</item>
 	</style>
-	<style name="largeCustomProgressBar" parent="@android:style/Widget.ProgressBar">
+	<style name="largeCustomProgressBar" parent="@android:style/Widget.ProgressBar.Large">
         <item name="android:indeterminateDrawable">@drawable/custom_loading</item>
     </style>
     <!-- 昵称文字样式 -->
