@@ -32,6 +32,9 @@ public class CustomGridLayout extends GridLayout {
 	public void setFirstView(View view){
 		mFirstView = view;
 	}
+	public View getFirstView(){
+		return mFirstView;
+	}
 	public void setAdapter(CursorAdapter adapter){
 		if(adapter != null){
 			if(mAdapter != null){

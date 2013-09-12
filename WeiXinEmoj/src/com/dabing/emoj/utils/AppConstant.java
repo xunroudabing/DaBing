@@ -58,4 +58,8 @@ public class AppConstant {
 	public static final String INTENT_EMOJ_ACTION = "INTENT_EMOJ_ACTION";
 	
 	public static final int REQUEST_COMMON_EMOJ = 11;
+	/**
+	 * 自定义表情添加文件
+	 */
+	public static final int REQUEST_ADD_FILE = 12;
 }

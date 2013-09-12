@@ -3,6 +3,12 @@ package com.dabing.emoj.fragment;
 import greendroid.util.GDUtils;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+
 
 import android.app.Activity;
 import android.content.Intent;
@@ -162,6 +168,9 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				File file = new File(mPath);
 				File[] list = file.listFiles(new FileHelper.FileContainsImageFilter());
 				Log.d(TAG, "list.length:"+list.length);
+				List<File> files = Arrays.asList(list);
+				Collections.sort(files, dateComparator);
+				files.toArray(list);
 				mHandler.sendMessage(Message.obtain(mHandler, 0, list));
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -172,7 +181,19 @@ public class AlbumDetailFragment extends UserDefineFragment {
 		}
 		
 	}
+	//修改日期排序
+	private Comparator<File> dateComparator = new Comparator<File>() {
+
+		@Override
+		public int compare(File object1, File object2) {
+			// TODO Auto-generated method stub
+			return longToCompareInt(object2.lastModified() - object1.lastModified());
+		}
+	};
 	
+    private int longToCompareInt(long result) {
+        return result > 0 ? 1 : (result < 0 ? -1 : 0);
+    }
 	private OnPullEventListener<GridView> onPullEventListener = new OnPullEventListener<GridView>() {
 
 		@Override

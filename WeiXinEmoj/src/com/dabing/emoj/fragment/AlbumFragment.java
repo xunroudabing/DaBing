@@ -1,10 +1,12 @@
 package com.dabing.emoj.fragment;
 
 import com.dabing.emoj.R;
+import com.dabing.emoj.activity.UserDefineAddActivity;
 import com.dabing.emoj.adpater.AlbumCusorAdapter;
 import com.dabing.emoj.db.UserDefineContentProvider;
 import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.service.EmojScanService;
+import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.widget.Album;
 import com.dabing.emoj.widget.Album.AlbumClickListener;
@@ -33,11 +35,13 @@ import android.support.v4.content.Loader;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ScrollView;
 
 public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks<Cursor>{
+
 	int mWidth = 80;
 	IEmojScanCallBack mCallBack;
 	Messenger client;
@@ -184,6 +188,15 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		// TODO Auto-generated method stub
 		super.onDetach();
 	}
+	
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.Fragment#onActivityResult(int, int, android.content.Intent)
+	 */
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		Log.d(TAG, "onActivityResult:"+requestCode + " " + resultCode);
+	}
 	// *********函数**************
 	
 	protected void refleshGridLayout() {
@@ -195,12 +208,12 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	protected void bindGridLayout(){
 		AddImageButton addImageButton = new AddImageButton(getActivity());
 		addImageButton.setWidth(mWidth);
+		addImageButton.setOnClick(addClickListener);
 		gridLayout.setFirstView(addImageButton);
 		if(adapter == null){
 			adapter = new AlbumCusorAdapter(getActivity().getApplicationContext(), null,COLUM_NUM,albumClickListener);
 		}
 		gridLayout.setAdapter(adapter);		
-		
 		
 		
 	}
@@ -235,16 +248,22 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	}
 	
 	public void recycle(){
-//		for (int i = 0; i < gridLayout.getChildCount(); i++) {
-//			View v = gridLayout.getChildAt(i);
-//			if(v instanceof Album){
-//				Album album = (Album) v;
-//				album.recycle();
-//			}
-//		}
 		gridLayout.removeAllViews();
 	}
 	// *********成员*********
+	/**
+	 * 添加文件夹
+	 */
+	private OnClickListener addClickListener = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent(getActivity(), UserDefineAddActivity.class);
+			getActivity().startActivityForResult(intent, AppConstant.REQUEST_ADD_FILE);
+		}
+	};
+	
 	private AlbumClickListener albumClickListener = new AlbumClickListener() {
 		
 		@Override

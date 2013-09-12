@@ -25,7 +25,9 @@ public class AddImageButton extends LinearLayout {
 		mWidth = width;
 		mImageView.setWidth(width-50);
 	}
-	
+	public void setOnClick(OnClickListener listener){
+		mImageView.setOnClickListener(listener);
+	}
 	/*
 	 * (non-Javadoc)
 	 * 

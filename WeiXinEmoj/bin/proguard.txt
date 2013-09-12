@@ -66,6 +66,9 @@
 # view AndroidManifest.xml #generated:92
 -keep class com.dabing.emoj.activity.UserDefineActivity { <init>(...); }
 
+# view AndroidManifest.xml #generated:98
+-keep class com.dabing.emoj.activity.UserDefineAddActivity { <init>(...); }
+
 # view AndroidManifest.xml #generated:97
 -keep class com.dabing.emoj.activity.UserDefineEmojViewActivity { <init>(...); }
 
@@ -75,16 +78,16 @@
 # view AndroidManifest.xml #generated:75
 -keep class com.dabing.emoj.activity.WelcomeActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:115
+# view AndroidManifest.xml #generated:116
 -keep class com.dabing.emoj.admin.MakeEmotionActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:114
+# view AndroidManifest.xml #generated:115
 -keep class com.dabing.emoj.admin.SelectEmojActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:113
+# view AndroidManifest.xml #generated:114
 -keep class com.dabing.emoj.admin.WebLoginActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:112
+# view AndroidManifest.xml #generated:113
 -keep class com.dabing.emoj.admin.uploadPicActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:95
@@ -100,28 +103,28 @@
 # view res/layout/emoj_browse_picture_detail.xml #generated:35
 -keep class com.dabing.emoj.advertise.WAPS_CustomAd { <init>(...); }
 
-# view AndroidManifest.xml #generated:110
+# view AndroidManifest.xml #generated:111
 -keep class com.dabing.emoj.db.UserDefineContentProvider { <init>(...); }
 
-# view AndroidManifest.xml #generated:116
+# view AndroidManifest.xml #generated:117
 -keep class com.dabing.emoj.demo.demo1 { <init>(...); }
 
-# view AndroidManifest.xml #generated:121
+# view AndroidManifest.xml #generated:122
 -keep class com.dabing.emoj.demo.demoFile { <init>(...); }
 
-# view AndroidManifest.xml #generated:119
+# view AndroidManifest.xml #generated:120
 -keep class com.dabing.emoj.demo.demoOOM { <init>(...); }
 
-# view AndroidManifest.xml #generated:120
+# view AndroidManifest.xml #generated:121
 -keep class com.dabing.emoj.demo.demoPanel { <init>(...); }
 
-# view AndroidManifest.xml #generated:117
+# view AndroidManifest.xml #generated:118
 -keep class com.dabing.emoj.demo.democall { <init>(...); }
 
-# view AndroidManifest.xml #generated:103
+# view AndroidManifest.xml #generated:104
 -keep class com.dabing.emoj.demo.demolist { <init>(...); }
 
-# view AndroidManifest.xml #generated:118
+# view AndroidManifest.xml #generated:119
 -keep class com.dabing.emoj.demo.demoshow { <init>(...); }
 
 # view res/layout/emoj_index1.xml #generated:34
@@ -137,22 +140,22 @@
 # view res/layout/emoj_img_detail.xml #generated:24
 -keep class com.dabing.emoj.imagezoomview.ImageZoomView { <init>(...); }
 
-# view AndroidManifest.xml #generated:132
+# view AndroidManifest.xml #generated:133
 -keep class com.dabing.emoj.service.AppRegister { <init>(...); }
 
-# view AndroidManifest.xml #generated:102
+# view AndroidManifest.xml #generated:103
 -keep class com.dabing.emoj.service.EmojScanService { <init>(...); }
 
-# view AndroidManifest.xml #generated:99
+# view AndroidManifest.xml #generated:100
 -keep class com.dabing.emoj.service.LoginSuccessBroadcast { <init>(...); }
 
-# view AndroidManifest.xml #generated:98
+# view AndroidManifest.xml #generated:99
 -keep class com.dabing.emoj.service.StartUpBroadcast { <init>(...); }
 
-# view AndroidManifest.xml #generated:101
+# view AndroidManifest.xml #generated:102
 -keep class com.dabing.emoj.service.WeiXinEmojLoginService { <init>(...); }
 
-# view AndroidManifest.xml #generated:100
+# view AndroidManifest.xml #generated:101
 -keep class com.dabing.emoj.service.WeiXinEmojService { <init>(...); }
 
 # view res/layout/user_define_album.xml #generated:13
@@ -201,19 +204,22 @@
 # view res/layout/wrapper_item_nopadding.xml #generated:2
 -keep class com.dabing.emoj.widget.WrapperImageView { <init>(...); }
 
-# view AndroidManifest.xml #generated:131
+# view AndroidManifest.xml #generated:132
 -keep class com.dabing.emoj.wxapi.WXEntryActivity { <init>(...); }
 
 # view res/layout/user_define_fragment2.xml #generated:7
 -keep class com.handmark.pulltorefresh.library.PullToRefreshGridView { <init>(...); }
 
+# view res/layout/user_define_add_file.xml #generated:8
+-keep class com.handmark.pulltorefresh.library.PullToRefreshListView { <init>(...); }
+
 # view res/layout/user_define_fragment1.xml #generated:7
 -keep class com.handmark.pulltorefresh.library.PullToRefreshScrollView { <init>(...); }
 
-# view AndroidManifest.xml #generated:140
+# view AndroidManifest.xml #generated:141
 -keep class com.tencent.appwallsdk.activity.QQAppWallActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:150
+# view AndroidManifest.xml #generated:151
 -keep class com.tencent.appwallsdk.service.DownloadService { <init>(...); }
 
 # view res/layout/app_wall.xml #generated:6
@@ -239,16 +245,16 @@
 # view res/layout/security_image.xml #generated:2
 -keep class com.tencent.mm.sdk.uikit.applet.SecurityImage { <init>(...); }
 
-# view AndroidManifest.xml #generated:126
+# view AndroidManifest.xml #generated:127
 -keep class com.umeng.common.net.DownloadingService { <init>(...); }
 
-# view AndroidManifest.xml #generated:125
+# view AndroidManifest.xml #generated:126
 -keep class com.umeng.fb.ui.FeedbackConversation { <init>(...); }
 
-# view AndroidManifest.xml #generated:124
+# view AndroidManifest.xml #generated:125
 -keep class com.umeng.fb.ui.FeedbackConversations { <init>(...); }
 
-# view AndroidManifest.xml #generated:123
+# view AndroidManifest.xml #generated:124
 -keep class com.umeng.fb.ui.SendFeedback { <init>(...); }
 
 # view res/layout/umeng_fb_conversation.xml #generated:14

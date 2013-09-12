@@ -12,6 +12,6 @@ public final class R {
 		public static final int app_name = 0x7f08001c;
 	}
 	public static final class drawable {
-		public static final int icon = 0x7f020102;
+		public static final int icon = 0x7f020103;
 	}
 }
