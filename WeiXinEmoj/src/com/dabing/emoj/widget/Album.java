@@ -4,7 +4,9 @@ import greendroid.util.GDUtils;
 
 import java.util.concurrent.ExecutorService;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
@@ -15,15 +17,20 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dabing.emoj.R;
 import com.dabing.emoj.fragment.UserDefineFragment.IEmojScanCallBack;
+import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.FileInfo;
 
 public class Album extends LinearLayout {
+	Dialog confirmDialog;
+	boolean isDelMode;//是否是删除模式
 	AlbumClickListener mListener;
 	FileInfo mFileInfo;
 	AlbumImageView imageView;
@@ -32,6 +39,8 @@ public class Album extends LinearLayout {
 	TextView childSizeTextView;
 	int mWidth = 80;
 	int mThumbWidth = 75;
+	static Animation zoomOut;
+	static Animation zoomEnter;
 	static BitmapFactory.Options sDefaultOptions;
 	static ExecutorService mService;
 	static final String TAG = Album.class.getSimpleName();
@@ -42,6 +51,7 @@ public class Album extends LinearLayout {
 	 */
 	public interface AlbumClickListener {
 		void click(FileInfo fileInfo);
+		void del(Album view,FileInfo fileInfo);
 	}
 	public Album(Context context) {
 		this(context, null);
@@ -67,8 +77,14 @@ public class Album extends LinearLayout {
 			sDefaultOptions.inTargetDensity = getResources()
 					.getDisplayMetrics().densityDpi;
 		}
-		
+		if(zoomEnter == null){
+			zoomEnter = AnimationUtils.loadAnimation(getContext(), R.anim.zoom_enter);
+		}
+		if(zoomOut == null){
+			zoomOut = AnimationUtils.loadAnimation(getContext(), R.anim.zoom_out);
+		}
 		setOnClickListener(listener);
+		btnDel.setOnClickListener(delListener);
 	}
 	public void setAlbumClickListener(AlbumClickListener listener){
 		mListener = listener;
@@ -81,10 +97,15 @@ public class Album extends LinearLayout {
 		albumNameTextView.setText(String.format("%s", fileInfo.fileName));
 		childSizeTextView.setText(String.valueOf(fileInfo.Count));
 		//mService.submit(new ThumbnailTask(mFileInfo.dbThumb));
-		long id = Long.parseLong(mFileInfo.dbThumb);
-		mService.submit(new ThumbnailProvider(id));
+		if(mFileInfo.dbThumb != null && !mFileInfo.dbThumb.equals("")){
+			long id = Long.parseLong(mFileInfo.dbThumb);
+			mService.submit(new ThumbnailProvider(id));
+		}
+		
 	}
-
+	public FileInfo getFile(){
+		return mFileInfo;
+	}
 	public void setWidth(int width) {
 		mWidth = width;
 		mThumbWidth = mWidth - 5;
@@ -97,9 +118,12 @@ public class Album extends LinearLayout {
 	 * @param b
 	 */
 	public void setDelMode(boolean b) {
+		isDelMode = b;
 		if (b) {
+			btnDel.startAnimation(zoomEnter);
 			btnDel.setVisibility(View.VISIBLE);
 		} else {
+			btnDel.startAnimation(zoomOut);
 			btnDel.setVisibility(View.GONE);
 		}
 	}
@@ -115,12 +139,48 @@ public class Album extends LinearLayout {
 		int width = MeasureSpec.makeMeasureSpec(mWidth, MeasureSpec.EXACTLY);
 		super.onMeasure(width, heightMeasureSpec);
 	}
+	//点击删除时触发
+	private OnClickListener delListener = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			if(confirmDialog == null){
+				String txt = getContext().getString(R.string.alert_confirm_del_file);
+				txt = txt.replace("{file}", "\""+mFileInfo.dbName+"\"");
+				confirmDialog = DialogFactory.createTwoButtonDialog(getContext(), txt, null, null, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						if(mListener != null){
+							mListener.del(Album.this, mFileInfo);
+						}
+						dialog.dismiss();
+					}
+				}, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						dialog.dismiss();
+					}
+				});
+			}
+			confirmDialog.show();
+		}
+	};
 	
 	private OnClickListener listener = new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+			//删除模式不可点击
+			if(isDelMode){
+				return;
+			}
+				
 			if(mListener != null){
 				mListener.click(mFileInfo);
 			}

@@ -19,6 +19,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -41,7 +42,7 @@ import android.view.WindowManager;
 import android.widget.ScrollView;
 
 public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks<Cursor>{
-
+	
 	int mWidth = 80;
 	IEmojScanCallBack mCallBack;
 	Messenger client;
@@ -52,7 +53,9 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	CustomGridLayout gridLayout;
 	PullToRefreshScrollView mScrollView;
 	AlbumCusorAdapter adapter;
+	UserDefineDataBaseHelper mHelper;
 	boolean IsScaned = false;//是否扫描过
+	boolean delMode = false;//删除模式
 	static final int COLUM_NUM = 3;
 	static final int COLUM_PADDING = 0;
 	static final String TAG = AlbumFragment.class.getSimpleName();	
@@ -90,7 +93,8 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		mScrollView.setOnPullEventListener(pullEventListener);
 		
 		bindGridLayout();
-		getLoaderManager().initLoader(0, null, this);
+		//getLoaderManager().initLoader(0, null, this);
+		getLoaderManager().restartLoader(0, null, this);
 		//通知父activity初始化完成
 		if(mCallBack != null){
 			mCallBack.onInit(TAG,null);
@@ -112,6 +116,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		client = new Messenger(mHandler);
+		mHelper = new UserDefineDataBaseHelper(getActivity());
 		BindService();
 		calculateAlbumWidth();
 	}
@@ -196,6 +201,14 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		Log.d(TAG, "onActivityResult:"+requestCode + " " + resultCode);
+		if(requestCode == AppConstant.REQUEST_ADD_FILE){
+			if(resultCode == Activity.RESULT_OK){
+				long id = data.getLongExtra(AppConstant.INTENT_USER_DEFINE_ADD_FILE_ID, -1);
+				Log.d(TAG, "onActivityResult id:"+id);
+				getLoaderManager().restartLoader(0, null, this);
+				
+			}
+		}
 	}
 	// *********函数**************
 	
@@ -211,7 +224,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		addImageButton.setOnClick(addClickListener);
 		gridLayout.setFirstView(addImageButton);
 		if(adapter == null){
-			adapter = new AlbumCusorAdapter(getActivity().getApplicationContext(), null,COLUM_NUM,albumClickListener);
+			adapter = new AlbumCusorAdapter(getActivity().getParent(), null,COLUM_NUM,albumClickListener);
 		}
 		gridLayout.setAdapter(adapter);		
 		
@@ -250,6 +263,37 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	public void recycle(){
 		gridLayout.removeAllViews();
 	}
+	
+	public void edit(){
+		delMode = !delMode;
+		setDelMode(delMode);
+	}
+	/**
+	 * 获取是否是删除模式
+	 * @return
+	 */
+	public boolean getDelMode(){
+		return delMode;
+	}
+	/**
+	 * 取消删除模式
+	 */
+	public void cancelDelMode(){
+		delMode = false;
+		setDelMode(false);
+	}
+	/**
+	 * 设置相册是否可删除
+	 * @param b
+	 */
+	protected void setDelMode(boolean b){
+		for (int i = 0; i < gridLayout.getChildCount(); i++) {
+			View view = gridLayout.getChildAt(i);
+			if (view instanceof Album) {
+				((Album) view).setDelMode(b);
+			}
+		}
+	}
 	// *********成员*********
 	/**
 	 * 添加文件夹
@@ -259,11 +303,12 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Intent intent = new Intent(getActivity(), UserDefineAddActivity.class);
-			getActivity().startActivityForResult(intent, AppConstant.REQUEST_ADD_FILE);
+			Intent intent = new Intent(getActivity().getApplicationContext(), UserDefineAddActivity.class);
+			startActivityForResult(intent, AppConstant.REQUEST_ADD_FILE);			
+			
 		}
 	};
-	
+	//点击相册
 	private AlbumClickListener albumClickListener = new AlbumClickListener() {
 		
 		@Override
@@ -271,6 +316,18 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 			// TODO Auto-generated method stub
 			if(mCallBack != null){
 				mCallBack.onClick(TAG, fileInfo);
+			}
+		}
+
+		@Override
+		public void del(Album view, FileInfo fileInfo) {
+			// TODO 删除相册
+			try {
+				gridLayout.removeView(view);
+				mHelper.remove((int)fileInfo.dbId);
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
 			}
 		}
 	};

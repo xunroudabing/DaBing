@@ -60,7 +60,8 @@ android.support.v4.app.BackStackRecord -> android.support.v4.app.a:
     void bumpBackStackNesting(int) -> a
     int commit() -> b
     void run() -> run
-    void popFromBackStack$1385ff() -> c
+    void popFromBackStack(boolean) -> a
+    java.lang.String getName() -> c
 android.support.v4.app.BackStackRecord$Op -> android.support.v4.app.b:
     android.support.v4.app.BackStackRecord$Op next -> a
     android.support.v4.app.BackStackRecord$Op prev -> b
@@ -139,40 +140,41 @@ android.support.v4.app.Fragment -> android.support.v4.app.Fragment:
     java.lang.String toString() -> toString
     android.support.v4.app.FragmentActivity getActivity() -> c
     android.content.res.Resources getResources() -> d
-    void onHiddenChanged$1385ff() -> e
-    android.support.v4.app.LoaderManager getLoaderManager() -> f
-    void startActivityForResult$7a9ca511(android.content.Intent) -> a
+    java.lang.String getString$47921032() -> e
+    void onHiddenChanged$1385ff() -> f
+    android.support.v4.app.LoaderManager getLoaderManager() -> g
+    void startActivityForResult(android.content.Intent,int) -> a
     void onActivityResult(int,int,android.content.Intent) -> a
-    android.view.LayoutInflater getLayoutInflater$2ee30c11() -> g
-    void onInflate$423a76cd() -> h
-    void onAttach$63a22f9() -> i
-    android.view.animation.Animation onCreateAnimation$24236ca7() -> j
+    android.view.LayoutInflater getLayoutInflater$2ee30c11() -> h
+    void onInflate$423a76cd() -> i
+    void onAttach$63a22f9() -> j
+    android.view.animation.Animation onCreateAnimation$24236ca7() -> k
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onViewCreated$65f1d89() -> k
-    android.view.View getView() -> l
+    void onViewCreated$65f1d89() -> l
+    android.view.View getView() -> m
     void onActivityCreated(android.os.Bundle) -> b
-    void onResume() -> m
+    void onResume() -> n
     void onSaveInstanceState(android.os.Bundle) -> c
     void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
-    void onPause() -> n
+    void onPause() -> o
     void onLowMemory() -> onLowMemory
-    void onDestroyView() -> o
-    void onDestroy() -> p
-    void initState() -> q
-    void onDetach() -> r
-    void onCreateOptionsMenu$761f6f96() -> s
-    void onPrepareOptionsMenu$1eec55bd() -> t
-    void onDestroyOptionsMenu() -> u
-    boolean onOptionsItemSelected$1b88ab4c() -> v
-    void onOptionsMenuClosed$1eec55bd() -> w
+    void onDestroyView() -> p
+    void onDestroy() -> q
+    void initState() -> r
+    void onDetach() -> s
+    void onCreateOptionsMenu$761f6f96() -> t
+    void onPrepareOptionsMenu$1eec55bd() -> u
+    void onDestroyOptionsMenu() -> v
+    boolean onOptionsItemSelected$1b88ab4c() -> w
+    void onOptionsMenuClosed$1eec55bd() -> x
     void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-    boolean onContextItemSelected$1b88ab4c() -> x
+    boolean onContextItemSelected$1b88ab4c() -> y
     void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
-    void performStart() -> y
-    void performStop() -> z
-    void performReallyStop() -> A
-    void performDestroyView() -> B
+    void performStart() -> z
+    void performStop() -> A
+    void performReallyStop() -> B
+    void performDestroyView() -> C
 android.support.v4.app.Fragment$InstantiationException -> android.support.v4.app.d:
 android.support.v4.app.Fragment$SavedState -> android.support.v4.app.Fragment$SavedState:
     android.os.Bundle mState -> a
@@ -219,7 +221,7 @@ android.support.v4.app.FragmentActivity -> android.support.v4.app.FragmentActivi
     void onAttachFragment$65850823() -> b
     android.support.v4.app.FragmentManager getSupportFragmentManager() -> c
     void startActivityForResult(android.content.Intent,int) -> startActivityForResult
-    void startActivityFromFragment$68747257(android.support.v4.app.Fragment,android.content.Intent) -> a
+    void startActivityFromFragment(android.support.v4.app.Fragment,android.content.Intent,int) -> a
     void invalidateSupportFragmentIndex(int) -> a
     android.support.v4.app.LoaderManagerImpl getLoaderManager(int,boolean,boolean) -> a
 android.support.v4.app.FragmentActivity$1 -> android.support.v4.app.f:
@@ -236,6 +238,7 @@ android.support.v4.app.FragmentActivity$NonConfigurationInstances -> android.sup
 android.support.v4.app.FragmentManager -> android.support.v4.app.i:
     android.support.v4.app.FragmentTransaction beginTransaction() -> a
     android.support.v4.app.Fragment findFragmentByTag(java.lang.String) -> a
+    void popBackStack$505cff1c() -> b
 android.support.v4.app.FragmentManagerImpl -> android.support.v4.app.j:
     boolean DEBUG -> a
     boolean HONEYCOMB -> b
@@ -265,7 +268,8 @@ android.support.v4.app.FragmentManagerImpl -> android.support.v4.app.j:
     android.view.animation.Interpolator ACCELERATE_QUINT -> z
     android.view.animation.Interpolator ACCELERATE_CUBIC -> A
     android.support.v4.app.FragmentTransaction beginTransaction() -> a
-    boolean popBackStackImmediate() -> b
+    boolean popBackStackImmediate() -> c
+    void popBackStack$505cff1c() -> b
     java.lang.String toString() -> toString
     void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
     android.view.animation.Animation makeOpenCloseAnimation$376f30fd(float,float,float,float) -> a
@@ -275,7 +279,7 @@ android.support.v4.app.FragmentManagerImpl -> android.support.v4.app.j:
     void moveToState(android.support.v4.app.Fragment) -> a
     void moveToState$2563266(int) -> d
     void moveToState(int,int,int,boolean) -> a
-    void startPendingDeferredFragments() -> c
+    void startPendingDeferredFragments() -> d
     void addFragment(android.support.v4.app.Fragment,boolean) -> a
     void removeFragment(android.support.v4.app.Fragment,int,int) -> a
     void hideFragment(android.support.v4.app.Fragment,int,int) -> b
@@ -284,40 +288,46 @@ android.support.v4.app.FragmentManagerImpl -> android.support.v4.app.j:
     void attachFragment(android.support.v4.app.Fragment,int,int) -> e
     android.support.v4.app.Fragment findFragmentById(int) -> a
     android.support.v4.app.Fragment findFragmentByTag(java.lang.String) -> a
-    void checkStateLoss() -> v
+    void checkStateLoss() -> w
     void enqueueAction$574583f(java.lang.Runnable) -> a
     int allocBackStackIndex(android.support.v4.app.BackStackRecord) -> a
     void setBackStackIndex(int,android.support.v4.app.BackStackRecord) -> a
     void freeBackStackIndex(int) -> b
-    boolean execPendingActions() -> d
-    void reportBackStackChanged() -> w
+    boolean execPendingActions() -> e
+    void reportBackStackChanged() -> x
     void addBackStackState(android.support.v4.app.BackStackRecord) -> b
-    java.util.ArrayList retainNonConfig() -> e
+    boolean popBackStackState$68507953$44bd8ea3(java.lang.String,int) -> a
+    java.util.ArrayList retainNonConfig() -> f
     void saveFragmentViewState(android.support.v4.app.Fragment) -> b
-    android.os.Parcelable saveAllState() -> f
+    android.os.Parcelable saveAllState() -> g
     void restoreAllState(android.os.Parcelable,java.util.ArrayList) -> a
     void attachActivity(android.support.v4.app.FragmentActivity) -> a
-    void noteStateNotSaved() -> g
-    void dispatchCreate() -> h
-    void dispatchActivityCreated() -> i
-    void dispatchStart() -> j
-    void dispatchResume() -> k
-    void dispatchPause() -> l
-    void dispatchStop() -> m
-    void dispatchReallyStop() -> n
-    void dispatchDestroy() -> o
+    void noteStateNotSaved() -> h
+    void dispatchCreate() -> i
+    void dispatchActivityCreated() -> j
+    void dispatchStart() -> k
+    void dispatchResume() -> l
+    void dispatchPause() -> m
+    void dispatchStop() -> n
+    void dispatchReallyStop() -> o
+    void dispatchDestroy() -> p
     void dispatchConfigurationChanged(android.content.res.Configuration) -> a
-    void dispatchLowMemory() -> p
-    boolean dispatchCreateOptionsMenu$761f6f92() -> q
-    boolean dispatchPrepareOptionsMenu$1eec55b9() -> r
-    boolean dispatchOptionsItemSelected$1b88ab4c() -> s
-    boolean dispatchContextItemSelected$1b88ab4c() -> t
-    void dispatchOptionsMenuClosed$1eec55bd() -> u
+    void dispatchLowMemory() -> q
+    boolean dispatchCreateOptionsMenu$761f6f92() -> r
+    boolean dispatchPrepareOptionsMenu$1eec55b9() -> s
+    boolean dispatchOptionsItemSelected$1b88ab4c() -> t
+    boolean dispatchContextItemSelected$1b88ab4c() -> u
+    void dispatchOptionsMenuClosed$1eec55bd() -> v
     int reverseTransit(int) -> c
 android.support.v4.app.FragmentManagerImpl$1 -> android.support.v4.app.k:
     android.support.v4.app.FragmentManagerImpl this$0 -> a
     void run() -> run
-android.support.v4.app.FragmentManagerImpl$5 -> android.support.v4.app.l:
+android.support.v4.app.FragmentManagerImpl$3 -> android.support.v4.app.l:
+    java.lang.String val$name -> a
+    int val$flags -> b
+    android.support.v4.app.FragmentManagerImpl this$0 -> c
+    void run() -> run
+android.support.v4.app.FragmentManagerImpl$5 -> android.support.v4.app.m:
     android.support.v4.app.Fragment val$fragment -> a
     android.support.v4.app.FragmentManagerImpl this$0 -> b
     void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
@@ -330,7 +340,7 @@ android.support.v4.app.FragmentManagerState -> android.support.v4.app.FragmentMa
     android.os.Parcelable$Creator CREATOR -> CREATOR
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-android.support.v4.app.FragmentManagerState$1 -> android.support.v4.app.m:
+android.support.v4.app.FragmentManagerState$1 -> android.support.v4.app.n:
     java.lang.Object[] newArray(int) -> newArray
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
 android.support.v4.app.FragmentState -> android.support.v4.app.FragmentState:
@@ -349,14 +359,14 @@ android.support.v4.app.FragmentState -> android.support.v4.app.FragmentState:
     android.support.v4.app.Fragment instantiate(android.support.v4.app.FragmentActivity) -> a
     int describeContents() -> describeContents
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-android.support.v4.app.FragmentState$1 -> android.support.v4.app.n:
+android.support.v4.app.FragmentState$1 -> android.support.v4.app.o:
     java.lang.Object[] newArray(int) -> newArray
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-android.support.v4.app.FragmentTransaction -> android.support.v4.app.o:
+android.support.v4.app.FragmentTransaction -> android.support.v4.app.p:
     android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment,java.lang.String) -> a
     android.support.v4.app.FragmentTransaction addToBackStack$6738a57() -> a
     int commit() -> b
-android.support.v4.app.HCSparseArray -> android.support.v4.app.p:
+android.support.v4.app.HCSparseArray -> android.support.v4.app.q:
     java.lang.Object DELETED -> a
     boolean mGarbage -> b
     int[] mKeys -> c
@@ -374,15 +384,15 @@ android.support.v4.app.HCSparseArray -> android.support.v4.app.p:
     void clear() -> c
     int binarySearch$76412d8d(int[],int,int) -> a
     int idealIntArraySize(int) -> f
-android.support.v4.app.LoaderManager -> android.support.v4.app.q:
-    android.support.v4.content.Loader initLoader$71be8de6(android.support.v4.app.LoaderManager$LoaderCallbacks) -> a
+android.support.v4.app.LoaderManager -> android.support.v4.app.r:
+    android.support.v4.content.Loader restartLoader$71be8de6(android.support.v4.app.LoaderManager$LoaderCallbacks) -> a
     void destroyLoader$13462e() -> a
     boolean hasRunningLoaders() -> b
-android.support.v4.app.LoaderManager$LoaderCallbacks -> android.support.v4.app.r:
+android.support.v4.app.LoaderManager$LoaderCallbacks -> android.support.v4.app.s:
     android.support.v4.content.Loader onCreateLoader$e57f803() -> a
     void onLoadFinished$13079eae(java.lang.Object) -> a
     void onLoaderReset$5dda1f52() -> a_
-android.support.v4.app.LoaderManagerImpl -> android.support.v4.app.s:
+android.support.v4.app.LoaderManagerImpl -> android.support.v4.app.t:
     boolean DEBUG -> a
     android.support.v4.app.HCSparseArray mLoaders -> b
     android.support.v4.app.HCSparseArray mInactiveLoaders -> c
@@ -391,9 +401,10 @@ android.support.v4.app.LoaderManagerImpl -> android.support.v4.app.s:
     boolean mRetaining -> f
     boolean mCreatingLoader -> g
     void updateActivity(android.support.v4.app.FragmentActivity) -> a
-    android.support.v4.app.LoaderManagerImpl$LoaderInfo createAndInstallLoader$348a764a(android.support.v4.app.LoaderManager$LoaderCallbacks) -> b
+    android.support.v4.app.LoaderManagerImpl$LoaderInfo createLoader$348a764a(android.support.v4.app.LoaderManager$LoaderCallbacks) -> b
+    android.support.v4.app.LoaderManagerImpl$LoaderInfo createAndInstallLoader$348a764a(android.support.v4.app.LoaderManager$LoaderCallbacks) -> c
     void installLoader(android.support.v4.app.LoaderManagerImpl$LoaderInfo) -> a
-    android.support.v4.content.Loader initLoader$71be8de6(android.support.v4.app.LoaderManager$LoaderCallbacks) -> a
+    android.support.v4.content.Loader restartLoader$71be8de6(android.support.v4.app.LoaderManager$LoaderCallbacks) -> a
     void destroyLoader$13462e() -> a
     void doStart() -> c
     void doStop() -> d
@@ -405,7 +416,7 @@ android.support.v4.app.LoaderManagerImpl -> android.support.v4.app.s:
     java.lang.String toString() -> toString
     void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
     boolean hasRunningLoaders() -> b
-android.support.v4.app.LoaderManagerImpl$LoaderInfo -> android.support.v4.app.t:
+android.support.v4.app.LoaderManagerImpl$LoaderInfo -> android.support.v4.app.u:
     int mId -> a
     android.os.Bundle mArgs -> b
     android.support.v4.app.LoaderManager$LoaderCallbacks mCallbacks -> c
@@ -428,11 +439,11 @@ android.support.v4.app.LoaderManagerImpl$LoaderInfo -> android.support.v4.app.t:
     void callOnLoadFinished(android.support.v4.content.Loader,java.lang.Object) -> b
     java.lang.String toString() -> toString
     void dump$ec96877(java.lang.String,java.io.PrintWriter,java.lang.String[]) -> a
-android.support.v4.app.NoSaveStateFrameLayout -> android.support.v4.app.u:
+android.support.v4.app.NoSaveStateFrameLayout -> android.support.v4.app.v:
     android.view.ViewGroup wrap(android.view.View) -> a
     void dispatchSaveInstanceState(android.util.SparseArray) -> dispatchSaveInstanceState
     void dispatchRestoreInstanceState(android.util.SparseArray) -> dispatchRestoreInstanceState
-android.support.v4.app.SuperNotCalledException -> android.support.v4.app.v:
+android.support.v4.app.SuperNotCalledException -> android.support.v4.app.w:
 android.support.v4.content.AsyncTaskLoader -> android.support.v4.a.a:
     android.support.v4.content.AsyncTaskLoader$LoadTask mTask -> a
     android.support.v4.content.AsyncTaskLoader$LoadTask mCancellingTask -> b
@@ -488,9 +499,10 @@ android.support.v4.content.Loader -> android.support.v4.a.d:
     void onForceLoad() -> a
     void stopLoading() -> j
     void onStopLoading() -> f
-    void reset() -> k
+    void abandon() -> k
+    void reset() -> l
     void onReset() -> g
-    void onContentChanged() -> l
+    void onContentChanged() -> m
     java.lang.String toString() -> toString
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
 android.support.v4.content.Loader$ForceLoadContentObserver -> android.support.v4.a.e:
@@ -2297,6 +2309,7 @@ com.dabing.emoj.R$anim -> com.dabing.emoj.R$anim:
     int slide_right_out -> slide_right_out
     int welcome_anmi_move -> welcome_anmi_move
     int zoom_enter -> zoom_enter
+    int zoom_out -> zoom_out
 com.dabing.emoj.R$array -> com.dabing.emoj.R$array:
     int UMageList -> UMageList
     int UMgenderList -> UMgenderList
@@ -2542,6 +2555,9 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int action_about -> action_about
     int action_bar_divider -> action_bar_divider
     int action_help -> action_help
+    int add_file_nor -> add_file_nor
+    int add_file_pressed -> add_file_pressed
+    int add_file_selector -> add_file_selector
     int album_background -> album_background
     int album_bg_nor -> album_bg_nor
     int albums_bg -> albums_bg
@@ -2557,6 +2573,7 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int appitem_del_btn_normal -> appitem_del_btn_normal
     int appitem_del_btn_pressed -> appitem_del_btn_pressed
     int appitem_del_selector -> appitem_del_selector
+    int arrow_down -> arrow_down
     int av_download -> av_download
     int broswer_progress -> broswer_progress
     int btn_browse_left_nor -> btn_browse_left_nor
@@ -2665,14 +2682,16 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int emoj_add_selector -> emoj_add_selector
     int emoj_black -> emoj_black
     int emoj_bottom_background -> emoj_bottom_background
+    int emoj_chk_v2 -> emoj_chk_v2
     int emoj_graydark -> emoj_graydark
     int emoj_graylight -> emoj_graylight
-    int emoj_graylight_v2 -> emoj_graylight_v2
     int emoj_item_nor -> emoj_item_nor
     int emoj_item_pressed -> emoj_item_pressed
     int emoj_item_selector -> emoj_item_selector
+    int emoj_nor_v2 -> emoj_nor_v2
     int emotionstore_custom_add_icon -> emotionstore_custom_add_icon
     int emotionstore_custom_add_icon_press -> emotionstore_custom_add_icon_press
+    int folder -> folder
     int gd_action_bar_add -> gd_action_bar_add
     int gd_action_bar_all_friends -> gd_action_bar_all_friends
     int gd_action_bar_compass -> gd_action_bar_compass
@@ -2749,7 +2768,9 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int hasdownload -> hasdownload
     int header_gridview_selector -> header_gridview_selector
     int heart_black -> heart_black
+    int heart_chk_v2 -> heart_chk_v2
     int heart_graydark -> heart_graydark
+    int heart_nor_v2 -> heart_nor_v2
     int ic_dialog_alert -> ic_dialog_alert
     int ic_dialog_long_click -> ic_dialog_long_click
     int ic_launcher -> ic_launcher
@@ -2847,10 +2868,15 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int new_icon -> new_icon
     int nosdcard_pic -> nosdcard_pic
     int page_indicator_dot_style2 -> page_indicator_dot_style2
+    int path_pane -> path_pane
+    int path_pane_bg -> path_pane_bg
+    int path_pane_pressed -> path_pane_pressed
+    int path_up_level -> path_up_level
     int pic_black -> pic_black
+    int pic_chk_v2 -> pic_chk_v2
     int pic_graydark -> pic_graydark
     int pic_graylight -> pic_graylight
-    int pic_graylight_v2 -> pic_graylight_v2
+    int pic_nor_v2 -> pic_nor_v2
     int preference_first_item -> preference_first_item
     int preference_item -> preference_item
     int preference_last_item -> preference_last_item
@@ -2866,9 +2892,10 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int right_corner -> right_corner
     int search_edittext_selector -> search_edittext_selector
     int setting_black -> setting_black
+    int setting_chk_v2 -> setting_chk_v2
     int setting_graydark -> setting_graydark
     int setting_graylight -> setting_graylight
-    int setting_graylight_v2 -> setting_graylight_v2
+    int setting_nor_v2 -> setting_nor_v2
     int shape_dialog -> shape_dialog
     int share_to_time_line_icon -> share_to_time_line_icon
     int social_add_person -> social_add_person
@@ -2885,6 +2912,11 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int tab_pic_selector -> tab_pic_selector
     int tab_setting_selector -> tab_setting_selector
     int tab_unread_bg -> tab_unread_bg
+    int tab_user_define_selector -> tab_user_define_selector
+    int tab_v2_emoj_selector -> tab_v2_emoj_selector
+    int tab_v2_emotion_selector -> tab_v2_emotion_selector
+    int tab_v2_pic_selector -> tab_v2_pic_selector
+    int tab_v2_setting_selector -> tab_v2_setting_selector
     int textview_background_black -> textview_background_black
     int textview_background_blue -> textview_background_blue
     int textview_background_brown -> textview_background_brown
@@ -2936,6 +2968,12 @@ com.dabing.emoj.R$drawable -> com.dabing.emoj.R$drawable:
     int umeng_fb_write_normal -> umeng_fb_write_normal
     int umeng_fb_write_pressed -> umeng_fb_write_pressed
     int umeng_fb_write_selector -> umeng_fb_write_selector
+    int up_level -> up_level
+    int up_level_pressed -> up_level_pressed
+    int user_define_add_file_listitem_pressed -> user_define_add_file_listitem_pressed
+    int user_define_add_file_listitem_selector -> user_define_add_file_listitem_selector
+    int user_define_chk -> user_define_chk
+    int user_define_nor -> user_define_nor
     int waps_app_detail_download_nor -> waps_app_detail_download_nor
     int waps_app_detail_download_pressed -> waps_app_detail_download_pressed
     int waps_app_detail_download_selector -> waps_app_detail_download_selector
@@ -2978,6 +3016,7 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int btn5 -> btn5
     int btn6 -> btn6
     int btn7 -> btn7
+    int btn8 -> btn8
     int btn_browse_left -> btn_browse_left
     int btn_browse_right -> btn_browse_right
     int btn_txt -> btn_txt
@@ -3112,6 +3151,7 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int main_tab_new_tv -> main_tab_new_tv
     int main_tab_settings -> main_tab_settings
     int main_tab_unread_tv -> main_tab_unread_tv
+    int main_tab_user_define -> main_tab_user_define
     int manualOnly -> manualOnly
     int mdpi -> mdpi
     int miniAdLinearLayout -> miniAdLinearLayout
@@ -3233,6 +3273,10 @@ com.dabing.emoj.R$id -> com.dabing.emoj.R$id:
     int umeng_fb_stateOrTime -> umeng_fb_stateOrTime
     int umeng_fb_state_or_date -> umeng_fb_state_or_date
     int umeng_fb_submit -> umeng_fb_submit
+    int user_define_add_file_item_btnAdd -> user_define_add_file_item_btnAdd
+    int user_define_add_file_item_txtChildSize -> user_define_add_file_item_txtChildSize
+    int user_define_add_file_item_txtName -> user_define_add_file_item_txtName
+    int user_define_add_file_listview -> user_define_add_file_listview
     int user_define_albumImageview -> user_define_albumImageview
     int user_define_album_add_btnAdd -> user_define_album_add_btnAdd
     int user_define_album_image_imageview -> user_define_album_image_imageview
@@ -3403,6 +3447,8 @@ com.dabing.emoj.R$layout -> com.dabing.emoj.R$layout:
     int umeng_fb_list_item -> umeng_fb_list_item
     int umeng_fb_new_reply_alert_dialog -> umeng_fb_new_reply_alert_dialog
     int umeng_fb_send_feedback -> umeng_fb_send_feedback
+    int user_define_add_file -> user_define_add_file
+    int user_define_add_file_item -> user_define_add_file_item
     int user_define_album -> user_define_album
     int user_define_album_add -> user_define_album_add
     int user_define_album_image -> user_define_album_image
@@ -3465,6 +3511,8 @@ com.dabing.emoj.R$string -> com.dabing.emoj.R$string:
     int a5 -> a5
     int about2 -> about2
     int add_weibo_content -> add_weibo_content
+    int alert_confirm_add_file -> alert_confirm_add_file
+    int alert_confirm_del_file -> alert_confirm_del_file
     int app_back -> app_back
     int app_cancel -> app_cancel
     int app_continue -> app_continue
@@ -3484,7 +3532,10 @@ com.dabing.emoj.R$string -> com.dabing.emoj.R$string:
     int applet_seccode_tip -> applet_seccode_tip
     int applet_secimg_change -> applet_secimg_change
     int applet_secimg_title -> applet_secimg_title
+    int btn_userdefine_back -> btn_userdefine_back
     int btn_userdefine_edit -> btn_userdefine_edit
+    int btn_userdefine_up -> btn_userdefine_up
+    int btn_userdefine_weixin -> btn_userdefine_weixin
     int confirm_dialog_back -> confirm_dialog_back
     int confirm_dialog_cancel -> confirm_dialog_cancel
     int confirm_dialog_ok -> confirm_dialog_ok
@@ -3551,6 +3602,7 @@ com.dabing.emoj.R$string -> com.dabing.emoj.R$string:
     int pull_to_refresh_pull_label -> pull_to_refresh_pull_label
     int pull_to_refresh_refreshing_label -> pull_to_refresh_refreshing_label
     int pull_to_refresh_release_label -> pull_to_refresh_release_label
+    int qq_not_install -> qq_not_install
     int qqappwall_app_name -> qqappwall_app_name
     int qqappwall_download_failed -> qqappwall_download_failed
     int qqappwall_download_failed_imply -> qqappwall_download_failed_imply
@@ -3921,21 +3973,21 @@ com.dabing.emoj.activity.EmojBrowsePictureActivity -> com.dabing.emoj.activity.E
     int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType -> aa
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
-    org.json.JSONObject GetNext() -> i
-    org.json.JSONObject GetPrev() -> j
-    void showNextImage() -> k
-    void RecycleBitmap() -> l
-    void SetImage() -> m
-    void recycle() -> n
+    org.json.JSONObject GetNext() -> g
+    org.json.JSONObject GetPrev() -> h
+    void showNextImage() -> i
+    void RecycleBitmap() -> j
+    void SetImage() -> k
+    void recycle() -> l
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
     void onDestroy() -> onDestroy
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    void showBrowseButton() -> o
+    void showBrowseButton() -> m
     void hideBrowseButton() -> p
     void hideException() -> q
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
     void initializeControls(java.lang.String) -> a
-    void show(int) -> b
+    void show(int) -> a
     void AsyncDownload(java.lang.String) -> g
     void onClick(android.view.View) -> onClick
     void ShareToWX_Friends() -> b
@@ -4009,87 +4061,89 @@ com.dabing.emoj.activity.EmojBrowsePictureActivity$downloadTask -> com.dabing.em
     com.dabing.emoj.activity.EmojBrowsePictureActivity this$0 -> a
     void run() -> run
 com.dabing.emoj.activity.EmojBrowseViewActivity -> com.dabing.emoj.activity.EmojBrowseViewActivity:
-    com.dabing.emoj.imagezoomview.ImageZoomView mZoomView -> N
-    com.dabing.emoj.imagezoomview.ZoomState mZoomState -> O
-    android.graphics.Bitmap mBitmap -> P
-    com.dabing.emoj.imagezoomview.SimpleZoomListener mZoomListener -> Q
-    android.widget.Button mZoomIn -> R
-    android.widget.Button mZoomOut -> S
-    float seed -> T
-    boolean emotionMode -> a
-    android.widget.RelativeLayout container -> b
-    com.tencent.exmobwin.banner.TAdView adView -> c
-    android.widget.LinearLayout wapsAdView -> d
-    com.dabing.emoj.advertise.WAPS_CustomAd wapsCustomAd -> e
-    android.widget.LinearLayout wapsMiniAdBackView -> f
-    android.widget.LinearLayout wapsMiniAdView -> g
-    android.widget.LinearLayout zoomlayout -> h
-    android.widget.LinearLayout layoutBottom -> i
-    android.widget.Button btnOK -> j
-    java.lang.String action -> k
-    android.widget.LinearLayout layout -> l
-    com.ant.liao.GifView mGifView -> m
-    android.widget.ProgressBar bar -> n
-    android.widget.TextView rateView -> o
-    com.dabing.emoj.utils.FileType mFileType -> p
-    boolean finish -> q
-    java.lang.String mUrl -> r
-    java.lang.String mFileName -> s
-    java.lang.String mFilePath -> t
-    java.lang.String mParms -> u
-    java.lang.String mMenuID -> v
-    org.json.JSONArray mArray -> w
-    int mIndicator -> x
-    com.tencent.mm.sdk.openapi.IWXAPI api -> y
-    boolean wxInstall -> z
-    boolean hasException -> A
-    android.widget.LinearLayout exceptionLayout -> B
-    android.widget.ImageView exceptionImageView -> C
-    android.widget.Button btn_browse_left -> D
-    android.widget.Button btn_browse_right -> E
-    com.dabing.emoj.activity.EmojBrowseViewActivity$EmojHandler mHandler -> F
-    long flag -> G
-    android.view.animation.Animation left_in -> H
-    android.view.animation.Animation right_in -> I
-    android.view.animation.Animation left_out -> J
-    android.view.animation.Animation right_out -> K
-    android.view.animation.Animation pop_in -> L
-    java.lang.String TAG -> M
-    android.view.View$OnClickListener btnListener -> U
-    int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType -> V
+    com.dabing.emoj.imagezoomview.ImageZoomView mZoomView -> a
+    com.dabing.emoj.imagezoomview.ZoomState mZoomState -> b
+    android.graphics.Bitmap mBitmap -> c
+    com.dabing.emoj.imagezoomview.SimpleZoomListener mZoomListener -> d
+    android.widget.Button mZoomIn -> e
+    android.widget.Button mZoomOut -> f
+    float seed -> g
+    boolean emotionMode -> h
+    android.widget.RelativeLayout container -> i
+    com.tencent.exmobwin.banner.TAdView adView -> j
+    android.widget.LinearLayout wapsAdView -> k
+    com.dabing.emoj.advertise.WAPS_CustomAd wapsCustomAd -> l
+    android.widget.LinearLayout wapsMiniAdBackView -> m
+    android.widget.LinearLayout wapsMiniAdView -> n
+    android.widget.LinearLayout zoomlayout -> o
+    android.widget.LinearLayout layoutBottom -> p
+    android.widget.Button btnOK -> q
+    java.lang.String action -> r
+    android.widget.LinearLayout layout -> s
+    com.ant.liao.GifView mGifView -> t
+    android.widget.ProgressBar bar -> u
+    android.widget.TextView rateView -> v
+    com.dabing.emoj.utils.FileType mFileType -> w
+    boolean finish -> x
+    java.lang.String mUrl -> y
+    java.lang.String mFileName -> z
+    java.lang.String mFilePath -> A
+    java.lang.String mParms -> B
+    java.lang.String mMenuID -> C
+    org.json.JSONArray mArray -> D
+    int mIndicator -> E
+    com.tencent.mm.sdk.openapi.IWXAPI api -> F
+    boolean wxInstall -> G
+    boolean hasException -> H
+    android.widget.LinearLayout exceptionLayout -> I
+    android.widget.ImageView exceptionImageView -> J
+    android.widget.Button btn_browse_left -> K
+    android.widget.Button btn_browse_right -> L
+    com.dabing.emoj.activity.EmojBrowseViewActivity$EmojHandler mHandler -> M
+    long flag -> N
+    android.view.animation.Animation left_in -> O
+    android.view.animation.Animation right_in -> P
+    android.view.animation.Animation left_out -> Q
+    android.view.animation.Animation right_out -> R
+    android.view.animation.Animation pop_in -> S
+    android.graphics.BitmapFactory$Options sDefaultOptions -> T
+    java.lang.String TAG -> U
+    android.view.View$OnClickListener btnListener -> V
+    int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType -> W
     void onCreate(android.os.Bundle) -> onCreate
-    void SetImage() -> f
-    java.lang.String GetNext() -> i
-    java.lang.String GetPrev() -> j
-    void RecycleBitmap() -> k
+    void Initialize() -> b
+    void SetImage() -> p
+    java.lang.String GetNext() -> q
+    java.lang.String GetPrev() -> r
+    void showNextImage() -> c
+    void showPrevImage() -> d
+    void RecycleBitmap() -> e
     int getLayoutId() -> a
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    void showBrowseButton() -> l
-    void hideBrowseButton() -> m
-    void hideException() -> n
+    void showBrowseButton() -> s
+    void hideBrowseButton() -> t
+    void hideException() -> f
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    void recycle() -> o
+    void recycle() -> g
     void onDestroy() -> onDestroy
-    void show(int) -> b
+    void SetupWxAction() -> h
+    void show(int) -> a
     void AsyncDownload(java.lang.String) -> b
     void initializeControls(java.lang.String) -> a
     void onClick(android.view.View) -> onClick
-    void openMenu() -> b
-    void ShareToWX_Friends() -> c
-    void ShareToWx_Circle() -> d
-    void UpdateHeaderClickCount() -> p
+    void openMenu() -> i
+    void ShareQQ() -> j
+    void ShareToWX_Friends() -> k
+    void ShareToWx_Circle() -> l
+    void UpdateHeaderClickCount() -> u
     void UmengEvent(java.lang.String,java.lang.String,java.lang.String) -> a
-    void downloadPackage() -> e
+    void downloadPackage() -> m
     void access$0(com.dabing.emoj.activity.EmojBrowseViewActivity) -> a
     void access$1(com.dabing.emoj.activity.EmojBrowseViewActivity,java.lang.String,java.lang.String,java.lang.String) -> a
-    void access$2(com.dabing.emoj.activity.EmojBrowseViewActivity,int) -> a
-    void access$3(com.dabing.emoj.activity.EmojBrowseViewActivity) -> b
+    void access$2(com.dabing.emoj.activity.EmojBrowseViewActivity) -> b
+    int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType() -> v
     void access$4(com.dabing.emoj.activity.EmojBrowseViewActivity) -> c
-    int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType() -> q
-    com.dabing.emoj.imagezoomview.ZoomState access$6(com.dabing.emoj.activity.EmojBrowseViewActivity) -> d
-    float access$7(com.dabing.emoj.activity.EmojBrowseViewActivity) -> e
-    void access$8(com.dabing.emoj.activity.EmojBrowseViewActivity) -> f
 com.dabing.emoj.activity.EmojBrowseViewActivity$1 -> com.dabing.emoj.activity.x:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
@@ -4113,40 +4167,46 @@ com.dabing.emoj.activity.EmojBrowseViewActivity$15 -> com.dabing.emoj.activity.a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.dabing.emoj.activity.EmojBrowseViewActivity$16 -> com.dabing.emoj.activity.ae:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
-    com.dabing.emoj.utils.PackageDownloader val$downloader -> b
-    java.lang.String val$menuid -> c
     void onClick(android.content.DialogInterface,int) -> onClick
 com.dabing.emoj.activity.EmojBrowseViewActivity$17 -> com.dabing.emoj.activity.af:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojBrowseViewActivity$2 -> com.dabing.emoj.activity.ag:
+com.dabing.emoj.activity.EmojBrowseViewActivity$18 -> com.dabing.emoj.activity.ag:
+    com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
+    com.dabing.emoj.utils.PackageDownloader val$downloader -> b
+    java.lang.String val$menuid -> c
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.activity.EmojBrowseViewActivity$19 -> com.dabing.emoj.activity.ah:
+    com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.activity.EmojBrowseViewActivity$2 -> com.dabing.emoj.activity.ai:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojBrowseViewActivity$3 -> com.dabing.emoj.activity.ah:
+com.dabing.emoj.activity.EmojBrowseViewActivity$3 -> com.dabing.emoj.activity.aj:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojBrowseViewActivity$4 -> com.dabing.emoj.activity.ai:
+com.dabing.emoj.activity.EmojBrowseViewActivity$4 -> com.dabing.emoj.activity.ak:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojBrowseViewActivity$5 -> com.dabing.emoj.activity.aj:
+com.dabing.emoj.activity.EmojBrowseViewActivity$5 -> com.dabing.emoj.activity.al:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojBrowseViewActivity$6 -> com.dabing.emoj.activity.ak:
+com.dabing.emoj.activity.EmojBrowseViewActivity$6 -> com.dabing.emoj.activity.am:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(int) -> a
-com.dabing.emoj.activity.EmojBrowseViewActivity$7 -> com.dabing.emoj.activity.al:
+com.dabing.emoj.activity.EmojBrowseViewActivity$7 -> com.dabing.emoj.activity.an:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onCancel(android.content.DialogInterface) -> onCancel
-com.dabing.emoj.activity.EmojBrowseViewActivity$8 -> com.dabing.emoj.activity.am:
+com.dabing.emoj.activity.EmojBrowseViewActivity$8 -> com.dabing.emoj.activity.ao:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onClick(int) -> a
-com.dabing.emoj.activity.EmojBrowseViewActivity$9 -> com.dabing.emoj.activity.an:
+com.dabing.emoj.activity.EmojBrowseViewActivity$9 -> com.dabing.emoj.activity.ap:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void onCancel(android.content.DialogInterface) -> onCancel
-com.dabing.emoj.activity.EmojBrowseViewActivity$EmojHandler -> com.dabing.emoj.activity.ao:
+com.dabing.emoj.activity.EmojBrowseViewActivity$EmojHandler -> com.dabing.emoj.activity.aq:
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.activity.EmojBrowseViewActivity$downloadTask -> com.dabing.emoj.activity.ap:
+com.dabing.emoj.activity.EmojBrowseViewActivity$downloadTask -> com.dabing.emoj.activity.ar:
     java.lang.String downloadURL -> b
     com.dabing.emoj.activity.EmojBrowseViewActivity this$0 -> a
     void run() -> run
@@ -4162,7 +4222,7 @@ com.dabing.emoj.activity.EmojContainerActivity -> com.dabing.emoj.activity.EmojC
     void onPause() -> onPause
     void onItemClick(android.view.View,org.json.JSONObject) -> a
     void setFragment(java.lang.String,org.json.JSONObject) -> a
-com.dabing.emoj.activity.EmojContainerActivity$1 -> com.dabing.emoj.activity.aq:
+com.dabing.emoj.activity.EmojContainerActivity$1 -> com.dabing.emoj.activity.as:
     com.dabing.emoj.activity.EmojContainerActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.EmojEmotionActivity -> com.dabing.emoj.activity.EmojEmotionActivity:
@@ -4177,7 +4237,7 @@ com.dabing.emoj.activity.EmojEmotionActivity -> com.dabing.emoj.activity.EmojEmo
     void onPause() -> onPause
     void onItemClick(android.view.View,org.json.JSONObject) -> a
     void setFragment(java.lang.String,org.json.JSONObject) -> a
-com.dabing.emoj.activity.EmojEmotionActivity$1 -> com.dabing.emoj.activity.ar:
+com.dabing.emoj.activity.EmojEmotionActivity$1 -> com.dabing.emoj.activity.at:
     com.dabing.emoj.activity.EmojEmotionActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.EmojImageViewActivity -> com.dabing.emoj.activity.EmojImageViewActivity:
@@ -4214,7 +4274,7 @@ com.dabing.emoj.activity.EmojImageViewActivity -> com.dabing.emoj.activity.EmojI
     int getLayoutId() -> a
     void onDestroy() -> onDestroy
     void initializeControls(java.lang.String) -> a
-    void show(int) -> b
+    void show(int) -> a
     void onClick(android.view.View) -> onClick
     void ShareToWX_Friends() -> b
     void ShareToWx_Circle() -> c
@@ -4224,40 +4284,40 @@ com.dabing.emoj.activity.EmojImageViewActivity -> com.dabing.emoj.activity.EmojI
     com.dabing.emoj.imagezoomview.ZoomState access$3(com.dabing.emoj.activity.EmojImageViewActivity) -> b
     float access$4(com.dabing.emoj.activity.EmojImageViewActivity) -> c
     void access$5(com.dabing.emoj.activity.EmojImageViewActivity) -> d
-com.dabing.emoj.activity.EmojImageViewActivity$1 -> com.dabing.emoj.activity.as:
+com.dabing.emoj.activity.EmojImageViewActivity$1 -> com.dabing.emoj.activity.au:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$10 -> com.dabing.emoj.activity.at:
+com.dabing.emoj.activity.EmojImageViewActivity$10 -> com.dabing.emoj.activity.av:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$2 -> com.dabing.emoj.activity.au:
+com.dabing.emoj.activity.EmojImageViewActivity$2 -> com.dabing.emoj.activity.aw:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$3 -> com.dabing.emoj.activity.av:
+com.dabing.emoj.activity.EmojImageViewActivity$3 -> com.dabing.emoj.activity.ax:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$4 -> com.dabing.emoj.activity.aw:
+com.dabing.emoj.activity.EmojImageViewActivity$4 -> com.dabing.emoj.activity.ay:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$5 -> com.dabing.emoj.activity.ax:
+com.dabing.emoj.activity.EmojImageViewActivity$5 -> com.dabing.emoj.activity.az:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(int) -> a
-com.dabing.emoj.activity.EmojImageViewActivity$6 -> com.dabing.emoj.activity.ay:
+com.dabing.emoj.activity.EmojImageViewActivity$6 -> com.dabing.emoj.activity.ba:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onCancel(android.content.DialogInterface) -> onCancel
-com.dabing.emoj.activity.EmojImageViewActivity$7 -> com.dabing.emoj.activity.az:
+com.dabing.emoj.activity.EmojImageViewActivity$7 -> com.dabing.emoj.activity.bb:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$8 -> com.dabing.emoj.activity.ba:
+com.dabing.emoj.activity.EmojImageViewActivity$8 -> com.dabing.emoj.activity.bc:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$9 -> com.dabing.emoj.activity.bb:
+com.dabing.emoj.activity.EmojImageViewActivity$9 -> com.dabing.emoj.activity.bd:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojImageViewActivity$MyHandler -> com.dabing.emoj.activity.bc:
+com.dabing.emoj.activity.EmojImageViewActivity$MyHandler -> com.dabing.emoj.activity.be:
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.activity.EmojImageViewActivity$downloadTask -> com.dabing.emoj.activity.bd:
+com.dabing.emoj.activity.EmojImageViewActivity$downloadTask -> com.dabing.emoj.activity.bf:
     java.lang.String downloadURL -> b
     com.dabing.emoj.activity.EmojImageViewActivity this$0 -> a
     void run() -> run
@@ -4291,19 +4351,19 @@ com.dabing.emoj.activity.EmojSearchActivity -> com.dabing.emoj.activity.EmojSear
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     void access$0(com.dabing.emoj.activity.EmojSearchActivity,java.lang.String,java.lang.String) -> a
-com.dabing.emoj.activity.EmojSearchActivity$1 -> com.dabing.emoj.activity.be:
+com.dabing.emoj.activity.EmojSearchActivity$1 -> com.dabing.emoj.activity.bg:
     com.dabing.emoj.activity.EmojSearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojSearchActivity$2 -> com.dabing.emoj.activity.bf:
+com.dabing.emoj.activity.EmojSearchActivity$2 -> com.dabing.emoj.activity.bh:
     com.dabing.emoj.activity.EmojSearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojSearchActivity$3 -> com.dabing.emoj.activity.bg:
+com.dabing.emoj.activity.EmojSearchActivity$3 -> com.dabing.emoj.activity.bi:
     com.dabing.emoj.activity.EmojSearchActivity this$0 -> a
     void onClick$3b77d2a1(org.json.JSONObject) -> a
-com.dabing.emoj.activity.EmojSearchActivity$4 -> com.dabing.emoj.activity.bh:
+com.dabing.emoj.activity.EmojSearchActivity$4 -> com.dabing.emoj.activity.bj:
     com.dabing.emoj.activity.EmojSearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojSearchActivity$5 -> com.dabing.emoj.activity.bi:
+com.dabing.emoj.activity.EmojSearchActivity$5 -> com.dabing.emoj.activity.bk:
     com.dabing.emoj.activity.EmojSearchActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.EmojViewActivity -> com.dabing.emoj.activity.EmojViewActivity:
@@ -4340,7 +4400,7 @@ com.dabing.emoj.activity.EmojViewActivity -> com.dabing.emoj.activity.EmojViewAc
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
     void recycle() -> d
     void onDestroy() -> onDestroy
-    void show(int) -> b
+    void show(int) -> a
     void initializeControls(java.lang.String) -> a
     void onClick(android.view.View) -> onClick
     void ShareToWX_Friends() -> b
@@ -4352,40 +4412,40 @@ com.dabing.emoj.activity.EmojViewActivity -> com.dabing.emoj.activity.EmojViewAc
     com.dabing.emoj.imagezoomview.ZoomState access$3(com.dabing.emoj.activity.EmojViewActivity) -> b
     float access$4(com.dabing.emoj.activity.EmojViewActivity) -> c
     void access$5(com.dabing.emoj.activity.EmojViewActivity) -> d
-com.dabing.emoj.activity.EmojViewActivity$1 -> com.dabing.emoj.activity.bj:
+com.dabing.emoj.activity.EmojViewActivity$1 -> com.dabing.emoj.activity.bl:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$10 -> com.dabing.emoj.activity.bk:
+com.dabing.emoj.activity.EmojViewActivity$10 -> com.dabing.emoj.activity.bm:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$2 -> com.dabing.emoj.activity.bl:
+com.dabing.emoj.activity.EmojViewActivity$2 -> com.dabing.emoj.activity.bn:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$3 -> com.dabing.emoj.activity.bm:
+com.dabing.emoj.activity.EmojViewActivity$3 -> com.dabing.emoj.activity.bo:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$4 -> com.dabing.emoj.activity.bn:
+com.dabing.emoj.activity.EmojViewActivity$4 -> com.dabing.emoj.activity.bp:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$5 -> com.dabing.emoj.activity.bo:
+com.dabing.emoj.activity.EmojViewActivity$5 -> com.dabing.emoj.activity.bq:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(int) -> a
-com.dabing.emoj.activity.EmojViewActivity$6 -> com.dabing.emoj.activity.bp:
+com.dabing.emoj.activity.EmojViewActivity$6 -> com.dabing.emoj.activity.br:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onCancel(android.content.DialogInterface) -> onCancel
-com.dabing.emoj.activity.EmojViewActivity$7 -> com.dabing.emoj.activity.bq:
+com.dabing.emoj.activity.EmojViewActivity$7 -> com.dabing.emoj.activity.bs:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$8 -> com.dabing.emoj.activity.br:
+com.dabing.emoj.activity.EmojViewActivity$8 -> com.dabing.emoj.activity.bt:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$9 -> com.dabing.emoj.activity.bs:
+com.dabing.emoj.activity.EmojViewActivity$9 -> com.dabing.emoj.activity.bu:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.EmojViewActivity$MyHandler -> com.dabing.emoj.activity.bt:
+com.dabing.emoj.activity.EmojViewActivity$MyHandler -> com.dabing.emoj.activity.bv:
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.activity.EmojViewActivity$downloadTask -> com.dabing.emoj.activity.bu:
+com.dabing.emoj.activity.EmojViewActivity$downloadTask -> com.dabing.emoj.activity.bw:
     java.lang.String downloadURL -> b
     com.dabing.emoj.activity.EmojViewActivity this$0 -> a
     void run() -> run
@@ -4418,17 +4478,52 @@ com.dabing.emoj.activity.MainTab1Activity -> com.dabing.emoj.activity.MainTab1Ac
     void CheckNetWorkState() -> a
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void access$0(com.dabing.emoj.activity.MainTab1Activity) -> a
-com.dabing.emoj.activity.MainTab1Activity$1 -> com.dabing.emoj.activity.bv:
+com.dabing.emoj.activity.MainTab1Activity$1 -> com.dabing.emoj.activity.bx:
     com.dabing.emoj.activity.MainTab1Activity this$0 -> a
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.dabing.emoj.activity.MainTab1Activity$2 -> com.dabing.emoj.activity.bw:
+com.dabing.emoj.activity.MainTab1Activity$2 -> com.dabing.emoj.activity.by:
     com.dabing.emoj.activity.MainTab1Activity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.MainTab1Activity$3 -> com.dabing.emoj.activity.bx:
+com.dabing.emoj.activity.MainTab1Activity$3 -> com.dabing.emoj.activity.bz:
     com.dabing.emoj.activity.MainTab1Activity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.dabing.emoj.activity.MainTab2Activity -> com.dabing.emoj.activity.MainTab2Activity:
+    com.tencent.qqconnect.dataprovider.CallbackManager mCallbackManager -> a
+    java.lang.String action -> b
+    android.widget.RadioButton r1 -> c
+    android.widget.RadioButton r2 -> d
+    android.widget.RadioButton r3 -> e
+    android.widget.RadioButton r4 -> f
+    android.widget.RadioButton r5 -> g
+    android.widget.TextView newEmojView -> h
+    android.widget.TextView newSettingView -> i
+    android.widget.TextView newEmotionView -> j
+    android.widget.TabHost mTabHost -> k
+    android.content.Intent intent1 -> l
+    android.content.Intent intent2 -> m
+    android.content.Intent intent3 -> n
+    android.content.Intent intent4 -> o
+    android.content.Intent intent5 -> p
+    java.lang.String TAG -> q
+    android.content.BroadcastReceiver broadcastReceiver -> r
     void onCreate(android.os.Bundle) -> onCreate
+    void onResume() -> onResume
+    void onDestroy() -> onDestroy
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+    android.widget.TabHost$TabSpec buildTabSpec(java.lang.String,java.lang.String,android.content.Intent) -> a
+    void CheckNetWorkState() -> a
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void onBackPressed() -> onBackPressed
+    void access$0(com.dabing.emoj.activity.MainTab2Activity) -> a
+com.dabing.emoj.activity.MainTab2Activity$1 -> com.dabing.emoj.activity.ca:
+    com.dabing.emoj.activity.MainTab2Activity this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.dabing.emoj.activity.MainTab2Activity$2 -> com.dabing.emoj.activity.cb:
+    com.dabing.emoj.activity.MainTab2Activity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.activity.MainTab2Activity$3 -> com.dabing.emoj.activity.cc:
+    com.dabing.emoj.activity.MainTab2Activity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
 com.dabing.emoj.activity.MainTabActivity -> com.dabing.emoj.activity.MainTabActivity:
     java.lang.String action -> a
     int offset -> b
@@ -4455,13 +4550,13 @@ com.dabing.emoj.activity.MainTabActivity -> com.dabing.emoj.activity.MainTabActi
     void CheckNetWorkState() -> a
     boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
     void access$0(com.dabing.emoj.activity.MainTabActivity) -> a
-com.dabing.emoj.activity.MainTabActivity$1 -> com.dabing.emoj.activity.by:
+com.dabing.emoj.activity.MainTabActivity$1 -> com.dabing.emoj.activity.cd:
     com.dabing.emoj.activity.MainTabActivity this$0 -> a
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.dabing.emoj.activity.MainTabActivity$2 -> com.dabing.emoj.activity.bz:
+com.dabing.emoj.activity.MainTabActivity$2 -> com.dabing.emoj.activity.ce:
     com.dabing.emoj.activity.MainTabActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.dabing.emoj.activity.MainTabActivity$3 -> com.dabing.emoj.activity.ca:
+com.dabing.emoj.activity.MainTabActivity$3 -> com.dabing.emoj.activity.cf:
     com.dabing.emoj.activity.MainTabActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.dabing.emoj.activity.SettingAboutActivity -> com.dabing.emoj.activity.SettingAboutActivity:
@@ -4471,10 +4566,10 @@ com.dabing.emoj.activity.SettingAboutActivity -> com.dabing.emoj.activity.Settin
     android.view.View$OnClickListener clickListener -> d
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
-com.dabing.emoj.activity.SettingAboutActivity$1 -> com.dabing.emoj.activity.cb:
+com.dabing.emoj.activity.SettingAboutActivity$1 -> com.dabing.emoj.activity.cg:
     com.dabing.emoj.activity.SettingAboutActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.SettingAboutActivity$2 -> com.dabing.emoj.activity.cc:
+com.dabing.emoj.activity.SettingAboutActivity$2 -> com.dabing.emoj.activity.ch:
     com.dabing.emoj.activity.SettingAboutActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.SettingActivity -> com.dabing.emoj.activity.SettingActivity:
@@ -4496,7 +4591,8 @@ com.dabing.emoj.activity.SettingActivity -> com.dabing.emoj.activity.SettingActi
     android.widget.LinearLayout pingjiaView -> p
     android.widget.LinearLayout problemView -> q
     java.lang.String TAG -> r
-    int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType -> s
+    com.dabing.emoj.qqconnect.BaseApiListener apiListener -> s
+    int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType -> t
     void onCreate(android.os.Bundle) -> onCreate
     void onResume() -> onResume
     int getLayoutId() -> a
@@ -4504,24 +4600,29 @@ com.dabing.emoj.activity.SettingActivity -> com.dabing.emoj.activity.SettingActi
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     void BindUserInfo() -> b
     int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType() -> c
-com.dabing.emoj.activity.SettingActivity$1 -> com.dabing.emoj.activity.cd:
+com.dabing.emoj.activity.SettingActivity$1 -> com.dabing.emoj.activity.ci:
+    com.dabing.emoj.activity.SettingActivity this$0 -> a
+    void onComplete(org.json.JSONObject,java.lang.Object) -> a
+    void onNetworkUnavailableException(com.tencent.open.NetworkUnavailableException,java.lang.Object) -> a
+com.dabing.emoj.activity.SettingActivity$2 -> com.dabing.emoj.activity.cj:
     com.dabing.emoj.activity.SettingActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.SettingActivity$2 -> com.dabing.emoj.activity.ce:
+com.dabing.emoj.activity.SettingActivity$3 -> com.dabing.emoj.activity.ck:
     com.dabing.emoj.activity.SettingActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.SettingActivity$MyHandler -> com.dabing.emoj.activity.cf:
+com.dabing.emoj.activity.SettingActivity$4 -> com.dabing.emoj.activity.cl:
+    com.dabing.emoj.activity.SettingActivity this$0 -> a
+    void onError(com.tencent.tauth.UiError) -> a
+    void onComplete(org.json.JSONObject) -> a
+    void onCancel() -> a
+com.dabing.emoj.activity.SettingActivity$MyHandler -> com.dabing.emoj.activity.cm:
     com.dabing.emoj.activity.SettingActivity this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.activity.SettingActivity$UserInfoTask -> com.dabing.emoj.activity.cg:
-    com.tencent.weibo.beans.OAuth oAuth -> a
-    com.dabing.emoj.activity.SettingActivity this$0 -> b
-    void run() -> run
 com.dabing.emoj.activity.SettingProblemActivity -> com.dabing.emoj.activity.SettingProblemActivity:
     java.lang.String TAG -> a
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
-com.dabing.emoj.activity.SettingProblemActivity$1 -> com.dabing.emoj.activity.ch:
+com.dabing.emoj.activity.SettingProblemActivity$1 -> com.dabing.emoj.activity.cn:
     com.dabing.emoj.activity.SettingProblemActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.SettingUserInfoActivity -> com.dabing.emoj.activity.SettingUserInfoActivity:
@@ -4537,16 +4638,16 @@ com.dabing.emoj.activity.SettingUserInfoActivity -> com.dabing.emoj.activity.Set
     int getLayoutId() -> a
     void getUserInfo() -> b
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-com.dabing.emoj.activity.SettingUserInfoActivity$1 -> com.dabing.emoj.activity.ci:
+com.dabing.emoj.activity.SettingUserInfoActivity$1 -> com.dabing.emoj.activity.co:
     com.dabing.emoj.activity.SettingUserInfoActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.SettingUserInfoActivity$2 -> com.dabing.emoj.activity.cj:
+com.dabing.emoj.activity.SettingUserInfoActivity$2 -> com.dabing.emoj.activity.cp:
     com.dabing.emoj.activity.SettingUserInfoActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.SettingUserInfoActivity$MyHandler -> com.dabing.emoj.activity.ck:
+com.dabing.emoj.activity.SettingUserInfoActivity$MyHandler -> com.dabing.emoj.activity.cq:
     com.dabing.emoj.activity.SettingUserInfoActivity this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.activity.SettingUserInfoActivity$UserInfoTask -> com.dabing.emoj.activity.cl:
+com.dabing.emoj.activity.SettingUserInfoActivity$UserInfoTask -> com.dabing.emoj.activity.cr:
     com.tencent.weibo.beans.OAuth oAuth -> a
     com.dabing.emoj.activity.SettingUserInfoActivity this$0 -> b
     void run() -> run
@@ -4558,37 +4659,112 @@ com.dabing.emoj.activity.SettingVersionActivity -> com.dabing.emoj.activity.Sett
     android.view.View$OnClickListener clickListener -> e
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
-com.dabing.emoj.activity.SettingVersionActivity$1 -> com.dabing.emoj.activity.cm:
+com.dabing.emoj.activity.SettingVersionActivity$1 -> com.dabing.emoj.activity.cs:
     com.dabing.emoj.activity.SettingVersionActivity this$0 -> a
     void onUpdateReturned(int,com.umeng.update.UpdateResponse) -> a
-com.dabing.emoj.activity.SettingVersionActivity$2 -> com.dabing.emoj.activity.cn:
+com.dabing.emoj.activity.SettingVersionActivity$2 -> com.dabing.emoj.activity.ct:
     com.dabing.emoj.activity.SettingVersionActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.activity.SettingVersionActivity$2$1 -> com.dabing.emoj.activity.co:
+com.dabing.emoj.activity.SettingVersionActivity$2$1 -> com.dabing.emoj.activity.cu:
     com.dabing.emoj.activity.SettingVersionActivity$2 this$1 -> a
     void OnDownloadEnd(int) -> a
-com.dabing.emoj.activity.SettingVersionActivity$3 -> com.dabing.emoj.activity.cp:
+com.dabing.emoj.activity.SettingVersionActivity$3 -> com.dabing.emoj.activity.cv:
     com.dabing.emoj.activity.SettingVersionActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.UserDefineActivity -> com.dabing.emoj.activity.UserDefineActivity:
-    boolean Mode -> m
-    android.widget.ProgressBar mProgressBar -> n
-    android.widget.TextView rightBtn -> o
-    int Album_Width -> p
-    java.lang.String[] PULL_MSG_ARRAY -> q
-    int PULL_MSG_ARRAY_INDEX -> r
-    java.lang.String TAG -> s
-    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> t
+    java.lang.String currentTAG -> m
+    java.lang.String action -> n
+    boolean Mode -> o
+    android.widget.ProgressBar mProgressBar -> p
+    android.widget.TextView rightBtn -> q
+    android.widget.TextView leftBtn -> r
+    android.widget.TextView mTitle -> s
+    int Album_Width -> t
+    java.lang.String[] PULL_MSG_ARRAY -> u
+    int PULL_MSG_ARRAY_INDEX -> v
+    java.lang.String TAG -> w
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> x
     void onCreate(android.os.Bundle) -> onCreate
     void onDestroy() -> onDestroy
     void onLoading() -> d
     void onEnd() -> e
     void onClick(java.lang.String,java.lang.Object) -> a
-com.dabing.emoj.activity.UserDefineActivity$1 -> com.dabing.emoj.activity.cq:
+    void onInit(java.lang.String,java.lang.Object) -> b
+    void onBackPressed() -> onBackPressed
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+com.dabing.emoj.activity.UserDefineActivity$1 -> com.dabing.emoj.activity.cw:
     com.dabing.emoj.activity.UserDefineActivity this$0 -> a
     void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
-com.dabing.emoj.activity.UserDefineActivity$2 -> com.dabing.emoj.activity.cr:
+com.dabing.emoj.activity.UserDefineActivity$2 -> com.dabing.emoj.activity.cx:
     com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.activity.UserDefineActivity$3 -> com.dabing.emoj.activity.cy:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.activity.UserDefineActivity$4 -> com.dabing.emoj.activity.cz:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.activity.UserDefineActivity$5 -> com.dabing.emoj.activity.da:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.activity.UserDefineActivity$6 -> com.dabing.emoj.activity.db:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.activity.UserDefineActivity$7 -> com.dabing.emoj.activity.dc:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.activity.UserDefineActivity$8 -> com.dabing.emoj.activity.dd:
+    com.dabing.emoj.activity.UserDefineActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.activity.UserDefineAddActivity -> com.dabing.emoj.activity.UserDefineAddActivity:
+    java.lang.String current -> a
+    java.util.Stack mStack -> b
+    com.dabing.emoj.db.UserDefineDataBaseHelper mHelper -> c
+    com.dabing.emoj.widget.NormalProgressDialog progressDialog -> d
+    com.dabing.emoj.adpater.UserDefineAddFilesAdapter mAdapter -> e
+    com.handmark.pulltorefresh.library.PullToRefreshListView mListView -> f
+    java.lang.String TAG -> g
+    java.util.Comparator cmpName -> i
+    android.os.Handler mHandler -> j
+    android.widget.AdapterView$OnItemClickListener listener -> h
+    void onCreate(android.os.Bundle) -> onCreate
+    int getLayoutId() -> a
+    void onBackPressed() -> onBackPressed
+    void showFiles(java.lang.String) -> a
+    boolean back() -> b
+    void BindFiles(java.util.List) -> a
+    void addFile(com.dabing.emoj.utils.SimpleFile) -> a
+    android.os.Handler access$0(com.dabing.emoj.activity.UserDefineAddActivity) -> a
+    java.util.Comparator access$1(com.dabing.emoj.activity.UserDefineAddActivity) -> b
+com.dabing.emoj.activity.UserDefineAddActivity$1 -> com.dabing.emoj.activity.de:
+    com.dabing.emoj.activity.UserDefineAddActivity this$0 -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
+com.dabing.emoj.activity.UserDefineAddActivity$2 -> com.dabing.emoj.activity.df:
+    com.dabing.emoj.activity.UserDefineAddActivity this$0 -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.dabing.emoj.activity.UserDefineAddActivity$3 -> com.dabing.emoj.activity.dg:
+    com.dabing.emoj.activity.UserDefineAddActivity this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.dabing.emoj.activity.UserDefineAddActivity$GetFilesTask -> com.dabing.emoj.activity.dh:
+    java.lang.String mPath -> a
+    com.dabing.emoj.activity.UserDefineAddActivity this$0 -> b
+    void run() -> run
+com.dabing.emoj.activity.UserDefineAddActivity$GetFilesTask$1 -> com.dabing.emoj.activity.di:
+    com.dabing.emoj.activity.UserDefineAddActivity$GetFilesTask this$1 -> a
+    boolean accept(java.io.File,java.lang.String) -> accept
+com.dabing.emoj.activity.UserDefineEmojViewActivity -> com.dabing.emoj.activity.UserDefineEmojViewActivity:
+    java.lang.String[] mFiles -> V
+    java.lang.String TAG -> W
+    void onCreate(android.os.Bundle) -> onCreate
+    void Initialize() -> b
+    void showNextImage() -> c
+    void showPrevImage() -> d
+    java.lang.String showNext() -> p
+    java.lang.String showPrev() -> q
+    void SetImage() -> r
+com.dabing.emoj.activity.UserDefineEmojViewActivity$1 -> com.dabing.emoj.activity.dj:
+    com.dabing.emoj.activity.UserDefineEmojViewActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.activity.UserLoginActivity -> com.dabing.emoj.activity.UserLoginActivity:
     android.webkit.WebView webView -> a
@@ -4596,7 +4772,7 @@ com.dabing.emoj.activity.UserLoginActivity -> com.dabing.emoj.activity.UserLogin
     java.lang.String TAG -> c
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
-com.dabing.emoj.activity.UserLoginActivity$1 -> com.dabing.emoj.activity.cs:
+com.dabing.emoj.activity.UserLoginActivity$1 -> com.dabing.emoj.activity.dk:
     com.dabing.emoj.activity.UserLoginActivity this$0 -> a
     void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
     void onReceivedSslError(android.webkit.WebView,android.webkit.SslErrorHandler,android.net.http.SslError) -> onReceivedSslError
@@ -4606,7 +4782,7 @@ com.dabing.emoj.activity.WelcomeActivity -> com.dabing.emoj.activity.WelcomeActi
     java.lang.String TAG -> c
     void onCreate(android.os.Bundle) -> onCreate
     void onWindowFocusChanged(boolean) -> onWindowFocusChanged
-com.dabing.emoj.activity.WelcomeActivity$1 -> com.dabing.emoj.activity.ct:
+com.dabing.emoj.activity.WelcomeActivity$1 -> com.dabing.emoj.activity.dl:
     com.dabing.emoj.activity.WelcomeActivity this$0 -> a
     void run() -> run
 com.dabing.emoj.admin.MakeEmotionActivity -> com.dabing.emoj.admin.MakeEmotionActivity:
@@ -4664,22 +4840,22 @@ com.dabing.emoj.admin.SelectEmojActivity -> com.dabing.emoj.admin.SelectEmojActi
     void InitEmotion() -> d
     void SetImage() -> e
     java.lang.String GetNext() -> f
-    java.lang.String GetPrev() -> i
-    void RecycleBitmap() -> j
+    java.lang.String GetPrev() -> g
+    void RecycleBitmap() -> h
     int getLayoutId() -> a
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    void showBrowseButton() -> k
-    void hideBrowseButton() -> l
+    void showBrowseButton() -> i
+    void hideBrowseButton() -> j
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    void recycle() -> m
+    void recycle() -> k
     void onDestroy() -> onDestroy
-    void show(int) -> b
+    void show(int) -> a
     void initializeControls(java.lang.String) -> a
     void onClick(android.view.View) -> onClick
     void ShareToWX_Friends() -> b
     void ShareToWx_Circle() -> c
-    void UpdateHeaderClickCount() -> n
+    void UpdateHeaderClickCount() -> l
     void UmengEvent(java.lang.String,java.lang.String,java.lang.String) -> a
     void access$0(com.dabing.emoj.admin.SelectEmojActivity,int) -> a
     void access$1(com.dabing.emoj.admin.SelectEmojActivity) -> a
@@ -4788,6 +4964,8 @@ com.dabing.emoj.adpater.AlbumDetailAdapter -> com.dabing.emoj.a.b:
     int mSpacing -> c
     int mWidth -> d
     java.lang.String TAG -> e
+    java.io.File[] getData() -> a
+    java.io.File getFile(int) -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
@@ -4904,7 +5082,32 @@ com.dabing.emoj.adpater.RegularEmojGridViewAdapter -> com.dabing.emoj.a.l:
     long getItemId(int) -> getItemId
     org.json.JSONObject getPic(int) -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.WapsAppWallListViewAdapter -> com.dabing.emoj.a.m:
+com.dabing.emoj.adpater.UserDefineAddFilesAdapter -> com.dabing.emoj.a.m:
+    com.dabing.emoj.adpater.UserDefineAddFilesAdapter$IAddFileCallBack mCallBack -> a
+    android.content.Context mContext -> b
+    java.util.List mList -> c
+    com.dabing.emoj.db.UserDefineDataBaseHelper mHelper -> d
+    java.lang.String TAG -> e
+    com.dabing.emoj.utils.SimpleFile getFile(int) -> a
+    int getCount() -> getCount
+    java.lang.Object getItem(int) -> getItem
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.dabing.emoj.adpater.UserDefineAddFilesAdapter$1 -> com.dabing.emoj.a.n:
+    com.dabing.emoj.adpater.UserDefineAddFilesAdapter this$0 -> a
+    com.dabing.emoj.utils.SimpleFile val$file -> b
+    void onClick(android.view.View) -> onClick
+    com.dabing.emoj.adpater.UserDefineAddFilesAdapter access$0(com.dabing.emoj.adpater.UserDefineAddFilesAdapter$1) -> a
+com.dabing.emoj.adpater.UserDefineAddFilesAdapter$1$1 -> com.dabing.emoj.a.o:
+    com.dabing.emoj.adpater.UserDefineAddFilesAdapter$1 this$1 -> a
+    com.dabing.emoj.utils.SimpleFile val$file -> b
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.adpater.UserDefineAddFilesAdapter$1$2 -> com.dabing.emoj.a.p:
+    com.dabing.emoj.adpater.UserDefineAddFilesAdapter$1 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.adpater.UserDefineAddFilesAdapter$IAddFileCallBack -> com.dabing.emoj.a.q:
+    void addFile(com.dabing.emoj.utils.SimpleFile) -> a
+com.dabing.emoj.adpater.WapsAppWallListViewAdapter -> com.dabing.emoj.a.r:
     android.content.Context mContext -> a
     java.util.List mData -> b
     java.lang.String TAG -> c
@@ -4913,7 +5116,7 @@ com.dabing.emoj.adpater.WapsAppWallListViewAdapter -> com.dabing.emoj.a.m:
     long getItemId(int) -> getItemId
     cn.waps.AdInfo getAdInfo(int) -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.dabing.emoj.adpater.WapsAppWallListViewAdapter$1 -> com.dabing.emoj.a.n:
+com.dabing.emoj.adpater.WapsAppWallListViewAdapter$1 -> com.dabing.emoj.a.s:
     com.dabing.emoj.adpater.WapsAppWallListViewAdapter this$0 -> a
     cn.waps.AdInfo val$info -> b
     void onClick(android.view.View) -> onClick
@@ -5048,11 +5251,15 @@ com.dabing.emoj.db.UserDefineDataBaseHelper -> com.dabing.emoj.db.a:
     void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
     com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor getCursor() -> a
     com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor getCursor(long) -> a
-    void delete(int) -> a
+    void remove(int) -> a
+    void enable(long) -> b
+    void delete(int) -> b
     void updateCount(int,int) -> a
     void update(int,com.dabing.emoj.utils.FileInfo) -> a
     long insert(com.dabing.emoj.utils.FileInfo) -> a
-    int getId(java.lang.String) -> a
+    long insert(com.dabing.emoj.utils.SimpleFile) -> a
+    boolean exist(java.lang.String) -> a
+    int getId(java.lang.String) -> b
 com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor -> com.dabing.emoj.db.b:
     int getId() -> a
     java.lang.String getPath() -> b
@@ -5106,28 +5313,36 @@ com.dabing.emoj.demo.demoPanel$EmotionAdpater -> com.dabing.emoj.demo.d:
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
 com.dabing.emoj.demo.democall -> com.dabing.emoj.demo.democall:
-    com.dabing.emoj.widget.QuickActionGrid mlist -> a
-    com.tencent.mm.sdk.openapi.IWXAPI api -> b
-    com.tencent.weibo.beans.OAuth oAuth -> c
-    android.widget.Button btn1 -> d
-    android.widget.Button btn2 -> e
-    android.widget.Button btn3 -> f
-    android.widget.Button btn4 -> g
-    android.widget.Button btn5 -> h
-    android.widget.Button btn6 -> i
-    android.widget.Button btn7 -> j
-    java.lang.String TAG -> k
+    com.tencent.tauth.Tencent mTencent -> a
+    com.dabing.emoj.widget.QuickActionGrid mlist -> b
+    com.tencent.mm.sdk.openapi.IWXAPI api -> c
+    com.tencent.weibo.beans.OAuth oAuth -> d
+    android.widget.Button btn1 -> e
+    android.widget.Button btn2 -> f
+    android.widget.Button btn3 -> g
+    android.widget.Button btn4 -> h
+    android.widget.Button btn5 -> i
+    android.widget.Button btn6 -> j
+    android.widget.Button btn7 -> k
+    android.widget.Button btn8 -> l
+    java.lang.String TAG -> m
     void onCreate(android.os.Bundle) -> onCreate
     int getLayoutId() -> a
     void onClick(android.view.View) -> onClick
     void getImages() -> b
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
 com.dabing.emoj.demo.democall$1 -> com.dabing.emoj.demo.e:
     com.dabing.emoj.demo.democall this$0 -> a
     void run() -> run
+com.dabing.emoj.demo.democall$4 -> com.dabing.emoj.demo.f:
+    com.dabing.emoj.demo.democall this$0 -> a
+    void onError(com.tencent.tauth.UiError) -> a
+    void onComplete(org.json.JSONObject) -> a
+    void onCancel() -> a
 com.dabing.emoj.demo.demolist -> com.dabing.emoj.demo.demolist:
     android.widget.ListView listView -> a
     void onCreate(android.os.Bundle) -> onCreate
-com.dabing.emoj.demo.demolist$1 -> com.dabing.emoj.demo.f:
+com.dabing.emoj.demo.demolist$1 -> com.dabing.emoj.demo.g:
     com.dabing.emoj.demo.demolist this$0 -> a
     java.lang.Class[] val$classes -> b
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
@@ -5155,77 +5370,102 @@ com.dabing.emoj.fragment.AlbumDetailFragment -> com.dabing.emoj.fragment.a:
     com.dabing.emoj.utils.FileInfo mFileInfo -> P
     com.handmark.pulltorefresh.library.PullToRefreshGridView gridView -> Q
     java.lang.String TAG -> R
-    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener onPullEventListener -> S
-    android.os.Handler mHandler -> T
+    java.util.Comparator dateComparator -> S
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener onPullEventListener -> T
+    android.widget.AdapterView$OnItemClickListener itemClickListener -> U
+    android.os.Handler mHandler -> V
     com.dabing.emoj.fragment.AlbumDetailFragment getInstance(com.dabing.emoj.utils.FileInfo) -> a
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
     void onActivityCreated(android.os.Bundle) -> b
-    void onDestroy() -> p
-    void onDetach() -> r
-    void onResume() -> m
+    void onDestroy() -> q
+    void onDetach() -> s
+    void onResume() -> n
+    void onActivityResult(int,int,android.content.Intent) -> a
+    void setCallBack(com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack) -> a
     void bindGridView(java.io.File[]) -> a
-    android.os.Handler access$0(com.dabing.emoj.fragment.AlbumDetailFragment) -> a
+    int access$0$57063734(long) -> a
+    android.os.Handler access$1(com.dabing.emoj.fragment.AlbumDetailFragment) -> a
+    java.util.Comparator access$2(com.dabing.emoj.fragment.AlbumDetailFragment) -> b
 com.dabing.emoj.fragment.AlbumDetailFragment$1 -> com.dabing.emoj.fragment.b:
     com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> a
-    void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
 com.dabing.emoj.fragment.AlbumDetailFragment$2 -> com.dabing.emoj.fragment.c:
     com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> a
+    void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
+com.dabing.emoj.fragment.AlbumDetailFragment$3 -> com.dabing.emoj.fragment.d:
+    com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.dabing.emoj.fragment.AlbumDetailFragment$4 -> com.dabing.emoj.fragment.e:
+    com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.fragment.AlbumDetailFragment$GetImagesTask -> com.dabing.emoj.fragment.d:
+com.dabing.emoj.fragment.AlbumDetailFragment$GetImagesTask -> com.dabing.emoj.fragment.f:
     java.lang.String mPath -> a
     com.dabing.emoj.fragment.AlbumDetailFragment this$0 -> b
     void run() -> run
-com.dabing.emoj.fragment.AlbumFragment -> com.dabing.emoj.fragment.e:
-    com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack mCallBack -> N
-    android.os.Messenger client -> O
-    android.os.Messenger mService -> P
-    boolean mBound -> Q
-    java.lang.String[] PULL_MSG_ARRAY -> R
-    int PULL_MSG_ARRAY_INDEX -> S
-    com.dabing.emoj.widget.CustomGridLayout gridLayout -> T
-    com.handmark.pulltorefresh.library.PullToRefreshScrollView mScrollView -> U
-    com.dabing.emoj.adpater.AlbumCusorAdapter adapter -> V
-    boolean IsScaned -> W
-    java.lang.String TAG -> X
-    com.dabing.emoj.fragment.AlbumFragment instance -> Y
-    com.dabing.emoj.widget.Album$AlbumClickListener albumClickListener -> Z
-    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> aa
-    android.os.Handler mHandler -> ab
-    android.content.ServiceConnection mConnection -> ac
-    com.dabing.emoj.fragment.AlbumFragment getInstance() -> C
+com.dabing.emoj.fragment.AlbumFragment -> com.dabing.emoj.fragment.g:
+    int mWidth -> N
+    com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack mCallBack -> O
+    android.os.Messenger client -> P
+    android.os.Messenger mService -> Q
+    boolean mBound -> R
+    java.lang.String[] PULL_MSG_ARRAY -> S
+    int PULL_MSG_ARRAY_INDEX -> T
+    com.dabing.emoj.widget.CustomGridLayout gridLayout -> U
+    com.handmark.pulltorefresh.library.PullToRefreshScrollView mScrollView -> V
+    com.dabing.emoj.adpater.AlbumCusorAdapter adapter -> W
+    com.dabing.emoj.db.UserDefineDataBaseHelper mHelper -> X
+    boolean IsScaned -> Y
+    boolean delMode -> Z
+    java.lang.String TAG -> aa
+    com.dabing.emoj.fragment.AlbumFragment instance -> ab
+    android.view.View$OnClickListener addClickListener -> ac
+    com.dabing.emoj.widget.Album$AlbumClickListener albumClickListener -> ad
+    com.handmark.pulltorefresh.library.PullToRefreshBase$OnPullEventListener pullEventListener -> ae
+    android.os.Handler mHandler -> af
+    android.content.ServiceConnection mConnection -> ag
+    com.dabing.emoj.fragment.AlbumFragment getInstance() -> D
     void onActivityCreated(android.os.Bundle) -> b
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onDestroy() -> p
-    void onPause() -> n
-    void onResume() -> m
-    void onDestroyView() -> o
-    void onDetach() -> r
-    void refleshGridLayout() -> D
+    void onDestroy() -> q
+    void onPause() -> o
+    void onResume() -> n
+    void onDestroyView() -> p
+    void onDetach() -> s
+    void onActivityResult(int,int,android.content.Intent) -> a
+    void refleshGridLayout() -> E
     void setCallBack(com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack) -> a
-    void register() -> E
-    void scanfiles() -> F
+    void edit() -> F
+    boolean getDelMode() -> G
+    void cancelDelMode() -> H
+    void setDelMode(boolean) -> a
+    void register() -> I
+    void scanfiles() -> J
     android.support.v4.content.Loader onCreateLoader$e57f803() -> a
     void onLoaderReset$5dda1f52() -> a_
     void onLoadFinished$13079eae(java.lang.Object) -> a
-com.dabing.emoj.fragment.AlbumFragment$1 -> com.dabing.emoj.fragment.f:
+com.dabing.emoj.fragment.AlbumFragment$1 -> com.dabing.emoj.fragment.h:
+    com.dabing.emoj.fragment.AlbumFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.fragment.AlbumFragment$2 -> com.dabing.emoj.fragment.i:
     com.dabing.emoj.fragment.AlbumFragment this$0 -> a
     void click(com.dabing.emoj.utils.FileInfo) -> a
-com.dabing.emoj.fragment.AlbumFragment$2 -> com.dabing.emoj.fragment.g:
+    void del(com.dabing.emoj.widget.Album,com.dabing.emoj.utils.FileInfo) -> a
+com.dabing.emoj.fragment.AlbumFragment$3 -> com.dabing.emoj.fragment.j:
     com.dabing.emoj.fragment.AlbumFragment this$0 -> a
     void onPullEvent$6ce99c71(com.handmark.pulltorefresh.library.PullToRefreshBase,com.handmark.pulltorefresh.library.PullToRefreshBase$State) -> a
-com.dabing.emoj.fragment.AlbumFragment$3 -> com.dabing.emoj.fragment.h:
+com.dabing.emoj.fragment.AlbumFragment$4 -> com.dabing.emoj.fragment.k:
     com.dabing.emoj.fragment.AlbumFragment this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.fragment.AlbumFragment$4 -> com.dabing.emoj.fragment.i:
+com.dabing.emoj.fragment.AlbumFragment$5 -> com.dabing.emoj.fragment.l:
     com.dabing.emoj.fragment.AlbumFragment this$0 -> a
     void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
     void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
-com.dabing.emoj.fragment.AlbumFragment$5 -> com.dabing.emoj.fragment.j:
+com.dabing.emoj.fragment.AlbumFragment$6 -> com.dabing.emoj.fragment.m:
     com.dabing.emoj.fragment.AlbumFragment this$0 -> a
     void run() -> run
-com.dabing.emoj.fragment.BaseEmojFragment -> com.dabing.emoj.fragment.k:
+com.dabing.emoj.fragment.BaseEmojFragment -> com.dabing.emoj.fragment.n:
     org.json.JSONObject mObject -> N
 com.dabing.emoj.fragment.CommonEmojFragment -> com.dabing.emoj.fragment.CommonEmojFragment:
     boolean flag -> O
@@ -5277,10 +5517,10 @@ com.dabing.emoj.fragment.CrystalHeaderFragment -> com.dabing.emoj.fragment.Cryst
     void onPageChanged$3d66f259(int) -> a
     void setItemSeleted(int,java.lang.String,boolean) -> a
     void access$0$5cbd274f(com.dabing.emoj.fragment.CrystalHeaderFragment,int,java.lang.String) -> a
-com.dabing.emoj.fragment.CrystalHeaderFragment$1 -> com.dabing.emoj.fragment.l:
+com.dabing.emoj.fragment.CrystalHeaderFragment$1 -> com.dabing.emoj.fragment.o:
     com.dabing.emoj.fragment.CrystalHeaderFragment this$0 -> a
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.CrystalHeaderFragment$2 -> com.dabing.emoj.fragment.m:
+com.dabing.emoj.fragment.CrystalHeaderFragment$2 -> com.dabing.emoj.fragment.p:
     com.dabing.emoj.fragment.CrystalHeaderFragment this$0 -> a
     void run() -> run
 com.dabing.emoj.fragment.EmotionEmojFragment -> com.dabing.emoj.fragment.EmotionEmojFragment:
@@ -5332,10 +5572,10 @@ com.dabing.emoj.fragment.EmotionHeaderFragment -> com.dabing.emoj.fragment.Emoti
     void onPageChanged$3d66f259(int) -> a
     void setItemSeleted(int,java.lang.String,boolean) -> a
     void access$0$529bb2b6(com.dabing.emoj.fragment.EmotionHeaderFragment,int,java.lang.String) -> a
-com.dabing.emoj.fragment.EmotionHeaderFragment$1 -> com.dabing.emoj.fragment.n:
+com.dabing.emoj.fragment.EmotionHeaderFragment$1 -> com.dabing.emoj.fragment.q:
     com.dabing.emoj.fragment.EmotionHeaderFragment this$0 -> a
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.EmotionHeaderFragment$2 -> com.dabing.emoj.fragment.o:
+com.dabing.emoj.fragment.EmotionHeaderFragment$2 -> com.dabing.emoj.fragment.r:
     com.dabing.emoj.fragment.EmotionHeaderFragment this$0 -> a
     void run() -> run
 com.dabing.emoj.fragment.HeaderFragment -> com.dabing.emoj.fragment.HeaderFragment:
@@ -5356,12 +5596,12 @@ com.dabing.emoj.fragment.HeaderFragment -> com.dabing.emoj.fragment.HeaderFragme
     org.json.JSONArray sort(org.json.JSONArray) -> a
     void onPageChanged$3d66f259(int) -> a
     void access$0$116747ce(com.dabing.emoj.fragment.HeaderFragment,int,java.lang.String) -> a
-com.dabing.emoj.fragment.HeaderFragment$1 -> com.dabing.emoj.fragment.p:
+com.dabing.emoj.fragment.HeaderFragment$1 -> com.dabing.emoj.fragment.s:
     com.dabing.emoj.fragment.HeaderFragment this$0 -> a
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener -> com.dabing.emoj.fragment.q:
+com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener -> com.dabing.emoj.fragment.t:
     void onItemClick(android.view.View,org.json.JSONObject) -> a
-com.dabing.emoj.fragment.HotEmojFragment -> com.dabing.emoj.fragment.r:
+com.dabing.emoj.fragment.HotEmojFragment -> com.dabing.emoj.fragment.u:
     com.dabing.emoj.adpater.HotEmojGridViewAdapter adapter -> O
     android.widget.GridView gridView -> P
     java.lang.String TAG -> Q
@@ -5369,10 +5609,10 @@ com.dabing.emoj.fragment.HotEmojFragment -> com.dabing.emoj.fragment.r:
     void onActivityCreated(android.os.Bundle) -> b
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onDestroy() -> p
+    void onDestroy() -> q
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     void onActivityResult(int,int,android.content.Intent) -> a
-com.dabing.emoj.fragment.RegularEmojFragment -> com.dabing.emoj.fragment.s:
+com.dabing.emoj.fragment.RegularEmojFragment -> com.dabing.emoj.fragment.v:
     java.lang.String action -> O
     org.json.JSONArray mArray -> P
     com.tencent.mm.sdk.openapi.IWXAPI api -> Q
@@ -5384,16 +5624,17 @@ com.dabing.emoj.fragment.RegularEmojFragment -> com.dabing.emoj.fragment.s:
     void onActivityCreated(android.os.Bundle) -> b
     void onCreate(android.os.Bundle) -> a
     android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-    void onDestroy() -> p
+    void onDestroy() -> q
     org.json.JSONArray makeArray(org.json.JSONArray) -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     void SendIntent$14e1ec6d(java.lang.String,java.lang.String) -> a
     void onActivityResult(int,int,android.content.Intent) -> a
-com.dabing.emoj.fragment.UserDefineFragment -> com.dabing.emoj.fragment.t:
-com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack -> com.dabing.emoj.fragment.u:
+com.dabing.emoj.fragment.UserDefineFragment -> com.dabing.emoj.fragment.w:
+com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack -> com.dabing.emoj.fragment.x:
     void onLoading() -> d
     void onEnd() -> e
     void onClick(java.lang.String,java.lang.Object) -> a
+    void onInit(java.lang.String,java.lang.Object) -> b
 com.dabing.emoj.imagezoomview.ImageZoomView -> com.dabing.emoj.imagezoomview.ImageZoomView:
     android.graphics.Paint mPaint -> b
     android.graphics.Rect mRectSrc -> c
@@ -5493,6 +5734,26 @@ com.dabing.emoj.provider.MyRequest -> com.dabing.emoj.provider.MyRequest:
 com.dabing.emoj.provider.MyRequest$1 -> com.dabing.emoj.provider.e:
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
+com.dabing.emoj.qqconnect.BaseApiListener -> com.dabing.emoj.c.a:
+    java.lang.String mScope -> b
+    java.lang.Boolean mNeedReAuth -> c
+    void onComplete(org.json.JSONObject,java.lang.Object) -> a
+    void onConnectTimeoutException$681d225a(org.apache.http.conn.ConnectTimeoutException) -> a
+    void onHttpStatusException$2d60cb38(com.tencent.open.HttpStatusException) -> a
+    void onIOException$7e5565fb(java.io.IOException) -> a
+    void onJSONException$18eb2175(org.json.JSONException) -> a
+    void onMalformedURLException$11b5f444(java.net.MalformedURLException) -> a
+    void onNetworkUnavailableException(com.tencent.open.NetworkUnavailableException,java.lang.Object) -> a
+    void onSocketTimeoutException$69211e98(java.net.SocketTimeoutException) -> a
+    void onUnknowException$54375c33(java.lang.Exception) -> a
+com.dabing.emoj.qqconnect.QQConnect -> com.dabing.emoj.c.b:
+    com.tencent.tauth.Tencent mTencent -> a
+    com.dabing.emoj.qqconnect.QQConnect instance -> b
+    android.content.Context mContext -> c
+    java.lang.String TAG -> d
+    com.dabing.emoj.qqconnect.QQConnect createInstance(android.content.Context) -> a
+    void Init() -> a
+    com.tencent.tauth.Tencent getTencent() -> b
 com.dabing.emoj.service.AppRegister -> com.dabing.emoj.service.AppRegister:
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
 com.dabing.emoj.service.EmojScanService -> com.dabing.emoj.service.EmojScanService:
@@ -5592,7 +5853,7 @@ com.dabing.emoj.service.WeiXinEmojService$Task1 -> com.dabing.emoj.service.r:
 com.dabing.emoj.service.WeiXinEmojService$Task2 -> com.dabing.emoj.service.s:
     com.dabing.emoj.service.WeiXinEmojService this$0 -> a
     void run() -> run
-com.dabing.emoj.utils.AppConfig -> com.dabing.emoj.c.a:
+com.dabing.emoj.utils.AppConfig -> com.dabing.emoj.d.a:
     java.lang.String TAG -> a
     com.tencent.weibo.beans.OAuth oAuth -> b
     com.tencent.weibo.beans.OAuth getOAuth() -> a
@@ -5603,60 +5864,66 @@ com.dabing.emoj.utils.AppConfig -> com.dabing.emoj.c.a:
     java.lang.String getThumb() -> f
     java.lang.String getCache() -> g
     java.lang.String getAblum() -> h
-    java.lang.String getEmojIndex(android.content.Context) -> a
-    void setEmojIndex(android.content.Context,java.lang.String) -> a
-    java.lang.String getEmoj(android.content.Context,java.lang.String) -> b
-    java.lang.String getCommonUse(android.content.Context) -> b
-    void setCommonUse(android.content.Context,java.lang.String) -> c
+    java.lang.String getQQ_OpenId(android.content.Context) -> a
+    void setQQ_OpenId(android.content.Context,java.lang.String) -> a
+    java.lang.String getQQ_AccessToken(android.content.Context) -> b
+    void setQQ_AccessToken(android.content.Context,java.lang.String) -> b
+    long getQQ_ExpiresIn(android.content.Context) -> c
+    void setQQ_ExpiresIn(android.content.Context,long) -> a
+    java.lang.String getEmojIndex(android.content.Context) -> d
+    void setEmojIndex(android.content.Context,java.lang.String) -> c
+    java.lang.String getEmoj(android.content.Context,java.lang.String) -> d
+    java.lang.String getCommonUse(android.content.Context) -> e
+    void setCommonUse(android.content.Context,java.lang.String) -> e
     int getColor(java.lang.String) -> a
-    boolean getAdvertise_on(android.content.Context) -> c
+    boolean getAdvertise_on(android.content.Context) -> f
     void setAdvertise_on(android.content.Context,boolean) -> a
-    java.lang.String getNotice(android.content.Context) -> d
-    void setNotic(android.content.Context,java.lang.String) -> d
-    java.lang.String getWeibo(android.content.Context) -> e
-    void setWeibo(android.content.Context,java.lang.String) -> e
-    java.lang.String getSharePicUrl(android.content.Context) -> f
-    void setSharePicUrl(android.content.Context,java.lang.String) -> f
-    java.lang.String getAdType(android.content.Context) -> g
-    void setAdType(android.content.Context,java.lang.String) -> g
-    java.lang.String getWAPS_INDEX1_AD_TYPE(android.content.Context) -> h
-    void setWAPS_INDEX1_AD_TYPE(android.content.Context,java.lang.String) -> h
-    java.lang.String getWAPS_INDEX2_AD_TYPE(android.content.Context) -> i
-    void setWAPS_INDEX2_AD_TYPE(android.content.Context,java.lang.String) -> i
-    java.lang.String getWAPS_INDEX3_AD_TYPE(android.content.Context) -> j
-    void setWAPS_INDEX3_AD_TYPE(android.content.Context,java.lang.String) -> j
-    void setVip(android.content.Context,java.lang.String) -> k
-    boolean getListenSwitch(android.content.Context) -> k
+    java.lang.String getNotice(android.content.Context) -> g
+    void setNotic(android.content.Context,java.lang.String) -> f
+    java.lang.String getWeibo(android.content.Context) -> h
+    void setWeibo(android.content.Context,java.lang.String) -> g
+    java.lang.String getSharePicUrl(android.content.Context) -> i
+    void setSharePicUrl(android.content.Context,java.lang.String) -> h
+    java.lang.String getAdType(android.content.Context) -> j
+    void setAdType(android.content.Context,java.lang.String) -> i
+    java.lang.String getWAPS_INDEX1_AD_TYPE(android.content.Context) -> k
+    void setWAPS_INDEX1_AD_TYPE(android.content.Context,java.lang.String) -> j
+    java.lang.String getWAPS_INDEX2_AD_TYPE(android.content.Context) -> l
+    void setWAPS_INDEX2_AD_TYPE(android.content.Context,java.lang.String) -> k
+    java.lang.String getWAPS_INDEX3_AD_TYPE(android.content.Context) -> m
+    void setWAPS_INDEX3_AD_TYPE(android.content.Context,java.lang.String) -> l
+    void setVip(android.content.Context,java.lang.String) -> m
+    boolean getListenSwitch(android.content.Context) -> n
     void setListenSwitch(android.content.Context,boolean) -> b
-    java.lang.String getListen(android.content.Context) -> l
-    void setListen(android.content.Context,java.lang.String) -> l
-    void setUnListen(android.content.Context,java.lang.String) -> m
-    void setMenuExtend(android.content.Context,java.lang.String) -> n
-    boolean getUserEnable(android.content.Context) -> m
+    java.lang.String getListen(android.content.Context) -> o
+    void setListen(android.content.Context,java.lang.String) -> n
+    void setUnListen(android.content.Context,java.lang.String) -> o
+    void setMenuExtend(android.content.Context,java.lang.String) -> p
+    boolean getUserEnable(android.content.Context) -> p
     void setUserEnable(android.content.Context,boolean) -> c
-    java.lang.String getUserInfo(android.content.Context) -> n
-    void setUserInfo(android.content.Context,java.lang.String) -> o
-    java.lang.String getHotEmoj(android.content.Context) -> o
-    void setHotEmoj(android.content.Context,java.lang.String) -> p
-    boolean getFirstLogin(android.content.Context) -> p
-    void setFirstLogin$1a552341(android.content.Context) -> q
-    java.lang.String getCategory(android.content.Context) -> r
-    void setCategory(android.content.Context,java.lang.String) -> q
-    java.lang.String getPublicAccount(android.content.Context) -> s
-    void setPublicAccount(android.content.Context,java.lang.String) -> r
-    org.json.JSONArray getNewEmojArray(android.content.Context) -> t
-    void setNewEmojArray(android.content.Context,java.lang.String) -> s
-    boolean isNewEmoj(android.content.Context,java.lang.String) -> t
-    int getHeaderClickCount(android.content.Context,java.lang.String) -> u
-    void setHeaderClickCount(android.content.Context,java.lang.String) -> v
-    boolean getIsDownload(android.content.Context,java.lang.String) -> w
-    void setIsDownload(android.content.Context,java.lang.String) -> x
-    boolean getIsNew(android.content.Context,java.lang.String) -> y
-    void setIsNew(android.content.Context,java.lang.String) -> z
+    java.lang.String getUserInfo(android.content.Context) -> q
+    void setUserInfo(android.content.Context,java.lang.String) -> q
+    java.lang.String getHotEmoj(android.content.Context) -> r
+    void setHotEmoj(android.content.Context,java.lang.String) -> r
+    boolean getFirstLogin(android.content.Context) -> s
+    void setFirstLogin$1a552341(android.content.Context) -> t
+    java.lang.String getCategory(android.content.Context) -> u
+    void setCategory(android.content.Context,java.lang.String) -> s
+    java.lang.String getPublicAccount(android.content.Context) -> v
+    void setPublicAccount(android.content.Context,java.lang.String) -> t
+    org.json.JSONArray getNewEmojArray(android.content.Context) -> w
+    void setNewEmojArray(android.content.Context,java.lang.String) -> u
+    boolean isNewEmoj(android.content.Context,java.lang.String) -> v
+    int getHeaderClickCount(android.content.Context,java.lang.String) -> w
+    void setHeaderClickCount(android.content.Context,java.lang.String) -> x
+    boolean getIsDownload(android.content.Context,java.lang.String) -> y
+    void setIsDownload(android.content.Context,java.lang.String) -> z
+    boolean getIsNew(android.content.Context,java.lang.String) -> A
+    void setIsNew(android.content.Context,java.lang.String) -> B
     void addEmotion(android.content.Context,java.lang.String,java.lang.String) -> a
     boolean existEmotion(org.json.JSONArray,java.lang.String) -> a
     void setUploadIds(android.content.Context,java.lang.String,java.lang.String) -> b
-com.dabing.emoj.utils.DaBingRequest -> com.dabing.emoj.c.b:
+com.dabing.emoj.utils.DaBingRequest -> com.dabing.emoj.d.b:
     java.lang.String TAG -> a
     java.lang.String getHt_timeline(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
     java.lang.String getHt_ids(com.tencent.weibo.beans.OAuth,java.lang.String) -> a
@@ -5665,42 +5932,42 @@ com.dabing.emoj.utils.DaBingRequest -> com.dabing.emoj.c.b:
     java.lang.String addPicUrl(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String) -> a
     java.lang.String getWeiboList(com.tencent.weibo.beans.OAuth,java.lang.String) -> c
     java.lang.String getChannelList$5b09d430(com.tencent.weibo.beans.OAuth,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
-com.dabing.emoj.utils.DialogFactory -> com.dabing.emoj.c.c:
+com.dabing.emoj.utils.DialogFactory -> com.dabing.emoj.d.c:
     android.app.Dialog creatRequestDialog(android.content.Context,java.lang.String) -> a
     android.app.Dialog createFailDialog(android.content.Context,java.lang.String,android.content.DialogInterface$OnClickListener) -> a
     android.app.Dialog createCommonDialog(android.content.Context,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener) -> a
     android.app.Dialog createTwoButtonDialog(android.content.Context,java.lang.String,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener) -> a
-com.dabing.emoj.utils.DialogFactory$2 -> com.dabing.emoj.c.d:
+com.dabing.emoj.utils.DialogFactory$2 -> com.dabing.emoj.d.d:
     android.content.DialogInterface$OnClickListener val$l -> a
     android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.utils.DialogFactory$3 -> com.dabing.emoj.c.e:
+com.dabing.emoj.utils.DialogFactory$3 -> com.dabing.emoj.d.e:
     android.content.DialogInterface$OnClickListener val$l -> a
     android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.utils.DialogFactory$4 -> com.dabing.emoj.c.f:
+com.dabing.emoj.utils.DialogFactory$4 -> com.dabing.emoj.d.f:
     android.content.DialogInterface$OnClickListener val$l1 -> a
     android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.utils.DialogFactory$5 -> com.dabing.emoj.c.g:
+com.dabing.emoj.utils.DialogFactory$5 -> com.dabing.emoj.d.g:
     android.content.DialogInterface$OnClickListener val$l2 -> a
     android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.utils.Emoj -> com.dabing.emoj.c.h:
+com.dabing.emoj.utils.Emoj -> com.dabing.emoj.d.h:
     java.lang.String getEmoj(android.content.Context,java.lang.String) -> a
-com.dabing.emoj.utils.FileHelper -> com.dabing.emoj.c.i:
+com.dabing.emoj.utils.FileHelper -> com.dabing.emoj.d.i:
     boolean cancel -> a
     java.lang.String[] IMAGE_PREFIX -> b
     java.lang.String TAG -> c
     void setCancel$1385ff() -> a
     java.lang.String find(java.lang.String,java.lang.String) -> a
-com.dabing.emoj.utils.FileHelper$FileContainsImageFilter -> com.dabing.emoj.c.j:
+com.dabing.emoj.utils.FileHelper$FileContainsImageFilter -> com.dabing.emoj.d.j:
     boolean accept(java.io.File,java.lang.String) -> accept
-com.dabing.emoj.utils.FileHelper$MyFileNameFilter -> com.dabing.emoj.c.k:
+com.dabing.emoj.utils.FileHelper$MyFileNameFilter -> com.dabing.emoj.d.k:
     java.lang.String mKey -> a
     com.dabing.emoj.utils.FileHelper this$0 -> b
     boolean accept(java.io.File,java.lang.String) -> accept
-com.dabing.emoj.utils.FileInfo -> com.dabing.emoj.c.l:
+com.dabing.emoj.utils.FileInfo -> com.dabing.emoj.d.l:
     java.lang.String fileName -> a
     java.lang.String filePath -> b
     long fileSize -> c
@@ -5716,7 +5983,7 @@ com.dabing.emoj.utils.FileInfo -> com.dabing.emoj.c.l:
     int dbState -> m
     java.lang.String dbType -> n
     java.lang.String dbThumb -> o
-com.dabing.emoj.utils.FileType -> com.dabing.emoj.c.m:
+com.dabing.emoj.utils.FileType -> com.dabing.emoj.d.m:
     com.dabing.emoj.utils.FileType JPEG -> a
     com.dabing.emoj.utils.FileType PNG -> b
     com.dabing.emoj.utils.FileType GIF -> c
@@ -5752,18 +6019,18 @@ com.dabing.emoj.utils.FileType -> com.dabing.emoj.c.m:
     java.lang.String getValue() -> a
     com.dabing.emoj.utils.FileType[] values() -> values
     com.dabing.emoj.utils.FileType valueOf(java.lang.String) -> valueOf
-com.dabing.emoj.utils.FileTypeJudge -> com.dabing.emoj.c.n:
+com.dabing.emoj.utils.FileTypeJudge -> com.dabing.emoj.d.n:
     java.lang.String TAG -> a
     java.lang.String getURLContent(java.lang.String) -> b
     java.lang.String getFileContent(java.io.InputStream) -> b
     com.dabing.emoj.utils.FileType getTypeFromURL(java.lang.String) -> a
     com.dabing.emoj.utils.FileType getType(java.io.InputStream) -> a
-com.dabing.emoj.utils.FlushedInputStream -> com.dabing.emoj.c.o:
+com.dabing.emoj.utils.FlushedInputStream -> com.dabing.emoj.d.o:
     long skip(long) -> skip
-com.dabing.emoj.utils.JsonHelper -> com.dabing.emoj.c.p:
+com.dabing.emoj.utils.JsonHelper -> com.dabing.emoj.d.p:
     java.lang.String TAG -> a
     org.json.JSONArray Filter(org.json.JSONArray) -> a
-com.dabing.emoj.utils.MyOauth -> com.dabing.emoj.c.q:
+com.dabing.emoj.utils.MyOauth -> com.dabing.emoj.d.q:
     java.lang.String access_token -> a
     long expires_in -> b
     java.lang.String openid -> c
@@ -5774,22 +6041,22 @@ com.dabing.emoj.utils.MyOauth -> com.dabing.emoj.c.q:
     java.lang.String msg -> h
     java.lang.String TAG -> i
     java.lang.String toString() -> toString
-com.dabing.emoj.utils.NetWorkCheck -> com.dabing.emoj.c.r:
+com.dabing.emoj.utils.NetWorkCheck -> com.dabing.emoj.d.r:
     boolean isConnect(android.content.Context) -> a
-com.dabing.emoj.utils.PackageDownloader -> com.dabing.emoj.c.s:
+com.dabing.emoj.utils.PackageDownloader -> com.dabing.emoj.d.s:
     android.content.Context mContext -> a
     com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask mTask -> b
     com.dabing.emoj.widget.DownloadProgressDialog mDialog -> c
     com.dabing.emoj.utils.PackageDownloader$DownloadPackageHandler mHandler -> d
     java.lang.String TAG -> e
     void download(java.lang.String) -> a
-com.dabing.emoj.utils.PackageDownloader$1 -> com.dabing.emoj.c.t:
+com.dabing.emoj.utils.PackageDownloader$1 -> com.dabing.emoj.d.t:
     com.dabing.emoj.utils.PackageDownloader this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.utils.PackageDownloader$DownloadPackageHandler -> com.dabing.emoj.c.u:
+com.dabing.emoj.utils.PackageDownloader$DownloadPackageHandler -> com.dabing.emoj.d.u:
     com.dabing.emoj.utils.PackageDownloader this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask -> com.dabing.emoj.c.v:
+com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask -> com.dabing.emoj.d.v:
     java.lang.String mID -> a
     org.json.JSONArray mArray -> b
     boolean isRun -> c
@@ -5797,10 +6064,10 @@ com.dabing.emoj.utils.PackageDownloader$DownloadPackageTask -> com.dabing.emoj.c
     void stop() -> a
     void run() -> run
     void makeThumb(java.lang.String,java.lang.String) -> a
-com.dabing.emoj.utils.QStr -> com.dabing.emoj.c.w:
+com.dabing.emoj.utils.QStr -> com.dabing.emoj.d.w:
     java.lang.String getPic(java.lang.String) -> a
     java.lang.String getPicNameFromURL(java.lang.String) -> b
-com.dabing.emoj.utils.RegularEmojManager -> com.dabing.emoj.c.x:
+com.dabing.emoj.utils.RegularEmojManager -> com.dabing.emoj.d.x:
     android.content.Context mContext -> a
     java.lang.String TAG -> b
     void clear() -> a
@@ -5809,7 +6076,11 @@ com.dabing.emoj.utils.RegularEmojManager -> com.dabing.emoj.c.x:
     void put(org.json.JSONArray,org.json.JSONObject) -> a
     org.json.JSONArray getArray$58e954dc(org.json.JSONArray) -> a
     org.json.JSONArray sort(org.json.JSONArray) -> b
-com.dabing.emoj.utils.TokenStore -> com.dabing.emoj.c.y:
+com.dabing.emoj.utils.SimpleFile -> com.dabing.emoj.d.y:
+    java.lang.String name -> a
+    java.lang.String path -> b
+    int count -> c
+com.dabing.emoj.utils.TokenStore -> com.dabing.emoj.d.z:
     java.lang.String fileName -> a
     java.lang.String TAG -> b
     void store(android.content.Context,java.lang.String) -> a
@@ -5818,50 +6089,73 @@ com.dabing.emoj.utils.TokenStore -> com.dabing.emoj.c.y:
     void storePrivate(android.content.Context,java.lang.String) -> b
     com.tencent.weibo.oauthv2.OAuthV2 fetch(android.content.Context) -> c
     com.tencent.weibo.oauthv2.OAuthV2 fetchPrivate(android.content.Context) -> d
-com.dabing.emoj.utils.Util -> com.dabing.emoj.c.z:
+com.dabing.emoj.utils.Util -> com.dabing.emoj.d.aa:
     java.lang.String ANDROID_SECURE -> e
     java.lang.String[] SysFileDirs -> f
     java.util.HashSet sDocMimeTypesSet -> a
     java.lang.String sZipFileMimeType -> b
     int CATEGORY_TAB_INDEX -> c
     int SDCARD_TAB_INDEX -> d
-    boolean isNormalFile(java.lang.String) -> a
-    java.lang.String getNameFromFilepath(java.lang.String) -> b
-com.dabing.emoj.utils.Util$1 -> com.dabing.emoj.c.aa:
-com.dabing.emoj.utils.Utils -> com.dabing.emoj.c.ab:
+    java.lang.String makeStandardPath(java.lang.String) -> a
+    boolean isNormalFile(java.lang.String) -> b
+    java.lang.String getExtFromFilename(java.lang.String) -> c
+    java.lang.String getNameFromFilepath(java.lang.String) -> d
+    android.graphics.Bitmap decodeSampledBitmap(java.lang.String,int,int) -> a
+com.dabing.emoj.utils.Util$1 -> com.dabing.emoj.d.ab:
+com.dabing.emoj.utils.Utils -> com.dabing.emoj.d.ac:
     int getScreenWidth(android.content.Context) -> a
 com.dabing.emoj.widget.AddImageButton -> com.dabing.emoj.widget.AddImageButton:
     int mWidth -> a
-    java.lang.String TAG -> b
+    com.dabing.emoj.widget.FitSizeImageView mImageView -> b
+    java.lang.String TAG -> c
+    void setWidth(int) -> a
+    void setOnClick(android.view.View$OnClickListener) -> a
     void onMeasure(int,int) -> onMeasure
 com.dabing.emoj.widget.Album -> com.dabing.emoj.widget.Album:
-    com.dabing.emoj.widget.Album$AlbumClickListener mListener -> a
-    com.dabing.emoj.utils.FileInfo mFileInfo -> b
-    com.dabing.emoj.widget.AlbumImageView imageView -> c
-    android.widget.ImageButton btnDel -> d
-    android.widget.TextView albumNameTextView -> e
-    android.widget.TextView childSizeTextView -> f
-    int mWidth -> g
-    int mThumbWidth -> h
-    android.graphics.BitmapFactory$Options sDefaultOptions -> i
-    java.util.concurrent.ExecutorService mService -> j
-    java.lang.String TAG -> k
-    android.view.View$OnClickListener listener -> l
-    android.os.Handler mHandler -> m
+    android.app.Dialog confirmDialog -> a
+    boolean isDelMode -> b
+    com.dabing.emoj.widget.Album$AlbumClickListener mListener -> c
+    com.dabing.emoj.utils.FileInfo mFileInfo -> d
+    com.dabing.emoj.widget.AlbumImageView imageView -> e
+    android.widget.ImageButton btnDel -> f
+    android.widget.TextView albumNameTextView -> g
+    android.widget.TextView childSizeTextView -> h
+    int mWidth -> i
+    int mThumbWidth -> j
+    android.view.animation.Animation zoomOut -> k
+    android.view.animation.Animation zoomEnter -> l
+    android.graphics.BitmapFactory$Options sDefaultOptions -> m
+    java.util.concurrent.ExecutorService mService -> n
+    java.lang.String TAG -> o
+    android.view.View$OnClickListener delListener -> p
+    android.view.View$OnClickListener listener -> q
+    android.os.Handler mHandler -> r
     void setAlbumClickListener(com.dabing.emoj.widget.Album$AlbumClickListener) -> a
     void setFile(com.dabing.emoj.utils.FileInfo) -> a
     void setWidth(int) -> a
+    void setDelMode(boolean) -> a
     void onMeasure(int,int) -> onMeasure
     android.os.Handler access$0(com.dabing.emoj.widget.Album) -> a
 com.dabing.emoj.widget.Album$1 -> com.dabing.emoj.widget.a:
     com.dabing.emoj.widget.Album this$0 -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.widget.Album$2 -> com.dabing.emoj.widget.b:
+    com.dabing.emoj.widget.Album access$0(com.dabing.emoj.widget.Album$1) -> a
+com.dabing.emoj.widget.Album$1$1 -> com.dabing.emoj.widget.b:
+    com.dabing.emoj.widget.Album$1 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.widget.Album$1$2 -> com.dabing.emoj.widget.c:
+    com.dabing.emoj.widget.Album$1 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dabing.emoj.widget.Album$2 -> com.dabing.emoj.widget.d:
+    com.dabing.emoj.widget.Album this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dabing.emoj.widget.Album$3 -> com.dabing.emoj.widget.e:
     com.dabing.emoj.widget.Album this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.widget.Album$AlbumClickListener -> com.dabing.emoj.widget.c:
+com.dabing.emoj.widget.Album$AlbumClickListener -> com.dabing.emoj.widget.f:
     void click(com.dabing.emoj.utils.FileInfo) -> a
-com.dabing.emoj.widget.Album$ThumbnailProvider -> com.dabing.emoj.widget.d:
+    void del(com.dabing.emoj.widget.Album,com.dabing.emoj.utils.FileInfo) -> a
+com.dabing.emoj.widget.Album$ThumbnailProvider -> com.dabing.emoj.widget.g:
     long _id -> a
     com.dabing.emoj.widget.Album this$0 -> b
     void run() -> run
@@ -5874,12 +6168,12 @@ com.dabing.emoj.widget.AlbumImageView -> com.dabing.emoj.widget.AlbumImageView:
     void onMeasure(int,int) -> onMeasure
 com.dabing.emoj.widget.CacheImageView -> com.dabing.emoj.widget.CacheImageView:
     com.dabing.emoj.widget.CacheImageView$CacheHandler mHandler -> a
-    java.util.concurrent.ExecutorService mService -> b
-    greendroid.image.ImageCache mCache -> c
-    greendroid.widget.AsyncImageView$OnImageViewLoadListener listener -> d
-    android.view.animation.Animation mAnimation -> e
-    java.lang.String mURL -> f
-    boolean isLoading -> g
+    greendroid.image.ImageCache mCache -> b
+    greendroid.widget.AsyncImageView$OnImageViewLoadListener listener -> c
+    android.view.animation.Animation mAnimation -> d
+    java.lang.String mURL -> e
+    boolean isLoading -> f
+    android.graphics.BitmapFactory$Options sDefaultOptions -> g
     java.lang.String TAG -> h
     void setImage(java.lang.String) -> a
     void setPath(java.lang.String,int) -> a
@@ -5887,15 +6181,15 @@ com.dabing.emoj.widget.CacheImageView -> com.dabing.emoj.widget.CacheImageView:
     android.graphics.Bitmap makeThumb(java.lang.String,java.lang.String) -> b
     android.graphics.BitmapFactory$Options access$0(com.dabing.emoj.widget.CacheImageView) -> a
     android.graphics.Bitmap access$1$6ac18fbd(java.lang.String,java.lang.String) -> a
-com.dabing.emoj.widget.CacheImageView$CacheHandler -> com.dabing.emoj.widget.e:
+com.dabing.emoj.widget.CacheImageView$CacheHandler -> com.dabing.emoj.widget.h:
     com.dabing.emoj.widget.CacheImageView this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-com.dabing.emoj.widget.CacheImageView$GetImageTask -> com.dabing.emoj.widget.f:
+com.dabing.emoj.widget.CacheImageView$GetImageTask -> com.dabing.emoj.widget.i:
     java.lang.String _filename -> b
     java.lang.String _url -> c
     com.dabing.emoj.widget.CacheImageView this$0 -> a
     void run() -> run
-com.dabing.emoj.widget.CacheImageView$ThumbnailTask -> com.dabing.emoj.widget.g:
+com.dabing.emoj.widget.CacheImageView$ThumbnailTask -> com.dabing.emoj.widget.j:
     java.lang.String mPath -> a
     int mThumbWidth -> b
     com.dabing.emoj.widget.CacheImageView this$0 -> c
@@ -5944,14 +6238,16 @@ com.dabing.emoj.widget.CrystalButton -> com.dabing.emoj.widget.CrystalButton:
     void setIEmojItemClickListener(com.dabing.emoj.fragment.HeaderFragment$IEmojItemClickListener) -> a
     void onClick(android.view.View) -> onClick
 com.dabing.emoj.widget.CustomGridLayout -> com.dabing.emoj.widget.CustomGridLayout:
-    android.widget.CursorAdapter mAdapter -> t
-    java.lang.String TAG -> u
-    android.database.DataSetObserver mObserver -> v
+    android.view.View mFirstView -> t
+    android.widget.CursorAdapter mAdapter -> u
+    java.lang.String TAG -> v
+    android.database.DataSetObserver mObserver -> w
+    void setFirstView(android.view.View) -> b
     void setAdapter(android.widget.CursorAdapter) -> a
-com.dabing.emoj.widget.CustomGridLayout$1 -> com.dabing.emoj.widget.h:
+com.dabing.emoj.widget.CustomGridLayout$1 -> com.dabing.emoj.widget.k:
     com.dabing.emoj.widget.CustomGridLayout this$0 -> a
     void onChanged() -> onChanged
-com.dabing.emoj.widget.DownloadProgressDialog -> com.dabing.emoj.widget.i:
+com.dabing.emoj.widget.DownloadProgressDialog -> com.dabing.emoj.widget.l:
     android.widget.TextView titleView -> a
     android.widget.ProgressBar progressBar -> b
     android.widget.TextView rateView -> c
@@ -5973,9 +6269,14 @@ com.dabing.emoj.widget.EmotionPanel -> com.dabing.emoj.widget.EmotionPanel:
     void measureChildren(int,int) -> measureChildren
     void onLayout(boolean,int,int,int,int) -> onLayout
     void setAdapter(android.widget.BaseAdapter) -> a
-com.dabing.emoj.widget.EmotionPanel$1 -> com.dabing.emoj.widget.j:
+com.dabing.emoj.widget.EmotionPanel$1 -> com.dabing.emoj.widget.m:
     com.dabing.emoj.widget.EmotionPanel this$0 -> a
     void onChanged() -> onChanged
+com.dabing.emoj.widget.FitSizeImageView -> com.dabing.emoj.widget.FitSizeImageView:
+    int mWidth -> a
+    java.lang.String TAG -> b
+    void setWidth(int) -> a
+    void onMeasure(int,int) -> onMeasure
 com.dabing.emoj.widget.LinearLayoutForListView -> com.dabing.emoj.widget.LinearLayoutForListView:
     java.lang.String TAG -> a
     android.widget.BaseAdapter adapter -> b
@@ -5984,15 +6285,18 @@ com.dabing.emoj.widget.LinearLayoutForListView -> com.dabing.emoj.widget.LinearL
     android.database.DataSetObserver mDataSetObserver -> e
     void setAdapter(android.widget.BaseAdapter) -> a
     android.widget.BaseAdapter access$0(com.dabing.emoj.widget.LinearLayoutForListView) -> a
-com.dabing.emoj.widget.LinearLayoutForListView$1 -> com.dabing.emoj.widget.k:
+com.dabing.emoj.widget.LinearLayoutForListView$1 -> com.dabing.emoj.widget.n:
     com.dabing.emoj.widget.LinearLayoutForListView this$0 -> a
     void onChanged() -> onChanged
-com.dabing.emoj.widget.NormalProgressDialog -> com.dabing.emoj.widget.l:
+com.dabing.emoj.widget.MatrixBitmap -> com.dabing.emoj.widget.MatrixBitmap:
+    java.lang.String TAG -> a
+    void draw(android.graphics.Canvas) -> draw
+com.dabing.emoj.widget.NormalProgressDialog -> com.dabing.emoj.widget.o:
     android.widget.TextView messageTextView -> a
-com.dabing.emoj.widget.PromptDialog -> com.dabing.emoj.widget.m:
+com.dabing.emoj.widget.PromptDialog -> com.dabing.emoj.widget.p:
     android.widget.ImageView imageView -> a
     void onClick(android.view.View) -> onClick
-com.dabing.emoj.widget.QuickActionGrid -> com.dabing.emoj.widget.n:
+com.dabing.emoj.widget.QuickActionGrid -> com.dabing.emoj.widget.q:
     com.dabing.emoj.widget.QuickActionGrid$OnQuickActionItemClickListener listener -> a
     com.dabing.emoj.widget.QuickActionGrid$QuickGridAdapter adapter -> b
     org.json.JSONArray mData -> c
@@ -6004,12 +6308,12 @@ com.dabing.emoj.widget.QuickActionGrid -> com.dabing.emoj.widget.n:
     void setData(org.json.JSONArray) -> a
     void show(android.view.View) -> a
     android.content.Context access$0(com.dabing.emoj.widget.QuickActionGrid) -> a
-com.dabing.emoj.widget.QuickActionGrid$1 -> com.dabing.emoj.widget.o:
+com.dabing.emoj.widget.QuickActionGrid$1 -> com.dabing.emoj.widget.r:
     com.dabing.emoj.widget.QuickActionGrid this$0 -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-com.dabing.emoj.widget.QuickActionGrid$OnQuickActionItemClickListener -> com.dabing.emoj.widget.p:
+com.dabing.emoj.widget.QuickActionGrid$OnQuickActionItemClickListener -> com.dabing.emoj.widget.s:
     void onClick$3b77d2a1(org.json.JSONObject) -> a
-com.dabing.emoj.widget.QuickActionGrid$QuickGridAdapter -> com.dabing.emoj.widget.q:
+com.dabing.emoj.widget.QuickActionGrid$QuickGridAdapter -> com.dabing.emoj.widget.t:
     org.json.JSONArray mArray -> a
     com.dabing.emoj.widget.QuickActionGrid this$0 -> b
     org.json.JSONObject getData(int) -> a
@@ -6056,7 +6360,9 @@ com.dabing.emoj.wxapi.WeiXinHelper -> com.dabing.emoj.wxapi.b:
     void shareIMG(java.lang.String) -> e
     void shareIMGToCircle(java.lang.String) -> f
     void shareToOther(java.lang.String,java.lang.String,java.lang.String) -> a
-    java.lang.String buildTransaction(java.lang.String) -> g
+    void shareQQ(java.lang.String) -> g
+    boolean existPackageName(android.content.Context,java.lang.String) -> a
+    java.lang.String buildTransaction(java.lang.String) -> h
 com.handmark.pulltorefresh.library.ILoadingLayout -> com.handmark.pulltorefresh.library.a:
     void setLoadingDrawable(android.graphics.drawable.Drawable) -> a
     void setPullLabel(java.lang.CharSequence) -> a
@@ -7284,8 +7590,8 @@ com.tencent.mm.sdk.uikit.MMBaseActivity -> com.tencent.mm.sdk.uikit.MMBaseActivi
     int maxVolumn -> j
     void onDestroy() -> onDestroy
     void onCreate(android.os.Bundle) -> onCreate
-    android.graphics.drawable.Drawable getDrawable(int) -> a
-    android.content.Context getContext() -> g
+    android.graphics.drawable.Drawable getDrawable(int) -> b
+    android.content.Context getContext() -> n
     void onStart() -> onStart
     boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
     void onResume() -> onResume
@@ -7297,7 +7603,7 @@ com.tencent.mm.sdk.uikit.MMBaseActivity -> com.tencent.mm.sdk.uikit.MMBaseActivi
     com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn1(java.lang.String,android.view.View$OnClickListener) -> a
     com.tencent.mm.sdk.uikit.MMImageButton setTitleBtn4(java.lang.String,android.view.View$OnClickListener) -> b
     com.tencent.mm.sdk.uikit.MMImageButton setBackBtn(android.view.View$OnClickListener) -> a
-    void hideVKB() -> h
+    void hideVKB() -> o
 com.tencent.mm.sdk.uikit.MMBaseActivity$1 -> com.tencent.mm.sdk.uikit.g:
     com.tencent.mm.sdk.uikit.MMBaseActivity this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
@@ -7375,6 +7681,1122 @@ com.tencent.mm.sdk.uikit.applet.SecurityImage -> com.tencent.mm.sdk.uikit.applet
     android.widget.Button changeBTN -> e
     android.widget.EditText authET -> f
     android.app.AlertDialog alert -> g
+com.tencent.open.BrowserAuth -> com.tencent.open.a:
+    int e -> e
+    com.tencent.open.BrowserAuth a -> a
+    java.util.HashMap b -> b
+    java.lang.String c -> c
+    boolean d -> d
+    com.tencent.open.BrowserAuth a() -> a
+    com.tencent.open.BrowserAuth$Auth a(java.lang.String) -> a
+    java.lang.String a(com.tencent.open.BrowserAuth$Auth) -> a
+    void b(java.lang.String) -> b
+    java.lang.String c() -> b
+    java.lang.String a(java.lang.String,java.lang.String) -> a
+com.tencent.open.BrowserAuth$Auth -> com.tencent.open.b:
+    com.tencent.tauth.IUiListener a -> a
+    com.tencent.open.TDialog b -> b
+    java.lang.String c -> c
+com.tencent.open.HttpStatusException -> com.tencent.open.c:
+com.tencent.open.KeyboardDetectorRelativeLayout -> com.tencent.open.KeyboardDetectorRelativeLayout:
+    java.lang.String a -> a
+    android.graphics.Rect b -> b
+    boolean c -> c
+    com.tencent.open.KeyboardDetectorRelativeLayout$IKeyboardChanged d -> d
+    void a(com.tencent.open.KeyboardDetectorRelativeLayout$IKeyboardChanged) -> a
+    void onMeasure(int,int) -> onMeasure
+com.tencent.open.KeyboardDetectorRelativeLayout$IKeyboardChanged -> com.tencent.open.d:
+    void onKeyboardShown(int) -> a
+    void onKeyboardHidden() -> a
+com.tencent.open.MySSLSocketFactory -> com.tencent.open.e:
+    javax.net.ssl.SSLContext a -> a
+    javax.net.ssl.SSLSocketFactory b -> b
+    org.apache.http.conn.scheme.HostNameResolver c -> c
+    java.net.Socket createSocket() -> createSocket
+    java.net.Socket connectSocket(java.net.Socket,java.lang.String,int,java.net.InetAddress,int,org.apache.http.params.HttpParams) -> connectSocket
+    java.net.Socket createSocket(java.net.Socket,java.lang.String,int,boolean) -> createSocket
+com.tencent.open.NetworkUnavailableException -> com.tencent.open.f:
+com.tencent.open.OpenApi -> com.tencent.open.g:
+    com.tencent.open.TContext a -> a
+    org.json.JSONObject a(android.content.Context,java.lang.String,android.os.Bundle,java.lang.String) -> a
+    android.os.Bundle a(java.lang.String,android.os.Bundle) -> a
+    void a(android.content.Context,java.lang.String,android.os.Bundle,java.lang.String,com.tencent.tauth.IRequestListener,java.lang.Object) -> a
+com.tencent.open.OpenConfig -> com.tencent.open.h:
+    java.util.HashMap a -> a
+    java.lang.String b -> b
+    android.content.Context c -> c
+    java.lang.String d -> d
+    org.json.JSONObject e -> e
+    long f -> f
+    int g -> g
+    boolean h -> h
+    com.tencent.open.OpenConfig a(android.content.Context,java.lang.String) -> a
+    java.lang.String e(java.lang.String) -> e
+    void b() -> a
+    void c() -> b
+    java.lang.String a(java.lang.String) -> a
+    int b(java.lang.String) -> b
+    long c(java.lang.String) -> c
+    boolean d(java.lang.String) -> d
+    void f(java.lang.String) -> f
+    android.content.Context a(com.tencent.open.OpenConfig) -> a
+    void a(com.tencent.open.OpenConfig,org.json.JSONObject) -> a
+    int a$51aa7b1d(com.tencent.open.OpenConfig) -> b
+com.tencent.open.OpenUi -> com.tencent.open.i:
+    com.tencent.open.TContext a -> a
+    int b -> b
+    android.util.SparseArray c -> c
+    int a(android.app.Activity,java.lang.String,android.os.Bundle,com.tencent.tauth.IUiListener) -> a
+    java.lang.String a(android.app.Activity) -> a
+    void b$7b9753dc(android.app.Activity,java.lang.String,android.os.Bundle,com.tencent.tauth.IUiListener) -> b
+    void a() -> a
+    android.content.Intent a(java.lang.String,android.app.Activity,java.lang.String) -> a
+    int a(java.lang.String,java.lang.String) -> a
+    boolean b(android.app.Activity,java.lang.String,android.os.Bundle,com.tencent.tauth.IUiListener) -> c
+    boolean a(int,int,android.content.Intent) -> a
+    android.content.Intent a(android.app.Activity,java.lang.String) -> a
+    android.content.Intent a(android.content.Context,java.lang.String,java.lang.String) -> a
+    boolean a(android.content.Context,java.lang.String) -> a
+    int b() -> b
+    int a(android.content.Context,java.lang.String,android.os.Bundle,com.tencent.tauth.IUiListener) -> a
+    java.lang.String a(java.lang.String) -> a
+    android.os.Bundle a(java.lang.String,android.os.Bundle) -> a
+    android.os.Bundle a(android.app.Activity,java.lang.String,android.os.Bundle) -> a
+    com.tencent.open.TContext a(com.tencent.open.OpenUi) -> a
+com.tencent.open.PKDialog -> com.tencent.open.j:
+    java.lang.String TAG -> b
+    java.lang.String mUrl -> c
+    com.tencent.tauth.IUiListener listener -> d
+    com.tencent.open.PKDialog$OnTimeListener mListener -> e
+    android.os.Handler mHandler -> f
+    com.tencent.open.KeyboardDetectorRelativeLayout mFlMain -> g
+    android.webkit.WebView mWebView -> h
+    java.lang.ref.WeakReference sWeakContext -> i
+    int mWebviewHeight -> j
+    android.widget.Toast sToast -> a
+    void onBackPressed() -> onBackPressed
+    void onCreate(android.os.Bundle) -> onCreate
+    void onKeyboardShown(int) -> a
+    void onKeyboardHidden() -> a
+    java.lang.String access$300() -> b
+    java.lang.ref.WeakReference access$400() -> c
+    com.tencent.open.PKDialog$OnTimeListener access$500(com.tencent.open.PKDialog) -> a
+    android.webkit.WebView access$600(com.tencent.open.PKDialog) -> b
+    void access$800(android.content.Context,java.lang.String) -> a
+    void access$900(android.content.Context,java.lang.String) -> b
+com.tencent.open.PKDialog$FbWebViewClient -> com.tencent.open.k:
+    com.tencent.open.PKDialog this$0 -> a
+    boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
+    void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
+    void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
+    void onReceivedSslError(android.webkit.WebView,android.webkit.SslErrorHandler,android.net.http.SslError) -> onReceivedSslError
+com.tencent.open.PKDialog$JsListener -> com.tencent.open.l:
+    com.tencent.open.PKDialog this$0 -> a
+com.tencent.open.PKDialog$OnTimeListener -> com.tencent.open.m:
+    java.lang.ref.WeakReference mWeakCtx -> c
+    java.lang.String mAction -> d
+    java.lang.String mUrl -> a
+    java.lang.String mAppid -> b
+    com.tencent.tauth.IUiListener mWeakL -> e
+    void onComplete(org.json.JSONObject) -> a
+    void onError(com.tencent.tauth.UiError) -> a
+    void onCancel() -> a
+    void access$700(com.tencent.open.PKDialog$OnTimeListener,java.lang.String) -> a
+com.tencent.open.PKDialog$THandler -> com.tencent.open.n:
+    com.tencent.open.PKDialog$OnTimeListener mL -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.tencent.open.ServerSetting -> com.tencent.open.o:
+    java.lang.String TAG -> a
+    com.tencent.open.ServerSetting sServerSetting -> b
+    java.lang.ref.WeakReference sWeakSharedPrefs -> c
+    java.lang.String sRedirectUrl -> d
+    java.lang.String sAuthorizeCgi -> e
+    java.lang.String sSendStoryUrl -> f
+    java.lang.String sInviteUrl -> g
+    java.lang.String sReportUrl -> h
+    java.lang.String sGraphBaseUrl -> i
+    java.lang.String sBragUrl -> j
+    java.lang.String sAskUrl -> k
+    java.lang.String sGiftUrl -> l
+    java.lang.String sLocalStorageUrl -> m
+    com.tencent.open.ServerSetting getInstance() -> a
+    java.lang.String getSettingUrl(android.content.Context,int) -> a
+com.tencent.open.TContext -> com.tencent.open.p:
+    java.lang.String b -> b
+    java.lang.String c -> c
+    long d -> d
+    java.lang.String e -> e
+    java.lang.String a -> a
+    android.content.Context f -> f
+    boolean a() -> a
+    java.lang.String b() -> b
+    void a(java.lang.String,java.lang.String) -> a
+    java.lang.String c() -> c
+    void a(java.lang.String) -> a
+    java.lang.String d() -> d
+    android.content.Context f() -> e
+com.tencent.open.TDialog -> com.tencent.open.q:
+    android.widget.FrameLayout$LayoutParams a -> a
+    java.lang.ref.WeakReference c -> c
+    java.lang.ref.WeakReference d -> d
+    java.lang.ref.WeakReference e -> e
+    java.lang.String f -> f
+    com.tencent.open.TDialog$OnTimeListener g -> g
+    com.tencent.tauth.IUiListener h -> h
+    android.widget.FrameLayout i -> i
+    android.webkit.WebView j -> j
+    android.widget.FrameLayout k -> k
+    android.widget.ProgressBar l -> l
+    android.os.Handler m -> m
+    boolean n -> n
+    com.tencent.open.TContext o -> o
+    android.widget.Toast b -> b
+    void onCreate(android.os.Bundle) -> onCreate
+    void onStop() -> onStop
+    void a(java.lang.String,java.lang.String) -> a
+    java.lang.ref.WeakReference a() -> a
+    void a(android.content.Context,java.lang.String) -> a
+    java.lang.ref.WeakReference b() -> b
+    void b(android.content.Context,java.lang.String) -> b
+    boolean a(com.tencent.open.TDialog,boolean) -> a
+    boolean b(com.tencent.open.TDialog) -> a
+    boolean c(com.tencent.open.TDialog) -> b
+    java.lang.String a(com.tencent.open.TDialog,java.lang.Object) -> a
+    java.lang.String d(com.tencent.open.TDialog) -> c
+    android.webkit.WebView e(com.tencent.open.TDialog) -> d
+    com.tencent.open.TDialog$OnTimeListener f(com.tencent.open.TDialog) -> e
+com.tencent.open.TDialog$FbWebViewClient -> com.tencent.open.r:
+    com.tencent.open.TDialog this$0 -> a
+    boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
+    void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
+    void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
+    void onReceivedSslError(android.webkit.WebView,android.webkit.SslErrorHandler,android.net.http.SslError) -> onReceivedSslError
+com.tencent.open.TDialog$JsListener -> com.tencent.open.s:
+    com.tencent.open.TDialog this$0 -> a
+com.tencent.open.TDialog$OnTimeListener -> com.tencent.open.t:
+    java.lang.ref.WeakReference mWeakCtx -> c
+    java.lang.String mAction -> d
+    java.lang.String mUrl -> a
+    java.lang.String mAppid -> b
+    com.tencent.tauth.IUiListener mWeakL -> e
+    void onComplete(org.json.JSONObject) -> a
+    void onError(com.tencent.tauth.UiError) -> a
+    void onCancel() -> a
+    void access$000(com.tencent.open.TDialog$OnTimeListener,java.lang.String) -> a
+com.tencent.open.TDialog$THandler -> com.tencent.open.u:
+    com.tencent.open.TDialog$OnTimeListener mL -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.tencent.open.TemporaryStorage -> com.tencent.open.v:
+    java.util.HashMap a -> a
+    java.lang.Object a(java.lang.String) -> a
+com.tencent.open.TencentStat -> com.tencent.open.w:
+    void b(com.tencent.open.TContext) -> a
+    void b(com.tencent.open.TContext,java.lang.String) -> a
+    void a(com.tencent.open.TContext,java.lang.String,java.lang.String[]) -> a
+com.tencent.open.Util -> com.tencent.open.x:
+    boolean a -> a
+    java.lang.String a(android.os.Bundle,java.lang.String) -> a
+    java.lang.String a(android.os.Bundle) -> a
+    android.os.Bundle a(java.lang.String) -> a
+    org.json.JSONObject a(org.json.JSONObject,java.lang.String) -> a
+    android.os.Bundle b(java.lang.String) -> b
+    org.json.JSONObject c(java.lang.String) -> c
+    com.tencent.open.Util$Statistic a(android.content.Context,java.lang.String,java.lang.String,android.os.Bundle) -> a
+    java.lang.String a(org.apache.http.HttpResponse) -> a
+    org.apache.http.client.HttpClient a(android.content.Context,java.lang.String,java.lang.String) -> a
+    org.json.JSONObject d(java.lang.String) -> d
+    void a(java.lang.String,java.lang.String) -> a
+    java.lang.String a() -> a
+    int d(android.content.Context) -> a
+    boolean e(java.lang.String) -> f
+    boolean e(android.content.Context) -> b
+    boolean a(android.content.Context,java.lang.String) -> a
+    void a(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> a
+    java.lang.String f(java.lang.String) -> e
+    char a(int) -> a
+    void a(android.content.Context,java.lang.String,long,java.lang.String) -> a
+    java.lang.String a(byte[]) -> a
+com.tencent.open.Util$NetworkProxy -> com.tencent.open.y:
+    java.lang.String a -> a
+    int b -> b
+com.tencent.open.Util$Statistic -> com.tencent.open.z:
+    java.lang.String a -> a
+    long b -> b
+    long c -> c
+com.tencent.open.a -> com.tencent.open.aa:
+    com.tencent.tauth.IUiListener b -> b
+    android.app.Activity c -> c
+    android.os.Bundle d -> d
+    java.lang.String e -> e
+    java.lang.String f -> f
+    java.lang.String g -> g
+    java.lang.String h -> h
+    android.os.Handler i -> i
+    com.tencent.open.OpenUi a -> a
+    void onComplete(org.json.JSONObject) -> a
+    void onError(com.tencent.tauth.UiError) -> a
+    void onCancel() -> a
+    void a() -> b
+    void a(com.tencent.open.a) -> a
+    com.tencent.tauth.IUiListener b(com.tencent.open.a) -> b
+    android.os.Handler c(com.tencent.open.a) -> c
+com.tencent.open.b -> com.tencent.open.ab:
+    com.tencent.tauth.IUiListener b -> b
+    boolean c -> c
+    com.tencent.open.OpenUi a -> a
+    void onComplete(org.json.JSONObject) -> a
+    void onError(com.tencent.tauth.UiError) -> a
+    void onCancel() -> a
+com.tencent.open.c -> com.tencent.open.ac:
+    android.os.Bundle a -> a
+    com.tencent.open.OpenConfig b -> b
+    void run() -> run
+com.tencent.open.cgireport.MobileInfoUtil -> com.tencent.open.a.a:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String a(android.content.Context) -> c
+    java.lang.String b(android.content.Context) -> a
+    java.lang.String c(android.content.Context) -> b
+com.tencent.open.cgireport.ReportDataModal -> com.tencent.open.a.b:
+    android.content.Context a -> a
+    android.database.sqlite.SQLiteDatabase b -> b
+    com.tencent.open.cgireport.a c -> c
+    int d -> d
+    boolean a(java.lang.String,java.lang.String,java.lang.String,int,long,long,long,java.lang.String) -> a
+    int a(java.util.ArrayList) -> a
+    boolean a() -> a
+    boolean b() -> b
+    java.util.ArrayList c() -> c
+    java.util.ArrayList d() -> d
+    int e() -> e
+com.tencent.open.cgireport.ReportManager -> com.tencent.open.a.c:
+    com.tencent.open.cgireport.ReportManager a -> a
+    long b -> b
+    int c -> c
+    boolean d -> d
+    java.util.Random e -> e
+    com.tencent.open.cgireport.ReportDataModal f -> f
+    java.util.ArrayList g -> g
+    java.util.ArrayList h -> h
+    com.tencent.open.cgireport.ReportManager a() -> a
+    void a$7d13fa86(android.content.Context,java.lang.String,long,long,long,int) -> a
+    void a$2e5ae49a(android.content.Context,java.lang.String,long,long,long,int,java.lang.String,java.lang.String) -> a
+    int b(android.content.Context,int) -> a
+    java.lang.String a(android.content.Context) -> a
+    void a(android.content.Context,java.lang.String) -> a
+    int a(com.tencent.open.cgireport.ReportManager,int) -> a
+    int a(com.tencent.open.cgireport.ReportManager) -> a
+    boolean a$57dde316(com.tencent.open.cgireport.ReportManager) -> b
+    java.util.ArrayList b(com.tencent.open.cgireport.ReportManager) -> c
+    com.tencent.open.cgireport.ReportDataModal c(com.tencent.open.cgireport.ReportManager) -> d
+com.tencent.open.cgireport.a -> com.tencent.open.a.d:
+    com.tencent.open.cgireport.ReportDataModal a -> a
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+com.tencent.open.cgireport.b -> com.tencent.open.a.e:
+    java.lang.String a -> a
+    android.content.Context b -> b
+    android.os.Bundle c -> c
+    com.tencent.open.cgireport.ReportManager d -> d
+    void run() -> run
+com.tencent.open.cgireport.reportItem -> com.tencent.open.a.f:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    java.lang.String d -> d
+    java.lang.String e -> e
+    java.lang.String f -> f
+    java.lang.String g -> g
+    java.lang.String h -> h
+    java.lang.String i -> i
+    java.lang.String a() -> a
+    java.lang.String b() -> b
+    java.lang.String c() -> c
+    java.lang.String d() -> d
+    java.lang.String e() -> e
+    java.lang.String f() -> f
+    java.lang.String g() -> g
+    java.lang.String h() -> h
+    java.lang.String i() -> i
+com.tencent.open.d -> com.tencent.open.ad:
+    com.tencent.open.a a -> a
+    void onUnknowException$54375c33(java.lang.Exception) -> a
+    void onSocketTimeoutException$69211e98(java.net.SocketTimeoutException) -> a
+    void onNetworkUnavailableException(com.tencent.open.NetworkUnavailableException,java.lang.Object) -> a
+    void onMalformedURLException$11b5f444(java.net.MalformedURLException) -> a
+    void onJSONException$18eb2175(org.json.JSONException) -> a
+    void onIOException$7e5565fb(java.io.IOException) -> a
+    void onHttpStatusException$2d60cb38(com.tencent.open.HttpStatusException) -> a
+    void onConnectTimeoutException$681d225a(org.apache.http.conn.ConnectTimeoutException) -> a
+    void onComplete(org.json.JSONObject,java.lang.Object) -> a
+com.tencent.open.f -> com.tencent.open.ae:
+    android.content.Context a -> a
+    android.os.Bundle b -> b
+    void run() -> run
+com.tencent.open.h -> com.tencent.open.af:
+    android.content.Context a -> a
+    java.lang.String b -> b
+    android.os.Bundle c -> c
+    java.lang.String d -> d
+    com.tencent.tauth.IRequestListener e -> e
+    java.lang.Object f -> f
+    com.tencent.open.OpenApi g -> g
+    void run() -> run
+com.tencent.open.i -> com.tencent.open.ag:
+    com.tencent.open.MySSLSocketFactory a -> a
+    java.security.cert.X509Certificate[] getAcceptedIssuers() -> getAcceptedIssuers
+    void checkClientTrusted(java.security.cert.X509Certificate[],java.lang.String) -> checkClientTrusted
+    void checkServerTrusted(java.security.cert.X509Certificate[],java.lang.String) -> checkServerTrusted
+com.tencent.open.m -> com.tencent.open.ah:
+    com.tencent.tauth.IUiListener a -> a
+    android.os.Bundle b -> b
+    java.lang.String c -> c
+    java.lang.ref.WeakReference d -> d
+com.tencent.open.n -> com.tencent.open.ai:
+    com.tencent.open.a a -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.tencent.plus.DensityUtil -> com.tencent.plus.a:
+    int dip2px(android.content.Context,float) -> a
+com.tencent.plus.ImageActivity -> com.tencent.plus.ImageActivity:
+    com.tencent.open.TContext b -> b
+    com.tencent.open.OpenApi c -> c
+    java.lang.String d -> d
+    android.os.Handler e -> e
+    com.tencent.plus.TouchView f -> f
+    android.widget.Button g -> g
+    android.widget.Button h -> h
+    com.tencent.plus.MaskView i -> i
+    android.widget.TextView j -> j
+    android.widget.ProgressBar k -> k
+    int l -> l
+    boolean m -> m
+    long n -> n
+    int o -> o
+    int p -> p
+    int q -> q
+    android.graphics.Rect r -> r
+    java.lang.String s -> s
+    android.graphics.Bitmap t -> t
+    android.widget.RelativeLayout a -> a
+    android.view.View$OnClickListener u -> u
+    android.view.View$OnClickListener v -> v
+    com.tencent.tauth.IRequestListener w -> w
+    com.tencent.tauth.IRequestListener x -> x
+    android.graphics.drawable.Drawable b(java.lang.String) -> a
+    void b() -> a
+    void onCreate(android.os.Bundle) -> onCreate
+    void onBackPressed() -> onBackPressed
+    void onDestroy() -> onDestroy
+    void b(java.lang.String,int) -> a
+    void a(int,java.lang.String,java.lang.String,java.lang.String) -> a
+    void d() -> b
+    void e() -> c
+    void a(java.lang.String,long) -> a
+    android.graphics.drawable.Drawable a(com.tencent.plus.ImageActivity,java.lang.String) -> a
+    android.graphics.Rect a(com.tencent.plus.ImageActivity,android.graphics.Rect) -> a
+    com.tencent.plus.MaskView a(com.tencent.plus.ImageActivity) -> a
+    android.graphics.Rect b(com.tencent.plus.ImageActivity) -> b
+    com.tencent.plus.TouchView c(com.tencent.plus.ImageActivity) -> c
+    android.widget.ProgressBar d(com.tencent.plus.ImageActivity) -> d
+    android.widget.Button e(com.tencent.plus.ImageActivity) -> e
+    android.widget.Button f(com.tencent.plus.ImageActivity) -> f
+    void g(com.tencent.plus.ImageActivity) -> g
+    boolean h(com.tencent.plus.ImageActivity) -> h
+    long i(com.tencent.plus.ImageActivity) -> i
+    void j(com.tencent.plus.ImageActivity) -> j
+    void a(com.tencent.plus.ImageActivity,java.lang.String,int) -> a
+    android.os.Handler k(com.tencent.plus.ImageActivity) -> k
+    void b(com.tencent.plus.ImageActivity,java.lang.String,int) -> b
+    java.lang.String l(com.tencent.plus.ImageActivity) -> l
+    void a$10e321ca(com.tencent.plus.ImageActivity,java.lang.String) -> b
+    boolean a$4e5608c1(com.tencent.plus.ImageActivity) -> m
+    void b(com.tencent.plus.ImageActivity,java.lang.String) -> c
+    int m(com.tencent.plus.ImageActivity) -> n
+    void n(com.tencent.plus.ImageActivity) -> o
+com.tencent.plus.MaskView -> com.tencent.plus.MaskView:
+    java.lang.String a -> a
+    android.graphics.Rect b -> b
+    android.graphics.Paint c -> c
+    void b() -> b
+    void onDraw(android.graphics.Canvas) -> onDraw
+    android.graphics.Rect a() -> a
+com.tencent.plus.TouchView -> com.tencent.plus.TouchView:
+    android.graphics.Matrix c -> c
+    android.graphics.Matrix d -> d
+    int e -> e
+    float f -> f
+    float g -> g
+    android.graphics.Bitmap h -> h
+    boolean i -> i
+    float j -> j
+    float k -> k
+    java.lang.String a -> a
+    android.graphics.PointF l -> l
+    android.graphics.PointF m -> m
+    float n -> n
+    float o -> o
+    boolean b -> b
+    android.graphics.Rect p -> p
+    void setImageBitmap(android.graphics.Bitmap) -> setImageBitmap
+    float a(android.view.MotionEvent) -> a
+    void a(android.graphics.Rect) -> a
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void b() -> a
+    void a(com.tencent.plus.TouchView) -> a
+    boolean a$7cb1083b(com.tencent.plus.TouchView) -> b
+com.tencent.plus.a -> com.tencent.plus.b:
+    java.lang.String a -> a
+    com.tencent.plus.g b -> b
+    void run() -> run
+com.tencent.plus.b -> com.tencent.plus.c:
+    com.tencent.plus.ImageActivity a -> a
+    void a(android.widget.Button) -> a
+    void b(android.widget.Button) -> b
+com.tencent.plus.c -> com.tencent.plus.d:
+    com.tencent.plus.d a -> a
+    void run() -> run
+com.tencent.plus.d -> com.tencent.plus.e:
+    com.tencent.plus.TouchView a -> a
+    void run() -> run
+com.tencent.plus.e -> com.tencent.plus.f:
+    java.lang.String a -> a
+    int b -> b
+    com.tencent.plus.ImageActivity c -> c
+    void run() -> run
+com.tencent.plus.f -> com.tencent.plus.g:
+    com.tencent.plus.ImageActivity a -> a
+    void onClick(android.view.View) -> onClick
+com.tencent.plus.g -> com.tencent.plus.h:
+    com.tencent.plus.ImageActivity a -> a
+    void onMalformedURLException$11b5f444(java.net.MalformedURLException) -> a
+    void onJSONException$18eb2175(org.json.JSONException) -> a
+    void onIOException$7e5565fb(java.io.IOException) -> a
+    void onComplete(org.json.JSONObject,java.lang.Object) -> a
+    void a$13462e() -> a
+    void onConnectTimeoutException$681d225a(org.apache.http.conn.ConnectTimeoutException) -> a
+    void onSocketTimeoutException$69211e98(java.net.SocketTimeoutException) -> a
+    void onUnknowException$54375c33(java.lang.Exception) -> a
+    void onNetworkUnavailableException(com.tencent.open.NetworkUnavailableException,java.lang.Object) -> a
+    void onHttpStatusException$2d60cb38(com.tencent.open.HttpStatusException) -> a
+com.tencent.plus.h -> com.tencent.plus.i:
+    com.tencent.plus.ImageActivity a -> a
+    void onMalformedURLException$11b5f444(java.net.MalformedURLException) -> a
+    void onJSONException$18eb2175(org.json.JSONException) -> a
+    void onIOException$7e5565fb(java.io.IOException) -> a
+    void onComplete(org.json.JSONObject,java.lang.Object) -> a
+    void a$4f708078(int) -> a
+    void onConnectTimeoutException$681d225a(org.apache.http.conn.ConnectTimeoutException) -> a
+    void onSocketTimeoutException$69211e98(java.net.SocketTimeoutException) -> a
+    void onUnknowException$54375c33(java.lang.Exception) -> a
+    void onNetworkUnavailableException(com.tencent.open.NetworkUnavailableException,java.lang.Object) -> a
+    void onHttpStatusException$2d60cb38(com.tencent.open.HttpStatusException) -> a
+com.tencent.plus.i -> com.tencent.plus.j:
+    com.tencent.plus.ImageActivity a -> a
+    void onClick(android.view.View) -> onClick
+com.tencent.plus.j -> com.tencent.plus.k:
+    com.tencent.plus.ImageActivity a -> a
+    void onGlobalLayout() -> onGlobalLayout
+com.tencent.plus.k -> com.tencent.plus.l:
+    com.tencent.plus.i a -> a
+    void run() -> run
+com.tencent.plus.l -> com.tencent.plus.m:
+    com.tencent.plus.h a -> a
+    void run() -> run
+com.tencent.plus.m -> com.tencent.plus.n:
+    com.tencent.plus.h a -> a
+    void run() -> run
+com.tencent.qqconnect.dataprovider.CallbackManager -> com.tencent.qqconnect.dataprovider.a:
+    java.lang.ref.WeakReference mContext -> a
+    android.net.Uri mData -> b
+    java.lang.String mFromPackageName -> c
+    java.lang.String mFromActivityClassName -> d
+    java.lang.String mSrcAction -> e
+    java.lang.String mAppid -> f
+    boolean mIsCallFromTencentApp -> g
+    int mRequestDataTypeFlag -> h
+com.tencent.qqconnect.dataprovider.datatype.TextAndMediaPath -> com.tencent.qqconnect.dataprovider.datatype.TextAndMediaPath:
+    java.lang.String mText -> a
+    java.lang.String mMediaPath -> b
+    android.os.Parcelable$Creator CREATOR -> CREATOR
+    int describeContents() -> describeContents
+    void writeToParcel(android.os.Parcel,int) -> writeToParcel
+com.tencent.qqconnect.dataprovider.datatype.TextAndMediaPath$1 -> com.tencent.qqconnect.dataprovider.datatype.a:
+    java.lang.Object[] newArray(int) -> newArray
+    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+com.tencent.qqconnect.dataprovider.datatype.TextOnly -> com.tencent.qqconnect.dataprovider.datatype.TextOnly:
+    java.lang.String mText -> a
+    android.os.Parcelable$Creator CREATOR -> CREATOR
+    int describeContents() -> describeContents
+    void writeToParcel(android.os.Parcel,int) -> writeToParcel
+com.tencent.qqconnect.dataprovider.datatype.TextOnly$1 -> com.tencent.qqconnect.dataprovider.datatype.b:
+    java.lang.Object[] newArray(int) -> newArray
+    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+com.tencent.record.debug.FileTracer -> com.tencent.a.a.a:
+    com.tencent.record.debug.FileTracerConfig a -> a
+    java.io.FileWriter b -> b
+    java.io.File c -> c
+    char[] d -> d
+    com.tencent.record.debug.SafeStringQueue e -> e
+    com.tencent.record.debug.SafeStringQueue f -> f
+    com.tencent.record.debug.SafeStringQueue g -> g
+    com.tencent.record.debug.SafeStringQueue h -> h
+    boolean i -> i
+    android.os.HandlerThread j -> j
+    android.os.Handler k -> k
+    void a() -> a
+    void b() -> b
+    void a(int,java.lang.Thread,long,java.lang.String,java.lang.String,java.lang.Throwable) -> a
+    boolean handleMessage(android.os.Message) -> handleMessage
+    void f() -> d
+    java.io.Writer h() -> e
+    void i() -> f
+com.tencent.record.debug.FileTracerConfig -> com.tencent.a.a.b:
+    java.text.SimpleDateFormat a -> a
+    java.io.FileFilter b -> b
+    java.lang.String c -> c
+    int d -> d
+    int e -> e
+    int f -> f
+    long g -> g
+    java.io.File h -> h
+    int i -> i
+    java.lang.String j -> j
+    long k -> k
+    java.io.FileFilter l -> l
+    java.util.Comparator m -> m
+    long a(java.io.File) -> a
+    java.io.File a() -> a
+    java.io.File e(java.io.File) -> c
+    void b() -> b
+    int f(java.io.File) -> d
+    java.lang.String c() -> c
+    int f() -> d
+    long g() -> e
+    int i() -> f
+    java.lang.String j() -> g
+    int d(java.io.File) -> b
+com.tencent.record.debug.LogcatTracer -> com.tencent.a.a.c:
+    com.tencent.record.debug.LogcatTracer a -> a
+    void a(int,java.lang.Thread,long,java.lang.String,java.lang.String,java.lang.Throwable) -> a
+com.tencent.record.debug.SafeStringQueue -> com.tencent.a.a.d:
+    java.util.concurrent.ConcurrentLinkedQueue a -> a
+    java.util.concurrent.atomic.AtomicInteger b -> b
+    int a(java.lang.String) -> a
+    void a(java.io.Writer,char[]) -> a
+    int a() -> a
+    void b() -> b
+    java.util.Iterator iterator() -> iterator
+com.tencent.record.debug.TraceFormat -> com.tencent.a.a.e:
+    com.tencent.record.debug.TraceFormat a -> a
+    java.lang.String a(int,java.lang.Thread,long,java.lang.String,java.lang.String,java.lang.Throwable) -> a
+com.tencent.record.debug.Tracer -> com.tencent.a.a.f:
+    int a -> a
+    boolean b -> b
+    com.tencent.record.debug.TraceFormat c -> c
+    void b(int,java.lang.Thread,long,java.lang.String,java.lang.String,java.lang.Throwable) -> b
+    void a(int,java.lang.Thread,long,java.lang.String,java.lang.String,java.lang.Throwable) -> a
+    void a(int) -> a
+    com.tencent.record.debug.TraceFormat e() -> c
+com.tencent.record.debug.WnsClientLog -> com.tencent.a.a.g:
+    com.tencent.record.debug.WnsClientLog a -> a
+    com.tencent.record.debug.WnsClientLog a() -> a
+    void a(java.lang.String,java.lang.String) -> a
+    void b(java.lang.String,java.lang.String) -> b
+    void c(java.lang.String,java.lang.String) -> c
+    void d(java.lang.String,java.lang.String) -> d
+    void a(java.lang.String,java.lang.String,java.lang.Throwable) -> a
+    void b() -> b
+com.tencent.record.debug.WnsTracer -> com.tencent.a.a.h:
+    com.tencent.record.debug.FileTracerConfig b -> b
+    com.tencent.record.debug.FileTracerConfig c -> c
+    com.tencent.record.debug.FileTracer d -> d
+    boolean a -> a
+    boolean e -> e
+    boolean f -> f
+    void b() -> b
+    void a(int,java.lang.String,java.lang.String,java.lang.Throwable) -> a
+    void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
+com.tencent.record.debug.a -> com.tencent.a.a.i:
+    boolean accept(java.io.File) -> accept
+com.tencent.record.debug.b -> com.tencent.a.a.j:
+    com.tencent.record.debug.FileTracerConfig a -> a
+    boolean accept(java.io.File) -> accept
+com.tencent.record.debug.c -> com.tencent.a.a.k:
+    com.tencent.record.debug.FileTracerConfig a -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
+com.tencent.record.info.Const$Debug -> com.tencent.a.b.a:
+    java.lang.String a -> a
+com.tencent.record.info.Global -> com.tencent.a.b.b:
+    android.content.Context a -> a
+    android.content.Context a() -> a
+    void a(android.content.Context) -> a
+com.tencent.record.info.StorageInfo -> com.tencent.a.b.c:
+    java.io.File a -> a
+    long b -> b
+    long c -> c
+    void a(java.io.File) -> a
+    void a(long) -> a
+    long c() -> a
+    void b(long) -> b
+    java.lang.String toString() -> toString
+com.tencent.record.util.FileUtils -> com.tencent.a.c.a:
+    boolean a(java.io.File) -> a
+com.tencent.stat.EasyActivity -> com.tencent.stat.EasyActivity:
+    void onResume() -> onResume
+    void onPause() -> onPause
+com.tencent.stat.EasyListActivity -> com.tencent.stat.EasyListActivity:
+    void onResume() -> onResume
+    void onPause() -> onPause
+com.tencent.stat.MtaSDkException -> com.tencent.stat.a:
+com.tencent.stat.StatConfig -> com.tencent.stat.b:
+    com.tencent.stat.common.StatLogger logger -> f
+    com.tencent.stat.StatConfig$OnlineConfig userCfg -> a
+    com.tencent.stat.StatConfig$OnlineConfig sdkCfg -> b
+    com.tencent.stat.StatReportStrategy statSendStrategy -> g
+    boolean enableStatService -> h
+    int sessionTimoutMillis -> i
+    int maxStoreEventCount -> j
+    int maxLoadEventCount -> k
+    int maxSendRetryCount -> l
+    int maxBatchReportCount -> m
+    java.lang.String HIBERNATE -> c
+    java.lang.String ta_http_proxy -> n
+    java.lang.String appkey -> o
+    java.lang.String installChannel -> p
+    java.lang.String qq -> d
+    int sendPeriodMinutes -> q
+    int maxParallelTimmingEvents -> r
+    boolean enableSmartReporting -> s
+    long lastReportStrategyCheckTime -> t
+    long maxReportStrategyCheckTime -> u
+    boolean isAutoExceptionCaught -> e
+    java.lang.String statReportUrl -> v
+    int maxSessionStatReportCount -> w
+    int curSessionStatReportCount -> x
+    int maxDaySessionNumbers -> y
+    int currentDaySessionNumbers -> z
+    boolean reportTrafficStat -> A
+    int maxReportEventLength -> B
+    com.tencent.stat.StatReportStrategy getStatSendStrategy() -> a
+    void setStatSendStrategy(com.tencent.stat.StatReportStrategy) -> a
+    boolean isDebugEnable() -> b
+    boolean isEnableStatService() -> c
+    void setEnableStatService(boolean) -> a
+    int getSessionTimoutMillis() -> d
+    int getMaxBatchReportCount() -> e
+    int getMaxSendRetryCount() -> f
+    int getMaxLoadEventCount() -> g
+    int getMaxStoreEventCount() -> h
+    void updateOnlineConfig(org.json.JSONObject) -> a
+    void updateCfg(com.tencent.stat.StatConfig$OnlineConfig,org.json.JSONObject) -> a
+    void updateReportStrategy(org.json.JSONObject) -> b
+    void setConfig(com.tencent.stat.StatConfig$OnlineConfig) -> a
+    org.apache.http.HttpHost getStatHttpProxy() -> i
+    java.lang.String getAppKey(android.content.Context) -> a
+    boolean updateAppkeys(java.lang.String) -> c
+    void setAppKey(android.content.Context,java.lang.String) -> a
+    java.lang.String getInstallChannel(android.content.Context) -> b
+    void setInstallChannel(java.lang.String) -> a
+    java.lang.String getQQ() -> j
+    void setSendPeriodMinutes$13462e() -> k
+    int getSendPeriodMinutes() -> l
+    int getMaxParallelTimmingEvents() -> m
+    boolean isEnableSmartReporting() -> n
+    void setEnableSmartReporting$1385ff() -> o
+    boolean isAutoExceptionCaught() -> p
+    void setAutoExceptionCaught$1385ff() -> q
+    java.lang.String getStatReportUrl() -> r
+    void setStatReportUrl(java.lang.String) -> b
+    int getMaxSessionStatReportCount() -> s
+    int getCurSessionStatReportCount() -> t
+    void setCurSessionStatReportCount$13462e() -> u
+    void incCurSessionStatReportCount() -> v
+    int getMaxDaySessionNumbers() -> w
+    void incCurrentDaySessionNumbers() -> x
+    void setCurrentDaySessionNumbers$13462e() -> y
+    int getCurrentDaySessionNumbers() -> z
+    int getMaxReportEventLength() -> A
+com.tencent.stat.StatConfig$OnlineConfig -> com.tencent.stat.c:
+    int type -> a
+    org.json.JSONObject props -> b
+    java.lang.String md5sum -> c
+    int version -> d
+com.tencent.stat.StatDispatchCallback -> com.tencent.stat.d:
+    void onDispatchSuccess() -> a
+    void onDispatchFailure() -> b
+com.tencent.stat.StatDispatcher -> com.tencent.stat.e:
+    com.tencent.stat.common.StatLogger logger -> c
+    long dispatcherThreadId -> d
+    org.apache.http.impl.client.DefaultHttpClient client -> a
+    android.os.Handler handler -> b
+    com.tencent.stat.StatDispatcher instance -> e
+    android.content.Context applicationContext -> f
+    void setApplicationContext(android.content.Context) -> a
+    android.content.Context getApplicationContext() -> a
+    com.tencent.stat.StatDispatcher getInstance() -> b
+    void sendHttpPost(java.util.List,com.tencent.stat.StatDispatchCallback) -> a
+    void send(java.util.List,com.tencent.stat.StatDispatchCallback) -> b
+    void send(com.tencent.stat.event.Event,com.tencent.stat.StatDispatchCallback) -> a
+com.tencent.stat.StatDispatcher$1 -> com.tencent.stat.f:
+    com.tencent.stat.StatDispatcher this$0 -> a
+    long getKeepAliveDuration(org.apache.http.HttpResponse,org.apache.http.protocol.HttpContext) -> getKeepAliveDuration
+com.tencent.stat.StatDispatcher$2 -> com.tencent.stat.g:
+    java.util.List val$evs -> a
+    com.tencent.stat.StatDispatchCallback val$cb -> b
+    com.tencent.stat.StatDispatcher this$0 -> c
+    void run() -> run
+com.tencent.stat.StatReportStrategy -> com.tencent.stat.h:
+    com.tencent.stat.StatReportStrategy INSTANT -> a
+    com.tencent.stat.StatReportStrategy ONLY_WIFI -> b
+    com.tencent.stat.StatReportStrategy BATCH -> c
+    com.tencent.stat.StatReportStrategy APP_LAUNCH -> d
+    com.tencent.stat.StatReportStrategy DEVELOPER -> e
+    com.tencent.stat.StatReportStrategy PERIOD -> f
+    com.tencent.stat.StatReportStrategy ONLY_WIFI_NO_CACHE -> g
+    int v -> h
+    com.tencent.stat.StatReportStrategy[] $VALUES -> i
+    com.tencent.stat.StatReportStrategy[] values() -> values
+    com.tencent.stat.StatReportStrategy valueOf(java.lang.String) -> valueOf
+    com.tencent.stat.StatReportStrategy getStatReportStrategy(int) -> a
+com.tencent.stat.StatService -> com.tencent.stat.i:
+    android.os.Handler handler -> a
+    java.util.Map timedEventMap -> b
+    long lastActivityTimestamp -> c
+    long nextDayStartTimestamp -> d
+    int sessionId -> e
+    java.lang.String last_pageId -> f
+    java.lang.String lastReferPageId -> g
+    java.util.Map timedPageEventMap -> h
+    com.tencent.stat.common.StatLogger logger -> i
+    java.lang.Thread$UncaughtExceptionHandler originalExceptionHandler -> j
+    boolean firstSession -> k
+    android.os.Handler getHandler(android.content.Context) -> c
+    org.json.JSONObject getEncodeConfig() -> c
+    int getSessionID(android.content.Context,boolean) -> a
+    void onResume(android.content.Context) -> a
+    void reportQQ(android.content.Context,java.lang.String) -> a
+    boolean startStatService(android.content.Context,java.lang.String,java.lang.String) -> a
+    void onPause(android.content.Context) -> b
+    void reportSdkSelfException(android.content.Context,java.lang.Throwable) -> a
+    void trackCustomEvent(android.content.Context,java.lang.String,java.lang.String[]) -> a
+    com.tencent.stat.common.StatLogger access$000() -> a
+    java.lang.Thread$UncaughtExceptionHandler access$100() -> b
+com.tencent.stat.StatService$1 -> com.tencent.stat.j:
+    android.content.Context val$tempContext -> a
+    void uncaughtException(java.lang.Thread,java.lang.Throwable) -> uncaughtException
+com.tencent.stat.StatService$2 -> com.tencent.stat.k:
+    int[] $SwitchMap$com$tencent$stat$StatReportStrategy -> a
+com.tencent.stat.StatService$StatTask -> com.tencent.stat.l:
+    com.tencent.stat.event.Event ev -> a
+    com.tencent.stat.StatReportStrategy strategy -> b
+    void sendEvents() -> a
+    void sendEventsNow(boolean) -> a
+    void run() -> run
+    com.tencent.stat.event.Event access$200(com.tencent.stat.StatService$StatTask) -> a
+com.tencent.stat.StatService$StatTask$1 -> com.tencent.stat.m:
+    com.tencent.stat.StatService$StatTask this$0 -> a
+    void onDispatchSuccess() -> a
+    void onDispatchFailure() -> b
+com.tencent.stat.StatService$StatTask$2 -> com.tencent.stat.n:
+    com.tencent.stat.StatService$StatTask this$0 -> a
+    void onDispatchSuccess() -> a
+    void onDispatchFailure() -> b
+com.tencent.stat.StatStore -> com.tencent.stat.o:
+    com.tencent.stat.StatStore$StatStoreHelper helper -> d
+    android.os.Handler handler -> a
+    int numStoredEvents -> b
+    com.tencent.stat.common.User user -> c
+    com.tencent.stat.common.StatLogger logger -> e
+    com.tencent.stat.StatStore instance -> f
+    java.util.HashMap kvMap -> g
+    int getNumStoredEvents() -> a
+    com.tencent.stat.StatStore getInstance(android.content.Context) -> a
+    com.tencent.stat.StatStore getInstance() -> b
+    com.tencent.stat.common.User getUser(android.content.Context) -> b
+    void directDeleteEvents(java.util.List) -> c
+    void directUpdateEvents(java.util.List,int) -> a
+    void updateEvents$22875ea3(java.util.List) -> a
+    void deleteEvents(java.util.List) -> b
+    void directStoreEvent(com.tencent.stat.event.Event,com.tencent.stat.StatDispatchCallback) -> a
+    void storeEvent(com.tencent.stat.event.Event,com.tencent.stat.StatDispatchCallback) -> b
+    void storeCfg(com.tencent.stat.StatConfig$OnlineConfig) -> a
+    void loadEvents(int) -> a
+    void loadKeyValues() -> d
+    void access$000(com.tencent.stat.StatStore) -> a
+    void access$100(com.tencent.stat.StatStore,java.util.List,int) -> a
+    void access$200(com.tencent.stat.StatStore,java.util.List) -> a
+    com.tencent.stat.StatStore$StatStoreHelper access$300(com.tencent.stat.StatStore) -> b
+    com.tencent.stat.common.StatLogger access$400() -> c
+    void access$500(com.tencent.stat.StatStore,java.util.List,int) -> b
+com.tencent.stat.StatStore$1 -> com.tencent.stat.p:
+    com.tencent.stat.StatStore this$0 -> a
+    void run() -> run
+com.tencent.stat.StatStore$2 -> com.tencent.stat.q:
+    java.util.List val$evs -> a
+    int val$status -> b
+    com.tencent.stat.StatStore this$0 -> c
+    void run() -> run
+com.tencent.stat.StatStore$3 -> com.tencent.stat.r:
+    java.util.List val$evs -> a
+    com.tencent.stat.StatStore this$0 -> b
+    void run() -> run
+com.tencent.stat.StatStore$4 -> com.tencent.stat.s:
+    com.tencent.stat.event.Event val$ev -> a
+    com.tencent.stat.StatDispatchCallback val$cb -> b
+    com.tencent.stat.StatStore this$0 -> c
+    void run() -> run
+com.tencent.stat.StatStore$5 -> com.tencent.stat.t:
+    com.tencent.stat.StatConfig$OnlineConfig val$cfg -> a
+    com.tencent.stat.StatStore this$0 -> b
+    void run() -> run
+com.tencent.stat.StatStore$6 -> com.tencent.stat.u:
+    com.tencent.stat.StatStore this$0 -> a
+    void run() -> run
+com.tencent.stat.StatStore$7 -> com.tencent.stat.v:
+    int val$maxNumber -> a
+    com.tencent.stat.StatStore this$0 -> b
+    void run() -> run
+com.tencent.stat.StatStore$7$1 -> com.tencent.stat.w:
+    java.util.List val$evs -> a
+    int val$loadNumber -> b
+    com.tencent.stat.StatStore$7 this$1 -> c
+    void onDispatchSuccess() -> a
+    void onDispatchFailure() -> b
+com.tencent.stat.StatStore$StatStoreHelper -> com.tencent.stat.x:
+    java.lang.String DATABASE_NAME -> a
+    int DATABASE_VERSION -> b
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void upgradeUserToVer3(android.database.sqlite.SQLiteDatabase) -> a
+    void upgradeEventsToVer3(android.database.sqlite.SQLiteDatabase) -> b
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+com.tencent.stat.StatStore$StoredEvent -> com.tencent.stat.y:
+    long id -> a
+    java.lang.String content -> b
+    int status -> c
+    int send_count -> d
+com.tencent.stat.common.Env -> com.tencent.stat.a.a:
+    com.tencent.stat.common.Env$BasicEnv basicEnv -> a
+    java.lang.Integer tel_network -> b
+    java.lang.String conn -> c
+    org.json.JSONObject attr_json -> d
+    void encode(org.json.JSONObject) -> a
+com.tencent.stat.common.Env$BasicEnv -> com.tencent.stat.a.b:
+    java.lang.String appVersion -> a
+    java.lang.String sdkVersion -> b
+    android.util.DisplayMetrics display -> c
+    int osVersion -> d
+    java.lang.String model -> e
+    java.lang.String manufacture -> f
+    java.lang.String language -> g
+    java.lang.String channel -> h
+    java.lang.String operator -> i
+    java.lang.String timezone -> j
+    java.lang.String sd -> k
+    int jb -> l
+com.tencent.stat.common.RC4 -> com.tencent.stat.a.c:
+    byte[] key -> a
+    byte[] encrypt(byte[]) -> a
+    byte[] decrypt(byte[]) -> b
+    byte[] encrypt(byte[],byte[]) -> a
+com.tencent.stat.common.SdkProtection -> com.tencent.stat.a.d:
+    long valueNotSet -> a
+    long getPreferencesValue(android.content.Context,java.lang.String) -> a
+    boolean beginCheck(android.content.Context) -> a
+    void endCheck(android.content.Context) -> b
+com.tencent.stat.common.StatBase64 -> com.tencent.stat.a.e:
+    boolean $assertionsDisabled -> a
+    byte[] decode$1cf9d9ca(byte[]) -> a
+    byte[] encode$1cf9d9ca(byte[]) -> b
+com.tencent.stat.common.StatBase64$Coder -> com.tencent.stat.a.f:
+    byte[] output -> a
+    int op -> b
+com.tencent.stat.common.StatBase64$Decoder -> com.tencent.stat.a.g:
+    int[] DECODE -> c
+    int[] DECODE_WEBSAFE -> d
+    int state -> e
+    int value -> f
+    int[] alphabet -> g
+    boolean process$7dcd25fc$1cf967a0(byte[],int) -> a
+com.tencent.stat.common.StatBase64$Encoder -> com.tencent.stat.a.h:
+    byte[] ENCODE -> h
+    byte[] ENCODE_WEBSAFE -> i
+    byte[] tail -> j
+    int tailLen -> c
+    int count -> k
+    boolean do_padding -> d
+    boolean do_newline -> e
+    boolean do_cr -> f
+    byte[] alphabet -> l
+    boolean $assertionsDisabled -> g
+    boolean process$7dcd25fc$1cf967a0(byte[],int) -> a
+com.tencent.stat.common.StatCommonHelper -> com.tencent.stat.a.i:
+    java.lang.String userId -> a
+    java.lang.String appkey -> b
+    java.lang.String macId -> c
+    java.lang.String deviceModel -> d
+    java.util.Random random -> e
+    com.tencent.stat.common.StatLogger logger -> f
+    java.util.Random getRandom() -> e
+    int getNextSessionID() -> a
+    byte[] deocdeGZipContent(byte[]) -> a
+    java.lang.String md5sum(java.lang.String) -> a
+    org.apache.http.HttpHost getHttpProxy(android.content.Context) -> a
+    java.lang.String getUserID(android.content.Context) -> b
+    java.lang.String getMacId(android.content.Context) -> c
+    android.util.DisplayMetrics getDisplayMetrics(android.content.Context) -> d
+    boolean checkPermission(android.content.Context,java.lang.String) -> a
+    boolean isWiFiActive(android.content.Context) -> e
+    java.lang.String getWifiMacAddress(android.content.Context) -> r
+    boolean isWifiNet(android.content.Context) -> f
+    boolean isNetworkAvailable(android.content.Context) -> g
+    java.lang.String getAppKey(android.content.Context) -> h
+    java.lang.String getInstallChannel(android.content.Context) -> i
+    java.lang.String getActivityName(android.content.Context) -> j
+    java.lang.String getDeviceID(android.content.Context) -> k
+    java.lang.String getSimOperator(android.content.Context) -> l
+    java.lang.String getCurAppVersion(android.content.Context) -> m
+    boolean checkPhoneState(android.content.Context) -> s
+    java.lang.String getLinkedWay(android.content.Context) -> n
+    java.lang.Integer getTelephonyNetworkType(android.content.Context) -> o
+    java.lang.String getAppVersion(android.content.Context) -> p
+    void jsonPut(org.json.JSONObject,java.lang.String,java.lang.String) -> a
+    int hasRootAccess$faab21a() -> b
+    com.tencent.stat.common.StatLogger getLogger() -> c
+    long getTomorrowStartMilliseconds() -> d
+    java.lang.Long convertStringToLong$5bd119ad(java.lang.String,java.lang.String,java.lang.Long) -> a
+    long getSDKLongVersion(java.lang.String) -> b
+    java.lang.String getExternalStorageInfo(android.content.Context) -> q
+    java.lang.String getDateFormat(long) -> a
+    java.lang.String encode(java.lang.String) -> c
+    java.lang.String decode(java.lang.String) -> d
+com.tencent.stat.common.StatCommonHelper$RootCmd -> com.tencent.stat.a.j:
+    int systemRootState -> a
+    boolean isRootSystem() -> a
+com.tencent.stat.common.StatLogger -> com.tencent.stat.a.k:
+    java.lang.String tag -> a
+    boolean debugEnable -> b
+    int logLevel -> c
+    boolean isDebugEnable() -> a
+    void setDebugEnable$1385ff() -> b
+    java.lang.String getLoggerClassInfo() -> c
+    void i(java.lang.Object) -> a
+    void warn(java.lang.Object) -> b
+    void w(java.lang.Object) -> c
+    void error(java.lang.Object) -> d
+    void e(java.lang.Object) -> e
+    void e(java.lang.Exception) -> a
+    void debug(java.lang.Object) -> f
+    void d(java.lang.Object) -> g
+com.tencent.stat.common.StatPreferences -> com.tencent.stat.a.l:
+    android.content.SharedPreferences defaultPerferences -> a
+    android.content.SharedPreferences getInstance(android.content.Context) -> a
+    long getLong(android.content.Context,java.lang.String,long) -> a
+    void putLong(android.content.Context,java.lang.String,long) -> b
+    java.lang.String getString$22670df9(android.content.Context,java.lang.String) -> a
+    void putString(android.content.Context,java.lang.String,java.lang.String) -> a
+com.tencent.stat.common.User -> com.tencent.stat.a.m:
+    java.lang.String uid -> a
+    java.lang.String mac -> b
+    int type -> c
+    java.lang.String getUid() -> a
+    java.lang.String getMac() -> b
+    void setType$13462e() -> c
+    int getType() -> d
+com.tencent.stat.event.AdditionEvent -> com.tencent.stat.b.a:
+    java.util.Map map -> a
+    com.tencent.stat.event.EventType getType() -> a
+    boolean onEncode(org.json.JSONObject) -> a
+com.tencent.stat.event.CustomEvent -> com.tencent.stat.b.b:
+    com.tencent.stat.event.CustomEvent$Key key -> a
+    long duration -> g
+    void setArgs(java.lang.String[]) -> a
+    com.tencent.stat.event.EventType getType() -> a
+    boolean onEncode(org.json.JSONObject) -> a
+com.tencent.stat.event.CustomEvent$Key -> com.tencent.stat.b.c:
+    java.lang.String id -> a
+    java.lang.String[] args -> b
+    java.util.Properties prop -> c
+    java.lang.String toString() -> toString
+    int hashCode() -> hashCode
+    boolean equals(java.lang.Object) -> equals
+com.tencent.stat.event.ErrorEvent -> com.tencent.stat.b.d:
+    java.lang.String error -> a
+    int errorAttr -> g
+    int maxErrorLength -> h
+    com.tencent.stat.event.EventType getType() -> a
+    boolean onEncode(org.json.JSONObject) -> a
+com.tencent.stat.event.Event -> com.tencent.stat.b.e:
+    java.lang.String appkey -> b
+    long timestamp -> c
+    int sessionId -> d
+    com.tencent.stat.common.User user -> e
+    android.content.Context ctx -> f
+    long getTimestamp() -> b
+    android.content.Context getContext() -> c
+    com.tencent.stat.event.EventType getType() -> a
+    boolean onEncode(org.json.JSONObject) -> a
+    boolean encode(org.json.JSONObject) -> b
+    java.lang.String toJsonString() -> d
+com.tencent.stat.event.EventType -> com.tencent.stat.b.f:
+    com.tencent.stat.event.EventType PAGE_VIEW -> a
+    com.tencent.stat.event.EventType SESSION_ENV -> b
+    com.tencent.stat.event.EventType ERROR -> c
+    com.tencent.stat.event.EventType CUSTOM -> d
+    com.tencent.stat.event.EventType ADDITION -> e
+    com.tencent.stat.event.EventType MONITOR_STAT -> f
+    int v -> g
+    com.tencent.stat.event.EventType[] $VALUES -> h
+    int GetIntValue() -> a
+com.tencent.stat.event.PageView -> com.tencent.stat.b.g:
+    java.lang.Long duration -> a
+    java.lang.String pageId -> g
+    java.lang.String referPageId -> h
+    com.tencent.stat.event.EventType getType() -> a
+    java.lang.String getPageId() -> e
+    boolean onEncode(org.json.JSONObject) -> a
+com.tencent.stat.event.SessionEnv -> com.tencent.stat.b.h:
+    com.tencent.stat.common.Env env -> a
+    org.json.JSONObject cfgJson -> g
+    com.tencent.stat.event.EventType getType() -> a
+    boolean onEncode(org.json.JSONObject) -> a
+com.tencent.tauth.AuthActivity -> com.tencent.tauth.AuthActivity:
+    void onCreate(android.os.Bundle) -> onCreate
+com.tencent.tauth.Constants -> com.tencent.tauth.a:
+    java.lang.String PACKAGE_QZONE -> a
+    java.lang.String PACKAGE_QQ -> b
+com.tencent.tauth.IRequestListener -> com.tencent.tauth.b:
+    void onComplete(org.json.JSONObject,java.lang.Object) -> a
+    void onIOException$7e5565fb(java.io.IOException) -> a
+    void onMalformedURLException$11b5f444(java.net.MalformedURLException) -> a
+    void onJSONException$18eb2175(org.json.JSONException) -> a
+    void onConnectTimeoutException$681d225a(org.apache.http.conn.ConnectTimeoutException) -> a
+    void onSocketTimeoutException$69211e98(java.net.SocketTimeoutException) -> a
+    void onNetworkUnavailableException(com.tencent.open.NetworkUnavailableException,java.lang.Object) -> a
+    void onHttpStatusException$2d60cb38(com.tencent.open.HttpStatusException) -> a
+    void onUnknowException$54375c33(java.lang.Exception) -> a
+com.tencent.tauth.IUiListener -> com.tencent.tauth.c:
+    void onComplete(org.json.JSONObject) -> a
+    void onError(com.tencent.tauth.UiError) -> a
+    void onCancel() -> a
+com.tencent.tauth.Tencent -> com.tencent.tauth.d:
+    com.tencent.open.OpenApi mOpenApi -> b
+    com.tencent.open.OpenUi mOpenUi -> c
+    com.tencent.open.TContext mTContext -> d
+    java.util.HashMap sessionMap -> a
+    com.tencent.tauth.Tencent createInstance(java.lang.String,android.content.Context) -> a
+    boolean isSessionValid() -> a
+    void setAccessToken(java.lang.String,java.lang.String) -> a
+    void setOpenId(java.lang.String) -> a
+    int login(android.app.Activity,java.lang.String,com.tencent.tauth.IUiListener) -> a
+    int invite(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener) -> a
+    void requestAsync$73376565(java.lang.String,java.lang.String,com.tencent.tauth.IRequestListener) -> a
+    boolean onActivityResult(int,int,android.content.Intent) -> a
+com.tencent.tauth.UiError -> com.tencent.tauth.e:
+    int errorCode -> a
+    java.lang.String errorMessage -> b
+    java.lang.String errorDetail -> c
 com.tencent.weibo.api.BasicAPI -> com.tencent.weibo.a.a:
     com.tencent.weibo.api.RequestAPI requestAPI -> b
     java.lang.String apiBaseUrl -> c

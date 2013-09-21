@@ -71,7 +71,17 @@ public class Util {
 
         return false;
     }
-
+    /**
+     * 如果path后面不带 / 则加上
+     * @param path
+     * @return
+     */
+    public static String makeStandardPath(String path){
+    	if(!path.endsWith(File.separator)){
+    		return path + File.separator;
+    	}
+    	return path;
+    }
     public static String makePath(String path1, String path2) {
         if (path1.endsWith(File.separator))
             return path1 + path2;

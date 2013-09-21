@@ -65,7 +65,6 @@ android.support.v4.app.Fragment:
     529:529:public final android.support.v4.app.Fragment getTargetFragment()
     536:536:public final int getTargetRequestCode()
     563:563:public final java.lang.CharSequence getText(int)
-    573:573:public final java.lang.String getString(int)
     586:586:public final varargs java.lang.String getString(int,java.lang.Object[])
     597:597:public final android.support.v4.app.FragmentManager getFragmentManager()
     604:604:public final boolean isAdded()
@@ -107,7 +106,6 @@ android.support.v4.app.FragmentManager:
     public abstract android.support.v4.app.Fragment findFragmentById(int)
     public abstract void popBackStack()
     public abstract boolean popBackStackImmediate()
-    public abstract void popBackStack(java.lang.String,int)
     public abstract boolean popBackStackImmediate(java.lang.String,int)
     public abstract void popBackStack(int,int)
     public abstract boolean popBackStackImmediate(int,int)
@@ -135,7 +133,6 @@ android.support.v4.app.FragmentManagerImpl:
     public static final int ANIM_STYLE_FADE_ENTER
     public static final int ANIM_STYLE_FADE_EXIT
     436:441:public void popBackStack()
-    452:457:public void popBackStack(java.lang.String,int)
     461:463:public boolean popBackStackImmediate(java.lang.String,int)
     468:476:public void popBackStack(int,int)
     480:485:public boolean popBackStackImmediate(int,int)
@@ -146,7 +143,6 @@ android.support.v4.app.FragmentManagerImpl:
     542:550:public android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
     1286:1294:public android.support.v4.app.Fragment findFragmentByWho(java.lang.String)
 android.support.v4.app.FragmentManagerImpl$2
-android.support.v4.app.FragmentManagerImpl$3
 android.support.v4.app.FragmentManagerImpl$4
 android.support.v4.app.FragmentPagerAdapter
 android.support.v4.app.FragmentStatePagerAdapter
@@ -187,14 +183,14 @@ android.support.v4.app.ListFragment
 android.support.v4.app.ListFragment$1
 android.support.v4.app.ListFragment$2
 android.support.v4.app.LoaderManager:
-    public abstract android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    public abstract android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     public abstract android.support.v4.content.Loader getLoader(int)
     public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
     176:177:public static void enableDebugLogging(boolean)
 android.support.v4.app.LoaderManagerImpl:
     static final java.lang.String TAG
     boolean mRetainingStarted
-    589:643:public android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    539:561:public android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     682:693:public android.support.v4.content.Loader getLoader(int)
 android.support.v4.app.ServiceCompat
 android.support.v4.content.AsyncTaskLoader:
@@ -219,8 +215,6 @@ android.support.v4.content.CursorLoader:
 android.support.v4.content.IntentCompat
 android.support.v4.content.Loader:
     118:118:public int getId()
-    261:263:public void abandon()
-    275:275:protected void onAbandon()
 android.support.v4.content.LocalBroadcastManager
 android.support.v4.content.LocalBroadcastManager$1
 android.support.v4.content.LocalBroadcastManager$BroadcastRecord
@@ -948,10 +942,10 @@ com.dabing.emoj.activity.EmojBrowsePictureActivity:
     static final float ZOOM_RATIO
     static final long delayMillis
 com.dabing.emoj.activity.EmojBrowseViewActivity:
-    private static final int MENU_ID_ZOOM
-    private static final int MENU_ID_PAN
-    private static final int MENU_ID_RESET
-    private android.widget.ZoomControls mZoomControls
+    protected static final int MENU_ID_ZOOM
+    protected static final int MENU_ID_PAN
+    protected static final int MENU_ID_RESET
+    protected android.widget.ZoomControls mZoomControls
     static final float ZOOM_RATIO
     static final long delayMillis
 com.dabing.emoj.activity.EmojEmotionActivity:
@@ -970,21 +964,25 @@ com.dabing.emoj.activity.EmojViewActivity:
     private static final int MENU_ID_PAN
     private static final int MENU_ID_RESET
     private android.widget.ZoomControls mZoomControls
+com.dabing.emoj.activity.MainTab2Activity:
+    android.widget.ImageView cursor
 com.dabing.emoj.activity.SettingActivity:
     static final int REQUEST_LOGIN
+com.dabing.emoj.activity.SettingActivity$UserInfoTask
 com.dabing.emoj.activity.SettingUserInfoActivity:
     static final int REQUEST_LOGIN
 com.dabing.emoj.activity.UserDefineActivity:
-    com.dabing.emoj.widget.CustomGridLayout gridLayout
     com.handmark.pulltorefresh.library.PullToRefreshScrollView mScrollView
     com.dabing.emoj.adpater.AlbumCusorAdapter adapter
     static final long REFLESH_UI_DELAY
     static final int COLUM_NUM
     static final int COLUM_PADDING
-    123:128:private void calculateAlbumWidth()
-    131:136:protected void addAlbum(com.dabing.emoj.utils.FileInfo)
-    141:148:protected void setDelMode()
+    112:117:private void calculateAlbumWidth()
 com.dabing.emoj.activity.UserDefineActivity$ImageFilenameFilter
+com.dabing.emoj.activity.UserDefineAddActivity:
+    static final int MSG_GET_FILES
+    static final int MSG_LOADING
+    static final int MSG_TASK_FINISH
 com.dabing.emoj.activity.WelcomeActivity:
     static final long delay
 com.dabing.emoj.admin.SelectEmojActivity:
@@ -1027,26 +1025,27 @@ com.dabing.emoj.db.UserDefineDataBaseHelper:
     public static final java.lang.String FIELD_CHILDSIZE
     static final java.lang.String TABLE_NAME
     static final int VERSION
-    92:107:public com.dabing.emoj.utils.FileInfo getFileInfo(int)
-    111:130:public com.dabing.emoj.utils.FileInfo getFileInfo(java.lang.String)
-    139:145:public void remove(int)
-    206:215:public void insert(java.io.File)
-    218:218:public boolean exist(com.dabing.emoj.utils.FileInfo)
-    222:232:public boolean exist(java.lang.String)
+    95:110:public com.dabing.emoj.utils.FileInfo getFileInfo(int)
+    114:133:public com.dabing.emoj.utils.FileInfo getFileInfo(java.lang.String)
+    224:233:public void insert(java.io.File)
+    250:250:public boolean exist(com.dabing.emoj.utils.FileInfo)
 com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor:
-    277:277:public java.lang.String getName()
-    285:285:public java.lang.String getType()
-    289:289:public java.lang.String getThumb()
-    293:293:public long getTime()
-    297:297:public int getState()
-    301:301:public int getChildSize()
+    318:318:public java.lang.String getName()
+    326:326:public java.lang.String getType()
+    330:330:public java.lang.String getThumb()
+    334:334:public long getTime()
+    338:338:public int getState()
+    342:342:public int getChildSize()
 com.dabing.emoj.demo.demoFile:
     55:56:private void maketext1(java.lang.CharSequence)
     100:111:private void start()
 com.dabing.emoj.demo.democall:
-    155:160:private void testJni()
-    163:182:private void getChannel()
+    176:181:private void testJni()
+    184:203:private void getChannel()
+    230:250:private void QQlogin()
+    282:319:private void shareQQ()
 com.dabing.emoj.demo.democall$2
+com.dabing.emoj.demo.democall$3
 com.dabing.emoj.exception.AccessRateLimitException:
     private static final long serialVersionUID
 com.dabing.emoj.exception.Check:
@@ -1065,10 +1064,11 @@ com.dabing.emoj.exception.ServerErrorException:
     private static final long serialVersionUID
 com.dabing.emoj.fragment.AlbumDetailFragment:
     static final int COLUM_NUM
-    109:110:public void setCallBack(com.dabing.emoj.fragment.UserDefineFragment$IEmojScanCallBack)
 com.dabing.emoj.fragment.AlbumFragment:
     static final int COLUM_NUM
-    310:318:protected void unregister()
+    static final int COLUM_PADDING
+    264:265:public void recycle()
+    423:431:protected void unregister()
 com.dabing.emoj.fragment.BaseEmojFragment:
     10:11:public BaseEmojFragment()
 com.dabing.emoj.fragment.CommonEmojFragment:
@@ -1148,6 +1148,9 @@ com.dabing.emoj.service.EmojScanService$ImageScanTask:
     361:393:private java.util.Map getThumbnails(java.util.Map)
 com.dabing.emoj.utils.AppConfig:
     public static final boolean DEBUG
+    public static final java.lang.String QQ_APPID
+    public static final java.lang.String QQ_SCOPE
+    public static final java.lang.String QQ_PACKAGE_NAME
     public static final java.lang.String redirectUri
     public static final java.lang.String clientId
     public static final java.lang.String clientSecret
@@ -1159,15 +1162,15 @@ com.dabing.emoj.utils.AppConfig:
     public static final java.lang.String CACHE_STRING
     public static final java.lang.String ALBUM_STRING
     static final java.lang.String FILENAME
-    171:191:public static int getBackgroundResId(java.lang.String)
-    288:290:public static boolean getUmengAdEnable(android.content.Context)
-    293:297:public static void setUmengAdEnable(android.content.Context,boolean)
-    320:322:public static java.lang.String getWAPS_AD_Type(android.content.Context)
-    325:329:public static void setWAPS_AD_Type(android.content.Context,java.lang.String)
-    386:389:public static java.lang.String getVip(android.content.Context)
-    420:422:public static java.lang.String getUnListen(android.content.Context)
-    436:438:public static java.lang.String getMenuExtend(android.content.Context)
-    753:756:public static java.lang.String getUploadIds(android.content.Context,java.lang.String)
+    213:233:public static int getBackgroundResId(java.lang.String)
+    330:332:public static boolean getUmengAdEnable(android.content.Context)
+    335:339:public static void setUmengAdEnable(android.content.Context,boolean)
+    362:364:public static java.lang.String getWAPS_AD_Type(android.content.Context)
+    367:371:public static void setWAPS_AD_Type(android.content.Context,java.lang.String)
+    428:431:public static java.lang.String getVip(android.content.Context)
+    462:464:public static java.lang.String getUnListen(android.content.Context)
+    478:480:public static java.lang.String getMenuExtend(android.content.Context)
+    795:798:public static java.lang.String getUploadIds(android.content.Context,java.lang.String)
 com.dabing.emoj.utils.AppConstant
 com.dabing.emoj.utils.DaBingRequest:
     static final java.lang.String format
@@ -1341,37 +1344,33 @@ com.dabing.emoj.utils.TokenStore:
 com.dabing.emoj.utils.Util:
     private static final java.lang.String ROOT_PATH
     private static final java.lang.String LOG_TAG
-    47:47:public Util()
-    54:54:public static boolean isSDCardReady()
-    59:69:public static boolean containsPath(java.lang.String,java.lang.String)
-    73:76:public static java.lang.String makePath(java.lang.String,java.lang.String)
-    80:80:public static java.lang.String getSdDirectory()
-    88:101:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.lang.String)
-    105:137:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.io.File,java.io.FilenameFilter,boolean)
-    146:159:public static android.graphics.drawable.Drawable getApkIcon(android.content.Context,java.lang.String)
-    163:167:public static java.lang.String getExtFromFilename(java.lang.String)
-    171:175:public static java.lang.String getNameFromFilename(java.lang.String)
-    179:183:public static java.lang.String getPathFromFilepath(java.lang.String)
-    201:256:public static java.lang.String copyFile(java.lang.String,java.lang.String)
-    266:271:public static boolean setText(android.view.View,int,java.lang.String)
-    275:280:public static boolean setText(android.view.View,int,int)
-    285:285:public static java.lang.String convertNumber(long)
-    290:303:public static java.lang.String convertStorage(long)
-    313:346:public static com.dabing.emoj.utils.Util$SDCardInfo getSDCardInfo()
-    352:356:public static java.lang.String formatDateString(android.content.Context,long)
+    50:50:public Util()
+    57:57:public static boolean isSDCardReady()
+    62:72:public static boolean containsPath(java.lang.String,java.lang.String)
+    86:89:public static java.lang.String makePath(java.lang.String,java.lang.String)
+    93:93:public static java.lang.String getSdDirectory()
+    101:114:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.lang.String)
+    118:150:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.io.File,java.io.FilenameFilter,boolean)
+    159:172:public static android.graphics.drawable.Drawable getApkIcon(android.content.Context,java.lang.String)
+    184:188:public static java.lang.String getNameFromFilename(java.lang.String)
+    192:196:public static java.lang.String getPathFromFilepath(java.lang.String)
+    214:269:public static java.lang.String copyFile(java.lang.String,java.lang.String)
+    279:284:public static boolean setText(android.view.View,int,java.lang.String)
+    288:293:public static boolean setText(android.view.View,int,int)
+    298:298:public static java.lang.String convertNumber(long)
+    303:316:public static java.lang.String convertStorage(long)
+    326:359:public static com.dabing.emoj.utils.Util$SDCardInfo getSDCardInfo()
+    365:369:public static java.lang.String formatDateString(android.content.Context,long)
+    405:412:public static android.graphics.Bitmap decodeSampledBitmapFromResource(android.content.res.Resources,int,int,int)
 com.dabing.emoj.utils.Util$SDCardInfo
 com.dabing.emoj.utils.Utils:
     12:12:public Utils()
-    20:22:public static int getScreenHeight(android.content.Context)
     27:34:public static float getScreenDensity(android.content.Context)
     37:46:public static boolean isChinese(char)
     49:58:public static int getLength(java.lang.CharSequence)
     62:66:public static java.lang.String getRealPathFromURI(android.app.Activity,android.net.Uri)
-com.dabing.emoj.widget.AddImageButton:
-    15:16:public AddImageButton(android.content.Context)
-    23:24:public void setWidth(int)
 com.dabing.emoj.widget.Album:
-    100:105:public void setDelMode(boolean)
+    107:107:public com.dabing.emoj.utils.FileInfo getFile()
 com.dabing.emoj.widget.Album$ThumbnailTask
 com.dabing.emoj.widget.AlbumImageView:
     47:48:public void setImageDrawable(android.graphics.drawable.Drawable)
@@ -1379,7 +1378,7 @@ com.dabing.emoj.widget.AlbumImageView:
 com.dabing.emoj.widget.CacheImageView:
     int mWidth
     int mHeight
-    101:102:public void setLoadingListener(greendroid.widget.AsyncImageView$OnImageViewLoadListener)
+    108:109:public void setLoadingListener(greendroid.widget.AsyncImageView$OnImageViewLoadListener)
 com.dabing.emoj.widget.CacheImageView$MakeTumbTask
 com.dabing.emoj.widget.CacheWrapperImageView:
     greendroid.image.ImageProcessor mProcessor
@@ -1388,6 +1387,8 @@ com.dabing.emoj.widget.CacheWrapperImageView:
 com.dabing.emoj.widget.CrystalButton:
     static final int PADDING
     65:66:public void setIcon(android.graphics.drawable.Drawable)
+com.dabing.emoj.widget.CustomGridLayout:
+    36:36:public android.view.View getFirstView()
 com.dabing.emoj.widget.EmojImageView:
     int mWidth
     int mHeight
@@ -1400,6 +1401,8 @@ com.dabing.emoj.widget.LinearLayoutForListView:
     89:92:public void addFootView(android.view.View)
     99:99:public android.view.View$OnClickListener getOnclickListner()
     108:109:public void setOnclickLinstener(android.view.View$OnClickListener)
+com.dabing.emoj.widget.MatrixBitmap:
+    12:13:public MatrixBitmap(android.content.Context)
 com.dabing.emoj.widget.NormalProgressDialog:
     23:24:public void setMessage(java.lang.CharSequence)
 com.dabing.emoj.widget.QuickActionList
@@ -1409,32 +1412,31 @@ com.dabing.emoj.wxapi.Util:
     private static final java.lang.String TAG
     private static final int MAX_DECODE_PICTURE_SIZE
     20:20:public Util()
-    42:59:public static byte[] getHtmlByteArray(java.lang.String)
-    64:76:public static byte[] inputStreamToByte(java.io.InputStream)
-    80:121:public static byte[] readFromFile(java.lang.String,int,int)
-    254:283:public static android.graphics.Bitmap resizeBitmap2(android.graphics.Bitmap,int,int)
+    43:60:public static byte[] getHtmlByteArray(java.lang.String)
+    65:77:public static byte[] inputStreamToByte(java.io.InputStream)
+    81:123:public static byte[] readFromFile(java.lang.String,int,int)
 com.dabing.emoj.wxapi.WeiXinHelper:
     private static final int THUMB_SIZE
     private static final int THUMB_MAX_WIDTH
     private static final int THUMB_MAX_HEIGHT
-    192:193:public void shareIMGFromURL_Circle(java.lang.String)
-    196:232:public void shareIMGFromURL(java.lang.String,int)
-    239:239:public void shareEmojToCircle(java.lang.String)
-    304:305:public void shareIMG(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    312:313:public void shareIMGToCircle(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    319:359:public void shareIMG(java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    361:405:public void shareApp(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    411:412:public void shareTextToFriends(java.lang.String)
-    418:419:public void shareTextToCircle(java.lang.String)
-    426:438:private void shareText(java.lang.String,int)
-    446:447:public void shareWebpage(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    455:456:public void shareWebpageToCircle(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    464:505:private void shareWebpage(java.lang.String,java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    507:519:public void shareToOther(java.lang.String,java.lang.String)
-    522:580:public void shareToOther(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
-    600:600:static synthetic java.lang.String access$0(com.dabing.emoj.wxapi.WeiXinHelper,java.lang.String)
-    62:62:static synthetic com.tencent.mm.sdk.openapi.IWXAPI access$1(com.dabing.emoj.wxapi.WeiXinHelper)
-    61:61:static synthetic android.content.Context access$2(com.dabing.emoj.wxapi.WeiXinHelper)
+    196:197:public void shareIMGFromURL_Circle(java.lang.String)
+    200:236:public void shareIMGFromURL(java.lang.String,int)
+    243:243:public void shareEmojToCircle(java.lang.String)
+    308:309:public void shareIMG(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    316:317:public void shareIMGToCircle(java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    323:363:public void shareIMG(java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    365:409:public void shareApp(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    415:416:public void shareTextToFriends(java.lang.String)
+    422:423:public void shareTextToCircle(java.lang.String)
+    430:442:private void shareText(java.lang.String,int)
+    450:451:public void shareWebpage(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    459:460:public void shareWebpageToCircle(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    468:509:private void shareWebpage(java.lang.String,java.lang.String,int,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    511:523:public void shareToOther(java.lang.String,java.lang.String)
+    526:584:public void shareToOther(java.lang.String,java.lang.String,com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener)
+    640:640:static synthetic java.lang.String access$0(com.dabing.emoj.wxapi.WeiXinHelper,java.lang.String)
+    66:66:static synthetic com.tencent.mm.sdk.openapi.IWXAPI access$1(com.dabing.emoj.wxapi.WeiXinHelper)
+    65:65:static synthetic android.content.Context access$2(com.dabing.emoj.wxapi.WeiXinHelper)
 com.dabing.emoj.wxapi.WeiXinHelper$1
 com.dabing.emoj.wxapi.WeiXinHelper$2
 com.dabing.emoj.wxapi.WeiXinHelper$3
@@ -1526,10 +1528,6 @@ com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView:
 com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView$InternalHorizontalScrollViewSDK9:
     88:95:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
     102:107:private int getScrollRange()
-com.handmark.pulltorefresh.library.PullToRefreshListView:
-    45:46:public PullToRefreshListView(android.content.Context)
-    53:54:public PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
-    57:58:public PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
 com.handmark.pulltorefresh.library.PullToRefreshListView$InternalListViewSDK9:
     267:273:protected boolean overScrollBy(int,int,int,int,int,int,int,int,boolean)
 com.handmark.pulltorefresh.library.PullToRefreshScrollView$InternalScrollViewSDK9:
@@ -2573,6 +2571,385 @@ com.tencent.mm.sdk.uikit.applet.SecurityImage$HttpModel$1
 com.tencent.mm.sdk.uikit.applet.SecurityImage$HttpModel$HttpGetTask
 com.tencent.mm.sdk.uikit.applet.SecurityImage$ISecurityModel
 com.tencent.mm.sdk.uikit.package-info
+com.tencent.open.AsynLoadImg
+com.tencent.open.AsynLoadImgBack
+com.tencent.open.OpenApi:
+    259:393:public org.json.JSONObject a(android.content.Context,java.lang.String,android.os.Bundle)
+    508:508:public static java.lang.String a()
+com.tencent.open.PKDialog:
+    private static final int WEBVIEW_HEIGHT
+    private static final int MSG_COMPLETE
+    private static final int MSG_CANCEL
+    private static final int MSG_SHOW_TIPS
+    private static final int MSG_ON_LOAD
+    private static final int MSG_SHOW_PROCESS
+    174:176:public void callJs(java.lang.String,java.lang.String)
+    355:367:private void loadUrlWithBrowser(java.lang.String,java.lang.String,java.lang.String)
+    48:48:static synthetic android.os.Handler access$200(com.tencent.open.PKDialog)
+com.tencent.open.PKDialog$JsListener:
+    182:185:public void onComplete(java.lang.String)
+    189:191:public void onCancel(java.lang.String)
+    195:196:public void showMsg(java.lang.String)
+    205:206:public void onLoad(java.lang.String)
+com.tencent.open.RedoDialog
+com.tencent.open.ServerSetting:
+    public static final int REDIRECT_URL
+    public static final int AUTHORIZE_CGI
+    public static final int STORY_URL
+    public static final int INVITE_URL
+    public static final int REPORT_URL
+    public static final int GRAPH_BASE_URL
+    public static final int BRAG_URL
+    public static final int ASK_URL
+    public static final int GIFT_URL
+    public static final int LOCAL_STORAGE_URL
+    public static final int ENVIRONMENT_NORMOL
+    public static final int ENVIRONMENT_EXPERIENCE
+    private static final java.lang.String SERVER_TYPE
+    private static final java.lang.String DEFAULT_REDIRECT_URI
+    private static final java.lang.String DEFAULT_CGI_AUTHORIZE
+    private static final java.lang.String DEFAULT_URL_SEND_STORY
+    private static final java.lang.String DEFAULT_URL_INVITE
+    private static final java.lang.String DEFAULT_URL_REPORT
+    private static final java.lang.String DEFAULT_URL_GRAPH_BASE
+    private static final java.lang.String DEFAULT_URL_BRAG
+    private static final java.lang.String DEFAULT_URL_ASK
+    private static final java.lang.String DEFAULT_URL_GIFT
+    private static final java.lang.String DEFAULT_LOCAL_STORAGE_URI
+    private static final java.lang.String SERVER_PREFS
+    private static final java.lang.String KEY_REDIRECT_URL
+    private static final java.lang.String KEY_AUTHORIZE_CGI
+    private static final java.lang.String KEY_STORY_URL
+    private static final java.lang.String KEY_INVITE_URL
+    private static final java.lang.String KEY_REPORT_URL
+    private static final java.lang.String KEY_GRAPH_BASE_URL
+    private static final java.lang.String KEY_BRAG_URL
+    private static final java.lang.String KEY_ASK_URL
+    private static final java.lang.String KEY_GIFT_URL
+    private static final java.lang.String KEY_LOCAL_STORAGE_URl
+    81:92:public void changeServer()
+    231:295:public void setEnvironment(android.content.Context,int)
+com.tencent.open.TContext:
+    68:68:public long e()
+com.tencent.open.TDialog:
+    47:47:static synthetic android.os.Handler a(com.tencent.open.TDialog)
+com.tencent.open.TDialog$JsListener:
+    316:317:public void onAddShare(java.lang.String)
+    322:323:public void onInvite(java.lang.String)
+    328:329:public void onCancelAddShare(int)
+    334:335:public void onCancelLogin()
+    340:341:public void onCancelInvite()
+    344:347:public void onComplete(java.lang.String)
+    350:352:public void onCancel(java.lang.String)
+    356:357:public void showMsg(java.lang.String)
+    366:367:public void onLoad(java.lang.String)
+com.tencent.open.TemporaryStorage:
+    13:13:public TemporaryStorage()
+    24:24:public static java.lang.Object a(java.lang.String,java.lang.Object)
+com.tencent.open.TencentStat:
+    18:18:public TencentStat()
+com.tencent.open.Util:
+    92:884:public Util()
+    290:386:public static com.tencent.open.Util$Statistic a(android.content.Context,java.lang.String,android.os.Bundle)
+    1075:1103:public static boolean b(android.content.Context)
+    1173:1183:public static boolean b()
+com.tencent.open.cgireport.MobileInfoUtil:
+    21:21:public MobileInfoUtil()
+com.tencent.open.cgireport.ReportComm
+com.tencent.open.e:
+    672:672:e()
+com.tencent.open.g
+com.tencent.open.j
+com.tencent.open.k
+com.tencent.open.l
+com.tencent.open.o
+com.tencent.plus.AvatarConstants
+com.tencent.plus.DensityUtil:
+    6:6:public DensityUtil()
+    19:20:public static int px2dip(android.content.Context,float)
+    31:32:public static int px2sp(android.content.Context,float)
+    42:43:public static int sp2px(android.content.Context,float)
+com.tencent.qqconnect.dataprovider.CallbackManager:
+    private static final java.lang.String HTTP_PREFIX
+    49:49:public boolean isCallFromTencentApp()
+    53:63:private int BackToTencentApp(android.os.Bundle)
+    67:67:public int getRequestDateTypeFlag()
+    77:77:public boolean isSupportType(int)
+    81:95:public int sendTextAndImagePath(java.lang.String,java.lang.String)
+    99:113:public int sendTextAndVideoPath(java.lang.String,java.lang.String)
+    117:126:public int sendTextOnly(java.lang.String)
+    130:165:private int checkFilePath(java.lang.String)
+com.tencent.qqconnect.dataprovider.Constants
+com.tencent.qqconnect.dataprovider.DataType
+com.tencent.qqconnect.dataprovider.ErrorCode
+com.tencent.qqconnect.dataprovider.datatype.TextAndMediaPath:
+    10:13:public TextAndMediaPath(java.lang.String,java.lang.String)
+    16:16:public java.lang.String getText()
+    20:20:public java.lang.String getMediaPath()
+com.tencent.qqconnect.dataprovider.datatype.TextOnly:
+    9:11:public TextOnly(java.lang.String)
+    14:14:public java.lang.String getText()
+com.tencent.record.debug.Trace
+com.tencent.record.debug.TraceLevel
+com.tencent.record.info.Const
+com.tencent.record.info.DeviceDash
+com.tencent.record.info.Global:
+    70:70:public Global()
+    214:214:public static final android.content.SharedPreferences a(java.lang.String,int)
+com.tencent.record.info.Option
+com.tencent.record.info.StorageDash:
+    20:20:public StorageDash()
+com.tencent.record.util.DataUtils
+com.tencent.record.util.FileUtils:
+    24:24:public FileUtils()
+com.tencent.record.util.StrUtils:
+    16:16:public StrUtils()
+com.tencent.record.util.Utils
+com.tencent.record.util.Utils$Bit:
+    22:22:public Utils$Bit()
+com.tencent.stat.MtaSDkException:
+    public MtaSDkException(java.lang.String,java.lang.Throwable)
+    public MtaSDkException(java.lang.Throwable)
+com.tencent.stat.StatAppMonitor
+com.tencent.stat.StatConfig:
+    public StatConfig()
+    public static void setDebugEnable(boolean)
+    public static void setSessionTimoutMillis(int)
+    public static void setMaxBatchReportCount(int)
+    public static void setMaxSendRetryCount(int)
+    public static void setMaxStoreEventCount(int)
+    public static java.lang.String getCustomProperty(java.lang.String)
+    public static java.lang.String getCustomProperty(java.lang.String,java.lang.String)
+    public static void setAppKey(java.lang.String)
+    public static void setQQ(android.content.Context,java.lang.String)
+    public static void setMaxParallelTimmingEvents(int)
+    public static void setMaxSessionStatReportCount(int)
+    public static void setMaxDaySessionNumbers(int)
+    public static void setMaxReportEventLength(int)
+com.tencent.stat.StatService:
+    public StatService()
+    public static void startNewSession(android.content.Context)
+    public static void stopSession()
+    public static void setEnvAttributes(android.content.Context,java.util.Map)
+    public static void reportError(android.content.Context,java.lang.String)
+    public static void reportException(android.content.Context,java.lang.Throwable)
+    public static void trackCustomKVEvent(android.content.Context,java.lang.String,java.util.Properties)
+    public static varargs void trackCustomBeginEvent(android.content.Context,java.lang.String,java.lang.String[])
+    public static varargs void trackCustomEndEvent(android.content.Context,java.lang.String,java.lang.String[])
+    public static void trackCustomBeginKVEvent(android.content.Context,java.lang.String,java.util.Properties)
+    public static void trackCustomEndKVEvent(android.content.Context,java.lang.String,java.util.Properties)
+    public static void reportAppMonitorStat(android.content.Context,com.tencent.stat.StatAppMonitor)
+    public static void commitEvents(android.content.Context,int)
+com.tencent.stat.common.Env:
+    public static void appendEnvAttr(android.content.Context,java.util.Map)
+com.tencent.stat.common.StatConstants
+com.tencent.stat.common.StatLogger:
+    public int getLogLevel()
+    public void setLogLevel(int)
+    public void setTag(java.lang.String)
+    public void verbose(java.lang.Object)
+    public void v(java.lang.Object)
+com.tencent.stat.event.CustomEvent:
+    public com.tencent.stat.event.CustomEvent$Key getKey()
+    public void setDuration(long)
+    public void setProperties(java.util.Properties)
+com.tencent.stat.event.ErrorEvent:
+    public ErrorEvent(android.content.Context,int,java.lang.String)
+com.tencent.stat.event.MonitorStatEvent
+com.tencent.tauth.AuthActivity:
+    private static final java.lang.String TAG
+com.tencent.tauth.Constants:
+    public static final java.lang.String SDK_VERSION
+    public static final java.lang.String SDK_QUA
+    public static final java.lang.String SDK_VERSION_STRING
+    public static final java.lang.String SDK_BUILD
+    public static final java.lang.String PARAM_ACCESS_TOKEN
+    public static final java.lang.String PARAM_KEY_STR
+    public static final java.lang.String PARAM_KEY_TYPE
+    public static final java.lang.String PARAM_PLATFORM
+    public static final java.lang.String SOURCE_QZONE
+    public static final java.lang.String SOURCE_QQ
+    public static final java.lang.String PARAM_CLIENT_ID
+    public static final java.lang.String PARAM_APP_ID
+    public static final java.lang.String PARAM_CONSUMER_KEY
+    public static final java.lang.String PARAM_OPEN_ID
+    public static final java.lang.String PARAM_HOPEN_ID
+    public static final java.lang.String PARAM_PLATFORM_ID
+    public static final java.lang.String PREFERENCE_PF
+    public static final java.lang.String PARAM_SCOPE
+    public static final java.lang.String PARAM_EXPIRES_IN
+    public static final java.lang.String PARAM_SOURCE
+    public static final java.lang.String PARAM_ACT
+    public static final java.lang.String PARAM_APP_ICON
+    public static final java.lang.String PARAM_APP_DESC
+    public static final java.lang.String PARAM_APP_CUSTOM
+    public static final java.lang.String PARAM_RECEIVER
+    public static final java.lang.String PARAM_TITLE
+    public static final java.lang.String PARAM_COMMENT
+    public static final java.lang.String PARAM_SUMMARY
+    public static final java.lang.String PARAM_APPNAME
+    public static final java.lang.String PARAM_IMAGE
+    public static final java.lang.String PARAM_IMAGE_URL
+    public static final java.lang.String PARAM_TARGET_URL
+    public static final java.lang.String PARAM_APP_SOURCE
+    public static final java.lang.String PARAM_URL
+    public static final java.lang.String PARAM_TYPE
+    public static final java.lang.String PARAM_PLAY_URL
+    public static final java.lang.String PARAM_SHARE_URL
+    public static final java.lang.String PARAM_AVATAR_URI
+    public static final java.lang.String PARAM_IMG_URL
+    public static final java.lang.String PARAM_SEND_MSG
+    public static final java.lang.String PARAM_TYPE_ID
+    public static final java.lang.String PARAM_AVATAR_RETURN_ACTIVITY
+    public static final int ERROR_IO
+    public static final int ERROR_URL
+    public static final int ERROR_JSON
+    public static final int ERROR_PARAM
+    public static final int ERROR_UNKNOWN
+    public static final int ERROR_CONNECTTIMEOUT
+    public static final int ERROR_SOCKETTIMEOUT
+    public static final int ERROR_HTTPSTATUS_ERROR
+    public static final int ERROR_IO_CharConversionException
+    public static final int ERROR_IO_CharacterCodingException_MalformedInputException
+    public static final int ERROR_IO_CharacterCodingException_UnmappableCharacterException
+    public static final int ERROR_IO_ClientProtocolException_HttpResponseException
+    public static final int ERROR_IO_ClosedChannelException
+    public static final int ERROR_IO_ConnectionClosedException
+    public static final int ERROR_IO_EOFException
+    public static final int ERROR_IO_FileLockInterruptionException
+    public static final int ERROR_IO_FileNotFoundException
+    public static final int ERROR_IO_HttpRetryException
+    public static final int ERROR_IO_InterruptedIOException_ConnectTimeoutException
+    public static final int ERROR_IO_InterruptedIOException_SocketTimeoutException
+    public static final int ERROR_IO_InvalidPropertiesFormatException
+    public static final int ERROR_IO_MalformedChunkCodingException
+    public static final int ERROR_IO_MalformedURLException
+    public static final int ERROR_IO_NoHttpResponseException
+    public static final int ERROR_IO_ObjectStreamException_InvalidClassException
+    public static final int ERROR_IO_ObjectStreamException_InvalidObjectException
+    public static final int ERROR_IO_ObjectStreamException_NotActiveException
+    public static final int ERROR_IO_ObjectStreamException_NotSerializableException
+    public static final int ERROR_IO_ObjectStreamException_OptionalDataException
+    public static final int ERROR_IO_ObjectStreamException_StreamCorruptedException
+    public static final int ERROR_IO_ObjectStreamException_WriteAbortedException
+    public static final int ERROR_IO_ProtocolException
+    public static final int ERROR_IO_SSLException_SSLHandshakeException
+    public static final int ERROR_IO_SSLException_SSLKeyException
+    public static final int ERROR_IO_SSLException_SSLPeerUnverifiedException
+    public static final int ERROR_IO_SSLException_SSLProtocolException
+    public static final int ERROR_IO_SocketException_BindException
+    public static final int ERROR_IO_SocketException_ConnectException
+    public static final int ERROR_IO_SocketException_NoRouteToHostException
+    public static final int ERROR_IO_SocketException_PortUnreachableException
+    public static final int ERROR_IO_SyncFailedException
+    public static final int ERROR_IO_UTFDataFormatException
+    public static final int ERROR_IO_UnknownHostException
+    public static final int ERROR_IO_UnknownServiceException
+    public static final int ERROR_IO_UnsupportedEncodingException
+    public static final int ERROR_IO_ZipException
+    public static final java.lang.String MSG_IO_ERROR
+    public static final java.lang.String MSG_URL_ERROR
+    public static final java.lang.String MSG_JSON_ERROR
+    public static final java.lang.String MSG_PARAM_ERROR
+    public static final java.lang.String MSG_UNKNOWN_ERROR
+    public static final java.lang.String MSG_CONNECTTIMEOUT_ERROR
+    public static final java.lang.String MSG_SOCKETTIMEOUT_ERROR
+    public static final java.lang.String MSG_IMAGE_ERROR
+    public static final java.lang.String MSG_OPEN_BROWSER_ERROR
+    public static final java.lang.String MSG_SHARE_NOSD_ERROR
+    public static final java.lang.String MSG_SHARE_GETIMG_ERROR
+    public static final java.lang.String MSG_SHARE_TO_QQ_ERROR
+    public static final java.lang.String HTTP_GET
+    public static final java.lang.String HTTP_POST
+    public static final java.lang.String GRAPH_BASE
+    public static final java.lang.String GRAPH_OPEN_ID
+    public static final java.lang.String GRAPH_SIMPLE_USER_INFO
+    public static final java.lang.String GRAPH_USER_INFO
+    public static final java.lang.String GRAPH_USER_PROFILE
+    public static final java.lang.String GRAPH_ADD_SHARE
+    public static final java.lang.String GRAPH_VIP_INFO
+    public static final java.lang.String GRAPH_VIP_RICH_INFO
+    public static final java.lang.String GRAPH_ADD_TOPIC
+    public static final java.lang.String GRAPH_LIST_ALBUM
+    public static final java.lang.String GRAPH_ADD_ALBUM
+    public static final java.lang.String GRAPH_UPLOAD_PIC
+    public static final java.lang.String GRAPH_ADD_PIC_T
+    public static final java.lang.String GRAPH_SET_AVATAR
+    public static final java.lang.String GRAPH_INTIMATE_FRIENDS
+    public static final java.lang.String GRAPH_NICK_TIPS
+    public static final java.lang.String KEY_PARAMS
+    public static final java.lang.String KEY_ACTION
+    public static final java.lang.String KEY_RESPONSE
+    public static final java.lang.String KEY_ERROR_CODE
+    public static final java.lang.String KEY_ERROR_MSG
+    public static final java.lang.String KEY_ERROR_DETAIL
+    public static final java.lang.String KEY_APP_NAME
+    public static final int CODE_REQUEST_MIN
+    public static final int CODE_REQUEST_MAX
+    public static final int UI_NONE
+    public static final int UI_ACTIVITY
+    public static final int UI_DIALOG
+    public static final int UI_CHECK_TOKEN
+    public static final java.lang.String ACTION_LOGIN
+    public static final java.lang.String ACTION_STORY
+    public static final java.lang.String ACTION_INVITE
+    public static final java.lang.String ACTION_PAY
+    public static final java.lang.String ACTION_CHALLENGE
+    public static final java.lang.String ACTION_BRAG
+    public static final java.lang.String ACTION_ASK
+    public static final java.lang.String ACTION_GIFT
+    public static final java.lang.String ACTION_SHARE_QQ
+    public static final java.lang.String ACTION_CHECK_TOKEN
+    public static final java.lang.String PARAM_ENCRY_EOKEN
+    public static final java.lang.String ACTION_AVATAR
+    public static final int ACTIVITY_OK
+    public static final int ACTIVITY_CANCEL
+    public static final java.lang.String MOBILEQQ_PACKAGE_NAME
+    public static final java.lang.String MOBILEQQ_CLASS_NAME
+    11:11:public Constants()
+com.tencent.tauth.DataConvert
+com.tencent.tauth.DownloadFileFromWeiyun
+com.tencent.tauth.DownloadFileFromWeiyun$1
+com.tencent.tauth.DownloadFileFromWeiyun$2
+com.tencent.tauth.DownloadFileFromWeiyun$3
+com.tencent.tauth.IDownloadFileFromWeiyunStatus
+com.tencent.tauth.IUploadFileToWeiyunStatus
+com.tencent.tauth.Tencent:
+    148:149:public java.lang.String getAccessToken()
+    184:185:public java.lang.String getOpenId()
+    204:205:public long getExpiresIn()
+    266:270:public int reAuth(android.app.Activity,java.lang.String,com.tencent.tauth.IUiListener)
+    282:292:public void logout(android.content.Context)
+    336:338:public int story(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    360:362:public int ask(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    383:385:public int gift(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    409:412:public int pay(android.app.Activity,com.tencent.tauth.IUiListener)
+    433:435:public int challenge(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    456:458:public int brag(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    500:501:public org.json.JSONObject request(java.lang.String,android.os.Bundle,java.lang.String)
+    505:512:public org.json.JSONObject requestSync(java.lang.String,android.os.Bundle,java.lang.String)
+    523:530:public org.json.JSONObject upload(java.lang.String,android.os.Bundle)
+    587:587:public java.lang.String getSDKVersion()
+    603:606:public void setAvatar(android.app.Activity,android.os.Bundle)
+    623:629:public void setAvatar(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    650:655:public void setAvatar(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener,int,int)
+    669:715:public void shareToQQ(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    724:773:private void shareToMobileQQ(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    780:846:private void doShareToQQ(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    852:871:private void shareToH5QQ(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+    882:905:private java.lang.String fillShareToQQParams(java.lang.String,android.os.Bundle)
+    43:43:static synthetic void access$000(com.tencent.tauth.Tencent,android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
+com.tencent.tauth.Tencent$1
+com.tencent.tauth.UploadFileToWeiyun
+com.tencent.tauth.UploadFileToWeiyun$1
+com.tencent.tauth.UploadFileToWeiyun$2
+com.tencent.tauth.UploadFileToWeiyun$3
+com.tencent.tauth.WeiyunConstants
+com.tencent.tauth.bean.Album
+com.tencent.tauth.bean.OpenId
+com.tencent.tauth.bean.Pic
+com.tencent.tauth.bean.UserInfo
+com.tencent.tauth.bean.UserProfile
 com.tencent.weibo.api.BasicAPI:
     31:42:public BasicAPI(java.lang.String,com.tencent.weibo.utils.QHttpClient)
     49:49:public java.lang.String getAPIBaseUrl()
@@ -3217,9 +3594,9 @@ greendroid.image.EmojImageLoader:
     java.lang.String mThumbFile
 greendroid.image.ImageCache:
     41:41:public static greendroid.image.ImageCache from(android.content.Context)
-    58:58:public int getLength()
-    75:101:public void flush(java.lang.String[],java.lang.String)
-    103:117:public void flush(java.util.List)
+    57:57:public int getLength()
+    74:100:public void flush(java.lang.String[],java.lang.String)
+    102:116:public void flush(java.util.List)
 greendroid.image.ImageLoader:
     static final int ON_START
     static final int ON_FAIL

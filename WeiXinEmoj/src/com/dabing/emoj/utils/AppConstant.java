@@ -52,6 +52,7 @@ public class AppConstant {
 	public static final String INTENT_EMOTION_MODE = "INTENT_EMOTION_MODE";
 	public static final String INTENT_ADINFO = "INTENT_ADINFO";
 	public static final String INTENT_WAPS_AD_DETAIL_HASMORE = "INTENT_WAPS_ADDETAIL_HASMORE";
+	public static final String INTENT_USER_DEFINE_ADD_FILE_ID = "INTENT_USER_DEFINE_ADD_FILE_ID";
 	/**
 	 * get-从微信请求 send-发送到微信 pick
 	 */

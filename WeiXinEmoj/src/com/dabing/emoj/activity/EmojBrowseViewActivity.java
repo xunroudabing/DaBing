@@ -843,19 +843,22 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 	}
 
 	protected void openMenu(){
-		String[] items = {"分享至微信朋友圈","打包下载本系列表情","其它分享"};
-		String[] types = {"TYPE_EXIT","TYPE_BLUE","TYPE_BUTTON"};
+		String[] items = {"发送给QQ好友","分享至微信朋友圈","打包下载本系列表情","其它分享"};
+		String[] types = {"TYPE_EXIT","TYPE_BLUE","TYPE_BUTTON","TYPE_BUTTON"};
 		Log.d(TAG, "menuid:"+mMenuID);
 		if(mMenuID == null || mMenuID.equals("") || mMenuID.equals("000")){
-			items = new String[] {"分享至微信朋友圈","其它分享"};
-			types = new String[] {"TYPE_EXIT","TYPE_BUTTON"};
+			items = new String[] {"发送给QQ好友","分享至微信朋友圈","其它分享"};
+			types = new String[] {"TYPE_EXIT","TYPE_BLUE","TYPE_BUTTON"};
 			MMAlert.showAlert(EmojBrowseViewActivity.this, "操作", items, types, new OnAlertSelectId() {			
 				public void onClick(int whichButton) {
 					// TODO Auto-generated method stub
 					if(whichButton == 0){
+						ShareQQ();
+					}
+					if(whichButton == 1){
 						ShareToWx_Circle();
 						
-					}else if (whichButton == 1) {
+					}else if (whichButton == 2) {
 						//其它分享
 						shareOther();
 						
@@ -874,12 +877,15 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			public void onClick(int whichButton) {
 				// TODO Auto-generated method stub
 				if(whichButton == 0){
+					ShareQQ();
+				}
+				if(whichButton == 1){
 					ShareToWx_Circle();
 					
-				}else if (whichButton == 1) {
+				}else if (whichButton == 2) {
 					downloadPackage();					
 					
-				}else if (whichButton == 2) {
+				}else if (whichButton == 3) {
 					//其它分享
 					shareOther();
 				}
@@ -895,11 +901,11 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		
 	}
 	protected void share(){
-		String[] items = {"发送给微信好友","分享至微信朋友圈","其它分享","打包下载本系列表情"};
-		String[] types = {"TYPE_EXIT","TYPE_BLUE","TYPE_BUTTON","TYPE_BUTTON"};
+		String[] items = {"发送给微信好友","发送给QQ好友","分享至微信朋友圈","其它分享","打包下载本系列表情"};
+		String[] types = {"TYPE_EXIT","TYPE_BLUE","TYPE_BLUE","TYPE_BUTTON","TYPE_BUTTON"};
 		if(mMenuID == null || mMenuID.equals("") || mMenuID.equals("000")){
-			items = new String[] {"发送给微信好友","分享至微信朋友圈","其它分享"};
-			types = new String[] {"TYPE_EXIT","TYPE_BLUE","TYPE_BUTTON"};
+			items = new String[] {"发送给微信好友","发送给QQ好友","分享至微信朋友圈","其它分享"};
+			types = new String[] {"TYPE_EXIT","TYPE_BLUE","TYPE_BLUE","TYPE_BUTTON"};
 		}
 		MMAlert.showAlert(EmojBrowseViewActivity.this, "分享", items, types, new OnAlertSelectId() {			
 			public void onClick(int whichButton) {
@@ -908,13 +914,18 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 					//分享到微信好友
 					ShareToWX_Friends();
 					
-				}else if (whichButton == 1) {
+				}
+				else if (whichButton == 1) {
+					//发送给QQ好友
+					ShareQQ();
+				}
+				else if (whichButton == 2) {
 					//分享到微信朋友圈
 					ShareToWx_Circle();
-				}else if(whichButton == 2){
+				}else if(whichButton == 3){
 					//其它分享
 					shareOther();
-				}else if(whichButton == 3){
+				}else if(whichButton == 4){
 					//打包下载本系列表情
 					downloadPackage();
 				}
@@ -928,7 +939,33 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		});
 		
 	}
-	
+	protected void ShareQQ(){
+		boolean qqInstall = WeiXinHelper.existPackageName(getApplicationContext(), AppConfig.QQ_PACKAGE_NAME);
+		if(!qqInstall){
+			String string = getResources().getString(R.string.qq_not_install);
+			DialogFactory.createCommonDialog(EmojBrowseViewActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+				}
+
+			}).show();
+			return;
+		}
+		if(!finish){
+			String string = getResources().getString(R.string.wx_not_finish);
+			DialogFactory.createCommonDialog(EmojBrowseViewActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+				}
+
+			}).show();
+			return;
+		}
+		WeiXinHelper helper = new WeiXinHelper(getApplicationContext(), api);
+		helper.shareQQ(mFilePath);
+	}
 	//分享至微信好友
 	protected void ShareToWX_Friends(){
 		if(!wxInstall){
@@ -943,7 +980,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			return;
 		}
 		if(!finish){
-			String string = getResources().getString(R.string.wx_not_install);
+			String string = getResources().getString(R.string.wx_not_finish);
 			DialogFactory.createCommonDialog(EmojBrowseViewActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
@@ -989,7 +1026,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			return;
 		}
 		if(!finish){
-			String string = getResources().getString(R.string.wx_not_install);
+			String string = getResources().getString(R.string.wx_not_finish);
 			DialogFactory.createCommonDialog(EmojBrowseViewActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub

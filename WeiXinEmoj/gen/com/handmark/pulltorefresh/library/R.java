@@ -9,19 +9,19 @@ package com.handmark.pulltorefresh.library;
 public final class R {
 	public static final class id {
 		public static final int pullFromStart = 0x7f050021;
-		public static final int pull_to_refresh_progress = 0x7f0500ce;
+		public static final int pull_to_refresh_progress = 0x7f0500cf;
 		public static final int rotate = 0x7f050027;
 		public static final int both = 0x7f050023;
 		public static final int webview = 0x7f05002a;
-		public static final int pull_to_refresh_text = 0x7f0500cf;
+		public static final int pull_to_refresh_text = 0x7f0500d0;
 		public static final int pullDownFromTop = 0x7f050025;
 		public static final int gridview = 0x7f050029;
 		public static final int pullUpFromBottom = 0x7f050026;
 		public static final int scrollview = 0x7f05002b;
 		public static final int pullFromEnd = 0x7f050022;
-		public static final int pull_to_refresh_image = 0x7f0500cd;
-		public static final int fl_inner = 0x7f0500cc;
-		public static final int pull_to_refresh_sub_text = 0x7f0500d0;
+		public static final int pull_to_refresh_image = 0x7f0500ce;
+		public static final int fl_inner = 0x7f0500cd;
+		public static final int pull_to_refresh_sub_text = 0x7f0500d1;
 		public static final int disabled = 0x7f050020;
 		public static final int flip = 0x7f050028;
 		public static final int manualOnly = 0x7f050024;
@@ -67,11 +67,11 @@ public final class R {
 		public static final int PullToRefresh_ptrHeaderSubTextColor = 3;
 	}
 	public static final class drawable {
-		public static final int indicator_bg_top = 0x7f020109;
-		public static final int default_ptr_flip = 0x7f020067;
-		public static final int indicator_arrow = 0x7f020107;
-		public static final int indicator_bg_bottom = 0x7f020108;
-		public static final int default_ptr_rotate = 0x7f020068;
+		public static final int indicator_bg_top = 0x7f02010c;
+		public static final int default_ptr_flip = 0x7f02006a;
+		public static final int indicator_arrow = 0x7f02010a;
+		public static final int indicator_bg_bottom = 0x7f02010b;
+		public static final int default_ptr_rotate = 0x7f02006b;
 	}
 	public static final class attr {
 		public static final int ptrHeaderBackground = 0x7f010068;

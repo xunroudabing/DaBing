@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.FileHandler;
@@ -39,6 +40,9 @@ import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
@@ -596,6 +600,42 @@ public class WeiXinHelper {
 			Log.e(TAG, e.toString());
 		}
 		
+	}
+	/**
+	 * 分享到QQ
+	 * @param filepath
+	 */
+	public void shareQQ(String filepath){
+		try {
+			File file = new File(filepath);
+			Intent intent=new Intent(Intent.ACTION_SEND);  
+			intent.setType("image/*"); 
+	        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+	        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+	        intent.setPackage("com.tencent.mobileqq");
+	        context.startActivity(intent);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+	}
+	/**
+	 * 判断是否安装了某用于分享的应用
+	 * @param context
+	 * @param packname 包名
+	 * @return
+	 */
+	public static boolean existPackageName(Context context,String packname){
+		Intent intent=new Intent(Intent.ACTION_SEND);  
+		intent.setType("image/*");
+		List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+		for(ResolveInfo info : list){
+			ActivityInfo activityInfo = info.activityInfo;
+			if(activityInfo.packageName.toLowerCase().equals(packname)){
+				return true;
+			}
+		}
+		return false;
 	}
 	private String buildTransaction(final String type) {
 		return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();

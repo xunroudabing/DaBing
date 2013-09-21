@@ -870,6 +870,7 @@ com.dabing.emoj.R$anim: int slide_right_in
 com.dabing.emoj.R$anim: int slide_right_out
 com.dabing.emoj.R$anim: int welcome_anmi_move
 com.dabing.emoj.R$anim: int zoom_enter
+com.dabing.emoj.R$anim: int zoom_out
 com.dabing.emoj.R$array
 com.dabing.emoj.R$array: int UMageList
 com.dabing.emoj.R$array: int UMgenderList
@@ -1115,6 +1116,9 @@ com.dabing.emoj.R$drawable: int aa_install_background
 com.dabing.emoj.R$drawable: int action_about
 com.dabing.emoj.R$drawable: int action_bar_divider
 com.dabing.emoj.R$drawable: int action_help
+com.dabing.emoj.R$drawable: int add_file_nor
+com.dabing.emoj.R$drawable: int add_file_pressed
+com.dabing.emoj.R$drawable: int add_file_selector
 com.dabing.emoj.R$drawable: int album_background
 com.dabing.emoj.R$drawable: int album_bg_nor
 com.dabing.emoj.R$drawable: int albums_bg
@@ -1130,6 +1134,7 @@ com.dabing.emoj.R$drawable: int app_panel_bg
 com.dabing.emoj.R$drawable: int appitem_del_btn_normal
 com.dabing.emoj.R$drawable: int appitem_del_btn_pressed
 com.dabing.emoj.R$drawable: int appitem_del_selector
+com.dabing.emoj.R$drawable: int arrow_down
 com.dabing.emoj.R$drawable: int av_download
 com.dabing.emoj.R$drawable: int broswer_progress
 com.dabing.emoj.R$drawable: int btn_browse_left_nor
@@ -1238,14 +1243,16 @@ com.dabing.emoj.R$drawable: int emoj099
 com.dabing.emoj.R$drawable: int emoj_add_selector
 com.dabing.emoj.R$drawable: int emoj_black
 com.dabing.emoj.R$drawable: int emoj_bottom_background
+com.dabing.emoj.R$drawable: int emoj_chk_v2
 com.dabing.emoj.R$drawable: int emoj_graydark
 com.dabing.emoj.R$drawable: int emoj_graylight
-com.dabing.emoj.R$drawable: int emoj_graylight_v2
 com.dabing.emoj.R$drawable: int emoj_item_nor
 com.dabing.emoj.R$drawable: int emoj_item_pressed
 com.dabing.emoj.R$drawable: int emoj_item_selector
+com.dabing.emoj.R$drawable: int emoj_nor_v2
 com.dabing.emoj.R$drawable: int emotionstore_custom_add_icon
 com.dabing.emoj.R$drawable: int emotionstore_custom_add_icon_press
+com.dabing.emoj.R$drawable: int folder
 com.dabing.emoj.R$drawable: int gd_action_bar_add
 com.dabing.emoj.R$drawable: int gd_action_bar_all_friends
 com.dabing.emoj.R$drawable: int gd_action_bar_compass
@@ -1322,7 +1329,9 @@ com.dabing.emoj.R$drawable: int gd_tab_indicator_unselected
 com.dabing.emoj.R$drawable: int hasdownload
 com.dabing.emoj.R$drawable: int header_gridview_selector
 com.dabing.emoj.R$drawable: int heart_black
+com.dabing.emoj.R$drawable: int heart_chk_v2
 com.dabing.emoj.R$drawable: int heart_graydark
+com.dabing.emoj.R$drawable: int heart_nor_v2
 com.dabing.emoj.R$drawable: int ic_dialog_alert
 com.dabing.emoj.R$drawable: int ic_dialog_long_click
 com.dabing.emoj.R$drawable: int ic_launcher
@@ -1420,10 +1429,15 @@ com.dabing.emoj.R$drawable: int net_webwechat_line
 com.dabing.emoj.R$drawable: int new_icon
 com.dabing.emoj.R$drawable: int nosdcard_pic
 com.dabing.emoj.R$drawable: int page_indicator_dot_style2
+com.dabing.emoj.R$drawable: int path_pane
+com.dabing.emoj.R$drawable: int path_pane_bg
+com.dabing.emoj.R$drawable: int path_pane_pressed
+com.dabing.emoj.R$drawable: int path_up_level
 com.dabing.emoj.R$drawable: int pic_black
+com.dabing.emoj.R$drawable: int pic_chk_v2
 com.dabing.emoj.R$drawable: int pic_graydark
 com.dabing.emoj.R$drawable: int pic_graylight
-com.dabing.emoj.R$drawable: int pic_graylight_v2
+com.dabing.emoj.R$drawable: int pic_nor_v2
 com.dabing.emoj.R$drawable: int preference_first_item
 com.dabing.emoj.R$drawable: int preference_item
 com.dabing.emoj.R$drawable: int preference_last_item
@@ -1439,9 +1453,10 @@ com.dabing.emoj.R$drawable: int regular_alert_nohistory
 com.dabing.emoj.R$drawable: int right_corner
 com.dabing.emoj.R$drawable: int search_edittext_selector
 com.dabing.emoj.R$drawable: int setting_black
+com.dabing.emoj.R$drawable: int setting_chk_v2
 com.dabing.emoj.R$drawable: int setting_graydark
 com.dabing.emoj.R$drawable: int setting_graylight
-com.dabing.emoj.R$drawable: int setting_graylight_v2
+com.dabing.emoj.R$drawable: int setting_nor_v2
 com.dabing.emoj.R$drawable: int shape_dialog
 com.dabing.emoj.R$drawable: int share_to_time_line_icon
 com.dabing.emoj.R$drawable: int social_add_person
@@ -1458,6 +1473,11 @@ com.dabing.emoj.R$drawable: int tab_emotion_selector
 com.dabing.emoj.R$drawable: int tab_pic_selector
 com.dabing.emoj.R$drawable: int tab_setting_selector
 com.dabing.emoj.R$drawable: int tab_unread_bg
+com.dabing.emoj.R$drawable: int tab_user_define_selector
+com.dabing.emoj.R$drawable: int tab_v2_emoj_selector
+com.dabing.emoj.R$drawable: int tab_v2_emotion_selector
+com.dabing.emoj.R$drawable: int tab_v2_pic_selector
+com.dabing.emoj.R$drawable: int tab_v2_setting_selector
 com.dabing.emoj.R$drawable: int textview_background_black
 com.dabing.emoj.R$drawable: int textview_background_blue
 com.dabing.emoj.R$drawable: int textview_background_brown
@@ -1509,6 +1529,12 @@ com.dabing.emoj.R$drawable: int umeng_fb_user_bubble
 com.dabing.emoj.R$drawable: int umeng_fb_write_normal
 com.dabing.emoj.R$drawable: int umeng_fb_write_pressed
 com.dabing.emoj.R$drawable: int umeng_fb_write_selector
+com.dabing.emoj.R$drawable: int up_level
+com.dabing.emoj.R$drawable: int up_level_pressed
+com.dabing.emoj.R$drawable: int user_define_add_file_listitem_pressed
+com.dabing.emoj.R$drawable: int user_define_add_file_listitem_selector
+com.dabing.emoj.R$drawable: int user_define_chk
+com.dabing.emoj.R$drawable: int user_define_nor
 com.dabing.emoj.R$drawable: int waps_app_detail_download_nor
 com.dabing.emoj.R$drawable: int waps_app_detail_download_pressed
 com.dabing.emoj.R$drawable: int waps_app_detail_download_selector
@@ -1551,6 +1577,7 @@ com.dabing.emoj.R$id: int btn4
 com.dabing.emoj.R$id: int btn5
 com.dabing.emoj.R$id: int btn6
 com.dabing.emoj.R$id: int btn7
+com.dabing.emoj.R$id: int btn8
 com.dabing.emoj.R$id: int btn_browse_left
 com.dabing.emoj.R$id: int btn_browse_right
 com.dabing.emoj.R$id: int btn_txt
@@ -1685,6 +1712,7 @@ com.dabing.emoj.R$id: int main_tab_new_settings
 com.dabing.emoj.R$id: int main_tab_new_tv
 com.dabing.emoj.R$id: int main_tab_settings
 com.dabing.emoj.R$id: int main_tab_unread_tv
+com.dabing.emoj.R$id: int main_tab_user_define
 com.dabing.emoj.R$id: int manualOnly
 com.dabing.emoj.R$id: int mdpi
 com.dabing.emoj.R$id: int miniAdLinearLayout
@@ -1806,6 +1834,10 @@ com.dabing.emoj.R$id: int umeng_fb_see_list_btn
 com.dabing.emoj.R$id: int umeng_fb_stateOrTime
 com.dabing.emoj.R$id: int umeng_fb_state_or_date
 com.dabing.emoj.R$id: int umeng_fb_submit
+com.dabing.emoj.R$id: int user_define_add_file_item_btnAdd
+com.dabing.emoj.R$id: int user_define_add_file_item_txtChildSize
+com.dabing.emoj.R$id: int user_define_add_file_item_txtName
+com.dabing.emoj.R$id: int user_define_add_file_listview
 com.dabing.emoj.R$id: int user_define_albumImageview
 com.dabing.emoj.R$id: int user_define_album_add_btnAdd
 com.dabing.emoj.R$id: int user_define_album_image_imageview
@@ -1976,6 +2008,8 @@ com.dabing.emoj.R$layout: int umeng_fb_conversations_item
 com.dabing.emoj.R$layout: int umeng_fb_list_item
 com.dabing.emoj.R$layout: int umeng_fb_new_reply_alert_dialog
 com.dabing.emoj.R$layout: int umeng_fb_send_feedback
+com.dabing.emoj.R$layout: int user_define_add_file
+com.dabing.emoj.R$layout: int user_define_add_file_item
 com.dabing.emoj.R$layout: int user_define_album
 com.dabing.emoj.R$layout: int user_define_album_add
 com.dabing.emoj.R$layout: int user_define_album_image
@@ -2038,6 +2072,8 @@ com.dabing.emoj.R$string: int a4
 com.dabing.emoj.R$string: int a5
 com.dabing.emoj.R$string: int about2
 com.dabing.emoj.R$string: int add_weibo_content
+com.dabing.emoj.R$string: int alert_confirm_add_file
+com.dabing.emoj.R$string: int alert_confirm_del_file
 com.dabing.emoj.R$string: int app_back
 com.dabing.emoj.R$string: int app_cancel
 com.dabing.emoj.R$string: int app_continue
@@ -2057,7 +2093,10 @@ com.dabing.emoj.R$string: int applet_seccode_fail_tip
 com.dabing.emoj.R$string: int applet_seccode_tip
 com.dabing.emoj.R$string: int applet_secimg_change
 com.dabing.emoj.R$string: int applet_secimg_title
+com.dabing.emoj.R$string: int btn_userdefine_back
 com.dabing.emoj.R$string: int btn_userdefine_edit
+com.dabing.emoj.R$string: int btn_userdefine_up
+com.dabing.emoj.R$string: int btn_userdefine_weixin
 com.dabing.emoj.R$string: int confirm_dialog_back
 com.dabing.emoj.R$string: int confirm_dialog_cancel
 com.dabing.emoj.R$string: int confirm_dialog_ok
@@ -2124,6 +2163,7 @@ com.dabing.emoj.R$string: int pull_to_refresh_from_bottom_release_label
 com.dabing.emoj.R$string: int pull_to_refresh_pull_label
 com.dabing.emoj.R$string: int pull_to_refresh_refreshing_label
 com.dabing.emoj.R$string: int pull_to_refresh_release_label
+com.dabing.emoj.R$string: int qq_not_install
 com.dabing.emoj.R$string: int qqappwall_app_name
 com.dabing.emoj.R$string: int qqappwall_download_failed
 com.dabing.emoj.R$string: int qqappwall_download_failed_imply
@@ -2417,6 +2457,10 @@ com.dabing.emoj.activity.SettingVersionActivity
 com.dabing.emoj.activity.SettingVersionActivity: SettingVersionActivity()
 com.dabing.emoj.activity.UserDefineActivity
 com.dabing.emoj.activity.UserDefineActivity: UserDefineActivity()
+com.dabing.emoj.activity.UserDefineAddActivity
+com.dabing.emoj.activity.UserDefineAddActivity: UserDefineAddActivity()
+com.dabing.emoj.activity.UserDefineEmojViewActivity
+com.dabing.emoj.activity.UserDefineEmojViewActivity: UserDefineEmojViewActivity()
 com.dabing.emoj.activity.UserLoginActivity
 com.dabing.emoj.activity.UserLoginActivity: UserLoginActivity()
 com.dabing.emoj.activity.WelcomeActivity
@@ -2551,9 +2595,15 @@ com.dabing.emoj.widget.EmojImageView: EmojImageView(android.content.Context,andr
 com.dabing.emoj.widget.EmotionPanel
 com.dabing.emoj.widget.EmotionPanel: EmotionPanel(android.content.Context,android.util.AttributeSet)
 com.dabing.emoj.widget.EmotionPanel: EmotionPanel(android.content.Context,android.util.AttributeSet,int)
+com.dabing.emoj.widget.FitSizeImageView
+com.dabing.emoj.widget.FitSizeImageView: FitSizeImageView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.FitSizeImageView: FitSizeImageView(android.content.Context,android.util.AttributeSet,int)
 com.dabing.emoj.widget.LinearLayoutForListView
 com.dabing.emoj.widget.LinearLayoutForListView: LinearLayoutForListView(android.content.Context)
 com.dabing.emoj.widget.LinearLayoutForListView: LinearLayoutForListView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.MatrixBitmap
+com.dabing.emoj.widget.MatrixBitmap: MatrixBitmap(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.MatrixBitmap: MatrixBitmap(android.content.Context,android.util.AttributeSet,int)
 com.dabing.emoj.widget.WrapperImageView
 com.dabing.emoj.widget.WrapperImageView: WrapperImageView(android.content.Context,android.util.AttributeSet)
 com.dabing.emoj.wxapi.WXEntryActivity
@@ -2586,7 +2636,10 @@ com.handmark.pulltorefresh.library.PullToRefreshGridView: PullToRefreshGridView(
 com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView
 com.handmark.pulltorefresh.library.PullToRefreshHorizontalScrollView: PullToRefreshHorizontalScrollView(android.content.Context,android.util.AttributeSet)
 com.handmark.pulltorefresh.library.PullToRefreshListView
+com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context)
 com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context,android.util.AttributeSet)
+com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode)
+com.handmark.pulltorefresh.library.PullToRefreshListView: PullToRefreshListView(android.content.Context,com.handmark.pulltorefresh.library.PullToRefreshBase$Mode,com.handmark.pulltorefresh.library.PullToRefreshBase$AnimationStyle)
 com.handmark.pulltorefresh.library.PullToRefreshScrollView
 com.handmark.pulltorefresh.library.PullToRefreshScrollView: PullToRefreshScrollView(android.content.Context)
 com.handmark.pulltorefresh.library.PullToRefreshScrollView: PullToRefreshScrollView(android.content.Context,android.util.AttributeSet)
@@ -2772,6 +2825,23 @@ com.tencent.mm.sdk.uikit.MMWizardActivity
 com.tencent.mm.sdk.uikit.applet.SecurityImage
 com.tencent.mm.sdk.uikit.applet.SecurityImage: SecurityImage(android.content.Context)
 com.tencent.mm.sdk.uikit.applet.SecurityImage: SecurityImage(android.content.Context,android.util.AttributeSet)
+com.tencent.open.KeyboardDetectorRelativeLayout
+com.tencent.open.KeyboardDetectorRelativeLayout: KeyboardDetectorRelativeLayout(android.content.Context,android.util.AttributeSet)
+com.tencent.plus.ImageActivity
+com.tencent.plus.MaskView
+com.tencent.plus.MaskView: MaskView(android.content.Context,android.util.AttributeSet)
+com.tencent.plus.TouchView
+com.tencent.plus.TouchView: TouchView(android.content.Context,android.util.AttributeSet)
+com.tencent.qqconnect.dataprovider.datatype.TextAndMediaPath
+com.tencent.qqconnect.dataprovider.datatype.TextAndMediaPath: android.os.Parcelable$Creator CREATOR
+com.tencent.qqconnect.dataprovider.datatype.TextOnly
+com.tencent.qqconnect.dataprovider.datatype.TextOnly: android.os.Parcelable$Creator CREATOR
+com.tencent.stat.EasyActivity
+com.tencent.stat.EasyListActivity
+com.tencent.stat.StatReportStrategy: com.tencent.stat.StatReportStrategy[] values()
+com.tencent.stat.StatReportStrategy: com.tencent.stat.StatReportStrategy valueOf(java.lang.String)
+com.tencent.tauth.AuthActivity
+com.tencent.tauth.AuthActivity: AuthActivity()
 com.tencent.weibo.demo.MainActivity
 com.tencent.weibo.demo.OAuthV1Activity
 com.tencent.weibo.demo.OAuthV3ImplicitGrantActivity

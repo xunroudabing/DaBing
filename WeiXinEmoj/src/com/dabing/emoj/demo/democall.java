@@ -1,8 +1,14 @@
 package com.dabing.emoj.demo;
 
+import java.util.List;
+
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +25,7 @@ import com.dabing.emoj.R;
 import com.dabing.emoj.activity.EmojViewActivity;
 import com.dabing.emoj.jni.JniTest;
 import com.dabing.emoj.jni.JniUtils;
+import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DaBingRequest;
@@ -29,14 +36,20 @@ import com.dabing.emoj.wxapi.WeiXinHelper;
 import com.tencent.mm.sdk.channel.MMessage;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.tauth.Constants;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
 import com.tencent.weibo.beans.OAuth;
 import com.tencent.weibo.constants.OAuthConstants;
 
 public class democall extends BaseActivity implements OnClickListener {
+	
+	Tencent mTencent;
 	QuickActionGrid mlist;
 	IWXAPI api;
 	OAuth oAuth;
-	Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
+	Button btn1, btn2, btn3, btn4, btn5, btn6, btn7,btn8;
 	static final String TAG = democall.class.getSimpleName();
 
 	/*
@@ -55,6 +68,7 @@ public class democall extends BaseActivity implements OnClickListener {
 		btn5 = (Button) findViewById(R.id.btn5);
 		btn6 = (Button) findViewById(R.id.btn6);
 		btn7 = (Button) findViewById(R.id.btn7);
+		btn8 = (Button) findViewById(R.id.btn8);
 		btn1.setOnClickListener(this);
 		btn2.setOnClickListener(this);
 		btn3.setOnClickListener(this);
@@ -62,10 +76,13 @@ public class democall extends BaseActivity implements OnClickListener {
 		btn5.setOnClickListener(this);
 		btn6.setOnClickListener(this);
 		btn7.setOnClickListener(this);
+		btn8.setOnClickListener(this);
 		oAuth = TokenStore.fetch(getApplicationContext());
 		api = WXAPIFactory.createWXAPI(democall.this, AppConstant.WEIXIN_APPID);
 		boolean b = api.isWXAppInstalled();
 		prepare();
+		QQConnect.createInstance(getApplicationContext()).Init();
+		mTencent = QQConnect.createInstance(getApplicationContext()).getTencent();
 	}
 
 	@Override
@@ -99,6 +116,10 @@ public class democall extends BaseActivity implements OnClickListener {
 		case R.id.btn7:
 			//getChannel();
 			getImages();
+			break;
+		case R.id.btn8:		
+			//shareQQ();
+			invite();
 			break;
 		default:
 			break;
@@ -203,5 +224,107 @@ public class democall extends BaseActivity implements OnClickListener {
 			String data = cursor.getString(4);
 			Log.d(TAG, String.format("id:%d title:%s display:%s date:%s data:%s", id,title,display,date,data));
 		} while (cursor.moveToNext());
+	}
+	
+	private void QQlogin(){
+		mTencent.login(democall.this, AppConfig.QQ_SCOPE, new IUiListener() {
+			
+			@Override
+			public void onError(UiError arg0) {
+				// TODO Auto-generated method stub
+				Log.d(TAG, "onError:"+arg0.toString());
+			}
+			
+			@Override
+			public void onComplete(JSONObject arg0) {
+				// TODO Auto-generated method stub
+				Log.d(TAG, "onComplete:"+arg0.toString());
+			}
+			
+			@Override
+			public void onCancel() {
+				// TODO Auto-generated method stub
+				Log.d(TAG, "onCancel()");
+			}
+		});
+	}
+	private void invite(){
+		 Bundle params = new Bundle();
+         params.putString(Constants.PARAM_APP_ICON,
+                 "http://imgcache.qq.com/qzone/space_item/pre/0/66768.gif");
+         params.putString(Constants.PARAM_APP_DESC,
+                 "AndroidSdk_1_3: invite description!");
+         params.putString(Constants.PARAM_APP_CUSTOM,
+                 "AndroidSdk_1_3: invite message!");
+         mTencent.invite(democall.this, params, new IUiListener() {
+			
+			@Override
+			public void onError(UiError uierror) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onComplete(JSONObject jsonobject) {
+				// TODO Auto-generated method stub
+				Log.d(TAG, "invite:"+jsonobject);
+				
+			}
+			
+			@Override
+			public void onCancel() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+	private void shareQQ(){
+		Intent intent=new Intent(Intent.ACTION_SEND);  
+		intent.setType("image/*");
+		List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+		for(ResolveInfo info : list){
+			ActivityInfo aInfo = info.activityInfo;
+			String packName = aInfo.packageName;
+			Log.d(TAG, "packname:"+packName);
+		}
+//		Bundle params = new Bundle();
+//		//params.putString(Constants.PARAM_TITLE,"分享的标题");
+//		params.putString(Constants.PARAM_IMAGE_URL	,"http://imgcache.qq.com/qzone/space_item/pre/0/66768.gif");
+//		params.putString(Constants.PARAM_TARGET_URL,
+//				"http://imgcache.qq.com/qzone/space_item/pre/0/66768.gif");
+//		//params.putString(Constants.PARAM_SUMMARY,"一些描述");
+//		params.putString(Constants.PARAM_APP_SOURCE,"微信表情包100399626");
+//		
+//		mTencent.shareToQQ(democall.this, params, new IUiListener() {
+//			
+//			@Override
+//			public void onError(UiError uierror) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//			
+//			@Override
+//			public void onComplete(JSONObject jsonobject) {
+//				// TODO Auto-generated method stub
+//				Log.d(TAG, "onComplete:"+jsonobject.toString());
+//			}
+//			
+//			@Override
+//			public void onCancel() {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//		});
+
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onActivityResult(int, int, android.content.Intent)
+	 */
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		mTencent.onActivityResult(requestCode, resultCode, data);
 	}
 }

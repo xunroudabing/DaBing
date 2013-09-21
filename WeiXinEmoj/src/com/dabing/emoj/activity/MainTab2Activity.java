@@ -4,12 +4,14 @@ import org.json.JSONArray;
 
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
+import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.service.StartUpBroadcast;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.NetWorkCheck;
 import com.dabing.emoj.widget.PromptDialog;
+import com.tencent.qqconnect.dataprovider.CallbackManager;
 import com.umeng.fb.NotificationType;
 import com.umeng.fb.UMFeedbackService;
 import com.umeng.update.UmengUpdateAgent;
@@ -39,6 +41,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
  *
  */
 public class MainTab2Activity extends TabActivity implements OnCheckedChangeListener {
+	CallbackManager mCallbackManager;
 	String action ="send";
 	ImageView cursor;
 	RadioButton r1,r2,r3,r4,r5;
@@ -73,6 +76,8 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 		InitAdvertise();
 		InitPrompt();
 		RegisterBroadcast();
+		mCallbackManager = new CallbackManager(MainTab2Activity.this);
+		QQConnect.createInstance(getApplicationContext()).Init();
 		UMFeedbackService.enableNewReplyNotification(MainTab2Activity.this, NotificationType.AlertDialog);
 		UmengUpdateAgent.update(MainTab2Activity.this);
 	}
@@ -316,7 +321,8 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 	
 	@Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-    	if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
+		Log.d(TAG, "dispatchKeyEvent");
+    	if(event.getKeyCode() == KeyEvent.KEYCODE_BACK && !mTabHost.getCurrentTabTag().equals("tab5")){
     		if(event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0){
     			DialogFactory.createTwoButtonDialog(MainTab2Activity.this, "确定退出微信表情包?", "确定", "取消", new DialogInterface.OnClickListener() {
     				
@@ -337,4 +343,13 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
     	}
     	return super.dispatchKeyEvent(event);
     };
+    
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onBackPressed()
+	 */
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+	}
 }

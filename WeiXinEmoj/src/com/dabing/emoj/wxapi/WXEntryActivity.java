@@ -2,6 +2,7 @@ package com.dabing.emoj.wxapi;
 
 
 import com.dabing.emoj.activity.MainTab1Activity;
+import com.dabing.emoj.activity.MainTab2Activity;
 import com.dabing.emoj.activity.MainTabActivity;
 import com.dabing.emoj.demo.democall;
 import com.dabing.emoj.utils.AppConstant;
@@ -69,7 +70,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 		finish();
 	}
 	private void GetMsg(){
-		Intent intent = new Intent(getApplicationContext(), MainTab1Activity.class);
+		Intent intent = new Intent(getApplicationContext(), MainTab2Activity.class);
 		intent.putExtra(AppConstant.INTENT_EMOJ_ACTION, "get");
 		intent.putExtras(getIntent().getExtras());
 //		Bundle bundle = getIntent().getExtras();

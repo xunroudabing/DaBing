@@ -11,6 +11,7 @@
 	<string name="confirm_dialog_ok">确定</string>
     <string name="confirm_dialog_share">分享</string>
     <string name="wx_not_install">您的设备上还没有安装微信,先去下载一个吧...</string>
+    <string name="qq_not_install">您的设备上还没有安装QQ,先去下载一个吧...</string>
     <string name="wx_not_finish">图片正在加载,请稍候再试...</string>
     <string name="notice">这是一款微信表情插件,同时也可以用于手机QQ等应用。它收录了不少有趣的表情,希望这款应用能够给你带来乐趣。</string>
     <string name="about2">作者:熏肉大饼 邮箱:hzroom110@163.com</string>
@@ -28,6 +29,11 @@
     <string name="btn_userdefine_back">返回</string>
     <string name="btn_userdefine_weixin">微信</string>
     <string name="title_custom">自定义表情</string>
+    <string name="alert_confirm_add_file">确定添加{file}?</string>
+    <string name="alert_confirm_del_file">确认移除{file}?</string>
+    
+    
+    
     <string name="p1">1.为什么无法发送表情?</string>
     <string name="a1">答:首先请您将设备上的微信升级至最新版本(微信4.3以下的版本是不支持发送动态表情的)。如果您的微信已经是最新版本,请您尝试重启一下设备。如果重启设备后仍然无法发送表情,那么建议您重新安装一下微信。</string>
     <string name="p2">2.如何把微信表情包加为微信插件？</string>

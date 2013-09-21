@@ -3,6 +3,8 @@ package com.dabing.emoj.db;
 import java.io.File;
 
 import com.dabing.emoj.utils.FileInfo;
+import com.dabing.emoj.utils.SimpleFile;
+import com.dabing.emoj.utils.Util;
 import com.dabing.emoj.widget.CustomGridLayout;
 
 import android.R.integer;
@@ -28,7 +30,7 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 	public static final String FIELD_ID = "_id";
 	public static final String FIELD_NAME = "name";// 文件名
 	public static final String FIELD_PATH = "path";// 文件路径
-	public static final String FIELD_TYPE = "type"; // 类型
+	public static final String FIELD_TYPE = "type"; // 类型 common
 	public static final String FIELD_THUMB = "thumb";// 缩略图地址
 	public static final String FIELD_TIME = "time";// 时间戳
 	public static final String FIELD_STATE = "state";// 状态位 1-默认 0-删除
@@ -78,8 +80,8 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 				null);
 		return cursor;
 	}
-	
-	public UserDefineCursor getCursor(long id){
+
+	public UserDefineCursor getCursor(long id) {
 		final String query = "SELECT * FROM " + TABLE_NAME + " WHERE "
 				+ FIELD_ID + "=?";
 		SQLiteDatabase db = getReadableDatabase();
@@ -88,6 +90,7 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 				new String[] { String.valueOf(id) }, null);
 		return cursor;
 	}
+
 	public FileInfo getFileInfo(int id) {
 		final String query = "SELECT * FROM " + TABLE_NAME + " WHERE "
 				+ FIELD_ID + "=?";
@@ -144,15 +147,28 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 		Log.d(TAG, "remove id:" + id);
 	}
 	/**
-	 * 物理删除
+	 * 恢复数据 将状态改为1
 	 * @param id
 	 */
-	public void delete(int id){
+	public void enable(long id){
+		ContentValues cv = new ContentValues();
+		cv.put(FIELD_STATE, 1);
+		SQLiteDatabase db = getWritableDatabase();
+		db.update(TABLE_NAME, cv, FIELD_ID + "=?",
+				new String[] { String.valueOf(id) });
+	}
+	/**
+	 * 物理删除
+	 * 
+	 * @param id
+	 */
+	public void delete(int id) {
 		String whereClause = FIELD_ID + " =?";
-		String[] whereValue = {String.valueOf(id)};
+		String[] whereValue = { String.valueOf(id) };
 		SQLiteDatabase db = getWritableDatabase();
 		db.delete(TABLE_NAME, whereClause, whereValue);
 	}
+
 	/**
 	 * 更新子文件数
 	 * 
@@ -165,28 +181,30 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = getWritableDatabase();
 		db.update(TABLE_NAME, values, FIELD_ID + "=?",
 				new String[] { String.valueOf(id) });
-		//Log.d(TAG, "update count:" + count + " id:" + id);
+		// Log.d(TAG, "update count:" + count + " id:" + id);
 	}
-	public void update(int id,FileInfo fileInfo){
+
+	public void update(int id, FileInfo fileInfo) {
 		ContentValues cv = new ContentValues();
-		if(fileInfo.fileName != null && !fileInfo.fileName.equals("")){
+		if (fileInfo.fileName != null && !fileInfo.fileName.equals("")) {
 			cv.put(FIELD_NAME, fileInfo.fileName);
 		}
-		if(fileInfo.filePath != null && !fileInfo.filePath.equals("")){
+		if (fileInfo.filePath != null && !fileInfo.filePath.equals("")) {
 			cv.put(FIELD_PATH, fileInfo.filePath);
 		}
-		if(fileInfo.dbType != null && !fileInfo.dbType.equals("")){
+		if (fileInfo.dbType != null && !fileInfo.dbType.equals("")) {
 			cv.put(FIELD_TYPE, fileInfo.dbType);
 		}
-		if(fileInfo.dbThumb != null && !fileInfo.dbThumb.equals("")){
+		if (fileInfo.dbThumb != null && !fileInfo.dbThumb.equals("")) {
 			cv.put(FIELD_THUMB, fileInfo.dbThumb);
 		}
 		SQLiteDatabase db = getWritableDatabase();
 		String whereClause = FIELD_ID + " =?";
 		String[] whereArgs = { String.valueOf(id) };
 		db.update(TABLE_NAME, cv, whereClause, whereArgs);
-		//Log.d(TAG, "update:"+id);
+		// Log.d(TAG, "update:"+id);
 	}
+
 	public long insert(FileInfo fileInfo) {
 		ContentValues cv = new ContentValues();
 		cv.put(FIELD_NAME, fileInfo.fileName);
@@ -214,41 +232,64 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 		Log.d(TAG, "insert id:" + id);
 	}
 
+	public long insert(SimpleFile file) {
+		ContentValues cv = new ContentValues();
+		cv.put(FIELD_NAME, file.name);
+		cv.put(FIELD_PATH, file.path);
+		cv.put(FIELD_TIME, System.currentTimeMillis());
+		cv.put(FIELD_TYPE, "common");
+		cv.put(FIELD_CHILDSIZE, file.count);
+		SQLiteDatabase db = getWritableDatabase();
+		long id = db.insert(TABLE_NAME, null, cv);
+		Log.d(TAG, "insert id:" + id);
+		return id;
+
+	}
+
 	public boolean exist(FileInfo fileInfo) {
 		return exist(fileInfo.filePath);
 	}
-	
-	public boolean exist(String path){
+
+	public boolean exist(String path) {
+		String filepath = Util.makeStandardPath(path);
 		final String query = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE "
-				+ FIELD_PATH + "=?";
+				+ FIELD_PATH + "=?" + " AND " + FIELD_STATE + "=?";
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor cursor = db.query(TABLE_NAME, new String[] { "COUNT(*)" },
-				FIELD_PATH + "=?", new String[] { path }, null,
-				null, null);
+				FIELD_PATH + "=?" + " AND " + FIELD_STATE + "=?", new String[] {
+						filepath, "1" }, null, null, null);
+		if (cursor == null) {
+			return false;
+		}
 		cursor.moveToFirst();
 		int count = cursor.getInt(0);
 		cursor.close();
-		Log.d(TAG, "exist:" + count);
+		Log.d(TAG, path + " exist:" + count);
 		return count > 0;
 	}
+
 	/**
-	 * 获取id 
+	 * 获取id
+	 * 
 	 * @param path
 	 * @return -1 该path在数据库不存在
 	 */
-	public int getId(String path){
+	public int getId(String path) {
 		int id = -1;
-		final String[] columns = {FIELD_ID};
+		String filepath = Util.makeStandardPath(path);
+		final String[] columns = { FIELD_ID };
 		String whereClause = FIELD_PATH + " =?";
-		String[] whereArgs = {path};
+		String[] whereArgs = { filepath };
 		SQLiteDatabase db = getReadableDatabase();
-		Cursor cursor = db.query(TABLE_NAME, columns, whereClause, whereArgs, null, null, null);
-		if(cursor != null && cursor.moveToFirst()){
+		Cursor cursor = db.query(TABLE_NAME, columns, whereClause, whereArgs,
+				null, null, null);
+		if (cursor != null && cursor.moveToFirst()) {
 			id = cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_ID));
 		}
 		cursor.close();
 		return id;
 	}
+
 	public static class UserDefineCursor extends SQLiteCursor {
 
 		private UserDefineCursor(SQLiteDatabase db, SQLiteCursorDriver driver,

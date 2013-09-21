@@ -37,7 +37,7 @@ public class WelcomeActivity extends Activity {
 			
 			public void run() {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(getApplicationContext(), MainTab1Activity.class);
+				Intent intent = new Intent(getApplicationContext(), MainTab2Activity.class);
 				startActivity(intent);
 				finish();
 			}

@@ -25,6 +25,13 @@ import android.util.Log;
 public class AppConfig {
 	static final String TAG = AppConfig.class.getSimpleName();
 	public static final boolean DEBUG = true;
+	//qq互联
+	public static final String QQ_APPID = "100399626";
+	//qq互联 权限
+	public static final String QQ_SCOPE = "get_user_info,get_simple_userinfo,get_user_profile,get_app_friends,upload_photo,"
+            + "add_share,add_topic,list_album,upload_pic,add_album,set_user_face,get_vip_info,get_vip_rich_info,get_intimate_friends_weibo,match_nick_tips_weibo";
+	//移动QQ包名
+	public static final String QQ_PACKAGE_NAME = "com.tencent.mobileqq";
 	//正式 http://t.qq.com/xunroudabing 测试 http://www.appchina.com/soft_detail_472820_0_10.html
 	public static final String redirectUri="http://android.myapp.com/android/appdetail.jsp?appid=653908";
 	//正式801278477 测试 801202538 测试
@@ -104,6 +111,41 @@ public class AppConfig {
 	 */
 	public static String getAblum(){
 		return getRoot() + ALBUM_STRING + File.separator;
+	}
+	
+	//***QQ互联相关****
+	public static String getQQ_OpenId(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		String ret = preferences.getString("QQ_OpenId", null);
+		return ret;
+	}
+	public static void setQQ_OpenId(Context context,String openId){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString("QQ_OpenId", openId);
+		editor.commit();
+	}
+	public static String getQQ_AccessToken(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		String ret = preferences.getString("QQ_AccessToken", null);
+		return ret;
+	}
+	public static void setQQ_AccessToken(Context context,String accessToken){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString("QQ_AccessToken", accessToken);
+		editor.commit();
+	}
+	public static long getQQ_ExpiresIn(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		long ret = preferences.getLong("QQ_ExpiresIn", 0);
+		return ret;
+	}
+	public static void setQQ_ExpiresIn(Context context,long expiresIn){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putLong("QQ_ExpiresIn", expiresIn);
+		editor.commit();
 	}
 	/**
 	 * 表情分类索引

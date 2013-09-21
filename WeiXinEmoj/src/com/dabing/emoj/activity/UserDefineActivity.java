@@ -4,13 +4,16 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.opengl.Visibility;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -24,6 +27,7 @@ import com.dabing.emoj.fragment.AlbumDetailFragment;
 import com.dabing.emoj.fragment.AlbumFragment;
 import com.dabing.emoj.fragment.UserDefineFragment.IEmojScanCallBack;
 import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.FileHelper;
 import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.widget.Album;
@@ -42,11 +46,11 @@ import com.tencent.mm.sdk.uikit.MMImageButton;
  *
  */
 public class UserDefineActivity extends FragmentActivity implements IEmojScanCallBack {
+	String currentTAG;
 	String action = "send";
 	boolean Mode = false;
 	ProgressBar mProgressBar;
 	TextView rightBtn,leftBtn,mTitle;
-	CustomGridLayout gridLayout;
 	PullToRefreshScrollView mScrollView;
 	AlbumCusorAdapter adapter;
 	int Album_Width = 80;
@@ -111,26 +115,10 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 		Log.d(TAG, "width:"+Album_Width);
 		
 	}
-	//插入相册
-	protected void addAlbum(FileInfo fileInfo){
-		Album album = new Album(getApplicationContext());
-		album.setWidth(Album_Width);
-		album.setFile(fileInfo);
-		
-		gridLayout.addView(album);
-	}
 	
 	
 	
-	protected void setDelMode(){
-		Mode = !Mode;
-		for(int i = 0;i<gridLayout.getChildCount();i++){
-			View view = gridLayout.getChildAt(i);
-			if(view instanceof Album){
-				((Album) view).setDelMode(Mode);
-			}
-		}
-	}
+
 	//下拉监听
 	private OnPullEventListener<ScrollView> pullEventListener = new OnPullEventListener<ScrollView>() {
 
@@ -178,7 +166,6 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 			action = data.getStringExtra(AppConstant.INTENT_EMOJ_ACTION);			
 		}
 		Log.d(TAG, "action:"+action);
-		rightBtn.setVisibility(View.VISIBLE);
 		if(action.equals("get")){			
 			leftBtn.setText(R.string.btn_userdefine_weixin);
 			leftBtn.setOnClickListener(new OnClickListener() {
@@ -237,9 +224,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 		if(TAG.equals(AlbumFragment.class.getSimpleName())){
 			FileInfo fileInfo = (FileInfo) parms;
 			Log.d(TAG, "fileinfo:"+fileInfo.filePath + " type:"+fileInfo.dbType);
-			startDetailFragment(fileInfo);
-			
-			
+			startDetailFragment(fileInfo);						
 		}
 		
 	}
@@ -248,9 +233,23 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 	public void onInit(String TAG,Object obj) {
 		// TODO Auto-generated method stub
 		Log.d(TAG, "onInit:"+TAG);
+		currentTAG = TAG;
 		if(TAG.equals(AlbumFragment.class.getSimpleName())){
 			mTitle.setText(R.string.title_custom);
 			SetupAction();
+			rightBtn.setVisibility(View.VISIBLE);
+			rightBtn.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					FragmentManager fm = getSupportFragmentManager();
+					Fragment fragment = fm.findFragmentByTag(AlbumFragment.class.getSimpleName());
+					if(fragment instanceof AlbumFragment){
+						((AlbumFragment) fragment).edit();
+					}
+				}
+			});
 		}
 		else if (TAG.equals(AlbumDetailFragment.class.getSimpleName())) {
 			rightBtn.setVisibility(View.GONE);
@@ -270,6 +269,65 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 				mTitle.setText(fileInfo.dbName);
 			}
 		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.FragmentActivity#onBackPressed()
+	 */
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Log.d(TAG, "onBackPressed");
+	}
+	/* (non-Javadoc)
+	 * @see android.app.Activity#dispatchKeyEvent(android.view.KeyEvent)
+	 */
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		// TODO Auto-generated method stub
+		Log.d(TAG, "dispatchKeyEvent");
+		if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
+    		if(event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0){
+    			if(currentTAG.equals(AlbumFragment.class.getSimpleName())){
+    				FragmentManager fm = getSupportFragmentManager();
+    				Fragment fragment = fm.findFragmentByTag(currentTAG);
+    				if(fragment != null){
+    					if(((AlbumFragment)fragment).getDelMode()){
+    						((AlbumFragment)fragment).cancelDelMode();
+    						return true;
+    					}else {
+    						DialogFactory.createTwoButtonDialog(UserDefineActivity.this, "确定退出微信表情包?", "确定", "取消", new DialogInterface.OnClickListener() {
+    		    				
+    		    				public void onClick(DialogInterface dialog, int which) {
+    		    					// TODO Auto-generated method stub
+    		    					getParent().finish();
+    		    					dialog.dismiss();
+    		    				}
+    		    			}, new DialogInterface.OnClickListener() {
+    		    				
+    		    				public void onClick(DialogInterface dialog, int which) {
+    		    					// TODO Auto-generated method stub
+    		    					dialog.dismiss();
+    		    				}
+    		    			}).show();
+    						return true;
+						}
+    				}
+    			}
+    		}
+		}
+		return super.dispatchKeyEvent(event);
+	}
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.FragmentActivity#onActivityResult(int, int, android.content.Intent)
+	 */
+	@Override
+	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(arg0, arg1, arg2);
+		Log.d(TAG, "onActivityResult");
+		
 	}
 
 }
