@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/user_define_add_file_listitem_selector"
+    android:padding="10dp"
+    android:orientation="horizontal">
+    
+	<ImageView 
+	android:src="@drawable/folder"    
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+	
+	<LinearLayout 	
+	android:layout_weight="1.0"    
+	android:layout_marginLeft="10dp"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+	    <TextView 
+	    android:id="@+id/user_define_add_file_item_txtName"    	
+	    android:text=""
+	    android:textColor="@color/black"
+	    android:textSize="@dimen/LargerTextSize"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" />
+	    
+	    <TextView 
+	    android:id="@+id/user_define_add_file_item_txtChildSize"    	
+	    android:text=""
+	    android:textColor="@color/gray_dark"
+	    android:layout_marginLeft="5dp"
+	    android:textSize="@dimen/SmallestTextSize"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" />
+	</LinearLayout>
+	
+	<ImageButton  
+	    android:id="@+id/user_define_add_file_item_btnAdd"
+	    android:background="@null"
+	    android:src="@drawable/add_file_selector"
+	    android:visibility="invisible"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" />
+</LinearLayout>
