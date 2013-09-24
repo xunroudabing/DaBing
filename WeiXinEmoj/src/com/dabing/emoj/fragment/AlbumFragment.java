@@ -42,7 +42,7 @@ import android.view.WindowManager;
 import android.widget.ScrollView;
 
 public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks<Cursor>{
-	
+	boolean mChanged = false;//cusor是否应该刷新
 	int mWidth = 80;
 	IEmojScanCallBack mCallBack;
 	Messenger client;
@@ -93,8 +93,12 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		mScrollView.setOnPullEventListener(pullEventListener);
 		
 		bindGridLayout();
-		//getLoaderManager().initLoader(0, null, this);
-		getLoaderManager().restartLoader(0, null, this);
+		if(!mChanged){
+			getLoaderManager().initLoader(0, null, this);
+		}else {
+			getLoaderManager().restartLoader(0, null, this);
+			mChanged = false;
+		}
 		//通知父activity初始化完成
 		if(mCallBack != null){
 			mCallBack.onInit(TAG,null);
@@ -325,6 +329,8 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 			try {
 				gridLayout.removeView(view);
 				mHelper.remove((int)fileInfo.dbId);
+				//getLoaderManager().restartLoader(0, null, AlbumFragment.this);
+				mChanged = true;
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
