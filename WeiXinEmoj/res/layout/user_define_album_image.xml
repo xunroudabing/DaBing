@@ -9,7 +9,6 @@
     
 	<ImageView 
 			android:id="@+id/user_define_album_image_imageview" 
-			android:src="@drawable/emoj005"  
 			android:layout_width="wrap_content"
 		    android:layout_height="wrap_content" />
 </LinearLayout>

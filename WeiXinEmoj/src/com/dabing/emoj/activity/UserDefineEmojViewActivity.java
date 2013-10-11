@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import com.ant.liao.GifView;
 import com.dabing.emoj.R;
@@ -12,11 +13,14 @@ import com.dabing.emoj.advertise.WAPS_CustomAd;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.FileType;
+import com.dabing.emoj.utils.RegularEmojManager;
 import com.dabing.emoj.utils.Util;
+import com.dabing.emoj.wxapi.WeiXinHelper;
 import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -72,7 +76,7 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 				finish();
 			}
 		});
-		
+		btnOK.setOnClickListener(btnListener);
 		Init();
 		SetupWxAction();
 		api = WXAPIFactory.createWXAPI(UserDefineEmojViewActivity.this, AppConstant.WEIXIN_APPID);
@@ -117,6 +121,53 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 		}
 	}
 	
+	
+	//发送至微信
+		private OnClickListener btnListener = new OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					if(finish){
+						//微信请求
+						if(action.equals("get")){
+						RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+						manager.add(mFileName, mParms);
+						WeiXinHelper helper = new WeiXinHelper(UserDefineEmojViewActivity.this, api);
+						if(mFileType == FileType.GIF){
+							//发动态图
+							helper.sendEmoj(mFilePath);
+						}
+						else {
+							//发静态图
+							helper.sendPng(mFilePath);
+						}						
+						UmengEvent("action026");//[自定义表情]从微信发送
+						setResult(RESULT_OK);
+						finish();
+						}else if (action.equals("pick")) {
+							//其他
+							Log.d(TAG, "onclick action:"+action);
+							RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+							manager.add(mFileName, mParms);
+							File file = new File(mFilePath);
+							Intent intent = new Intent();
+							intent.setData(Uri.fromFile(file));
+							UmengEvent("action028");//[自定义表情]第三方调用
+							setResult(RESULT_OK, intent);
+							finish();
+						}
+						
+					}else{
+						String text = getResources().getString(R.string.wx_not_finish);
+						Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+					Log.e(TAG, e.toString());
+				}
+			}
+		};
 	/* (non-Javadoc)
 	 * @see com.dabing.emoj.activity.EmojBrowseViewActivity#showNextImage()
 	 */
@@ -220,6 +271,19 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 			mFileType = FileType.PNG;
 			initializeControls(mFilePath);
 			show(2);
+		}
+	}
+	
+	@Override
+	protected void AddToRegular(String filename, String parms, String filepath) {
+		// TODO Auto-generated method stub
+		RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+		Log.d(TAG, "AddToRegular:"+filepath);
+		try {
+			manager.add(String.format("file:%s", filepath), parms);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			Log.e(TAG, e.toString());
 		}
 	}
 }

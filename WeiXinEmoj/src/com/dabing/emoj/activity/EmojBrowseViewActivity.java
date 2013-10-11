@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -138,7 +139,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 	Animation right_out;
 	Animation pop_in;
 	static BitmapFactory.Options sDefaultOptions;
-	static final float ZOOM_RATIO = 0.25f;
+	static final float ZOOM_RATIO = 0.3f;
 	static final long delayMillis = 5000;
 	static final String TAG = EmojBrowseViewActivity.class.getSimpleName();
 	/* (non-Javadoc)
@@ -487,8 +488,9 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 				if(finish){
 					//微信请求
 					if(action.equals("get")){
-					RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
-					manager.add(mFileName, mParms);
+//					RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+//					manager.add(mFileName, mParms);
+					AddToRegular(mFileName, mParms, mFilePath);
 					WeiXinHelper helper = new WeiXinHelper(EmojBrowseViewActivity.this, api);
 					if(mFileType == FileType.GIF){
 						//发动态图
@@ -499,25 +501,26 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 						helper.sendPng(mFilePath);
 					}
 					UpdateHeaderClickCount();
-					UmengEvent("action002", mFileName, mParms);
+					UmengEvent("action002",mParms);
 					setResult(RESULT_OK);
 					finish();
 					}else if (action.equals("pick")) {
 						//其他
 						Log.d(TAG, "onclick action:"+action);
-						RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
-						manager.add(mFileName, mParms);
+//						RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+//						manager.add(mFileName, mParms);
+						AddToRegular(mFileName, mParms, mFilePath);
 						File file = new File(mFilePath);
 						Intent intent = new Intent();
 						intent.setData(Uri.fromFile(file));
 						UpdateHeaderClickCount();
-						UmengEvent("action019", mFileName, mParms);
+						UmengEvent("action019",mParms);
 						setResult(RESULT_OK, intent);
 						finish();
 					}
 					//-----更新事件-----
 					if(emotionMode){
-						UmengEvent("action021", mFileName, mParms);
+						UmengEvent("action021",mParms);
 					}
 				}else{
 					String text = getResources().getString(R.string.wx_not_finish);
@@ -774,8 +777,8 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
         	int w = (int) (Utils.getScreenWidth(getApplicationContext())*0.5F);
         	int h = (int) (Utils.getScreenHeight(getApplicationContext())*0.5F);
         	mBitmap = Util.decodeSampledBitmap(mFilePath,w,h);
-        	int size = mBitmap.getRowBytes() * mBitmap.getHeight();
-        	Log.d(TAG,w+"*"+h+ " bitmap.size:"+size);
+//        	int size = mBitmap.getRowBytes() * mBitmap.getHeight();
+//        	Log.d(TAG,w+"*"+h+ " bitmap.size:"+size);
         }
 
         mZoomListener = new SimpleZoomListener();
@@ -965,6 +968,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		}
 		WeiXinHelper helper = new WeiXinHelper(getApplicationContext(), api);
 		helper.shareQQ(mFilePath);
+		AddToRegular(mFileName, mParms, mFilePath);
 	}
 	//分享至微信好友
 	protected void ShareToWX_Friends(){
@@ -997,13 +1001,14 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			}else {
 				helper.shareIMG(mFilePath);
 			}	
-			RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
-			manager.add(mFileName, mParms);
+//			RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+//			manager.add(mFileName, mParms);
+			AddToRegular(mFileName, mParms, mFilePath);
 			UpdateHeaderClickCount();
-			UmengEvent("action001", mFileName, mParms);
+			UmengEvent("action001",mParms);
 			//-----更新事件-----
 			if(emotionMode){
-				UmengEvent("action021", mFileName, mParms);
+				UmengEvent("action021",mParms);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -1043,10 +1048,11 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			}else {
 				helper.shareIMGToCircle(mFilePath);
 			}
-			RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
-			manager.add(mFileName, mParms);
+//			RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+//			manager.add(mFileName, mParms);
+			AddToRegular(mFileName, mParms, mFilePath);
 			UpdateHeaderClickCount();
-			UmengEvent("action003", mFileName,mParms);
+			UmengEvent("action003",mParms);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -1059,7 +1065,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			WeiXinHelper helper = new WeiXinHelper(EmojBrowseViewActivity.this, api);
 			helper.shareToOther(mFilePath, "#微信表情包#这个表情是不是很有趣?", "来自微信表情包的分享");
 			UpdateHeaderClickCount();
-			UmengEvent("action008", mFileName, mParms);
+			UmengEvent("action008",mParms);
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());
@@ -1074,13 +1080,25 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			//Log.d(TAG, mParms + ":" + count);
 		}
 	}
-	private void UmengEvent(String eventid,String filename,String parms){
+	protected void UmengEvent(String eventid){
+		MobclickAgent.onEvent(EmojBrowseViewActivity.this, eventid);
+	}
+	protected void UmengEvent(String eventid,String parms){
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("parms", parms);
-		map.put("filename", filename);
+		//map.put("filename", filename);
 		MobclickAgent.onEvent(EmojBrowseViewActivity.this, eventid, map);
 	}
-	
+	//添加到最近使用
+	protected void AddToRegular(String filename,String parms,String filepath){
+		RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
+		try {
+			manager.add(filename, parms);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			Log.e(TAG, e.toString());
+		}
+	}
 	//***********表情打包下载*************
 	//表情打包下载
 	protected void downloadPackage(){

@@ -78,8 +78,8 @@ public class AlbumDetailFragment extends UserDefineFragment {
 		super.onActivityCreated(savedInstanceState);
 		gridView = (PullToRefreshGridView) getView().findViewById(R.id.gridview2);
 		gridView.getLoadingLayoutProxy().setLoadingDrawable(null);
-		gridView.getLoadingLayoutProxy().setPullLabel(null);
-		gridView.getLoadingLayoutProxy().setReleaseLabel(null);
+		gridView.getLoadingLayoutProxy().setPullLabel("");
+		gridView.getLoadingLayoutProxy().setReleaseLabel("");
 		gridView.setOnPullEventListener(onPullEventListener);
 		if(mCallBack != null){
 			mCallBack.onInit(TAG,mFileInfo);
@@ -221,6 +221,7 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				Intent intent = new Intent(getActivity(), UserDefineEmojViewActivity.class);
 				intent.putExtra(AppConstant.INTENT_PIC_NAME, file.getPath());
 				intent.putExtra(AppConstant.INTENT_PIC_ARRAY, paths);
+				intent.putExtra(AppConstant.INTENT_PIC_PARMS, "自定义表情");
 				intent.putExtra(AppConstant.INTENT_TITLE, getString(R.string.title_custom));
 				intent.putExtras(getActivity().getIntent());
 				startActivityForResult(intent, AppConstant.REQUEST_COMMON_EMOJ);

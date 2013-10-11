@@ -2074,6 +2074,7 @@ com.dabing.emoj.R$string: int about2
 com.dabing.emoj.R$string: int add_weibo_content
 com.dabing.emoj.R$string: int alert_confirm_add_file
 com.dabing.emoj.R$string: int alert_confirm_del_file
+com.dabing.emoj.R$string: int alert_regular_notexist
 com.dabing.emoj.R$string: int app_back
 com.dabing.emoj.R$string: int app_cancel
 com.dabing.emoj.R$string: int app_continue

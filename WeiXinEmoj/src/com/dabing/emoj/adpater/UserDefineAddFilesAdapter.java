@@ -17,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 /**
  * 用于展现自定义表情添加文件夹详细
@@ -52,7 +53,7 @@ public class UserDefineAddFilesAdapter extends BaseAdapter {
 		}
 		TextView nameTextView = (TextView) view.findViewById(R.id.user_define_add_file_item_txtName);
 		TextView sizeTextView = (TextView) view.findViewById(R.id.user_define_add_file_item_txtChildSize);
-		ImageButton addBtn = (ImageButton) view.findViewById(R.id.user_define_add_file_item_btnAdd);
+		ImageView addBtn = (ImageView) view.findViewById(R.id.user_define_add_file_item_btnAdd);
 		final SimpleFile file = mList.get(position);
 		nameTextView.setText(file.name);
 		if(file.count > 0){

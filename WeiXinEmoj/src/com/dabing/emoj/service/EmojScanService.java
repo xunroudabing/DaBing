@@ -20,6 +20,7 @@ import com.dabing.emoj.utils.FileInfo;
 import com.dabing.emoj.utils.Util;
 
 import android.app.Service;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -98,6 +99,8 @@ public class EmojScanService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		// TODO Auto-generated method stub
+		Log.d(TAG, "EmojScanService.start....");
+		GDUtils.getExecutor(getApplicationContext()).execute(new AlbumCheckTask());
 		return START_STICKY;
 	}
 
@@ -419,15 +422,15 @@ public class EmojScanService extends Service {
 				do {
 					long id = cursor.getLong(cursor
 							.getColumnIndexOrThrow(MediaColumns._ID));
-					String title = cursor.getString(cursor
-							.getColumnIndexOrThrow(MediaColumns.TITLE));
-					String display = cursor.getString(cursor
-							.getColumnIndexOrThrow(MediaColumns.DISPLAY_NAME));
-					String date = cursor.getString(cursor
-							.getColumnIndexOrThrow(MediaColumns.DATE_MODIFIED));
+//					String title = cursor.getString(cursor
+//							.getColumnIndexOrThrow(MediaColumns.TITLE));
+//					String display = cursor.getString(cursor
+//							.getColumnIndexOrThrow(MediaColumns.DISPLAY_NAME));
+//					String date = cursor.getString(cursor
+//							.getColumnIndexOrThrow(MediaColumns.DATE_MODIFIED));
 					String filepath = cursor.getString(4);
-					String thumbpath = cursor.getString(cursor
-							.getColumnIndexOrThrow(MediaColumns.DATA));
+//					String thumbpath = cursor.getString(cursor
+//							.getColumnIndexOrThrow(MediaColumns.DATA));
 //					//Log.d(TAG, String.format(
 //							"id:%d title:%s display:%s date:%s data:%s", id,
 //							title, display, date, filepath));
@@ -502,7 +505,11 @@ public class EmojScanService extends Service {
 						} else {
 							// 更新子文件数
 							int count = getChildCount(path);
-							dbHelper.updateCount(count, id);
+							long thumb = getThumbId(path); 
+							ContentValues cv = new ContentValues();
+							cv.put(UserDefineDataBaseHelper.FIELD_CHILDSIZE, count);
+							cv.put(UserDefineDataBaseHelper.FIELD_THUMB, String.valueOf(thumb));
+							dbHelper.update(cv, id);
 						}
 					} while (cusor.moveToNext());
 				}
@@ -542,6 +549,42 @@ public class EmojScanService extends Service {
 				}
 			}
 			return count;
+		}
+		
+		/**
+		 * 获取文件夹下的第一幅照片的id
+		 * @param path
+		 * @return
+		 */
+		protected long getThumbId(String path){
+			Uri uri = Media.getContentUri("external");
+			String order = MediaColumns.DATE_MODIFIED + " desc";
+			String[] colums = { MediaColumns._ID, MediaColumns.DATA,
+					MediaColumns.DATE_MODIFIED };
+			String where = MediaColumns.DATA + " like ?";
+			String[] whereArgs = { path + "%" };
+			Cursor cursor = null;
+			long ret = -1;
+			try {
+				cursor = getContentResolver().query(uri, colums, where, whereArgs,
+						order);
+				cursor.moveToFirst();
+				if(cursor != null){
+					cursor.moveToFirst();
+					if(cursor.getCount() > 0){
+						long id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaColumns._ID));
+						ret = id;
+					}
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}finally{
+				if(cursor != null){
+					cursor.close();
+				}
+			}
+			return ret;
 		}
 
 	}

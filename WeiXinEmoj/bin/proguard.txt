@@ -210,7 +210,7 @@
 # view res/layout/user_define_fragment2.xml #generated:7
 -keep class com.handmark.pulltorefresh.library.PullToRefreshGridView { <init>(...); }
 
-# view res/layout/user_define_add_file.xml #generated:8
+# view res/layout/user_define_add_file.xml #generated:9
 -keep class com.handmark.pulltorefresh.library.PullToRefreshListView { <init>(...); }
 
 # view res/layout/user_define_fragment1.xml #generated:7

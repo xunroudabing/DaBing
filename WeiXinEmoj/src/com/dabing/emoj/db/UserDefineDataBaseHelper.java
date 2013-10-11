@@ -175,11 +175,9 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 	 * @param count
 	 * @param id
 	 */
-	public void updateCount(int count, int id) {
-		ContentValues values = new ContentValues();
-		values.put(FIELD_CHILDSIZE, count);
+	public void update(ContentValues cv, int id) {
 		SQLiteDatabase db = getWritableDatabase();
-		db.update(TABLE_NAME, values, FIELD_ID + "=?",
+		db.update(TABLE_NAME, cv, FIELD_ID + "=?",
 				new String[] { String.valueOf(id) });
 		// Log.d(TAG, "update count:" + count + " id:" + id);
 	}
@@ -235,10 +233,11 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 	public long insert(SimpleFile file) {
 		ContentValues cv = new ContentValues();
 		cv.put(FIELD_NAME, file.name);
-		cv.put(FIELD_PATH, file.path);
+		cv.put(FIELD_PATH, Util.makeStandardPath(file.path));
 		cv.put(FIELD_TIME, System.currentTimeMillis());
 		cv.put(FIELD_TYPE, "common");
 		cv.put(FIELD_CHILDSIZE, file.count);
+		cv.put(FIELD_THUMB, "-1");
 		SQLiteDatabase db = getWritableDatabase();
 		long id = db.insert(TABLE_NAME, null, cv);
 		Log.d(TAG, "insert id:" + id);

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Stack;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -19,6 +20,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.dabing.emoj.BaseActivity;
@@ -44,6 +46,7 @@ public class UserDefineAddActivity extends BaseActivity implements IAddFileCallB
 	NormalProgressDialog progressDialog;
 	UserDefineAddFilesAdapter mAdapter;
 	PullToRefreshListView mListView;
+	ImageView mEmptyIcon;
 	/**
 	 * 获取文件集合
 	 */
@@ -58,11 +61,13 @@ public class UserDefineAddActivity extends BaseActivity implements IAddFileCallB
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		setMMTitle(R.string.title_choose_files);
 		progressDialog = new NormalProgressDialog(UserDefineAddActivity.this);
+		mEmptyIcon = (ImageView) findViewById(R.id.user_define_add_file_emptyIcon);
 		mListView = (PullToRefreshListView) findViewById(R.id.user_define_add_file_listview);
 		mListView.getLoadingLayoutProxy().setLoadingDrawable(null);
-		mListView.getLoadingLayoutProxy().setPullLabel(null);
-		mListView.getLoadingLayoutProxy().setReleaseLabel(null);
+		mListView.getLoadingLayoutProxy().setPullLabel("");
+		mListView.getLoadingLayoutProxy().setReleaseLabel("");
 		showSDcardRoot();
 		mHelper = new UserDefineDataBaseHelper(getApplicationContext());
 	}
@@ -113,8 +118,18 @@ public class UserDefineAddActivity extends BaseActivity implements IAddFileCallB
 		mAdapter = new UserDefineAddFilesAdapter(UserDefineAddActivity.this, list,this);
 		mListView.getRefreshableView().setAdapter(mAdapter);
 		mListView.getRefreshableView().setOnItemClickListener(listener);
+		ShowEmpty(list == null || list.size() <= 0);
 	}
 	
+	protected void ShowEmpty(boolean b){
+		if(b){
+			mEmptyIcon.setVisibility(View.VISIBLE);
+			mListView.setVisibility(View.GONE);
+		}else {
+			mListView.setVisibility(View.VISIBLE);
+			mEmptyIcon.setVisibility(View.GONE);
+		}
+	}
 	
 	class GetFilesTask implements Runnable{
 		String mPath;
@@ -222,6 +237,7 @@ public class UserDefineAddActivity extends BaseActivity implements IAddFileCallB
 			mHelper.enable(id);
 		}
 		Log.d(TAG, "addFile:"+id);
+		sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"+file.path)));
 		Intent intent = new Intent();
 		intent.putExtra(AppConstant.INTENT_USER_DEFINE_ADD_FILE_ID, id);
 		setResult(RESULT_OK, intent);

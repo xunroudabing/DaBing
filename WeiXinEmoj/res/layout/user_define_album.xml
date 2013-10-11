@@ -12,7 +12,7 @@
     
     <com.dabing.emoj.widget.AlbumImageView     
     android:id="@+id/user_define_albumImageview"  
-    dabing:default_src="@drawable/emoj005"  
+    dabing:default_src="@null"  
    	android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 	    

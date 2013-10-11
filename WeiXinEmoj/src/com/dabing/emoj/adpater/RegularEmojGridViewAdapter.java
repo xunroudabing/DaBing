@@ -45,9 +45,15 @@ public class RegularEmojGridViewAdapter extends BaseAdapter {
 		imageView.setWidth(mWidth);
 		JSONObject object = mData.getJSONObject(position);
 		String filename = object.getString("name");
-		String url = AppConstant.PIC_SERVER_URL + filename + AppConstant.PIC_ITEM_FULL_PREFIX;
-		//Log.d(TAG, "url:"+url);
-		imageView.setImage(url);
+		if(filename.startsWith("file:")){
+			String path = filename.replace("file:", "");
+			imageView.setPath(path);
+		}else {
+			String url = AppConstant.PIC_SERVER_URL + filename + AppConstant.PIC_ITEM_FULL_PREFIX;
+			//Log.d(TAG, "url:"+url);
+			imageView.setImage(url);
+		}
+		
 		return root;
 	}
 	public int getCount() {

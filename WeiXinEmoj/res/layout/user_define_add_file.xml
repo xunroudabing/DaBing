@@ -3,6 +3,7 @@
     android:background="@color/gray_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical|center"
     android:orientation="vertical" >
 
 	<com.handmark.pulltorefresh.library.PullToRefreshListView
@@ -13,6 +14,11 @@
 	    android:divider="@drawable/list_divider_line"
 	    android:dividerHeight="1dp"
 	    android:fadingEdge="none" />
-
-
+	
+	<ImageView 
+	android:id="@+id/user_define_add_file_emptyIcon"    
+	android:src="@drawable/empty_icon"    
+	android:visibility="gone"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 </LinearLayout>

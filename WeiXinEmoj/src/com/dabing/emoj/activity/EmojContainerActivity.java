@@ -92,7 +92,7 @@ public class EmojContainerActivity extends FragmentActivity implements IEmojItem
 			try {
 				String id = item.getString("id");
 				setFragment(id, item);
-				UmengEvent(id);
+				//UmengEvent(id); 不再统计分类点击量
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				Log.e(TAG, e.toString());

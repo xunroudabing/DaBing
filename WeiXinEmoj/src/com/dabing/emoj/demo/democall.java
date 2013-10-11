@@ -119,7 +119,8 @@ public class democall extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.btn8:		
 			//shareQQ();
-			invite();
+			//invite();
+			getThumb("/storage/sdcard0/DCIM/Camera/");
 			break;
 		default:
 			break;
@@ -326,5 +327,29 @@ public class democall extends BaseActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
 		mTencent.onActivityResult(requestCode, resultCode, data);
+	}
+	/**
+	 *
+	 * @param path /storage/sdcard0/DCIM/Camera/
+	 */
+	protected void getThumb(String path){
+		Uri uri = Media.getContentUri("external");
+		String order = MediaColumns.DATE_MODIFIED + " desc";
+		String[] colums = { MediaColumns._ID, MediaColumns.DATA,
+				MediaColumns.DATE_MODIFIED };
+		String where = MediaColumns.DATA + " like ?";
+		String[] whereArgs = { path + "%"};
+		Cursor cursor = getContentResolver().query(uri, colums, where, whereArgs,
+				order);
+		cursor.moveToFirst();
+		if(cursor != null){
+			cursor.moveToFirst();
+			do {
+				long id = cursor.getLong(cursor
+						.getColumnIndexOrThrow(MediaColumns._ID));
+				String filepath = cursor.getString(cursor.getColumnIndexOrThrow(MediaColumns.DATA));
+				Log.d(TAG, " id:"+id + " filepath:"+filepath);
+			} while (cursor.moveToNext());
+		}
 	}
 }

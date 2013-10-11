@@ -7,10 +7,14 @@ import java.util.concurrent.ExecutorService;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MediaStore.MediaColumns;
+import android.provider.MediaStore.Images.Media;
 import android.provider.MediaStore.Images.Thumbnails;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -24,7 +28,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dabing.emoj.R;
-import com.dabing.emoj.fragment.UserDefineFragment.IEmojScanCallBack;
 import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.FileInfo;
 
@@ -97,9 +100,16 @@ public class Album extends LinearLayout {
 		albumNameTextView.setText(String.format("%s", fileInfo.fileName));
 		childSizeTextView.setText(String.valueOf(fileInfo.Count));
 		//mService.submit(new ThumbnailTask(mFileInfo.dbThumb));
-		if(mFileInfo.dbThumb != null && !mFileInfo.dbThumb.equals("")){
+		if(mFileInfo.dbThumb != null && !mFileInfo.dbThumb.equals("") && !mFileInfo.dbThumb.equals("-1")){
 			long id = Long.parseLong(mFileInfo.dbThumb);
 			mService.submit(new ThumbnailProvider(id));
+			//mService.submit(new ThumbnailTask(mFileInfo.dbThumb));
+		}else if(mFileInfo.dbThumb != null && mFileInfo.dbThumb.equals("-1")) {
+			long id = getThumbId(mFileInfo.filePath);
+			Log.d(TAG, "getThumbId:"+id);
+			if(id !=-1){
+				mService.submit(new ThumbnailProvider(id));
+			}
 		}
 		
 	}
@@ -111,7 +121,41 @@ public class Album extends LinearLayout {
 		mThumbWidth = mWidth - 5;
 		imageView.setWidth(mThumbWidth);
 	}
-
+	/**
+	 * 获取文件夹下的第一幅照片的id
+	 * @param path
+	 * @return
+	 */
+	protected long getThumbId(String path){
+		Uri uri = Media.getContentUri("external");
+		String order = MediaColumns.DATE_MODIFIED + " desc";
+		String[] colums = { MediaColumns._ID, MediaColumns.DATA,
+				MediaColumns.DATE_MODIFIED };
+		String where = MediaColumns.DATA + " like ?";
+		String[] whereArgs = { path + "%" };
+		Cursor cursor = null;
+		long ret = -1;
+		try {
+			cursor = getContext().getContentResolver().query(uri, colums, where, whereArgs,
+					order);
+			cursor.moveToFirst();
+			if(cursor != null){
+				cursor.moveToFirst();
+				if(cursor.getCount() > 0){
+					long id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaColumns._ID));
+					ret = id;
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}finally{
+			if(cursor != null){
+				cursor.close();
+			}
+		}
+		return ret;
+	}
 	/**
 	 * 设置为删除模式
 	 * 
@@ -232,11 +276,19 @@ public class Album extends LinearLayout {
 		public void run() {
 			// TODO Auto-generated method stub
 			try {
+				Bitmap cache = GDUtils.getImageCache(getContext()).get(mPath);
+				if(cache != null){
+					Log.d(TAG, "取缓存中的缩略图");
+					mHandler.sendMessage(Message.obtain(mHandler, 1,
+							cache));
+					return;
+				}
 				Bitmap bitmap = com.dabing.emoj.wxapi.Util.extractThumbNail(
 						mPath, mThumbWidth, mThumbWidth, true);
 				if (bitmap != null) {
 					Bitmap resizeBitmap = com.dabing.emoj.wxapi.Util
 							.resizeBitmap(bitmap, mThumbWidth, mThumbWidth);
+					GDUtils.getImageCache(getContext()).put(mPath, resizeBitmap);
 					mHandler.sendMessage(Message.obtain(mHandler, 1,
 							resizeBitmap));
 				}

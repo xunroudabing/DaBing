@@ -34,10 +34,9 @@
 	    android:layout_width="wrap_content"
     	android:layout_height="wrap_content" />
 	</LinearLayout>
-	
-	<ImageButton  
+
+	<ImageView  
 	    android:id="@+id/user_define_add_file_item_btnAdd"
-	    android:background="@null"
 	    android:src="@drawable/add_file_selector"
 	    android:visibility="invisible"
 	    android:layout_width="wrap_content"

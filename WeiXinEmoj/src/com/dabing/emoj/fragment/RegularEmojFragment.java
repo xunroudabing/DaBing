@@ -15,6 +15,7 @@ import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.FileHelper;
 import com.dabing.emoj.utils.RegularEmojManager;
+import com.dabing.emoj.utils.Util;
 import com.dabing.emoj.wxapi.WeiXinHelper;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
@@ -31,6 +32,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 /**
  * 常用表情
@@ -136,43 +138,69 @@ public class RegularEmojFragment extends BaseEmojFragment implements OnItemClick
 			//直接发送
 			if(action.equals("get")){
 				if(filename != ""){
-					FileHelper helper =new FileHelper();
-					String mFileName = helper.find(AppConfig.getEmoj(), filename);
-					//有缓存
-					if(mFileName != null){
-						String prefix = mFileName.substring(mFileName.lastIndexOf(".")+1);
-						String filepath = AppConfig.getEmoj()+mFileName;
-						WeiXinHelper wx = new WeiXinHelper(getActivity(), api);
-						//Log.d(TAG, "prefix:"+prefix);
-						if(prefix.toLowerCase().equals("gif")){
-							wx.sendEmoj(filepath);
-						}else {
-							wx.sendPng(filepath);
+					FileHelper helper = new FileHelper();
+					String filepath = null;
+					String mFileName = null;
+					if (filename.startsWith("file:")) {
+						filepath = filename.replace("file:", "");
+						mFileName = Util.getNameFromFilepath(filepath);
+					} else {
+						mFileName = helper.find(AppConfig.getEmoj(), filename);
+						// 有缓存
+						if (mFileName != null) {
+							filepath = AppConfig.getEmoj() + mFileName;
+						} else {
+							// 无缓存
+							SendIntent(filename, url, title);
+							return;
 						}
-						UmengEvent("action012", filename);
-						getActivity().finish();
-					}else {
-						//无缓存
-						SendIntent(filename, url, title);
 					}
+					File file = new File(filepath);
+					if(!file.exists()){
+						Toast.makeText(getActivity(), R.string.alert_regular_notexist, Toast.LENGTH_SHORT).show();
+						return;
+					}
+					String prefix = mFileName.substring(mFileName
+							.lastIndexOf(".") + 1);
+					WeiXinHelper wx = new WeiXinHelper(getActivity(), api);
+					// Log.d(TAG, "prefix:"+prefix);
+					if (prefix.toLowerCase().equals("gif")) {
+						wx.sendEmoj(filepath);
+					} else {
+						wx.sendPng(filepath);
+					}
+					UmengEvent("action012", filename);
+					getActivity().finish();
 				}
 			}
-			else if (action.equals("pick")) {
+			else if (action.equals("pick")) {				
 				if(filename != ""){
-					FileHelper helper =new FileHelper();
-					String mFileName = helper.find(AppConfig.getEmoj(), filename);
-					//有缓存
-					if(mFileName != null){
-						String filepath = AppConfig.getEmoj()+mFileName;
+					if(filename.startsWith("file:")){
+						String filepath = filename.replace("file:", "");
 						File file = new File(filepath);
-						Intent intent = new Intent();
-						intent.setData(Uri.fromFile(file));
-						getActivity().getParent().setResult(Activity.RESULT_OK, intent);
-						getActivity().getParent().finish();
+						if(file.exists()){
+							Intent intent = new Intent();
+							intent.setData(Uri.fromFile(file));
+							getActivity().getParent().setResult(Activity.RESULT_OK, intent);
+							getActivity().getParent().finish();
+						}
 					}else {
-						//无缓存
-						SendIntent(filename, url, title);
+						FileHelper helper =new FileHelper();
+						String mFileName = helper.find(AppConfig.getEmoj(), filename);
+						//有缓存
+						if(mFileName != null){
+							String filepath = AppConfig.getEmoj()+mFileName;
+							File file = new File(filepath);
+							Intent intent = new Intent();
+							intent.setData(Uri.fromFile(file));
+							getActivity().getParent().setResult(Activity.RESULT_OK, intent);
+							getActivity().getParent().finish();
+						}else {
+							//无缓存
+							SendIntent(filename, url, title);
+						}
 					}
+					
 				}
 			}
 			else if(action.equals("send")){				

@@ -183,14 +183,12 @@ android.support.v4.app.ListFragment
 android.support.v4.app.ListFragment$1
 android.support.v4.app.ListFragment$2
 android.support.v4.app.LoaderManager:
-    public abstract android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     public abstract android.support.v4.content.Loader getLoader(int)
     public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
     176:177:public static void enableDebugLogging(boolean)
 android.support.v4.app.LoaderManagerImpl:
     static final java.lang.String TAG
     boolean mRetainingStarted
-    539:561:public android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     682:693:public android.support.v4.content.Loader getLoader(int)
 android.support.v4.app.ServiceCompat
 android.support.v4.content.AsyncTaskLoader:
@@ -948,6 +946,8 @@ com.dabing.emoj.activity.EmojBrowseViewActivity:
     protected android.widget.ZoomControls mZoomControls
     static final float ZOOM_RATIO
     static final long delayMillis
+com.dabing.emoj.activity.EmojContainerActivity:
+    152:153:private void UmengEvent(java.lang.String)
 com.dabing.emoj.activity.EmojEmotionActivity:
     150:151:private void UmengEvent(java.lang.String)
 com.dabing.emoj.activity.EmojImageViewActivity:
@@ -1027,25 +1027,27 @@ com.dabing.emoj.db.UserDefineDataBaseHelper:
     static final int VERSION
     95:110:public com.dabing.emoj.utils.FileInfo getFileInfo(int)
     114:133:public com.dabing.emoj.utils.FileInfo getFileInfo(java.lang.String)
-    224:233:public void insert(java.io.File)
-    250:250:public boolean exist(com.dabing.emoj.utils.FileInfo)
+    222:231:public void insert(java.io.File)
+    249:249:public boolean exist(com.dabing.emoj.utils.FileInfo)
 com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor:
-    318:318:public java.lang.String getName()
-    326:326:public java.lang.String getType()
-    330:330:public java.lang.String getThumb()
-    334:334:public long getTime()
-    338:338:public int getState()
-    342:342:public int getChildSize()
+    317:317:public java.lang.String getName()
+    325:325:public java.lang.String getType()
+    329:329:public java.lang.String getThumb()
+    333:333:public long getTime()
+    337:337:public int getState()
+    341:341:public int getChildSize()
 com.dabing.emoj.demo.demoFile:
     55:56:private void maketext1(java.lang.CharSequence)
     100:111:private void start()
 com.dabing.emoj.demo.democall:
-    176:181:private void testJni()
-    184:203:private void getChannel()
-    230:250:private void QQlogin()
-    282:319:private void shareQQ()
+    177:182:private void testJni()
+    185:204:private void getChannel()
+    231:251:private void QQlogin()
+    253:281:private void invite()
+    283:320:private void shareQQ()
 com.dabing.emoj.demo.democall$2
 com.dabing.emoj.demo.democall$3
+com.dabing.emoj.demo.democall$4
 com.dabing.emoj.exception.AccessRateLimitException:
     private static final long serialVersionUID
 com.dabing.emoj.exception.Check:
@@ -1067,8 +1069,8 @@ com.dabing.emoj.fragment.AlbumDetailFragment:
 com.dabing.emoj.fragment.AlbumFragment:
     static final int COLUM_NUM
     static final int COLUM_PADDING
-    264:265:public void recycle()
-    423:431:protected void unregister()
+    268:269:public void recycle()
+    429:437:protected void unregister()
 com.dabing.emoj.fragment.BaseEmojFragment:
     10:11:public BaseEmojFragment()
 com.dabing.emoj.fragment.CommonEmojFragment:
@@ -1140,12 +1142,12 @@ com.dabing.emoj.service.EmojScanService:
     public static final int CLIENT_ACTION_START
     public static final int CLIENT_ACTION_END
     public static final int CLINET_REFLESH_UI
-    247:248:public void stopScan()
+    250:251:public void stopScan()
 com.dabing.emoj.service.EmojScanService$FileRootScanTask
 com.dabing.emoj.service.EmojScanService$FileRootScanTask$1
 com.dabing.emoj.service.EmojScanService$FileRootScanTask$1$1
 com.dabing.emoj.service.EmojScanService$ImageScanTask:
-    361:393:private java.util.Map getThumbnails(java.util.Map)
+    364:396:private java.util.Map getThumbnails(java.util.Map)
 com.dabing.emoj.utils.AppConfig:
     public static final boolean DEBUG
     public static final java.lang.String QQ_APPID
@@ -1370,7 +1372,7 @@ com.dabing.emoj.utils.Utils:
     49:58:public static int getLength(java.lang.CharSequence)
     62:66:public static java.lang.String getRealPathFromURI(android.app.Activity,android.net.Uri)
 com.dabing.emoj.widget.Album:
-    107:107:public com.dabing.emoj.utils.FileInfo getFile()
+    117:117:public com.dabing.emoj.utils.FileInfo getFile()
 com.dabing.emoj.widget.Album$ThumbnailTask
 com.dabing.emoj.widget.AlbumImageView:
     47:48:public void setImageDrawable(android.graphics.drawable.Drawable)
@@ -2920,6 +2922,7 @@ com.tencent.tauth.Tencent:
     204:205:public long getExpiresIn()
     266:270:public int reAuth(android.app.Activity,java.lang.String,com.tencent.tauth.IUiListener)
     282:292:public void logout(android.content.Context)
+    312:314:public int invite(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
     336:338:public int story(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
     360:362:public int ask(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
     383:385:public int gift(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
