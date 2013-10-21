@@ -12,8 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.waps.AppConnect;
-import cn.waps.MiniAdView;
+import com.dabing.ads.*;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
@@ -115,6 +114,6 @@ public class WAPS_AppDetailActivity extends BaseActivity implements OnClickListe
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		//Toast.makeText(getContext(), "clicked", Toast.LENGTH_SHORT).show();
-		AppConnect.getInstance(this).downloadAd(adInfo.adId);
+		AppConnect.getInstance(this).downloadAd(this,adInfo.adId);
 	}
 }

@@ -243,15 +243,15 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		QQConnect.createInstance(getApplicationContext()).getTencent().onActivityResult(requestCode, resultCode, data);
-		if(requestCode == REQUEST_LOGIN){
-			if(resultCode == RESULT_OK){
-				//登录成功
-				loginView.setVisibility(View.GONE);
-				userinfoView.setVisibility(View.VISIBLE);
-				BindUserInfo();
-				Toast.makeText(SettingActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-			}
-		}
+//		if(requestCode == REQUEST_LOGIN){
+//			if(resultCode == RESULT_OK){
+//				//登录成功
+//				loginView.setVisibility(View.GONE);
+//				userinfoView.setVisibility(View.VISIBLE);
+//				BindUserInfo();
+//				Toast.makeText(SettingActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+//			}
+//		}
 	}
 	
 	public void SetupAction(){
@@ -404,6 +404,13 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 							AppConfig.setQQ_OpenId(getApplicationContext(), openId);
 							AppConfig.setQQ_AccessToken(getApplicationContext(), access_token);
 							AppConfig.setQQ_ExpiresIn(getApplicationContext(), expires);
+							
+//							//登录成功
+							QQConnect.createInstance(getApplicationContext()).Init();
+							loginView.setVisibility(View.GONE);
+							userinfoView.setVisibility(View.VISIBLE);
+							BindUserInfo();
+							Toast.makeText(SettingActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
 							
 						}
 					} catch (JSONException e) {

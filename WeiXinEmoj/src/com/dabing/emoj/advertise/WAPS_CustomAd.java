@@ -4,8 +4,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cn.waps.AdInfo;
-import cn.waps.AppConnect;
+import com.dabing.ads.*;
 
 import com.dabing.emoj.R;
 import com.dabing.emoj.utils.AppConstant;

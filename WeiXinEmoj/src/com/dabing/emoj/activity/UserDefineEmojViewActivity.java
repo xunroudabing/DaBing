@@ -9,6 +9,7 @@ import org.json.JSONException;
 
 import com.ant.liao.GifView;
 import com.dabing.emoj.R;
+import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.utils.AppConstant;
@@ -31,7 +32,11 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+/**
+ * 自定义图片
+ * @author DaBing
+ *
+ */
 public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 	
 	String[] mFiles;
@@ -52,6 +57,9 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 	@Override
 	protected void Initialize() {
 		// TODO Auto-generated method stub
+		mAdView = (MixAdView) findViewById(R.id.mixAdView);
+		mAdView.setAdTag("ad_index3");
+		mAdView.InitAD();
 		mGifView = (GifView) findViewById(R.id.gifview);
 		mGifView.setZoomRatio(ZOOM_RATIO);
 		layout = (LinearLayout) findViewById(R.id.emoj_detail_l1);
@@ -63,11 +71,11 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 		mZoomView = (ImageZoomView)findViewById(R.id.emoj_zoomview);
 		mZoomView.setFullScreen(false);
 		container = (RelativeLayout) findViewById(R.id.emoj_browse_container);
-		adView = (TAdView) findViewById(R.id.adview);
-		wapsAdView = (LinearLayout) findViewById(R.id.wapsAdview);
-		wapsCustomAd = (WAPS_CustomAd) findViewById(R.id.wapsCustomAdview);
-		wapsMiniAdBackView = (LinearLayout) findViewById(R.id.miniAdviewBackView);
-		wapsMiniAdView = (LinearLayout) findViewById(R.id.miniAdview);
+//		adView = (TAdView) findViewById(R.id.adview);
+//		wapsAdView = (LinearLayout) findViewById(R.id.wapsAdview);
+//		wapsCustomAd = (WAPS_CustomAd) findViewById(R.id.wapsCustomAdview);
+//		wapsMiniAdBackView = (LinearLayout) findViewById(R.id.miniAdviewBackView);
+//		wapsMiniAdView = (LinearLayout) findViewById(R.id.miniAdview);
 		setBackBtn(new OnClickListener() {
 			
 			public void onClick(View v) {

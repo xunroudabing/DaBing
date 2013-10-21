@@ -48,14 +48,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
-import cn.waps.AdView;
-import cn.waps.AppConnect;
-import cn.waps.MiniAdView;
-
+import com.dabing.ads.*;
 import com.ant.liao.GifView;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
+import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
@@ -102,6 +100,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 	//************************************
     boolean emotionMode = false;
     RelativeLayout container;
+    MixAdView mAdView;
     TAdView adView;
     LinearLayout wapsAdView;//万普广告
     WAPS_CustomAd wapsCustomAd;//万普自定义广告
@@ -185,11 +184,11 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		mZoomView = (ImageZoomView)findViewById(R.id.emoj_zoomview);
 		mZoomView.setFullScreen(false);
 		container = (RelativeLayout) findViewById(R.id.emoj_browse_container);
-		adView = (TAdView) findViewById(R.id.adview);
-		wapsAdView = (LinearLayout) findViewById(R.id.wapsAdview);
-		wapsCustomAd = (WAPS_CustomAd) findViewById(R.id.wapsCustomAdview);
-		wapsMiniAdBackView = (LinearLayout) findViewById(R.id.miniAdviewBackView);
-		wapsMiniAdView = (LinearLayout) findViewById(R.id.miniAdview);
+//		adView = (TAdView) findViewById(R.id.adview);
+//		wapsAdView = (LinearLayout) findViewById(R.id.wapsAdview);
+//		wapsCustomAd = (WAPS_CustomAd) findViewById(R.id.wapsCustomAdview);
+//		wapsMiniAdBackView = (LinearLayout) findViewById(R.id.miniAdviewBackView);
+//		wapsMiniAdView = (LinearLayout) findViewById(R.id.miniAdview);
 		setBackBtn(new OnClickListener() {
 			
 			public void onClick(View v) {
@@ -203,7 +202,14 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		SetupWxAction();
 		api = WXAPIFactory.createWXAPI(EmojBrowseViewActivity.this, AppConstant.WEIXIN_APPID);
 		wxInstall = api.isWXAppInstalled();
-		InitAd();
+		//InitAd();
+		mAdView = (MixAdView) findViewById(R.id.mixAdView);
+		if(emotionMode){
+			mAdView.setAdTag("ad_index2");
+		}else {
+			mAdView.setAdTag("ad_index1");
+		}
+		mAdView.InitAD();
 	}
 	//设置当前图片
 	private void SetImage(){

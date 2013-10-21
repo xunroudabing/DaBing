@@ -10,6 +10,7 @@ import com.dabing.emoj.R;
 import com.dabing.emoj.activity.EmojBrowseViewActivity;
 import com.dabing.emoj.activity.EmojSearchActivity;
 import com.dabing.emoj.activity.EmojViewActivity;
+import com.dabing.emoj.activity.UserDefineEmojViewActivity;
 import com.dabing.emoj.adpater.RegularEmojGridViewAdapter;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
@@ -134,28 +135,30 @@ public class RegularEmojFragment extends BaseEmojFragment implements OnItemClick
 			Log.d(TAG, "onItemClick item:"+item.toString());
 			String filename = item.getString("name");
 			String title = item.getString("p");
+			String filepath = null;
+			String mFileName = null;
+			if (filename.startsWith("file:")){
+				filepath = filename.replace("file:", "");
+				mFileName = Util.getNameFromFilepath(filepath);
+			}else {
+				FileHelper helper = new FileHelper();
+				mFileName = helper.find(AppConfig.getEmoj(), filename);
+				if(mFileName != null){
+					filepath = AppConfig.getEmoj() + mFileName;
+				}
+			}
+			Log.d(TAG, "filepath:"+filepath+" mFileName:"+mFileName);
 			String url = AppConstant.PIC_SERVER_URL+filename+AppConstant.PIC_ITEM_FULL_PREFIX;
 			//直接发送
 			if(action.equals("get")){
 				if(filename != ""){
-					FileHelper helper = new FileHelper();
-					String filepath = null;
-					String mFileName = null;
-					if (filename.startsWith("file:")) {
-						filepath = filename.replace("file:", "");
-						mFileName = Util.getNameFromFilepath(filepath);
-					} else {
-						mFileName = helper.find(AppConfig.getEmoj(), filename);
-						// 有缓存
-						if (mFileName != null) {
-							filepath = AppConfig.getEmoj() + mFileName;
-						} else {
-							// 无缓存
-							SendIntent(filename, url, title);
-							return;
-						}
+					//sd卡无文件，直接访问url
+					if(filepath == null){
+						SendIntent(filename, url, title);
+						return;
 					}
 					File file = new File(filepath);
+					//表情文件不存在
 					if(!file.exists()){
 						Toast.makeText(getActivity(), R.string.alert_regular_notexist, Toast.LENGTH_SHORT).show();
 						return;
@@ -170,26 +173,25 @@ public class RegularEmojFragment extends BaseEmojFragment implements OnItemClick
 						wx.sendPng(filepath);
 					}
 					UmengEvent("action012", filename);
-					getActivity().finish();
+					getActivity().getParent().finish();
 				}
 			}
 			else if (action.equals("pick")) {				
 				if(filename != ""){
 					if(filename.startsWith("file:")){
-						String filepath = filename.replace("file:", "");
 						File file = new File(filepath);
 						if(file.exists()){
 							Intent intent = new Intent();
 							intent.setData(Uri.fromFile(file));
 							getActivity().getParent().setResult(Activity.RESULT_OK, intent);
 							getActivity().getParent().finish();
+						}else {
+							Toast.makeText(getActivity(), R.string.alert_regular_notexist, Toast.LENGTH_SHORT).show();
+							return;
 						}
 					}else {
-						FileHelper helper =new FileHelper();
-						String mFileName = helper.find(AppConfig.getEmoj(), filename);
 						//有缓存
-						if(mFileName != null){
-							String filepath = AppConfig.getEmoj()+mFileName;
+						if(mFileName != null){		
 							File file = new File(filepath);
 							Intent intent = new Intent();
 							intent.setData(Uri.fromFile(file));
@@ -203,8 +205,21 @@ public class RegularEmojFragment extends BaseEmojFragment implements OnItemClick
 					
 				}
 			}
-			else if(action.equals("send")){				
-				SendIntent(filename, url, title);
+			else if(action.equals("send")){		
+				//自定义表情
+				if(filename.startsWith("file:")){
+					File file = new File(filepath);
+					if(file.exists()){
+						Intent intent = new Intent(getActivity(), UserDefineEmojViewActivity.class);
+						intent.putExtra(AppConstant.INTENT_PIC_NAME, filepath);
+						intent.putExtra(AppConstant.INTENT_TITLE, "最近使用");
+						startActivityForResult(intent, AppConstant.REQUEST_COMMON_EMOJ);
+					}else {
+						Toast.makeText(getActivity(), R.string.alert_regular_notexist, Toast.LENGTH_SHORT).show();
+					}
+				}else {
+					SendIntent(filename, url, title);
+				}				
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -216,9 +231,9 @@ public class RegularEmojFragment extends BaseEmojFragment implements OnItemClick
 		intent.putExtra(AppConstant.INTENT_PIC_NAME, filename);
 		intent.putExtra(AppConstant.INTENT_PIC_URL, url);
 		intent.putExtra(AppConstant.INTENT_TITLE, "最近使用");
-		if(mArray != null){
-			intent.putExtra(AppConstant.INTENT_PIC_ARRAY, mArray.toString());
-		}
+//		if(mArray != null){
+//			intent.putExtra(AppConstant.INTENT_PIC_ARRAY, mArray.toString());
+//		}
 		intent.putExtras(getActivity().getIntent());
 		startActivityForResult(intent, AppConstant.REQUEST_COMMON_EMOJ);
 	}

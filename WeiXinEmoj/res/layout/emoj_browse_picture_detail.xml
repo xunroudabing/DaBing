@@ -15,7 +15,13 @@
 	android:layout_alignParentTop="true"
    	android:layout_width="fill_parent"
   	android:layout_height="wrap_content">
-	<com.tencent.exmobwin.banner.TAdView
+  	
+	<com.dabing.emoj.advertise.MixAdView 
+	android:id="@+id/mixAdView"    
+	dabing:tag="ad_index2"    
+	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"/>
+<!-- <com.tencent.exmobwin.banner.TAdView
 	xmlns:mobwin="http://mobwin.android.com/apk/res/com.dabing.emoj"
 	android:id="@+id/adview"
 	android:visibility="gone"	
@@ -50,8 +56,9 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"/>
-  	</LinearLayout>
+  	</LinearLayout>-->
 	</LinearLayout>
+	
 	<LinearLayout
 	android:orientation="vertical"
 	android:gravity="center"

@@ -13,9 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import cn.waps.AdInfo;
-import cn.waps.AppConnect;
-import cn.waps.MiniAdView;
+import com.dabing.ads.*;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;

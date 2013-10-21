@@ -271,6 +271,57 @@ public class AppConfig {
 		editor.putBoolean("advertise", b);
 		editor.commit();
 	}
+	
+	/**
+	 * 新广告开关
+	 * @param context
+	 * @return
+	 */
+	public static boolean getAdvertise_onV2(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean b = preferences.getBoolean("advertiseV2", AppConstant.AD_ENABLE);
+		return b;
+	}
+	public static void setAdvertise_onV2(Context context,boolean b){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean("advertiseV2", b);
+		editor.commit();
+	}
+	/**
+	 * 获取是否移除广告
+	 * @param context
+	 * @return
+	 */
+	public static boolean getAdvertiseRemove(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean b = preferences.getBoolean("advertiseRemove", false);
+		return b;
+	}
+	public static void setAdvertiseRemove(Context context,boolean b){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean("advertiseRemove", b);
+		editor.commit();
+	}
+	/**
+	 * 获取广告TAG配置
+	 * @param context
+	 * @param tag ad_index1 ad_index2 ad_index3 ad_index4
+	 * @return QQ_BANNER WAPS_BANNER WAPS_MINI WAPS_CUSTOM YOUMI_BANNER
+	 */
+	public static String getAdvertiseTAG(Context context,String tag){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		String ret = preferences.getString("advertise_"+tag, AppConstant.AD_DEFAULT_ADSHOWTYPE);
+		return ret;
+	}
+	
+	public static void setAdvertiseTAG(Context context,String tag,String value){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString("advertise_"+tag, value);
+		editor.commit();
+	}
 	/**
 	 * 关于本软件
 	 * @param context

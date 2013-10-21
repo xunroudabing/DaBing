@@ -62,10 +62,11 @@ public class WeiXinEmojService extends Service implements UmengOnlineConfigureLi
 		Log.d(TAG, "WeiXinEmojService 服务启动....");
 		BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
 		queue.add(new Task1());
+		queue.add(new AdvertiseConfig());
 		queue.add(new MenuTask());
 		queue.add(new Task2());
 		queue.add(new OauthTask());
-		queue.add(new PriOauthVerify());
+		//queue.add(new PriOauthVerify());
 		queue.add(new ListenTask());
 		queue.add(new ApiCheckTask());
 		BlockQueueTask task = new BlockQueueTask(queue);
@@ -214,7 +215,49 @@ public class WeiXinEmojService extends Service implements UmengOnlineConfigureLi
 		}
 		
 	}
-	
+	//2013.10.21 更新广告项配置
+	class AdvertiseConfig implements Runnable{
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			try {				
+				//广告
+				String advertise = MobclickAgent.getConfigParams(WeiXinEmojService.this, "advertise_onV2");				
+				if(advertise != null && !advertise.equals("") && !advertise.equals("null")){
+					if(advertise.equals("true")){
+						AppConfig.setAdvertise_onV2(getApplicationContext(), true);
+					}else if (advertise.equals("false")) {
+						AppConfig.setAdvertise_onV2(getApplicationContext(), false);
+					}
+					//Log.d(TAG, "广告:"+advertise);
+				}
+				String ad1 = MobclickAgent.getConfigParams(WeiXinEmojService.this, "ad_index1");
+				if(ad1 != null && !ad1.equals("") && !ad1.equals("null")){
+					AppConfig.setAdvertiseTAG(getApplicationContext(), "ad_index1", ad1);
+				}
+				
+				String ad2 = MobclickAgent.getConfigParams(WeiXinEmojService.this, "ad_index2");
+				if(ad2 != null && !ad2.equals("") && !ad2.equals("null")){
+					AppConfig.setAdvertiseTAG(getApplicationContext(), "ad_index2", ad2);
+				}
+				
+				String ad3 = MobclickAgent.getConfigParams(WeiXinEmojService.this, "ad_index3");
+				if(ad3 != null && !ad3.equals("") && !ad3.equals("null")){
+					AppConfig.setAdvertiseTAG(getApplicationContext(), "ad_index3", ad3);
+				}
+				
+				String ad4 = MobclickAgent.getConfigParams(WeiXinEmojService.this, "ad_index4");
+				if(ad4 != null && !ad4.equals("") && !ad4.equals("null")){
+					AppConfig.setAdvertiseTAG(getApplicationContext(), "ad_index4", ad4);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+		}
+		
+	}
 	class MenuTask implements Runnable{
 
 		public void run() {

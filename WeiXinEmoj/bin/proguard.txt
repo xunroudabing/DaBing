@@ -1,7 +1,7 @@
 # view res/layout/admin_select_emoj.xml #generated:15
 # view res/layout/demo_oom.xml #generated:8
 # view res/layout/emoj_browse_detail.xml #generated:15
-# view res/layout/emoj_browse_picture_detail.xml #generated:62
+# view res/layout/emoj_browse_picture_detail.xml #generated:69
 # view res/layout/emoj_detail.xml #generated:16
 # view res/layout/emoj_img_detail.xml #generated:16
 -keep class com.ant.liao.GifView { <init>(...); }
@@ -90,6 +90,10 @@
 # view AndroidManifest.xml #generated:118
 -keep class com.dabing.emoj.admin.uploadPicActivity { <init>(...); }
 
+# view res/layout/emoj_browse_detail.xml #generated:145
+# view res/layout/emoj_browse_picture_detail.xml #generated:19
+-keep class com.dabing.emoj.advertise.MixAdView { <init>(...); }
+
 # view AndroidManifest.xml #generated:81
 -keep class com.dabing.emoj.advertise.WAPS_ADView { <init>(...); }
 
@@ -99,8 +103,7 @@
 # view AndroidManifest.xml #generated:79
 -keep class com.dabing.emoj.advertise.WAPS_AppWallActivity { <init>(...); }
 
-# view res/layout/emoj_browse_detail.xml #generated:163
-# view res/layout/emoj_browse_picture_detail.xml #generated:35
+# view res/layout/mix_adview.xml #generated:25
 -keep class com.dabing.emoj.advertise.WAPS_CustomAd { <init>(...); }
 
 # view AndroidManifest.xml #generated:116
@@ -135,7 +138,7 @@
 
 # view res/layout/admin_select_emoj.xml #generated:23
 # view res/layout/emoj_browse_detail.xml #generated:23
-# view res/layout/emoj_browse_picture_detail.xml #generated:70
+# view res/layout/emoj_browse_picture_detail.xml #generated:77
 # view res/layout/emoj_detail.xml #generated:24
 # view res/layout/emoj_img_detail.xml #generated:24
 -keep class com.dabing.emoj.imagezoomview.ImageZoomView { <init>(...); }
@@ -232,10 +235,9 @@
 -keep class com.tencent.exmobwin.banner.MobWINBrowserActivity { <init>(...); }
 
 # view res/layout/admin_select_emoj.xml #generated:122
-# view res/layout/emoj_browse_detail.xml #generated:145
-# view res/layout/emoj_browse_picture_detail.xml #generated:18
 # view res/layout/emoj_detail.xml #generated:123
 # view res/layout/emoj_img_detail.xml #generated:130
+# view res/layout/mix_adview.xml #generated:7
 -keep class com.tencent.exmobwin.banner.TAdView { <init>(...); }
 
 # view res/layout/mm_title.xml #generated:10
@@ -320,4 +322,13 @@
 
 # view res/layout/gd_thumbnail_item_view.xml #generated:20
 -keep class greendroid.widget.itemview.ThumbnailItemView { <init>(...); }
+
+# view AndroidManifest.xml #generated:171
+-keep class net.youmi.android.AdBrowser { <init>(...); }
+
+# view AndroidManifest.xml #generated:180
+-keep class net.youmi.android.AdReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:176
+-keep class net.youmi.android.AdService { <init>(...); }
 

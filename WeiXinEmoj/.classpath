@@ -7,7 +7,6 @@
 	<classpathentry kind="lib" path="libs/Android_SDK_v1.2.jar"/>
 	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
 	<classpathentry kind="lib" path="libs/android-support-v7-gridlayout.jar"/>
-	<classpathentry kind="lib" path="libs/AppOffer_1.8.4.jar"/>
 	<classpathentry kind="lib" path="libs/httpmime-4.1.3.jar"/>
 	<classpathentry kind="lib" path="libs/libammsdk.jar"/>
 	<classpathentry kind="lib" path="libs/qq_appwall_sdk_1.5.jar"/>
@@ -15,5 +14,7 @@
 	<classpathentry kind="lib" path="libs/umeng_sdk.jar"/>
 	<classpathentry kind="lib" path="libs/mta-sdk-1.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/open_sdk.jar"/>
+	<classpathentry kind="lib" path="libs/AppOffer_1.8.8_xunroudabing.jar"/>
+	<classpathentry kind="lib" path="libs/YoumiSdk_v4.05_2013-10-10.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

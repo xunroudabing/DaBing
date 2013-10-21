@@ -5,8 +5,7 @@ import java.util.List;
 import com.dabing.emoj.R;
 import com.dabing.emoj.widget.WrapperImageView;
 
-import cn.waps.AdInfo;
-import cn.waps.AppConnect;
+import com.dabing.ads.*;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -55,7 +54,7 @@ public class WapsAppWallListViewAdapter extends BaseAdapter {
 			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				AppConnect.getInstance(mContext).downloadAd(info.getAdId());
+				AppConnect.getInstance(mContext).downloadAd(mContext,info.getAdId());
 			}
 		});
 		return root;

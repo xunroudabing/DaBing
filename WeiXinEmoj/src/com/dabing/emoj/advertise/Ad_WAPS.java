@@ -2,7 +2,7 @@ package com.dabing.emoj.advertise;
 
 import com.dabing.emoj.utils.AppConstant;
 
-import cn.waps.AppConnect;
+import com.dabing.ads.*;
 import android.content.Context;
 import android.util.Log;
 
@@ -28,7 +28,7 @@ public class Ad_WAPS implements IAdvertise {
 
 	public void release(Context context) {
 		// TODO Auto-generated method stub
-		AppConnect.getInstance(context).finalize();	
+		AppConnect.getInstance(context).close();	
 	}
 
 }

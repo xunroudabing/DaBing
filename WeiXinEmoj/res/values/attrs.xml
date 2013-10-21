@@ -8,4 +8,8 @@
     <declare-styleable name="AlbumImageView">
         <attr name="default_src" format="reference"></attr>
     </declare-styleable>
+    
+    <declare-styleable name="MixAdView">
+        <attr name="tag" format="string"></attr>
+    </declare-styleable>
 </resources>

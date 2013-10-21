@@ -53,14 +53,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
 
-import cn.waps.AdView;
-import cn.waps.AppConnect;
-import cn.waps.MiniAdView;
+import com.dabing.ads.*;
 
 import com.ant.liao.GifView;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
+import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
 import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.exception.ExceptionManager;
@@ -87,7 +86,7 @@ import com.tencent.mm.sdk.uikit.MMAlert;
 import com.tencent.mm.sdk.uikit.MMAlert.OnAlertSelectId;
 import com.umeng.analytics.MobclickAgent;
 /**
- * 趣图
+ * 趣图 
  * @author DaBing
  *
  */
@@ -117,6 +116,7 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
     TextView textView;
     RelativeLayout container;
     TAdView adView;
+    MixAdView mAdView;//自定义广告
     LinearLayout wapsAdView;//万普广告
     WAPS_CustomAd wapsCustomAd;//万普自定义广告
     LinearLayout wapsMiniAdBackView;
@@ -184,6 +184,9 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 		return R.layout.emoj_browse_picture_detail;
 	}
 	protected void Initialize(){
+		mAdView = (MixAdView) findViewById(R.id.mixAdView);
+		mAdView.setAdTag("ad_index4");
+		mAdView.InitAD();
 		exceptionLayout = (LinearLayout) findViewById(R.id.emoj_detail_exception);
 		exceptionImageView = (ImageView) findViewById(R.id.emoj_detail_exception_img);
 		exceptionImageView.setOnClickListener(this);
@@ -199,11 +202,11 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 		zoomlayout = (LinearLayout) findViewById(R.id.emoj_zoom_layout);
 		mZoomView = (ImageZoomView)findViewById(R.id.emoj_zoomview);
 		container = (RelativeLayout) findViewById(R.id.emoj_browse_container);
-		adView = (TAdView) findViewById(R.id.adview);
-		wapsAdView = (LinearLayout) findViewById(R.id.wapsAdview);
-		wapsCustomAd = (WAPS_CustomAd) findViewById(R.id.wapsCustomAdview);
-		wapsMiniAdBackView = (LinearLayout) findViewById(R.id.miniAdviewBackView);
-		wapsMiniAdView = (LinearLayout) findViewById(R.id.miniAdview);
+		//adView = (TAdView) findViewById(R.id.adview);
+//		wapsAdView = (LinearLayout) findViewById(R.id.wapsAdview);
+//		wapsCustomAd = (WAPS_CustomAd) findViewById(R.id.wapsCustomAdview);
+//		wapsMiniAdBackView = (LinearLayout) findViewById(R.id.miniAdviewBackView);
+//		wapsMiniAdView = (LinearLayout) findViewById(R.id.miniAdview);
 		setBackBtn(new OnClickListener() {
 			
 			public void onClick(View v) {
@@ -218,7 +221,7 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 		SetupWxAction();
 		api = WXAPIFactory.createWXAPI(EmojBrowsePictureActivity.this, AppConstant.WEIXIN_APPID);
 		wxInstall = api.isWXAppInstalled();
-		InitAd();
+		//InitAd();
 	}
 	private void Init(){
 		Intent data = getIntent();

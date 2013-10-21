@@ -9,7 +9,33 @@ public class AdManager {
 	public enum AdType {
 		QQ,
 		UMENG,
-		WAPS
+		WAPS,
+		YOUMI
+	}
+	public enum AdShowType{
+		QQ_BANNER("QQ_BANNER"),
+		WAPS_BANNER("WAPS_BANNER"),
+		WAPS_MINI("WAPS_MINI"),
+		WAPS_CUSTOM("WAPS_CUSTOM"),
+		YOUMI_BANNER("YOUMI_BANNER");
+		
+		private String mDescription;		 
+		private AdShowType(String description){
+			mDescription = description;
+		}
+		
+		public String getDescription(){
+			return mDescription;
+		}
+		
+		public static AdShowType getAdShowType(String description){
+			for(AdShowType adShowType : AdShowType.values()){
+				if(adShowType.getDescription().equals(description)){
+					return adShowType;
+				}
+			}
+			return WAPS_BANNER;
+		}
 	}
 	static final String TAG = AdManager.class.getSimpleName();
 	Context mContext;
@@ -47,8 +73,10 @@ public class AdManager {
 //			return;
 //		}
 		try {
-			IAdvertise ad = getAdClass(getAdType());
-			ad.init(mContext);
+			IAdvertise waps = getAdClass(AdType.WAPS);
+			waps.init(mContext);
+			IAdvertise youmi = getAdClass(AdType.YOUMI);
+			youmi.init(mContext);
 			Log.d(TAG, "AdManager.init");
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -63,6 +91,8 @@ public class AdManager {
 		try {
 			IAdvertise ad = getAdClass(getAdType());
 			ad.release(mContext);
+			IAdvertise youmi = getAdClass(AdType.YOUMI);
+			youmi.release(mContext);
 			Log.d(TAG, "AdManager.release");
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -78,6 +108,8 @@ public class AdManager {
 			return new Ad_UMENG();
 		}else if (adType == AdType.WAPS) {
 			return new Ad_WAPS();
+		}else if (adType == AdType.YOUMI) {
+			return new Ad_YOUMI();
 		}
 		return new Ad_QQ();
 	}

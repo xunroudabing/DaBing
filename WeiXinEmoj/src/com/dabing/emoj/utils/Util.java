@@ -195,7 +195,11 @@ public class Util {
         }
         return "";
     }
-
+    /**
+     * 返回文件名 /xxx/xxx.png 返回xxx.png
+     * @param filepath
+     * @return 
+     */
     public static String getNameFromFilepath(String filepath) {
         int pos = filepath.lastIndexOf('/');
         if (pos != -1) {
