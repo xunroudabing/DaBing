@@ -44,7 +44,7 @@ public class AlbumCusorAdapter extends CursorAdapter {
 	@Override
 	public View newView(Context context, Cursor cursor, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		Album album = new Album(context);
+		Album album = new Album(mContext);
 		album.setWidth(mWidth);
 		album.setAlbumClickListener(mListener);
 		return album;

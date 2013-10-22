@@ -8,7 +8,7 @@ public class AppConstant {
 	// QQ UMENG WAPS
 	public static final String AD_TYPE = "WAPS";
 	//广告开关
-	public static final boolean AD_ENABLE = false;
+	public static final boolean AD_ENABLE = true;
 	//默认的广告TAG
 	public static final String AD_DEFAULT_ADSHOWTYPE = "YOUMI_BANNER";
 	//万普广告形式 BANNER MINI CUSTOM

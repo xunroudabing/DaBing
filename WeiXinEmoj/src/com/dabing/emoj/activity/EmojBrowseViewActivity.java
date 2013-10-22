@@ -596,7 +596,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			});
 		}
 	}
-	//广告处理
+	//广告处理 已废弃
 	private void InitAd(){
 		AdManager ad = new AdManager(EmojBrowseViewActivity.this);
 		if(!ad.getEnable()){
@@ -732,7 +732,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 				Log.d(TAG, "mFilePath:"+mFilePath);
 				URL imgUrl=new URL(downloadURL);
 				URLConnection connection = imgUrl.openConnection();
-				byte buffer[] = new byte[1024*10];
+				byte buffer[] = new byte[1024*4];
 				int len=0;
 				int hasRead=0;
 				int rate=0;

@@ -24,7 +24,7 @@ import android.util.Log;
 
 public class AppConfig {
 	static final String TAG = AppConfig.class.getSimpleName();
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	//qq互联
 	public static final String QQ_APPID = "100399626";
 	//qq互联 权限

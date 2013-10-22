@@ -33,6 +33,7 @@ import com.dabing.emoj.advertise.WAPS_AppWallActivity;
 import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.qqconnect.BaseApiListener;
 import com.dabing.emoj.qqconnect.QQConnect;
+import com.dabing.emoj.service.LoginSuccessBroadcast;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.RegularEmojManager;
@@ -404,13 +405,17 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 							AppConfig.setQQ_OpenId(getApplicationContext(), openId);
 							AppConfig.setQQ_AccessToken(getApplicationContext(), access_token);
 							AppConfig.setQQ_ExpiresIn(getApplicationContext(), expires);
-							
+														
 //							//登录成功
 							QQConnect.createInstance(getApplicationContext()).Init();
 							loginView.setVisibility(View.GONE);
 							userinfoView.setVisibility(View.VISIBLE);
 							BindUserInfo();
 							Toast.makeText(SettingActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+							
+							//发送登陆成功的广播
+							Intent intent = new Intent(getApplicationContext(), LoginSuccessBroadcast.class);
+			                sendBroadcast(intent);
 							
 						}
 					} catch (JSONException e) {

@@ -139,8 +139,7 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 					if(finish){
 						//微信请求
 						if(action.equals("get")){
-						RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
-						manager.add(mFileName, mParms);
+						AddToRegular(mFileName, mParms, mFilePath);
 						WeiXinHelper helper = new WeiXinHelper(UserDefineEmojViewActivity.this, api);
 						if(mFileType == FileType.GIF){
 							//发动态图
@@ -156,8 +155,7 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 						}else if (action.equals("pick")) {
 							//其他
 							Log.d(TAG, "onclick action:"+action);
-							RegularEmojManager manager = new RegularEmojManager(getApplicationContext());
-							manager.add(mFileName, mParms);
+							AddToRegular(mFileName, mParms, mFilePath);
 							File file = new File(mFilePath);
 							Intent intent = new Intent();
 							intent.setData(Uri.fromFile(file));

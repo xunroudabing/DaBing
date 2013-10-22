@@ -223,7 +223,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	}
 	
 	protected void bindGridLayout(){
-		AddImageButton addImageButton = new AddImageButton(getActivity());
+		AddImageButton addImageButton = new AddImageButton(getActivity().getParent());
 		addImageButton.setWidth(mWidth);
 		addImageButton.setOnClick(addClickListener);
 		gridLayout.setFirstView(addImageButton);
@@ -391,15 +391,15 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 
 	// *******bind service 相关*********
 	private void BindService() {
-		Intent intent = new Intent(getActivity().getApplicationContext(),
+		Intent intent = new Intent(getActivity().getParent().getApplicationContext(),
 				EmojScanService.class);
-		getActivity().getApplicationContext().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+		getActivity().getParent().getApplicationContext().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 		mBound = true;
 	}
 
 	private void UnBindService() {
 		try {
-			getActivity().getApplicationContext().unbindService(mConnection);
+			getActivity().getParent().getApplicationContext().unbindService(mConnection);
 			mBound = false;
 		} catch (Exception e) {
 			// TODO: handle exception

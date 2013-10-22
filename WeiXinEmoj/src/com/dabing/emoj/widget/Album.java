@@ -88,6 +88,7 @@ public class Album extends LinearLayout {
 		}
 		setOnClickListener(listener);
 		btnDel.setOnClickListener(delListener);
+		prepareDialog();
 	}
 	public void setAlbumClickListener(AlbumClickListener listener){
 		mListener = listener;
@@ -171,7 +172,29 @@ public class Album extends LinearLayout {
 			btnDel.setVisibility(View.GONE);
 		}
 	}
-
+	
+	protected void prepareDialog(){
+		String txt = getContext().getString(R.string.alert_confirm_del_file);
+		txt = txt.replace("{file}", "\""+mFileInfo.dbName+"\"");
+		confirmDialog = DialogFactory.createTwoButtonDialog(getContext(), txt, null, null, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				if(mListener != null){
+					mListener.del(Album.this, mFileInfo);
+				}
+				dialog.dismiss();
+			}
+		}, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
+		});
+	}
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -189,29 +212,10 @@ public class Album extends LinearLayout {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			if(confirmDialog == null){
-				String txt = getContext().getString(R.string.alert_confirm_del_file);
-				txt = txt.replace("{file}", "\""+mFileInfo.dbName+"\"");
-				confirmDialog = DialogFactory.createTwoButtonDialog(getContext(), txt, null, null, new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						if(mListener != null){
-							mListener.del(Album.this, mFileInfo);
-						}
-						dialog.dismiss();
-					}
-				}, new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						dialog.dismiss();
-					}
-				});
+			if(confirmDialog != null){
+				confirmDialog.show();
 			}
-			confirmDialog.show();
+			
 		}
 	};
 	

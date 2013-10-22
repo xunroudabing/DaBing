@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <!-- 腾讯聚赢 banner-->
+	<com.tencent.exmobwin.banner.TAdView
+	xmlns:mobwin="http://mobwin.android.com/apk/res/com.dabing.emoj"
+	android:id="@+id/tencent_view"
+	android:visibility="gone"	
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	mobwin:textColor="#ffff3333"
+	mobwin:titleColor="#ff00aa00"
+	mobwin:backAlpha="180" >
+	</com.tencent.exmobwin.banner.TAdView>
+	<!-- 万普banner -->
+	<LinearLayout
+	android:id="@+id/waps_banner"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:visibility="gone"	
+	android:gravity="center_horizontal"/>
+	<!-- 万普自定义广告 -->
+	<com.dabing.emoj.advertise.WAPS_CustomAd 	
+	android:id="@+id/waps_custom"    
+	android:visibility="gone"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" />
+	<!-- 万普迷你广告 -->
+	<LinearLayout
+	android:id="@+id/waps_mini"         
+	android:visibility="gone"
+    android:background="@drawable/app_panel_bg"    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+  	<LinearLayout  
+	android:id="@+id/miniAdview"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"/>
+  	</LinearLayout>
+  	<!-- 有米banner -->
+  	<LinearLayout
+    android:id="@+id/youmi_banner"
+    android:visibility="gone"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal" >
+    </LinearLayout>
+
+</LinearLayout>
