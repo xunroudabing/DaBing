@@ -48,7 +48,7 @@ public class WeiXinEmojLoginServiceV2 extends Service {
 		// TODO Auto-generated method stub
 		BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
 		queue.add(new AddIdolTask(AppConstant.WEIBO_IDOL));
-		queue.add(new ShareTask(AppConfig.getWeibo(getApplicationContext()), R.drawable.emoj042));
+		queue.add(new ShareWeiBoTask(AppConfig.getWeibo(getApplicationContext()), R.drawable.emoj042));
 		BlockQueueTask task = new BlockQueueTask(queue);
 		GDUtils.getExecutor(getApplicationContext()).execute(task);
 		return START_STICKY;
@@ -130,10 +130,10 @@ public class WeiXinEmojLoginServiceV2 extends Service {
 	/*
 	 *分享 
 	 */
-	class ShareTask implements Runnable{
+	class ShareWeiBoTask implements Runnable{
 		String mContent;
 		int mResId;
-		public ShareTask(String content,int resId){
+		public ShareWeiBoTask(String content,int resId){
 			mContent = content;
 			mResId = resId;
 		}
@@ -157,6 +157,22 @@ public class WeiXinEmojLoginServiceV2 extends Service {
 		}
 		
 	}
-	
-	
+	//分享至qq空间
+	class ShareSpaceTask implements Runnable{
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			try {
+				if(!AppConfig.getAllowShareSpace(getApplicationContext())){
+					return;
+				}
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+		}
+		
+	}
 }

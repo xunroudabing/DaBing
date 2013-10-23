@@ -289,6 +289,32 @@ public class AppConfig {
 		editor.commit();
 	}
 	/**
+	 * 登录时是否分享至qq空间
+	 * @param context
+	 * @return
+	 */
+	public static boolean getAllowShareSpace(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean ret = preferences.getBoolean("AllowShareSpace", true);
+		return ret;
+	}
+	public static void setAllowShareSpace(Context context,boolean b){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean("AllowShareSpace", b);
+		editor.commit();
+	}
+	/**
+	 * 获取分享到QQ空间的评论
+	 * @param context
+	 * @return
+	 */
+	public static String getShareComment(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		String ret = preferences.getString("ShareComment", AppConstant.SHARE_COMMENT);
+		return ret;
+	}
+	/**
 	 * 获取是否移除广告
 	 * @param context
 	 * @return
