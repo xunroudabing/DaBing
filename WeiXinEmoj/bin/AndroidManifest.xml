@@ -109,6 +109,7 @@
         <service  android:name=".service.WeiXinEmojService"></service>
         <service android:name=".service.WeiXinEmojLoginService"></service>
         <service android:name=".service.EmojScanService"></service>
+        <service android:name=".service.WeiXinEmojLoginServiceV2"></service>
         <activity android:name=".demo.demolist">
 			
         </activity>

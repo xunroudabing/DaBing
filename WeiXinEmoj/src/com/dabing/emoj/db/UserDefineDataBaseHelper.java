@@ -170,12 +170,12 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * 更新子文件数
+	 * 更新
 	 * 
 	 * @param count
 	 * @param id
 	 */
-	public void update(ContentValues cv, int id) {
+	public void update(ContentValues cv, long id) {
 		SQLiteDatabase db = getWritableDatabase();
 		db.update(TABLE_NAME, cv, FIELD_ID + "=?",
 				new String[] { String.valueOf(id) });

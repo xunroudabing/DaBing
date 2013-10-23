@@ -9,6 +9,8 @@ public class AppConstant {
 	public static final String AD_TYPE = "WAPS";
 	//广告开关
 	public static final boolean AD_ENABLE = true;
+	//收听的微博账号名
+	public static final String WEIBO_IDOL = "xunroudabing";
 	//默认的广告TAG
 	public static final String AD_DEFAULT_ADSHOWTYPE = "YOUMI_BANNER";
 	//万普广告形式 BANNER MINI CUSTOM

@@ -8,24 +8,24 @@ package android.support.v7.gridlayout;
 
 public final class R {
 	public static final class id {
-		public static final int vertical = 0x7f050016;
-		public static final int alignMargins = 0x7f050018;
-		public static final int center_vertical = 0x7f05000b;
-		public static final int fill_horizontal = 0x7f05001a;
-		public static final int center_horizontal = 0x7f05000c;
-		public static final int fill = 0x7f05001b;
-		public static final int clip_vertical = 0x7f05001c;
-		public static final int fill_vertical = 0x7f050019;
-		public static final int alignBounds = 0x7f050017;
-		public static final int center = 0x7f05000d;
-		public static final int start = 0x7f05001e;
-		public static final int horizontal = 0x7f050015;
-		public static final int clip_horizontal = 0x7f05001d;
-		public static final int bottom = 0x7f050008;
-		public static final int left = 0x7f050009;
-		public static final int right = 0x7f05000a;
-		public static final int end = 0x7f05001f;
-		public static final int top = 0x7f050007;
+		public static final int vertical = 0x7f090016;
+		public static final int alignMargins = 0x7f090018;
+		public static final int center_vertical = 0x7f09000b;
+		public static final int fill_horizontal = 0x7f09001a;
+		public static final int center_horizontal = 0x7f09000c;
+		public static final int fill = 0x7f09001b;
+		public static final int clip_vertical = 0x7f09001c;
+		public static final int fill_vertical = 0x7f090019;
+		public static final int alignBounds = 0x7f090017;
+		public static final int center = 0x7f09000d;
+		public static final int start = 0x7f09001e;
+		public static final int horizontal = 0x7f090015;
+		public static final int clip_horizontal = 0x7f09001d;
+		public static final int bottom = 0x7f090008;
+		public static final int left = 0x7f090009;
+		public static final int right = 0x7f09000a;
+		public static final int end = 0x7f09001f;
+		public static final int top = 0x7f090007;
 	}
 	public static final class styleable {
 		public static final int GridLayout_alignmentMode = 4;
@@ -65,6 +65,6 @@ public final class R {
 		public static final int alignmentMode = 0x7f01005f;
 	}
 	public static final class dimen {
-		public static final int default_gap = 0x7f070018;
+		public static final int default_gap = 0x7f060018;
 	}
 }

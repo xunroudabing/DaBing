@@ -40,7 +40,18 @@ public class QQConnect {
 		}
 		Log.d(TAG, "QQConnect.isSessionValid:"+mTencent.isSessionValid());
 	}
-	
+	/**
+	 * 退出登录
+	 */
+	public void Logout(){
+		if(mTencent != null){
+			mTencent.logout(mContext);
+		}
+		AppConfig.setQQ_AccessToken(mContext, null);
+		AppConfig.setQQ_ExpiresIn(mContext, 0);
+		AppConfig.setQQ_OpenId(mContext, null);
+		AppConfig.setUserInfo(mContext, null);
+	}
 	public Tencent getTencent(){
 		return mTencent;
 	}

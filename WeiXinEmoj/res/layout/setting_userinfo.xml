@@ -90,5 +90,5 @@
 			  android:text=""/>
         </LinearLayout>
     </LinearLayout>
-	<Button android:layout_marginTop="5dp" android:textSize="16.0dip" android:textColor="@color/white" android:id="@+id/setting_userinfo_logout" android:background="@drawable/btn_style_one" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="重新登录" android:shadowColor="@color/black" android:shadowDy="2.0" android:shadowRadius="1.0"  />
+	<Button android:layout_marginTop="5dp" android:textSize="16.0dip" android:textColor="@color/white" android:id="@+id/setting_userinfo_logout" android:background="@drawable/btn_style_one" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/logout" android:shadowColor="@color/black" android:shadowDy="2.0" android:shadowRadius="1.0"  />
 </LinearLayout>

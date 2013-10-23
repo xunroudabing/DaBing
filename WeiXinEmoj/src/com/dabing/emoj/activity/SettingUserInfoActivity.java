@@ -20,10 +20,15 @@ import android.widget.ImageView.ScaleType;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
+import com.dabing.emoj.qqconnect.BaseApiListener;
+import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.TokenStore;
 import com.dabing.emoj.widget.EmojImageView;
+import com.tencent.open.NetworkUnavailableException;
+import com.tencent.tauth.Constants;
+import com.tencent.tauth.Tencent;
 import com.tencent.weibo.api.UserAPI;
 import com.tencent.weibo.beans.OAuth;
 import com.tencent.weibo.constants.OAuthConstants;
@@ -33,6 +38,7 @@ import com.tencent.weibo.constants.OAuthConstants;
  *
  */
 public class SettingUserInfoActivity extends BaseActivity {
+	Tencent mTencent;
 	TextView nickView,sexView,locationView;
 	EmojImageView headView;
 	Button btnlogout;
@@ -59,6 +65,7 @@ public class SettingUserInfoActivity extends BaseActivity {
 				finish();
 			}
 		});
+		mTencent = QQConnect.createInstance(getApplicationContext()).getTencent();
 		Bind();
 	}
 
@@ -71,7 +78,7 @@ public class SettingUserInfoActivity extends BaseActivity {
 		try {
 			String json = AppConfig.getUserInfo(getApplicationContext());
 			if(json == null){
-				getUserInfo();
+				getUserInfoV2();
 			}else {
 				//Log.d(TAG, "111");
 				mHandler.sendMessage(Message.obtain(mHandler, 1, json));
@@ -81,17 +88,21 @@ public class SettingUserInfoActivity extends BaseActivity {
 			Log.e(TAG, e.toString());
 		}
 	}
+	//退出登录
 	private OnClickListener logoutListener = new OnClickListener() {
 		
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Intent intent1 = new Intent(getApplicationContext(), UserLoginActivity.class);
-			startActivityForResult(intent1, REQUEST_LOGIN);
+//			Intent intent1 = new Intent(getApplicationContext(), UserLoginActivity.class);
+//			startActivityForResult(intent1, REQUEST_LOGIN);
+			QQConnect.createInstance(getApplicationContext()).Logout();
+			finish();
 		}
 	};
 	private void getUserInfo(){
 		GDUtils.getExecutor(getApplicationContext()).execute(new UserInfoTask());
 	}
+	//废弃
 	class UserInfoTask implements Runnable{
 		OAuth oAuth;
 		public UserInfoTask(){
@@ -126,31 +137,33 @@ public class SettingUserInfoActivity extends BaseActivity {
 			case 1:
 				String json = msg.obj.toString();
 				try {
+//					JSONObject object = new JSONObject(json);
+//					JSONObject data = object.getJSONObject("data");
+//					String head = data.getString("head");
+//					String nick = data.getString("nick");
+//					String s = data.getString("sex");
+//					String sex = "";
+//					if(s.equals("1")){
+//						sex = "男";
+//					}else if (s.equals("2")) {
+//						sex = "女";
+//					}else {
+//						sex = "未填写";
+//					}
+//					String location = data.getString("location");
 					JSONObject object = new JSONObject(json);
-					JSONObject data = object.getJSONObject("data");
-					String head = data.getString("head");
-					String nick = data.getString("nick");
-					String s = data.getString("sex");
-					String sex = "";
-					if(s.equals("1")){
-						sex = "男";
-					}else if (s.equals("2")) {
-						sex = "女";
-					}else {
-						sex = "未填写";
-					}
-					String location = data.getString("location");
+					String nick = object.getString("nickname");
+					String sex = object.getString("gender");
+					String url = object.getString("figureurl_qq_1");
 					nickView.setText(nick);
 					sexView.setText(sex);
-					locationView.setText(location);
+					//locationView.setText(location);
 					Drawable d = getDrawable(R.drawable.wb_head_default50x50);
 					int width = d.getIntrinsicWidth();
 					int height = d.getIntrinsicHeight();
 					ImageProcessor processor = new ScaleImageProcessor(width, height, ScaleType.CENTER_CROP);
 					headView.setImageProcessor(processor);
-					headView.setUrl(head+AppConstant.PIC_HEAD_SMALL_PREFIX);
-					//缓存
-					AppConfig.setUserInfo(getApplicationContext(), json);
+					headView.setUrl(url);
 				} catch (Exception e) {
 					// TODO: handle exception
 					Log.e(TAG, e.toString());
@@ -173,5 +186,54 @@ public class SettingUserInfoActivity extends BaseActivity {
 			}
 		}
 	}
+	
+	protected void getUserInfoV2(){
+		Tencent mTencent = QQConnect.createInstance(getApplicationContext()).getTencent();
+		mTencent.requestAsync(Constants.GRAPH_USER_INFO, null, Constants.HTTP_GET, apiListener, null);
+	}
+	
+	protected BaseApiListener apiListener = new BaseApiListener("get_user_info", true){
+
+		/* (non-Javadoc)
+		 * @see com.dabing.emoj.qqconnect.BaseApiListener#doComplete(org.json.JSONObject, java.lang.Object)
+		 */
+		@Override
+		protected void doComplete(JSONObject response, Object state) {
+			// TODO Auto-generated method stub
+			super.doComplete(response, state);
+		}
+
+		/* (non-Javadoc)
+		 * @see com.dabing.emoj.qqconnect.BaseApiListener#onComplete(org.json.JSONObject, java.lang.Object)
+		 */
+		@Override
+		public void onComplete(JSONObject jsonobject, Object obj) {
+			// TODO Auto-generated method stub
+			super.onComplete(jsonobject, obj);
+			Log.d(TAG, "get_user_info:"+jsonobject);
+			try {
+				int ret = jsonobject.getInt("ret");
+				if(ret == 0){
+					mHandler.sendMessage(Message.obtain(mHandler, 1, jsonobject.toString()));
+					AppConfig.setUserInfo(getApplicationContext(), jsonobject.toString());
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+		}
+
+		/* (non-Javadoc)
+		 * @see com.dabing.emoj.qqconnect.BaseApiListener#onNetworkUnavailableException(com.tencent.open.NetworkUnavailableException, java.lang.Object)
+		 */
+		@Override
+		public void onNetworkUnavailableException(
+				NetworkUnavailableException networkunavailableexception,
+				Object obj) {
+			// TODO Auto-generated method stub
+			super.onNetworkUnavailableException(networkunavailableexception, obj);
+		}
+		
+	};
 
 }

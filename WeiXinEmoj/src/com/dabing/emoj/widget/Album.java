@@ -2,9 +2,11 @@ package com.dabing.emoj.widget;
 
 import greendroid.util.GDUtils;
 
+import java.io.File;
 import java.util.concurrent.ExecutorService;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
@@ -21,6 +23,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
@@ -28,6 +31,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dabing.emoj.R;
+import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.FileInfo;
 
@@ -88,7 +92,6 @@ public class Album extends LinearLayout {
 		}
 		setOnClickListener(listener);
 		btnDel.setOnClickListener(delListener);
-		prepareDialog();
 	}
 	public void setAlbumClickListener(AlbumClickListener listener){
 		mListener = listener;
@@ -98,6 +101,12 @@ public class Album extends LinearLayout {
 			return;
 		}
 		mFileInfo = fileInfo;
+		//检测文件夹是否存在
+		File file = new File(mFileInfo.filePath);
+		if(!file.exists()){
+			Log.d(TAG, mFileInfo.filePath + " not exist");
+			return;
+		}
 		albumNameTextView.setText(String.format("%s", fileInfo.fileName));
 		childSizeTextView.setText(String.valueOf(fileInfo.Count));
 		//mService.submit(new ThumbnailTask(mFileInfo.dbThumb));
@@ -109,6 +118,8 @@ public class Album extends LinearLayout {
 			long id = getThumbId(mFileInfo.filePath);
 			Log.d(TAG, "getThumbId:"+id);
 			if(id !=-1){
+				//更新缩略图id
+				updateThumb(mFileInfo.dbId, id);
 				mService.submit(new ThumbnailProvider(id));
 			}
 		}
@@ -121,6 +132,19 @@ public class Album extends LinearLayout {
 		mWidth = width;
 		mThumbWidth = mWidth - 5;
 		imageView.setWidth(mThumbWidth);
+	}
+	//更新数据库中的thumb字段
+	protected void updateThumb(long id,long thumbid){
+		try {
+			UserDefineDataBaseHelper helper = new UserDefineDataBaseHelper(getContext());
+			ContentValues cv = new ContentValues();
+			cv.put(UserDefineDataBaseHelper.FIELD_THUMB, thumbid);
+			helper.update(cv, id);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
 	}
 	/**
 	 * 获取文件夹下的第一幅照片的id
@@ -174,26 +198,7 @@ public class Album extends LinearLayout {
 	}
 	
 	protected void prepareDialog(){
-		String txt = getContext().getString(R.string.alert_confirm_del_file);
-		txt = txt.replace("{file}", "\""+mFileInfo.dbName+"\"");
-		confirmDialog = DialogFactory.createTwoButtonDialog(getContext(), txt, null, null, new DialogInterface.OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
-				if(mListener != null){
-					mListener.del(Album.this, mFileInfo);
-				}
-				dialog.dismiss();
-			}
-		}, new DialogInterface.OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
-				dialog.dismiss();
-			}
-		});
+		
 	}
 	/*
 	 * (non-Javadoc)
@@ -212,10 +217,36 @@ public class Album extends LinearLayout {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			if(confirmDialog != null){
-				confirmDialog.show();
+			if (confirmDialog == null) {
+				String txt = getContext().getString(
+						R.string.alert_confirm_del_file);
+				txt = txt.replace("{file}", "\"" + mFileInfo.dbName + "\"");
+				confirmDialog = DialogFactory.createTwoButtonDialog(
+						getContext(), txt, null, null,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+								if (mListener != null) {
+									mListener.del(Album.this, mFileInfo);
+								}
+								dialog.dismiss();
+							}
+						}, new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+								dialog.dismiss();
+							}
+						});
+				confirmDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 			}
-			
+			confirmDialog.show();
+
 		}
 	};
 	

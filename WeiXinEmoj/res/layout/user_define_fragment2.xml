@@ -18,7 +18,7 @@
 		android:fadingEdge="none"
         ptr:ptrAnimationStyle="flip"
         ptr:ptrHeaderTextAppearance="@style/PullToRreshMessage"
-        ptr:ptrMode="both" />
+        ptr:ptrMode="pullFromStart" />
       
 
 </LinearLayout>

@@ -8,6 +8,8 @@ import com.dabing.emoj.db.UserDefineDataBaseHelper.UserDefineCursor;
 
 import android.R.integer;
 import android.database.Cursor;
+import android.text.Html.TagHandler;
+import android.util.Log;
 
 
 public class FileInfo {
@@ -106,7 +108,12 @@ public class FileInfo {
 //		fileInfo.dbThumb = cursor.getThumb();
 //		fileInfo.dbTime = cursor.getTime();		
 //		fileInfo.Count = cursor.getChildSize();
-		
+		//文件夹不存在，数据直接从数据库取
+		if(fileInfo == null){
+			fileInfo = new FileInfo();
+			fileInfo.filePath = filePath;
+			fileInfo.fileName = Util.getNameFromFilepath(filePath);
+		}
 		fileInfo.dbId = cursor.getInt(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_ID));
 		fileInfo.dbName = cursor.getString(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_NAME));
 		fileInfo.dbState = cursor.getInt(cursor.getColumnIndexOrThrow(UserDefineDataBaseHelper.FIELD_STATE));

@@ -108,6 +108,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 	protected void onResume() {
 		super.onResume();
 		isNew();
+		Initialize();
 	};
 	@Override
 	protected int getLayoutId() {
@@ -301,6 +302,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 			Log.e(TAG, e.toString());
 		}
 	}
+	//废弃
 	class UserInfoTask implements Runnable{
 		OAuth oAuth;
 		public UserInfoTask(){
@@ -351,7 +353,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 //					String location = data.getString("location");
 					
 					JSONObject object = new JSONObject(json);
-					String url = object.getString("figureurl_1");
+					String url = object.getString("figureurl_qq_1");
 					Drawable d = getDrawable(R.drawable.wb_head_default50x50);
 					int width = d.getIntrinsicWidth();
 					int height = d.getIntrinsicHeight();
