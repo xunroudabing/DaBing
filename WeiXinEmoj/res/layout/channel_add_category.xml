@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light"
+    android:orientation="vertical" >
+    <!-- 头部 -->
+	<LinearLayout
+	android:orientation="vertical"     
+    android:background="@drawable/app_panel_bg"
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	    <HorizontalScrollView
+	    android:fadingEdge="none"
+	    android:scrollbars="none"
+	    android:paddingTop="10dp"
+	    android:paddingBottom="10dp"
+	    android:paddingLeft="10dp"          	
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content">
+	        <RadioGroup
+	        android:id="@+id/channel_add_category_head"     	    
+	        android:orientation="horizontal"
+	        android:layout_width="match_parent"
+    		android:layout_height="wrap_content">
+	        </RadioGroup>
+	    </HorizontalScrollView>
+	</LinearLayout>
+</LinearLayout>
