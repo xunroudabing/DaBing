@@ -20,4 +20,16 @@
     <item type="id" name="confirm_dialog_btn2"></item>
     <item type="id" name="confirm_dialog_thumb_iv"></item>
     <item type="id" name="sdcard_toast_text"></item>
+    
+    <!-- channel header -->
+    <item type="id" name="channel_header_radio_1"></item>
+    <item type="id" name="channel_header_radio_2"></item>
+    <item type="id" name="channel_header_radio_3"></item>
+    <item type="id" name="channel_header_radio_4"></item>
+    <item type="id" name="channel_header_radio_5"></item>
+    <item type="id" name="channel_header_radio_6"></item>
+    <item type="id" name="channel_header_radio_7"></item>
+    <item type="id" name="channel_header_radio_8"></item>
+    <item type="id" name="channel_header_radio_9"></item>
+    <item type="id" name="channel_header_radio_10"></item>
 </resources>

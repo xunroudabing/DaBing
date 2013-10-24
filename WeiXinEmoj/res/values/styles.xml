@@ -40,7 +40,19 @@
         <item name="android:button">@null</item>
         <item name="android:layout_weight">1.0</item>
     </style>
-    	 <style name="ZoomInButton">
+    <style name="ChannelTabButton">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">@color/mm_tab_btn</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/tab_bg</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginRight">10dp</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="ZoomInButton">
         <item name="android:background">@drawable/mm_zoomin_btn</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

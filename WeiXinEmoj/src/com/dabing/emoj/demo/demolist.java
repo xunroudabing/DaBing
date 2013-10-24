@@ -3,6 +3,7 @@ package com.dabing.emoj.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.dabing.emoj.activity.ChannelAddCategoryActivity;
 import com.dabing.emoj.activity.DownloadGridViewActivity;
 import com.dabing.emoj.activity.EmojBrowseViewActivity;
 import com.dabing.emoj.activity.EmojContainerActivity;
@@ -58,7 +59,8 @@ public class demolist extends ListActivity {
 						  "MainTab1Activity",
 						  "MainTab2Activity",
 						  "UserDefineActivity",
-						  "demoFile"
+						  "demoFile",
+						  "ChannelAddCategoryActivity"
 						};
 		
 		final Class<?>[] classes = {demo1.class,
@@ -78,7 +80,8 @@ public class demolist extends ListActivity {
 									MainTab1Activity.class,
 									MainTab2Activity.class,
 									UserDefineActivity.class,
-									demoFile.class
+									demoFile.class,
+									ChannelAddCategoryActivity.class
 									};
 		List<String> nameArray = new ArrayList<String>();
 		for(String a : names){
