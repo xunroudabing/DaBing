@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
+	
     <LinearLayout 
-    android:padding="10dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
     android:background="@color/gray_light"
 	android:orientation="horizontal"	
 	android:layout_width="match_parent"
     android:layout_height="wrap_content">
 	    <LinearLayout android:clickable="true" android:focusable="true" android:focusableInTouchMode="true" android:padding="5dp" android:orientation="horizontal"  android:background="@drawable/search_edittext_selector" android:layout_weight="1.0" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="7.0dip">
                 <ImageView android:id="@+id/search_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="3.0dip" android:src="@drawable/wb_square_icon_zoom" />
-                <EditText  android:textSize="16.0sp" android:textColorHint="@color/edit_hint_color" android:id="@+id/emoj_index2_edittext" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:hint="@string/search_hint"  />
+                <EditText android:lines="1"  android:textSize="16.0sp" android:textColorHint="@color/edit_hint_color" android:id="@+id/emoj_index2_edittext" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:hint="@string/search_hint"  />
         </LinearLayout>
         <Button 
             android:layout_marginLeft="5dp"
@@ -26,11 +28,36 @@
 			android:textColor="@color/white"			
 			android:background="@drawable/custom_button_selector" />
 	</LinearLayout>
-	     <View 
-  			android:background="@drawable/list_divider_line" 
-  			android:layout_width="fill_parent" 
-  			android:layout_height="1dp" />
-		<LinearLayout
+	<View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/list_divider_line" />
+
+	<!-- 头部 -->
+	<LinearLayout
+	android:orientation="vertical"     
+    android:background="@color/gray_light"
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	    <HorizontalScrollView
+	    android:fadingEdge="none"
+	    android:scrollbars="none"
+	    android:paddingLeft="10dp"          	
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content">
+	        <RadioGroup
+	        android:id="@+id/channel_category_head"     	    
+	        android:orientation="horizontal"
+	        android:layout_width="match_parent"
+    		android:layout_height="wrap_content">
+	        </RadioGroup>
+	    </HorizontalScrollView>
+	</LinearLayout>     
+	<View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/list_divider_line" />
+	<LinearLayout
 	android:paddingTop="2dp"
 	android:orientation="vertical"
 	android:gravity="center"
