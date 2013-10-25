@@ -295,6 +295,9 @@
 # view res/layout/gd_tab_content.xml #generated:20
 -keep class greendroid.widget.ActionBarHost { <init>(...); }
 
+# view res/layout/channel_add_category_list_item.xml #generated:25
+# view res/layout/channel_add_category_list_item.xml #generated:33
+# view res/layout/channel_add_category_list_item.xml #generated:43
 # view res/layout/gd_thumbnail_item_view.xml #generated:27
 -keep class greendroid.widget.AsyncImageView { <init>(...); }
 
