@@ -7,12 +7,15 @@ import android.R.integer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
+import com.dabing.emoj.utils.AppConstant;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
 
 public class ChannelAddCategoryActivity extends MMBaseActivity {
@@ -35,16 +38,26 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 	
 	protected void BindHeader(){
 		try {
+			String json = AppConstant.CHANNEL_CATEGORY;
 			JSONArray array = new JSONArray(json);
 			for (int i = 0; i < array.length(); i++) {
 				JSONObject obj = array.getJSONObject(i);
 				String name = obj.getString("n");
-				String id = String.format("channel_header_radio_%d", i+1);
-				int resId = getResources().getIdentifier(id, "id", getPackageName());
-				RadioButton rd = (RadioButton) LayoutInflater.from(getApplicationContext()).inflate(R.layout.channel_add_category_header_item,header,false);
+				int id = obj.getInt("id");
+				int childsize = 0;
+				JSONArray info = obj.getJSONArray("info");
+				if(info != null){
+					childsize = info.length();
+				}
+				String title = String.format("%s(%d)", name,childsize);
+				Log.d(TAG, "childsize:"+childsize);
+				String btnid = String.format("channel_header_radio_%d", i+1);
+				int resId = getResources().getIdentifier(btnid, "id", getPackageName());
+				RadioButton rd = (RadioButton) LayoutInflater.from(getApplicationContext()).inflate(R.layout.channel_category_item,header,false);
 				rd.setId(resId);
-				rd.setText(name);
-				
+				rd.setText(title);
+				rd.setTag(id);
+				rd.setOnCheckedChangeListener(onHeaderChangeListener);
 				header.addView(rd);
 			}
 		} catch (Exception e) {
@@ -53,4 +66,18 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		}
 		
 	}
+	
+	// 点击header时触发
+	private OnCheckedChangeListener onHeaderChangeListener = new OnCheckedChangeListener() {
+
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView,
+				boolean isChecked) {
+			// TODO Auto-generated method stub
+			if (isChecked) {
+				int id = (Integer) buttonView.getTag();
+				Log.d(TAG, "onCheckedChanged:" + id);
+			}
+		}
+	};
 }

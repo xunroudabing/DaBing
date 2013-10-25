@@ -1,5 +1,6 @@
 package com.dabing.emoj.activity;
 
+import org.apache.http.client.RedirectException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -10,13 +11,18 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView.OnItemClickListener;
@@ -49,6 +55,7 @@ import com.umeng.analytics.MobclickAgent;
  *
  */
 public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrollListener,OnItemClickListener {
+	RadioGroup mHeader;
 	QuickActionGrid mGrid;
 	String action="send";
 	boolean flag = true;
@@ -73,11 +80,13 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 		editText = (EditText) findViewById(R.id.emoj_index2_edittext);
 		btnSearch = (Button) findViewById(R.id.emoj_index2_btnSearch);
 		gridView = (GridView) findViewById(R.id.emoj_index2_gridview);
+		mHeader = (RadioGroup) findViewById(R.id.channel_category_head);
 		btnSearch.setOnClickListener(clickListener);
 		setTitleBtn1("微频道", categoryListener);
 		SetupAction();
 		Bind();
 		PrepareActionGrid();
+		BindHeader();
 		gridView.setOnScrollListener(this);
 		gridView.setOnItemClickListener(this);
 	}
@@ -334,4 +343,48 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 			Log.e(TAG, e.toString());
 		}
 	}
+	
+	//********header********
+	protected void BindHeader(){
+		try {
+			String json = AppConstant.CHANNEL_CATEGORY;
+			JSONArray array = new JSONArray(json);
+			for (int i = 0; i < array.length(); i++) {
+				JSONObject obj = array.getJSONObject(i);
+				String name = obj.getString("n");
+				int id = obj.getInt("id");
+				int childsize = 0;
+				JSONArray info = obj.getJSONArray("info");
+				if(info != null){
+					childsize = info.length();
+				}
+				String title = String.format("%s(%d)", name,childsize);
+				Log.d(TAG, "childsize:"+childsize);
+				String btnid = String.format("channel_header_radio_%d", i+1);
+				int resId = getResources().getIdentifier(btnid, "id", getPackageName());
+				RadioButton rd = (RadioButton) LayoutInflater.from(getApplicationContext()).inflate(R.layout.channel_category_item,mHeader,false);
+				rd.setId(resId);
+				rd.setText(title);
+				rd.setTag(id);
+				rd.setOnCheckedChangeListener(onHeaderChangeListener);
+				mHeader.addView(rd);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+		
+	}
+	//点击header时触发
+	private OnCheckedChangeListener onHeaderChangeListener = new OnCheckedChangeListener() {
+		
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+			// TODO Auto-generated method stub
+			if(isChecked){
+				int id = (Integer) buttonView.getTag();
+				Log.d(TAG, "onCheckedChanged:"+id);
+			}
+		}
+	};
 }
