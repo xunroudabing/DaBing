@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/channel_add_category_list_item_bg"
+    android:padding="10dp"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+	android:orientation="horizontal"	
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	    <TextView
+	    android:text="标题1"   
+	    android:textColor="@color/black"
+	    android:textSize="@dimen/TitleTextSize"  
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+	</LinearLayout>
+	
+	<RelativeLayout
+	android:layout_marginTop="5dp"     
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	    <greendroid.widget.AsyncImageView 
+	    android:id="@+id/channel_add_category_list_item_img1"
+	    dabing:defaultSrc="@color/gray_light"    
+	    dabing:inDensity="hdpi"
+	    android:layout_alignParentLeft="true"
+	    android:layout_width="95dp"
+    	android:layout_height="95dp" />
+	    
+	    <greendroid.widget.AsyncImageView 
+	    android:id="@+id/channel_add_category_list_item_img2"
+	    dabing:defaultSrc="@color/gray_light"    
+	    dabing:inDensity="hdpi"
+	    android:layout_toRightOf="@id/channel_add_category_list_item_img1"
+	    android:layout_alignTop="@id/channel_add_category_list_item_img1"
+	    android:layout_marginLeft="5dp"
+	    android:layout_width="45dp"
+    	android:layout_height="45dp" />
+	    
+	    <greendroid.widget.AsyncImageView 
+	    android:id="@+id/channel_add_category_list_item_img3"
+	    dabing:defaultSrc="@color/gray_light"    
+	    dabing:inDensity="hdpi"
+	    android:layout_toRightOf="@id/channel_add_category_list_item_img1"
+	    android:layout_alignBottom="@id/channel_add_category_list_item_img1"
+	    android:layout_marginLeft="5dp"
+	    android:layout_width="45dp"
+    	android:layout_height="45dp" />
+	</RelativeLayout>
+</LinearLayout>
