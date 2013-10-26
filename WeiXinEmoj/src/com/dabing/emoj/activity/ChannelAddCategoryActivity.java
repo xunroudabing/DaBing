@@ -1,13 +1,20 @@
 package com.dabing.emoj.activity;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.R.integer;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,10 +23,13 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.widget.ChannelListItem;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
 
 public class ChannelAddCategoryActivity extends MMBaseActivity {
 	String json = "[{\"id\":1,\"n\":\"测试1\",\"p\":\"\"},{\"id\":2,\"n\":\"测试1\",\"p\":\"\"},{\"id\":3,\"n\":\"测试1\",\"p\":\"\"},{\"id\":4,\"n\":\"测试1\",\"p\":\"\"},{\"id\":5,\"n\":\"测试1\",\"p\":\"\"},{\"id\":6,\"n\":\"测试1\",\"p\":\"\"},{\"id\":7,\"n\":\"测试1\",\"p\":\"\"},{\"id\":8,\"n\":\"测试1\",\"p\":\"\"},{\"id\":9,\"n\":\"测试1\",\"p\":\"\"},{\"id\":10,\"n\":\"测试1\",\"p\":\"\"}]";
+	ChannelCategoryAdpater mAdpater;
+	GridView mGridView;
 	RadioGroup header;
 	static final String TAG = ChannelAddCategoryActivity.class.getSimpleName();
 	@Override
@@ -27,6 +37,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		header = (RadioGroup) findViewById(R.id.channel_add_category_head);
+		mGridView = (GridView) findViewById(R.id.channel_add_category_gridview);
 		BindHeader();
 	}
 
@@ -66,6 +77,30 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		}
 		
 	}
+	protected JSONArray getJsonArray(int id){
+		String json = AppConstant.CHANNEL_CATEGORY;
+		try {
+			JSONArray array = new JSONArray(json);
+			for (int i = 0; i < array.length(); i++) {
+				JSONObject obj = array.getJSONObject(i);
+				int _id = obj.getInt("id");
+				if(_id == id){
+					JSONArray info = obj.getJSONArray("info");
+					return info;
+				}
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			Log.e(TAG, e.toString());
+		}
+		return null;
+		
+	}
+	protected void BindGridView(int id){
+		JSONArray array = getJsonArray(id);
+		mAdpater = new ChannelCategoryAdpater(array);
+		mGridView.setAdapter(mAdpater);
+	}
 	
 	// 点击header时触发
 	private OnCheckedChangeListener onHeaderChangeListener = new OnCheckedChangeListener() {
@@ -77,7 +112,71 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 			if (isChecked) {
 				int id = (Integer) buttonView.getTag();
 				Log.d(TAG, "onCheckedChanged:" + id);
+				BindGridView(id);
 			}
 		}
 	};
+	
+	//
+	class ChannelCategoryAdpater extends BaseAdapter{
+		JSONArray mArray;
+		int mWidth = 80;
+		int COLUM_NUM = 2;
+		static final int COLUM_PADDING = 10;
+		public ChannelCategoryAdpater(JSONArray array){
+			mArray = array;
+			calculateAlbumWidth();
+		}
+		private View makeView(int position, View convertView, ViewGroup parent) throws JSONException{
+			ChannelListItem root = null;
+			if(convertView == null){
+				root = new ChannelListItem(ChannelAddCategoryActivity.this);
+			}else {
+				root = (ChannelListItem) convertView;
+			}
+			JSONObject obj = mArray.getJSONObject(position);
+			String name = obj.getString("n");
+			root.setWidth(mWidth);
+			return root;
+		}
+		// 计算相册宽度
+		private void calculateAlbumWidth() {
+			WindowManager windowManager = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
+			int screenWidth = windowManager.getDefaultDisplay().getWidth();
+			mWidth = (screenWidth - (COLUM_NUM + 1) * COLUM_PADDING)
+					/ COLUM_NUM;
+			Log.d(TAG, "width:" + mWidth);
+
+		}
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return mArray.length();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			try {
+				return makeView(position, convertView, parent);
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+			return null;
+		}
+		
+	}
 }

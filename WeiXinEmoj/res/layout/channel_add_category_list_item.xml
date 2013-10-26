@@ -12,6 +12,7 @@
 	android:layout_width="match_parent"
     android:layout_height="wrap_content">
 	    <TextView
+	    android:id="@+id/channel_add_category_list_item_title"    
 	    android:text="标题1"   
 	    android:textColor="@color/black"
 	    android:textSize="@dimen/TitleTextSize"  
@@ -23,32 +24,39 @@
 	android:layout_marginTop="5dp"     
 	android:layout_width="match_parent"
     android:layout_height="wrap_content">
-	    <greendroid.widget.AsyncImageView 
+	    <com.dabing.emoj.widget.FitSizeAsyncImageView
 	    android:id="@+id/channel_add_category_list_item_img1"
 	    dabing:defaultSrc="@color/gray_light"    
 	    dabing:inDensity="hdpi"
 	    android:layout_alignParentLeft="true"
-	    android:layout_width="95dp"
-    	android:layout_height="95dp" />
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" />
 	    
-	    <greendroid.widget.AsyncImageView 
+	    <com.dabing.emoj.widget.FitSizeAsyncImageView
 	    android:id="@+id/channel_add_category_list_item_img2"
 	    dabing:defaultSrc="@color/gray_light"    
 	    dabing:inDensity="hdpi"
 	    android:layout_toRightOf="@id/channel_add_category_list_item_img1"
 	    android:layout_alignTop="@id/channel_add_category_list_item_img1"
 	    android:layout_marginLeft="5dp"
-	    android:layout_width="45dp"
-    	android:layout_height="45dp" />
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" />
 	    
-	    <greendroid.widget.AsyncImageView 
+	    <com.dabing.emoj.widget.FitSizeAsyncImageView
 	    android:id="@+id/channel_add_category_list_item_img3"
 	    dabing:defaultSrc="@color/gray_light"    
 	    dabing:inDensity="hdpi"
 	    android:layout_toRightOf="@id/channel_add_category_list_item_img1"
 	    android:layout_alignBottom="@id/channel_add_category_list_item_img1"
 	    android:layout_marginLeft="5dp"
-	    android:layout_width="45dp"
-    	android:layout_height="45dp" />
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" />
 	</RelativeLayout>
+	
+	<Button
+	    android:layout_marginTop="10dp"
+	    android:text="订阅"
+	    android:background="@drawable/albums_icon_bg" 
+	    android:layout_width="match_parent" 
+	    android:layout_height="wrap_content" />
 </LinearLayout>
