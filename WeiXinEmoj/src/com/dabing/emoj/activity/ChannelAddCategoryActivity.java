@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import android.R.integer;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -122,6 +123,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		JSONArray mArray;
 		int mWidth = 80;
 		int COLUM_NUM = 2;
+		
 		static final int COLUM_PADDING = 10;
 		public ChannelCategoryAdpater(JSONArray array){
 			mArray = array;
@@ -142,10 +144,14 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		// 计算相册宽度
 		private void calculateAlbumWidth() {
 			WindowManager windowManager = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
-			int screenWidth = windowManager.getDefaultDisplay().getWidth();
+			DisplayMetrics dm = new DisplayMetrics();
+			//int screenWidth = windowManager.getDefaultDisplay().getWidth();
+			windowManager.getDefaultDisplay().getMetrics(dm);
+			int screenWidth = (int)(dm.widthPixels / dm.density);
 			mWidth = (screenWidth - (COLUM_NUM + 1) * COLUM_PADDING)
 					/ COLUM_NUM;
-			Log.d(TAG, "width:" + mWidth);
+			
+			Log.d(TAG, "width:" + mWidth + " screenWidth:"+screenWidth + " density:"+dm.density);
 
 		}
 		@Override
