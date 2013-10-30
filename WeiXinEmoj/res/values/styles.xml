@@ -43,8 +43,12 @@
     <style name="ChannelTabButton">
         <item name="android:textSize">15.0dip</item>
         <item name="android:textColor">@color/channel_tab_btn</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowDx">1.2</item>
+        <item name="android:shadowDy">1.2</item>
+        <item name="android:shadowRadius">1.0</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:background">@drawable/tab_bg</item>
+        <item name="android:background">@drawable/channel_item_bg</item>
         <item name="android:padding">7dp</item>
         <item name="android:layout_width">0.0dip</item>
         <item name="android:layout_height">wrap_content</item>
@@ -204,5 +208,12 @@
         <item name="android:background">@drawable/btn_browse_right_selector</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="ChannelAddBtn" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/channel_add_btn_selector</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingLeft">35.0dip</item>
+  	 	<item name="android:maxHeight">10.0dip</item>
     </style>
 </resources>

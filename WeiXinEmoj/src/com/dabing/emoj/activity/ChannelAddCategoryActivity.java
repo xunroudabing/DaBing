@@ -23,12 +23,15 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
+import com.dabing.emoj.bonus.IBouns;
+import com.dabing.emoj.bonus.WAPS_Bonus;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.widget.ChannelListItem;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
 
 public class ChannelAddCategoryActivity extends MMBaseActivity {
 	String json = "[{\"id\":1,\"n\":\"测试1\",\"p\":\"\"},{\"id\":2,\"n\":\"测试1\",\"p\":\"\"},{\"id\":3,\"n\":\"测试1\",\"p\":\"\"},{\"id\":4,\"n\":\"测试1\",\"p\":\"\"},{\"id\":5,\"n\":\"测试1\",\"p\":\"\"},{\"id\":6,\"n\":\"测试1\",\"p\":\"\"},{\"id\":7,\"n\":\"测试1\",\"p\":\"\"},{\"id\":8,\"n\":\"测试1\",\"p\":\"\"},{\"id\":9,\"n\":\"测试1\",\"p\":\"\"},{\"id\":10,\"n\":\"测试1\",\"p\":\"\"}]";
+	IBouns mBouns;
 	ChannelCategoryAdpater mAdpater;
 	GridView mGridView;
 	RadioGroup header;
@@ -39,6 +42,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		super.onCreate(savedInstanceState);
 		header = (RadioGroup) findViewById(R.id.channel_add_category_head);
 		mGridView = (GridView) findViewById(R.id.channel_add_category_gridview);
+		mBouns = new WAPS_Bonus(ChannelAddCategoryActivity.this);
 		BindHeader();
 	}
 
@@ -48,6 +52,12 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		return R.layout.channel_add_category;
 	}
 	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		mBouns.reflesh();
+	}
 	protected void BindHeader(){
 		try {
 			String json = AppConstant.CHANNEL_CATEGORY;
@@ -135,6 +145,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 				root = new ChannelListItem(ChannelAddCategoryActivity.this);
 			}else {
 				root = (ChannelListItem) convertView;
+				root.clear();
 			}
 			JSONObject obj = mArray.getJSONObject(position);
 			String name = obj.getString("n");

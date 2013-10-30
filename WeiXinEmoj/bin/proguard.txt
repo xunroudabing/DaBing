@@ -201,9 +201,9 @@
 # view res/layout/header_fragment_emotionpanel.xml #generated:8
 -keep class com.dabing.emoj.widget.EmotionPanel { <init>(...); }
 
-# view res/layout/channel_add_category_list_item.xml #generated:32
-# view res/layout/channel_add_category_list_item.xml #generated:40
-# view res/layout/channel_add_category_list_item.xml #generated:50
+# view res/layout/channel_add_category_list_item.xml #generated:33
+# view res/layout/channel_add_category_list_item.xml #generated:42
+# view res/layout/channel_add_category_list_item.xml #generated:53
 -keep class com.dabing.emoj.widget.FitSizeAsyncImageView { <init>(...); }
 
 # view res/layout/user_define_album_add.xml #generated:11

@@ -7,14 +7,13 @@
     <!-- 头部 -->
 	<LinearLayout
 	android:orientation="vertical"     
-    android:background="@color/gray_light"
+    android:background="@drawable/abs__ab_stacked_transparent_light_holo"
 	android:layout_width="match_parent"
     android:layout_height="wrap_content">
 	    <HorizontalScrollView
 	    android:fadingEdge="none"
 	    android:scrollbars="none"
 	    android:paddingTop="2dp"
-	    android:paddingBottom="2dp"         	
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content">
 	        <RadioGroup
@@ -25,10 +24,6 @@
 	        </RadioGroup>
 	    </HorizontalScrollView>
 	</LinearLayout>
-	<View
-        android:layout_width="fill_parent"
-        android:layout_height="1.0px"
-        android:background="@color/gray_dark" />
 	<LinearLayout 
 	android:orientation="vertical"
 	android:gravity="center"
