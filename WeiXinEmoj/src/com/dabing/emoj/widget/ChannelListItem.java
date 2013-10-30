@@ -15,6 +15,7 @@ import com.dabing.emoj.R;
 import com.dabing.emoj.provider.ChannelRequest;
 import com.dabing.emoj.provider.IRequest;
 import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.Utils;
 
 import android.content.Context;
 import android.os.Handler;
@@ -34,7 +35,8 @@ import android.widget.TextView;
  */
 public class ChannelListItem extends LinearLayout implements IRequest {
 	ChannelRequest mRequest;
-	int img1_width,img2_width;
+	int img1_width = 105;//单位 px
+	int img2_width = 50;//单位  px
 	int mWidth;
 	String mChannelID;
 	TextView mTextView;
@@ -72,14 +74,23 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		}
 		
 	}
+	/**
+	 * 设置控件宽度 
+	 * @param width 单位dp
+	 */
 	public void setWidth(int width){
 		mWidth = width;
-		img2_width = (mWidth - COLUM_PADDING * 2 - 5) / 3;
-		img1_width = img2_width * 2 + 5;
-		Log.d(TAG, "img1:"+img1_width + " img2:"+img2_width);
-		img1.setWidth(img1_width);
-		img2.setWidth(img2_width);
-		img3.setWidth(img2_width);
+		int img2_width_dp = (mWidth - COLUM_PADDING * 2 - 5) / 3;
+		int img1_width_dp = img2_width_dp * 2 + 5;
+		Log.d(TAG, "img1:"+img1_width_dp+"dp" + " img2:"+img2_width_dp+"dp");
+		img1.setWidth(img1_width_dp);
+		img2.setWidth(img2_width_dp);
+		img3.setWidth(img2_width_dp);
+		//将dp转为px
+		float density = Utils.getScreenDensity(getContext());
+		img1_width = (int) (img1_width_dp * density);
+		img2_width = (int) (img2_width_dp * density);
+		Log.d(TAG, "img1:"+img1_width+"px" + " img2:"+img2_width+"px");
 	}
 	/*
 	 * (non-Javadoc)
@@ -108,8 +119,8 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		int w2 = img2.getMeasuredWidth();
 //		Log.d(TAG, "img1:"+w1+"x"+h1);
 //		Log.d(TAG, "img2:"+w2+"x"+h2);
-		ImageProcessor processor1 = new ScaleImageProcessor(w1, h1, ScaleType.CENTER_CROP);
-		ImageProcessor processor2 = new ScaleImageProcessor(w2, h2, ScaleType.CENTER_CROP);
+		ImageProcessor processor1 = new ScaleImageProcessor(img1_width, img1_width, ScaleType.CENTER_CROP);
+		ImageProcessor processor2 = new ScaleImageProcessor(img2_width, img2_width, ScaleType.CENTER_CROP);
 		
 		img1.setImageProcessor(processor1);
 		img2.setImageProcessor(processor2);
@@ -131,7 +142,7 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 			if(array.length() >= THUMB_SIZE){
 				String[] thumbs = new String[THUMB_SIZE];
 				for (int i = 0; i < THUMB_SIZE; i++) {
-					thumbs[i] = getURL(array.getJSONObject(i)) + AppConstant.PIC_ITEM_PREFIX;
+					thumbs[i] = getURL(array.getJSONObject(i)) + AppConstant.PIC_ITEM_SMALL_PREFIX;
 				}
 				//显示封面图片
 				ShowThumb(thumbs);
