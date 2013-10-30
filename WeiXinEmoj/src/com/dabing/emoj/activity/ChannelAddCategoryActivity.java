@@ -138,7 +138,10 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 			}
 			JSONObject obj = mArray.getJSONObject(position);
 			String name = obj.getString("n");
+			int id = obj.getInt("id");
 			root.setWidth(mWidth);
+			root.setTitle(name);
+			root.setChannelID(String.valueOf(id));
 			return root;
 		}
 		// 计算相册宽度
@@ -148,7 +151,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 			//int screenWidth = windowManager.getDefaultDisplay().getWidth();
 			windowManager.getDefaultDisplay().getMetrics(dm);
 			int screenWidth = (int)(dm.widthPixels / dm.density);
-			mWidth = (screenWidth - (COLUM_NUM + 1) * COLUM_PADDING)
+			mWidth = (screenWidth - (COLUM_NUM - 1) * COLUM_PADDING)
 					/ COLUM_NUM;
 			
 			Log.d(TAG, "width:" + mWidth + " screenWidth:"+screenWidth + " density:"+dm.density);

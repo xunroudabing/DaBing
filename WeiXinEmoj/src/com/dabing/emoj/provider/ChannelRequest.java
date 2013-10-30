@@ -24,6 +24,11 @@ public class ChannelRequest extends BaseRequest {
 		FieldName_ID = "id";
 		FieldName_TimeStamp = "pubtime";
 	}
+	/**
+	 * 
+	 * @param context
+	 * @param key 频道id
+	 */
 	public ChannelRequest(Context context,String key){
 		this(context);
 		if(context != null){
@@ -31,6 +36,16 @@ public class ChannelRequest extends BaseRequest {
 		}
 		mKey = key;
 		
+	}
+	/**
+	 * 
+	 * @param context
+	 * @param key 频道id
+	 * @param reqNum 请求几条数据
+	 */
+	public ChannelRequest(Context context,String key,String reqNum){
+		this(context, key);
+		mReqnum = reqNum;
 	}
 	@Override
 	public void setContext(Context context) {
