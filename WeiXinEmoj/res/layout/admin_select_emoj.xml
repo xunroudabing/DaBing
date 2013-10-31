@@ -119,17 +119,6 @@
   	</LinearLayout>
 	</LinearLayout>   
 	
-	<com.tencent.exmobwin.banner.TAdView
-	xmlns:mobwin="http://mobwin.android.com/apk/res/com.dabing.emoj"
-	android:id="@+id/adview"
-	android:visibility="gone"
-	android:layout_alignParentTop="true"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	mobwin:textColor="#ffff3333"
-	mobwin:titleColor="#ff00aa00"
-	mobwin:backAlpha="180" >
-	</com.tencent.exmobwin.banner.TAdView>
 	<Button android:id="@+id/btn_browse_left" android:visibility="invisible"  style="@style/BrowseLeftStyle"></Button>
     <Button android:id="@+id/btn_browse_right" android:visibility="invisible" style="@style/BrowseRightStyle"></Button>  
 </RelativeLayout>

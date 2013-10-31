@@ -77,9 +77,9 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				FragmentManager fm = getSupportFragmentManager();
-				AlbumFragment fragment = (AlbumFragment) fm.findFragmentByTag(AlbumFragment.class.getSimpleName());
-				fragment.scanfiles();
+//				FragmentManager fm = getSupportFragmentManager();
+//				AlbumFragment fragment = (AlbumFragment) fm.findFragmentByTag(AlbumFragment.class.getSimpleName());
+//				fragment.scanfiles();
 			}
 		});
 		Init();
@@ -289,7 +289,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 		Log.d(TAG, "dispatchKeyEvent");
 		if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
     		if(event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0){
-    			if(currentTAG.equals(AlbumFragment.class.getSimpleName())){
+    			if(currentTAG != null && currentTAG.equals(AlbumFragment.class.getSimpleName())){
     				FragmentManager fm = getSupportFragmentManager();
     				Fragment fragment = fm.findFragmentByTag(currentTAG);
     				if(fragment != null){

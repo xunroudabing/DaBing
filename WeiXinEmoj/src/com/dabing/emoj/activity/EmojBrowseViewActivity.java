@@ -77,7 +77,11 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.uikit.MMAlert;
 import com.tencent.mm.sdk.uikit.MMAlert.OnAlertSelectId;
 import com.umeng.analytics.MobclickAgent;
-
+/**
+ * 表情展示页
+ * @author DaBing
+ *
+ */
 public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListener,OnClickListener {
 	 /** Constant used as menu item id for setting zoom control type */
     protected static final int MENU_ID_ZOOM = 0;

@@ -154,7 +154,6 @@ public class SelectEmojActivity extends BaseActivity implements OnTouchListener,
 		mZoomView = (ImageZoomView)findViewById(R.id.emoj_zoomview);
 		mZoomView.setFullScreen(false);
 		container = (RelativeLayout) findViewById(R.id.emoj_browse_container);
-		adView = (TAdView) findViewById(R.id.adview);
 		setBackBtn(new OnClickListener() {
 			
 			public void onClick(View v) {

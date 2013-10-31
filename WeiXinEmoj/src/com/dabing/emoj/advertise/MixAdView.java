@@ -1,15 +1,6 @@
 package com.dabing.emoj.advertise;
 
 import net.youmi.android.banner.AdSize;
-
-import com.dabing.ads.AdView;
-import com.dabing.ads.AppConnect;
-import com.dabing.ads.MiniAdView;
-import com.dabing.emoj.R;
-import com.dabing.emoj.advertise.AdManager.AdShowType;
-import com.dabing.emoj.utils.AppConfig;
-import com.tencent.exmobwin.banner.TAdView;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -18,13 +9,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.dabing.ads.AdView;
+import com.dabing.ads.AppConnect;
+import com.dabing.ads.MiniAdView;
+import com.dabing.emoj.R;
+import com.dabing.emoj.advertise.AdManager.AdShowType;
+import com.dabing.emoj.utils.AppConfig;
 /**
  * 自定义混合广告控件
  * @author DaBing
  *
  */
 public class MixAdView extends LinearLayout {
-	TAdView tencent_banner;
 	LinearLayout waps_banner,waps_mini,youmi_banner;
 	WAPS_CustomAd waps_custom;
 	String mTAG;
@@ -49,7 +46,6 @@ public class MixAdView extends LinearLayout {
 		mTAG = tag;
 	}
 	protected void InitView(){
-		tencent_banner = (TAdView) findViewById(R.id.tencent_view);
 		waps_banner = (LinearLayout) findViewById(R.id.waps_banner);
 		waps_custom = (WAPS_CustomAd) findViewById(R.id.waps_custom);
 		waps_mini = (LinearLayout) findViewById(R.id.waps_mini);
@@ -72,7 +68,7 @@ public class MixAdView extends LinearLayout {
 			AdShowType showType = AdShowType.getAdShowType(adShowType);
 			switch (showType) {
 			case QQ_BANNER:
-				tencent_banner.setVisibility(View.VISIBLE);
+				//tencent_banner.setVisibility(View.VISIBLE);
 				break;
 			case WAPS_BANNER:
 				waps_banner.setVisibility(View.VISIBLE);

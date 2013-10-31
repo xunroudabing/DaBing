@@ -83,7 +83,6 @@ public class EmojViewActivity extends BaseActivity implements OnClickListener {
     private Button mZoomOut;
     private float seed=1.2f;
 	//****************
-    TAdView adView;
     LinearLayout zoomlayout;
 	LinearLayout layoutBottom;
 	Button btnOK;
@@ -118,7 +117,6 @@ public class EmojViewActivity extends BaseActivity implements OnClickListener {
 		layoutBottom = (LinearLayout) findViewById(R.id.emoj_detail_bottom);
 		zoomlayout = (LinearLayout) findViewById(R.id.emoj_zoom_layout);
 		mZoomView = (ImageZoomView)findViewById(R.id.emoj_zoomview);
-		adView = (TAdView) findViewById(R.id.adview);
 		setBackBtn(new OnClickListener() {
 			
 			public void onClick(View v) {
@@ -213,11 +211,11 @@ public class EmojViewActivity extends BaseActivity implements OnClickListener {
 	}
 	//广告处理
 	private void InitAd(){
-		if(AppConfig.getAdvertise_on(getApplicationContext())){
-			adView.setVisibility(View.VISIBLE);
-		}else {
-			adView.setVisibility(View.GONE);
-		}
+//		if(AppConfig.getAdvertise_on(getApplicationContext())){
+//			adView.setVisibility(View.VISIBLE);
+//		}else {
+//			adView.setVisibility(View.GONE);
+//		}
 	}
 	private void Init(){
 		Intent data = getIntent();

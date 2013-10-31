@@ -492,6 +492,10 @@ public class EmojScanService extends Service {
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
+			if(!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+				Log.d(TAG, "sdcard no avavible,skip...");
+				return;
+			}
 			UserDefineCursor cusor = dbHelper.getCursor();
 			try {
 				if (cusor != null && cusor.moveToFirst()) {

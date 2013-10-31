@@ -12,12 +12,10 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
-import java.util.Map;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -36,12 +34,10 @@ import android.widget.ZoomControls;
 import com.ant.liao.GifView;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
-import com.dabing.emoj.activity.EmojViewActivity.MyHandler;
-import com.dabing.emoj.activity.EmojViewActivity.downloadTask;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener;
-import com.dabing.emoj.imagezoomview.ZoomState;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener.ControlType;
+import com.dabing.emoj.imagezoomview.ZoomState;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
@@ -49,8 +45,6 @@ import com.dabing.emoj.utils.FileHelper;
 import com.dabing.emoj.utils.FileType;
 import com.dabing.emoj.utils.FileTypeJudge;
 import com.dabing.emoj.utils.QStr;
-import com.dabing.emoj.utils.RegularEmojManager;
-import com.dabing.emoj.widget.EmojImageView;
 import com.dabing.emoj.wxapi.WeiXinHelper;
 import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.IWXAPI;
@@ -59,7 +53,11 @@ import com.tencent.mm.sdk.uikit.MMAlert;
 import com.tencent.mm.sdk.uikit.MMAlert.OnAlertSelectId;
 import com.umeng.analytics.MobclickAgent;
 
-
+/**
+ * 废弃
+ * @author DaBing
+ *
+ */
 public class EmojImageViewActivity extends BaseActivity implements OnClickListener {
 	 /** Constant used as menu item id for setting zoom control type */
     private static final int MENU_ID_ZOOM = 0;
@@ -82,7 +80,6 @@ public class EmojImageViewActivity extends BaseActivity implements OnClickListen
     private float seed=1.2f;
     //-------
     Button btnok;
-    TAdView adView;
     String action = "send";
     LinearLayout layout;
     LinearLayout zoomlayout;
@@ -116,7 +113,6 @@ public class EmojImageViewActivity extends BaseActivity implements OnClickListen
 		bar = (ProgressBar) findViewById(R.id.image_zoom_view_progress);
 		rateView = (TextView) findViewById(R.id.image_zoom_view_rate);
 		mZoomView = (ImageZoomView)findViewById(R.id.emoj_zoomview);
-		adView = (TAdView) findViewById(R.id.adview);
 		btnok = (Button) findViewById(R.id.emoj_detail_btnok);
 		btnok.setOnClickListener(btnListener);
 		setBackBtn(new OnClickListener() {
@@ -193,11 +189,11 @@ public class EmojImageViewActivity extends BaseActivity implements OnClickListen
 	}
 	//广告处理
 	private void InitAd(){
-		if(AppConfig.getAdvertise_on(getApplicationContext())){
-			adView.setVisibility(View.VISIBLE);
-		}else {
-			adView.setVisibility(View.GONE);
-		}
+//		if(AppConfig.getAdvertise_on(getApplicationContext())){
+//			adView.setVisibility(View.VISIBLE);
+//		}else {
+//			adView.setVisibility(View.GONE);
+//		}
 	}
 	private void Initialize(){
 		Intent data = getIntent();

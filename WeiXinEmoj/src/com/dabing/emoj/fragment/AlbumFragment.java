@@ -20,12 +20,15 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -39,6 +42,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 
 public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks<Cursor>{
@@ -52,6 +56,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	int PULL_MSG_ARRAY_INDEX = 0;
 	CustomGridLayout gridLayout;
 	PullToRefreshScrollView mScrollView;
+	ImageView mSdcardNoAviaible;
 	AlbumCusorAdapter adapter;
 	UserDefineDataBaseHelper mHelper;
 	boolean IsScaned = false;//是否扫描过
@@ -82,7 +87,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		gridLayout = (CustomGridLayout) getView().findViewById(
 				R.id.gridContainer);
 		gridLayout.setColumnCount(COLUM_NUM);
-
+		mSdcardNoAviaible = (ImageView) getView().findViewById(R.id.user_define_fragment1_nosdcard);
 		PULL_MSG_ARRAY = getResources().getStringArray(R.array.pull_msg_array);
 		PULL_MSG_ARRAY_INDEX = 0;
 		mScrollView.getLoadingLayoutProxy().setLoadingDrawable(null);
@@ -92,7 +97,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 				PULL_MSG_ARRAY[PULL_MSG_ARRAY_INDEX]);
 		mScrollView.setOnPullEventListener(pullEventListener);
 		
-		bindGridLayout();
+		bindGridLayout(null);
 		if(!mChanged){
 			getLoaderManager().initLoader(0, null, this);
 		}else {
@@ -108,6 +113,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 			IsScaned = true;
 			scanFilesDelayed(500);
 		}
+		registerSdcardReceiver();
 	}
 
 	/*
@@ -152,6 +158,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		Log.d(TAG, "onDestroy()");
 		getLoaderManager().destroyLoader(0);
 		UnBindService();
+		unregisterSdcardReceiver();
 	}
 	
 	/*
@@ -174,8 +181,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		Log.d(TAG, "onResume");
-		
+		Log.d(TAG, "onResume");	
 	}
 	
 	/* (non-Javadoc)
@@ -222,14 +228,12 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 		}
 	}
 	
-	protected void bindGridLayout(){
+	protected void bindGridLayout(Cursor cursor){
 		AddImageButton addImageButton = new AddImageButton(getActivity().getParent());
 		addImageButton.setWidth(mWidth);
 		addImageButton.setOnClick(addClickListener);
 		gridLayout.setFirstView(addImageButton);
-		if(adapter == null){
-			adapter = new AlbumCusorAdapter(getActivity().getParent(), null,COLUM_NUM,albumClickListener);
-		}
+		adapter = new AlbumCusorAdapter(getActivity().getParent(), cursor,COLUM_NUM,albumClickListener);
 		gridLayout.setAdapter(adapter);		
 		
 		
@@ -298,7 +302,64 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 			}
 		}
 	}
-	// *********成员*********
+	/**
+	 * 检测SD卡状态，更新UI
+	 */
+	protected void checkSdcardAvavible(){
+		//sdcard弹出
+		if(!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+			Log.d(TAG, "sdcard not avaible");
+			mSdcardNoAviaible.setVisibility(View.VISIBLE);
+			mScrollView.setVisibility(View.GONE);
+		}else {
+			Log.d(TAG, "sdcard avaible");
+			if(mScrollView.getVisibility() != View.VISIBLE){
+				mScrollView.setVisibility(View.VISIBLE);
+			}
+			mSdcardNoAviaible.setVisibility(View.GONE);			
+		}
+	}
+	
+	protected void registerSdcardReceiver(){
+		IntentFilter filter = new IntentFilter();
+		filter.addAction("android.intent.action.MEDIA_MOUNTED");
+		filter.addAction("android.intent.action.MEDIA_UNMOUNTED");
+		filter.addAction("android.intent.action.MEDIA_REMOVED");
+		filter.addAction("android.intent.action.ACTION_MEDIA_BAD_REMOVAL");
+		try {
+			getActivity().registerReceiver(mSdcardReceiver, filter);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	protected void unregisterSdcardReceiver(){
+		try {
+			getActivity().unregisterReceiver(mSdcardReceiver);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	// *********成员*********	
+	private BroadcastReceiver mSdcardReceiver = new BroadcastReceiver() {
+		
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// TODO Auto-generated method stub
+			if (intent.getAction()
+					.equals("android.intent.action.MEDIA_MOUNTED"))// SD卡已经成功挂载
+			{
+				Log.d(TAG, "sdcard MEDIA_MOUNTED");
+			} else if (intent.getAction().equals(
+					"android.intent.action.MEDIA_REMOVED")
+					|| intent.getAction().equals(
+							"android.intent.action.MEDIA_UNMOUNTED")
+					|| intent.getAction().equals(
+							"android.intent.action.ACTION_MEDIA_BAD_REMOVAL")) {
+				Log.d(TAG, "sdcard not MEDIA_MOUNTED");
+
+			}
+		}
+	};
 	/**
 	 * 添加文件夹
 	 */
@@ -439,7 +500,7 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	// 开始扫描
 	public void scanfiles() {
 		try {
-			Log.d(TAG, "222");
+			Log.d(TAG, "scanfiles()");
 			Message message = Message.obtain(null, EmojScanService.CLIENT_SCAN);
 			message.replyTo = client;
 			mService.send(message);
@@ -485,7 +546,13 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	public void onLoadFinished(Loader<Cursor> arg0, Cursor cursor) {
 		// TODO Auto-generated method stub
 		Log.d(TAG, "onLoadFinished");
-		adapter.changeCursor(cursor);
+		try {
+			adapter.changeCursor(cursor);
+			//bindGridLayout(cursor);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
 	}
 
 	@Override

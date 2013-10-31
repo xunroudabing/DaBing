@@ -77,8 +77,6 @@ public class AdManager {
 			waps.init(mContext);
 			IAdvertise youmi = getAdClass(AdType.YOUMI);
 			youmi.init(mContext);
-			IAdvertise tencent = getAdClass(AdType.QQ);
-			tencent.init(mContext);
 			Log.d(TAG, "AdManager.init");
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -95,8 +93,6 @@ public class AdManager {
 			ad.release(mContext);
 			IAdvertise youmi = getAdClass(AdType.YOUMI);
 			youmi.release(mContext);
-			IAdvertise tencent = getAdClass(AdType.QQ);
-			tencent.release(mContext);
 			Log.d(TAG, "AdManager.release");
 		} catch (Exception e) {
 			// TODO: handle exception

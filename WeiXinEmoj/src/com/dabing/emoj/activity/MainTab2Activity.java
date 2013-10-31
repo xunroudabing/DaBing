@@ -306,11 +306,11 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 			Log.d(TAG, "action:"+intent.getAction());
 			if(intent.getAction().equals("android.intent.action.MEDIA_MOUNTED"))//SD卡已经成功挂载
             {                
-                                                  
+                   Log.d(TAG, "android.intent.action.MEDIA_MOUNTED");                               
             }
 			else if(intent.getAction().equals("android.intent.action.MEDIA_REMOVED")||intent.getAction().equals("android.intent.action.MEDIA_UNMOUNTED")||intent.getAction().equals("android.intent.action.ACTION_MEDIA_BAD_REMOVAL"))
             {	
-				
+				 Log.d(TAG, "android.intent.action.MEDIA_UNMOUNTED");          
             }
 			else if (intent.getAction().equals("android.net.conn.CONNECTIVITY_CHANGE")) {
 				CheckNetWorkState();

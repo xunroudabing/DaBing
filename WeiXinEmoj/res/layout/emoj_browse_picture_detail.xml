@@ -21,42 +21,7 @@
 	dabing:tag="ad_index2"    
 	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"/>
-<!-- <com.tencent.exmobwin.banner.TAdView
-	xmlns:mobwin="http://mobwin.android.com/apk/res/com.dabing.emoj"
-	android:id="@+id/adview"
-	android:visibility="gone"	
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	mobwin:textColor="#ffff3333"
-	mobwin:titleColor="#ff00aa00"
-	mobwin:backAlpha="180" >
-	</com.tencent.exmobwin.banner.TAdView>
-	<LinearLayout
-	android:id="@+id/wapsAdview"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:visibility="gone"	
-	android:gravity="center_horizontal"/>
-	
-	<com.dabing.emoj.advertise.WAPS_CustomAd 	
-	android:id="@+id/wapsCustomAdview"    
-	android:visibility="gone"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content" />
-	
-	<LinearLayout
-	android:id="@+id/miniAdviewBackView"         
-	android:visibility="gone"
-    android:background="@drawable/app_panel_bg"    
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-  	<LinearLayout  
-	android:id="@+id/miniAdview"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center_horizontal"/>
-  	</LinearLayout>-->
+
 	</LinearLayout>
 	
 	<LinearLayout

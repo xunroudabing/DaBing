@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 废弃 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    
+    android:orientation="vertical" >   
 	<LinearLayout
 	android:orientation="vertical"
 	android:gravity="center"
@@ -126,16 +125,4 @@
   	</LinearLayout>
 
 	</LinearLayout>    
-	
-	<com.tencent.exmobwin.banner.TAdView
-	xmlns:mobwin="http://mobwin.android.com/apk/res/com.dabing.emoj"
-	android:id="@+id/adview"
-	android:visibility="gone"
-	android:layout_alignParentTop="true"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	mobwin:textColor="#ffff3333"
-	mobwin:titleColor="#ff00aa00"
-	mobwin:backAlpha="180" >
-	</com.tencent.exmobwin.banner.TAdView>
 </RelativeLayout>
