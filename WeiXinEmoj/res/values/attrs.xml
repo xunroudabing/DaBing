@@ -12,4 +12,9 @@
     <declare-styleable name="MixAdView">
         <attr name="tag" format="string"></attr>
     </declare-styleable>
+    
+    <declare-styleable name="ChannelCheckBox">
+        <attr name="src" format="reference"></attr>
+        <attr name="checked_src" format="reference"></attr>
+    </declare-styleable>
 </resources>

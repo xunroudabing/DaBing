@@ -25,12 +25,12 @@ import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
+import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.widget.ChannelListItem;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
 
 public class ChannelAddCategoryActivity extends MMBaseActivity {
-	String json = "[{\"id\":1,\"n\":\"测试1\",\"p\":\"\"},{\"id\":2,\"n\":\"测试1\",\"p\":\"\"},{\"id\":3,\"n\":\"测试1\",\"p\":\"\"},{\"id\":4,\"n\":\"测试1\",\"p\":\"\"},{\"id\":5,\"n\":\"测试1\",\"p\":\"\"},{\"id\":6,\"n\":\"测试1\",\"p\":\"\"},{\"id\":7,\"n\":\"测试1\",\"p\":\"\"},{\"id\":8,\"n\":\"测试1\",\"p\":\"\"},{\"id\":9,\"n\":\"测试1\",\"p\":\"\"},{\"id\":10,\"n\":\"测试1\",\"p\":\"\"}]";
 	IBouns mBouns;
 	ChannelCategoryAdpater mAdpater;
 	GridView mGridView;
@@ -60,7 +60,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 	}
 	protected void BindHeader(){
 		try {
-			String json = AppConstant.CHANNEL_CATEGORY;
+			String json = AppConfig.getChannelCategory(getApplicationContext());
 			JSONArray array = new JSONArray(json);
 			for (int i = 0; i < array.length(); i++) {
 				JSONObject obj = array.getJSONObject(i);
@@ -89,7 +89,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		
 	}
 	protected JSONArray getJsonArray(int id){
-		String json = AppConstant.CHANNEL_CATEGORY;
+		String json = AppConfig.getChannelCategory(getApplicationContext());
 		try {
 			JSONArray array = new JSONArray(json);
 			for (int i = 0; i < array.length(); i++) {
@@ -150,8 +150,13 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 			JSONObject obj = mArray.getJSONObject(position);
 			String name = obj.getString("n");
 			int id = obj.getInt("id");
+			int bonus = 0;
+			if(obj.has("b")){
+				bonus = obj.getInt("b");
+			}
 			root.setWidth(mWidth);
 			root.setTitle(name);
+			root.setBonus(bonus);
 			root.setChannelID(String.valueOf(id));
 			return root;
 		}

@@ -129,6 +129,7 @@ public abstract class BaseRequest implements Parcelable{
 				if(listener != null){
 					listener.onRequestEnd();
 				}
+				break;
 			default:
 				break;
 			}

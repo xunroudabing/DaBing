@@ -1,51 +1,53 @@
 package com.dabing.emoj.widget;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import greendroid.image.ImageProcessor;
 import greendroid.image.ScaleImageProcessor;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import com.dabing.ads.ar;
-import com.dabing.emoj.R;
-import com.dabing.emoj.provider.ChannelRequest;
-import com.dabing.emoj.provider.IRequest;
-import com.dabing.emoj.utils.AppConstant;
-import com.dabing.emoj.utils.Utils;
 
 import android.content.Context;
-import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
-import android.view.View.MeasureSpec;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-import android.widget.CheckBox;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.dabing.emoj.R;
+import com.dabing.emoj.bonus.IBouns;
+import com.dabing.emoj.bonus.WAPS_Bonus;
+import com.dabing.emoj.provider.ChannelRequest;
+import com.dabing.emoj.provider.IRequest;
+import com.dabing.emoj.utils.AppConfig;
+import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.Utils;
+import com.dabing.emoj.widget.ChannelCheckBox.BeforeCheckedChangeListener;
+import com.dabing.emoj.widget.ChannelCheckBox.OnCheckedChangeListener;
 /**
  * 
  * @author DaBing
  *
  */
 public class ChannelListItem extends LinearLayout implements IRequest {
+	boolean mEnable = true;//是否可用 免费的都是可用的 收费的购买过才可用
 	String mTitle;
 	ChannelRequest mRequest;
 	int img1_width = 105;//单位 px
 	int img2_width = 50;//单位  px
 	int mWidth;
+	int mBonus = 0;
 	String mChannelID;
 	TextView mTextView;
+	TextView mBonusTextView;
 	FitSizeAsyncImageView img1,img2,img3;
-	CheckBox mCheckBox;
+	ChannelCheckBox mCheckBox;
 	static Map<String, String[]> CHANNEL_CACHE = new HashMap<String, String[]>();
 	static final int THUMB_SIZE = 3;//请求图片数量
 	static final int COLUM_PADDING = 10;
@@ -58,10 +60,12 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		// TODO Auto-generated constructor stub
 		LayoutInflater.from(context).inflate(R.layout.channel_add_category_list_item, this, true);
 		mTextView = (TextView) findViewById(R.id.channel_add_category_list_item_title);
+		mBonusTextView = (TextView) findViewById(R.id.channel_add_category_list_item_bonus);
 		img1 = (FitSizeAsyncImageView) findViewById(R.id.channel_add_category_list_item_img1);
 		img2 = (FitSizeAsyncImageView) findViewById(R.id.channel_add_category_list_item_img2);
 		img3 = (FitSizeAsyncImageView) findViewById(R.id.channel_add_category_list_item_img3);
-		mCheckBox = (CheckBox) findViewById(R.id.channel_add_category_chkbox);
+		mCheckBox = (ChannelCheckBox) findViewById(R.id.channel_add_category_list_item_chkbtn);
+		mCheckBox.setInterception(changeListener);
 		mCheckBox.setOnCheckedChangeListener(onCheckedChangeListener);
 	}
 	/**
@@ -91,11 +95,38 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		
 	}
 	/**
+	 * 设置积分
+	 * @param bonus
+	 */
+	public void setBonus(int bonus){
+		mBonus = bonus;
+		//积分开关为开
+		if (AppConfig.getBonusEnable(getContext())) {
+			// 免费
+			if (mBonus <= 0) {
+				mBonusTextView.setText("");
+				mBonusTextView.setVisibility(View.GONE);
+			}
+			// 收费
+			else {
+				mBonusTextView.setText(String.format("%d", mBonus));
+				mBonusTextView.setVisibility(View.VISIBLE);
+			}
+		}else {
+			mBonusTextView.setText("");
+			mBonusTextView.setVisibility(View.GONE);
+		}
+	}
+	/**
 	 * 设置频道收听状态
 	 * @param checked
 	 */
 	public void setChecked(boolean checked){
 		mCheckBox.setChecked(checked);
+	}
+	
+	public void toggle(){
+		mCheckBox.toggle();
 	}
 	/**
 	 * 设置控件宽度 
@@ -142,13 +173,6 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 	}
 	//显示封面图片
 	protected void ShowThumb(String[] array){
-		int h1 = img1.getMeasuredHeight();
-		int w1 = img1.getMeasuredWidth();
-		
-		int h2 = img2.getMeasuredHeight();
-		int w2 = img2.getMeasuredWidth();
-//		Log.d(TAG, "img1:"+w1+"x"+h1);
-//		Log.d(TAG, "img2:"+w2+"x"+h2);
 		ImageProcessor processor1 = new ScaleImageProcessor(img1_width, img1_width, ScaleType.CENTER_CROP);
 		ImageProcessor processor2 = new ScaleImageProcessor(img2_width, img2_width, ScaleType.CENTER_CROP);
 		
@@ -165,13 +189,51 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 //		Log.d(TAG, array[2]);
 
 	}
+	private BeforeCheckedChangeListener changeListener = new BeforeCheckedChangeListener() {		
+		@Override
+		public boolean interception(ChannelCheckBox view, boolean checked) {
+			// TODO Auto-generated method stub
+			Log.d(TAG, "interception checked:"+checked);
+			if(checked){
+				//收费的
+				if(mBonus > 0){
+					//是否已购买
+					boolean isBuyed = AppConfig.getChannelBuyed(getContext(), Integer.parseInt(mChannelID));
+					//已购买
+					if(isBuyed){
+						//写入订阅的频道库
+					}
+					//未购买
+					else {
+						IBouns helper = new WAPS_Bonus(getContext());
+						//获取拥有的积分
+						int wealth = helper.get();
+						//积分足够提示是否购买
+						if(wealth >= mBonus){
+							Log.d(TAG, "have enough bonus,ready to buy?");
+							return true;
+						}
+						//积分不足提示获取积分
+						else {
+							Log.d(TAG, "not enough bonus");
+							return true;
+						}
+					}
+				}
+			}else {
+				//取消选中
+			}
+			return false;
+		}
+	};
 	//点击checkbox时触发
 	protected OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
 		
 		@Override
-		public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		public void onCheckedChanged(ChannelCheckBox buttonView, boolean isChecked) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "isChecked:"+isChecked);
+			Log.d(TAG, "onCheckedChanged isChecked:"+isChecked);
+			
 		}
 	};
 	

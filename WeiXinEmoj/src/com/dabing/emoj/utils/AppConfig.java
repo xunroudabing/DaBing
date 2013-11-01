@@ -695,27 +695,7 @@ public class AppConfig {
 	 * @param context
 	 * @param id 表情id
 	 */
-	public static void setNewEmojArray(Context context,String id){
-//		JSONArray array = getNewEmojArray(context);
-//		if(array == null || array.length() <= 0){
-//			return;
-//		}
-//		JSONArray newArray = new JSONArray();
-//		try {
-//			for(int i=0;i<array.length();i++){
-//				String item = array.getString(i);
-//				if(!id.equals(item)){
-//					newArray.put(item);
-//				}
-//			}
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
-//		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
-//		SharedPreferences.Editor editor = preferences.edit();
-//		editor.putString("newemoj", newArray.toString());
-//		editor.commit();
-		
+	public static void setNewEmojArray(Context context,String id){		
 		try {
 			int versionCode = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
 			String key = String.format("version%d_emoj%s", versionCode,id);
@@ -886,5 +866,54 @@ public class AppConfig {
 		String key = "upload_"+id;
 		editor.putString(key, data);
 		editor.commit();
+	}
+	/**
+	 * 获取微频道内容
+	 * @param context
+	 * @return
+	 */
+	public static String getChannelCategory(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		String ret = preferences.getString("channel_category", AppConstant.CHANNEL_CATEGORY);
+		return ret;
+	}
+	
+	public static void setChannelCategory(Context context,String json){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString("channel_category", json);
+		editor.commit();
+	}
+	/**
+	 * 积分开关
+	 * @param context
+	 * @return
+	 */
+	public static boolean getBonusEnable(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean ret = preferences.getBoolean("bonus_enable", AppConstant.BONUS_ENABLE);
+		return ret;
+	}
+	/**
+	 * 设置该频道是否已购买
+	 * @param context
+	 * @param channelID
+	 */
+	public static void setChannelBuyed(Context context,int channelID){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean(String.format("channel_buy_%d", channelID), true);
+		editor.commit();
+	}
+	/**
+	 * 查询该频道是否已购买(应该在收费的频道中调用)
+	 * @param context
+	 * @param channelID
+	 * @return
+	 */
+	public static boolean getChannelBuyed(Context context,int channelID){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean ret = preferences.getBoolean(String.format("channel_buy_%d", channelID),false);
+		return ret;
 	}
 }
