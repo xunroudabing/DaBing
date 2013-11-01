@@ -105,7 +105,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 		mProgressBar.setVisibility(View.VISIBLE);
 	}
 	protected void hideProgressBar(){
-		mProgressBar.setVisibility(View.INVISIBLE);
+		mProgressBar.setVisibility(View.GONE);
 	}
 	//计算相册宽度
 	private void calculateAlbumWidth(){
@@ -252,7 +252,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 			});
 		}
 		else if (TAG.equals(AlbumDetailFragment.class.getSimpleName())) {
-			rightBtn.setVisibility(View.GONE);
+			rightBtn.setVisibility(View.INVISIBLE);
 			leftBtn.setText(R.string.btn_userdefine_up);
 			leftBtn.setOnClickListener(new OnClickListener() {
 				
