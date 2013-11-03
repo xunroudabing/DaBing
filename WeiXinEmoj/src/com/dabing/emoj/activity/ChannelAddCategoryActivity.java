@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
 import android.widget.GridView;
@@ -75,7 +77,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 				Log.d(TAG, "childsize:"+childsize);
 				String btnid = String.format("channel_header_radio_%d", i+1);
 				int resId = getResources().getIdentifier(btnid, "id", getPackageName());
-				RadioButton rd = (RadioButton) LayoutInflater.from(getApplicationContext()).inflate(R.layout.channel_category_item,header,false);
+				RadioButton rd = (RadioButton) LayoutInflater.from(ChannelAddCategoryActivity.this).inflate(R.layout.channel_category_item,header,false);
 				rd.setId(resId);
 				rd.setText(title);
 				rd.setTag(id);
@@ -111,6 +113,15 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		JSONArray array = getJsonArray(id);
 		mAdpater = new ChannelCategoryAdpater(array);
 		mGridView.setAdapter(mAdpater);
+		mGridView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 	
 	// 点击header时触发
@@ -142,10 +153,9 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		private View makeView(int position, View convertView, ViewGroup parent) throws JSONException{
 			ChannelListItem root = null;
 			if(convertView == null){
-				root = new ChannelListItem(ChannelAddCategoryActivity.this);
+				root = (ChannelListItem) LayoutInflater.from(ChannelAddCategoryActivity.this).inflate(R.layout.channel_list_item, parent, false);
 			}else {
 				root = (ChannelListItem) convertView;
-				root.clear();
 			}
 			JSONObject obj = mArray.getJSONObject(position);
 			String name = obj.getString("n");

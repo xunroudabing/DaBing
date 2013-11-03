@@ -48,7 +48,10 @@ public class WAPS_Bonus implements IBouns {
 		editor.putInt("waps_bonus", bonus);
 		editor.commit();
 	}
-	
+	/**
+	 * 获取积分,来自本地缓存
+	 * @return
+	 */
 	public int getBonusCached(){
 		SharedPreferences preferences = mContext.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
 		int ret = preferences.getInt("waps_bonus", 0);

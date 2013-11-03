@@ -9,17 +9,20 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dabing.ads.ac;
 import com.dabing.emoj.R;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
@@ -27,16 +30,16 @@ import com.dabing.emoj.provider.ChannelRequest;
 import com.dabing.emoj.provider.IRequest;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.Utils;
+import com.dabing.emoj.widget.ChannelCheckBox.AfterCheckedChangeListener;
 import com.dabing.emoj.widget.ChannelCheckBox.BeforeCheckedChangeListener;
-import com.dabing.emoj.widget.ChannelCheckBox.OnCheckedChangeListener;
 /**
  * 
  * @author DaBing
  *
  */
 public class ChannelListItem extends LinearLayout implements IRequest {
-	boolean mEnable = true;//是否可用 免费的都是可用的 收费的购买过才可用
 	String mTitle;
 	ChannelRequest mRequest;
 	int img1_width = 105;//单位 px
@@ -66,7 +69,7 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		img3 = (FitSizeAsyncImageView) findViewById(R.id.channel_add_category_list_item_img3);
 		mCheckBox = (ChannelCheckBox) findViewById(R.id.channel_add_category_list_item_chkbtn);
 		mCheckBox.setInterception(changeListener);
-		mCheckBox.setOnCheckedChangeListener(onCheckedChangeListener);
+		mCheckBox.setOnCheckedChangeListener(afterCheckedChangeListener);
 	}
 	/**
 	 * 设置频道名称
@@ -116,17 +119,6 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 			mBonusTextView.setText("");
 			mBonusTextView.setVisibility(View.GONE);
 		}
-	}
-	/**
-	 * 设置频道收听状态
-	 * @param checked
-	 */
-	public void setChecked(boolean checked){
-		mCheckBox.setChecked(checked);
-	}
-	
-	public void toggle(){
-		mCheckBox.toggle();
 	}
 	/**
 	 * 设置控件宽度 
@@ -191,7 +183,7 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 	}
 	private BeforeCheckedChangeListener changeListener = new BeforeCheckedChangeListener() {		
 		@Override
-		public boolean interception(ChannelCheckBox view, boolean checked) {
+		public boolean interception(final ChannelCheckBox view, boolean checked) {
 			// TODO Auto-generated method stub
 			Log.d(TAG, "interception checked:"+checked);
 			if(checked){
@@ -211,32 +203,70 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 						//积分足够提示是否购买
 						if(wealth >= mBonus){
 							Log.d(TAG, "have enough bonus,ready to buy?");
+							String tmp1 = getResources().getString(R.string.alert_confirm_channel_add);
+							String txt1 = tmp1.replace("{wealth}", String.valueOf(wealth)).replace("{bonus}", String.valueOf(mBonus));
+							Dialog dialog1 = DialogFactory.createTwoButtonDialog(getContext(), txt1, null, null, new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									// TODO Auto-generated method stub
+									Log.d(TAG, "ok");
+									view.setChecked(true, false);
+								}
+							}, new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									// TODO Auto-generated method stub
+									Log.d(TAG, "cancel");
+									dialog.dismiss();
+								}
+							});
+							dialog1.show();
 							return true;
 						}
 						//积分不足提示获取积分
 						else {
 							Log.d(TAG, "not enough bonus");
+							String tmp2 = getResources().getString(R.string.alert_confirm_channel_getbonus);
+							String txt2 = tmp2.replace("{bonus}", String.valueOf(mBonus));
+							Dialog dialog2 = DialogFactory.createTwoButtonDialog(getContext(), txt2, "获取铜板", null, new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									// TODO Auto-generated method stub
+									Log.d(TAG, "ok");
+								}
+							}, new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									// TODO Auto-generated method stub
+									Log.d(TAG, "cancel");
+									dialog.dismiss();
+								}
+							});
+							dialog2.show();
 							return true;
 						}
 					}
 				}
 			}else {
-				//取消选中
+				//取消选中,从频道库中移除
 			}
 			return false;
 		}
+		
 	};
-	//点击checkbox时触发
-	protected OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
+
+	private AfterCheckedChangeListener afterCheckedChangeListener = new AfterCheckedChangeListener() {
 		
 		@Override
-		public void onCheckedChanged(ChannelCheckBox buttonView, boolean isChecked) {
+		public void onCheckedChanged(ChannelCheckBox view, boolean checked) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "onCheckedChanged isChecked:"+isChecked);
-			
+			Log.d(TAG, mChannelID + " " + "onCheckedChanged");
 		}
 	};
-	
 	//*****ChannelRequest事件*********
 	@Override
 	public void onBind(String response) {

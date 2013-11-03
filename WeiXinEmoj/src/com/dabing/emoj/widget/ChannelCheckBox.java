@@ -16,7 +16,7 @@ import com.dabing.emoj.R;
  */
 public class ChannelCheckBox extends LinearLayout {
 	//***接口***
-	public interface OnCheckedChangeListener{
+	public interface AfterCheckedChangeListener{
 		void onCheckedChanged(ChannelCheckBox view,boolean checked);
 	}
 	public interface BeforeCheckedChangeListener{
@@ -29,7 +29,7 @@ public class ChannelCheckBox extends LinearLayout {
 		boolean interception(ChannelCheckBox view,boolean checked);
 	}
 	BeforeCheckedChangeListener mBeforeCheckedChangeListener;
-	OnCheckedChangeListener mCheckedChangeListener;
+	AfterCheckedChangeListener mCheckedChangeListener;
 	boolean mChecked = false;
 	int mCheckedResId = -1;
 	int mResId = -1;
@@ -81,7 +81,7 @@ public class ChannelCheckBox extends LinearLayout {
 	public void toggle(){
 		setChecked(!mChecked,true);
 	}
-	public void setOnCheckedChangeListener(OnCheckedChangeListener listener){
+	public void setOnCheckedChangeListener(AfterCheckedChangeListener listener){
 		mCheckedChangeListener = listener;
 	}
 	public void setInterception(BeforeCheckedChangeListener listener){
@@ -92,7 +92,7 @@ public class ChannelCheckBox extends LinearLayout {
 		if(mResId != -1){
 			mView.setImageResource(mResId);
 		}
-		setOnClickListener(onClickListener);
+		mView.setOnClickListener(onClickListener);
 	}
 	protected void updateUI(){
 		if(mChecked){
