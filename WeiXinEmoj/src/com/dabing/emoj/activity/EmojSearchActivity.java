@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -30,6 +31,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.adpater.EmojGridViewAdapter;
+import com.dabing.emoj.db.ChannelDatabaseHelper;
 import com.dabing.emoj.exception.DBLog;
 import com.dabing.emoj.exception.ExceptionManager;
 import com.dabing.emoj.provider.BaseRequest;
@@ -345,9 +347,41 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 	}
 	
 	//********header********
+	protected String getHeaderJson(){
+		ChannelDatabaseHelper helper = new ChannelDatabaseHelper(getApplicationContext());
+		Cursor cursor = null;
+		try {
+			JSONArray array = new JSONArray();
+			cursor = helper.getCursor();
+			//获取数据库中的频道集合，构造json
+			if(cursor != null){
+				cursor.moveToFirst();
+				do {
+					int channelId = cursor.getInt(cursor.getColumnIndexOrThrow(ChannelDatabaseHelper.FIELD_CHANNLEID));
+					String name = cursor.getString(cursor.getColumnIndexOrThrow(ChannelDatabaseHelper.FIELD_NAME));
+					JSONObject object = new JSONObject();
+					object.put("id", channelId);
+					object.put("n", name);
+					array.put(object);
+				} while (cursor.moveToNext());
+				return array.toString();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}finally{
+			if(cursor != null){
+				cursor.close();
+			}
+		}
+		return null;
+	}
 	protected void BindHeader(){
 		try {
-			String json = AppConstant.CHANNEL_CATEGORY;
+			String json = getHeaderJson();
+			if(json == null){
+				return;
+			}
 			JSONArray array = new JSONArray(json);
 			for (int i = 0; i < array.length(); i++) {
 				JSONObject obj = array.getJSONObject(i);
