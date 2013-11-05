@@ -53,14 +53,43 @@ public class ChannelDatabaseHelper extends SQLiteOpenHelper {
 	
 	public Cursor getCursor(){
 		SQLiteDatabase db = getReadableDatabase();
-		Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, "ORDER BY " + FIELD_TIME + " DESC");
+		Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, FIELD_TIME);
 		return cursor;
 	}
-	
+	/**
+	 * 加频道
+	 * @param cv
+	 * @return
+	 */
 	public long insert(ContentValues cv){
 		SQLiteDatabase db = getWritableDatabase();
 		long id = db.insert(TABLE_NAME, null, cv);
 		return id;
 	}
-
+	/**
+	 * 移除频道 
+	 * @param channelId
+	 */
+	public void remove(long channelId){
+		final String whereClause = FIELD_CHANNLEID + "=?";
+		SQLiteDatabase db = getWritableDatabase();
+		db.delete(TABLE_NAME, whereClause, new String[]{String.valueOf(channelId)});
+	}
+	/**
+	 * 是否存在该频道
+	 * @param channelId
+	 * @return
+	 */
+	public boolean exist(long channelId){
+		final String whereClause = FIELD_CHANNLEID + "=?";
+		SQLiteDatabase db = getWritableDatabase();
+		Cursor cursor = db.query(TABLE_NAME, new String[]{"COUNT(*)"}, whereClause, new String[]{String.valueOf(channelId)}, null, null, null);
+		if(cursor == null){
+			return false;
+		}
+		cursor.moveToFirst();
+		int count = cursor.getInt(0);
+		cursor.close();
+		return count > 0;
+	}
 }

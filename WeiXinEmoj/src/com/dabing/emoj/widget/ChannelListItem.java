@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.util.AttributeSet;
@@ -26,6 +27,7 @@ import com.dabing.ads.ac;
 import com.dabing.emoj.R;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
+import com.dabing.emoj.db.ChannelDatabaseHelper;
 import com.dabing.emoj.provider.ChannelRequest;
 import com.dabing.emoj.provider.IRequest;
 import com.dabing.emoj.utils.AppConfig;
@@ -70,6 +72,13 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		mCheckBox = (ChannelCheckBox) findViewById(R.id.channel_add_category_list_item_chkbtn);
 		mCheckBox.setInterception(changeListener);
 		mCheckBox.setOnCheckedChangeListener(afterCheckedChangeListener);
+	}
+	/**
+	 * 设置选中状态
+	 * @param checked
+	 */
+	public void setChecked(boolean checked){
+		mCheckBox.setChecked(checked, false);
 	}
 	/**
 	 * 设置频道名称
@@ -181,12 +190,41 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 //		Log.d(TAG, array[2]);
 
 	}
+	
+	protected void addChannel(){
+		try {
+			ChannelDatabaseHelper helper = new ChannelDatabaseHelper(getContext());
+			ContentValues cv = new ContentValues();
+			cv.put(ChannelDatabaseHelper.FIELD_CHANNLEID, mChannelID);
+			cv.put(ChannelDatabaseHelper.FIELD_NAME, mTitle);
+			cv.put(ChannelDatabaseHelper.FIELD_TYPE, "common");
+			cv.put(ChannelDatabaseHelper.FIELD_TIME, System.currentTimeMillis());			
+			helper.insert(cv);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}		
+		
+	}
+	
+	protected void removeChannel(){
+		try {
+			ChannelDatabaseHelper helper = new ChannelDatabaseHelper(getContext());
+			helper.remove(Long.parseLong(mChannelID));
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+	}
 	private BeforeCheckedChangeListener changeListener = new BeforeCheckedChangeListener() {		
 		@Override
 		public boolean interception(final ChannelCheckBox view, boolean checked) {
 			// TODO Auto-generated method stub
 			Log.d(TAG, "interception checked:"+checked);
 			if(checked){
+				if(!AppConfig.getBonusEnable(getContext())){
+					return false;
+				}
 				//收费的
 				if(mBonus > 0){
 					//是否已购买
@@ -211,7 +249,7 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 								public void onClick(DialogInterface dialog, int which) {
 									// TODO Auto-generated method stub
 									Log.d(TAG, "ok");
-									view.setChecked(true, false);
+									view.setChecked(true, true);
 								}
 							}, new DialogInterface.OnClickListener() {
 								
@@ -265,6 +303,14 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		public void onCheckedChanged(ChannelCheckBox view, boolean checked) {
 			// TODO Auto-generated method stub
 			Log.d(TAG, mChannelID + " " + "onCheckedChanged");
+			ChannelDatabaseHelper helper = new ChannelDatabaseHelper(getContext());
+			if(checked){
+				Log.d(TAG, "addChannel:"+mChannelID);
+				addChannel();
+			}else {
+				Log.d(TAG, "removeChannel:"+mChannelID);
+				removeChannel();
+			}
 		}
 	};
 	//*****ChannelRequest事件*********

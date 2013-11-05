@@ -30,6 +30,8 @@
     <string name="btn_userdefine_weixin">微信</string>
     <string name="title_custom">自定义表情</string>
     <string name="title_choose_files">选择一个文件夹</string>
+    <string name="title_add_channel">微频道订阅</string>
+    <string name="title_channel">微频道</string>
     <string name="alert_confirm_add_file">确定添加{file}?</string>
     <string name="alert_confirm_del_file">确认移除{file}?</string>
     <string name="alert_regular_notexist">找到不到此文件</string>

@@ -11,6 +11,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -27,6 +28,7 @@ import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
+import com.dabing.emoj.db.ChannelDatabaseHelper;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.widget.ChannelListItem;
@@ -42,10 +44,19 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		setMMTitle(R.string.title_add_channel);
 		header = (RadioGroup) findViewById(R.id.channel_add_category_head);
 		mGridView = (GridView) findViewById(R.id.channel_add_category_gridview);
 		mBouns = new WAPS_Bonus(ChannelAddCategoryActivity.this);
 		BindHeader();
+		setBackBtn(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 	}
 
 	@Override
@@ -144,10 +155,11 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		JSONArray mArray;
 		int mWidth = 80;
 		int COLUM_NUM = 2;
-		
+		ChannelDatabaseHelper mHelper;
 		static final int COLUM_PADDING = 10;
 		public ChannelCategoryAdpater(JSONArray array){
 			mArray = array;
+			mHelper = new ChannelDatabaseHelper(getApplicationContext());
 			calculateAlbumWidth();
 		}
 		private View makeView(int position, View convertView, ViewGroup parent) throws JSONException{
@@ -164,10 +176,12 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 			if(obj.has("b")){
 				bonus = obj.getInt("b");
 			}
+			boolean checked = mHelper.exist(id);
 			root.setWidth(mWidth);
 			root.setTitle(name);
 			root.setBonus(bonus);
 			root.setChannelID(String.valueOf(id));
+			root.setChecked(checked);
 			return root;
 		}
 		// 计算相册宽度

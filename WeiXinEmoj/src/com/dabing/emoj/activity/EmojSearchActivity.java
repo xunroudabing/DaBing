@@ -79,15 +79,16 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		setMMTitle(R.string.title_channel);
 		editText = (EditText) findViewById(R.id.emoj_index2_edittext);
 		btnSearch = (Button) findViewById(R.id.emoj_index2_btnSearch);
 		gridView = (GridView) findViewById(R.id.emoj_index2_gridview);
 		mHeader = (RadioGroup) findViewById(R.id.channel_category_head);
 		btnSearch.setOnClickListener(clickListener);
-		setTitleBtn1("微频道", categoryListener);
+		setTitleBtn1(R.drawable.mm_title_btn_channel_normal, categoryListener);
 		SetupAction();
 		Bind();
-		PrepareActionGrid();
+		//PrepareActionGrid();
 		BindHeader();
 		gridView.setOnScrollListener(this);
 		gridView.setOnItemClickListener(this);
@@ -276,11 +277,15 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
+		Log.d(TAG, "onActivityResult:"+requestCode+" "+resultCode);		
 		if(requestCode == AppConstant.REQUEST_COMMON_EMOJ){
 			if(resultCode == RESULT_OK){
 				getParent().setResult(RESULT_OK, data);
 				finish();
 			}
+		}		
+		else if (requestCode == AppConstant.REQUEST_ADD_CHANNEL) {
+			BindHeader();
 		}
 	}
 	
@@ -304,7 +309,9 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 		
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			mGrid.show(v);
+			//mGrid.show(v);
+			Intent intent = new Intent(getApplicationContext(), ChannelAddCategoryActivity.class);
+			startActivityForResult(intent, AppConstant.REQUEST_ADD_CHANNEL);
 		}
 	};
 	//点击分类
@@ -351,7 +358,7 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 		ChannelDatabaseHelper helper = new ChannelDatabaseHelper(getApplicationContext());
 		Cursor cursor = null;
 		try {
-			JSONArray array = new JSONArray();
+			JSONArray array = new JSONArray(AppConstant.CHANNEL_CATEGORY_INDEX);
 			cursor = helper.getCursor();
 			//获取数据库中的频道集合，构造json
 			if(cursor != null){
@@ -382,24 +389,23 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 			if(json == null){
 				return;
 			}
+			mHeader.removeAllViews();
 			JSONArray array = new JSONArray(json);
+			int checkedId = Integer.parseInt(DEFAULT);
 			for (int i = 0; i < array.length(); i++) {
 				JSONObject obj = array.getJSONObject(i);
 				String name = obj.getString("n");
 				int id = obj.getInt("id");
-				int childsize = 0;
-				JSONArray info = obj.getJSONArray("info");
-				if(info != null){
-					childsize = info.length();
-				}
-				String title = String.format("%s(%d)", name,childsize);
-				Log.d(TAG, "childsize:"+childsize);
+				String title = String.format("%s", name);
 				String btnid = String.format("channel_header_radio_%d", i+1);
 				int resId = getResources().getIdentifier(btnid, "id", getPackageName());
 				RadioButton rd = (RadioButton) LayoutInflater.from(getApplicationContext()).inflate(R.layout.channel_category_item,mHeader,false);
 				rd.setId(resId);
 				rd.setText(title);
 				rd.setTag(id);
+				if(checkedId == id){
+					rd.setChecked(true);
+				}
 				rd.setOnCheckedChangeListener(onHeaderChangeListener);
 				mHeader.addView(rd);
 			}
@@ -418,6 +424,8 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 			if(isChecked){
 				int id = (Integer) buttonView.getTag();
 				Log.d(TAG, "onCheckedChanged:"+id);
+				DEFAULT = String.valueOf(id);
+				Bind();
 			}
 		}
 	};

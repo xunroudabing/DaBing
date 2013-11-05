@@ -54,7 +54,7 @@ public class ChannelCheckBox extends LinearLayout {
 	/**
 	 * 
 	 * @param checked
-	 * @param interception 是否启用interception过滤
+	 * @param interception 是否触发事件
 	 */
 	public void setChecked(boolean checked,boolean interception){
 		if (mChecked == checked) {
@@ -71,8 +71,10 @@ public class ChannelCheckBox extends LinearLayout {
 		}
 		mChecked = checked;
 		updateUI();
-		if (mCheckedChangeListener != null) {
-			mCheckedChangeListener.onCheckedChanged(this, mChecked);
+		if (interception) {
+			if (mCheckedChangeListener != null) {
+				mCheckedChangeListener.onCheckedChanged(this, mChecked);
+			}
 		}
 	}
 	public boolean isChecked(){

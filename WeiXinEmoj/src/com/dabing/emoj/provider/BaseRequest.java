@@ -58,7 +58,6 @@ public abstract class BaseRequest implements Parcelable{
 			// TODO Auto-generated method stub
 			try {
 				String response = execute(mPageflag,mTweetid,mTime);
-				Log.d(TAG, "response:"+response);
 				JSONObject object = new JSONObject(response);
 				//成功返回值
 				if(Check.check_ret(object)){
