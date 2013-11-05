@@ -176,6 +176,12 @@
 # view res/layout/cache_item.xml #generated:2
 -keep class com.dabing.emoj.widget.CacheWrapperImageView { <init>(...); }
 
+# view res/layout/channel_add_category_list_item.xml #generated:82
+-keep class com.dabing.emoj.widget.ChannelCheckBox { <init>(...); }
+
+# view res/layout/channel_list_item.xml #generated:2
+-keep class com.dabing.emoj.widget.ChannelListItem { <init>(...); }
+
 # view res/layout/header_fragment_emotionpanel_item.xml #generated:2
 -keep class com.dabing.emoj.widget.ColorButton { <init>(...); }
 
@@ -201,9 +207,9 @@
 # view res/layout/header_fragment_emotionpanel.xml #generated:8
 -keep class com.dabing.emoj.widget.EmotionPanel { <init>(...); }
 
-# view res/layout/channel_add_category_list_item.xml #generated:33
 # view res/layout/channel_add_category_list_item.xml #generated:42
-# view res/layout/channel_add_category_list_item.xml #generated:53
+# view res/layout/channel_add_category_list_item.xml #generated:51
+# view res/layout/channel_add_category_list_item.xml #generated:62
 -keep class com.dabing.emoj.widget.FitSizeAsyncImageView { <init>(...); }
 
 # view res/layout/user_define_album_add.xml #generated:11

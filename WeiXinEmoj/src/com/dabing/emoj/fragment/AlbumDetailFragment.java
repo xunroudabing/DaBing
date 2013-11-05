@@ -217,12 +217,14 @@ public class AlbumDetailFragment extends UserDefineFragment {
 				for (int i = 0; i < mFiles.length; i++) {
 					paths[i] = mFiles[i].getPath();
 				}
-				
+				long dbId = mFileInfo.dbId;
 				Intent intent = new Intent(getActivity(), UserDefineEmojViewActivity.class);
 				intent.putExtra(AppConstant.INTENT_PIC_NAME, file.getPath());
 				intent.putExtra(AppConstant.INTENT_PIC_ARRAY, paths);
 				intent.putExtra(AppConstant.INTENT_PIC_PARMS, "自定义表情");
 				intent.putExtra(AppConstant.INTENT_TITLE, getString(R.string.title_custom));
+				//自定义表情相册在数据库中的id
+				intent.putExtra(AppConstant.INTENT_USER_DEFINE_DBID, dbId);
 				intent.putExtras(getActivity().getIntent());
 				startActivityForResult(intent, AppConstant.REQUEST_COMMON_EMOJ);
 			} catch (Exception e) {

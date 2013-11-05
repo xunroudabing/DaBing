@@ -11,6 +11,7 @@ import com.ant.liao.GifView;
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
+import com.dabing.emoj.db.UserDefineDataBaseHelper;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.FileType;
@@ -20,6 +21,7 @@ import com.dabing.emoj.wxapi.WeiXinHelper;
 import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -38,7 +40,7 @@ import android.widget.Toast;
  *
  */
 public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
-	
+	long mUserDefineDbId = -1;
 	String[] mFiles;
 	static final String TAG = UserDefineEmojViewActivity.class.getSimpleName();
 	/* (non-Javadoc)
@@ -108,6 +110,10 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 		}
 		if(data.getStringArrayExtra(AppConstant.INTENT_PIC_ARRAY) != null){
 			mFiles = data.getStringArrayExtra(AppConstant.INTENT_PIC_ARRAY);//文件路径名集合			
+		}
+		//此项用于更新相册使用次数
+		if(data.getLongExtra(AppConstant.INTENT_USER_DEFINE_DBID, -1) != -1){
+			mUserDefineDbId = data.getLongExtra(AppConstant.INTENT_USER_DEFINE_DBID, -1);
 		}
 		finish = true;
 		//显示图片
@@ -287,9 +293,23 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 		Log.d(TAG, "AddToRegular:"+filepath);
 		try {
 			manager.add(String.format("file:%s", filepath), parms);
+			UpdateOrderNo();
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			Log.e(TAG, e.toString());
+		}
+	}
+	//序号+1
+	protected void UpdateOrderNo(){
+		if(mUserDefineDbId != -1){
+			try {
+				Log.d(TAG, "UpdateOrderNo:"+mUserDefineDbId);
+				UserDefineDataBaseHelper helper = new UserDefineDataBaseHelper(getApplicationContext());
+				helper.updateOrderNo(mUserDefineDbId);
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
 		}
 	}
 }

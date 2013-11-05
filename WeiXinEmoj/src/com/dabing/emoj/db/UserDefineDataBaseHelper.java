@@ -35,6 +35,7 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 	public static final String FIELD_TIME = "time";// 时间戳
 	public static final String FIELD_STATE = "state";// 状态位 1-默认 0-删除
 	public static final String FIELD_CHILDSIZE = "childsize";// 图片文件数
+	public static final String FIELD_ORDER = "orderno";//序号
 	boolean isFirstCreate = false;
 	static final String TABLE_NAME = "user_define_table";
 	static final int VERSION = 2;
@@ -57,7 +58,7 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 				+ "	integer primary key autoincrement," + FIELD_NAME + " text,"
 				+ FIELD_PATH + " text," + FIELD_TYPE + " text," + FIELD_THUMB
 				+ " text," + FIELD_TIME + " integer," + FIELD_CHILDSIZE
-				+ " integer," + FIELD_STATE + " integer default 1);";
+				+ " integer," + FIELD_STATE + " integer default 1," + FIELD_ORDER + " integer default 0);";
 		Log.d(TAG, "onCreate:" + sql);
 		db.execSQL(sql);
 		isFirstCreate = true;
@@ -73,7 +74,7 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 
 	public UserDefineCursor getCursor() {
 		final String query = "SELECT * FROM " + TABLE_NAME + " WHERE "
-				+ FIELD_STATE + "=?";
+				+ FIELD_STATE + "=?" + " ORDER BY " + FIELD_ORDER + " DESC";
 		SQLiteDatabase db = getReadableDatabase();
 		UserDefineCursor cursor = (UserDefineCursor) db.rawQueryWithFactory(
 				new UserDefineCursor.Factory(), query, new String[] { "1" },
@@ -181,7 +182,7 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 				new String[] { String.valueOf(id) });
 		// Log.d(TAG, "update count:" + count + " id:" + id);
 	}
-
+	
 	public void update(int id, FileInfo fileInfo) {
 		ContentValues cv = new ContentValues();
 		if (fileInfo.fileName != null && !fileInfo.fileName.equals("")) {
@@ -202,7 +203,26 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 		db.update(TABLE_NAME, cv, whereClause, whereArgs);
 		// Log.d(TAG, "update:"+id);
 	}
-
+	/**
+	 * 序号+1
+	 * @param id
+	 */
+	public void updateOrderNo(long id){
+		final String whereClasue = FIELD_ID + "=?";
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.query(TABLE_NAME, new String[] { FIELD_ORDER },
+				whereClasue, new String[] { String.valueOf(id) }, null, null,
+				null);
+		if (cursor != null) {
+			cursor.moveToFirst();
+			int order = cursor.getInt(0);
+			cursor.close();
+			order++;
+			ContentValues cv = new ContentValues();
+			cv.put(FIELD_ORDER, order);
+			update(cv, id);
+		}
+	}
 	public long insert(FileInfo fileInfo) {
 		ContentValues cv = new ContentValues();
 		cv.put(FIELD_NAME, fileInfo.fileName);
@@ -263,7 +283,7 @@ public class UserDefineDataBaseHelper extends SQLiteOpenHelper {
 		cursor.moveToFirst();
 		int count = cursor.getInt(0);
 		cursor.close();
-		Log.d(TAG, path + " exist:" + count);
+		//Log.d(TAG, path + " exist:" + count);
 		return count > 0;
 	}
 

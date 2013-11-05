@@ -48,7 +48,7 @@ public class UserDefineContentProvider extends ContentProvider {
 		case URI_ALBUM:
 			try {
 				final String query = "SELECT * FROM " + UserDefineDataBaseHelper.TABLE_NAME + " WHERE "
-						+ UserDefineDataBaseHelper.FIELD_STATE + "=?";
+						+ UserDefineDataBaseHelper.FIELD_STATE + "=?" + " ORDER BY " + UserDefineDataBaseHelper.FIELD_ORDER + " DESC";
 				SQLiteDatabase db = mHelper.getReadableDatabase();
 				cursor = db.rawQuery(query, new String[]{"1"});
 			} catch (Exception e) {

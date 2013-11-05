@@ -41,8 +41,8 @@ public final class R {
 		public static final int pull_to_refresh_from_bottom_release_label = 0x7f070043;
 	}
 	public static final class layout {
-		public static final int pull_to_refresh_header_horizontal = 0x7f030072;
-		public static final int pull_to_refresh_header_vertical = 0x7f030073;
+		public static final int pull_to_refresh_header_horizontal = 0x7f030073;
+		public static final int pull_to_refresh_header_vertical = 0x7f030074;
 	}
 	public static final class styleable {
 		public static final int PullToRefresh_ptrDrawableStart = 7;
