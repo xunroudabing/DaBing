@@ -58,7 +58,6 @@
         android:layout_height="1dp"
         android:background="@drawable/list_divider_line" />
 	<LinearLayout
-	android:paddingTop="2dp"
 	android:orientation="vertical"
 	android:gravity="center"
 	android:layout_width="match_parent"

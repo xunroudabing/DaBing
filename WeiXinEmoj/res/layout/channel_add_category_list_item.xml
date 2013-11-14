@@ -11,7 +11,8 @@
 	<LinearLayout
 	android:orientation="horizontal"	
 	android:paddingLeft="10dp"
-	android:paddingTop="2dp"
+	android:paddingTop="3dp"
+	android:paddingBottom="3dp"
 	android:paddingRight="10dp"
 	android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -19,7 +20,11 @@
 	    android:id="@+id/channel_add_category_list_item_title"    
 	    android:text=""   
 	    android:textColor="@color/gray_dark"
-	    android:textSize="@dimen/LargeTextSize"  
+	    android:textSize="@dimen/BasicTextSize"  
+	    android:shadowColor="@color/white"
+        android:shadowDx="1.2"
+        android:shadowDy="1.2"
+        android:shadowRadius="1.0"
 	    android:layout_weight="1.0"
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content" />
@@ -34,7 +39,8 @@
 	    android:layout_width="wrap_content"
     	android:layout_height="wrap_content"/>
 	</LinearLayout>
-	
+	<View 
+	    android:layout_marginLeft="1dp" android:layout_marginRight="1dp" android:background="@drawable/list_divider_line" android:layout_width="match_parent" android:layout_height="1dp" />
 	<RelativeLayout
 	android:layout_marginTop="5dp"  
 	android:layout_marginLeft="5dp"
