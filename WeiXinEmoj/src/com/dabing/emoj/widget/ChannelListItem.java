@@ -290,7 +290,7 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 					}
 				}
 			}else {
-				//取消选中,从频道库中移除
+				//取消选中
 			}
 			return false;
 		}

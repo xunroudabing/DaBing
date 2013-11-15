@@ -885,13 +885,23 @@ public class AppConfig {
 		editor.commit();
 	}
 	/**
-	 * 积分开关
+	 * 积分开关 是否开启积分 所有需要积分的都免费
 	 * @param context
 	 * @return
 	 */
 	public static boolean getBonusEnable(Context context){
 		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
 		boolean ret = preferences.getBoolean("bonus_enable", AppConstant.BONUS_ENABLE);
+		return ret;
+	}
+	/**
+	 * 是否隐藏积分相关内容 
+	 * @param context
+	 * @return
+	 */
+	public static boolean getBonusHide(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean ret = preferences.getBoolean("bonus_hide", AppConstant.BONUS_HIDE);
 		return ret;
 	}
 	/**

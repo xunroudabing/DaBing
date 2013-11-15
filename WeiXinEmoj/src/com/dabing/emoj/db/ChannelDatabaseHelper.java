@@ -1,7 +1,5 @@
 package com.dabing.emoj.db;
 
-import com.dabing.emoj.exception.DBLog;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
