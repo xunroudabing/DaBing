@@ -33,12 +33,17 @@ import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.widget.ChannelListItem;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
-
+/**
+ * 微频道订阅
+ * @author Administrator
+ *
+ */
 public class ChannelAddCategoryActivity extends MMBaseActivity {
 	IBouns mBouns;
 	ChannelCategoryAdpater mAdpater;
 	GridView mGridView;
 	RadioGroup header;
+	static final int DEFAULT = 43;
 	static final String TAG = ChannelAddCategoryActivity.class.getSimpleName();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 				finish();
 			}
 		});
+		BindGridView(DEFAULT);
 	}
 
 	@Override
@@ -92,6 +98,9 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 				rd.setId(resId);
 				rd.setText(title);
 				rd.setTag(id);
+				if(id == DEFAULT){
+					rd.setChecked(true);
+				}
 				rd.setOnCheckedChangeListener(onHeaderChangeListener);
 				header.addView(rd);
 			}
