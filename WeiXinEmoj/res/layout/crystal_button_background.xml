@@ -6,6 +6,7 @@
    
 	 <ImageView 
     android:id="@+id/crystal_button_background_img"
+    android:layout_margin="5dp"
     android:layout_centerInParent="true"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />

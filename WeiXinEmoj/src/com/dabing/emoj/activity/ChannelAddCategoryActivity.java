@@ -22,10 +22,13 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
+import com.dabing.emoj.bonus.IBonusChangeListener;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
 import com.dabing.emoj.db.ChannelDatabaseHelper;
@@ -38,7 +41,7 @@ import com.tencent.mm.sdk.uikit.MMBaseActivity;
  * @author Administrator
  *
  */
-public class ChannelAddCategoryActivity extends MMBaseActivity {
+public class ChannelAddCategoryActivity extends MMBaseActivity implements IBonusChangeListener {
 	IBouns mBouns;
 	ChannelCategoryAdpater mAdpater;
 	GridView mGridView;
@@ -53,6 +56,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 		header = (RadioGroup) findViewById(R.id.channel_add_category_head);
 		mGridView = (GridView) findViewById(R.id.channel_add_category_gridview);
 		mBouns = new WAPS_Bonus(ChannelAddCategoryActivity.this);
+		mBouns.setBonusChangeListener(this);
 		BindHeader();
 		setBackBtn(new OnClickListener() {
 			
@@ -186,6 +190,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 				bonus = obj.getInt("b");
 			}
 			boolean checked = mHelper.exist(id);
+			root.setBonusChangeListener(ChannelAddCategoryActivity.this);
 			root.setWidth(mWidth);
 			root.setTitle(name);
 			root.setBonus(bonus);
@@ -236,5 +241,52 @@ public class ChannelAddCategoryActivity extends MMBaseActivity {
 			return null;
 		}
 		
+	}
+	//***积分改变时触发****
+	@Override
+	public void onChange(String t, final int value) {
+		// TODO Auto-generated method stub
+		Log.d(TAG,t + ":" + value);
+		if(t.equals("get")){
+			if(value != 0){
+				runOnUiThread(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						showToast(value);
+					}
+				});
+				
+			}
+		}else if (t.equals("spend")) {
+			if(value != 0){
+				runOnUiThread(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						showToast(value);
+					}
+				});
+			}
+		}
+	}
+
+	@Override
+	public void onError(String TAG, String ex) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	protected void showToast(int value){
+		View view = LayoutInflater.from(ChannelAddCategoryActivity.this).inflate(R.layout.bonus_alert_toast, null);
+		TextView txt = (TextView) view.findViewById(R.id.bonus_alert_toast_txt);
+		String s = value > 0 ? String.format("+%d", value):String.valueOf(value);
+		txt.setText(s);
+		Toast toast = new Toast(ChannelAddCategoryActivity.this);
+		toast.setDuration(Toast.LENGTH_LONG);
+		toast.setView(view);
+		toast.show();
 	}
 }

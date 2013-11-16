@@ -33,7 +33,8 @@ public class AppConfig {
 	//移动QQ包名
 	public static final String QQ_PACKAGE_NAME = "com.tencent.mobileqq";
 	//正式 http://t.qq.com/xunroudabing 测试 http://www.appchina.com/soft_detail_472820_0_10.html
-	public static final String redirectUri="http://android.myapp.com/android/appdetail.jsp?appid=653908";
+	//http://www.wandoujia.com/apps/com.dabing.emoj
+	public static final String redirectUri="http://www.wandoujia.com/apps/com.dabing.emoj";
 	//正式801278477 测试 801202538 测试
 	public static final String clientId="801278477";
 	//正式0e35e00fef0dacc616105cb20461ead1 测试 cc33fef861dad95cf7296643144b95cd

@@ -53,8 +53,9 @@ public class WAPS_Bonus implements IBouns {
 				// TODO Auto-generated method stub
 				Log.d(TAG, "spend getUpdatePoints:"+arg0 + " " + arg1);
 				if(mListener != null){
-					mListener.onChange("spend", bonus);
+					mListener.onChange("spend", -bonus);
 				}
+				setBonus(arg1);
 			}
 		});
 		return 0;
@@ -80,6 +81,7 @@ public class WAPS_Bonus implements IBouns {
 				if(mListener != null){
 					mListener.onChange("award", arg1);
 				}
+				setBonus(arg1);
 			}
 		});
 		
@@ -107,10 +109,6 @@ public class WAPS_Bonus implements IBouns {
 		SharedPreferences preferences = mContext.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
 		int ret = preferences.getInt("waps_bonus", 0);
 		return ret;
-	}
-	
-	public void setBonusChangeListener(IBonusChangeListener listener){
-		mListener = listener;
 	}
 	
 	@Override
@@ -143,6 +141,16 @@ public class WAPS_Bonus implements IBouns {
 				setBonus(i);
 			}
 		});
+	}
+	@Override
+	public void setBonusChangeListener(IBonusChangeListener listener) {
+		// TODO Auto-generated method stub
+		mListener = listener;
+	}
+	@Override
+	public void showOffers() {
+		// TODO Auto-generated method stub
+		AppConnect.getInstance(mContext).showAppOffers(mContext);
 	}
 
 }

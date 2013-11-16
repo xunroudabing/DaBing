@@ -49,14 +49,15 @@ public class ChannelCheckBox extends LinearLayout {
 		InitView();
 	}
 	public void setChecked(boolean checked){
-		setChecked(checked, false);
+		setChecked(checked, false,false);
 	}
 	/**
 	 * 
 	 * @param checked
-	 * @param interception 是否触发事件
+	 * @param interception 是否触发interception事件
+	 * @param onchange 是否触发onchange事件
 	 */
-	public void setChecked(boolean checked,boolean interception){
+	public void setChecked(boolean checked,boolean interception,boolean onchange){
 		if (mChecked == checked) {
 			return;
 		}
@@ -71,7 +72,7 @@ public class ChannelCheckBox extends LinearLayout {
 		}
 		mChecked = checked;
 		updateUI();
-		if (interception) {
+		if (onchange) {
 			if (mCheckedChangeListener != null) {
 				mCheckedChangeListener.onCheckedChanged(this, mChecked);
 			}
@@ -81,7 +82,7 @@ public class ChannelCheckBox extends LinearLayout {
 		return mChecked;
 	}
 	public void toggle(){
-		setChecked(!mChecked,true);
+		setChecked(!mChecked,true,true);
 	}
 	public void setOnCheckedChangeListener(AfterCheckedChangeListener listener){
 		mCheckedChangeListener = listener;

@@ -104,10 +104,6 @@
         <service android:name=".service.EmojScanService"></service>
         <service android:name=".service.WeiXinEmojLoginServiceV2"></service>
         <activity android:name=".demo.demolist">
-			<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <provider android:name=".db.UserDefineContentProvider" android:authorities="com.dabing.emoj.UserDefineContentProvider"></provider>

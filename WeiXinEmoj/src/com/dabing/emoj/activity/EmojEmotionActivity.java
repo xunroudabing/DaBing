@@ -117,7 +117,7 @@ public class EmojEmotionActivity extends FragmentActivity implements IEmojItemCl
 				BaseEmojFragment fragment = createFragment(item);
 				currentFragment = fragment;
 				trans.replace(R.id.emoj_index3_container, fragment,id);
-				trans.commit();
+				trans.commitAllowingStateLoss();
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

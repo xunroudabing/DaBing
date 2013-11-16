@@ -143,7 +143,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 			AlbumFragment fragment = AlbumFragment.getInstance();
 			fragment.setCallBack(this);
 			trans.replace(R.id.user_define_container, fragment, AlbumFragment.class.getSimpleName());
-			trans.commit();
+			trans.commitAllowingStateLoss();
 		}
 		
 	}
@@ -156,7 +156,7 @@ public class UserDefineActivity extends FragmentActivity implements IEmojScanCal
 			fragment.setCallBack(this);
 			trans.replace(R.id.user_define_container, fragment, AlbumDetailFragment.class.getSimpleName());
 			trans.addToBackStack(null);
-			trans.commit();
+			trans.commitAllowingStateLoss();
 		}
 	}
 	

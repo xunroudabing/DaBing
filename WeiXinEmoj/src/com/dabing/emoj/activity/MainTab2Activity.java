@@ -4,6 +4,9 @@ import org.json.JSONArray;
 
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
+import com.dabing.emoj.bonus.IBonusChangeListener;
+import com.dabing.emoj.bonus.IBouns;
+import com.dabing.emoj.bonus.WAPS_Bonus;
 import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.service.StartUpBroadcast;
 import com.dabing.emoj.utils.AppConfig;
@@ -40,7 +43,8 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
  * @author DaBing
  *
  */
-public class MainTab2Activity extends TabActivity implements OnCheckedChangeListener {
+public class MainTab2Activity extends TabActivity implements OnCheckedChangeListener,IBonusChangeListener {
+	IBouns mBouns;
 	CallbackManager mCallbackManager;
 	String action ="send";
 	ImageView cursor;
@@ -80,6 +84,8 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 		QQConnect.createInstance(getApplicationContext()).Init();
 		UMFeedbackService.enableNewReplyNotification(MainTab2Activity.this, NotificationType.AlertDialog);
 		UmengUpdateAgent.update(MainTab2Activity.this);
+		mBouns = new WAPS_Bonus(MainTab2Activity.this);
+		mBouns.setBonusChangeListener(this);
 	}
 	
 	@Override
@@ -89,6 +95,7 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 		CheckNetWorkState();
 		showNewEmoj();
 		showNewSetting();
+		mBouns.reflesh();
 	};
 	@Override
 	protected void onDestroy() {
@@ -351,5 +358,39 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
+	}
+
+	@Override
+	public void onChange(String t, final int value) {
+		// TODO Auto-generated method stub
+		if(t.equals("get")){
+			if(value != 0){
+				runOnUiThread(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						showToast(value);
+					}
+				});
+			}
+		}
+	}
+
+	@Override
+	public void onError(String TAG, String ex) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	protected void showToast(int value){
+		View view = LayoutInflater.from(MainTab2Activity.this).inflate(R.layout.bonus_alert_toast, null);
+		TextView txt = (TextView) view.findViewById(R.id.bonus_alert_toast_txt);
+		String s = value > 0 ? String.format("+%d", value):String.valueOf(value);
+		txt.setText(s);
+		Toast toast = new Toast(MainTab2Activity.this);
+		toast.setDuration(Toast.LENGTH_LONG);
+		toast.setView(view);
+		toast.show();
 	}
 }

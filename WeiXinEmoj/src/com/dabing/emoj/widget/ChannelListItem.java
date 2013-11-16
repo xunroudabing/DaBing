@@ -22,9 +22,12 @@ import android.view.View;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dabing.ads.ac;
 import com.dabing.emoj.R;
+import com.dabing.emoj.activity.ChannelAddCategoryActivity;
+import com.dabing.emoj.bonus.IBonusChangeListener;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
 import com.dabing.emoj.db.ChannelDatabaseHelper;
@@ -42,6 +45,7 @@ import com.dabing.emoj.widget.ChannelCheckBox.BeforeCheckedChangeListener;
  *
  */
 public class ChannelListItem extends LinearLayout implements IRequest {
+	IBonusChangeListener mBonusChangeListener;
 	String mTitle;
 	ChannelRequest mRequest;
 	int img1_width = 105;//单位 px
@@ -74,11 +78,18 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		mCheckBox.setOnCheckedChangeListener(afterCheckedChangeListener);
 	}
 	/**
+	 * 设置监听事件
+	 * @param listener
+	 */
+	public void setBonusChangeListener(IBonusChangeListener listener){
+		mBonusChangeListener = listener;
+	}
+	/**
 	 * 设置选中状态
 	 * @param checked
 	 */
 	public void setChecked(boolean checked){
-		mCheckBox.setChecked(checked, false);
+		mCheckBox.setChecked(checked);
 	}
 	/**
 	 * 设置频道名称
@@ -121,7 +132,8 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 			}
 			// 收费
 			else {
-				mBonusTextView.setText(String.format("%d", mBonus));
+				//不显示具体数额 特此注释
+				//mBonusTextView.setText(String.format("%d", mBonus));
 				mBonusTextView.setVisibility(View.VISIBLE);
 			}
 		}else {
@@ -235,7 +247,8 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 					}
 					//未购买
 					else {
-						IBouns helper = new WAPS_Bonus(getContext());
+						final IBouns helper = new WAPS_Bonus(getContext());
+						helper.setBonusChangeListener(mBonusChangeListener);
 						//获取拥有的积分
 						int wealth = helper.get();
 						//积分足够提示是否购买
@@ -249,7 +262,11 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 								public void onClick(DialogInterface dialog, int which) {
 									// TODO Auto-generated method stub
 									Log.d(TAG, "ok");
-									view.setChecked(true, true);
+									helper.spend(mBonus);
+									view.setChecked(true, false,true);
+									//设为已购买
+									AppConfig.setChannelBuyed(getContext(), Integer.parseInt(mChannelID));
+									dialog.dismiss();
 								}
 							}, new DialogInterface.OnClickListener() {
 								
@@ -274,6 +291,8 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 								public void onClick(DialogInterface dialog, int which) {
 									// TODO Auto-generated method stub
 									Log.d(TAG, "ok");
+									helper.showOffers();
+									dialog.dismiss();
 								}
 							}, new DialogInterface.OnClickListener() {
 								
@@ -382,5 +401,16 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 			Log.e(TAG, e.toString());
 		}
 		return null;
+	}
+	
+	protected void showToast(int value){
+		View view = LayoutInflater.from(getContext()).inflate(R.layout.bonus_alert_toast, null);
+		TextView txt = (TextView) view.findViewById(R.id.bonus_alert_toast_txt);
+		String s = value > 0 ? String.format("+%d", value):String.valueOf(value);
+		txt.setText(s);
+		Toast toast = new Toast(getContext());
+		toast.setDuration(Toast.LENGTH_LONG);
+		toast.setView(view);
+		toast.show();
 	}
 }

@@ -2,6 +2,10 @@ package com.dabing.emoj.bonus;
 
 public interface IBouns {
 	/**
+	 * 跳转至积分墙
+	 */
+	void showOffers();
+	/**
 	 * 设置积分
 	 * @param bonus
 	 */
@@ -26,4 +30,9 @@ public interface IBouns {
 	 * 刷新 从服务器端获取积分
 	 */
 	void reflesh();
+	/**
+	 * 积分变化的监听事件
+	 * @param listener
+	 */
+	void setBonusChangeListener(IBonusChangeListener listener);
 }

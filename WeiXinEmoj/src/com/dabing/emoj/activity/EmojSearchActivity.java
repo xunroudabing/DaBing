@@ -361,7 +361,7 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 			JSONArray array = new JSONArray(AppConstant.CHANNEL_CATEGORY_INDEX);
 			cursor = helper.getCursor();
 			//获取数据库中的频道集合，构造json
-			if(cursor != null){
+			if(cursor != null && cursor.getCount() > 0){
 				cursor.moveToFirst();
 				do {
 					int channelId = cursor.getInt(cursor.getColumnIndexOrThrow(ChannelDatabaseHelper.FIELD_CHANNLEID));
@@ -371,8 +371,9 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 					object.put("n", name);
 					array.put(object);
 				} while (cursor.moveToNext());
-				return array.toString();
+				
 			}
+			return array.toString();
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());
