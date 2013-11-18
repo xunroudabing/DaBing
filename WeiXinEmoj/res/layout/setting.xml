@@ -91,13 +91,7 @@
 			  android:layout_height="wrap_content" 
 			  android:text="表情打包下载"/>
              
-             <ImageView 
-              android:id="@+id/setting_download_icon"
-              android:layout_toRightOf="@id/setting_download_txt"
-              android:layout_marginLeft="5dp"
-              android:src="@drawable/alert_new"
-              android:layout_width="wrap_content" 
-			  android:layout_height="wrap_content"  />
+            
              <ImageView 
               android:src="@drawable/mm_submenu_normal"      
               android:layout_marginRight="12.0dip"  
@@ -105,8 +99,9 @@
        
               android:layout_width="wrap_content" 
 			  android:layout_height="wrap_content"  />
-        </RelativeLayout>     
-        <RelativeLayout android:id="@+id/setting_attention" style="@style/leba_bg_mid_layout">
+        </RelativeLayout>    
+        <!-- 隐藏 --> 
+        <RelativeLayout android:visibility="gone" android:id="@+id/setting_attention" style="@style/leba_bg_mid_layout">
              <ImageView
               android:id="@+id/setting_attention_icon1"    
               android:src="@drawable/rating_important"   
