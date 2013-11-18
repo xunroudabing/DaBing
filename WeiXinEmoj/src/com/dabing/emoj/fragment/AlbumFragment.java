@@ -46,7 +46,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 
 public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks<Cursor>{
-	boolean mChanged = false;//cusor是否应该刷新
+	static boolean mChanged = false;//cusor是否应该刷新
 	int mWidth = 80;
 	IEmojScanCallBack mCallBack;
 	Messenger client;
@@ -59,17 +59,19 @@ public class AlbumFragment extends UserDefineFragment implements LoaderCallbacks
 	ImageView mSdcardNoAviaible;
 	AlbumCusorAdapter adapter;
 	UserDefineDataBaseHelper mHelper;
-	boolean IsScaned = false;//是否扫描过
+	static boolean IsScaned = false;//是否扫描过
 	boolean delMode = false;//删除模式
 	static final int COLUM_NUM = 3;
 	static final int COLUM_PADDING = 0;
 	static final String TAG = AlbumFragment.class.getSimpleName();	
 	static AlbumFragment instance;
 	public static AlbumFragment getInstance(){
-		if(instance == null){
-			instance = new AlbumFragment();
-		}
-		return instance;
+//		if(instance == null){
+//			instance = new AlbumFragment();
+//		}
+//		return instance;
+		AlbumFragment fragment = new AlbumFragment();
+		return fragment;
 	}
 
 	/*
