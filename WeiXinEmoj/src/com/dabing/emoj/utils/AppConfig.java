@@ -927,4 +927,21 @@ public class AppConfig {
 		boolean ret = preferences.getBoolean(String.format("channel_buy_%d", channelID),false);
 		return ret;
 	}
+	/**
+	 * 获取常见问题
+	 * @param context
+	 * @return
+	 */
+	public static String getProblem(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		String ret = preferences.getString("setting_problem_content", AppConstant.SETTING_PROBLEM);
+		return ret;
+	}
+	
+	public static void setProblem(Context context,String json){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString("setting_problem_content", json);
+		editor.commit();
+	}
 }

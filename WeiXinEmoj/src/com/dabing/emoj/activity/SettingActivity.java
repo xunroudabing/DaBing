@@ -1,11 +1,10 @@
 package com.dabing.emoj.activity;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-
 import greendroid.image.ImageProcessor;
 import greendroid.image.ScaleImageProcessor;
-import greendroid.util.GDUtils;
+
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,16 +20,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import android.widget.ImageView.ScaleType;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
-import com.dabing.emoj.advertise.WAPS_AppWallActivity;
 import com.dabing.emoj.advertise.AdManager.AdType;
+import com.dabing.emoj.advertise.WAPS_AppWallActivity;
 import com.dabing.emoj.qqconnect.BaseApiListener;
 import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.service.LoginSuccessBroadcast;
@@ -61,7 +60,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 	Button btnClear;
 	EmojImageView headView;
 	RelativeLayout downloadView,attentionView;
-	ImageView downloadIcon,attensionIcon;
+	ImageView attensionIcon;
 	LinearLayout loginView,userinfoView,versionView,yijianView,aboutView,appwallView,helpView;
 	LinearLayout pingjiaView,problemView;
 	static final int REQUEST_LOGIN = 1;
@@ -87,7 +86,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		headView = (EmojImageView) findViewById(R.id.setting_userinfo_head);
 		downloadView = (RelativeLayout) findViewById(R.id.setting_download);
 		attentionView = (RelativeLayout) findViewById(R.id.setting_attention);
-		downloadIcon = (ImageView) findViewById(R.id.setting_download_icon);
+
 		attensionIcon = (ImageView) findViewById(R.id.setting_attention_icon);
 		loginView.setOnClickListener(this);
 		userinfoView.setOnClickListener(this);
@@ -116,16 +115,16 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		return R.layout.setting;
 	}
 	private void isNew(){
-		if (AppConfig.getIsNew(getApplicationContext(), "unread_download")) {
-			downloadIcon.setVisibility(View.VISIBLE);
-		}else {
-			downloadIcon.setVisibility(View.INVISIBLE);
-		}
-		if(AppConfig.getIsNew(getApplicationContext(), "unread_public")){
-			attensionIcon.setVisibility(View.VISIBLE);
-		}else {
-			attensionIcon.setVisibility(View.INVISIBLE);
-		}
+//		if (AppConfig.getIsNew(getApplicationContext(), "unread_download")) {
+//			downloadIcon.setVisibility(View.VISIBLE);
+//		}else {
+//			downloadIcon.setVisibility(View.INVISIBLE);
+//		}
+//		if(AppConfig.getIsNew(getApplicationContext(), "unread_public")){
+//			attensionIcon.setVisibility(View.VISIBLE);
+//		}else {
+//			attensionIcon.setVisibility(View.INVISIBLE);
+//		}
 	}
 	public void Initialize(){
 		//OAuth oAuth = TokenStore.fetchPrivate(getApplicationContext());

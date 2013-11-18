@@ -47,7 +47,8 @@ public class AppConstant {
 	public static final String E1 = "{\"id\":\"e1\",\"t\":\"大笑\",\"p\":[],\"b\":\"red\",\"d\":\"\",\"c\":1,\"o\":1}";
 	//分享到QQ空间
 	public static final String SHARE_COMMENT = "";
-			
+	//常见问题
+	public static final String SETTING_PROBLEM = "[{\"p\":\"为什么无法发送表情?\",\"a\":\"首先请您将设备上的微信升级至最新版本(微信4.3以下的版本是不支持发送动态表情的)。如果您的微信已经是最新版本,请您尝试重启一下设备。如果重启设备后仍然无法发送表情,那么建议您重新安装一下微信.\"},{\"p\":\"如何把微信表情包加为微信插件？\",\"a\":\"具体设置请见【设置】-【使用说明】\"}]";		
 	/**
 	 * 图片源后缀
 	 */

@@ -61,11 +61,12 @@ public class WeiXinEmojService extends Service implements UmengOnlineConfigureLi
 		// TODO Auto-generated method stub
 		Log.d(TAG, "WeiXinEmojService 服务启动....");
 		BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
-		queue.add(new Task1());
+		//queue.add(new Task1());
+		queue.add(new ConfigTask());
 		queue.add(new AdvertiseConfig());
 		queue.add(new MenuTask());
-		queue.add(new Task2());
-		queue.add(new OauthTask());
+		//queue.add(new Task2());
+		//queue.add(new OauthTask());
 		//queue.add(new PriOauthVerify());
 		queue.add(new ListenTask());
 		queue.add(new ApiCheckTask());
@@ -207,6 +208,53 @@ public class WeiXinEmojService extends Service implements UmengOnlineConfigureLi
 				String picUrl = MobclickAgent.getConfigParams(WeiXinEmojService.this, "share_pic_url");
 				if(picUrl != null && !picUrl.equals("") && !picUrl.equals("null")){
 					AppConfig.setSharePicUrl(getApplicationContext(), picUrl);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+		}
+		
+	}
+	//2013.11.18 更新全局配置项
+	class ConfigTask implements Runnable{
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			try {
+				//关于
+				String about = MobclickAgent.getConfigParams(WeiXinEmojService.this, "notice");
+				if(about != null && !about.equals("") && !about.equals("null")){
+					AppConfig.setNotic(getApplicationContext(), about);
+					//Log.d(TAG, "关于:"+about);
+				}
+				//微博分享
+				String weibo = MobclickAgent.getConfigParams(WeiXinEmojService.this, "add_weibo_content");
+				if(weibo != null && !weibo.equals("") && !weibo.equals("null")){
+					AppConfig.setWeibo(getApplicationContext(), weibo);
+					//Log.d(TAG, "分享:"+weibo);
+				}
+				//vip
+				String vip = MobclickAgent.getConfigParams(WeiXinEmojService.this, "vip");
+				if(vip != null && !vip.equals("") && !vip.equals("null")){
+					AppConfig.setVip(getApplicationContext(), vip);
+				}
+				
+				//公共账号
+				String account = MobclickAgent.getConfigParams(WeiXinEmojService.this, "weixin_public_account");
+				if(account != null && !account.equals("") && !account.equals("null")){
+					AppConfig.setPublicAccount(getApplicationContext(), account);
+				}
+				//微博分享图片url
+				String picUrl = MobclickAgent.getConfigParams(WeiXinEmojService.this, "share_pic_url");
+				if(picUrl != null && !picUrl.equals("") && !picUrl.equals("null")){
+					AppConfig.setSharePicUrl(getApplicationContext(), picUrl);
+				}
+				//常见问题
+				String setting_problem = MobclickAgent.getConfigParams(WeiXinEmojService.this, "setting_problem_content");
+				if(setting_problem != null && !setting_problem.equals("") && !setting_problem.equals("null")){
+					AppConfig.setProblem(getApplicationContext(), setting_problem);
 				}
 			} catch (Exception e) {
 				// TODO: handle exception

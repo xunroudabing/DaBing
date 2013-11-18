@@ -290,11 +290,11 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
     //设置项是否有更新
     private void showNewSetting(){
     	try {
-			if (AppConfig.getIsNew(getApplicationContext(), "unread_download") || AppConfig.getIsNew(getApplicationContext(), "unread_public")) {
-				newSettingView.setVisibility(View.VISIBLE);
-			}else {
-				newSettingView.setVisibility(View.INVISIBLE);
-			}
+//			if (AppConfig.getIsNew(getApplicationContext(), "unread_download") || AppConfig.getIsNew(getApplicationContext(), "unread_public")) {
+//				newSettingView.setVisibility(View.VISIBLE);
+//			}else {
+//				newSettingView.setVisibility(View.INVISIBLE);
+//			}
 			
 //			if(AppConfig.getIsNew(getApplicationContext(), "unread_emotion")){
 //				newEmotionView.setVisibility(View.VISIBLE);
