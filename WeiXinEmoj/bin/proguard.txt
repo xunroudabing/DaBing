@@ -81,16 +81,16 @@
 # view AndroidManifest.xml #generated:53
 -keep class com.dabing.emoj.activity.WelcomeActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:118
+# view AndroidManifest.xml #generated:114
 -keep class com.dabing.emoj.admin.MakeEmotionActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:117
+# view AndroidManifest.xml #generated:113
 -keep class com.dabing.emoj.admin.SelectEmojActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:116
+# view AndroidManifest.xml #generated:112
 -keep class com.dabing.emoj.admin.WebLoginActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:115
+# view AndroidManifest.xml #generated:111
 -keep class com.dabing.emoj.admin.uploadPicActivity { <init>(...); }
 
 # view res/layout/emoj_browse_detail.xml #generated:145
@@ -109,28 +109,28 @@
 # view res/layout/mix_adview.xml #generated:15
 -keep class com.dabing.emoj.advertise.WAPS_CustomAd { <init>(...); }
 
-# view AndroidManifest.xml #generated:113
+# view AndroidManifest.xml #generated:109
 -keep class com.dabing.emoj.db.UserDefineContentProvider { <init>(...); }
 
-# view AndroidManifest.xml #generated:119
+# view AndroidManifest.xml #generated:115
 -keep class com.dabing.emoj.demo.demo1 { <init>(...); }
 
-# view AndroidManifest.xml #generated:124
+# view AndroidManifest.xml #generated:120
 -keep class com.dabing.emoj.demo.demoFile { <init>(...); }
 
-# view AndroidManifest.xml #generated:122
+# view AndroidManifest.xml #generated:118
 -keep class com.dabing.emoj.demo.demoOOM { <init>(...); }
 
-# view AndroidManifest.xml #generated:123
+# view AndroidManifest.xml #generated:119
 -keep class com.dabing.emoj.demo.demoPanel { <init>(...); }
 
-# view AndroidManifest.xml #generated:120
+# view AndroidManifest.xml #generated:116
 -keep class com.dabing.emoj.demo.democall { <init>(...); }
 
 # view AndroidManifest.xml #generated:106
 -keep class com.dabing.emoj.demo.demolist { <init>(...); }
 
-# view AndroidManifest.xml #generated:121
+# view AndroidManifest.xml #generated:117
 -keep class com.dabing.emoj.demo.demoshow { <init>(...); }
 
 # view res/layout/emoj_index1.xml #generated:34
@@ -146,7 +146,7 @@
 # view res/layout/emoj_img_detail.xml #generated:23
 -keep class com.dabing.emoj.imagezoomview.ImageZoomView { <init>(...); }
 
-# view AndroidManifest.xml #generated:135
+# view AndroidManifest.xml #generated:131
 -keep class com.dabing.emoj.service.AppRegister { <init>(...); }
 
 # view AndroidManifest.xml #generated:104
@@ -176,7 +176,7 @@
 # view res/layout/cache_item.xml #generated:2
 -keep class com.dabing.emoj.widget.CacheWrapperImageView { <init>(...); }
 
-# view res/layout/channel_add_category_list_item.xml #generated:84
+# view res/layout/channel_add_category_list_item.xml #generated:90
 -keep class com.dabing.emoj.widget.ChannelCheckBox { <init>(...); }
 
 # view res/layout/channel_list_item.xml #generated:2
@@ -207,9 +207,9 @@
 # view res/layout/header_fragment_emotionpanel.xml #generated:8
 -keep class com.dabing.emoj.widget.EmotionPanel { <init>(...); }
 
-# view res/layout/channel_add_category_list_item.xml #generated:44
-# view res/layout/channel_add_category_list_item.xml #generated:53
-# view res/layout/channel_add_category_list_item.xml #generated:64
+# view res/layout/channel_add_category_list_item.xml #generated:50
+# view res/layout/channel_add_category_list_item.xml #generated:59
+# view res/layout/channel_add_category_list_item.xml #generated:70
 -keep class com.dabing.emoj.widget.FitSizeAsyncImageView { <init>(...); }
 
 # view res/layout/user_define_album_add.xml #generated:11
@@ -224,7 +224,7 @@
 # view res/layout/wrapper_item_nopadding.xml #generated:2
 -keep class com.dabing.emoj.widget.WrapperImageView { <init>(...); }
 
-# view AndroidManifest.xml #generated:134
+# view AndroidManifest.xml #generated:130
 -keep class com.dabing.emoj.wxapi.WXEntryActivity { <init>(...); }
 
 # view res/layout/user_define_fragment2.xml #generated:7
@@ -236,10 +236,10 @@
 # view res/layout/user_define_fragment1.xml #generated:8
 -keep class com.handmark.pulltorefresh.library.PullToRefreshScrollView { <init>(...); }
 
-# view AndroidManifest.xml #generated:143
+# view AndroidManifest.xml #generated:139
 -keep class com.tencent.appwallsdk.activity.QQAppWallActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:153
+# view AndroidManifest.xml #generated:149
 -keep class com.tencent.appwallsdk.service.DownloadService { <init>(...); }
 
 # view res/layout/app_wall.xml #generated:6
@@ -252,19 +252,19 @@
 # view res/layout/security_image.xml #generated:2
 -keep class com.tencent.mm.sdk.uikit.applet.SecurityImage { <init>(...); }
 
-# view AndroidManifest.xml #generated:156
+# view AndroidManifest.xml #generated:152
 -keep class com.tencent.tauth.AuthActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:129
+# view AndroidManifest.xml #generated:125
 -keep class com.umeng.common.net.DownloadingService { <init>(...); }
 
-# view AndroidManifest.xml #generated:128
+# view AndroidManifest.xml #generated:124
 -keep class com.umeng.fb.ui.FeedbackConversation { <init>(...); }
 
-# view AndroidManifest.xml #generated:127
+# view AndroidManifest.xml #generated:123
 -keep class com.umeng.fb.ui.FeedbackConversations { <init>(...); }
 
-# view AndroidManifest.xml #generated:126
+# view AndroidManifest.xml #generated:122
 -keep class com.umeng.fb.ui.SendFeedback { <init>(...); }
 
 # view res/layout/umeng_fb_conversation.xml #generated:14
@@ -328,12 +328,12 @@
 # view res/layout/gd_thumbnail_item_view.xml #generated:20
 -keep class greendroid.widget.itemview.ThumbnailItemView { <init>(...); }
 
-# view AndroidManifest.xml #generated:168
+# view AndroidManifest.xml #generated:164
 -keep class net.youmi.android.AdBrowser { <init>(...); }
 
-# view AndroidManifest.xml #generated:177
+# view AndroidManifest.xml #generated:173
 -keep class net.youmi.android.AdReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:173
+# view AndroidManifest.xml #generated:169
 -keep class net.youmi.android.AdService { <init>(...); }
 

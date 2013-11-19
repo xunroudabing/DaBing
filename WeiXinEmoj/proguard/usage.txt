@@ -31,6 +31,10 @@ com.ant.liao.R$string
 com.dabing.emoj.BuildConfig
 com.dabing.emoj.R:
     10:10:public R()
+com.dabing.emoj.activity.ChannelAddCategoryActivity:
+    static final int DEFAULT
+com.dabing.emoj.activity.ChannelAddCategoryActivity$ChannelCategoryAdpater:
+    static final int COLUM_PADDING
 com.dabing.emoj.activity.EmojBrowsePictureActivity:
     private static final int MENU_ID_ZOOM
     private static final int MENU_ID_PAN
@@ -58,8 +62,8 @@ com.dabing.emoj.activity.EmojBrowseViewActivity:
     static final float ZOOM_RATIO
     static final long delayMillis
     private static synthetic int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType
-    601:635:private void InitAd()
-    81:81:static synthetic int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType()
+    605:639:private void InitAd()
+    85:85:static synthetic int[] $SWITCH_TABLE$com$dabing$emoj$advertise$AdManager$AdType()
 com.dabing.emoj.activity.EmojContainerActivity:
     152:153:private void UmengEvent(java.lang.String)
 com.dabing.emoj.activity.EmojEmotionActivity:
@@ -72,7 +76,8 @@ com.dabing.emoj.activity.EmojImageViewActivity:
 com.dabing.emoj.activity.EmojSearchActivity:
     static final int COL_NUM
     static final java.lang.String REQ_NUM
-    322:336:private void getImages(org.json.JSONArray)
+    297:307:private void PrepareActionGrid()
+    340:354:private void getImages(org.json.JSONArray)
 com.dabing.emoj.activity.EmojViewActivity:
     private static final int MENU_ID_ZOOM
     private static final int MENU_ID_PAN
@@ -105,7 +110,7 @@ com.dabing.emoj.admin.SelectEmojActivity:
     private static final int MENU_ID_RESET
     private android.widget.ZoomControls mZoomControls
     static final long delayMillis
-    522:530:private void SetupWxAction()
+    521:529:private void SetupWxAction()
 com.dabing.emoj.admin.uploadPicActivity:
     static final int interval
 com.dabing.emoj.adpater.AlbumCusorAdapter:
@@ -127,6 +132,23 @@ com.dabing.emoj.advertise.WAPS_CustomAd:
     static final long DELAY
     static final long PERIOD
     95:96:public void setPause(boolean)
+com.dabing.emoj.bonus.IBouns:
+    public abstract void set(int)
+    public abstract void award(int)
+com.dabing.emoj.bonus.WAPS_Bonus:
+    static final int RETRY
+    static final java.lang.String FILENAME
+    67:88:public void award(int)
+    92:93:public void set(int)
+com.dabing.emoj.bonus.WAPS_Bonus$2
+com.dabing.emoj.db.ChannelDatabaseHelper:
+    public static final java.lang.String FIELD_ID
+    public static final java.lang.String FIELD_CHANNLEID
+    public static final java.lang.String FIELD_NAME
+    public static final java.lang.String FIELD_TYPE
+    public static final java.lang.String FIELD_TIME
+    public static final java.lang.String TABLE_NAME
+    static final int VERSION
 com.dabing.emoj.db.UserDefineContentProvider:
     static final int URI_ALBUM
     static final int URI_ALBUM_ID
@@ -139,19 +161,20 @@ com.dabing.emoj.db.UserDefineDataBaseHelper:
     public static final java.lang.String FIELD_TIME
     public static final java.lang.String FIELD_STATE
     public static final java.lang.String FIELD_CHILDSIZE
+    public static final java.lang.String FIELD_ORDER
     static final java.lang.String TABLE_NAME
     static final int VERSION
-    95:110:public com.dabing.emoj.utils.FileInfo getFileInfo(int)
-    114:133:public com.dabing.emoj.utils.FileInfo getFileInfo(java.lang.String)
-    222:231:public void insert(java.io.File)
-    249:249:public boolean exist(com.dabing.emoj.utils.FileInfo)
+    96:111:public com.dabing.emoj.utils.FileInfo getFileInfo(int)
+    115:134:public com.dabing.emoj.utils.FileInfo getFileInfo(java.lang.String)
+    242:251:public void insert(java.io.File)
+    269:269:public boolean exist(com.dabing.emoj.utils.FileInfo)
 com.dabing.emoj.db.UserDefineDataBaseHelper$UserDefineCursor:
-    317:317:public java.lang.String getName()
-    325:325:public java.lang.String getType()
-    329:329:public java.lang.String getThumb()
-    333:333:public long getTime()
-    337:337:public int getState()
-    341:341:public int getChildSize()
+    337:337:public java.lang.String getName()
+    345:345:public java.lang.String getType()
+    349:349:public java.lang.String getThumb()
+    353:353:public long getTime()
+    357:357:public int getState()
+    361:361:public int getChildSize()
 com.dabing.emoj.demo.demoFile:
     55:56:private void maketext1(java.lang.CharSequence)
     100:111:private void start()
@@ -185,8 +208,10 @@ com.dabing.emoj.fragment.AlbumDetailFragment:
 com.dabing.emoj.fragment.AlbumFragment:
     static final int COLUM_NUM
     static final int COLUM_PADDING
-    268:269:public void recycle()
-    429:437:protected void unregister()
+    static com.dabing.emoj.fragment.AlbumFragment instance
+    274:275:public void recycle()
+    312:323:protected void checkSdcardAvavible()
+    492:500:protected void unregister()
 com.dabing.emoj.fragment.BaseEmojFragment:
     10:11:public BaseEmojFragment()
 com.dabing.emoj.fragment.CommonEmojFragment:
@@ -264,6 +289,7 @@ com.dabing.emoj.service.EmojScanService$FileRootScanTask$1
 com.dabing.emoj.service.EmojScanService$FileRootScanTask$1$1
 com.dabing.emoj.service.EmojScanService$ImageScanTask:
     364:396:private java.util.Map getThumbnails(java.util.Map)
+com.dabing.emoj.service.WeiXinEmojLoginServiceV2$ShareSpaceTask
 com.dabing.emoj.service.WeiXinEmojService$PriOauthVerify
 com.dabing.emoj.utils.AppConfig:
     public static final boolean DEBUG
@@ -281,21 +307,25 @@ com.dabing.emoj.utils.AppConfig:
     public static final java.lang.String CACHE_STRING
     public static final java.lang.String ALBUM_STRING
     static final java.lang.String FILENAME
-    213:233:public static int getBackgroundResId(java.lang.String)
-    281:283:public static boolean getAdvertise_onV2(android.content.Context)
-    302:306:public static void setAdvertiseRemove(android.content.Context,boolean)
-    381:383:public static boolean getUmengAdEnable(android.content.Context)
-    386:390:public static void setUmengAdEnable(android.content.Context,boolean)
-    413:415:public static java.lang.String getWAPS_AD_Type(android.content.Context)
-    418:422:public static void setWAPS_AD_Type(android.content.Context,java.lang.String)
-    429:431:public static java.lang.String getWAPS_INDEX1_AD_TYPE(android.content.Context)
-    446:448:public static java.lang.String getWAPS_INDEX2_AD_TYPE(android.content.Context)
-    463:465:public static java.lang.String getWAPS_INDEX3_AD_TYPE(android.content.Context)
-    479:482:public static java.lang.String getVip(android.content.Context)
-    513:515:public static java.lang.String getUnListen(android.content.Context)
-    529:531:public static java.lang.String getMenuExtend(android.content.Context)
-    550:555:public static void setUserEnable(android.content.Context,boolean)
-    846:849:public static java.lang.String getUploadIds(android.content.Context,java.lang.String)
+    214:234:public static int getBackgroundResId(java.lang.String)
+    298:300:public static boolean getAllowShareSpace(android.content.Context)
+    303:307:public static void setAllowShareSpace(android.content.Context,boolean)
+    314:316:public static java.lang.String getShareComment(android.content.Context)
+    329:333:public static void setAdvertiseRemove(android.content.Context,boolean)
+    408:410:public static boolean getUmengAdEnable(android.content.Context)
+    413:417:public static void setUmengAdEnable(android.content.Context,boolean)
+    440:442:public static java.lang.String getWAPS_AD_Type(android.content.Context)
+    445:449:public static void setWAPS_AD_Type(android.content.Context,java.lang.String)
+    456:458:public static java.lang.String getWAPS_INDEX1_AD_TYPE(android.content.Context)
+    473:475:public static java.lang.String getWAPS_INDEX2_AD_TYPE(android.content.Context)
+    490:492:public static java.lang.String getWAPS_INDEX3_AD_TYPE(android.content.Context)
+    506:509:public static java.lang.String getVip(android.content.Context)
+    540:542:public static java.lang.String getUnListen(android.content.Context)
+    556:558:public static java.lang.String getMenuExtend(android.content.Context)
+    577:582:public static void setUserEnable(android.content.Context,boolean)
+    853:856:public static java.lang.String getUploadIds(android.content.Context,java.lang.String)
+    883:887:public static void setChannelCategory(android.content.Context,java.lang.String)
+    904:906:public static boolean getBonusHide(android.content.Context)
 com.dabing.emoj.utils.AppConstant
 com.dabing.emoj.utils.DaBingRequest:
     static final java.lang.String format
@@ -442,7 +472,7 @@ com.dabing.emoj.utils.FileHelper$OnScanFileListener
 com.dabing.emoj.utils.FileInfo:
     public boolean Selected
     static final java.lang.String IMAGE_PATTERN
-    59:91:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.io.File,java.io.FilenameFilter,boolean)
+    61:93:public static com.dabing.emoj.utils.FileInfo GetFileInfo(java.io.File,java.io.FilenameFilter,boolean)
 com.dabing.emoj.utils.FileType:
     171:172:public void setValue(java.lang.String)
 com.dabing.emoj.utils.FileTypeJudge:
@@ -493,12 +523,12 @@ com.dabing.emoj.utils.Util:
 com.dabing.emoj.utils.Util$SDCardInfo
 com.dabing.emoj.utils.Utils:
     12:12:public Utils()
-    27:34:public static float getScreenDensity(android.content.Context)
     37:46:public static boolean isChinese(char)
     49:58:public static int getLength(java.lang.CharSequence)
     62:66:public static java.lang.String getRealPathFromURI(android.app.Activity,android.net.Uri)
 com.dabing.emoj.widget.Album:
-    118:118:public com.dabing.emoj.utils.FileInfo getFile()
+    129:129:public com.dabing.emoj.utils.FileInfo getFile()
+    202:202:protected void prepareDialog()
 com.dabing.emoj.widget.Album$ThumbnailTask
 com.dabing.emoj.widget.AlbumImageView:
     47:48:public void setImageDrawable(android.graphics.drawable.Drawable)
@@ -512,6 +542,13 @@ com.dabing.emoj.widget.CacheWrapperImageView:
     greendroid.image.ImageProcessor mProcessor
     68:70:public void setImageProcessor(greendroid.image.ImageProcessor)
     73:74:public void setCachedPath(java.lang.String)
+com.dabing.emoj.widget.ChannelCheckBox:
+    82:82:public boolean isChecked()
+com.dabing.emoj.widget.ChannelListItem:
+    static final int THUMB_SIZE
+    static final int COLUM_PADDING
+    168:168:public void clear()
+    407:415:protected void showToast(int)
 com.dabing.emoj.widget.CrystalButton:
     static final int PADDING
     65:66:public void setIcon(android.graphics.drawable.Drawable)
@@ -533,6 +570,8 @@ com.dabing.emoj.widget.MatrixBitmap:
     12:13:public MatrixBitmap(android.content.Context)
 com.dabing.emoj.widget.NormalProgressDialog:
     23:24:public void setMessage(java.lang.CharSequence)
+com.dabing.emoj.widget.QuickActionGrid:
+    64:65:public void setOnQuickActionItemClickListener(com.dabing.emoj.widget.QuickActionGrid$OnQuickActionItemClickListener)
 com.dabing.emoj.widget.QuickActionList
 com.dabing.emoj.widget.QuickActionList$QuickActionAdapter
 com.dabing.emoj.widget.QuickActionPanel
@@ -576,6 +615,14 @@ com.dabing.emoj.wxapi.WeiXinHelper$WXThumbTask
 com.dabing.emoj.wxapi.WeiXinHelper$WeiXinListener
 com.tencent.exmobwin.MobWINManager:
     private static final java.lang.String a
+    public MobWINManager()
+    public static varargs void init(android.content.Context,java.lang.String,java.lang.String,java.lang.String,int[])
+com.tencent.exmobwin.Type:
+    public static final int MOBWIN_BANNER
+    public static final int MOBWIN_SPOT
+    public static final int MOBWIN_INTEGRALWALL
+    public static final int MOBWIN_MINIBANNER
+    public Type()
 com.tencent.exmobwin.a.b:
     private static final java.lang.String n
     public static final int b
@@ -618,6 +665,14 @@ com.tencent.exmobwin.b.e
 com.tencent.exmobwin.b.f:
     private static final java.lang.String a
     public java.util.ArrayList a()
+com.tencent.exmobwin.banner.AdListener:
+    public static final int ERROR_CONNECTION_FAILED
+    public static final int ERROR_NO_AVAILABLE_ADS
+    public static final int ERROR_GIF_DECODE_FAILED
+    public static final int ERROR_GET_IMAGE_FAILED
+    public static final int ERROR_SERVER_DATA_EXCEPTION
+    public abstract void onReceiveAd()
+    public abstract void onReceiveFailed(int)
 com.tencent.exmobwin.banner.DialogActivity:
     private static final java.lang.String a
     private static final java.lang.String b
@@ -629,6 +684,9 @@ com.tencent.exmobwin.banner.MobWINBrowserActivity:
 com.tencent.exmobwin.banner.TAdView:
     private static final java.lang.String a
     private static final int b
+    private com.tencent.exmobwin.banner.AdListener c
+    public TAdView(android.app.Activity)
+    public void setAdListener(com.tencent.exmobwin.banner.AdListener)
 com.tencent.exmobwin.banner.TMiniAdView:
     private static final java.lang.String a
     private static final int b
@@ -640,6 +698,8 @@ com.tencent.exmobwin.banner.a:
     private static final java.lang.String o
     private static final java.lang.String p
     private static final int q
+com.tencent.exmobwin.banner.d:
+    public void a(com.tencent.exmobwin.banner.AdListener)
 com.tencent.exmobwin.c.a:
     private static final java.lang.String a
     public a()
@@ -1864,7 +1924,6 @@ com.tencent.tauth.Tencent:
     184:185:public java.lang.String getOpenId()
     204:205:public long getExpiresIn()
     266:270:public int reAuth(android.app.Activity,java.lang.String,com.tencent.tauth.IUiListener)
-    282:292:public void logout(android.content.Context)
     312:314:public int invite(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
     336:338:public int story(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)
     360:362:public int ask(android.app.Activity,android.os.Bundle,com.tencent.tauth.IUiListener)

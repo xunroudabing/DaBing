@@ -4161,6 +4161,7 @@ com.dabing.emoj.R$attr
 com.dabing.emoj.R$attr: int CenterInVertical
 com.dabing.emoj.R$attr: int activeDot
 com.dabing.emoj.R$attr: int alignmentMode
+com.dabing.emoj.R$attr: int checked_src
 com.dabing.emoj.R$attr: int columnCount
 com.dabing.emoj.R$attr: int columnOrderPreserved
 com.dabing.emoj.R$attr: int defaultSrc
@@ -4273,6 +4274,7 @@ com.dabing.emoj.R$attr: int rowCount
 com.dabing.emoj.R$attr: int rowOrderPreserved
 com.dabing.emoj.R$attr: int segmentedBar
 com.dabing.emoj.R$attr: int segmentedContentView
+com.dabing.emoj.R$attr: int src
 com.dabing.emoj.R$attr: int subtext
 com.dabing.emoj.R$attr: int subtitle
 com.dabing.emoj.R$attr: int tag
@@ -4291,6 +4293,7 @@ com.dabing.emoj.R$color: int blue
 com.dabing.emoj.R$color: int brown
 com.dabing.emoj.R$color: int button_selected
 com.dabing.emoj.R$color: int button_unselected
+com.dabing.emoj.R$color: int channel_tab_btn
 com.dabing.emoj.R$color: int dark_divider
 com.dabing.emoj.R$color: int darkgrey
 com.dabing.emoj.R$color: int edit_hint_color
@@ -4396,8 +4399,11 @@ com.dabing.emoj.R$drawable: int aa_button_install_focused
 com.dabing.emoj.R$drawable: int aa_button_install_normal
 com.dabing.emoj.R$drawable: int aa_button_install_pressed
 com.dabing.emoj.R$drawable: int aa_install_background
+com.dabing.emoj.R$drawable: int abs__ab_stacked_transparent_light_holo
+com.dabing.emoj.R$drawable: int abs__ab_transparent_dark_holo
 com.dabing.emoj.R$drawable: int action_about
 com.dabing.emoj.R$drawable: int action_bar_divider
+com.dabing.emoj.R$drawable: int action_btn_n
 com.dabing.emoj.R$drawable: int action_help
 com.dabing.emoj.R$drawable: int add_file_nor
 com.dabing.emoj.R$drawable: int add_file_pressed
@@ -4419,6 +4425,11 @@ com.dabing.emoj.R$drawable: int appitem_del_btn_pressed
 com.dabing.emoj.R$drawable: int appitem_del_selector
 com.dabing.emoj.R$drawable: int arrow_down
 com.dabing.emoj.R$drawable: int av_download
+com.dabing.emoj.R$drawable: int biz_news_column_subscribe_add
+com.dabing.emoj.R$drawable: int biz_news_column_subscribe_add_pressed
+com.dabing.emoj.R$drawable: int biz_news_column_subscribe_cancel
+com.dabing.emoj.R$drawable: int biz_pc_main_money_big_icon
+com.dabing.emoj.R$drawable: int biz_pc_main_money_icon
 com.dabing.emoj.R$drawable: int broswer_progress
 com.dabing.emoj.R$drawable: int btn_browse_left_nor
 com.dabing.emoj.R$drawable: int btn_browse_left_pressed
@@ -4456,11 +4467,17 @@ com.dabing.emoj.R$drawable: int btn_txt_nor
 com.dabing.emoj.R$drawable: int btn_txt_selected
 com.dabing.emoj.R$drawable: int btn_txt_selector
 com.dabing.emoj.R$drawable: int button_install_selector
+com.dabing.emoj.R$drawable: int channel_add_btn_selector
+com.dabing.emoj.R$drawable: int channel_add_category_list_item_bg
+com.dabing.emoj.R$drawable: int channel_item_bg
+com.dabing.emoj.R$drawable: int channel_tab_bg
 com.dabing.emoj.R$drawable: int collections_view_as_grid
 com.dabing.emoj.R$drawable: int collections_view_as_list
 com.dabing.emoj.R$drawable: int confirm_dialog_bottom_bg
 com.dabing.emoj.R$drawable: int confirm_dialog_failweb
 com.dabing.emoj.R$drawable: int confirm_dialog_load
+com.dabing.emoj.R$drawable: int confirm_dialog_load_v2
+com.dabing.emoj.R$drawable: int confirm_dialog_load_v3
 com.dabing.emoj.R$drawable: int confirm_dialog_successful_icon
 com.dabing.emoj.R$drawable: int confirm_dialog_top_bg
 com.dabing.emoj.R$drawable: int crystal_circle_nor
@@ -4472,6 +4489,8 @@ com.dabing.emoj.R$drawable: int custom_button_nor
 com.dabing.emoj.R$drawable: int custom_button_selected
 com.dabing.emoj.R$drawable: int custom_button_selector
 com.dabing.emoj.R$drawable: int custom_loading
+com.dabing.emoj.R$drawable: int custom_loading_v2
+com.dabing.emoj.R$drawable: int custom_loading_v3
 com.dabing.emoj.R$drawable: int cute_cate_danceing
 com.dabing.emoj.R$drawable: int default_imageview_background
 com.dabing.emoj.R$drawable: int default_ptr_flip
@@ -4684,6 +4703,7 @@ com.dabing.emoj.R$drawable: int mm_title_back_normal
 com.dabing.emoj.R$drawable: int mm_title_back_pressed
 com.dabing.emoj.R$drawable: int mm_title_bg
 com.dabing.emoj.R$drawable: int mm_title_btn_back
+com.dabing.emoj.R$drawable: int mm_title_btn_channel_normal
 com.dabing.emoj.R$drawable: int mm_title_btn_focused
 com.dabing.emoj.R$drawable: int mm_title_btn_groupcontact_normal
 com.dabing.emoj.R$drawable: int mm_title_btn_menu_normal
@@ -4713,6 +4733,7 @@ com.dabing.emoj.R$drawable: int navigation_refresh
 com.dabing.emoj.R$drawable: int net_warn_icon
 com.dabing.emoj.R$drawable: int net_webwechat_line
 com.dabing.emoj.R$drawable: int new_icon
+com.dabing.emoj.R$drawable: int nosdcard_chatting_bg
 com.dabing.emoj.R$drawable: int nosdcard_pic
 com.dabing.emoj.R$drawable: int page_indicator_dot_style2
 com.dabing.emoj.R$drawable: int path_pane
@@ -4847,13 +4868,13 @@ com.dabing.emoj.R$id: int admin_txtEmojName
 com.dabing.emoj.R$id: int admin_txtKey
 com.dabing.emoj.R$id: int admin_txtMsg
 com.dabing.emoj.R$id: int admin_txtPath
-com.dabing.emoj.R$id: int adview
 com.dabing.emoj.R$id: int alert_dialog_transparent_txt
 com.dabing.emoj.R$id: int alignBounds
 com.dabing.emoj.R$id: int alignMargins
 com.dabing.emoj.R$id: int authcode_change_btn
 com.dabing.emoj.R$id: int authcode_et
 com.dabing.emoj.R$id: int authcode_iv
+com.dabing.emoj.R$id: int bonus_alert_toast_txt
 com.dabing.emoj.R$id: int both
 com.dabing.emoj.R$id: int bottom
 com.dabing.emoj.R$id: int btn1
@@ -4872,6 +4893,26 @@ com.dabing.emoj.R$id: int cache_item_img
 com.dabing.emoj.R$id: int center
 com.dabing.emoj.R$id: int center_horizontal
 com.dabing.emoj.R$id: int center_vertical
+com.dabing.emoj.R$id: int channel_add_category_gridview
+com.dabing.emoj.R$id: int channel_add_category_head
+com.dabing.emoj.R$id: int channel_add_category_list_item_bonus
+com.dabing.emoj.R$id: int channel_add_category_list_item_chkbtn
+com.dabing.emoj.R$id: int channel_add_category_list_item_img1
+com.dabing.emoj.R$id: int channel_add_category_list_item_img2
+com.dabing.emoj.R$id: int channel_add_category_list_item_img3
+com.dabing.emoj.R$id: int channel_add_category_list_item_title
+com.dabing.emoj.R$id: int channel_category_head
+com.dabing.emoj.R$id: int channel_checkbox_img
+com.dabing.emoj.R$id: int channel_header_radio_1
+com.dabing.emoj.R$id: int channel_header_radio_10
+com.dabing.emoj.R$id: int channel_header_radio_2
+com.dabing.emoj.R$id: int channel_header_radio_3
+com.dabing.emoj.R$id: int channel_header_radio_4
+com.dabing.emoj.R$id: int channel_header_radio_5
+com.dabing.emoj.R$id: int channel_header_radio_6
+com.dabing.emoj.R$id: int channel_header_radio_7
+com.dabing.emoj.R$id: int channel_header_radio_8
+com.dabing.emoj.R$id: int channel_header_radio_9
 com.dabing.emoj.R$id: int clip_horizontal
 com.dabing.emoj.R$id: int clip_vertical
 com.dabing.emoj.R$id: int color_button_img
@@ -5074,7 +5115,6 @@ com.dabing.emoj.R$id: int setting_yijian
 com.dabing.emoj.R$id: int single
 com.dabing.emoj.R$id: int sort_btn
 com.dabing.emoj.R$id: int start
-com.dabing.emoj.R$id: int tencent_view
 com.dabing.emoj.R$id: int text_tv
 com.dabing.emoj.R$id: int thirdDomainMail
 com.dabing.emoj.R$id: int title
@@ -5132,6 +5172,7 @@ com.dabing.emoj.R$id: int user_define_album_image_imageview
 com.dabing.emoj.R$id: int user_define_btnDel
 com.dabing.emoj.R$id: int user_define_childsize
 com.dabing.emoj.R$id: int user_define_container
+com.dabing.emoj.R$id: int user_define_fragment1_nosdcard
 com.dabing.emoj.R$id: int user_define_progressBar
 com.dabing.emoj.R$id: int user_define_txt
 com.dabing.emoj.R$id: int userdefine_gridview
@@ -5179,8 +5220,14 @@ com.dabing.emoj.R$layout: int alert_dialog_menu_list_layout_special
 com.dabing.emoj.R$layout: int alert_dialog_menu_list_layout_title
 com.dabing.emoj.R$layout: int alert_dialog_transparent_layout
 com.dabing.emoj.R$layout: int app_wall
+com.dabing.emoj.R$layout: int bonus_alert_toast
 com.dabing.emoj.R$layout: int cache_imageview
 com.dabing.emoj.R$layout: int cache_item
+com.dabing.emoj.R$layout: int channel_add_category
+com.dabing.emoj.R$layout: int channel_add_category_list_item
+com.dabing.emoj.R$layout: int channel_category_item
+com.dabing.emoj.R$layout: int channel_checkbox
+com.dabing.emoj.R$layout: int channel_list_item
 com.dabing.emoj.R$layout: int colorbutton
 com.dabing.emoj.R$layout: int common_emoj_fragment
 com.dabing.emoj.R$layout: int confirm_dialog_footer_btn
@@ -5364,6 +5411,8 @@ com.dabing.emoj.R$string: int a5
 com.dabing.emoj.R$string: int about2
 com.dabing.emoj.R$string: int add_weibo_content
 com.dabing.emoj.R$string: int alert_confirm_add_file
+com.dabing.emoj.R$string: int alert_confirm_channel_add
+com.dabing.emoj.R$string: int alert_confirm_channel_getbonus
 com.dabing.emoj.R$string: int alert_confirm_del_file
 com.dabing.emoj.R$string: int alert_regular_notexist
 com.dabing.emoj.R$string: int app_back
@@ -5441,6 +5490,7 @@ com.dabing.emoj.R$string: int gd_take_photo
 com.dabing.emoj.R$string: int gd_talk
 com.dabing.emoj.R$string: int gd_trashcan
 com.dabing.emoj.R$string: int hello
+com.dabing.emoj.R$string: int logout
 com.dabing.emoj.R$string: int network_disconnect
 com.dabing.emoj.R$string: int nosupport
 com.dabing.emoj.R$string: int notice
@@ -5470,6 +5520,8 @@ com.dabing.emoj.R$string: int qqappwall_unknown_app
 com.dabing.emoj.R$string: int sdcard_mounted
 com.dabing.emoj.R$string: int search_hint
 com.dabing.emoj.R$string: int sending_request
+com.dabing.emoj.R$string: int title_add_channel
+com.dabing.emoj.R$string: int title_channel
 com.dabing.emoj.R$string: int title_choose_files
 com.dabing.emoj.R$string: int title_custom
 com.dabing.emoj.R$string: int umeng_common_action_cancel
@@ -5487,6 +5539,8 @@ com.dabing.emoj.R$string: int wx_not_install
 com.dabing.emoj.R$style
 com.dabing.emoj.R$style: int BrowseLeftStyle
 com.dabing.emoj.R$style: int BrowseRightStyle
+com.dabing.emoj.R$style: int ChannelAddBtn
+com.dabing.emoj.R$style: int ChannelTabButton
 com.dabing.emoj.R$style: int ChattingUIContent
 com.dabing.emoj.R$style: int ChattingUIFMessageText
 com.dabing.emoj.R$style: int ChattingUIMailSenderText
@@ -5626,6 +5680,7 @@ com.dabing.emoj.R$style: int ZoomInButton
 com.dabing.emoj.R$style: int ZoomOutButton
 com.dabing.emoj.R$style: int dialog
 com.dabing.emoj.R$style: int largeCustomProgressBar
+com.dabing.emoj.R$style: int largeCustomProgressBarHolo
 com.dabing.emoj.R$style: int leba_bg_base_layout
 com.dabing.emoj.R$style: int leba_bg_bottom_layout
 com.dabing.emoj.R$style: int leba_bg_mid_layout
@@ -5649,6 +5704,8 @@ com.dabing.emoj.R$styleable: int AsyncImageView_defaultSrc
 com.dabing.emoj.R$styleable: int AsyncImageView_inDensity
 com.dabing.emoj.R$styleable: int AsyncImageView_isPreMeasureSize
 com.dabing.emoj.R$styleable: int AsyncImageView_url
+com.dabing.emoj.R$styleable: int ChannelCheckBox_checked_src
+com.dabing.emoj.R$styleable: int ChannelCheckBox_src
 com.dabing.emoj.R$styleable: int DrawableItem_drawable
 com.dabing.emoj.R$styleable: int GridLayout_alignmentMode
 com.dabing.emoj.R$styleable: int GridLayout_columnCount
@@ -5712,6 +5769,8 @@ com.dabing.emoj.WeiXinEmojActivity
 com.dabing.emoj.WeiXinEmojActivity: WeiXinEmojActivity()
 com.dabing.emoj.activity.AppWallActivity
 com.dabing.emoj.activity.AppWallActivity: AppWallActivity()
+com.dabing.emoj.activity.ChannelAddCategoryActivity
+com.dabing.emoj.activity.ChannelAddCategoryActivity: ChannelAddCategoryActivity()
 com.dabing.emoj.activity.DownloadGridViewActivity
 com.dabing.emoj.activity.DownloadGridViewActivity: DownloadGridViewActivity()
 com.dabing.emoj.activity.EmojBrowsePictureActivity
@@ -5861,6 +5920,7 @@ com.dabing.emoj.service.StartUpBroadcast: StartUpBroadcast()
 com.dabing.emoj.service.WeiXinEmojLoginService
 com.dabing.emoj.service.WeiXinEmojLoginService: WeiXinEmojLoginService()
 com.dabing.emoj.service.WeiXinEmojLoginServiceV2
+com.dabing.emoj.service.WeiXinEmojLoginServiceV2: WeiXinEmojLoginServiceV2()
 com.dabing.emoj.service.WeiXinEmojService
 com.dabing.emoj.service.WeiXinEmojService: WeiXinEmojService()
 com.dabing.emoj.utils.FileType: com.dabing.emoj.utils.FileType[] values()
@@ -5878,6 +5938,12 @@ com.dabing.emoj.widget.CacheImageView: CacheImageView(android.content.Context,an
 com.dabing.emoj.widget.CacheImageView: CacheImageView(android.content.Context,android.util.AttributeSet,int)
 com.dabing.emoj.widget.CacheWrapperImageView
 com.dabing.emoj.widget.CacheWrapperImageView: CacheWrapperImageView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.ChannelCheckBox
+com.dabing.emoj.widget.ChannelCheckBox: ChannelCheckBox(android.content.Context)
+com.dabing.emoj.widget.ChannelCheckBox: ChannelCheckBox(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.ChannelListItem
+com.dabing.emoj.widget.ChannelListItem: ChannelListItem(android.content.Context)
+com.dabing.emoj.widget.ChannelListItem: ChannelListItem(android.content.Context,android.util.AttributeSet)
 com.dabing.emoj.widget.ColorButton
 com.dabing.emoj.widget.ColorButton: ColorButton(android.content.Context,android.util.AttributeSet)
 com.dabing.emoj.widget.ColorButton: ColorButton(android.content.Context,android.util.AttributeSet,int)
@@ -5895,6 +5961,9 @@ com.dabing.emoj.widget.EmojImageView: EmojImageView(android.content.Context,andr
 com.dabing.emoj.widget.EmotionPanel
 com.dabing.emoj.widget.EmotionPanel: EmotionPanel(android.content.Context,android.util.AttributeSet)
 com.dabing.emoj.widget.EmotionPanel: EmotionPanel(android.content.Context,android.util.AttributeSet,int)
+com.dabing.emoj.widget.FitSizeAsyncImageView
+com.dabing.emoj.widget.FitSizeAsyncImageView: FitSizeAsyncImageView(android.content.Context,android.util.AttributeSet)
+com.dabing.emoj.widget.FitSizeAsyncImageView: FitSizeAsyncImageView(android.content.Context,android.util.AttributeSet,int)
 com.dabing.emoj.widget.FitSizeImageView
 com.dabing.emoj.widget.FitSizeImageView: FitSizeImageView(android.content.Context,android.util.AttributeSet)
 com.dabing.emoj.widget.FitSizeImageView: FitSizeImageView(android.content.Context,android.util.AttributeSet,int)
@@ -6663,55 +6732,10 @@ com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onPageProgressChange
 com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onLoadPageFinish()
 com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onReceivePageTitle(java.lang.String)
 com.tencent.appwallsdk.view.QQAppWallViewPageListener: void onReceiveError(int,java.lang.String)
-com.tencent.exmobwin.MobWINManager
-com.tencent.exmobwin.MobWINManager: MobWINManager()
-com.tencent.exmobwin.MobWINManager: void init(android.content.Context,int[])
-com.tencent.exmobwin.MobWINManager: void init(android.content.Context,java.lang.String,java.lang.String,java.lang.String,int[])
-com.tencent.exmobwin.MobWINManager: void destroy()
-com.tencent.exmobwin.Type
-com.tencent.exmobwin.Type: int MOBWIN_BANNER
-com.tencent.exmobwin.Type: int MOBWIN_SPOT
-com.tencent.exmobwin.Type: int MOBWIN_INTEGRALWALL
-com.tencent.exmobwin.Type: int MOBWIN_MINIBANNER
-com.tencent.exmobwin.Type: Type()
-com.tencent.exmobwin.banner.AdListener
-com.tencent.exmobwin.banner.AdListener: int ERROR_CONNECTION_FAILED
-com.tencent.exmobwin.banner.AdListener: int ERROR_NO_AVAILABLE_ADS
-com.tencent.exmobwin.banner.AdListener: int ERROR_GIF_DECODE_FAILED
-com.tencent.exmobwin.banner.AdListener: int ERROR_GET_IMAGE_FAILED
-com.tencent.exmobwin.banner.AdListener: int ERROR_SERVER_DATA_EXCEPTION
-com.tencent.exmobwin.banner.AdListener: void onReceiveAd()
-com.tencent.exmobwin.banner.AdListener: void onReceiveFailed(int)
 com.tencent.exmobwin.banner.DialogActivity
-com.tencent.exmobwin.banner.DialogActivity: DialogActivity()
-com.tencent.exmobwin.banner.DialogActivity: void onCreate(android.os.Bundle)
-com.tencent.exmobwin.banner.DialogActivity: void onStart()
-com.tencent.exmobwin.banner.DialogActivity: void onRestart()
-com.tencent.exmobwin.banner.DialogActivity: void onResume()
-com.tencent.exmobwin.banner.DialogActivity: void onPause()
-com.tencent.exmobwin.banner.DialogActivity: void onStop()
-com.tencent.exmobwin.banner.DialogActivity: void onConfigurationChanged(android.content.res.Configuration)
-com.tencent.exmobwin.banner.DialogActivity: boolean onKeyUp(int,android.view.KeyEvent)
-com.tencent.exmobwin.banner.DialogActivity: void onSaveInstanceState(android.os.Bundle)
-com.tencent.exmobwin.banner.DialogActivity: void onDestroy()
-com.tencent.exmobwin.banner.DialogActivity: boolean onKeyDown(int,android.view.KeyEvent)
 com.tencent.exmobwin.banner.MobWINBrowserActivity
-com.tencent.exmobwin.banner.MobWINBrowserActivity: MobWINBrowserActivity()
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onCreate(android.os.Bundle)
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onStart()
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onRestart()
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onResume()
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onPause()
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onStop()
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onConfigurationChanged(android.content.res.Configuration)
-com.tencent.exmobwin.banner.MobWINBrowserActivity: boolean onKeyUp(int,android.view.KeyEvent)
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onSaveInstanceState(android.os.Bundle)
-com.tencent.exmobwin.banner.MobWINBrowserActivity: void onDestroy()
-com.tencent.exmobwin.banner.MobWINBrowserActivity: boolean onKeyDown(int,android.view.KeyEvent)
 com.tencent.exmobwin.banner.TAdView
-com.tencent.exmobwin.banner.TAdView: TAdView(android.app.Activity)
 com.tencent.exmobwin.banner.TAdView: TAdView(android.content.Context,android.util.AttributeSet)
-com.tencent.exmobwin.banner.TAdView: void setAdListener(com.tencent.exmobwin.banner.AdListener)
 com.tencent.exmobwin.banner.TMiniAdView
 com.tencent.exmobwin.banner.TMiniAdView: TMiniAdView(android.content.Context,android.util.AttributeSet)
 com.tencent.exmobwin.spot.SpotActivity

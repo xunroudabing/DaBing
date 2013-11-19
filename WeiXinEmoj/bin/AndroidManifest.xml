@@ -71,7 +71,7 @@
         <activity android:name=".advertise.WAPS_AppWallActivity"></activity>
         <activity android:name=".advertise.WAPS_AppDetailActivity"></activity>
         <activity android:name=".advertise.WAPS_ADView" android:configChanges="keyboardHidden|orientation"/>    
-        <activity android:name=".activity.MainTab2Activity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait">
+        <activity android:name=".activity.MainTab2Activity" android:launchMode="singleTask" android:screenOrientation="portrait">
              <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
                 <category android:name="android.intent.category.OPENABLE" />
@@ -104,10 +104,6 @@
         <service android:name=".service.EmojScanService"></service>
         <service android:name=".service.WeiXinEmojLoginServiceV2"></service>
         <activity android:name=".demo.demolist">
-			<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <provider android:name=".db.UserDefineContentProvider" android:authorities="com.dabing.emoj.UserDefineContentProvider"></provider>
