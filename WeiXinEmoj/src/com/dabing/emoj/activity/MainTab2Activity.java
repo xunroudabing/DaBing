@@ -12,6 +12,7 @@ import com.dabing.emoj.service.StartUpBroadcast;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
+import com.dabing.emoj.utils.MediaUtils;
 import com.dabing.emoj.utils.NetWorkCheck;
 import com.dabing.emoj.widget.PromptDialog;
 import com.tencent.qqconnect.dataprovider.CallbackManager;
@@ -372,6 +373,7 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
+						MediaUtils.getInstance(getApplicationContext()).playSound(R.raw.coin);
 						showToast(value);
 					}
 				});

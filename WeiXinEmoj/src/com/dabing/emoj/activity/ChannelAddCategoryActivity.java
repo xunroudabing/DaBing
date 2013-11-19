@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import android.R.integer;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -34,6 +35,7 @@ import com.dabing.emoj.bonus.WAPS_Bonus;
 import com.dabing.emoj.db.ChannelDatabaseHelper;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.MediaUtils;
 import com.dabing.emoj.widget.ChannelListItem;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
 /**
@@ -254,6 +256,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity implements IBonus
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
+						MediaUtils.getInstance(getApplicationContext()).playSound(R.raw.coin);
 						showToast(value);
 					}
 				});
@@ -266,6 +269,7 @@ public class ChannelAddCategoryActivity extends MMBaseActivity implements IBonus
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
+						MediaUtils.getInstance(getApplicationContext()).playSound(R.raw.coin);
 						showToast(value);
 					}
 				});
@@ -289,4 +293,5 @@ public class ChannelAddCategoryActivity extends MMBaseActivity implements IBonus
 		toast.setView(view);
 		toast.show();
 	}
+	
 }
