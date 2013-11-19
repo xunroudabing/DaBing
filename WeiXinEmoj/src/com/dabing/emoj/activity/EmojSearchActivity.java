@@ -4,6 +4,7 @@ import org.apache.http.client.RedirectException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.R.integer;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +12,15 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -22,8 +28,11 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView.OnItemClickListener;
@@ -63,8 +72,8 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 	boolean flag = true;
 	boolean firstLoad = true;
 	Dialog dialog;
-	Button btnSearch;
 	EditText editText;
+	ImageView editClear;
 	BaseRequest mRequest;
 	GridView gridView;
 	EmojGridViewAdapter adapter;
@@ -79,35 +88,79 @@ public class EmojSearchActivity extends BaseActivity implements IRequest,OnScrol
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setMMTitle(R.string.title_channel);
+		setMMTitle(R.string.title_channel);		
 		editText = (EditText) findViewById(R.id.emoj_index2_edittext);
-		btnSearch = (Button) findViewById(R.id.emoj_index2_btnSearch);
+		editClear = (ImageView) findViewById(R.id.emoj_index2_editclear);
+		//btnSearch = (Button) findViewById(R.id.emoj_index2_btnSearch);
 		gridView = (GridView) findViewById(R.id.emoj_index2_gridview);
 		mHeader = (RadioGroup) findViewById(R.id.channel_category_head);
-		btnSearch.setOnClickListener(clickListener);
+		//btnSearch.setOnClickListener(clickListener);
+		editText.setOnEditorActionListener(onEditorActionListener);
+		editText.addTextChangedListener(textWatcher);
+		editClear.setOnClickListener(clearListener);
 		setTitleBtn1(R.drawable.mm_title_btn_channel_normal, categoryListener);
 		SetupAction();
 		Bind();
 		//PrepareActionGrid();
 		BindHeader();
 		gridView.setOnScrollListener(this);
-		gridView.setOnItemClickListener(this);
+		gridView.setOnItemClickListener(this);		
 	}
-	private OnClickListener clickListener = new OnClickListener() {
+	//***搜索相关****
+	private OnEditorActionListener onEditorActionListener = new OnEditorActionListener() {
 		
-		public void onClick(View v) {
+		@Override
+		public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 			// TODO Auto-generated method stub
-			String key = editText.getText().toString();
-			if(key == null || key.equals("")){
-				Toast.makeText(EmojSearchActivity.this, "请输入搜索条件", Toast.LENGTH_SHORT).show();
-				return;
+			if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+				String key = v.getText().toString();
+				if (key == null || key.equals("")) {
+					Toast.makeText(EmojSearchActivity.this, "请输入搜索条件",
+							Toast.LENGTH_SHORT).show();
+					return false;
+				}
+				mRequest = new MyRequest(EmojSearchActivity.this, key);
+				mRequest.setOnRequestListener(EmojSearchActivity.this);
+				mRequest.beginRequest();
+				UmengEvent("action010", key);
 			}
-			mRequest = new MyRequest(EmojSearchActivity.this, key);
-			mRequest.setOnRequestListener(EmojSearchActivity.this);
-			mRequest.beginRequest();
-			UmengEvent("action010", key);
+			return false;
 		}
 	};
+	private TextWatcher textWatcher = new TextWatcher() {
+		int length = 0;
+		@Override
+		public void onTextChanged(CharSequence s, int start, int before, int count) {
+			// TODO Auto-generated method stub
+			length = count;
+		}
+		
+		@Override
+		public void beforeTextChanged(CharSequence s, int start, int count,
+				int after) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void afterTextChanged(Editable s) {
+			// TODO Auto-generated method stub
+			if(length > 0){
+				editClear.setVisibility(View.VISIBLE);
+			}else {
+				editClear.setVisibility(View.INVISIBLE);
+			}
+		}
+	};
+	private OnClickListener clearListener = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			editText.setText("");
+		}
+	};
+	
 	@Override
 	protected int getLayoutId() {
 		// TODO Auto-generated method stub
