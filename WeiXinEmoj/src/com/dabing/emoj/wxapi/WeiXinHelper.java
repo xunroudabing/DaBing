@@ -46,10 +46,12 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
+import android.graphics.BitmapFactory.Options;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.webkit.URLUtil;
 
@@ -59,6 +61,7 @@ public class WeiXinHelper {
 		void onProgress(int rate);
 		void onDownload(Bitmap bitmap);
 	}
+	private static final long MAX_BYTE_SIZE = 30720;
 	private static final int THUMB_SIZE = 100;
 	private static final int THUMB_MAX_WIDTH = 100;
 	private static final int THUMB_MAX_HEIGHT = 150;
@@ -108,21 +111,32 @@ public class WeiXinHelper {
 		if(!file.exists()){
 			return;
 		}		 
+		long filesize = file.length();
 		WXEmojiObject emoji = new WXEmojiObject();
 		emoji.emojiPath = filepath;
 		WXMediaMessage msg = new WXMediaMessage(emoji);
 		msg.title = "分享自微信表情包";
 		msg.description = "";
-		Bitmap bitmap  = BitmapFactory.decodeFile(filepath);
-		Bitmap thumbBmp = Util.resizeBitmap(bitmap, 200, 300);		
-		byte[] thumbData = Util.bmpToByteArray(thumbBmp, true);
-		if(thumbData.length > 30000){
-			thumbBmp = Util.resizeBitmap(bitmap, 150, 225);
-			thumbData = Util.bmpToByteArray(thumbBmp, true);
+		Log.d(TAG, "sendPng filesize:"+filesize);
+		//小于30k直接发送
+		if(filesize < MAX_BYTE_SIZE){
+			Bitmap bitmap  = BitmapFactory.decodeFile(filepath);
+			byte[] thumbData = Util.bmpToByteArray(bitmap,true);
+			msg.thumbData = thumbData;
+			Log.d(TAG, "sendPng thumbData:"+thumbData.length);
+		}else {
+			Bitmap bitmap  = BitmapFactory.decodeFile(filepath);
+			Bitmap thumbBmp = Util.resizeBitmap(bitmap, 200, 300);		
+			byte[] thumbData = Util.bmpToByteArray(thumbBmp,true);
+			if(thumbData.length > 30000){
+				thumbBmp = Util.resizeBitmap(bitmap, 150, 225);
+				thumbData = Util.bmpToByteArray(thumbBmp,true);
+			}
+			Log.d(TAG, "sendPng thumbData:"+thumbData.length);
+			msg.thumbData = thumbData;	
+			bitmap.recycle();
 		}
-		Log.d(TAG, "sendPng thumbData:"+thumbData.length);
-		msg.thumbData = thumbData;	
-		bitmap.recycle();
+		
 		GetMessageFromWX.Resp resp = new GetMessageFromWX.Resp();
 		String trans = getTransaction();
 		Log.d(TAG, "trans:"+trans);
@@ -139,7 +153,7 @@ public class WeiXinHelper {
 		obj.setImagePath(filepath);
 		WXMediaMessage msg = new WXMediaMessage();
 		msg.mediaObject = obj;
-		msg.title = "标题";
+		msg.title = "分享自微信表情包";
 		Bitmap bitmap  = BitmapFactory.decodeFile(filepath);
 		Bitmap thumbBmp = Util.resizeBitmap(bitmap, THUMB_MAX_WIDTH, THUMB_MAX_HEIGHT);
 		//Log.d(TAG, "before:"+bitmap.getWidth()+"x"+bitmap.getHeight() + "after:"+thumbBmp.getWidth()+"x"+thumbBmp.getHeight());
@@ -169,7 +183,7 @@ public class WeiXinHelper {
 		obj.setImagePath(path);
 		WXMediaMessage msg=new WXMediaMessage();
 		msg.mediaObject = obj;
-		msg.title = "这是一个标题";
+		msg.title = "分享自微信表情包";
 		Bitmap bitmap  = BitmapFactory.decodeFile(path);
 		Bitmap thumbBmp = Util.resizeBitmap(bitmap, THUMB_MAX_WIDTH, THUMB_MAX_HEIGHT);
 		//Log.d(TAG, "before:"+bitmap.getWidth()+"x"+bitmap.getHeight() + "after:"+thumbBmp.getWidth()+"x"+thumbBmp.getHeight());
