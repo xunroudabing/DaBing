@@ -16,7 +16,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 有助于获取投放地域广告,提高广告与用户的相关性,提高广告点击率 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />    
+    <!-- 小米推送权限 -->
+    <permission android:name="com.dabing.emoj.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.dabing.emoj.permission.MIPUSH_RECEIVE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:name=".BaseApplication"
         android:theme="@style/MMTheme.Basic"
@@ -104,6 +109,10 @@
         <service android:name=".service.EmojScanService"></service>
         <service android:name=".service.WeiXinEmojLoginServiceV2"></service>
         <activity android:name=".demo.demolist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         
         <provider android:name=".db.UserDefineContentProvider" android:authorities="com.dabing.emoj.UserDefineContentProvider"></provider>
@@ -118,6 +127,7 @@
         <activity android:name=".demo.demoOOM"></activity>
         <activity android:name=".demo.demoPanel"></activity>
         <activity android:name=".demo.demoFile"></activity>
+        <activity android:name=".push.PushControllerActivity"></activity>
         <!-- 友盟  -->
         <activity android:name="com.umeng.fb.ui.SendFeedback" android:windowSoftInputMode="adjustResize" />
 		<activity android:name="com.umeng.fb.ui.FeedbackConversations" />
@@ -176,7 +186,45 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-
+		<!-- 小米推送服务 -->
+		 <service
+            android:enabled="true"
+            android:exported="true"
+            android:process=":pushservice"
+            android:name="com.xiaomi.push.service.XMPushService"/>
+        
+        <!-- the PushMessageHandler here must be defined in the same process as the one you call MiPushClient.initialize -->
+        <service
+            android:enabled="true"
+            android:exported="true"
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler" />
+        <receiver
+            android:exported="true"
+            android:name="com.xiaomi.mipush.sdk.PushServiceReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver
+			android:exported="true" android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver" > 
+			<intent-filter>
+			<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+			<category android:name="android.intent.category.DEFAULT" /> 
+			</intent-filter>
+		</receiver>
+        
+        <receiver
+            android:exported="false"
+            android:process=":pushservice"
+            android:name="com.xiaomi.push.service.receivers.PingReceiver" >
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
