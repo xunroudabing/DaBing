@@ -59,8 +59,8 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 	String action ="send";
 	Button btnClear;
 	EmojImageView headView;
-	RelativeLayout downloadView,attentionView;
-	ImageView attensionIcon;
+	RelativeLayout downloadView,attentionView,removeadView;
+	ImageView attensionIcon,removeadIcon;
 	LinearLayout loginView,userinfoView,versionView,yijianView,aboutView,appwallView,helpView;
 	LinearLayout pingjiaView,problemView;
 	static final int REQUEST_LOGIN = 1;
@@ -86,8 +86,9 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		headView = (EmojImageView) findViewById(R.id.setting_userinfo_head);
 		downloadView = (RelativeLayout) findViewById(R.id.setting_download);
 		attentionView = (RelativeLayout) findViewById(R.id.setting_attention);
-
+		removeadView = (RelativeLayout) findViewById(R.id.setting_removead);
 		attensionIcon = (ImageView) findViewById(R.id.setting_attention_icon);
+		removeadIcon = (ImageView) findViewById(R.id.setting_removead_icon);
 		loginView.setOnClickListener(this);
 		userinfoView.setOnClickListener(this);
 		versionView.setOnClickListener(this);
@@ -100,6 +101,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		pingjiaView.setOnClickListener(this);
 		problemView.setOnClickListener(this);
 		attentionView.setOnClickListener(this);
+		removeadView.setOnClickListener(this);
 		Initialize();
 		SetupAction();
 	}
@@ -125,6 +127,11 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 //		}else {
 //			attensionIcon.setVisibility(View.INVISIBLE);
 //		}
+		if(AppConfig.getIsNew(getApplicationContext(), "unread_removead")){
+			removeadIcon.setVisibility(View.VISIBLE);
+		}else {
+			removeadIcon.setVisibility(View.INVISIBLE);
+		}
 	}
 	public void Initialize(){
 		//OAuth oAuth = TokenStore.fetchPrivate(getApplicationContext());
@@ -231,6 +238,18 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 				  Intent localIntent = new Intent("android.intent.action.VIEW", Uri.parse(AppConfig.getPublicAccount(getApplicationContext())));
 			      localIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.qrcode.GetQRCodeInfoUI");
 			      startActivity(localIntent);
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
+			}
+			break;
+		//清除广告	
+		case R.id.setting_removead:
+			try {
+				AppConfig.setIsNew(getApplicationContext(), "unread_removead");
+				Intent intent_removead = new Intent(getApplicationContext(), BonusGainActivity.class);
+				intent_removead.putExtra(AppConstant.INTENT_TITLE, getString(R.string.title_setting_removead));
+				startActivity(intent_removead);
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());

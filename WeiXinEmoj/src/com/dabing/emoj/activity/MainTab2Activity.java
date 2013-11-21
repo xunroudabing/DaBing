@@ -304,6 +304,11 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 //			}else {
 //				newEmotionView.setVisibility(View.INVISIBLE);
 //			}
+    		if(AppConfig.getIsNew(getApplicationContext(), "unread_removead")){
+    			newSettingView.setVisibility(View.VISIBLE);
+    		}else {
+    			newSettingView.setVisibility(View.INVISIBLE);
+    		}
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());
