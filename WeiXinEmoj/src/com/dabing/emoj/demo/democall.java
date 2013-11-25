@@ -1,5 +1,6 @@
 package com.dabing.emoj.demo;
 
+import java.io.File;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -49,7 +50,7 @@ public class democall extends BaseActivity implements OnClickListener {
 	QuickActionGrid mlist;
 	IWXAPI api;
 	OAuth oAuth;
-	Button btn1, btn2, btn3, btn4, btn5, btn6, btn7,btn8;
+	Button btn1, btn2, btn3, btn4, btn5, btn6, btn7,btn8,btn9;
 	static final String TAG = democall.class.getSimpleName();
 
 	/*
@@ -69,6 +70,7 @@ public class democall extends BaseActivity implements OnClickListener {
 		btn6 = (Button) findViewById(R.id.btn6);
 		btn7 = (Button) findViewById(R.id.btn7);
 		btn8 = (Button) findViewById(R.id.btn8);
+		btn9 = (Button) findViewById(R.id.btn9);
 		btn1.setOnClickListener(this);
 		btn2.setOnClickListener(this);
 		btn3.setOnClickListener(this);
@@ -77,6 +79,7 @@ public class democall extends BaseActivity implements OnClickListener {
 		btn6.setOnClickListener(this);
 		btn7.setOnClickListener(this);
 		btn8.setOnClickListener(this);
+		btn9.setOnClickListener(this);
 		oAuth = TokenStore.fetch(getApplicationContext());
 		api = WXAPIFactory.createWXAPI(democall.this, AppConstant.WEIXIN_APPID);
 		boolean b = api.isWXAppInstalled();
@@ -121,6 +124,9 @@ public class democall extends BaseActivity implements OnClickListener {
 			//shareQQ();
 			//invite();
 			getThumb("/storage/sdcard0/DCIM/Camera/");
+			break;
+		case R.id.btn9:
+			setHead();
 			break;
 		default:
 			break;
@@ -351,5 +357,39 @@ public class democall extends BaseActivity implements OnClickListener {
 				Log.d(TAG, " id:"+id + " filepath:"+filepath);
 			} while (cursor.moveToNext());
 		}
+	}
+	
+	protected void setHead(){
+		if(mTencent.isSessionValid() && mTencent.getOpenId() != null){
+			Bundle bundle = new Bundle();
+			String path = AppConfig.getEmoj() + "00d903ecb3e7d951861e.GIF";
+			String uri = Uri.fromFile(new File(path)).toString();
+			Log.d(TAG, "setHead:"+uri);
+			bundle.putString(Constants.PARAM_AVATAR_URI, uri);
+			mTencent.setAvatar(democall.this, bundle, new IUiListener() {
+				
+				@Override
+				public void onError(UiError arg0) {
+					// TODO Auto-generated method stub
+					Log.d(TAG, "onError:"+arg0);
+				}
+				
+				@Override
+				public void onComplete(JSONObject arg0) {
+					// TODO Auto-generated method stub
+					Log.d(TAG, "onComplete:"+arg0);
+				}
+				
+				@Override
+				public void onCancel() {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+		}
+	}
+	
+	protected void setFriends(){
+		
 	}
 }
