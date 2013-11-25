@@ -1,5 +1,8 @@
 package com.dabing.emoj.activity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,6 +41,7 @@ import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.MediaUtils;
 import com.dabing.emoj.widget.ChannelListItem;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
+import com.umeng.analytics.MobclickAgent;
 /**
  * 微频道订阅
  * @author Administrator
@@ -293,5 +297,6 @@ public class ChannelAddCategoryActivity extends MMBaseActivity implements IBonus
 		toast.setView(view);
 		toast.show();
 	}
+	
 	
 }

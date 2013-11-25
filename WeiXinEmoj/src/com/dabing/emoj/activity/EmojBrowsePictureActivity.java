@@ -911,8 +911,8 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 			}
 		}
 	protected void share(){
-		String[] items = {"发送给微信好友","分享至微信朋友圈","其它分享","保存到我的相册"};
-		String[] types = {"TYPE_EXIT","TYPE_BLUE","TYPE_BUTTON","TYPE_BUTTON"};
+		String[] items = {"发送给微信好友","发送给QQ好友","分享至微信朋友圈","其它分享","保存到我的相册"};
+		String[] types = {"TYPE_EXIT","TYPE_BLUE","TYPE_BLUE","TYPE_BUTTON","TYPE_BUTTON"};
 		MMAlert.showAlert(EmojBrowsePictureActivity.this, "分享", items, types, new OnAlertSelectId() {			
 			public void onClick(int whichButton) {
 				// TODO Auto-generated method stub
@@ -921,12 +921,15 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 					ShareToWX_Friends();
 					
 				}else if (whichButton == 1) {
+					//发送给QQ好友
+					ShareQQ();
+				}else if (whichButton == 2) {
 					//分享到微信朋友圈
 					ShareToWx_Circle();
-				}else if(whichButton == 2){
+				}else if(whichButton == 3){
 					//其它分享
 					shareOther();
-				}else if (whichButton == 3) {
+				}else if (whichButton == 4) {
 					//保存到相册
 					saveMedia();
 				}
@@ -1027,6 +1030,34 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 			// TODO: handle exception
 			Log.e(TAG, e.toString());
 		}
+	}
+	protected void ShareQQ(){
+		boolean qqInstall = WeiXinHelper.existPackageName(getApplicationContext(), AppConfig.QQ_PACKAGE_NAME);
+		if(!qqInstall){
+			String string = getResources().getString(R.string.qq_not_install);
+			DialogFactory.createCommonDialog(EmojBrowsePictureActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+				}
+
+			}).show();
+			return;
+		}
+		if(!finish){
+			String string = getResources().getString(R.string.wx_not_finish);
+			DialogFactory.createCommonDialog(EmojBrowsePictureActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+				}
+
+			}).show();
+			return;
+		}
+		WeiXinHelper helper = new WeiXinHelper(getApplicationContext(), api);
+		helper.shareQQ(mFilePath);
+		UmengEvent("action029");
 	}
 	private void UmengEvent(String eventid){
 		MobclickAgent.onEvent(EmojBrowsePictureActivity.this, eventid);

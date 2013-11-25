@@ -62,7 +62,7 @@ public class AdManager {
 	 * @return
 	 */
 	public boolean getEnable(){
-		boolean b = AppConfig.getAdvertise_on(mContext);
+		boolean b = AppConfig.getAdvertise_onV2(mContext);
 		return b;
 	}
 	/**

@@ -7,10 +7,16 @@ import java.util.List;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Process;
 import android.util.Log;
 
+import com.dabing.emoj.activity.BonusGainActivity;
+import com.dabing.emoj.activity.MainTab2Activity;
 import com.dabing.emoj.exception.DefaultCrashHandler;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
@@ -188,6 +194,9 @@ public class BaseApplication extends GDApplication {
 				String topic, boolean hasNotified) {
 			Log.d(PUSHTAG, "onReceiveMessage is called. " + content + ", "
 					+ alias + ", " + topic + ", " + hasNotified);
+			if(!hasNotified){
+				//sendNotification(content);
+			}
 		}
 
 		@Override
@@ -202,5 +211,17 @@ public class BaseApplication extends GDApplication {
 			Log.d(PUSHTAG, "onCommandResult is called. " + command + ": "
 					+ params);
 		}
+	}
+	//发送通知
+	protected void sendNotification(String content){
+		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		Notification notification = new Notification(R.drawable.icon, "接收到了一条推送消息", System.currentTimeMillis());
+		notification.flags = Notification.FLAG_AUTO_CANCEL;
+		Intent pIntent = new Intent(getApplicationContext(), BonusGainActivity.class);
+		//intent.putExtra("data", data);
+		//pIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+		PendingIntent pendingIntent= PendingIntent.getActivity(getApplicationContext(), 0, pIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		notification.setLatestEventInfo(getApplicationContext(), "标题", content, pendingIntent);
+		mNotificationManager.notify(0, notification);
 	}
 }

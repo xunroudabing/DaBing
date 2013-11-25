@@ -74,8 +74,8 @@ public class PushControllerActivity extends MMBaseActivity {
 		Constants.useOfficial();
 		String topic = topicText.getText().toString();
 		String data = dataText.getText().toString();
-		String title = "this is a title";
-		String des = "这是一段描述";
+		String title = "微信表情包";
+		String des = "微信表情包给你发来一个新表情";
 
 		Message msg = new Message.Builder().title(title).description(des)
 				.payload(data).restrictedPackageName("com.dabing.emoj").notifyType(1).build();

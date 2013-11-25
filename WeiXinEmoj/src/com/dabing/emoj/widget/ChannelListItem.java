@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.dabing.ads.ac;
 import com.dabing.emoj.R;
 import com.dabing.emoj.activity.ChannelAddCategoryActivity;
+import com.dabing.emoj.activity.EmojBrowseViewActivity;
 import com.dabing.emoj.bonus.IBonusChangeListener;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
@@ -39,6 +40,7 @@ import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.Utils;
 import com.dabing.emoj.widget.ChannelCheckBox.AfterCheckedChangeListener;
 import com.dabing.emoj.widget.ChannelCheckBox.BeforeCheckedChangeListener;
+import com.umeng.analytics.MobclickAgent;
 /**
  * 
  * @author DaBing
@@ -266,6 +268,7 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 									view.setChecked(true, false,true);
 									//设为已购买
 									AppConfig.setChannelBuyed(getContext(), Integer.parseInt(mChannelID));
+									UmengEvent("action031", mTitle);
 									dialog.dismiss();
 								}
 							}, new DialogInterface.OnClickListener() {
@@ -307,6 +310,9 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 							return true;
 						}
 					}
+				}else {
+					//无积分
+					UmengEvent("action032", mTitle);
 				}
 			}else {
 				//取消选中
@@ -412,5 +418,12 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 		toast.setDuration(Toast.LENGTH_LONG);
 		toast.setView(view);
 		toast.show();
+	}
+	
+	protected void UmengEvent(String eventid,String parms){
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("parms", parms);
+		//map.put("filename", filename);
+		MobclickAgent.onEvent(getContext(), eventid, map);
 	}
 }

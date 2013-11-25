@@ -153,7 +153,7 @@ public class UserDefineEmojViewActivity extends EmojBrowseViewActivity {
 						}
 						else {
 							//发静态图
-							helper.sendPng(mFilePath);
+							helper.sendIMGPath(mFilePath);
 						}						
 						UmengEvent("action026");//[自定义表情]从微信发送
 						setResult(RESULT_OK);

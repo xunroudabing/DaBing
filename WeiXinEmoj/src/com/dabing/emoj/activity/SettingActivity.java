@@ -146,6 +146,13 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 			userinfoView.setVisibility(View.VISIBLE);
 			BindUserInfo();
 		}
+		
+		//根据积分隐藏开关显示去除广告
+		if(AppConfig.getBonusHide(getApplicationContext())){
+			removeadView.setVisibility(View.GONE);
+		}else {
+			removeadView.setVisibility(View.VISIBLE);
+		}
 	}
 
 	public void onClick(View v) {

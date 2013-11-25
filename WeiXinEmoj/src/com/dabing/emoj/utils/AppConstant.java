@@ -12,7 +12,7 @@ public class AppConstant {
 	//积分开关 是否开启积分 所有需要积分的都免费
 	public static final boolean BONUS_ENABLE = true;
 	//是否隐藏积分 和积分有关的都不显示
-	public static final boolean BONUS_HIDE = false;
+	public static final boolean BONUS_HIDE = true;
 	//收听的微博账号名
 	public static final String WEIBO_IDOL = "xunroudabing";
 	//默认的广告TAG

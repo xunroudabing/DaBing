@@ -20,6 +20,7 @@ import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.MediaUtils;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * 获取积分
@@ -52,6 +53,7 @@ public class BonusGainActivity extends BaseActivity implements
 		btnRemove.setOnClickListener(this);
 		mBouns = new WAPS_Bonus(BonusGainActivity.this);
 		mBouns.setBonusChangeListener(this);
+		ResetButtonState();
 	}
 
 	@Override
@@ -158,13 +160,24 @@ public class BonusGainActivity extends BaseActivity implements
 	protected void UpdateUI() {
 		int b = mBouns.get();
 		wealthTextView.setText(String.valueOf(b));
+		
 	}
-
+	//重置按钮状态
+	protected void ResetButtonState(){
+		// 广告已去除
+		if (AppConfig.getAdvertiseRemove(getApplicationContext())) {
+			btnRemove.setEnabled(false);
+			btnRemove.setText(R.string.btn_remove_ad_finish);
+		}
+	}
 	// 获取铜板
 	protected void GainCoin() {
 		mBouns.showOffers();
 	}
-
+	
+	protected void UmengEvent(String eventid){
+		MobclickAgent.onEvent(BonusGainActivity.this, eventid);
+	}
 	// 去除广告
 	protected void RemoveAd() {
 		try {
@@ -185,9 +198,11 @@ public class BonusGainActivity extends BaseActivity implements
 								mBouns.spend(BONUS_REMOVE_AD);
 								AppConfig.setAdvertiseRemove(
 										getApplicationContext(), true);
+								UmengEvent("action033");
 								dialog.dismiss();
 								runOnUiThread(new Runnable() {
 									public void run() {
+										ResetButtonState();
 										Toast.makeText(
 												BonusGainActivity.this,
 												R.string.alert_removead_success,

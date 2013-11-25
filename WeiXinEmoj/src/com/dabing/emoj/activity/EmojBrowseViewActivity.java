@@ -979,6 +979,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		WeiXinHelper helper = new WeiXinHelper(getApplicationContext(), api);
 		helper.shareQQ(mFilePath);
 		AddToRegular(mFileName, mParms, mFilePath);
+		UmengEvent("action030");
 	}
 	//分享至微信好友
 	protected void ShareToWX_Friends(){
