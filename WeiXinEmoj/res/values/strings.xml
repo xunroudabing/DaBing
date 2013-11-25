@@ -30,6 +30,7 @@
     <string name="btn_userdefine_weixin">微信</string>
     <string name="btn_gain_coin">获取铜板</string>
     <string name="btn_remove_ad">去除广告(-50铜)</string>
+    <string name="btn_remove_ad_finish">去除广告(已去除)</string>
     <string name="title_custom">自定义表情</string>
     <string name="title_choose_files">选择一个文件夹</string>
     <string name="title_add_channel">微频道订阅</string>
