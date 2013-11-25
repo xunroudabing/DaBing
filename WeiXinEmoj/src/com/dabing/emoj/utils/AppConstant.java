@@ -17,6 +17,8 @@ public class AppConstant {
 	public static final String WEIBO_IDOL = "xunroudabing";
 	//默认的广告TAG
 	public static final String AD_DEFAULT_ADSHOWTYPE = "YOUMI_BANNER";
+	//签名md5
+	public static final String SIGN = "b7ac740f2a1bfb5b391b3d869bcca97b";
 	//万普广告形式 BANNER MINI CUSTOM
 	public static final String WAPS_AD_TYPE = "CUSTOM";
 	public static final String WAPS_INDEX1_AD_TYPE = "BANNER";

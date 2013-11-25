@@ -9,6 +9,7 @@ import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
 import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.service.StartUpBroadcast;
+import com.dabing.emoj.utils.ApkSignCheck;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
@@ -20,6 +21,7 @@ import com.umeng.fb.NotificationType;
 import com.umeng.fb.UMFeedbackService;
 import com.umeng.update.UmengUpdateAgent;
 
+import android.app.Dialog;
 import android.app.TabActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -94,6 +96,7 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 	@Override
 	protected void onResume() {
 		super.onResume();
+		checkApkSign();
 		CheckMediaMounted();
 		CheckNetWorkState();
 		showNewEmoj();
@@ -401,5 +404,41 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 		toast.setDuration(Toast.LENGTH_LONG);
 		toast.setView(view);
 		toast.show();
+	}
+	/**
+	 * 验证签名，反打包
+	 */
+	protected void checkApkSign(){
+		if(AppConfig.DEBUG){
+			return;
+		}
+		boolean chk = false;
+		try {
+			ApkSignCheck apk = new ApkSignCheck(getApplicationContext());
+			String md5 = apk.getPublicKey();
+			if(md5 != null){
+				if(md5.toLowerCase().equals(AppConstant.SIGN)){
+					chk = true;
+				}else {
+					Log.d(TAG, "checkApkSign:"+md5+" invalid sign");
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+		//非法
+		if(!chk){
+			Dialog dialog = DialogFactory.createFailDialog(MainTab2Activity.this, "非法签名,该应用是山寨版,请到正规应用市场下载正版微信表情包", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					finish();
+				}
+			});
+			dialog.setCancelable(false);
+			dialog.show();
+		}
 	}
 }

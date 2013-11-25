@@ -27,6 +27,7 @@ import com.dabing.emoj.activity.EmojViewActivity;
 import com.dabing.emoj.jni.JniTest;
 import com.dabing.emoj.jni.JniUtils;
 import com.dabing.emoj.qqconnect.QQConnect;
+import com.dabing.emoj.utils.ApkSignCheck;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DaBingRequest;
@@ -126,7 +127,7 @@ public class democall extends BaseActivity implements OnClickListener {
 			getThumb("/storage/sdcard0/DCIM/Camera/");
 			break;
 		case R.id.btn9:
-			setHead();
+			getsign();
 			break;
 		default:
 			break;
@@ -391,5 +392,10 @@ public class democall extends BaseActivity implements OnClickListener {
 	
 	protected void setFriends(){
 		
+	}
+	
+	protected void getsign(){
+		ApkSignCheck apk = new ApkSignCheck(getApplicationContext());
+		String key = apk.getPublicKey();
 	}
 }
