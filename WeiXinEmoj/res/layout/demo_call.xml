@@ -51,6 +51,12 @@
     android:text="QQ登陆"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
+      
+      <Button  
+    android:id="@+id/btn9"   
+    android:text="QQ头像"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
     
     <TextView 
     android:padding="10dp"
