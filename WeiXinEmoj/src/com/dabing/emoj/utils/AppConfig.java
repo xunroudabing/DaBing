@@ -895,6 +895,12 @@ public class AppConfig {
 		boolean ret = preferences.getBoolean("bonus_enable", AppConstant.BONUS_ENABLE);
 		return ret;
 	}
+	public static void setBonusEnable(Context context,boolean b){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean("bonus_enable", b);
+		editor.commit();
+	}
 	/**
 	 * 是否隐藏积分相关内容 
 	 * @param context
@@ -904,6 +910,12 @@ public class AppConfig {
 		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
 		boolean ret = preferences.getBoolean("bonus_hide", AppConstant.BONUS_HIDE);
 		return ret;
+	}
+	public static void setBonusHide(Context context,boolean b){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean("bonus_hide", b);
+		editor.commit();
 	}
 	/**
 	 * 设置该频道是否已购买

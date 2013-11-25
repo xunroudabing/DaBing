@@ -256,6 +256,24 @@ public class WeiXinEmojService extends Service implements UmengOnlineConfigureLi
 				if(setting_problem != null && !setting_problem.equals("") && !setting_problem.equals("null")){
 					AppConfig.setProblem(getApplicationContext(), setting_problem);
 				}
+				//积分开关 是否开启积分 所有需要积分的都免费
+				String bonus_enable = MobclickAgent.getConfigParams(WeiXinEmojService.this, "bonus_enable");
+				if(bonus_enable != null && !bonus_enable.equals("") && !bonus_enable.equals("null")){
+					if(bonus_enable.equals("true")){
+						AppConfig.setBonusEnable(getApplicationContext(), true);
+					}else if (bonus_enable.equals("false")) {
+						AppConfig.setBonusEnable(getApplicationContext(), false);
+					}
+				}
+				//是否隐藏积分 和积分有关的都不显示
+				String bonus_hide = MobclickAgent.getConfigParams(getApplicationContext(), "bonus_hide");
+				if(bonus_hide != null && !bonus_hide.equals("") && !bonus_hide.equals("null")){
+					if(bonus_hide.equals("true")){
+						AppConfig.setBonusHide(getApplicationContext(), true);
+					}else if (bonus_hide.equals("false")) {
+						AppConfig.setBonusHide(getApplicationContext(), false);
+					}
+				}
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
