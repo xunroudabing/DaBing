@@ -171,6 +171,7 @@
                 <data android:scheme="tencent100399626" /><!-- 100380359 100381104 222222 -->
             </intent-filter>
         </activity>
+        <activity android:name="com.tencent.plus.ImageActivity" />
         <!-- 有米 -->
         <activity
             android:name="net.youmi.android.AdBrowser"
