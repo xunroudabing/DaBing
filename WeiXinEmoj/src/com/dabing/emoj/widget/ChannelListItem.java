@@ -257,7 +257,7 @@ public class ChannelListItem extends LinearLayout implements IRequest {
 						if(wealth >= mBonus){
 							Log.d(TAG, "have enough bonus,ready to buy?");
 							String tmp1 = getResources().getString(R.string.alert_confirm_channel_add);
-							String txt1 = tmp1.replace("{wealth}", String.valueOf(wealth)).replace("{bonus}", String.valueOf(mBonus));
+							String txt1 = tmp1.replace("{bonus}", String.valueOf(mBonus));
 							Dialog dialog1 = DialogFactory.createTwoButtonDialog(getContext(), txt1, null, null, new DialogInterface.OnClickListener() {
 								
 								@Override

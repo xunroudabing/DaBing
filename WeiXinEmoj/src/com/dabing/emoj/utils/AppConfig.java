@@ -956,4 +956,25 @@ public class AppConfig {
 		editor.putString("setting_problem_content", json);
 		editor.commit();
 	}
+	/**
+	 * 是否是会员
+	 * @param context
+	 * @return
+	 */
+	public static boolean getIsVip(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean ret = preferences.getBoolean("isVip", false);
+		return ret;
+	}
+	/**
+	 * 设置为会员
+	 * @param context
+	 * @param b
+	 */
+	public static void setIsVip(Context context,boolean b){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean("isVip", b);
+		editor.commit();
+	}
 }

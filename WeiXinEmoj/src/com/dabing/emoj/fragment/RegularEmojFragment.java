@@ -170,7 +170,7 @@ public class RegularEmojFragment extends BaseEmojFragment implements OnItemClick
 					if (prefix.toLowerCase().equals("gif")) {
 						wx.sendEmoj(filepath);
 					} else {
-						wx.sendPng(filepath);
+						wx.sendIMGPath(filepath);
 					}
 					UmengEvent("action012", filename);
 					getActivity().getParent().finish();
