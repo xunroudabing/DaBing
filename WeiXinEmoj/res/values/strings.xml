@@ -29,8 +29,11 @@
     <string name="btn_userdefine_back">返回</string>
     <string name="btn_userdefine_weixin">微信</string>
     <string name="btn_gain_coin">获取铜板</string>
-    <string name="btn_remove_ad">去除广告(-50铜)</string>
+    <string name="btn_remove_ad">去除广告(-{bonus}铜)</string>
     <string name="btn_remove_ad_finish">去除广告(已去除)</string>
+    <string name="btn_vip">升级会员(-{bonus}铜)</string>
+    <string name="btn_vip_finish">升级会员(升级成功)</string>
+    
     <string name="title_custom">自定义表情</string>
     <string name="title_choose_files">选择一个文件夹</string>
     <string name="title_add_channel">微频道订阅</string>
@@ -39,11 +42,13 @@
     <string name="alert_confirm_add_file">确定添加{file}?</string>
     <string name="alert_confirm_del_file">确认移除{file}?</string>
     <string name="alert_regular_notexist">找到不到此文件</string>
-    <string name="alert_confirm_channel_add">余额{wealth}铜板,需要消耗{bonus}铜板,确定继续?</string>
+    <string name="alert_confirm_channel_add">需要消耗{bonus}铜板,确定继续?</string>
     <string name="alert_confirm_channel_getbonus">需要{bonus}铜板,您余额不足</string>
     <string name="alert_confirm_removead">需要消耗{bonus}铜板,确定继续?</string>
+    <string name="alert_confirm_tovip">需要消耗{bonus}铜板,确定继续?</string>
     <string name="alert_bonus_notenough">当前余额不足</string>
     <string name="alert_removead_success">去除广告成功</string>
+    <string name="alert_tovip_success">升级会员成功</string>
     <string name="logout">退出登录</string>
     
     <string name="p1">1.为什么无法发送表情?</string>
