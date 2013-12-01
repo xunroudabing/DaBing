@@ -76,7 +76,7 @@
         <activity android:name=".advertise.WAPS_AppWallActivity"></activity>
         <activity android:name=".advertise.WAPS_AppDetailActivity"></activity>
         <activity android:name=".advertise.WAPS_ADView" android:configChanges="keyboardHidden|orientation"/>    
-        <activity android:name=".activity.MainTab2Activity" android:launchMode="singleTask" android:screenOrientation="portrait">
+        <activity android:name=".activity.MainTab2Activity" android:screenOrientation="portrait">
              <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
                 <category android:name="android.intent.category.OPENABLE" />
