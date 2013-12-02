@@ -213,7 +213,7 @@ public class BaseApplication extends GDApplication {
 //			j json
 			save(content);
 			if(!hasNotified){
-				//sendNotification(content);
+				sendNotification(content);
 			}else {
 				//
 			}
@@ -234,15 +234,26 @@ public class BaseApplication extends GDApplication {
 	}
 	//发送通知
 	protected void sendNotification(String content){
-		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-		Notification notification = new Notification(R.drawable.icon, "接收到了一条推送消息", System.currentTimeMillis());
-		notification.flags = Notification.FLAG_AUTO_CANCEL;
-		Intent pIntent = new Intent(getApplicationContext(), BonusGainActivity.class);
-		//intent.putExtra("data", data);
-		//pIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-		PendingIntent pendingIntent= PendingIntent.getActivity(getApplicationContext(), 0, pIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-		notification.setLatestEventInfo(getApplicationContext(), "标题", content, pendingIntent);
-		mNotificationManager.notify(0, notification);
+		try {
+			JSONObject object = new JSONObject(content);
+			String title = object.getString("s1");
+			String des = object.getString("s2");
+			int c = object.getInt("c");
+			
+			NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+			Notification notification = new Notification(R.drawable.logo, "微信表情包发来一条通知", System.currentTimeMillis());
+			notification.flags = Notification.FLAG_AUTO_CANCEL;
+			Intent pIntent = new Intent(getApplicationContext(), BonusGainActivity.class);
+			//intent.putExtra("data", data);
+			//pIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+			PendingIntent pendingIntent= PendingIntent.getActivity(getApplicationContext(), 0, pIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+			notification.setLatestEventInfo(getApplicationContext(), title, des, pendingIntent);
+			mNotificationManager.notify(0, notification);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+		
 	}
 	/**
 	 * 保存推送消息
@@ -260,7 +271,7 @@ public class BaseApplication extends GDApplication {
 				int type = json.getInt("p");
 				String thumb = json.getString("t");
 				String des = json.getString("d");
-				String data = json.getString("json");
+				String data = json.getString("j");
 				
 				ContentValues cv = new ContentValues();
 				cv.put(PushEmojDatabaseHelper.FIELD_EMOJID, emojId);

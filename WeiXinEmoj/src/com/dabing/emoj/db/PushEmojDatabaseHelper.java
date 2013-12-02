@@ -67,11 +67,23 @@ public class PushEmojDatabaseHelper extends SQLiteOpenHelper {
 				FIELD_TIME + " DESC");
 		return cursor;
 	}
-
+	
+	public Cursor getCursor(String emojId){
+		SQLiteDatabase db = getReadableDatabase();
+		String whereClasue = FIELD_EMOJID + "=?";
+		Cursor cursor = db.query(TABLE_NAME, null, whereClasue, new String[]{emojId}, null, null, null);
+		return cursor;
+	}
 	public long insert(ContentValues cv) {
 		SQLiteDatabase db = getWritableDatabase();
 		long id = db.insert(TABLE_NAME, null, cv);
 		return id;
+	}
+	
+	public void remove(String emojId){
+		SQLiteDatabase db = getWritableDatabase();
+		String whereClause = FIELD_EMOJID + "=?";
+		db.delete(TABLE_NAME, whereClause, new String[]{emojId});
 	}
 
 }

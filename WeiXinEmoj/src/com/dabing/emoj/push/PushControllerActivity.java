@@ -1,7 +1,14 @@
 package com.dabing.emoj.push;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
+import org.json.JSONException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
@@ -13,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.dabing.emoj.R;
+import com.dabing.emoj.utils.AppConfig;
 import com.tencent.mm.sdk.uikit.MMBaseActivity;
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.xmpush.server.Constants;
@@ -23,7 +31,7 @@ import com.xiaomi.xmpush.server.Sender;
 public class PushControllerActivity extends MMBaseActivity {
 	Sender mSender;
 	Button btnSend;
-	EditText topicText, aliasText, dataText;
+	EditText topicText, aliasText, dataText,mainText,subText;
 	static final String TAG = PushControllerActivity.class.getSimpleName();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,8 @@ public class PushControllerActivity extends MMBaseActivity {
 		aliasText = (EditText) findViewById(R.id.push_edit_alias);
 		dataText = (EditText) findViewById(R.id.push_edit_json);
 		btnSend = (Button) findViewById(R.id.push_btnsend);
+		mainText = (EditText) findViewById(R.id.push_edit_s1);
+		subText = (EditText) findViewById(R.id.push_edit_s2);
 		btnSend.setOnClickListener(btnSendListener);
 		Init();
 	}
@@ -73,14 +83,22 @@ public class PushControllerActivity extends MMBaseActivity {
 	protected void sendMessageByTopic(){
 		Constants.useOfficial();
 		String topic = topicText.getText().toString();
-		String data = dataText.getText().toString();
-		String title = "微信表情包";
-		String des = "微信表情包给你发来一个新表情";
-
-		Message msg = new Message.Builder().title(title).description(des)
-				.payload(data).restrictedPackageName("com.dabing.emoj").notifyType(1).build();
+		String filename = dataText.getText().toString();
+		String title = mainText.getText().toString();
+		String des = subText.getText().toString();
+		String json = getJsonTxt(filename);
+		Log.d(TAG, "json:"+json);
+		
 		
 		try {
+			org.json.JSONObject contentObject = new org.json.JSONObject();
+			contentObject.put("s1", title);
+			contentObject.put("s2", des);
+			contentObject.put("c", 1);
+			contentObject.put("obj", new org.json.JSONObject(json));
+			
+			Message msg = new Message.Builder().title(title).description(des)
+					.payload(contentObject.toString()).restrictedPackageName("com.dabing.emoj").notifyType(1).build();
 			Result result = mSender.broadcast(msg, topic, 3);
 			com.xiaomi.push.sdk.ErrorCode code = result.getErrorCode();
 			JSONObject object = result.getData();
@@ -101,7 +119,32 @@ public class PushControllerActivity extends MMBaseActivity {
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			Log.e(TAG, e.toString());
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+	}
+	
+	protected String getJsonTxt(String filename){
+		String path = AppConfig.getLog() + filename + ".txt";
+		try {
+			StringBuilder sb = new StringBuilder();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(path)), "GBK"));
+			String line = null;
+			while((line = reader.readLine()) != null){
+				Log.d(TAG, "line:"+line);
+				sb.append(line);
+			}
+			reader.close();
+			return sb.toString();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 	private OnClickListener btnSendListener = new OnClickListener() {
 
