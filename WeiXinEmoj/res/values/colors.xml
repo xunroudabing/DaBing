@@ -25,6 +25,7 @@
     <color name="nickblue">#ff0083cd</color>
     <color name="app_panel_bg">#686868</color>
     <color name="coin_yellow">#D9A028</color>
+    <color name="divider_color">#ffc5c5c5</color>
     <!-- 微信 -->
     <color name="semitransparent">#80000000</color>
     <color name="lightransparent">#a0000000</color>

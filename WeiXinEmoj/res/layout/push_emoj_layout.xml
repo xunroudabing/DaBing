@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray_light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<RelativeLayout  
+	android:padding="5dp"    
+	android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	     <com.dabing.emoj.widget.CacheWrapperImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/push_emoj_indexImg"
+	    android:layout_gravity="center"
+	    android:layout_alignParentLeft="true"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
+	    
+	     <TextView
+	    android:id="@+id/push_emoj_emojTxt"      	    
+	    android:text="碎碎猫"     
+	    android:textColor="@color/black"
+	    android:textSize="@dimen/BasicTextSize"
+	    android:layout_toRightOf="@id/push_emoj_indexImg"
+	    android:layout_alignBaseline="@id/push_emoj_indexImg"
+	    android:layout_marginLeft="5dp"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+	     
+	     <TextView
+	    android:id="@+id/push_emoj_desTxt"   
+	    android:text="关于表情的描述..."
+	    android:textSize="@dimen/SmallTextSize"
+	    android:textColor="#FF737373"
+	    android:shadowColor="@color/white"
+	    android:shadowDx="1.2"
+	    android:shadowDy="1.2"
+	    android:shadowRadius="1.0"
+	    android:layout_below="@id/push_emoj_indexImg"    
+	    android:layout_marginTop="5dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+	</RelativeLayout>
+	<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/disan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="共24个表情"  
+            android:textSize="@dimen/SmallTextSize"
+            android:textColor="#FF737373"
+	    	android:shadowColor="@color/white"
+	    	android:shadowDx="1.2"
+	    	android:shadowDy="1.2"
+	    	android:shadowRadius="1.0" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/disan"
+            android:background="@color/divider_color" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/disan"
+            android:background="@color/divider_color" />
+    </RelativeLayout>
+	
+	<GridView     
+		android:gravity="center"
+		android:fadingEdge="none"
+		android:id="@+id/push_emoj_gridview"
+		android:numColumns="5"
+		android:stretchMode="columnWidth"
+		android:verticalSpacing="2dp"
+		android:horizontalSpacing="5dp"
+		android:listSelector="@drawable/mm_trans"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"></GridView>
+	
+	 <Button
+                android:id="@+id/push_emoj_btnAdd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/btn_style_one"
+                android:shadowColor="@color/black"
+                android:shadowDy="2.0"
+                android:shadowRadius="1.0"
+                android:text="添加到表情列表"
+                android:textColor="@color/white"
+                android:textSize="16.0dip" />
+</LinearLayout>
