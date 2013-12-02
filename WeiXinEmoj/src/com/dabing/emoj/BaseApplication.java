@@ -5,11 +5,14 @@ import greendroid.app.GDApplication;
 import java.io.File;
 import java.util.List;
 
+import org.json.JSONObject;
+
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Process;
@@ -17,9 +20,11 @@ import android.util.Log;
 
 import com.dabing.emoj.activity.BonusGainActivity;
 import com.dabing.emoj.activity.MainTab2Activity;
+import com.dabing.emoj.db.PushEmojDatabaseHelper;
 import com.dabing.emoj.exception.DefaultCrashHandler;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
+import com.umeng.common.net.p;
 import com.xiaomi.channel.commonutils.logger.LoggerInterface;
 import com.xiaomi.mipush.sdk.Constants;
 import com.xiaomi.mipush.sdk.Logger;
@@ -194,8 +199,23 @@ public class BaseApplication extends GDApplication {
 				String topic, boolean hasNotified) {
 			Log.d(PUSHTAG, "onReceiveMessage is called. " + content + ", "
 					+ alias + ", " + topic + ", " + hasNotified);
+
+//			s1 主标题
+//			s2 副标题
+//			c 类型 1-表情 2-文本
+//*****二级字段 obj		
+//			i id 表情id			
+//			n name 表情名称	
+//			p 0-免费 1-会员 2-铜板
+//			m 铜板数
+//			t thumb 封面图片
+//			d 描述
+//			j json
+			save(content);
 			if(!hasNotified){
 				//sendNotification(content);
+			}else {
+				//
 			}
 		}
 
@@ -223,5 +243,40 @@ public class BaseApplication extends GDApplication {
 		PendingIntent pendingIntent= PendingIntent.getActivity(getApplicationContext(), 0, pIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		notification.setLatestEventInfo(getApplicationContext(), "标题", content, pendingIntent);
 		mNotificationManager.notify(0, notification);
+	}
+	/**
+	 * 保存推送消息
+	 * @param content
+	 */
+	protected void save(String content){
+		try {
+			JSONObject object = new JSONObject(content);
+			//消息类型 1-表情 2-文本
+			int c = object.getInt("c");
+			if(c == 1){
+				JSONObject json = object.getJSONObject("obj");
+				String emojId = json.getString("i");
+				String name = json.getString("n");
+				int type = json.getInt("p");
+				String thumb = json.getString("t");
+				String des = json.getString("d");
+				String data = json.getString("json");
+				
+				ContentValues cv = new ContentValues();
+				cv.put(PushEmojDatabaseHelper.FIELD_EMOJID, emojId);
+				cv.put(PushEmojDatabaseHelper.FIELD_NAME, name);
+				cv.put(PushEmojDatabaseHelper.FIELD_TYPE, type);
+				cv.put(PushEmojDatabaseHelper.FIELD_THUMB, thumb);
+				cv.put(PushEmojDatabaseHelper.FIELD_DES, des);
+				cv.put(PushEmojDatabaseHelper.FIELD_EMOJ, data);
+				cv.put(PushEmojDatabaseHelper.FIELD_TIME, System.currentTimeMillis());
+				
+				PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(getApplicationContext());
+				helper.insert(cv);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
 	}
 }

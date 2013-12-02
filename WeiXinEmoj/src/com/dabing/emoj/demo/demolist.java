@@ -17,6 +17,7 @@ import com.dabing.emoj.admin.MakeEmotionActivity;
 import com.dabing.emoj.admin.WebLoginActivity;
 import com.dabing.emoj.admin.uploadPicActivity;
 import com.dabing.emoj.push.PushControllerActivity;
+import com.dabing.emoj.push.PushEmojActivity;
 
 
 import android.app.ListActivity;
@@ -62,7 +63,8 @@ public class demolist extends ListActivity {
 						  "UserDefineActivity",
 						  "demoFile",
 						  "ChannelAddCategoryActivity",
-						  "PushControllerActivity"
+						  "PushControllerActivity",
+						  "PushEmojActivity"
 						};
 		
 		final Class<?>[] classes = {demo1.class,
@@ -84,7 +86,8 @@ public class demolist extends ListActivity {
 									UserDefineActivity.class,
 									demoFile.class,
 									ChannelAddCategoryActivity.class,
-									PushControllerActivity.class
+									PushControllerActivity.class,
+									PushEmojActivity.class
 									};
 		List<String> nameArray = new ArrayList<String>();
 		for(String a : names){
