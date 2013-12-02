@@ -103,6 +103,7 @@
         <activity android:name=".activity.UserDefineAddActivity"></activity>
         <activity android:name=".activity.ChannelAddCategoryActivity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.BonusGainActivity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait"></activity>
+        <activity android:name=".push.PushEmojActivity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait"></activity>
         <receiver android:name=".service.StartUpBroadcast"></receiver>
         <receiver android:name=".service.LoginSuccessBroadcast"></receiver>
         <service  android:name=".service.WeiXinEmojService"></service>
