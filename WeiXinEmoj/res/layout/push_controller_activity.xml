@@ -23,14 +23,23 @@
 
     <EditText
         android:id="@+id/push_edit_json"
-        android:hint="data"
+        android:hint="json"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
+	 <EditText
+        android:id="@+id/push_edit_s1"
+        android:hint="主标题"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+	  <EditText
+        android:id="@+id/push_edit_s2"
+        android:hint="副标题"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/push_btnsend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="send" />
+        android:text="send by topic" />
 
 </LinearLayout>
