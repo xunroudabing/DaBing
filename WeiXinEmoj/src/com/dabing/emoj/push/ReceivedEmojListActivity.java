@@ -34,12 +34,14 @@ public class ReceivedEmojListActivity extends BaseActivity {
 	MyEmojAdapter mAdapter;
 	PushEmojDatabaseHelper mHelper;
 	ListView mListView;
+	ImageView noImageView;
 	static final String TAG = ReceivedEmojListActivity.class.getSimpleName();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setMMTitle(R.string.title_receive_emoj);
+		noImageView = (ImageView) findViewById(R.id.push_emoj_list_nodata);
 		mListView = (ListView) findViewById(R.id.push_emoj_list_listview);
 		mHelper = new PushEmojDatabaseHelper(getApplicationContext());
 		mListView.setOnItemClickListener(itemClickListener);
@@ -86,8 +88,13 @@ public class ReceivedEmojListActivity extends BaseActivity {
 					
 					mAdapter = new MyEmojAdapter(array);
 					mListView.setAdapter(mAdapter);
+					
+					noImageView.setVisibility(View.GONE);
+					mListView.setVisibility(View.VISIBLE);
 				}else {
 					Log.d(TAG, "no data..");
+					noImageView.setVisibility(View.VISIBLE);
+					mListView.setVisibility(View.GONE);
 				}
 			}
 		} catch (Exception e) {

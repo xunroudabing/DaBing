@@ -173,7 +173,6 @@ public class BaseApplication extends GDApplication {
 			CallbackImpl callback = new CallbackImpl();
 			MiPushClient.initialize(this, AppConstant.MI_APP_ID,
 					AppConstant.MI_APP_KEY, callback);
-			MiPushClient.subscribe(this, "emoj", null);
 			return true;
 		}
 		return false;
@@ -192,7 +191,10 @@ public class BaseApplication extends GDApplication {
 		@Override
 		public void onSubscribeResult(long resultCode, String reason,
 				String topic) {
-			Log.d(PUSHTAG, "onSubscribeResult is called.");
+			Log.d(PUSHTAG, "onSubscribeResult is called.resultCode:"+resultCode+" topic:"+topic);
+			if(resultCode == 0){
+				AppConfig.setSubscribe(getApplicationContext(), true);
+			}
 		}
 
 		@Override
@@ -223,7 +225,10 @@ public class BaseApplication extends GDApplication {
 		@Override
 		public void onInitializeResult(long resultCode, String reason,
 				final String regID) {
-			Log.d(PUSHTAG, "onInitializeResult is called. " + regID);			
+			Log.d(PUSHTAG, "onInitializeResult is called. " + regID);	
+			if(!AppConfig.getSubscribe(getApplicationContext())){
+				MiPushClient.subscribe(getApplicationContext(), "emoj", null);
+			}
 		}
 
 		@Override

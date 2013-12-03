@@ -22,20 +22,24 @@ import android.widget.Button;
 import android.widget.DialerFilter;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.activity.BonusGainActivity;
+import com.dabing.emoj.bonus.IBonusChangeListener;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
 import com.dabing.emoj.db.PushEmojDatabaseHelper;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
+import com.dabing.emoj.utils.MediaUtils;
 import com.dabing.emoj.widget.CacheWrapperImageView;
 
-public class PushEmojActivity extends BaseActivity {
+public class PushEmojActivity extends BaseActivity implements IBonusChangeListener{
 
+	IBouns mBouns;
 	int indexImgWidth = 100;
 	JSONObject mData;
 	String mEmojID;
@@ -46,7 +50,6 @@ public class PushEmojActivity extends BaseActivity {
 	Button addBtn;
 	static final int COLUM_NUM = 5;
 	static final String TAG = PushEmojActivity.class.getSimpleName();
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -58,6 +61,8 @@ public class PushEmojActivity extends BaseActivity {
 		mGridView = (GridView) findViewById(R.id.push_emoj_gridview);
 		addBtn = (Button) findViewById(R.id.push_emoj_btnAdd);
 		addBtn.setOnClickListener(onClickListener);
+		mBouns = new WAPS_Bonus(PushEmojActivity.this);
+		mBouns.setBonusChangeListener(this);
 		caculateWidth();
 		BindUI();
 	}
@@ -184,6 +189,7 @@ public class PushEmojActivity extends BaseActivity {
 			try {
 				// 0-免费 1-会员 2-铜板
 				int type = mData.getInt(PushEmojDatabaseHelper.FIELD_TYPE);
+				final int money = mData.getInt(PushEmojDatabaseHelper.FIELD_MONEY);
 				switch (type) {
 				case 0:
 					AddEmoj();
@@ -223,8 +229,53 @@ public class PushEmojActivity extends BaseActivity {
 					}
 					break;
 				case 2:
-					final IBouns helper = new WAPS_Bonus(getContext());
 					
+					int wealth = mBouns.get();
+					//提示购买
+					if(wealth >= money){
+						String msg = getString(R.string.alert_push_emoj_needbonus).replace("{bonus}", String.valueOf(money));
+						Dialog dialog1 = DialogFactory.createTwoButtonDialog(PushEmojActivity.this, msg, null, null, new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								// TODO Auto-generated method stub
+								mBouns.spend(money);
+								AddEmoj();
+								addBtn.setText(R.string.btn_push_emoj_add_finish);
+								addBtn.setEnabled(false);
+								dialog.dismiss();
+							}
+						},new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								// TODO Auto-generated method stub
+								dialog.dismiss();
+							}
+						});
+						dialog1.show();
+						
+					}else {
+					//余额不足						
+						String msg = getString(R.string.alert_push_emoj_getbonus).replace("{bonus}", String.valueOf(money));
+						Dialog dialog2 = DialogFactory.createTwoButtonDialog(PushEmojActivity.this, msg, "获取铜板", null, new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								// TODO Auto-generated method stub
+								mBouns.showOffers();
+								dialog.dismiss();
+							}
+						}, new DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								// TODO Auto-generated method stub
+								dialog.dismiss();
+							}
+						});
+						dialog2.show();
+					}
 					break;
 				default:
 					break;
@@ -292,5 +343,67 @@ public class PushEmojActivity extends BaseActivity {
 			return null;
 		}
 
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.dabing.emoj.BaseActivity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		mBouns.reflesh();
+	}
+	
+	@Override
+	public void onChange(String t, final int value) {
+		// TODO Auto-generated method stub
+		if (t.equals("get")) {
+			if (value != 0) {
+				runOnUiThread(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						MediaUtils.getInstance(getApplicationContext())
+								.playSound(R.raw.coin);
+						showToast(value);
+					}
+				});
+
+			}
+		} else if (t.equals("spend")) {
+			if (value != 0) {
+				runOnUiThread(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						MediaUtils.getInstance(getApplicationContext())
+								.playSound(R.raw.coin);
+						showToast(value);
+					}
+				});
+			}
+		}
+	}
+
+	@Override
+	public void onError(String TAG, String ex) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	protected void showToast(int value) {
+		View view = LayoutInflater.from(PushEmojActivity.this).inflate(
+				R.layout.bonus_alert_toast, null);
+		TextView txt = (TextView) view.findViewById(R.id.bonus_alert_toast_txt);
+		String s = value > 0 ? String.format("+%d", value) : String
+				.valueOf(value);
+		txt.setText(s);
+		Toast toast = new Toast(PushEmojActivity.this);
+		toast.setDuration(Toast.LENGTH_LONG);
+		toast.setView(view);
+		toast.show();
 	}
 }

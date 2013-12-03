@@ -970,4 +970,21 @@ public class AppConfig {
 		editor.putBoolean("isVip", b);
 		editor.commit();
 	}
+	/**
+	 * 推送是否订阅成功
+	 * @param context
+	 * @return
+	 */
+	public static boolean getSubscribe(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		boolean ret = preferences.getBoolean("Subscribe", false);
+		return ret;
+	}
+	
+	public static void setSubscribe(Context context,boolean b){
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean("Subscribe", b);
+		editor.commit();
+	}
 }
