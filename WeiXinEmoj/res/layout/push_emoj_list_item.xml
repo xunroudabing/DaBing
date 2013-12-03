@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	 <com.dabing.emoj.widget.CacheWrapperImageView
+     	xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
+	    android:id="@+id/push_emoj_list_item_img"
+	    android:layout_gravity="center"
+	    dabing:inDensity="hdpi"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
+
+	 <RelativeLayout 
+	    android:layout_weight="1.0"
+	    android:layout_marginLeft="5dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	     <TextView 
+	    android:id="@+id/push_emoj_list_item_txt1"      
+	    android:textColor="@color/black"
+	    android:textSize="@dimen/BasicTextSize"     
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+	     
+	      <TextView 
+	    android:id="@+id/push_emoj_list_item_txt2"      
+	    android:textSize="@dimen/SmallTextSize"    
+	    android:textColor="#FF737373"
+	    android:shadowColor="@color/white"
+	    android:shadowDx="1.2"
+	    android:shadowDy="1.2"
+	    android:shadowRadius="1.0" 
+	    android:singleLine="true"
+	    android:ellipsize="end"
+	    android:layout_below="@id/push_emoj_list_item_txt1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+	      
+	      <ImageView
+	    android:id="@+id/push_emoj_list_item_imgNew" 
+	    android:src="@drawable/alert_new"      	 
+	    android:visibility="gone"
+	    android:layout_toRightOf="@id/push_emoj_list_item_txt1"
+	    android:layout_alignBottom="@id/push_emoj_list_item_txt1"   
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+	 </RelativeLayout>
+	 
+	 <TextView
+	    android:id="@+id/push_emoj_list_item_time"   
+	    android:textSize="@dimen/SmallTextSize"    
+	    android:textColor="#FF737373"
+	    android:shadowColor="@color/white"
+	    android:shadowDx="1.2"
+	    android:shadowDy="1.2"
+	    android:shadowRadius="1.0" 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+</LinearLayout>

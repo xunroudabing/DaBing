@@ -33,12 +33,15 @@
     <string name="btn_remove_ad_finish">去除广告(已去除)</string>
     <string name="btn_vip">升级会员(-{bonus}铜)</string>
     <string name="btn_vip_finish">升级会员(升级成功)</string>
+    <string name="btn_push_emoj_add">添加至表情列表</string>
+    <string name="btn_push_emoj_add_finish">已添加</string>
     
     <string name="title_custom">自定义表情</string>
     <string name="title_choose_files">选择一个文件夹</string>
     <string name="title_add_channel">微频道订阅</string>
 	<string name="title_setting_removead">去除广告</string>
     <string name="title_channel">微频道</string>
+    <string name="title_receive_emoj">接收到的表情</string>
     <string name="alert_confirm_add_file">确定添加{file}?</string>
     <string name="alert_confirm_del_file">确认移除{file}?</string>
     <string name="alert_regular_notexist">找到不到此文件</string>
@@ -49,6 +52,10 @@
     <string name="alert_bonus_notenough">当前余额不足</string>
     <string name="alert_removead_success">去除广告成功</string>
     <string name="alert_tovip_success">升级会员成功</string>
+    <string name="alert_push_emoj_need_vip">您还不是会员,确认升级?</string>
+    <string name="alert_push_emoj_needbonus">需要消耗{bonus}铜板,确定继续?</string>
+    <string name="alert_push_emoj_getbonus">需要{bonus}铜板,您余额不足</string>
+    
     <string name="logout">退出登录</string>
     
     <string name="p1">1.为什么无法发送表情?</string>
