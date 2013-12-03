@@ -1,11 +1,17 @@
 package com.dabing.emoj.db;
 
+import org.json.JSONObject;
+
+import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.SimpleCrypto;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * 推送表情数据库
@@ -68,11 +74,43 @@ public class PushEmojDatabaseHelper extends SQLiteOpenHelper {
 		return cursor;
 	}
 	
-	public Cursor getCursor(String emojId){
+	public JSONObject getItem(String emojId){
 		SQLiteDatabase db = getReadableDatabase();
 		String whereClasue = FIELD_EMOJID + "=?";
 		Cursor cursor = db.query(TABLE_NAME, null, whereClasue, new String[]{emojId}, null, null, null);
-		return cursor;
+		if(cursor != null){
+			if(cursor.getCount() > 0){
+				cursor.moveToFirst();
+				try {
+					JSONObject object = new JSONObject();
+					object.put(FIELD_ID, cursor.getLong(cursor.getColumnIndexOrThrow(FIELD_ID)));
+					object.put(FIELD_EMOJID, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_EMOJID)));
+					object.put(FIELD_NAME, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_NAME)));
+					object.put(FIELD_THUMB, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_THUMB)));
+					String json_encry = cursor.getString(cursor.getColumnIndexOrThrow(FIELD_EMOJ));
+					String json_decry = SimpleCrypto.decrypt(AppConstant.ENCRYPT_SEED, json_encry);
+					Log.d(TAG, "json_decry:"+json_decry);
+					object.put(FIELD_EMOJ, new JSONObject(json_decry));
+					object.put(FIELD_DES, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_DES)));
+					object.put(FIELD_STATE, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_STATE)));
+					object.put(FIELD_READ, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_READ)));
+					object.put(FIELD_TYPE, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_TYPE)));
+					object.put(FIELD_MONEY, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_MONEY)));
+					object.put(FIELD_TIME, cursor.getLong(cursor.getColumnIndexOrThrow(FIELD_TIME)));
+				
+					return object;
+				} catch (Exception e) {
+					// TODO: handle exception
+					Log.e(TAG, e.toString());
+				}finally{
+					if(cursor != null){
+						cursor.close();
+					}
+				}
+				
+			}
+		}
+		return null;
 	}
 	public long insert(ContentValues cv) {
 		SQLiteDatabase db = getWritableDatabase();
@@ -84,6 +122,24 @@ public class PushEmojDatabaseHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = getWritableDatabase();
 		String whereClause = FIELD_EMOJID + "=?";
 		db.delete(TABLE_NAME, whereClause, new String[]{emojId});
+	}
+	
+	public void update(ContentValues cv,String emojId){
+		final String whereClause = FIELD_EMOJID + "=?";
+		SQLiteDatabase db = getWritableDatabase();
+		db.update(TABLE_NAME, cv, whereClause, new String[]{emojId});
+	}
+	public boolean exist(String emojId){
+		final String whereClause = FIELD_EMOJ + "=?";
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.query(TABLE_NAME, new String[]{"COUNT(*)"}, whereClause, new String[]{emojId}, null, null, null);
+		if(cursor == null){
+			return false;
+		}
+		cursor.moveToFirst();
+		int count = cursor.getInt(0);
+		cursor.close();
+		return count > 0;
 	}
 
 }

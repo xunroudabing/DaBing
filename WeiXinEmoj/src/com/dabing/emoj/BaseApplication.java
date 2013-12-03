@@ -24,6 +24,7 @@ import com.dabing.emoj.db.PushEmojDatabaseHelper;
 import com.dabing.emoj.exception.DefaultCrashHandler;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.SimpleCrypto;
 import com.umeng.common.net.p;
 import com.xiaomi.channel.commonutils.logger.LoggerInterface;
 import com.xiaomi.mipush.sdk.Constants;
@@ -273,16 +274,20 @@ public class BaseApplication extends GDApplication {
 				String des = json.getString("d");
 				String data = json.getString("j");
 				
+				PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(getApplicationContext());
+				//数据库已存在，不保存至数据库
+				if(helper.exist(emojId)){
+					return;
+				}
 				ContentValues cv = new ContentValues();
 				cv.put(PushEmojDatabaseHelper.FIELD_EMOJID, emojId);
 				cv.put(PushEmojDatabaseHelper.FIELD_NAME, name);
 				cv.put(PushEmojDatabaseHelper.FIELD_TYPE, type);
 				cv.put(PushEmojDatabaseHelper.FIELD_THUMB, thumb);
 				cv.put(PushEmojDatabaseHelper.FIELD_DES, des);
-				cv.put(PushEmojDatabaseHelper.FIELD_EMOJ, data);
+				cv.put(PushEmojDatabaseHelper.FIELD_EMOJ, SimpleCrypto.encrypt(AppConstant.ENCRYPT_SEED, data));
 				cv.put(PushEmojDatabaseHelper.FIELD_TIME, System.currentTimeMillis());
-				
-				PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(getApplicationContext());
+					
 				helper.insert(cv);
 			}
 		} catch (Exception e) {
