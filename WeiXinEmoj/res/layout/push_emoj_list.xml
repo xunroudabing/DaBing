@@ -3,6 +3,7 @@
     android:background="@color/gray_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center|center_vertical"
     android:orientation="vertical" >
     
 	 <ListView 
@@ -15,4 +16,11 @@
 	  android:listSelector="@color/gray"
 	  android:layout_width="fill_parent" 
 	  android:layout_height="wrap_content"></ListView>
+	 
+	 <ImageView 	  
+	  android:id="@+id/push_emoj_list_nodata"   
+	  android:src="@drawable/alert_no_data"
+	  android:visibility="gone"
+	  android:layout_width="wrap_content" 
+	  android:layout_height="wrap_content"/>
 </LinearLayout>

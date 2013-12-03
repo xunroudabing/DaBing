@@ -52,7 +52,7 @@
                    <RadioButton android:id="@id/main_tab_settings" android:text="设置" android:drawableTop="@drawable/tab_v2_setting_selector" style="@style/MMTabButton" />
                 </LinearLayout>
                 <LinearLayout android:gravity="top|right|center" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                    <TextView android:textSize="10.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/main_tab_new_settings" android:background="@drawable/alert_new" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@null" />
+                    <TextView android:textSize="10.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/main_tab_new_settings" android:background="@drawable/friendactivity_newnotice" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@null" />
                 </LinearLayout>
             </FrameLayout>
             
