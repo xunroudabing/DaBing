@@ -48,13 +48,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
-import com.dabing.ads.*;
+
 import com.ant.liao.GifView;
+import com.dabing.ads.AdView;
+import com.dabing.ads.AppConnect;
+import com.dabing.ads.MiniAdView;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
-import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.AdManager.AdType;
+import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener;
@@ -71,7 +74,6 @@ import com.dabing.emoj.utils.RegularEmojManager;
 import com.dabing.emoj.utils.Util;
 import com.dabing.emoj.utils.Utils;
 import com.dabing.emoj.wxapi.WeiXinHelper;
-import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.uikit.MMAlert;
@@ -105,7 +107,6 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
     boolean emotionMode = false;
     RelativeLayout container;
     MixAdView mAdView;
-    TAdView adView;
     LinearLayout wapsAdView;//万普广告
     WAPS_CustomAd wapsCustomAd;//万普自定义广告
     LinearLayout wapsMiniAdBackView;
@@ -609,7 +610,6 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 		AdType adType = ad.getAdType();
 		switch (adType) {
 		case QQ:
-			adView.setVisibility(View.VISIBLE);
 			break;
 		case WAPS:
 			String waps_ad_type = null;

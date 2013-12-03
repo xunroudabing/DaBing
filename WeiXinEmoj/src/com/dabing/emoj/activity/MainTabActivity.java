@@ -10,8 +10,6 @@ import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
 import com.dabing.emoj.utils.NetWorkCheck;
 import com.dabing.emoj.widget.PromptDialog;
-import com.tencent.exmobwin.MobWINManager;
-import com.tencent.exmobwin.Type;
 import com.umeng.fb.NotificationType;
 import com.umeng.fb.UMFeedbackService;
 import com.umeng.update.UmengUpdateAgent;
@@ -223,7 +221,7 @@ public class MainTabActivity extends TabActivity implements OnCheckedChangeListe
     	if(AppConfig.getAdvertise_on(getApplicationContext())){
     		try {
     			Log.d(TAG, "MobWINManager.init...");	
-    			MobWINManager.init(MainTabActivity.this, Type.MOBWIN_BANNER);
+    			//MobWINManager.init(MainTabActivity.this, Type.MOBWIN_BANNER);
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
@@ -232,7 +230,7 @@ public class MainTabActivity extends TabActivity implements OnCheckedChangeListe
     }
     private void DestroyAdvertise(){
     	try {
-			MobWINManager.destroy();
+			//MobWINManager.destroy();
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());

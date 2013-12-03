@@ -1,26 +1,19 @@
 package com.dabing.emoj.utils;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.http.entity.mime.content.ContentBody;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.dabing.emoj.R;
-import com.tencent.exmobwin.a.b;
-import com.tencent.weibo.beans.OAuth;
-import com.tencent.weibo.oauthv2.OAuthV2;
-
-import android.R.bool;
-import android.R.integer;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Environment;
-import android.text.Html.TagHandler;
 import android.util.Log;
+
+import com.dabing.emoj.R;
+import com.tencent.weibo.beans.OAuth;
+import com.tencent.weibo.oauthv2.OAuthV2;
 
 public class AppConfig {
 	static final String TAG = AppConfig.class.getSimpleName();

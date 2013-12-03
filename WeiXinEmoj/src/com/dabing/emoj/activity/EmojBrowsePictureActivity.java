@@ -17,13 +17,10 @@ import java.net.URLConnection;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import android.R.integer;
 import android.app.Dialog;
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -33,9 +30,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
-import android.provider.MediaStore.Images;
-import android.provider.MediaStore.Images.Media;
-import android.text.InputFilter.LengthFilter;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -53,23 +47,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
 
-import com.dabing.ads.*;
-
 import com.ant.liao.GifView;
+import com.dabing.ads.AdView;
+import com.dabing.ads.AppConnect;
+import com.dabing.ads.MiniAdView;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
+import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
-import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.exception.ExceptionManager;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener;
-import com.dabing.emoj.imagezoomview.ZoomState;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener.ControlType;
+import com.dabing.emoj.imagezoomview.ZoomState;
 import com.dabing.emoj.provider.BaseRequest;
 import com.dabing.emoj.provider.IRequest;
-import com.dabing.emoj.provider.MyRequest;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
@@ -79,7 +73,6 @@ import com.dabing.emoj.utils.FileTypeJudge;
 import com.dabing.emoj.utils.JsonHelper;
 import com.dabing.emoj.utils.QStr;
 import com.dabing.emoj.wxapi.WeiXinHelper;
-import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.uikit.MMAlert;
@@ -115,7 +108,6 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
     ImageView exceptionImageView;
     TextView textView;
     RelativeLayout container;
-    TAdView adView;
     MixAdView mAdView;//自定义广告
     LinearLayout wapsAdView;//万普广告
     WAPS_CustomAd wapsCustomAd;//万普自定义广告
@@ -708,7 +700,6 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 		AdType adType = ad.getAdType();
 		switch (adType) {
 		case QQ:
-			adView.setVisibility(View.VISIBLE);
 			break;
 		case WAPS:
 			String waps_ad_type = AppConfig.getWAPS_INDEX3_AD_TYPE(getApplicationContext());

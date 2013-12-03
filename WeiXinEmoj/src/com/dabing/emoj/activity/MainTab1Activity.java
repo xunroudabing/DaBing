@@ -2,20 +2,6 @@ package com.dabing.emoj.activity;
 
 import org.json.JSONArray;
 
-import com.dabing.emoj.R;
-import com.dabing.emoj.advertise.AdManager;
-import com.dabing.emoj.service.StartUpBroadcast;
-import com.dabing.emoj.utils.AppConfig;
-import com.dabing.emoj.utils.AppConstant;
-import com.dabing.emoj.utils.DialogFactory;
-import com.dabing.emoj.utils.NetWorkCheck;
-import com.dabing.emoj.widget.PromptDialog;
-import com.tencent.exmobwin.MobWINManager;
-import com.tencent.exmobwin.Type;
-import com.umeng.fb.NotificationType;
-import com.umeng.fb.UMFeedbackService;
-import com.umeng.update.UmengUpdateAgent;
-
 import android.app.TabActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -34,12 +20,24 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+
+import com.dabing.emoj.R;
+import com.dabing.emoj.advertise.AdManager;
+import com.dabing.emoj.service.StartUpBroadcast;
+import com.dabing.emoj.utils.AppConfig;
+import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.DialogFactory;
+import com.dabing.emoj.utils.NetWorkCheck;
+import com.dabing.emoj.widget.PromptDialog;
+import com.umeng.fb.NotificationType;
+import com.umeng.fb.UMFeedbackService;
+import com.umeng.update.UmengUpdateAgent;
 
 public class MainTab1Activity extends TabActivity implements OnCheckedChangeListener {
 	String action ="send";

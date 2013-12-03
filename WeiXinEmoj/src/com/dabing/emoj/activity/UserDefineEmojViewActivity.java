@@ -4,24 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.ant.liao.GifView;
-import com.dabing.emoj.R;
-import com.dabing.emoj.advertise.MixAdView;
-import com.dabing.emoj.advertise.WAPS_CustomAd;
-import com.dabing.emoj.db.UserDefineDataBaseHelper;
-import com.dabing.emoj.imagezoomview.ImageZoomView;
-import com.dabing.emoj.utils.AppConstant;
-import com.dabing.emoj.utils.FileType;
-import com.dabing.emoj.utils.RegularEmojManager;
-import com.dabing.emoj.utils.Util;
-import com.dabing.emoj.wxapi.WeiXinHelper;
-import com.tencent.exmobwin.banner.TAdView;
-import com.tencent.mm.sdk.openapi.WXAPIFactory;
-
-import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -34,6 +18,18 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ant.liao.GifView;
+import com.dabing.emoj.R;
+import com.dabing.emoj.advertise.MixAdView;
+import com.dabing.emoj.db.UserDefineDataBaseHelper;
+import com.dabing.emoj.imagezoomview.ImageZoomView;
+import com.dabing.emoj.utils.AppConstant;
+import com.dabing.emoj.utils.FileType;
+import com.dabing.emoj.utils.RegularEmojManager;
+import com.dabing.emoj.utils.Util;
+import com.dabing.emoj.wxapi.WeiXinHelper;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 /**
  * 自定义图片
  * @author DaBing

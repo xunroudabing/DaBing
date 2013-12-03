@@ -3,6 +3,16 @@ package com.dabing.emoj.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.ListActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
 import com.dabing.emoj.activity.ChannelAddCategoryActivity;
 import com.dabing.emoj.activity.DownloadGridViewActivity;
 import com.dabing.emoj.activity.EmojBrowseViewActivity;
@@ -16,19 +26,7 @@ import com.dabing.emoj.activity.WelcomeActivity;
 import com.dabing.emoj.admin.MakeEmotionActivity;
 import com.dabing.emoj.admin.WebLoginActivity;
 import com.dabing.emoj.admin.uploadPicActivity;
-import com.dabing.emoj.push.PushControllerActivity;
 import com.dabing.emoj.push.PushEmojActivity;
-
-
-import android.app.ListActivity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class demolist extends ListActivity {
 	ListView listView;
@@ -63,7 +61,6 @@ public class demolist extends ListActivity {
 						  "UserDefineActivity",
 						  "demoFile",
 						  "ChannelAddCategoryActivity",
-						  "PushControllerActivity",
 						  "PushEmojActivity"
 						};
 		
@@ -86,7 +83,6 @@ public class demolist extends ListActivity {
 									UserDefineActivity.class,
 									demoFile.class,
 									ChannelAddCategoryActivity.class,
-									PushControllerActivity.class,
 									PushEmojActivity.class
 									};
 		List<String> nameArray = new ArrayList<String>();

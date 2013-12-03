@@ -46,7 +46,6 @@ import com.dabing.emoj.utils.FileType;
 import com.dabing.emoj.utils.FileTypeJudge;
 import com.dabing.emoj.utils.QStr;
 import com.dabing.emoj.wxapi.WeiXinHelper;
-import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.uikit.MMAlert;

@@ -20,11 +20,10 @@ import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -51,8 +50,8 @@ import com.dabing.emoj.R;
 import com.dabing.emoj.activity.EmojBrowseViewActivity;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener;
-import com.dabing.emoj.imagezoomview.ZoomState;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener.ControlType;
+import com.dabing.emoj.imagezoomview.ZoomState;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
@@ -61,7 +60,6 @@ import com.dabing.emoj.utils.FileType;
 import com.dabing.emoj.utils.FileTypeJudge;
 import com.dabing.emoj.utils.RegularEmojManager;
 import com.dabing.emoj.wxapi.WeiXinHelper;
-import com.tencent.exmobwin.banner.TAdView;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.uikit.MMAlert;
@@ -92,7 +90,6 @@ public class SelectEmojActivity extends BaseActivity implements OnTouchListener,
     String[] e_names;
     String[] e_ids;
     RelativeLayout container;
-    TAdView adView;
 	LinearLayout zoomlayout;
 	LinearLayout layoutBottom;
 	Button btnOK;
@@ -529,12 +526,6 @@ public class SelectEmojActivity extends BaseActivity implements OnTouchListener,
 	}
 	//广告处理
 	private void InitAd(){
-		if(AppConfig.getAdvertise_on(getApplicationContext())){
-			adView.setVisibility(View.VISIBLE);
-		}else {
-			adView.setVisibility(View.GONE);
-		}
-		
 	}
 	private void Init(){
 		Intent data = getIntent();
