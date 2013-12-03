@@ -104,6 +104,7 @@
         <activity android:name=".activity.ChannelAddCategoryActivity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.BonusGainActivity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait"></activity>
         <activity android:name=".push.PushEmojActivity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait"></activity>
+        <activity android:name=".push.ReceivedEmojListActivity" android:configChanges="keyboardHidden|orientation" android:screenOrientation="portrait"></activity>
         <receiver android:name=".service.StartUpBroadcast"></receiver>
         <receiver android:name=".service.LoginSuccessBroadcast"></receiver>
         <service  android:name=".service.WeiXinEmojService"></service>
@@ -129,7 +130,6 @@
         <activity android:name=".demo.demoOOM"></activity>
         <activity android:name=".demo.demoPanel"></activity>
         <activity android:name=".demo.demoFile"></activity>
-        <activity android:name=".push.PushControllerActivity"></activity>
         <!-- 友盟  -->
         <activity android:name="com.umeng.fb.ui.SendFeedback" android:windowSoftInputMode="adjustResize" />
 		<activity android:name="com.umeng.fb.ui.FeedbackConversations" />
