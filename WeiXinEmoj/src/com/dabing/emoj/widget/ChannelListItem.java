@@ -9,7 +9,6 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -24,10 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dabing.ads.ac;
 import com.dabing.emoj.R;
-import com.dabing.emoj.activity.ChannelAddCategoryActivity;
-import com.dabing.emoj.activity.EmojBrowseViewActivity;
 import com.dabing.emoj.bonus.IBonusChangeListener;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;

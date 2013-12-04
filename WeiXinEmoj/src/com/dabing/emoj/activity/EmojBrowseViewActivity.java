@@ -24,7 +24,6 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -50,13 +49,8 @@ import android.widget.Toast;
 import android.widget.ZoomControls;
 
 import com.ant.liao.GifView;
-import com.dabing.ads.AdView;
-import com.dabing.ads.AppConnect;
-import com.dabing.ads.MiniAdView;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
-import com.dabing.emoj.advertise.AdManager;
-import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
 import com.dabing.emoj.imagezoomview.ImageZoomView;
@@ -601,42 +595,6 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			});
 		}
 	}
-	//广告处理 已废弃
-	private void InitAd(){
-		AdManager ad = new AdManager(EmojBrowseViewActivity.this);
-		if(!ad.getEnable()){
-			return;
-		}
-		AdType adType = ad.getAdType();
-		switch (adType) {
-		case QQ:
-			break;
-		case WAPS:
-			String waps_ad_type = null;
-			if(emotionMode){
-				waps_ad_type = AppConfig.getWAPS_INDEX2_AD_TYPE(getApplicationContext());				
-			}else {
-				waps_ad_type = AppConfig.getWAPS_INDEX1_AD_TYPE(getApplicationContext());
-			}
-			//String waps_ad_type = AppConfig.getWAPS_AD_Type(getApplicationContext());
-			if(waps_ad_type.equals("BANNER")){
-				wapsAdView.setVisibility(View.VISIBLE);
-				new AdView(EmojBrowseViewActivity.this, wapsAdView).DisplayAd();
-			}else if (waps_ad_type.equals("MINI")) {
-				wapsMiniAdBackView.setVisibility(View.VISIBLE);
-				AppConnect.getInstance(this).setAdBackColor(getResources().getColor(R.color.app_panel_bg)); 
-				//设置迷你广告广告语颜色
-				AppConnect.getInstance(this).setAdForeColor(Color.WHITE); 
-				new MiniAdView(this, wapsMiniAdView).DisplayAd(10); 
-			}else if (waps_ad_type.equals("CUSTOM")) {
-				wapsCustomAd.setVisibility(View.VISIBLE);
-				wapsCustomAd.start();
-			}
-			break;
-		default:
-			break;
-		}
-	}
 	private void Init(){
 		Intent data = getIntent();
 //		if(data.getStringExtra(AppConstant.INTENT_PIC_URL) != null){
@@ -920,6 +878,7 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			items = new String[] {"发送给微信好友","发送给QQ好友","分享至微信朋友圈","其它分享"};
 			types = new String[] {"TYPE_EXIT","TYPE_BLUE","TYPE_BLUE","TYPE_BUTTON"};
 		}
+		final int length = items.length;
 		MMAlert.showAlert(EmojBrowseViewActivity.this, "分享", items, types, new OnAlertSelectId() {			
 			public void onClick(int whichButton) {
 				// TODO Auto-generated method stub
@@ -940,7 +899,9 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 					shareOther();
 				}else if(whichButton == 4){
 					//打包下载本系列表情
-					downloadPackage();
+					if(length >= 5){
+						downloadPackage();
+					}
 				}
 			}
 		}, new OnCancelListener() {

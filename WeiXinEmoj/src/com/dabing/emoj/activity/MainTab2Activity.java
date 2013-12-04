@@ -7,6 +7,7 @@ import com.dabing.emoj.advertise.AdManager;
 import com.dabing.emoj.bonus.IBonusChangeListener;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
+import com.dabing.emoj.db.PushEmojDatabaseHelper;
 import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.service.StartUpBroadcast;
 import com.dabing.emoj.utils.ApkSignCheck;
@@ -307,16 +308,37 @@ public class MainTab2Activity extends TabActivity implements OnCheckedChangeList
 //			}else {
 //				newEmotionView.setVisibility(View.INVISIBLE);
 //			}
-    		if(AppConfig.getIsNew(getApplicationContext(), "unread_removead")){
+    		if(isRemoveAdNew() || isPushEmojNew()){
     			newSettingView.setVisibility(View.VISIBLE);
     		}else {
     			newSettingView.setVisibility(View.INVISIBLE);
     		}
+    		
+    		
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());
 		}
     }
+    
+    //是否有未读的推送表情
+  	protected boolean isPushEmojNew(){
+  		try {
+  			PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(getApplicationContext());
+  			boolean ret = helper.isNew();
+  			return ret;
+  		} catch (Exception e) {
+  			// TODO: handle exception
+  			Log.e(TAG, e.toString());
+  		}
+  		return false;
+  	}
+  	protected boolean isRemoveAdNew(){
+  		if(AppConfig.getBonusHide(getApplicationContext())){
+  			return false;
+  		}
+  		return AppConfig.getIsNew(getApplicationContext(), "unread_removead");
+  	}
     private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {		
 		@Override
 		public void onReceive(Context context, Intent intent) {

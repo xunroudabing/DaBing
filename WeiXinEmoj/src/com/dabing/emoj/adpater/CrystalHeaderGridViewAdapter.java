@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import com.dabing.emoj.R;
 import com.dabing.emoj.fragment.HeaderFragment.IEmojItemClickListener;
 import com.dabing.emoj.utils.AppConfig;
+import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.widget.CrystalButton;
 
 import android.content.Context;
@@ -47,11 +48,17 @@ public class CrystalHeaderGridViewAdapter extends BaseAdapter {
 		final JSONObject obj = mData.getJSONObject(position);
 		String id = obj.getString("id");
 		String name = obj.getString("t");
-		String background = obj.getString("b");
+		boolean hasThumb = obj.has("thumb");
+		//String background = obj.getString("b");
 		crystalButton.setWidth(mWidth);
 		String resId = "emoj"+id.toString();
-		Drawable drawable = getIcon(resId);
-		crystalButton.setImageDrawable(drawable);
+		if(!hasThumb){
+			Drawable drawable = getIcon(resId);
+			crystalButton.setImageDrawable(drawable);
+		}else {
+			String thumb = obj.getString("thumb");
+			crystalButton.setImage(AppConstant.PIC_SERVER_URL + thumb + AppConstant.PIC_ITEM_FULL_PREFIX);
+		}
 		crystalButton.setID(id);
 		crystalButton.setJson(obj);
 		if(AppConfig.isNewEmoj(mContext, id)){

@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.activity.BonusGainActivity;
+import com.dabing.emoj.activity.MainTab2Activity;
 import com.dabing.emoj.bonus.IBonusChangeListener;
 import com.dabing.emoj.bonus.IBouns;
 import com.dabing.emoj.bonus.WAPS_Bonus;
@@ -65,6 +66,8 @@ public class PushEmojActivity extends BaseActivity implements IBonusChangeListen
 		mBouns.setBonusChangeListener(this);
 		caculateWidth();
 		BindUI();
+		SetupAction();
+		SetHasRead();
 	}
 
 	@Override
@@ -78,7 +81,7 @@ public class PushEmojActivity extends BaseActivity implements IBonusChangeListen
 		int screenWidth = manager.getDefaultDisplay().getWidth();
 		// Log.d(TAG, "screenWidth:"+screenWidth);
 		// 图片宽度
-		indexImgWidth = (int) ((screenWidth - (COLUM_NUM + 1) * 5) / COLUM_NUM);
+		indexImgWidth = (int) ((screenWidth - (COLUM_NUM + 1) * 10) / COLUM_NUM);
 	}
 
 	// 返回jsonarray中的前top项
@@ -115,7 +118,40 @@ public class PushEmojActivity extends BaseActivity implements IBonusChangeListen
 		}
 
 	}
-
+	//设为已读
+	protected void SetHasRead(){
+		try {
+			if(mEmojID == null || mEmojID.equals("")){
+				return;
+			}
+			PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(getApplicationContext());
+			ContentValues cv = new ContentValues();
+			cv.put(PushEmojDatabaseHelper.FIELD_READ, "1");
+			helper.update(cv, mEmojID);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+	}
+	//从通知过来的点返回直接跳转至主界面
+	protected void SetupAction(){
+		final boolean from_notify = getIntent().getBooleanExtra(AppConstant.INTENT_PUSH_FROM_NOTIFY, false);
+		setBackBtn(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(from_notify){
+					Intent intent = new Intent(getApplicationContext(), MainTab2Activity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
+					finish();
+				}else {
+					finish();
+				}
+			}
+		});
+	}
 	protected void BindUI() {
 
 		mEmojID = getIntent().getStringExtra(AppConstant.INTENT_PUSH_EMOJID);
@@ -344,7 +380,19 @@ public class PushEmojActivity extends BaseActivity implements IBonusChangeListen
 		}
 
 	}
-	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		final boolean from_notify = getIntent().getBooleanExtra(AppConstant.INTENT_PUSH_FROM_NOTIFY, false);
+		if(from_notify){
+			Intent intent = new Intent(getApplicationContext(), MainTab2Activity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			finish();
+		}else {
+			super.onBackPressed();
+		}
+	}
 	/* (non-Javadoc)
 	 * @see com.dabing.emoj.BaseActivity#onResume()
 	 */

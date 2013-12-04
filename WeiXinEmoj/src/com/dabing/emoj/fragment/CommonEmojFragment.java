@@ -79,7 +79,7 @@ public class CommonEmojFragment extends BaseEmojFragment implements IUMengReceiv
 		gridView.setOnScrollListener(this);
 		try {
 			InitParms();
-			JSONArray parms = mObject.getJSONArray("p");
+			//JSONArray parms = mObject.getJSONArray("p");
 			id = mObject.getString("id");
 			String json = AppConfig.getEmoj(getActivity(), id);
 			if(json != null){

@@ -2,22 +2,21 @@ package com.dabing.emoj.adpater;
 
 import java.util.List;
 
-import com.dabing.emoj.R;
-import com.dabing.emoj.widget.WrapperImageView;
-
-import com.dabing.ads.*;
-
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.openapi.v1.AdInfo;
+import android.openapi.v1.AppConnect;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.dabing.emoj.R;
 /**
  * 万普应用墙
  * @author DaBing

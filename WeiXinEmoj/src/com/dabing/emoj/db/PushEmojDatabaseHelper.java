@@ -1,5 +1,6 @@
 package com.dabing.emoj.db;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.dabing.emoj.utils.AppConstant;
@@ -73,73 +74,167 @@ public class PushEmojDatabaseHelper extends SQLiteOpenHelper {
 				FIELD_TIME + " DESC");
 		return cursor;
 	}
-	
-	public JSONObject getItem(String emojId){
+
+	public JSONObject getItem(String emojId) {
 		SQLiteDatabase db = getReadableDatabase();
 		String whereClasue = FIELD_EMOJID + "=?";
-		Cursor cursor = db.query(TABLE_NAME, null, whereClasue, new String[]{emojId}, null, null, null);
-		if(cursor != null){
-			if(cursor.getCount() > 0){
+		Cursor cursor = db.query(TABLE_NAME, null, whereClasue,
+				new String[] { emojId }, null, null, null);
+		if (cursor != null) {
+			if (cursor.getCount() > 0) {
 				cursor.moveToFirst();
 				try {
 					JSONObject object = new JSONObject();
-					object.put(FIELD_ID, cursor.getLong(cursor.getColumnIndexOrThrow(FIELD_ID)));
-					object.put(FIELD_EMOJID, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_EMOJID)));
-					object.put(FIELD_NAME, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_NAME)));
-					object.put(FIELD_THUMB, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_THUMB)));
-					String json_encry = cursor.getString(cursor.getColumnIndexOrThrow(FIELD_EMOJ));
-					String json_decry = SimpleCrypto.decrypt(AppConstant.ENCRYPT_SEED, json_encry);
-					Log.d(TAG, "json_decry:"+json_decry);
+					object.put(FIELD_ID, cursor.getLong(cursor
+							.getColumnIndexOrThrow(FIELD_ID)));
+					object.put(FIELD_EMOJID, cursor.getString(cursor
+							.getColumnIndexOrThrow(FIELD_EMOJID)));
+					object.put(FIELD_NAME, cursor.getString(cursor
+							.getColumnIndexOrThrow(FIELD_NAME)));
+					object.put(FIELD_THUMB, cursor.getString(cursor
+							.getColumnIndexOrThrow(FIELD_THUMB)));
+					String json_encry = cursor.getString(cursor
+							.getColumnIndexOrThrow(FIELD_EMOJ));
+					String json_decry = SimpleCrypto.decrypt(
+							AppConstant.ENCRYPT_SEED, json_encry);
+					Log.d(TAG, "json_decry:" + json_decry);
 					object.put(FIELD_EMOJ, new JSONObject(json_decry));
-					object.put(FIELD_DES, cursor.getString(cursor.getColumnIndexOrThrow(FIELD_DES)));
-					object.put(FIELD_STATE, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_STATE)));
-					object.put(FIELD_READ, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_READ)));
-					object.put(FIELD_TYPE, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_TYPE)));
-					object.put(FIELD_MONEY, cursor.getInt(cursor.getColumnIndexOrThrow(FIELD_MONEY)));
-					object.put(FIELD_TIME, cursor.getLong(cursor.getColumnIndexOrThrow(FIELD_TIME)));
-				
+					object.put(FIELD_DES, cursor.getString(cursor
+							.getColumnIndexOrThrow(FIELD_DES)));
+					object.put(FIELD_STATE, cursor.getInt(cursor
+							.getColumnIndexOrThrow(FIELD_STATE)));
+					object.put(FIELD_READ, cursor.getInt(cursor
+							.getColumnIndexOrThrow(FIELD_READ)));
+					object.put(FIELD_TYPE, cursor.getInt(cursor
+							.getColumnIndexOrThrow(FIELD_TYPE)));
+					object.put(FIELD_MONEY, cursor.getInt(cursor
+							.getColumnIndexOrThrow(FIELD_MONEY)));
+					object.put(FIELD_TIME, cursor.getLong(cursor
+							.getColumnIndexOrThrow(FIELD_TIME)));
+
 					return object;
 				} catch (Exception e) {
 					// TODO: handle exception
 					Log.e(TAG, e.toString());
-				}finally{
-					if(cursor != null){
+				} finally {
+					if (cursor != null) {
 						cursor.close();
 					}
 				}
-				
+
 			}
 		}
 		return null;
 	}
+
 	public long insert(ContentValues cv) {
 		SQLiteDatabase db = getWritableDatabase();
 		long id = db.insert(TABLE_NAME, null, cv);
 		return id;
 	}
-	
-	public void remove(String emojId){
+
+	public void remove(String emojId) {
 		SQLiteDatabase db = getWritableDatabase();
 		String whereClause = FIELD_EMOJID + "=?";
-		db.delete(TABLE_NAME, whereClause, new String[]{emojId});
+		db.delete(TABLE_NAME, whereClause, new String[] { emojId });
 	}
-	
-	public void update(ContentValues cv,String emojId){
+
+	public void update(ContentValues cv, String emojId) {
 		final String whereClause = FIELD_EMOJID + "=?";
 		SQLiteDatabase db = getWritableDatabase();
-		db.update(TABLE_NAME, cv, whereClause, new String[]{emojId});
+		db.update(TABLE_NAME, cv, whereClause, new String[] { emojId });
 	}
-	public boolean exist(String emojId){
-		final String whereClause = FIELD_EMOJ + "=?";
+
+	public boolean exist(String emojId) {
+		final String whereClause = FIELD_EMOJID + "=?";
 		SQLiteDatabase db = getReadableDatabase();
-		Cursor cursor = db.query(TABLE_NAME, new String[]{"COUNT(*)"}, whereClause, new String[]{emojId}, null, null, null);
-		if(cursor == null){
-			return false;
+
+		Cursor cursor = null;
+		int count = 0;
+		try {
+			cursor = db.query(TABLE_NAME, new String[] { "COUNT(*)" },
+					whereClause, new String[] { emojId }, null, null, null);
+			if (cursor == null) {
+				return false;
+			}
+			cursor.moveToFirst();
+			count = cursor.getInt(0);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		} finally {
+			if (cursor != null) {
+				cursor.close();
+			}
 		}
-		cursor.moveToFirst();
-		int count = cursor.getInt(0);
-		cursor.close();
 		return count > 0;
+	}
+	/**
+	 * 是否有未读的消息
+	 * @return
+	 */
+	public boolean isNew(){
+		final String whereClause = FIELD_READ + "=?";
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = null;
+		int count = 0;
+		try {
+			cursor = db.query(TABLE_NAME, new String[]{"COUNT(*)"}, whereClause, new String[]{"0"}, null, null, null);
+			if(cursor != null){
+				cursor.moveToFirst();
+				count = cursor.getInt(0);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}finally{
+			if(cursor != null){
+				cursor.close();
+			}
+		}
+		return count > 0;
+	}
+	/**
+	 * 获取添加的表情列表
+	 * 
+	 * @return
+	 */
+	public JSONArray getArray() {
+		final String whereClause = FIELD_STATE + "=?";
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = null;
+		JSONArray array = new JSONArray();
+		try {
+			cursor = db.query(TABLE_NAME, new String[] {FIELD_EMOJID,FIELD_NAME,FIELD_THUMB}, whereClause,
+					new String[] { "1" }, null, null, FIELD_TIME + " DESC");
+			if (cursor != null) {
+				if (cursor.moveToFirst()) {
+					do {
+						String id = cursor.getString(cursor.getColumnIndexOrThrow(FIELD_EMOJID));
+						String name = cursor.getString(cursor.getColumnIndexOrThrow(FIELD_NAME));
+						String thumb = cursor.getString(cursor.getColumnIndexOrThrow(FIELD_THUMB));
+						String parms = String.format("wxemoj%s", id);
+						
+						JSONObject obj = new JSONObject();
+						obj.put("id", id);
+						obj.put("t", name);
+						obj.put("o", 2);
+						obj.put("c", 1);
+						obj.put("p", new JSONArray().put(parms));
+						obj.put("thumb", thumb);
+						array.put(obj);
+					} while (cursor.moveToNext());
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}finally{
+			if(cursor != null){
+				cursor.close();
+			}
+		}
+		return array;
 	}
 
 }

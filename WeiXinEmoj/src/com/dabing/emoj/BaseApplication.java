@@ -22,6 +22,7 @@ import com.dabing.emoj.activity.BonusGainActivity;
 import com.dabing.emoj.activity.MainTab2Activity;
 import com.dabing.emoj.db.PushEmojDatabaseHelper;
 import com.dabing.emoj.exception.DefaultCrashHandler;
+import com.dabing.emoj.push.PushEmojActivity;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.SimpleCrypto;
@@ -191,8 +192,9 @@ public class BaseApplication extends GDApplication {
 		@Override
 		public void onSubscribeResult(long resultCode, String reason,
 				String topic) {
-			Log.d(PUSHTAG, "onSubscribeResult is called.resultCode:"+resultCode+" topic:"+topic);
-			if(resultCode == 0){
+			Log.d(PUSHTAG, "onSubscribeResult is called.resultCode:"
+					+ resultCode + " topic:" + topic);
+			if (resultCode == 0) {
 				AppConfig.setSubscribe(getApplicationContext(), true);
 			}
 		}
@@ -203,30 +205,36 @@ public class BaseApplication extends GDApplication {
 			Log.d(PUSHTAG, "onReceiveMessage is called. " + content + ", "
 					+ alias + ", " + topic + ", " + hasNotified);
 
-//			s1 主标题
-//			s2 副标题
-//			c 类型 1-表情 2-文本
-//*****二级字段 obj		
-//			i id 表情id			
-//			n name 表情名称	
-//			p 0-免费 1-会员 2-铜板
-//			m 铜板数
-//			t thumb 封面图片
-//			d 描述
-//			j json
-			save(content);
-			if(!hasNotified){
-				sendNotification(content);
-			}else {
-				//
+			// s1 主标题
+			// s2 副标题
+			// c 类型 1-表情 2-文本
+			// *****二级字段 obj ******
+			// i id 表情id
+			// n name 表情名称
+			// p 0-免费 1-会员 2-铜板
+			// m 铜板数
+			// t thumb 封面图片
+			// d 描述
+			// j json
+			try {
+				save(content);
+				//点击通知时触发
+				if (hasNotified) {
+					sendIntent(content);
+				} else {
+					sendNotification(content);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, e.toString());
 			}
 		}
 
 		@Override
 		public void onInitializeResult(long resultCode, String reason,
 				final String regID) {
-			Log.d(PUSHTAG, "onInitializeResult is called. " + regID);	
-			if(!AppConfig.getSubscribe(getApplicationContext())){
+			Log.d(PUSHTAG, "onInitializeResult is called. " + regID);
+			if (!AppConfig.getSubscribe(getApplicationContext())) {
 				MiPushClient.subscribe(getApplicationContext(), "emoj", null);
 			}
 		}
@@ -238,39 +246,72 @@ public class BaseApplication extends GDApplication {
 					+ params);
 		}
 	}
-	//发送通知
-	protected void sendNotification(String content){
+	//打开弹出页
+	protected void sendIntent(String content){
+		try {
+			JSONObject object = new JSONObject(content);
+			int c = object.getInt("c");
+			if(c == 1){
+				JSONObject json = object.getJSONObject("obj");
+				String emojId = json.getString("i");
+				Intent intent = new Intent(getApplicationContext(), PushEmojActivity.class);
+				intent.putExtra(AppConstant.INTENT_PUSH_EMOJID, emojId);
+				intent.putExtra(AppConstant.INTENT_PUSH_FROM_NOTIFY, true);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+				Log.d(TAG, "sendIntent...");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+	}
+	// 发送通知
+	protected void sendNotification(String content) {
 		try {
 			JSONObject object = new JSONObject(content);
 			String title = object.getString("s1");
 			String des = object.getString("s2");
 			int c = object.getInt("c");
-			
-			NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-			Notification notification = new Notification(R.drawable.logo, "微信表情包发来一条通知", System.currentTimeMillis());
-			notification.flags = Notification.FLAG_AUTO_CANCEL;
-			Intent pIntent = new Intent(getApplicationContext(), BonusGainActivity.class);
-			//intent.putExtra("data", data);
-			//pIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-			PendingIntent pendingIntent= PendingIntent.getActivity(getApplicationContext(), 0, pIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-			notification.setLatestEventInfo(getApplicationContext(), title, des, pendingIntent);
-			mNotificationManager.notify(0, notification);
+			if (c == 1) {
+				JSONObject json = object.getJSONObject("obj");
+				String emojId = json.getString("i");
+				NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+				Notification notification = new Notification(R.drawable.logo,
+						"微信表情包发来一条消息", System.currentTimeMillis());
+				notification.flags = Notification.FLAG_AUTO_CANCEL;
+				Intent pIntent = new Intent(getApplicationContext(),
+						PushEmojActivity.class);
+				pIntent.putExtra(AppConstant.INTENT_PUSH_EMOJID, emojId);
+				pIntent.putExtra(AppConstant.INTENT_PUSH_FROM_NOTIFY, true);
+				pIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+				PendingIntent pendingIntent = PendingIntent.getActivity(
+						getApplicationContext(), 0, pIntent,
+						PendingIntent.FLAG_UPDATE_CURRENT);
+				notification.setLatestEventInfo(getApplicationContext(), title,
+						des, pendingIntent);
+				mNotificationManager.notify(0, notification);
+				Log.d(TAG, "sendNotification...");
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());
 		}
-		
+
 	}
+
 	/**
 	 * 保存推送消息
+	 * 
 	 * @param content
 	 */
-	protected void save(String content){
+	protected void save(String content) {
 		try {
 			JSONObject object = new JSONObject(content);
-			//消息类型 1-表情 2-文本
+			// 消息类型 1-表情 2-文本
 			int c = object.getInt("c");
-			if(c == 1){
+			if (c == 1) {
 				JSONObject json = object.getJSONObject("obj");
 				String emojId = json.getString("i");
 				String name = json.getString("n");
@@ -278,10 +319,11 @@ public class BaseApplication extends GDApplication {
 				String thumb = json.getString("t");
 				String des = json.getString("d");
 				String data = json.getString("j");
-				
-				PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(getApplicationContext());
-				//数据库已存在，不保存至数据库
-				if(helper.exist(emojId)){
+
+				PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(
+						getApplicationContext());
+				// 数据库已存在，不保存至数据库
+				if (helper.exist(emojId)) {
 					return;
 				}
 				ContentValues cv = new ContentValues();
@@ -290,9 +332,11 @@ public class BaseApplication extends GDApplication {
 				cv.put(PushEmojDatabaseHelper.FIELD_TYPE, type);
 				cv.put(PushEmojDatabaseHelper.FIELD_THUMB, thumb);
 				cv.put(PushEmojDatabaseHelper.FIELD_DES, des);
-				cv.put(PushEmojDatabaseHelper.FIELD_EMOJ, SimpleCrypto.encrypt(AppConstant.ENCRYPT_SEED, data));
-				cv.put(PushEmojDatabaseHelper.FIELD_TIME, System.currentTimeMillis());
-					
+				cv.put(PushEmojDatabaseHelper.FIELD_EMOJ,
+						SimpleCrypto.encrypt(AppConstant.ENCRYPT_SEED, data));
+				cv.put(PushEmojDatabaseHelper.FIELD_TIME,
+						System.currentTimeMillis());
+
 				helper.insert(cv);
 			}
 		} catch (Exception e) {

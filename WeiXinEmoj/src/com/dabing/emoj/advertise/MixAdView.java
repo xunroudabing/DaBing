@@ -4,15 +4,13 @@ import net.youmi.android.banner.AdSize;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.openapi.v1.AppConnect;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.dabing.ads.AdView;
-import com.dabing.ads.AppConnect;
-import com.dabing.ads.MiniAdView;
 import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager.AdShowType;
 import com.dabing.emoj.utils.AppConfig;
@@ -72,7 +70,8 @@ public class MixAdView extends LinearLayout {
 				break;
 			case WAPS_BANNER:
 				waps_banner.setVisibility(View.VISIBLE);
-				new AdView(getContext(), waps_banner).DisplayAd();
+				//new AdView(getContext(), waps_banner).DisplayAd();
+				AppConnect.getInstance(getContext()).showBannerAd(getContext(), waps_banner);
 				break;
 			case WAPS_CUSTOM:
 				waps_custom.setVisibility(View.VISIBLE);
@@ -85,7 +84,8 @@ public class MixAdView extends LinearLayout {
 				// 设置迷你广告广告语颜色
 				AppConnect.getInstance(getContext())
 						.setAdForeColor(Color.WHITE);
-				new MiniAdView(getContext(), waps_mini).DisplayAd(10);
+				//new MiniAdView(getContext(), waps_mini).DisplayAd(10);
+				AppConnect.getInstance(getContext()).showMiniAd(getContext(), waps_mini, 10);
 				break;
 			case YOUMI_BANNER:
 				youmi_banner.setVisibility(View.VISIBLE);

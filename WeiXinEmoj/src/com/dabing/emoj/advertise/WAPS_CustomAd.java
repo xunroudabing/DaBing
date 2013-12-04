@@ -4,13 +4,10 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.dabing.ads.*;
-
-import com.dabing.emoj.R;
-import com.dabing.emoj.utils.AppConstant;
-
 import android.content.Context;
 import android.content.Intent;
+import android.openapi.v1.AdInfo;
+import android.openapi.v1.AppConnect;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
@@ -23,7 +20,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.dabing.emoj.R;
+import com.dabing.emoj.utils.AppConstant;
 /**
  * 万普自定义广告条
  * @author DaBing

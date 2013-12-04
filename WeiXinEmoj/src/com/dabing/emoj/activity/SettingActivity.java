@@ -30,6 +30,8 @@ import com.dabing.emoj.R;
 import com.dabing.emoj.advertise.AdManager;
 import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.advertise.WAPS_AppWallActivity;
+import com.dabing.emoj.db.PushEmojDatabaseHelper;
+import com.dabing.emoj.push.ReceivedEmojListActivity;
 import com.dabing.emoj.qqconnect.BaseApiListener;
 import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.service.LoginSuccessBroadcast;
@@ -59,8 +61,8 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 	String action ="send";
 	Button btnClear;
 	EmojImageView headView;
-	RelativeLayout downloadView,attentionView,removeadView;
-	ImageView attensionIcon,removeadIcon;
+	RelativeLayout downloadView,attentionView,removeadView,pushemojView;
+	ImageView attensionIcon,removeadIcon,pushemojIcon;
 	LinearLayout loginView,userinfoView,versionView,yijianView,aboutView,appwallView,helpView;
 	LinearLayout pingjiaView,problemView;
 	static final int REQUEST_LOGIN = 1;
@@ -87,8 +89,10 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		downloadView = (RelativeLayout) findViewById(R.id.setting_download);
 		attentionView = (RelativeLayout) findViewById(R.id.setting_attention);
 		removeadView = (RelativeLayout) findViewById(R.id.setting_removead);
+		pushemojView = (RelativeLayout) findViewById(R.id.setting_pushemoj);
 		attensionIcon = (ImageView) findViewById(R.id.setting_attention_icon);
 		removeadIcon = (ImageView) findViewById(R.id.setting_removead_icon);
+		pushemojIcon = (ImageView) findViewById(R.id.setting_pushemoj_icon);
 		loginView.setOnClickListener(this);
 		userinfoView.setOnClickListener(this);
 		versionView.setOnClickListener(this);
@@ -102,6 +106,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		problemView.setOnClickListener(this);
 		attentionView.setOnClickListener(this);
 		removeadView.setOnClickListener(this);
+		pushemojView.setOnClickListener(this);
 		Initialize();
 		SetupAction();
 	}
@@ -132,6 +137,24 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		}else {
 			removeadIcon.setVisibility(View.INVISIBLE);
 		}
+		
+		if(isPushEmojNew()){
+			pushemojIcon.setVisibility(View.VISIBLE);			
+		}else {
+			pushemojIcon.setVisibility(View.INVISIBLE);
+		}
+	}
+	//是否有未读的推送表情
+	protected boolean isPushEmojNew(){
+		try {
+			PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(getApplicationContext());
+			boolean ret = helper.isNew();
+			return ret;
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+		return false;
 	}
 	public void Initialize(){
 		//OAuth oAuth = TokenStore.fetchPrivate(getApplicationContext());
@@ -261,6 +284,11 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
 			}
+			break;
+		//表情更新	
+		case R.id.setting_pushemoj:
+			Intent intent8 = new Intent(getApplicationContext(), ReceivedEmojListActivity.class);
+			startActivity(intent8);
 			break;
 		default:
 			break;

@@ -2,6 +2,7 @@ package com.dabing.emoj.advertise;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.openapi.v1.AppConnect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,9 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.dabing.ads.*;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
@@ -91,7 +89,8 @@ public class WAPS_AppDetailActivity extends BaseActivity implements OnClickListe
 		//设置迷你广告广告语颜色
 		AppConnect.getInstance(this).setAdForeColor(Color.WHITE); 
 
-		new MiniAdView(this, miniAdview).DisplayAd(10);
+		//new MiniAdView(this, miniAdview).DisplayAd(10);
+		AppConnect.getInstance(this).showMiniAd(this, miniAdview, 10);
 	}
 	public void BindDetail(){
 		if(getIntent().getParcelableExtra(AppConstant.INTENT_ADINFO) != null){

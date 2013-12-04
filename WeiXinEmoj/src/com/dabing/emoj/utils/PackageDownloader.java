@@ -57,9 +57,9 @@ public class PackageDownloader {
 		JSONArray mArray;
 		boolean isRun = true;
 		public DownloadPackageTask(String id){
-			mID = id;
-			String json = Emoj.getEmoj(mContext,id);
+			mID = id;			
 			try {
+				String json = AppConfig.getEmoj(mContext, id);
 				Log.d(TAG, "json:"+json);
 				//数组
 				if(json.startsWith("[")){

@@ -1,11 +1,9 @@
 package com.dabing.emoj.bonus;
 
-import com.dabing.ads.AppConnect;
-import com.dabing.ads.UpdatePointsNotifier;
-
-import android.R.integer;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.openapi.v1.AppConnect;
+import android.openapi.v1.UpdatePointsNotifier;
 import android.util.Log;
 /**
  * 万普积分

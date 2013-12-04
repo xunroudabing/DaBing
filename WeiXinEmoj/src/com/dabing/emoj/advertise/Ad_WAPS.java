@@ -1,10 +1,10 @@
 package com.dabing.emoj.advertise;
 
-import com.dabing.emoj.utils.AppConstant;
-
-import com.dabing.ads.*;
 import android.content.Context;
+import android.openapi.v1.AppConnect;
 import android.util.Log;
+
+import com.dabing.emoj.utils.AppConstant;
 
 public class Ad_WAPS implements IAdvertise {
 	static final String TAG = Ad_WAPS.class.getSimpleName();
@@ -13,7 +13,7 @@ public class Ad_WAPS implements IAdvertise {
 		try {
 			//AppConnect.getInstance(context);	
 			AppConnect.getInstance(AppConstant.WAPS_ID, AppConstant.WAPS_PID, context);
-			AppConnect.getInstance(context).setAdViewClassName("com.dabing.emoj.advertise.WAPS_ADView");
+			//AppConnect.getInstance(context).setAdViewClassName("com.dabing.emoj.advertise.WAPS_ADView");
 			// 禁用错误报告
 			AppConnect.getInstance(context).setCrashReport(false);
 			

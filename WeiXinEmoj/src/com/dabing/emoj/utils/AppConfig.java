@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.dabing.emoj.R;
+import com.dabing.emoj.db.PushEmojDatabaseHelper;
 import com.tencent.weibo.beans.OAuth;
 import com.tencent.weibo.oauthv2.OAuthV2;
 
@@ -168,10 +170,16 @@ public class AppConfig {
 	 * @param context
 	 * @param key
 	 * @return
+	 * @throws JSONException 
 	 */
-	public static String getEmoj(Context context,String key){
+	public static String getEmoj(Context context,String key) throws JSONException{
 		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
 		String defaultEmoj = Emoj.getEmoj(context,key);
+		if(defaultEmoj == null){
+			PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(context);
+			JSONObject object = helper.getItem(key);
+			return object.getJSONObject(PushEmojDatabaseHelper.FIELD_EMOJ).toString();
+		}
 		String result = preferences.getString(key, defaultEmoj);
 		return result;
 	}
@@ -756,6 +764,18 @@ public class AppConfig {
 			return;
 		}
 		count++;
+		String key = "header" + id;
+		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putInt(key, count);
+		editor.commit();
+	}
+	public static void setHeaderClickCount(Context context,String id,int count){
+		if(id.equals("000")){
+			return;
+		}else if (id.equals("099")) {
+			return;
+		}
 		String key = "header" + id;
 		SharedPreferences preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();

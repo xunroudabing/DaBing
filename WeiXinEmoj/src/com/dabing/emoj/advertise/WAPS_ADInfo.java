@@ -1,7 +1,7 @@
 package com.dabing.emoj.advertise;
 
-import com.dabing.ads.*;
 import android.graphics.Bitmap;
+import android.openapi.v1.AdInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
 

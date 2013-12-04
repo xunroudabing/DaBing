@@ -23,7 +23,6 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -48,13 +47,8 @@ import android.widget.Toast;
 import android.widget.ZoomControls;
 
 import com.ant.liao.GifView;
-import com.dabing.ads.AdView;
-import com.dabing.ads.AppConnect;
-import com.dabing.ads.MiniAdView;
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
-import com.dabing.emoj.advertise.AdManager;
-import com.dabing.emoj.advertise.AdManager.AdType;
 import com.dabing.emoj.advertise.MixAdView;
 import com.dabing.emoj.advertise.WAPS_CustomAd;
 import com.dabing.emoj.exception.ExceptionManager;
@@ -689,37 +683,6 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 					openMenu();
 				}
 			});
-		}
-	}
-	//广告处理
-	private void InitAd(){
-		AdManager ad = new AdManager(EmojBrowsePictureActivity.this);
-		if(!ad.getEnable()){
-			return;
-		}
-		AdType adType = ad.getAdType();
-		switch (adType) {
-		case QQ:
-			break;
-		case WAPS:
-			String waps_ad_type = AppConfig.getWAPS_INDEX3_AD_TYPE(getApplicationContext());
-			//String waps_ad_type = AppConfig.getWAPS_AD_Type(getApplicationContext());
-			if(waps_ad_type.equals("BANNER")){
-				wapsAdView.setVisibility(View.VISIBLE);
-				new AdView(EmojBrowsePictureActivity.this, wapsAdView).DisplayAd();
-			}else if (waps_ad_type.equals("MINI")) {
-				wapsMiniAdBackView.setVisibility(View.VISIBLE);
-				AppConnect.getInstance(this).setAdBackColor(getResources().getColor(R.color.app_panel_bg)); 
-				//设置迷你广告广告语颜色
-				AppConnect.getInstance(this).setAdForeColor(Color.WHITE); 
-				new MiniAdView(this, wapsMiniAdView).DisplayAd(10); 
-			}else if (waps_ad_type.equals("CUSTOM")) {
-				wapsCustomAd.setVisibility(View.VISIBLE);
-				wapsCustomAd.start();
-			}
-			break;
-		default:
-			break;
 		}
 	}
 	

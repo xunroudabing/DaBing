@@ -165,8 +165,8 @@ public class DownloadGridViewActivity extends BaseActivity implements IEmojItemC
 		boolean isRun = true;
 		public DownloadPackageTask(String id){
 			mID = id;
-			String json = Emoj.getEmoj(getApplicationContext(),id);
 			try {
+				String json = AppConfig.getEmoj(getApplicationContext(), id);
 				JSONObject object = new JSONObject(json);
 				mArray = object.getJSONArray("data");
 			} catch (Exception e) {

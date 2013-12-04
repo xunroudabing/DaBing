@@ -4,22 +4,21 @@ import java.util.List;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.openapi.v1.AdInfo;
+import android.openapi.v1.AppConnect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
-
-import com.dabing.ads.*;
 
 import com.dabing.emoj.BaseActivity;
 import com.dabing.emoj.R;
 import com.dabing.emoj.adpater.WapsAppWallListViewAdapter;
 import com.dabing.emoj.utils.AppConstant;
-import com.tencent.mm.algorithm.MD5;
 
 public class WAPS_AppWallActivity extends BaseActivity implements OnItemClickListener{
 	LinearLayout miniAdView;
@@ -67,7 +66,8 @@ public class WAPS_AppWallActivity extends BaseActivity implements OnItemClickLis
 		//设置迷你广告广告语颜色
 		AppConnect.getInstance(this).setAdForeColor(Color.WHITE); 
 
-		new MiniAdView(this, miniAdView).DisplayAd(10);
+		//new MiniAdView(this, miniAdView).DisplayAd(10);
+		AppConnect.getInstance(this).showMiniAd(this, miniAdView, 10);
 	}
 	public void BindAppWall(){
 		try {

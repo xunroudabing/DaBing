@@ -20,7 +20,8 @@ public class CrystalButton extends RelativeLayout implements OnClickListener {
 	String ID = "";
 	int mWidth = 80;
 	RelativeLayout container;
-	ImageView imageView,iconView,bannerView;
+	CacheImageView imageView;
+	ImageView iconView,bannerView;
 	public static String selected = "000";
 	static final int PADDING = 10;
 	static final String TAG = CrystalButton.class.getSimpleName();
@@ -33,7 +34,7 @@ public class CrystalButton extends RelativeLayout implements OnClickListener {
 		setBackgroundResource(R.drawable.crystal_rectangle_selector);
 		setPadding(PADDING, PADDING, PADDING, PADDING);
 		LayoutInflater.from(context).inflate(R.layout.crystal_button_background, this, true);
-		imageView = (ImageView) findViewById(R.id.crystal_button_background_img);
+		imageView = (CacheImageView) findViewById(R.id.crystal_button_background_img);
 		iconView = (ImageView) findViewById(R.id.crystal_button_background_icon);
 		bannerView = (ImageView) findViewById(R.id.crystal_button_background_banner);
 		container = (RelativeLayout) findViewById(R.id.crystal_button_background_container);
@@ -49,6 +50,9 @@ public class CrystalButton extends RelativeLayout implements OnClickListener {
 	    int widthSpec = MeasureSpec.makeMeasureSpec(mWidth, MeasureSpec.EXACTLY);
 		super.onMeasure(widthSpec, widthSpec);
 	};
+	public void setImage(String url){
+		imageView.setImage(url);
+	}
 	public void setImageDrawable(Drawable d){
 		imageView.setImageDrawable(d);
 	}
