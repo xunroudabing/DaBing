@@ -12,8 +12,8 @@
 	  android:divider="@drawable/list_divider_line"
 	  android:dividerHeight="1dp"
 	  android:fadingEdge="none"
+	  android:listSelector="@drawable/push_emoj_list_item_selector"
 	  android:id="@+id/push_emoj_list_listview" 
-	  android:listSelector="@color/gray"
 	  android:layout_width="fill_parent" 
 	  android:layout_height="wrap_content"></ListView>
 	 

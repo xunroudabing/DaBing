@@ -41,7 +41,7 @@
     <string name="title_add_channel">微频道订阅</string>
 	<string name="title_setting_removead">去除广告</string>
     <string name="title_channel">微频道</string>
-    <string name="title_receive_emoj">接收到的表情</string>
+    <string name="title_receive_emoj">表情更新</string>
     <string name="alert_confirm_add_file">确定添加{file}?</string>
     <string name="alert_confirm_del_file">确认移除{file}?</string>
     <string name="alert_regular_notexist">找到不到此文件</string>

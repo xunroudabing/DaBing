@@ -118,6 +118,43 @@
                         android:layout_marginRight="12.0dip"
                         android:src="@drawable/mm_submenu_normal" />
                 </RelativeLayout>
+                <!-- 表情更新 -->
+                 <RelativeLayout
+                    android:id="@+id/setting_pushemoj"
+                    style="@style/leba_bg_mid_layout">
+
+                    <ImageView
+                        android:id="@+id/setting_pushemoj_icon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12.0dip"
+                        android:src="@drawable/social_send" />
+
+                    <TextView
+                        android:id="@+id/setting_pushemoj_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/setting_pushemoj_icon1"
+                        android:layout_weight="1.0"
+                        android:text="表情更新"
+                        android:textColor="#ff333333"
+                        android:textSize="16.0dip" />
+
+                    <ImageView
+                        android:id="@+id/setting_pushemoj_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/setting_pushemoj_txt"
+                        android:src="@drawable/friendactivity_newnotice" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12.0dip"
+                        android:src="@drawable/mm_submenu_normal" />
+                </RelativeLayout>
                 <!-- 去除广告 -->
                 <RelativeLayout
                     android:id="@+id/setting_removead"

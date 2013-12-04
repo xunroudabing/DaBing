@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:dabing="http://schemas.android.com/apk/res/com.dabing.emoj"
     android:id="@+id/crystal_button_background_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
    
-	 <ImageView 
+	 <com.dabing.emoj.widget.CacheImageView
     android:id="@+id/crystal_button_background_img"
     android:layout_margin="5dp"
+    dabing:inDensity="hdpi"
     android:layout_centerInParent="true"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
