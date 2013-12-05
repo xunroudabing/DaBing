@@ -274,6 +274,11 @@ public class WeiXinEmojService extends Service implements UmengOnlineConfigureLi
 						AppConfig.setBonusHide(getApplicationContext(), false);
 					}
 				}
+				//微频道
+				String channel_category = MobclickAgent.getConfigParams(getApplicationContext(), "channel_category");
+				if(channel_category != null && !channel_category.equals("") && !channel_category.equals("null")){
+					AppConfig.setChannelCategory(getApplicationContext(), channel_category);
+				}
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, e.toString());
