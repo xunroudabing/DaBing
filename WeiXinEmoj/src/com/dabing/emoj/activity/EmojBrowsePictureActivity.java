@@ -912,7 +912,7 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 			return;
 		}
 		if(!finish){
-			String string = getResources().getString(R.string.wx_not_install);
+			String string = getResources().getString(R.string.wx_not_finish);
 			DialogFactory.createCommonDialog(EmojBrowsePictureActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
@@ -951,7 +951,7 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 			return;
 		}
 		if(!finish){
-			String string = getResources().getString(R.string.wx_not_install);
+			String string = getResources().getString(R.string.wx_not_finish);
 			DialogFactory.createCommonDialog(EmojBrowsePictureActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
@@ -1088,7 +1088,7 @@ public class EmojBrowsePictureActivity extends BaseActivity implements OnTouchLi
 			return;
 		}
 		if(!finish){
-			String string = getResources().getString(R.string.wx_not_install);
+			String string = getResources().getString(R.string.wx_not_finish);
 			DialogFactory.createCommonDialog(EmojBrowsePictureActivity.this, string,"确定", new DialogInterface.OnClickListener() {				
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
