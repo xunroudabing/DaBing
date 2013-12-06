@@ -333,7 +333,7 @@ public class democall extends BaseActivity implements OnClickListener {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		mTencent.onActivityResult(requestCode, resultCode, data);
+		//mTencent.onActivityResult(requestCode, resultCode, data);
 	}
 	/**
 	 *
