@@ -56,6 +56,9 @@
     <string name="alert_push_emoj_needbonus">需要消耗{bonus}铜板,确定继续?</string>
     <string name="alert_push_emoj_getbonus">需要{bonus}铜板,您余额不足</string>
     
+    <string name="share_qzone_title">微信表情包,让你的表情动起来</string>
+    <string name="share_qzone_summary">微信表情包是一款微信表情应用,它能给你的聊天带来更多乐趣,你发的表情都是会动的哦....</string>
+
     <string name="logout">退出登录</string>
     
     <string name="p1">1.为什么无法发送表情?</string>
