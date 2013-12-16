@@ -1,8 +1,18 @@
 package com.dabing.emoj.qqconnect;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
+
+import org.apache.http.conn.ConnectTimeoutException;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.dabing.emoj.utils.AppConfig;
+import com.tencent.open.HttpStatusException;
+import com.tencent.open.NetworkUnavailableException;
+import com.tencent.tauth.Constants;
+import com.tencent.tauth.IRequestListener;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
@@ -87,6 +97,99 @@ public class QQConnect {
 					Log.d(TAG, "onCancel");
 				}
 			});
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, e.toString());
+		}
+	}
+	/**
+	 * 分享到QQ空间
+	 * @param title
+	 * @param webUrl
+	 * @param imgUrl
+	 * @param comment
+	 * @param summary
+	 * @param type
+	 * @return
+	 */
+	public void shareToQZone(String title,String webUrl,String imgUrl,String comment,String summary,String type){
+		try {
+			Bundle bundle = new Bundle();
+			bundle.putString("title", title);
+			bundle.putString("url", webUrl);
+			if(comment != null){
+				bundle.putString("comment", comment);
+			}
+			if(summary != null){
+				bundle.putString("summary", summary);
+			}
+			bundle.putString("images", imgUrl);
+			bundle.putString("type", type);
+			bundle.putString("site", "微信表情包");
+			bundle.putString("fromurl", webUrl);
+			//JSONObject json = mTencent.request(Constants.GRAPH_ADD_SHARE, bundle, Constants.HTTP_POST);
+			mTencent.requestAsync(Constants.GRAPH_ADD_SHARE, bundle, Constants.HTTP_POST, new IRequestListener() {
+				
+				@Override
+				public void onUnknowException(Exception exception, Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onSocketTimeoutException(
+						SocketTimeoutException sockettimeoutexception, Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onNetworkUnavailableException(
+						NetworkUnavailableException networkunavailableexception, Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onMalformedURLException(
+						MalformedURLException malformedurlexception, Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onJSONException(JSONException jsonexception, Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onIOException(IOException ioexception, Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onHttpStatusException(HttpStatusException httpstatusexception,
+						Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onConnectTimeoutException(
+						ConnectTimeoutException connecttimeoutexception, Object obj) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onComplete(JSONObject jsonobject, Object obj) {
+					// TODO Auto-generated method stub
+					Log.d(TAG, "onComplete:"+jsonobject.toString());
+				}
+			}, null);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.e(TAG, e.toString());

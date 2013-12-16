@@ -127,6 +127,7 @@ public class CrystalHeaderFragment extends LinearLayout implements
 			}
 			// 添加推送来的表情
 			JSONArray array_append = mHelper.getArray();
+			Log.d(TAG, "array_append:"+array_append);
 			for (int i = 0; i < array_append.length(); i++) {
 				JSONObject item = array_append.getJSONObject(i);
 				String id = item.getString("id");

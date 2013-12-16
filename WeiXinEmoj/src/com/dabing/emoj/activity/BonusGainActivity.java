@@ -60,6 +60,14 @@ public class BonusGainActivity extends BaseActivity implements OnClickListener,
 		btnVip.setOnClickListener(this);
 		mBouns = new WAPS_Bonus(BonusGainActivity.this);
 		mBouns.setBonusChangeListener(this);
+		setBackBtn(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 		InitVisableState();
 		InitViews();
 	}

@@ -57,6 +57,7 @@ import com.dabing.emoj.imagezoomview.ImageZoomView;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener;
 import com.dabing.emoj.imagezoomview.SimpleZoomListener.ControlType;
 import com.dabing.emoj.imagezoomview.ZoomState;
+import com.dabing.emoj.qqconnect.QQConnect;
 import com.dabing.emoj.utils.AppConfig;
 import com.dabing.emoj.utils.AppConstant;
 import com.dabing.emoj.utils.DialogFactory;
@@ -937,8 +938,9 @@ public class EmojBrowseViewActivity extends BaseActivity implements OnTouchListe
 			}).show();
 			return;
 		}
-		WeiXinHelper helper = new WeiXinHelper(getApplicationContext(), api);
-		helper.shareQQ(mFilePath);
+//		WeiXinHelper helper = new WeiXinHelper(getApplicationContext(), api);
+//		helper.shareQQ(mFilePath);
+		QQConnect.createInstance(getApplicationContext()).shareToQQ(EmojBrowseViewActivity.this, mFilePath);
 		AddToRegular(mFileName, mParms, mFilePath);
 		UmengEvent("action030");
 	}

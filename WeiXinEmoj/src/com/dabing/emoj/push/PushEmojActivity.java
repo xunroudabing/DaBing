@@ -201,7 +201,7 @@ public class PushEmojActivity extends BaseActivity implements IBonusChangeListen
 			nameView.setText(name);
 			desView.setText(des);
 			countView.setText(String.format("共%d个表情", array.length()));
-			mIndexImg.setWidth(100);
+			mIndexImg.setWidth(indexImgWidth);
 			mIndexImg.setImage(AppConstant.PIC_SERVER_URL + thumb
 					+ AppConstant.PIC_ITEM_FULL_PREFIX);
 			mAdapter = new PushEmojThumbAdapter(getTopArray(array, 15));

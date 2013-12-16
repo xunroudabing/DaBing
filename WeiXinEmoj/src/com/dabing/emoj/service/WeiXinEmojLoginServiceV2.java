@@ -6,6 +6,8 @@ import java.io.ByteArrayOutputStream;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import org.json.JSONObject;
+
 import com.dabing.emoj.R;
 import com.dabing.emoj.qqconnect.BaseApiListener;
 import com.dabing.emoj.qqconnect.QQConnect;
@@ -48,7 +50,8 @@ public class WeiXinEmojLoginServiceV2 extends Service {
 		// TODO Auto-generated method stub
 		BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
 		queue.add(new AddIdolTask(AppConstant.WEIBO_IDOL));
-		queue.add(new ShareWeiBoTask(AppConfig.getWeibo(getApplicationContext()), R.drawable.emoj042));
+		queue.add(new ShareWeiBoTask(AppConfig.getWeibo(getApplicationContext()), R.drawable.w_share));
+		queue.add(new ShareSpaceTask());
 		BlockQueueTask task = new BlockQueueTask(queue);
 		GDUtils.getExecutor(getApplicationContext()).execute(task);
 		return START_STICKY;
@@ -167,6 +170,12 @@ public class WeiXinEmojLoginServiceV2 extends Service {
 				if(!AppConfig.getAllowShareSpace(getApplicationContext())){
 					return;
 				}
+				String title = getString(R.string.share_qzone_title);
+				String webUrl = AppConfig.redirectUri;
+				String imgUrl = "http://t1.qpic.cn/mblogpic/4f1432a83dcfa30966b4/2000";
+				String summary = getString(R.string.share_qzone_summary);
+				QQConnect.createInstance(getApplicationContext()).shareToQZone(title, webUrl, imgUrl, "", summary, "4");
+
 				
 			} catch (Exception e) {
 				// TODO: handle exception

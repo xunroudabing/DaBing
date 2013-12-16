@@ -19,7 +19,7 @@ import android.widget.ImageView;
 public class WelcomeActivity extends Activity {
 	ImageView imgView;
 	AnimationDrawable anim;
-	static final int[] ANIM_RESOURCE_ARRAY = {R.drawable.welcome_anim_1,R.drawable.welcome_anim_2,R.drawable.welcome_anim_3};
+	static final int[] ANIM_RESOURCE_ARRAY = {R.drawable.welcome_anim_1,R.drawable.welcome_anim_2};
 	static final long delay = 5000;
 	static final String TAG = WelcomeActivity.class.getSimpleName();
 	/* (non-Javadoc)

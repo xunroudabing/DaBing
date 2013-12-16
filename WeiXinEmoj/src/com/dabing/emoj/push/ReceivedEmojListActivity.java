@@ -4,12 +4,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -41,6 +44,14 @@ public class ReceivedEmojListActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setMMTitle(R.string.title_receive_emoj);
+		setBackBtn(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 		noImageView = (ImageView) findViewById(R.id.push_emoj_list_nodata);
 		mListView = (ListView) findViewById(R.id.push_emoj_list_listview);
 		mHelper = new PushEmojDatabaseHelper(getApplicationContext());
@@ -127,9 +138,19 @@ public class ReceivedEmojListActivity extends BaseActivity {
 	};
 	
 	class MyEmojAdapter extends BaseAdapter{
+		int COLUM_NUM = 5;
+		int mWidth;
 		JSONArray mArray;
 		public MyEmojAdapter(JSONArray array){
 			mArray = array;
+			caculateWidth();
+		}
+		protected void caculateWidth() {
+			WindowManager manager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+			int screenWidth = manager.getDefaultDisplay().getWidth();
+			// Log.d(TAG, "screenWidth:"+screenWidth);
+			// 图片宽度
+			mWidth = (int) ((screenWidth - (COLUM_NUM + 1) * 10) / COLUM_NUM);
 		}
 		protected View makeView(int arg0, View arg1, ViewGroup arg2) throws JSONException{
 			View root = null;
@@ -153,7 +174,7 @@ public class ReceivedEmojListActivity extends BaseActivity {
 			long millsec = obj.getLong("time");			
 			String time = QStr.fixTime(String.valueOf(millsec/1000));
 			
-			thumbView.setWidth(100);
+			thumbView.setWidth(mWidth);
 			thumbView.setImage(AppConstant.PIC_SERVER_URL + thumb + AppConstant.PIC_ITEM_FULL_PREFIX);
 			nameView.setText(name);
 			desView.setText(des);
