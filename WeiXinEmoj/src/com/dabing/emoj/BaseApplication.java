@@ -319,7 +319,10 @@ public class BaseApplication extends GDApplication {
 				String thumb = json.getString("t");
 				String des = json.getString("d");
 				String data = json.getString("j");
-
+				int money = 0;
+				if(json.has("m")){
+					money = json.getInt("m");
+				}
 				PushEmojDatabaseHelper helper = new PushEmojDatabaseHelper(
 						getApplicationContext());
 				// 数据库已存在，不保存至数据库
@@ -332,6 +335,7 @@ public class BaseApplication extends GDApplication {
 				cv.put(PushEmojDatabaseHelper.FIELD_TYPE, type);
 				cv.put(PushEmojDatabaseHelper.FIELD_THUMB, thumb);
 				cv.put(PushEmojDatabaseHelper.FIELD_DES, des);
+				cv.put(PushEmojDatabaseHelper.FIELD_MONEY, String.valueOf(money));
 				cv.put(PushEmojDatabaseHelper.FIELD_EMOJ,
 						SimpleCrypto.encrypt(AppConstant.ENCRYPT_SEED, data));
 				cv.put(PushEmojDatabaseHelper.FIELD_TIME,
