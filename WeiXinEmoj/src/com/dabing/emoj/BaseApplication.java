@@ -38,24 +38,24 @@ public class BaseApplication extends GDApplication {
 	// 小米推送服务调试 开发完成后关闭该日志
 	static {
 		Constants.useOfficial();
-		LoggerInterface newLogger = new LoggerInterface() {
-
-			@Override
-			public void setTag(String tag) {
-				// ignore
-			}
-
-			@Override
-			public void log(String content, Throwable t) {
-				Log.d(PUSHTAG, content, t);
-			}
-
-			@Override
-			public void log(String content) {
-				Log.d(PUSHTAG, content);
-			}
-		};
-		Logger.setLogger(newLogger);
+//		LoggerInterface newLogger = new LoggerInterface() {
+//
+//			@Override
+//			public void setTag(String tag) {
+//				// ignore
+//			}
+//
+//			@Override
+//			public void log(String content, Throwable t) {
+//				Log.d(PUSHTAG, content, t);
+//			}
+//
+//			@Override
+//			public void log(String content) {
+//				Log.d(PUSHTAG, content);
+//			}
+//		};
+//		Logger.setLogger(newLogger);
 	}
 
 	/*
