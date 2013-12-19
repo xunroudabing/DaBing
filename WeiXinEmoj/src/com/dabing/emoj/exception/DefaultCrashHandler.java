@@ -65,25 +65,25 @@ public class DefaultCrashHandler implements UncaughtExceptionHandler {
 		//内存溢出
 		if(ex instanceof OutOfMemoryError){
 			str = mContext.getString(R.string.ex_oom);
-			Log.e(TAG, "OutOfMemoryError:"+ex.getLocalizedMessage());
+			Log.e(TAG, "OutOfMemoryError:");
 		}
 		else if (ex instanceof RuntimeException) {
 			str = mContext.getString(R.string.ex_runtime);
-			Log.e(TAG, "RuntimeException:"+ex.getLocalizedMessage());
+			Log.e(TAG, "RuntimeException:");
 		}
 		final String msg = str;
-		new Thread(new Runnable() {			
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				Looper.prepare();
-				Dialog dialog = DialogFactory.createFailDialog(mContext, msg, listener);
-				//dialog.setCancelable(false);
-				dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT); 
-				dialog.show();
-				Looper.loop();
-			}
-		}).start();
+//		new Thread(new Runnable() {			
+//			@Override
+//			public void run() {
+//				// TODO Auto-generated method stub
+//				Looper.prepare();
+//				Dialog dialog = DialogFactory.createFailDialog(mContext, msg, listener);
+//				//dialog.setCancelable(false);
+//				dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT); 
+//				dialog.show();
+//				Looper.loop();
+//			}
+//		}).start();
 		
 		return true;
 	}
