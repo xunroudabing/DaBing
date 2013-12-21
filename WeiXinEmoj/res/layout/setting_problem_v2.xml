@@ -9,6 +9,7 @@
 	android:id="@+id/setting_problem_listview"    
 	android:cacheColorHint="#00000000"
 	android:fadingEdge="none"
+	android:listSelector="@drawable/mm_trans"
 	android:layout_width="match_parent"
     android:layout_height="match_parent"></ListView>
 </LinearLayout>
