@@ -25,7 +25,7 @@
     <application
         android:name=".BaseApplication"
         android:theme="@style/MMTheme.Basic"
-        android:debuggable="false"
+        android:debuggable="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name" >
 	
@@ -39,8 +39,8 @@
 		android:value="false" />
         <!-- 友盟appkey -->
 		<meta-data android:value="50b2d1565270151296000023" android:name="UMENG_APPKEY"></meta-data>
-		<!--豌豆夹 wandoujia DaBing Google Play google 腾讯 QQ  应用汇 APPCHINA 小米 XIAOMI 91助手 91ZS N多市场 NDUO 安智 anzhi 搜狐sohu 机锋 jifeng 中国移动 ChinaMobile 百度 baidu-->
-        <meta-data android:name="UMENG_CHANNEL" android:value="XIAOMI" />
+		<!--豌豆夹 wandoujia 360 DaBing Google Play google 腾讯 QQ  应用汇 APPCHINA 小米 XIAOMI 91助手 91ZS N多市场 NDUO 安智 anzhi 搜狐sohu 机锋 jifeng 中国移动 ChinaMobile 百度 baidu-->
+        <meta-data android:name="UMENG_CHANNEL" android:value="91ZS" />
         <activity
             android:label="@string/app_name"
             android:name=".WeiXinEmojActivity" >
